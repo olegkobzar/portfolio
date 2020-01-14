@@ -1,0 +1,641 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Content</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="noindex, nofollow"/>
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+	<div class="wrapp">
+		<div class="wrapper">
+			<header class="header">
+	<div class="container">
+		<div class="header__top">
+			<div class="header__search-wrapp js-search-input">
+				<input type="text" class="header__search" placeholder="Найти">
+				<button class="btn header__search-btn">
+					<span class="header__search-btn-icon">
+						<svg class="icon-search">
+							<use xlink:href="#search"></use>
+						</svg>
+					</span>
+					Найти
+				</button>
+			</div>
+			<div class="header__left">
+				<span class="header__logo">
+					<a href="#" class="header__logo-link">
+						<img src="pic/logo.png" alt="">
+					</a>
+				</span>
+				<span class="header__descr-text">
+					Продажа, обслуживание и монтаж отопительного оборудования
+				</span>
+			</div>
+			<div class="header__right">
+				<div class="header__time-work">
+					<span class="header__time-work-text">
+						Пн.-Пт. с 9.00 до 19.00
+					</span>
+					<span class="header__time-work-text">
+						Сб.-Вс. выходной
+					</span>
+				</div>
+				<div class="header__contact">
+					<span class="header__contact-icon">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<div class="header__phone">
+						<div class="header__phone-wrapp">
+							<a href="tel:+74012337315" class="header__phone-link">
+								+7 (4012) 33 73 15
+							</a>
+							<span class="header__phone-text">
+								Сервис
+							</span>
+						</div>
+						<div class="header__phone-wrapp">
+							<a href="tel:+74012337315" class="header__phone-link">
+								+7 (4012) 33 73 15
+							</a>
+							<span class="header__phone-text">
+								Офис
+							</span>
+						</div>
+						<div class="header__callback">
+							<a data-fancybox data-src="#popup" href="javascript:;" class="header__callback-link">
+								Заказать звонок
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="header__btn-menu js-btn-menu">
+					<span class="header__btn-line"></span>
+					<span class="header__btn-line"></span>
+					<span class="header__btn-line"></span>
+				</div>
+				<div class="header__btn-search js-btn-search">
+					<svg class="icon-search">
+						<use xlink:href="#search"></use>
+					</svg>
+				</div>
+			</div>
+		</div>
+
+		<div class="header__bott js-menu-bott">
+			<nav class="header__nav">
+				<div class="header__contact header__contact--mobile">
+					<span class="header__contact-icon">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<div class="header__phone">
+						<div class="header__phone-wrapp">
+							<a href="tel:+74012337315" class="header__phone-link">
+								+7 (4012) 33 73 15
+							</a>
+							<span class="header__phone-text">
+								Сервис
+							</span>
+						</div>
+						<div class="header__phone-wrapp">
+							<a href="tel:+74012337315" class="header__phone-link">
+								+7 (4012) 33 73 15
+							</a>
+							<span class="header__phone-text">
+								Офис
+							</span>
+						</div>
+						<div class="header__callback">
+							<a data-fancybox data-src="#popup" href="javascript:;" class="header__callback-link">
+								Заказать звонок
+							</a>
+						</div>
+					</div>
+				</div>
+				<ul class="header__list">
+					<li class="header__item">
+						<a href="#" class="header__link active">
+							<span class="header__link-middle">Каталог</span>
+						</a>
+
+
+						<div class="header__submenu js-submenu">
+							<div class="header__submenu-inner">
+								<div class="header__col header__col--big">
+									<a href="#" class="header__title more-mobile js-show-category">Котлы отопительные</a>
+									<div class="header__category">
+										<div class="header__category-col">
+											<a href="#" class="header__category-title more-mobile js-show-category-two">Настенные</a>
+											<ul class="header__category-list">
+												<li class="header__category-item">
+													<a href="#" class="header__category-link">Одноконтурные</a>
+												</li>
+												<li class="header__category-item">
+													<a href="#" class="header__category-link">Двуконтурные</a>
+												</li>
+												<li class="header__category-item">
+													<a href="#" class="header__category-link">Конденсационные</a>
+												</li>
+											</ul>
+										</div>
+										<div class="header__category-col">
+											<a href="#" class="header__category-title more-mobile js-show-category-two">Напольные</a>
+											<ul class="header__category-list">
+												<li class="header__category-item">
+													<a href="#" class="header__category-link">Одноконтурные</a>
+												</li>
+												<li class="header__category-item">
+													<a href="#" class="header__category-link">Двуконтурные</a>
+												</li>
+											</ul>
+										</div>
+										<div class="header__category-col">
+											<a href="#" class="header__category-title header__category-title--link">Котлы твердотопливные</a>
+										</div>
+										<div class="header__category-col">
+											<a href="#" class="header__category-title header__category-title--link">Котлы комбинированные</a>
+										</div>
+										<div class="header__category-col">
+											<a href="#" class="header__category-title header__category-title--link">Котлы электрические</a>
+										</div>
+									</div>
+								</div>
+								<div class="header__col">
+									<a href="#" class="header__title more-mobile js-show-category">Горелки</a>
+									<ul class="header__category-list header__category-list--sub">
+										<li class="header__category-item">
+											<a href="#" class="header__category-link">Газовые</a>
+										</li>
+										<li class="header__category-item">
+											<a href="#" class="header__category-link">Пеллетные</a>
+										</li>
+										<li class="header__category-item">
+											<a href="#" class="header__category-link">Дизельные</a>
+										</li>
+									</ul>
+									<div class="header__category-other">
+										<div class="header__category-link-wrapp">
+											<a href="#" class="header__title header__title--link">Аксессуары для котлов</a>
+										</div>
+										<div class="header__category-link-wrapp">
+											<a href="#" class="header__title header__title--link">Системы дымоудаления</a>
+										</div>
+									</div>
+								</div>
+								<div class="header__col">
+									<a href="#" class="header__title more-mobile js-show-category">Бойлеры</a>
+									<ul class="header__category-list header__category-list--sub">
+										<li class="header__category-item">
+											<a href="#" class="header__category-link">Электрические</a>
+										</li>
+										<li class="header__category-item">
+											<a href="#" class="header__category-link">Косвенного нагрева</a>
+										</li>
+									</ul>
+									<div class="header__category-other">
+										<div class="header__category-link-wrapp">
+											<a href="#" class="header__title header__title--link">Аксессуары для котлов</a>
+										</div>
+										<div class="header__category-link-wrapp">
+											<a href="#" class="header__title header__title--link">Системы дымоудаления</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+
+					<li class="header__item">
+						<a href="#" class="header__link header__link--services js-services-btn">
+							<span class="header__link-middle">Услуги</span>
+						</a>
+						<div class="header__submenu header__submenu--services">
+							<ul class="header__submenu-inner">
+								<li class="header__services-item">
+									<a href="#" class="header__title header__title--link">Монтаж котлов</a>
+								</li>
+								<li class="header__services-item">
+									<a href="#" class="header__title header__title--link">Сервисное обслуживание</a>
+								</li>
+								<li class="header__services-item">
+									<a href="#" class="header__title header__title--link">Монтаж систем отопления</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span class="header__link-middle">О компании</span>
+						</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span class="header__link-middle">Сертификаты</span>
+						</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span class="header__link-middle">Новости</span>
+						</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span class="header__link-middle">Контакты</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+	</div>
+
+</header>
+
+
+<svg style="width: 0; height: 0; position: absolute; left: -9999px;">
+	<!-- Градиент -->
+	<linearGradient id="linear-gradient">
+		<stop offset="0%" stop-color="#2a7ee0"/>
+		<stop offset="100%" stop-color="#01adef"/>
+	</linearGradient>
+</svg>
+	
+			<div class="content">
+	<div class="container">
+		<ul class="breadcrumbs">
+	
+		<li class="breadcrumbs__item">
+			<a href="#" class="breadcrumbs__link">Главная</a>
+		</li>
+	
+	<li class="breadcrumbs__item">
+		Новости
+	</li>
+</ul>
+
+		<span class="content__title">Контентная страница</span>
+		<div class="static-content">
+
+			<img style="float: right;" href="pic/content/content-1.jpg" data-fancybox data-width="1000" data-height="580" src="pic/content/content-1.jpg" alt="">
+			
+			<p>Приступая к доказательству следует безапелляционно заявить, что геодезическая линия стремительно позиционирует постулат, как и предполагалось. Линейное уравнение решительно развивает аксиоматичный разрыв функции, что и требовалось доказать. Огибающая семейства прямых положительна. Тройной интеграл, конечно, притягивает разрыв функции. Тем не менее, первая производная стабилизирует многомерный степенной ряд, при этом.    Приступая к доказательству следует безапелляционно заявить, что геодезическая линия стремительно позиционирует постулат, как и предполагалось. Линейное уравнение решительно развивает аксиоматичный разрыв функции,   Приступая к доказательству следует безапелляционно заявить, что геодезическая линия стремительно позиционирует постулат, как и предполагалось. Линейное уравнение решительно развивает аксиоматичный разрыв функции, что и требовалось доказать. Огибающая семейства прямых положительна. Тройной интеграл, конечно, притягивает разрыв функции. Тем не менее, первая производная стабилизирует многомерный степенной ряд, при этом, вместо 13 можно взять любую другую константу.</p>
+
+			<div style="padding-bottom: 25px;">
+				<img style="float: left;" href="pic/content/content-2.jpg" data-fancybox data-width="1000" data-height="580" data-fancybox src="pic/content/content-2.jpg" alt="">
+				<img style="float: left;" href="pic/content/content-3.jpg" data-fancybox data-width="1000" data-height="580" data-fancybox src="pic/content/content-3.jpg" alt="">
+				<img style="float: left;" href="pic/content/content-4.jpg" data-fancybox data-width="1000" data-height="580" data-fancybox src="pic/content/content-4.jpg" alt="">
+				<img style="float: left;" href="pic/content/content-5.jpg" data-fancybox data-width="1000" data-height="580" data-fancybox src="pic/content/content-5.jpg" alt="">
+				<img style="float: left;" href="pic/content/content-6.jpg" data-fancybox data-width="1000" data-height="580" data-fancybox src="pic/content/content-6.jpg" alt="">
+			</div>
+
+			<h1>Заголовок H1</h1>
+			<p>
+				Представляется логичным, что пресс-клиппинг довольно хорошо сбалансирован. Торговая марка, следовательно, продуцирует конвергентный департамент маркетинга и продаж. Косвенная реклама, как принято считать, раскручивает культурный анализ рыночных цен.
+			</p>
+
+			<h2>Заголовок H2</h2>
+			<p>
+				Представляется логичным, что пресс-клиппинг довольно хорошо сбалансирован. Торговая марка, следовательно, продуцирует конвергентный департамент маркетинга и продаж. Косвенная реклама, как принято считать, раскручивает культурный анализ рыночных цен.
+			</p>
+
+			<h3>Заголовок H3</h3>
+			<p>
+				Представляется логичным, что пресс-клиппинг довольно хорошо сбалансирован. Торговая марка, следовательно, продуцирует конвергентный департамент маркетинга и продаж. Косвенная реклама, как принято считать, раскручивает культурный анализ рыночных цен.
+			</p>
+
+			<h4>Заголовок H4</h4>
+			<p>
+				Представляется логичным, что пресс-клиппинг довольно хорошо сбалансирован. Торговая марка, следовательно, продуцирует конвергентный департамент маркетинга и продаж. Косвенная реклама, как принято считать, раскручивает культурный анализ рыночных цен.
+			</p>
+
+			<blockquote>
+				Представляется логичным, что пресс-клиппинг довольно хорошо сбалансирован. Торговая марка, следовательно, продуцирует конвергентный департамент маркетинга и продаж. Косвенная реклама, как принято считать, раскручивает культурный анализ рыночных цен.
+			</blockquote>
+
+			<div style="float: left;">
+				<h4>Заголовок H4</h4>
+				<ul>
+					<li>Представляется логичным</li>
+					<li>Что пресс-клиппинг довольно.</li>
+					<li>Торговая марка, следовательно</li>
+					<li>Косвенная реклама</li>
+				</ul>
+			</div>
+			<div style="float: left;">
+				<h4>Заголовок H4</h4>
+				<ul>
+					<li>Представляется логичным</li>
+					<li>Что пресс-клиппинг довольно.</li>
+					<li>Торговая марка, следовательно</li>
+					<li>Косвенная реклама</li>
+				</ul>
+			</div>
+			<div style="float: left;">
+				<h4>Заголовок H4</h4>
+				<ol>
+					<li>Представляется логичным</li>
+					<li>Что пресс-клиппинг довольно.</li>
+					<li>Торговая марка, следовательно</li>
+					<li>Косвенная реклама</li>
+				</ol>
+			</div>
+			<div style="float: left; padding-bottom: 48px;">
+				<h4>Заголовок H4</h4>
+				<ol>
+					<li>Представляется логичным</li>
+					<li>Что пресс-клиппинг довольно.</li>
+					<li>Торговая марка, следовательно</li>
+					<li>Косвенная реклама</li>
+				</ol>
+			</div>
+
+			<table style="padding-bottom: 60px;">
+				<thead>
+					<tr>
+						<th>Разнообразный</th>
+						<th>Раз</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Богатый опыт реализация намеченных</td>
+						<td>Богатый опыт </td>
+					</tr>
+					<tr>
+						<td>Плановых заданий представляет собой</td>
+						<td>Плановых </td>
+					</tr>
+					<tr>
+						<td>Интересный эксперимент проверки</td>
+						<td>Интересный эксперимент проверки</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</div>
+			<div class="order">
+	<div class="container">
+		<div class="order__outer">
+			<span class="order__title">Заказать обслуживание:</span>
+			<div class="decor triangle-blue" style="top: 0; left: 14.9%;"></div>
+			<div class="decor triangle-blue-small" style="bottom: 6%; left: 13%;"></div>
+			<div class="decor triangle-yellow" style="top: 29px; left: 39.3%;"></div>
+			<div class="decor triangle-yellow-small" style="bottom: 0; left: 40%;"></div>
+			<div class="decor square-blue" style="top: 42px; left: 33.3%; z-index: -2;"></div>
+			<div class="decor square-blue-small" style="bottom: 1px; left: 41%;"></div>
+			<div class="decor square-yellow" style="bottom: -39px; left: 16%;"></div>
+
+			<div class="order__holder">
+				<form action="#" class="order__form">
+					<div class="order__inner">
+						<div class="order__row">
+							<div class="order__col">
+								<div class="order__item">
+									<span class="order__item-label">Имя:</span>
+									<input type="text" class="order__item-input">
+								</div>
+								<div class="order__item">
+									<span class="order__item-label">Марка котла:</span>
+									<input type="text" class="order__item-input">
+								</div>
+							</div>
+							<div class="order__col">
+								<div class="order__item">
+									<span class="order__item-label">Телефон:</span>
+									<input type="text" class="order__item-input phone">
+								</div>
+								<div class="order__item">
+									<span class="order__item-label">Модель котла:</span>
+									<input type="text" class="order__item-input">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="order__inner">
+						<div class="order__item">
+							<span class="order__item-label">Описание неисправности:</span>
+							<textarea class="order__item-textarea"></textarea>
+						</div>
+					</div>
+					<div class="order__bott-form">
+						<label class="checkbox" checked>
+							<input type="checkbox" name="check">
+							<span>Я ознакомлен с <a href="#" class="order__link-check">политикой конфиденциальности</a> и согласен на <a href="#" class="order__link-check">обработку персональных данных</a> </span>
+						</label>
+						<button class="btn btn--yellow order__item-btn">Заказать</button>
+					</div>
+					
+				</form>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+		<footer class="footer">
+	<div class="footer-top">
+		<div class="container">
+			<div class="footer__left">
+				<div class="footer__logo">
+					<a href="#" class="footer__logo-link">
+						<!-- <svg class="icon-logo">
+							<use xlink href="#logo"></use>
+						</svg> -->
+						
+						<img src="pic/logo.png" alt="">
+						<span class="footer__logo-txt">Продажа отопительного оборудования</span>
+					</a>
+				</div>
+				<div class="footer__nav">
+					<div class="footer__nav-inner">
+					<ul class="footer__nav-list">
+						<li class="footer__nav-item">
+							<a href="#">Каталог</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Котлы отопительные</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Услуги</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Горелки</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">О компании</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Аксессуары для котлов</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Сертификаты</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Системы дымоудаления</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Контакты</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Бойлеры</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Новости</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Газовые колонки</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Газовая арматура</a>
+						</li>
+					</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer__right footer__contact">
+				<div class="footer__contact-item">
+					<div class="footer__contact-icon">
+						<svg class="icon-location">
+							<use xlink:href="#location"></use>
+						</svg>
+					</div>
+					<div class="footer__contact-info">
+						<span class="footer__contact-txt">г. Калининград,</span>
+						<span class="footer__contact-txt">ул. Марата, 2</span>
+						<span class="footer__contact-time">Пн.-Пт. с 9.00 до 19.00</span>
+					</div>
+				</div>
+				<div class="footer__contact-item">
+					<div class="footer__contact-icon">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</div>
+					<div class="footer__contact-info">
+						<span class="footer__contact-txt footer__contact-txt--mod">
+							<a href="tel: +7(4012)337315" class="footer__contact-phone">
+								+7 (4012) 33 73 15
+							</a>
+							<span class="footer__contact-desc">Сервис</span>
+						</span>
+						<span class="footer__contact-txt footer__contact-txt--mod">
+							<a href="tel: +7(4012)337315" class="footer__contact-phone">
+								+7 (4012) 33 73 15
+							</a>
+							<span class="footer__contact-desc">Офис</span>
+						</span>
+						<span class="footer__contact-txt footer__contact-txt--mod">
+							<a href="tel: +7(4012)337315" class="footer__contact-phone">
+								+7 (4012) 33 73 15
+							</a>
+							<span class="footer__contact-desc">Офис</span>
+						</span>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="footer-bottom__left">
+				<span>2017-2018 Алеком</span>
+				<p>Все материалы данного сайта являются объектами авторского права (в том числе дизайн). Запрещается копирование, распространение (в том числе путем копирования на другие сайты и ресурсы в Интернете) или любое иное использование информации и объектов без предварительного согласия правообладателя</p>
+			</div>
+			<div class="footer-bottom__right">
+				<a href="http://mtsite.ru" target="_blank" rel="norollow" class="footer-bottom__logo">
+					<span class="footer-bottom__icon">
+						<!-- <svg class="icon-multisite">
+							<use xlink href="#multisite"></use>
+						</svg> -->
+						<img src="pic/multi.png" alt="">
+					</span>
+					<span class="footer-bottom__txt">
+						<span>Сделано в веб-студии "Мультисайт"</span>
+						<span>Разработка и продвижение сайтов.</span>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+	</div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

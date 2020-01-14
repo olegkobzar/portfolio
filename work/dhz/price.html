@@ -1,0 +1,470 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Цены</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+
+ 	</div>
+
+
+  <div class="wrapper">
+
+    <header class="header">
+	
+	<div class="header__language">
+		<ul class="header__language-list">
+			<li class="header__language-item">
+				<a href="" class="header__language-link">SP</a>
+			</li>
+			<li class="header__language-item">
+				<a href="" class="header__language-link">EN</a>
+			</li>
+			<li class="header__language-item">
+				<a href="" class="header__language-link header__language-link--active">RU</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="container">
+		<div class="header__holder">
+				<div class="header__inner header__inner--left">
+
+					<a class="header__toggler js-toggler" data-href="nav"><span class="header__toggler-decor"></span></a>
+
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">DHZ</a>
+					</div>
+
+					<nav class="header__nav js-collapse" data-nav="nav">
+						<ul class="header__nav-list">
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">О компании</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Продукция</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Статьи</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Документы</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Стоимость</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Поставщикам</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Экология</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+
+					<div class="header__search">
+						<form action="" class="header__search-form">
+							<a class="header__search-toggler" data-fancybox data-src="#popup-search" href="javascript:;">
+								<svg class="icon-search">
+								  <use xlink:href="#search"></use>
+								</svg>
+							</a>
+						</form>
+					</div>
+
+				</div>
+				<div class="header__inner header__inner--right">
+					<div class="header__callback">
+						<a href="tel: +74952042967" class="header__callback-link">+7 (495) 204-29-67</a>
+						<span class="header__callback-link header__callback-link--small" data-fancybox data-src="#popup-callback" href="javascript:;">Заказать звонок</span>
+					</div>
+				</div>
+		</div>
+	</div>
+</header>
+
+
+		<div class="price" style="background-image: url('pic/bg/price-bg.jpg')">
+			<div class="price__head">
+				<div class="container">
+					<div class="price__heading">
+						<h2 class="price__title">Проконсультируем по вашим вопросам</h2>
+						<span class="price__subtitle">и поможем рассчитать заказ</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="price__form">
+				<form action="">
+					<div class="price__form-info">
+						<span class="price__ttl">Отправить заявку</span>
+						<span class="price__subttl">В течении 30 минут мы вам перезвоним</span>
+					</div>
+					<div class="price__right">
+						<div class="callback__wrapp-input price__input">
+							<input type="tel" name="phone" class="js-mask valid" placeholder="+7 (___) ___ __ __" required="" aria-invalid="false">
+						</div>
+						<div class="callback__wrapp-btn price-btn">
+							<button class="btn">Отправить заявку</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="about-factory">
+	<div class="container">
+		<div class="about-factory__left">
+			<span class="about-factory__title">Дмитриевский химический завод —</span>
+			<span class="about-factory__subtitle">одно из старейших предприятий химической отрасли</span>
+			<p class="about-factory__descr">
+				Это было небольшое полукустарное производство, в состав которого входили вальяновый, уксусно-кислотный, парокотельный цех и подсобная служба.
+				Завод производил 32% техническую уксусную кислоту и 80% пищевую.
+				Большая заслуга в достижении успехов последних лет принадлежит коллективу завода, творческой работе специалистов предприятия, квалифицированных кадров основных и вспомогательных цехов.
+			</p>
+		</div>
+		<div class="about-factory__right">
+			<span class="about-factory__count about-factory__count--small">
+				<span class="about-factory__count-top">314</span>
+				<span class="about-factory__count-bottom">Профессионалов своего дела</span>
+			</span>
+			<span class="about-factory__count about-factory__count--average">
+				<span class="about-factory__count-top">24</span>
+				<span class="about-factory__count-bottom">Городов содержит наши представительства</span>
+			</span>
+			<span class="about-factory__count about-factory__count--long">
+				<span class="about-factory__count-top">14 000 м<sup>2</sup></span>
+				<span class="about-factory__count-bottom">Производственных площадей</span>
+			</span>
+
+			<p class="about-factory__descr about-factory__descr--mobile">
+				Это было небольшое полукустарное производство, в состав которого входили вальяновый, уксусно-кислотный, парокотельный цех и подсобная служба.
+				Завод производил 32% техническую уксусную кислоту и 80% пищевую.
+				Большая заслуга в достижении успехов последних лет принадлежит коллективу завода, творческой работе специалистов предприятия, квалифицированных кадров основных и вспомогательных цехов.
+			</p>
+		</div>
+	</div>
+</div>
+
+
+
+
+			<div class="tabs">
+			  <span class="chemical-prod__title">Химическая продукция</span>
+			  <ul class="tabs__caption">
+			    <li class="tabs__item active">Фасованные товары</li>
+			    <li class="tabs__item">Наливка</li>
+			  </ul>
+
+			  <div class="tabs__content active">
+			  	<div class="chemical__mobile">
+			    	<div class="chemical">
+		<div class="chemical__inner">
+			<ul class="chemical__list ">
+				
+	<li class="chemical__item  js-item">
+		<a href="#" class="chemical__link">
+			<div class="chemical__icon">
+				<svg class="icon-medicine">
+		  			<use xlink:href="#medicine"/>
+		  		</svg>
+			</div>
+			<h4 class="chemical__caption">Бутилаценат</h4>
+			<span class="chemical__description">Бутилацетат применяется как растворитель в лакокрасочной промышленности, в производстве пластмасс, целлофана, искусственных кож, в кожевенно-обувной промышленности</span>
+		</a>
+	</li>
+	<li class="chemical__item  js-item">
+		<a href="#" class="chemical__link">
+			<div class="chemical__icon">
+				<svg class="icon-medicine">
+		  			<use xlink:href="#medicine"/>
+		  		</svg>
+			</div>
+			<h4 class="chemical__caption">Растворители</h4>
+			<span class="chemical__description">Растворитель для базисных эмалей. Мы являемся поставщиками растворителей на ведущие автомобилестроительные компании России</span>
+		</a>
+	</li>
+	<li class="chemical__item  js-item">
+		<a href="#" class="chemical__link">
+			<div class="chemical__icon">
+				<svg class="icon-medicine">
+		  			<use xlink:href="#medicine"/>
+		  		</svg>
+			</div>
+			<h4 class="chemical__caption">Пищевая уксусная кислота</h4>
+			<span class="chemical__description">Дмитриевский химический завод является крупнейшим предприятием в России по производству пищевой уксусной кислоты</span>
+		</a>
+	</li>
+			</ul>
+		</div>
+</div>
+			    </div>
+			    <div class="price__btn">
+			    	<a href="#" class="btn">ПОСМОТРЕТЬ ВЕСЬ КАТАЛОГ</a>
+			    </div>
+
+			  </div>
+
+			  <div class="tabs__content">
+			    <div class="chemical__mobile">
+			    	<div class="chemical">
+		<div class="chemical__inner">
+			<ul class="chemical__list ">
+				
+	<li class="chemical__item  js-item">
+		<a href="#" class="chemical__link">
+			<div class="chemical__icon">
+				<svg class="icon-medicine">
+		  			<use xlink:href="#medicine"/>
+		  		</svg>
+			</div>
+			<h4 class="chemical__caption">Бутилаценат</h4>
+			<span class="chemical__description">Бутилацетат применяется как растворитель в лакокрасочной промышленности, в производстве пластмасс, целлофана, искусственных кож, в кожевенно-обувной промышленности</span>
+		</a>
+	</li>
+	<li class="chemical__item  js-item">
+		<a href="#" class="chemical__link">
+			<div class="chemical__icon">
+				<svg class="icon-medicine">
+		  			<use xlink:href="#medicine"/>
+		  		</svg>
+			</div>
+			<h4 class="chemical__caption">Растворители</h4>
+			<span class="chemical__description">Растворитель для базисных эмалей. Мы являемся поставщиками растворителей на ведущие автомобилестроительные компании России</span>
+		</a>
+	</li>
+	<li class="chemical__item  js-item">
+		<a href="#" class="chemical__link">
+			<div class="chemical__icon">
+				<svg class="icon-medicine">
+		  			<use xlink:href="#medicine"/>
+		  		</svg>
+			</div>
+			<h4 class="chemical__caption">Пищевая уксусная кислота</h4>
+			<span class="chemical__description">Дмитриевский химический завод является крупнейшим предприятием в России по производству пищевой уксусной кислоты</span>
+		</a>
+	</li>
+			</ul>
+		</div>
+</div>
+			    </div>
+			    <div class="price__btn">
+			    	<a href="#" class="btn">ПОСМОТРЕТЬ ВЕСЬ КАТАЛОГ</a>
+			    </div>
+			  </div>
+
+			</div>
+
+
+		</div>
+
+		<div class="question">
+	<div class="container">
+		<div class="question__inner">
+			<h3>Часто задаваемые вопросы</h3>
+			<div class="question__list js-question">
+				
+	<div class="question__item js-question-item">
+		<h4 class="question__caption js-question-btn">Как просходит процесс заказа и отправки товара</h4>
+		<span class="question__answer js-question-collapse">В один прекрасный момент, мне позвонил менеджер компании, которая занимается скликиванием рекламного бюджета в Я.Директ. Причем, по их словам, для этой цели они разработали специального робота, который полностью эмулирует поведение пользователя и не распознается яндексом как бот.</span>
+	</div>
+
+	<div class="question__item js-question-item">
+		<h4 class="question__caption js-question-btn">Карго-культ вокруг и внутри нас: IT HR и маркетинг</h4>
+		<span class="question__answer js-question-collapse">Совсем недавно я наткнулся на очередное обсуждение DevRel в «Разборе Полетов», в котором услышал странно знакомое слово «карго-культ». Потом оно же всплыло и в Telegram-канале Алексея 23derevo Федорова. Потом еще где-то… Всё это привело меня к мысли, что карго-культ охватил умы людей во всех сферах: от HR до разработки, от выбора диеты до принятия решения о выборе фреймворка или профессионального инструмента</span>
+	</div>
+
+	<div class="question__item js-question-item">
+		<h4 class="question__caption js-question-btn">Конечно, это рискованно, но с должными мерами предосторожности, можно</h4>
+		<span class="question__answer js-question-collapse">Благодаря Крису Талингеру в Twitter уже вовсю используют новый компилятор Graal, и не просто во имя любви к инновациям: это помогает компании экономить ощутимые суммы. Крис уже делился опытом Twitter в Петербурге на конференции Joker, а теперь приготовил новый доклад, призванный показать обычным Java-разработчикам, как им подступиться к Graal. А в ожидании этого доклада мы расспросили его и об основах Graal, и о том, как теперь в Twitter заходят ещё дальше, и о том, как Крис организовал на Гавайях Благодаря Крису Талингеру в Twitter уже вовсю используют новый компилятор Graal, и не просто во имя любви к инновациям: это помогает компании экономить ощутимые суммы. Крис уже делился опытом Twitter в Петербурге на конференции Joker, а теперь приготовил новый доклад, призванный показать обычным Java-разработчикам, как им подступиться к Graal. А в ожидании этого доклада мы расспросили его и об основах Graal, и о том, как теперь в Twitter заходят ещё дальше, и о том, как Крис организовал на Гавайях Благодаря Крису Талингеру в Twitter уже вовсю используют новый компилятор Graal, и не просто во имя любви к инновациям: это помогает компании экономить ощутимые суммы. Крис уже делился опытом Twitter в Петербурге на конференции Joker, а теперь приготовил новый доклад, призванный показать обычным Java-разработчикам, как им подступиться к Graal. А в ожидании этого доклада мы расспросили его и об основах Graal, и о том, как теперь в Twitter заходят ещё дальше, и о том, как Крис организовал на Гавайях Благодаря Крису Талингеру в Twitter уже вовсю используют новый компилятор Graal, и не просто во имя любви к инновациям: это помогает компании экономить ощутимые суммы. Крис уже делился опытом Twitter в Петербурге на конференции Joker, а теперь приготовил новый доклад, призванный показать обычным Java-разработчикам, как им подступиться к Graal. А в ожидании этого доклада мы расспросили его и об основах Graal, и о том, как теперь в Twitter заходят ещё дальше, и о том, как Крис организовал на Гавайях</span>
+	</div>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+		<div class="phone">
+	<div class="container">
+		<div class="phone__inner">
+			<h4 class="phone__caption">У вас остались вопросы? Задайте их нам</h4>
+			<a href="tel:+74959955091" class="phone__link">+7 (495) 995-50-91</a>
+		</div>
+	</div>
+</div>
+
+
+		<div class="callback">
+	<div class="container">
+		<div class="callback__inner">
+			<form action="" id="form__phone" class="js-phone">
+				<div class="callback__form-inner">
+					<span class="callback__text">
+						Мы перезвоним вам в течении 30 минут
+					</span>
+					<div class="callback__wrapp-input">
+						<input type="tel" name="phone" class="js-mask" placeholder="+7 (___) ___ __ __" required>
+					</div>
+					<div class="callback__wrapp-btn">
+						<button class="btn">Отправить заявку</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+      </div>
+
+  <footer class="footer">
+	<div class="container">
+
+		<div class="footer__row">
+			<div class="footer__col footer__col--large">
+				<span class="footer__title">DHZ</span>
+				<p class="footer__txt">
+					Мы – это сплоченная команда профессионалов, которые
+					нацелены на производство высококачественной продукции.
+					В 2008 году завод был признал самым динамично
+					развивающимся предприятием Ивановской области и вошел
+					в десятку крупнейших предприятий региона.
+				</p>
+			</div>
+
+			<div class="footer__col footer__col--large">
+				<div class="footer__inner footer__inner--large">
+					<span class="footer__heading">О нас</span>
+					<ul class="footer__list">
+						<li class="footer__item">
+							<a href="#" class="footer__link">О компании</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Продукция</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Статьи</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Документы</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Стоимость</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Поставщикам</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Экология</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Контакты</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="footer__inner footer__inner--small">
+					<span class="footer__heading">Каталог</span>
+					<ul class="footer__list">
+						<li class="footer__item">
+							<a href="#" class="footer__link">Бутилацетат</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Растворители</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Пищевая уксусная кислота</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer__col footer__col--small">
+				<div class="footer__contacts">
+					<a href="#" class="footer__number">+7 (495) 204-29-67</a>
+					<a class="footer__callBack" data-fancybox data-src="#popup-callback" href="javascript:;">Заказать звонок</a>
+				</div>
+				<div class="footer__social">
+					<span class="footer__social-title">Мы в сети</span>
+					<ul class="footer__social-list">
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<svg class="icon-twitter">
+									<use xlink:href="#twitter"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<svg class="icon-instagram">
+									<use xlink:href="#instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link footer__social-link--linkedin">
+								<svg class="icon-linkedin">
+									<use xlink:href="#linkedin"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</footer>
+
+
+  <div id="popup-search" class="popup popup--search">
+
+	<form action="">
+		<input class="search__input" type="search" placeholder="Что ищем?">
+		<div class="search__btn"><button class="btn btn-search">ИСКАТЬ</button></div>
+	</form>
+
+</div>
+
+  <div id="popup-callback" class="popup popup--callback">
+	<div class="popup__holder">
+		<span class="popup__title">Заказать звонок</span>
+
+		<form action="">
+			<input class="popup__input" type="text" placeholder="Имя">
+			<input type="tel" name="phone" class="popup__input js-mask valid" placeholder="Телефон" required="" aria-invalid="false">
+			<div class="popup__btn"><button class="btn">Отправить</button></div>
+		</form>
+	</div>
+</div>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

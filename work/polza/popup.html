@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css?rel=71864">
+    <!-- @endif -->
+</head>
+<body class="@@class">
+
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+
+<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+</div> 
+
+<div class="wrapper">
+
+	<header class="header compensate-for-scrollbar ">
+	<div class="container">
+		<div class="header__wrap">
+			<div class="header__logo">
+				<a href="#" class="header__logo-link">
+					<span class="header__logo-icon">
+						<svg class="icon-logo">
+							<use xlink:href="#logo"></use>
+						</svg>
+					</span>
+					<span class="header__logo-text">польза</span>
+				</a>
+			</div>
+			<div class="header__btn-menu js-btn-menu">
+				<span class="header__btn-line"></span>
+				<span class="header__btn-line"></span>
+			</div>
+			<div class="header__menu js-menu">
+				<div class="header__phone">
+					<a href="tel:+78129884200" class="header__phone-link">+7 (812) 988-42-00</a>
+				</div>
+				<nav class="header__nav">
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">Как это работает?</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">Меню</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">Цены</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">Доставка</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">Контакты</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header__btn-wrap">
+					<a href="#popup-authorization" data-fancybox class="btn btn--white">Войти</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="container" style="padding-top: 400px; padding-bottom: 400px; display: flex; flex-direction: column;">
+		<a href="#popup-authorization" data-fancybox>Авторизация1</a>
+		<a href="#popup-message" data-fancybox>Авторизация2</a>
+		<a href="#popup-product" data-fancybox>Информация о продукте</a>
+	</div>
+
+	<div class="popup" id="popup-authorization">
+	<div class="popup__wrap">
+		<div class="popup__inner">
+			<span class="caption popup__caption">Авторизация</span>
+			<form action="">
+				<div class="popup__form">
+					<span class="popup__label">Введите телефон</span>
+					<div class="popup__input-wrap">
+						<input type="tel" placeholder="+7">
+					</div>
+					<div class="popup__btn-wrap">
+						<button class="btn" type="submit">отправить</button>
+					</div>
+					<span class="popup__consent-text">Нажимая кнопку "Далее", Вы даете согласие на обработку персональных данных.</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="popup" id="popup-message">
+	<div class="popup__wrap">
+		<div class="popup__inner">
+			<span class="caption popup__caption">Авторизация</span>
+			<form action="">
+				<div class="popup__form">
+					<span class="popup__label">Введите код из смс</span>
+					<div class="popup__input-wrap popup__input-wrap--code">
+						<input type="text" placeholder="oooooo" maxlength="6">
+					</div>
+					<div class="popup__btn-wrap">
+						<button class="btn" type="submit">отправить</button>
+					</div>
+					<span class="popup__consent-text popup__consent-text--code">Мы отправили вам смс-сообщение с кодом на номер <b>+79286990566</b></span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="popup popup--product" id="popup-product">
+	<div class="popup__wrap">
+		<div class="popup__img" style="background-image: url(pic/product-1.jpg);"></div>
+		<div class="popup__info">
+			<span class="popup__info-type">обед</span>
+			<span class="caption popup__info-name">Куриные фрикадельки со спагетти и томатами</span>
+			<ul class="popup__info-list">
+				<li class="popup__info-item">
+					<span class="popup__info-title">Калароийность</span>
+					<span class="popup__info-value">229 ккал</span>
+				</li>
+				<li class="popup__info-item">
+					<span class="popup__info-title">Вес</span>
+					<span class="popup__info-value">150 г</span>
+				</li>
+				<li class="popup__info-item">
+					<span class="popup__info-title">Белки</span>
+					<span class="popup__info-value">14,25 г</span>
+				</li>
+				<li class="popup__info-item">
+					<span class="popup__info-title">Жиры</span>
+					<span class="popup__info-value">5,49 г</span>
+				</li>
+				<li class="popup__info-item">
+					<span class="popup__info-title">Углеводы</span>
+					<span class="popup__info-value">29,77 г</span>
+				</li>
+			</ul>
+			<ul class="popup__info-product">
+				<li class="popup__info-product-item">Филе индейки</li>
+				<li class="popup__info-product-item">Кабачки</li>
+				<li class="popup__info-product-item">Лук</li>
+				<li class="popup__info-product-item">Морковь</li>
+				<li class="popup__info-product-item">Перец болгарский</li>
+				<li class="popup__info-product-item">Соус унаги</li>
+				<li class="popup__info-product-item">Гречневая лапша</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__col">
+				<div class="footer__logo">
+					<a href="#" class="footer__logo-link">
+						<span class="footer__logo-icon">
+							<svg class="icon-logo">
+								<use xlink:href="#logo"></use>
+							</svg>
+						</span>
+						<span class="footer__logo-text">польза</span>
+					</a>
+				</div>
+				<span class="footer__descr">Доставка еды для людей с заболеваниями, требующими специальной диеты</span>
+			</div>
+			<div class="footer__col">
+				<ul class="footer__nav">
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Главная</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Цены</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Как это работает</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Доставка</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Меню</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Контакты</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__col">
+				<div class="footer__contact">
+					<div class="footer__contact-item">
+						<a href="tel:+78129884200" class="footer__contact-link">+7 (812) 988-42-00</a>
+					</div>
+					<div class="footer__contact-item">
+						<a href="mailto:hello@polzafood.ru" class="footer__contact-link">hello@polzafood.ru</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer__icon-1">
+		<svg class="icon-footer-1">
+			<use xlink:href="#footer-1"></use>
+		</svg>
+	</div>
+	<div class="footer__icon-2">
+		<svg class="icon-footer-2">
+			<use xlink:href="#footer-2"></use>
+		</svg>
+	</div>
+</footer>
+
+<script src="js/vendor.js?rel=71864"></script>
+
+
+<script src="pages-list.js"></script>
+
+
+<script src="js/main.js?rel=71864"></script>
+
+
+</body>
+</html>
+

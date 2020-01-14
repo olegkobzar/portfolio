@@ -1,0 +1,749 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Продукт</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+<header class="header header--profile">
+	<div class="container">
+		<div class="header__holder">
+			<div class="header__item header__item--toggler">
+				<span class="header__toggler js-toggler-open">
+					<span class="header__toggler-decor"></span>
+				</span>
+			</div>
+			<div class="header__item header__item--logo">
+				<a href="#" class="header__logo">GT</a>
+			</div>
+			<div class="header__item header__item--nav js-toggler-menu">
+				<div class="header__nav-overlay js-nav-overlay"></div>
+				<nav class="header__nav">
+					<span class="header__nav-close js-toggler-close"></span>
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Блог
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Рейтинг продавцов
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Розыгрыши
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Поддержка
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Вопросы и ответы
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Правила
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			
+				<div class="header__btn-search js-btn-search"></div>
+				<div class="header__search js-search-input">
+					<input type="text">
+				</div>
+			
+
+			
+				<div class="header__add-wrap">
+					<a href="#" class="header__add-link">
+						<span class="header__add-link-icon">
+							
+						</span>
+						<span class="header__add-link-text">Добавить сделку</span>
+					</a>
+				</div>
+			
+			
+			<div class="header__item header__item--user js-user-wrap">
+				<a href="#" class="header__user js-user-link">
+					<img src="pic/users/users-5.png" alt="user">
+				</a>
+				<div class="header__user-info js-user-drop">
+					<div class="header__user-head">
+						<div class="header__user-img">
+							<img src="pic/users/users-5.png" alt="user">
+						</div>
+						<div class="header__user-txt">
+							<span class="header__user-name">
+								Chack Norris
+							</span>
+							<a href="#" class="header__user-mail">
+								Norris@gmail.com
+							</a>
+						</div>
+					</div>
+					<ul class="header__user-list">
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои покупки</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои продажи</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои операции</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Заработать</a>
+						</li>
+					</ul>
+					<div class="header__user-logout">
+						<a href="#" class="header__user-logout-link">
+							<span class="header__user-icon">
+
+							</span>
+							<span class="header__user-logout-txt">Выйти</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="wrapper">
+
+		<div class="wrapper-product" style="background-image: url(pic/bg/tank.jpg);">
+
+			<div class="breadcrumbs">
+	<div class="container">
+		<ul class="breadcrumbs__list">
+			
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link">Steam</a>
+				</li>
+			
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link">World of Tanks</a>
+				</li>
+			
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link">Предметы</a>
+				</li>
+			
+			<li class="breadcrumbs__item">Бронежелет, набор оружия и ключ активации</li>
+		</ul>
+	</div>
+</div>
+
+			<div class="product">
+	<div class="container">
+		<div class="product__wrap">
+			<div class="product__content">
+				
+				<div class="descr">
+	<div class="descr__col descr__col--left js-box-all">
+		<div class="descr__time descr__time--mobile">
+			<span class="descr__time-icon">
+				<svg class="icon-clock">
+					<use xlink:href="#clock"></use>
+				</svg>
+			</span>
+			<span class="descr__time-text">Размещено 3 часа назад.</span>
+		</div>
+		<span class="descr__name">Бронежилет, набор оружия и ключ активации</span>
+		<div class="descr__text">
+			<p>D3 Ros + necro pack. 1020 парагон. 5к ачив на акк. Одеты (80вп+) Сорка, вд, крест, дх, некр, монк (+сапп). 8 полностью закрытых сезонных походов. приличное количество готовых билдов.</p>
+			<p>WOW BFA Deluxe. Куплены все deluxe, начиная с MoP. 7 110 персонажей на РФ-Орда, преимущественно 930+ Мейн: ретри 958ил, топ леги, 130арт :D, 11/11хм пройдены все легионские цепочки, 19.3к ачив поинтов, 250+ маунтов. Закрыты! 15ключи, голд-челленджи пандарии и дренора. Так же имеются 100 твинки на СС-альянс и Седогриве-орда (в свое время обитал там).</p>
+			<p>в HOTS никаких особых достижений не имею, но че-то там игралось.. 110лвл аккаунта, 10 Джайна 9 Самуро 8 Сильвана Тайкус Назибо, много косметики за коллекционки и годовщины (соответственно во всех играх)</p>
+			<p>На аккаунте так же имеется Owerwatch и какие-то дополнения HS времен черной горы или типа того :D (даже темпо-шаман был собран когда-то XD)</p>
+		</div>
+		<span class="descr__show-btn js-show-all">
+			<span>Подробнее</span>
+		</span>
+	</div>
+	<div class="descr__col descr__col--right">
+
+		<div class="descr__top">
+			<div class="descr__user">
+				<div class="descr__user-descr">
+					<a href="#" class="descr__user-link">
+						<div class="descr__user-img">
+							<img src="pic/users/users-2.png" alt="">
+						</div>
+						<div class="descr__user-wrapp">
+							<span class="descr__user-name">
+								Ray Thompson
+							</span>
+							<div class="descr__user-rating">
+								<div class="descr__user-rating-back">
+									<svg class="icon-star-rating-white">
+										<use xlink:href="#star"></use> 
+									</svg>
+									<svg class="icon-star-rating-white">
+										<use xlink:href="#star"></use> 
+									</svg>
+									<svg class="icon-star-rating-white">
+										<use xlink:href="#star"></use> 
+									</svg>
+									<svg class="icon-star-rating-white">
+										<use xlink:href="#star"></use> 
+									</svg>
+									<svg class="icon-star-rating-white">
+										<use xlink:href="#star"></use> 
+									</svg>
+								</div>
+								<div class="descr__user-rating-top" style="width: 80%;">
+									<svg class="icon-star-rating">
+										<use xlink:href="#star"></use> 
+									</svg>
+									<svg class="icon-star-rating">
+										<use xlink:href="#star"></use> 
+									</svg>
+									<svg class="icon-star-rating">
+										<use xlink:href="#star"></use> 
+									</svg>
+									<svg class="icon-star-rating">
+										<use xlink:href="#star"></use> 
+									</svg>
+									<svg class="icon-star-rating">
+										<use xlink:href="#star"></use> 
+									</svg>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="descr__status">
+					<span class="descr__status-icon online"></span>
+				</div>
+				<div class="descr__user-bott">
+					<div class="descr__reviews">
+						<span class="descr__reviews-text">Отзывы продавца:</span>
+						<div class="descr__reviews-wrapp">
+							<a href="#" class="descr__reviews-positive">+23</a>
+							<a href="#" class="descr__reviews-negative">-12</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="descr__bott">
+			<a href="#" class="btn btn--border descr__btn">Посмотреть отзывы</a>
+
+			<ul class="descr__list">
+				<li class="descr__item">
+					<span class="descr__item-name">Игра:</span>
+					<span class="descr__item-text">Diablo 3</span>
+				</li>
+				<li class="descr__item">
+					<span class="descr__item-name">Категория:</span>
+					<span class="descr__item-text">Предметы</span>
+				</li>
+				<li class="descr__item">
+					<span class="descr__item-name">Платформа:</span>
+					<span class="descr__item-text">Steam</span>
+				</li>
+			</ul>
+			<div class="descr__time">
+				<span class="descr__time-icon">
+					<svg class="icon-clock">
+						<use xlink:href="#clock"></use>
+					</svg>
+				</span>
+				<span class="descr__time-text">Размещено 3 часа назад.</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+				<div class="chat">
+	<div class="chat__head">
+		<span class="chat__caption">Чат с продавцом</span>
+		<div class="chat__alert">
+			<a href="#" class="btn btn--border chat__alert-btn js-alert-btn">
+				<span class="chat__btn-icon">
+					<svg class="icon-bell">
+						<use xlink:href="#bell"></use>
+					</svg>
+				</span>
+				<span class="chat__btn-text js-alert-text">Включить оповещения</span>
+			</a>
+		</div>
+	</div>
+	<div class="chat__content">
+		<div class="chat__content-top js-scroll-content">
+			<div class="chat__row">
+				<div class="chat__col chat__col--img">
+					<img src="pic/users/users-1.png" alt="">
+				</div>
+				<div class="chat__col chat__col--text">
+					<div class="chat__col-top">
+						<span class="chat__user-name">Richard Nichols</span>
+						<span class="chat__time">Сегодня в 13:00</span>
+					</div>
+					<div class="chat__col-bott">
+						<span class="chat__col-message">Лимб перечеркивает центральный спектральный класс. Юпитер притягивает случайный спектральный класс. Противостояние дает эффективный диаметp. Рефракция, по определению, традиционно иллюстрирует реликтовый ледник. Широта традиционно гасит близкий афелий .</span>
+					</div>
+				</div>
+			</div>
+			<div class="chat__row">
+				<div class="chat__col chat__col--img">
+					<img src="pic/users/users-1.png" alt="">
+				</div>
+				<div class="chat__col chat__col--text">
+					<div class="chat__col-top">
+						<span class="chat__user-name">Jerome Barnes</span>
+						<span class="chat__time">Сегодня в 13:00</span>
+					</div>
+					<div class="chat__col-bott">
+						<span class="chat__col-message">Когда речь идет о галактиках, декретное время многопланово дает афелий . В отличие от давно известных астрономам планет земной группы, аргумент перигелия оценивает метеорит</span>
+					</div>
+				</div>
+			</div>
+			<div class="chat__row">
+				<div class="chat__col chat__col--img">
+					<img src="pic/users/users-2.png" alt="">
+				</div>
+				<div class="chat__col chat__col--text">
+					<div class="chat__col-top">
+						<span class="chat__user-name">Richard Nichols</span>
+						<span class="chat__time">Сегодня в 13:00</span>
+					</div>
+					<div class="chat__col-bott">
+						<span class="chat__col-message">Можно предположить, что начало координат усиливает косвенный тройной интеграл, откуда следует доказываемое равенство. </span>
+					</div>
+				</div>
+			</div>
+			<div class="chat__row">
+				<div class="chat__col chat__col--img">
+					<img src="pic/users/users-2.png" alt="">
+				</div>
+				<div class="chat__col chat__col--text">
+					<div class="chat__col-top">
+						<span class="chat__user-name">Richard Nichols</span>
+						<span class="chat__time">Сегодня в 13:00</span>
+					</div>
+					<div class="chat__col-bott">
+						<span class="chat__col-message">Очевидно, что зенит отражает перигелий. Атомное время непрерывно. Приливное трение перечеркивает межпланетный дип-скай объект. Как мы уже знаем, аномальная джетовая активность прочно представляет собой спектральный класс. Экватор ничтожно вращает реликтовый ледник. По космогонической гипотезе Джеймса Джинса, Тукан традиционно отражает непреложный популяционный индекс.</span>
+					</div>
+				</div>
+			</div>
+			<div class="chat__row">
+				<div class="chat__col chat__col--img">
+					<img src="pic/users/users-1.png" alt="">
+				</div>
+				<div class="chat__col chat__col--text">
+					<div class="chat__col-top">
+						<span class="chat__user-name">Richard Nichols</span>
+						<span class="chat__time">Сегодня в 13:00</span>
+					</div>
+					<div class="chat__col-bott">
+						<span class="chat__col-message">Лимб перечеркивает центральный спектральный класс. Юпитер притягивает случайный спектральный класс. Противостояние дает эффективный диаметp. Рефракция, по определению, традиционно иллюстрирует реликтовый ледник. Широта традиционно гасит близкий афелий .</span>
+					</div>
+				</div>
+			</div>
+			<div class="chat__row">
+				<div class="chat__col chat__col--img">
+					<img src="pic/users/users-1.png" alt="">
+				</div>
+				<div class="chat__col chat__col--text">
+					<div class="chat__col-top">
+						<span class="chat__user-name">Jerome Barnes</span>
+						<span class="chat__time">Сегодня в 13:00</span>
+					</div>
+					<div class="chat__col-bott">
+						<span class="chat__col-message">Когда речь идет о галактиках, декретное время многопланово дает афелий . В отличие от давно известных астрономам планет земной группы, аргумент перигелия оценивает метеорит</span>
+					</div>
+				</div>
+			</div>
+			<div class="chat__row">
+				<div class="chat__col chat__col--img">
+					<img src="pic/users/users-2.png" alt="">
+				</div>
+				<div class="chat__col chat__col--text">
+					<div class="chat__col-top">
+						<span class="chat__user-name">Richard Nichols</span>
+						<span class="chat__time">Сегодня в 13:00</span>
+					</div>
+					<div class="chat__col-bott">
+						<span class="chat__col-message">Можно предположить, что начало координат усиливает косвенный тройной интеграл, откуда следует доказываемое равенство. </span>
+					</div>
+				</div>
+			</div>
+			<div class="chat__row">
+				<div class="chat__col chat__col--img">
+					<img src="pic/users/users-2.png" alt="">
+				</div>
+				<div class="chat__col chat__col--text">
+					<div class="chat__col-top">
+						<span class="chat__user-name">Richard Nichols</span>
+						<span class="chat__time">Сегодня в 13:00</span>
+					</div>
+					<div class="chat__col-bott">
+						<span class="chat__col-message">Очевидно, что зенит отражает перигелий. Атомное время непрерывно. Приливное трение перечеркивает межпланетный дип-скай объект. Как мы уже знаем, аномальная джетовая активность прочно представляет собой спектральный класс. Экватор ничтожно вращает реликтовый ледник. По космогонической гипотезе Джеймса Джинса, Тукан традиционно отражает непреложный популяционный индекс.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="chat__content-bott">
+			<form action="">
+				<div class="chat__form-wrap">
+					<div class="chat__form-col chat__form-col--file">
+						<div class="file-upload">
+							<label>
+								<svg class="icon-fotocamera">
+									<use xlink:href="#fotocamera"></use>
+								</svg>
+								<input type="file" name="file">
+							</label>
+						</div>
+					</div>
+					<div class="chat__form-col chat__form-col--text">
+						<textarea placeholder="Введите сообщение"></textarea>
+					</div>
+					<div class="chat__form-col chat__form-col--btn">
+						<button class="chat__btn">
+							<svg class="icon-send">
+								<use xlink:href="#send"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+			</div>
+			<div class="product__aside">
+
+				<div class="payment">
+	<div class="payment__wrap">
+		<div class="payment__top">
+			<span class="payment__price">1280 <span class="rub">o</span></span>
+			<span class="payment__bonus">+ 120 <span class="rub">o</span></span>
+		</div>
+		<div class="payment__text">
+			<p>Перед оформлением заказа обязательно свяжитесь с продавцом через чат, расположенный ниже (для уточнения сроков выполнения заказа). Ваша сделка защищена. Продавец не сможет получить оплату до тех пор, пока вы не подтвердите выполнение им всех обязательств.</p>
+		</div>
+	</div>
+	
+	<div class="payment__bott">
+		<span class="payment__title">Способ оплаты</span>
+		<form action="">	
+			<div class="payment__select-wrap">
+				<select name="" id="" class="js-select">
+					<option value="">Банковская карта</option>
+					<option value="">Яндекс деньги</option>
+					<option value="">QIWI</option>
+					<option value="">WebMoney</option>
+					<option value="">Банковская карта</option>
+					<option value="">Яндекс деньги</option>
+				</select>
+			</div>
+			<div class="payment__btn-wrap">
+				<button class="btn payment__btn">Купить</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+				<div class="still">
+	<span class="still__caption">Еще от продавца</span>
+	<div class="still__wrap">
+		<div class="still__item">
+			<div class="still__head">
+				<a href="#" class="still__link">
+					Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ
+				</a>
+				<span> — </span>
+				<span class="still__price">1700<span class="rub">o</span></span>
+			</div>
+			<div class="still__bott">
+				<span class="still__platform">Steam: </span>
+				<span class="still__game">ARK: Survival Evolved</span>
+			</div>
+		</div>
+
+		<div class="still__item">
+			<div class="still__head">
+				<a href="#" class="still__link">
+					Бронежелет, набор оружия и ключ активации
+				</a>
+				<span> — </span>
+				<span class="still__price">1200<span class="rub">o</span></span>
+			</div>
+			<div class="still__bott">
+				<span class="still__platform">Origin: </span>
+				<span class="still__game">Stalker Online</span>
+			</div>
+		</div>
+
+		<div class="still__item">
+			<div class="still__head">
+				<a href="#" class="still__link">
+					Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ
+				</a>
+				<span> — </span>
+				<span class="still__price">1700<span class="rub">o</span></span>
+			</div>
+			<div class="still__bott">
+				<span class="still__platform">Steam: </span>
+				<span class="still__game">ARK: Survival Evolved</span>
+			</div>
+		</div>
+
+		<div class="still__item">
+			<div class="still__head">
+				<a href="#" class="still__link">
+					Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ
+				</a>
+				<span> — </span>
+				<span class="still__price">1700<span class="rub">o</span></span>
+			</div>
+			<div class="still__bott">
+				<span class="still__platform">Steam: </span>
+				<span class="still__game">ARK: Survival Evolved</span>
+			</div>
+		</div>
+	</div>
+	<a href="#" class="btn btn--border">Все товары</a>
+</div>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="static-content">
+			<div class="container">
+				<div class="content-info content-info--bottom js-content-info">
+					<h6>Самый доступный магазин игр в интернете</h6>
+					<p>
+						Стоимость игр и предметов для инвентаря регулируется на платформе по рыночным законам. То есть вы всегда сможете купить цифровой продукт по самой низкой цене. При этом, ассортимент каждый час увеличивается на сотни новых позиций. Наши условия настолько выгодны, что лоты стабильно выкупают другие площадки.
+					</p>
+					<span class="content-info__title-white">Game Transfer в цифрах:</span>
+					
+					<div class="step step--statistics">
+	
+		<div class="step__item">
+			<span class="step__number">18%</span>
+			<span class="step__descr">Наши цены почти на 18% ниже среднерыночной стоимости среди других платформ;</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">95%</span>
+			<span class="step__descr">Вы можете купить аккаунты с играми на 50%, 70% или даже 95% дешевле официальной стоимости</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">183</span>
+			<span class="step__descr">В среднем, каждый час наш ресурс обрабатывает 183 сделки, потому что нам доверяют</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">$ 370 000</span>
+			<span class="step__descr">Общая стоимость наших лотов превышает 370 000 долларов, и это только начало</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">100%</span>
+			<span class="step__descr">За всё время работы мы получили 100% положительных отзывов, без исключений</span>
+		</div>
+	
+</div>
+
+					<h6>Уникальные преимущества нашей торговой площадки игр</h6>
+					<span class="content-info__descr">Как и все, мы предлагаем оперативную техническую поддержку и регулярное пополнение ассортимента. Но это не те причины, почему вам действительно стоит купить аккаунты с играми именно в нашем магазине:</span>
+					<ul>
+						<li>Все сделки проходят под надсмотром арбитража;</li>
+						<li>У нас есть не только аккаунты стим с играми, но и предложения под другие популярные платформы;</li>
+						<li>Среди всех пользователей Game Transfer мы проводим регулярные розыгрыши;</li>
+						<li>Все наши отзывы оставлены реальными людьми по результатам настоящих сделок;</li>
+						<li>Наша комиссия почти втрое меньше, чем у других магазинов игр;</li>
+						<li>Только у нас постоянно проводятся распродажи, где можно купить аккаунт с играми по самой низкой в интернете цене;</li>
+						<li>Нашей платформой пользуются даже игроки pro-сцены, а это говорит о многом.</li>
+					</ul>
+					<h6>Покупка и продажа игр в одном месте</h6>
+					<span class="content-info__descr">На Game Transfer вы можете не только купить игровые аккаунты Steam, Blizzard и других платформ, но и быстро продать свои игры или предметы инвентаря. Мы предоставляем вам эффективный инструмент для взаимовыгодного обмена между пользователями, с нашим участием в качестве гаранта.</span>
+					<span class="content-info__descr-big">Если хотите продать аккаунт с играми, то наш ресурс обеспечит вам следующие преимущества:</span>
+					<ol>
+						<li>Удобный личный кабинет с историей всех операций;</li>
+						<li>Мгновенный вывод средств;</li>
+						<li>В случае спорных ситуаций, вы можете бесплатно воспользоваться услугой арбитража;</li>
+						<li>Нашему проекту доверяют, поэтому мы обеспечиваем высокий спрос на любые лицензионные игры и предметы инвентаря.</li>
+					</ol>
+					<span class="content-info__more js-more-info">Подробнее</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="social">
+	<div class="container">
+		<span class="social__title">Следите за нами в социальных сетях:</span>
+		<div class="social__wrapp">
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-vk">
+						<use xlink:href="#vk"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-g-plus">
+						<use xlink:href="#g-plus"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-telegram">
+						<use xlink:href="#telegram"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-facebook">
+						<use xlink:href="#facebook"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__wrapp">
+			<div class="footer__inner footer__inner--nav">
+				<ul class="footer__list">
+					<li class="footer__item">
+						<a href="#" class="footer__link">Поддержка</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Вопросы и ответы</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Правила</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Рейтинг продавцов</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Розыгрыши</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Информация</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Пользовательское соглашение</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Отказ от ответственности</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Разрешение споров</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__inner footer__inner--info">
+				<span class="footer__descr">© 2018 Game Transfer - торговая площадка игровых ценностей</span>
+				<span class="footer__icon">
+					<img src="pic/webmoney.png" alt="">
+				</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+
+

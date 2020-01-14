@@ -1,0 +1,883 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+
+<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+</div> 
+
+	<div class="wrapper">
+
+		<header class="header js-wrapp-nav">
+	<div class="container">
+		<div class="header__logo">
+			<a href="#" class="header__logo-link">
+				<span class="header__logo-icon">
+					<svg class="icon-logo-green">
+						<use xlink:href="#logo-green"></use>
+					</svg>
+				</span>
+				<span class="header__logo-text">Первый интерактивный портал в России для обучения игре на гитаре</span>
+			</a>
+		</div>
+
+		<div class="header__menu-btn js-btn-menu">
+			<span class="header__menu-line"></span>
+			<span class="header__menu-line"></span>
+			<span class="header__menu-line"></span>
+		</div>
+		<div class="header__wrapp-mobile js-menu-mobile">
+			<div class="header__menu-close js-close-menu"></div>
+			<nav class="header__nav">
+				<span class="header__menu-text-mobile">Меню</span>
+				<ul class="header__list">
+					<li class="header__item">
+						<a href="#" class="header__link">Курс</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">Стоимость</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">Контакты</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="header__right">
+				<div class="header__login">
+					<div class="header__entrance">
+						<a href="#" class="btn btn--border-blue">Вход</a>
+					</div>
+					<div class="header__registration">
+						<a href="#" class="btn header__registration--btn">Регистрация</a>
+					</div>
+				</div>
+				<div class="header__right-mobile">
+					<span class="header__right-mobile-title">Нужна помощь?</span>
+					<span class="header__right-mobile-text">Пишите нам</span>
+					<a href="mailto:help@pimaschool.ru" class="header__right-mobile-mail">help@pimaschool.ru</a>
+				</div>
+				<div class="header__phone">
+					<div class="header__phone-wrapp">
+						<a href="tel:88005555555" class="header__phone-link">8 812 989-74-20</a>
+						<div class="header__phone-icons">
+							<span class="header__phone-icon">
+								<svg class="icon-twitter">
+									<use xlink:href="#twitter"></use>
+								</svg>
+							</span>
+							<span class="header__phone-icon">
+								<svg class="icon-whatsapp">
+									<use xlink:href="#whatsapp"></use>
+								</svg>
+							</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</header>
+
+		<div class="descr">
+	<div class="container">
+		<div class="descr__top">
+			<div class="descr__left js-height">
+				<span class="descr__online">Онлайн-курс</span>
+				<h1 class="descr__caption">Гитара <span>для начинающих</span></h1>
+				<span class="descr__creators">От создателей PimaLIVE, школы Guitar Masters и Алексея Духовича</span>
+			</div>
+			<div class="descr__right js-height">
+				<div class="descr__subscribe">
+					<div class="descr__reverse">
+						<span class="descr__icon-logo">
+							<svg class="icon-logo-red">
+								<use xlink:href="#logo-red"></use>
+							</svg>
+						</span>
+						<span class="descr__text">От cоздателей youtube-канала <a href="#" class="descr__text-link">PimaLIVE</a></span>
+						<span class="descr__icon-logo descr__icon-logo--mobile">
+							<svg class="icon-logo-red">
+								<use xlink:href="#logo-red"></use>
+							</svg>
+						</span>
+					</div>
+					<div class="descr__youtube">
+						<div class="descr__youtube-wrapp">
+							<span class="descr__youtube-icon">
+								<svg class="icon-youtube-red">
+									<use xlink:href="#youtube"></use>
+								</svg>
+							</span>
+							<span class="descr__youtube-value">150 000+</span>
+						</div>
+						<span class="descr__youtube-text">подписчиков</span>
+					</div>
+				</div>
+				<div class="descr__img-wrapp js-height">
+					<img src="pic/main.png" alt="">
+				</div>
+			</div>
+
+		</div>
+		<div class="descr__bott">
+			<div class="descr__bott-video">
+				<iframe src="https://player.vimeo.com/video/271823587" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+			<div class="descr__bott-see">
+				<span class="descr__icon-arrow">
+					<svg class="icon-arrow">
+						<use xlink:href="#arrow"></use>
+					</svg>
+				</span>
+				<span class="descr__bott-text">Посмотрите, как работает портал</span>
+			</div>
+		</div>
+	</div>
+</div>
+		
+		<div class="about">
+	<div class="container">
+		<div class="about__left">
+			<h2 class="about__caption">Соверши прорыв</h2>
+			<p class="about__descr">Этот курс станет прорывом для тех, кто начинает с нуля или уже имеет небольшой опыт и хочет заполнить «черные дыры» в своих знаниях.</p>
+			<p class="about__descr">За 90 дней вы получите необходимые базовые практические и теоретические знания, комплекс эффективных упражнений + научитесь исполнять понравившиеся композиции.</p>
+			<span class="about__title">Через 3 месяца вы сможете самостоятельно:</span>
+			<ul class="about__list">
+				<li class="about__item">Правильно и эффективно заниматься </li>
+				<li class="about__item">Изучите все виды техник и их грамотное применение </li>
+				<li class="about__item">Быстро разучивать композиции</li>
+				<li class="about__item">Узнаете, какие упражнения необходимо играть и сколько времени этому уделять</li>
+			</ul>
+			<div class="about__numbers">
+				<div class="about__item-number">
+					<span class="about__number">120</span>
+					<span class="about__text">видео-уроков</span>
+				</div>
+				<div class="about__item-number">
+					<span class="about__number">30</span>
+					<span class="about__text">минут в день</span>
+				</div>
+				<div class="about__item-number">
+					<span class="about__number">90</span>
+					<span class="about__text">дней на курс</span>
+				</div>
+			</div>
+		</div>
+		<div class="about__right">
+			<div class="about__card">
+				<span class="about__card-title">Для кого</span>
+				<ul class="about__card-list">
+					<li class="about__card-item">
+						<span class="about__card-text">Уровень</span>
+						<span class="about__card-value">Начинающий</span>
+					</li>
+					<li class="about__card-item">
+						<span class="about__card-text">Сложность</span>
+						<span class="about__card-value">Легкая и средняя</span>
+					</li>
+					<li class="about__card-item">
+						<span class="about__card-text">Гитара</span>
+						<span class="about__card-value">Акустика и классика</span>
+					</li>
+				</ul>
+				<a href="#" class="btn about__link">Попробовать бесплатно</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="slider">
+	<div class="container">
+		<div class="slider__holder js-slider-main">
+			<div class="slider__item">	
+	<div class="slider__left">
+		<div class="slider__image slider__image--blue">
+			<img src="pic/page.png" alt="img">
+		</div>
+	</div>
+	<div class="slider__right">
+		<div class="slider__right-inner">
+			<h2 class="slider__title">План занятий</h2>
+			<span class="slider__info">5 дней в неделю в вашем «личном кабинете» формируются несколько уроков с упражнениями, разборами композиций, теорией и тестами. Просто выполняйте задания и эффект гарантирован!</span>
+			<div class="slider__desc">
+				<span class="slider__desc-icon">
+					<svg class="icon-clock">
+						<use xlink:href="#clock"></use>
+					</svg>
+				</span>
+				<span class="slider__desc-title">24 часа на выполнение заданий</span>
+				<span class="slider__desc-txt">После выполнения всех заданий «на сегодня», вы получаете доступ к новым урокам. Дисциплина — залог успеха! </span>
+			</div>
+		</div>
+	</div>
+</div><div class="slider__item">	
+	<div class="slider__left">
+		<div class="slider__image slider__image--pink">
+			<img src="pic/page.png" alt="img">
+		</div>
+	</div>
+	<div class="slider__right">
+		<div class="slider__right-inner">
+			<h2 class="slider__title">Мотивация</h2>
+			<span class="slider__info">За каждое выполненное задание вам начисляются баллы, которые можно обменять на новые уроки! Самые прилежные смогут учиться в PimaSchool бесплатно!</span>
+			<div class="slider__desc">
+				<span class="slider__desc-icon">
+					<svg class="icon-microphone">
+						<use xlink:href="#microphone"></use>
+					</svg>
+				</span>
+				<span class="slider__desc-title">Открытый микрофон</span>
+				<span class="slider__desc-txt">Ничто не мотивирует сильнее чем то, как играют другие, находясь на том же уровне, что и вы! Выкладывайте видео своих исполнений и получайте обратную связь от других участников сообщества</span>
+			</div>
+		</div>
+	</div>
+</div><div class="slider__item">	
+	<div class="slider__left">
+		<div class="slider__image slider__image--purple">
+			<img src="pic/page.png" alt="img">
+		</div>
+	</div>
+	<div class="slider__right">
+		<div class="slider__right-inner">
+			<h2 class="slider__title">Пошаговые разборы</h2>
+			<span class="slider__info">5 дней в неделю в вашем «личном кабинете» формируются несколько уроков с упражнениями, разборами композиций, теорией и тестами. Просто выполняйте задания и эффект гарантирован!</span>
+			<div class="slider__desc">
+				<span class="slider__desc-icon">
+					<svg class="icon-user">
+						<use xlink:href="#user"></use>
+					</svg>
+				</span>
+				<span class="slider__desc-title">Пошаговые разборы</span>
+				<span class="slider__desc-txt">Эффективность наших уроков уже оценили более 150 тысяч подписчиков PimaLIVE, и это были бесплатные уроки! Теперь представьте, какой мощный прорыв ждет вас с нашими платными занятиями.</span>
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+	</div>
+</div>
+
+		<div class="advantages">
+	<div class="container">
+		<div class="advantages__caption-wrapp">
+			<span class="advantages__icon">
+				<svg class="icon-lattice">
+					<use xlink:href="#lattice"></use>
+				</svg>
+			</span>
+			<h2 class="advantages__caption">Всё не как у всех</h2>
+		</div>
+		
+		<div class="advantages__wrapp">
+			<div class="advantages__item">
+				<h5 class="advantages__title">Пошаговая <span>методика</span></h5>
+				<span class="advantages__descr">Хватит думать чем себя занять, сколько уделить времени упражнениям, а сколько разборам. Теперь нужно просто зайти в личный кабинет и выполнить задания «на сегодня». </span>
+			</div>
+			<div class="advantages__item">
+				<h5 class="advantages__title">Уроки <span>от PRO</span></h5>
+				<span class="advantages__descr">Наши курсы разработаны гитаристами с высшим музыкальным образованием и более чем 10-летним опытом преподавания! Каждое задание проверено в работе с реальными учениками в нашей живой школе Guitar Masters в Санкт-Петербурге! </span>
+			</div>
+			<div class="advantages__item">
+				<h5 class="advantages__title">Сообщество <span>и поддержка</span></h5>
+				<span class="advantages__descr">Вместе с вами будут учиться ваши единомышленники. Комментируйте задания, общайтесь, советуйтесь и делитесь впечатлениями. </span>
+			</div>
+			<div class="advantages__item">
+				<h5 class="advantages__title">100% <span>«сок»</span></h5>
+				<span class="advantages__descr">Целых 3 месяца мы сокращали и убирали всю воду из базового курса. Теперь мы уверены — в уроках “PimaSHCOOL” нет ничего лишнего! </span>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="autor">
+	<div class="container">
+		<div class="autor__descr js-height">
+			<span class="autor__programm">Автор программы</span>
+			<h2 class="autor__name">Алексей Духович</h2>
+			<span class="autor__activities">Создатель канала PimaLIVE и школы Guitar Masters. Музыкальная карьера 19 лет, преподаю более 9 лет.</span>
+			<ul class="autor__list">
+				<li class="autor__item">
+					<span class="autor__item-icon">
+						<svg class="icon-star">
+							<use xlink:href="#star"></use>
+						</svg>
+					</span>
+					<span class="autor__item-text">Высшее музыкальное образование по классу «гитара» (красный диплом).</span>
+				</li>
+				<li class="autor__item">
+					<span class="autor__item-icon">
+						<svg class="icon-star">
+							<use xlink:href="#star"></use>
+						</svg>
+					</span>
+					<span class="autor__item-text">Стипендиат Федерального агентства по культуре и кинематографии.</span>
+				</li>
+				<li class="autor__item">
+					<span class="autor__item-icon">
+						<svg class="icon-star">
+							<use xlink:href="#star"></use>
+						</svg>
+					</span>
+					<span class="autor__item-text">Лауреат второй степени на “XI Международном Конкурсе Классической Гитары в Иль де Ре», 2008 г. (Франция), в номинации сольное исполнение.</span>
+				</li>
+				<li class="autor__item">
+					<span class="autor__item-icon">
+						<svg class="icon-star">
+							<use xlink:href="#star"></use>
+						</svg>
+					</span>
+					<span class="autor__item-text">Лауреат и дипломант всероссийских международных и республиканских конкурсов в г. Брянск, Смоленск, Белгород, Минск, Гомель, Гродно и др.</span>
+				</li>
+				<li class="autor__item">
+					<span class="autor__item-icon">
+						<svg class="icon-star">
+							<use xlink:href="#star"></use>
+						</svg>
+					</span>
+					<span class="autor__item-text">Многочисленные концертные выступления в городах России и РБ, а также Германии (Хаген, Дюссельдорф, Дортмунд) и Франции (Ньор, Иль де Ре и др) как сольно, так и в составе квартета. </span>
+				</li>
+				<li class="autor__item">
+					<span class="autor__item-icon">
+						<svg class="icon-star">
+							<use xlink:href="#star"></use>
+						</svg>
+					</span>
+					<span class="autor__item-text">Участник Международного Гитарного Конкурса им. Карла Шайта (Karl Scheit) Вена, Австрия, V Международного Гитарного Конкурса в г. Изерлон, Германия</span>
+				</li>
+			</ul>
+		</div>
+		<div class="autor__img-wrapp js-height">
+			<img src="pic/man.png" alt="">
+		</div>
+	</div>
+</div>
+
+		<div class="price">
+	<div class="container">
+		<h2 class="price__caption">Сколько стоит</h2>
+		<div class="price__wrapp">
+			<div class="price__item">
+				<div class="price__inner">
+					<span class="price__title-day">7 дней</span>
+					<span class="price__descr">Пробный период</span>
+					<span class="price__value">Бесплатно</span>
+					<div class="price__btn-wrapp">
+						<a href="#" class="btn price__btn">Выбрать</a>
+					</div>
+				</div>
+			</div>
+			<div class="price__item">
+				<div class="price__inner">
+					<span class="price__title-day price__title-day--green">30 дней</span>
+					<span class="price__descr">Оплачивайте курс частями </span>
+					<span class="price__value">1710 <span class="rubl">o</span><span class="price__value-month"> / месяц</span> </span>
+					<div class="price__btn-wrapp">
+						<a href="#" class="btn price__btn">Выбрать</a>
+					</div>
+				</div>
+			</div>
+			<div class="price__item">
+				<div class="price__inner">
+					<span class="price__title-day">150 дней</span>
+					<span class="price__descr">Месяц в подарок</span>
+					<span class="price__value">5 130 <span class="rubl">o</span></span>
+					<div class="price__btn-wrapp">
+						<a href="#" class="btn price__btn">Выбрать</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="price__payment">
+			<div class="price__payment-item">
+				<svg class="icon-visa">
+					<use xlink:href="#visa"></use>
+				</svg>
+			</div>
+			<div class="price__payment-item">
+				<svg class="icon-mastercard">
+					<use xlink:href="#mastercard"></use>
+				</svg>
+			</div>
+			<div class="price__payment-item">
+				<svg class="icon-mir">
+					<use xlink:href="#mir"></use>
+				</svg>
+			</div>
+			<div class="price__payment-item">
+				<svg class="icon-tincoff">
+					<use xlink:href="#tincoff"></use>
+				</svg>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+		<div class="command">
+	<div class="container">
+		<div class="command__holder">
+			<div class="command__left">
+				<div class="command__image">
+					<img src="pic/team.png" alt="photo">
+				</div>
+			</div>
+			<div class="command__right">
+				<h2 class="command__title">
+					Команда PimaSCHOOL
+				</h2>
+				<span class="command__subtitle">
+					Наверняка у вас появился вопрос, кто работал над созданием PimaSCHOOL? Мы не будем перечислять себя по-фамильно, а просто расскажем маленькую предысторию… 
+				</span>
+				<div class="command__text static-content">
+					<p>
+						Более 7 лет назад, наш главный вдохновитель, основатель Pima-PROJECT, профессиональный гитарист и просто хороший человек открыл гитарную школу в Санкт-Петербурге. Целью было: объединить под одной крышей самых талантливых гитаристов, которые сумеют передать свои знания другим и стать самой крутой гитарной школой Питера! Несколько лет тщательных поисков и вуаля — наш коллектив сложился.
+					</p>
+					<span class="command__link js-more-link">
+						Читать дальше
+					</span>
+					<div class="command__text command__text--more static-content js-more-content">
+						<p>
+							Более 7 лет назад, наш главный вдохновитель, основатель Pima-PROJECT, профессиональный гитарист и просто хороший человек открыл гитарную школу в Санкт-Петербурге. Целью было: объединить под одной крышей самых талантливых гитаристов, которые сумеют передать свои знания другим и стать самой крутой гитарной школой Питера! Несколько лет тщательных поисков и вуаля — наш коллектив сложился.
+						</p>
+						<p>
+							Более 7 лет назад, наш главный вдохновитель, основатель Pima-PROJECT, профессиональный гитарист и просто хороший человек открыл гитарную школу в Санкт-Петербурге. Целью было: объединить под одной крышей самых талантливых гитаристов, которые сумеют передать свои знания другим и стать самой крутой гитарной школой Питера! Несколько лет тщательных поисков и вуаля — наш коллектив сложился.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="pupils">
+	<div class="container">
+		<h2 class="pupils__title">Играют ученики школы</h2>
+		<div class="pupils__holder slick-slider js-pupils-slider">
+			<div class="pupils__item">
+				<div class="js-vimeo-load" data-src="https://player.vimeo.com/video/271823587"></div>
+				<div class="pupils__item-info">
+					<span class="pupils__item-name">Алексей Беда</span>
+					<span class="pupils__item-desc">после 6 занятий</span>
+				</div>
+			</div>
+			<div class="pupils__item">
+				<div class="js-vimeo-load" data-src="https://player.vimeo.com/video/271823658"></div>
+				<div class="pupils__item-info">
+					<span class="pupils__item-name">Алексей Алексеевич</span>
+					<span class="pupils__item-desc">после 7 занятий</span>
+				</div>
+			</div>
+			<div class="pupils__item">
+				<div class="js-vimeo-load" data-src="https://player.vimeo.com/video/271864184"></div>
+				<div class="pupils__item-info">
+					<span class="pupils__item-name">Артем Колесников</span>
+					<span class="pupils__item-desc">после 6 занятий</span>
+				</div>
+			</div>
+			<div class="pupils__item">
+				<div class="js-vimeo-load" data-src="https://player.vimeo.com/video/271823658"></div>
+				<div class="pupils__item-info">
+					<span class="pupils__item-name">Алексей Алексеевич</span>
+					<span class="pupils__item-desc">после 7 занятий</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+		<div class="question">
+	<div class="container">
+		<h2 class="question__caption">Ответы на вопросы</h2>
+		<div class="question__wrapp">
+			<div class="question__item">
+				<span class="question__title js-accordeon">Что входит в бесплатный период?</span>
+				<div class="question__content js-accordeon-content">Систематичность и дисциплина — залог успешного обучения. Если не выполнять задания на сегодня, вы не получите доступ к новым заданиям завтра. Но есть и хорошая новость. У вас есть два дня в неделю, для того, чтобы наверстать упущенное.</div>
+			</div>
+			<div class="question__item">
+				<span class="question__title js-accordeon">Можно ли просматривать материалы после окончания подписки?</span>
+				<div class="question__content js-accordeon-content">Систематичность и дисциплина — залог успешного обучения. Если не выполнять задания на сегодня, вы не получите доступ к новым заданиям завтра. Но есть и хорошая новость. У вас есть два дня в неделю, для того, чтобы наверстать упущенное. </div>
+			</div>
+			<div class="question__item">
+				<span class="question__title js-accordeon">Что будет, если не выполнять задания вовремя?</span>
+				<div class="question__content js-accordeon-content">Систематичность и дисциплина — залог успешного обучения. Если не выполнять задания на сегодня, вы не получите доступ к новым заданиям завтра. Но есть и хорошая новость. У вас есть два дня в неделю, для того, чтобы наверстать упущенное. </div>
+			</div>
+			<div class="question__item">
+				<span class="question__title js-accordeon">Планируются ли новые курсы?</span>
+				<div class="question__content js-accordeon-content">Систематичность и дисциплина — залог успешного обучения. Если не выполнять задания на сегодня, вы не получите доступ к новым заданиям завтра. Но есть и хорошая новость. У вас есть два дня в неделю, для того, чтобы наверстать упущенное. </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="reviews">
+	<div class="container">
+		<span class="reviews__caption">Отзывы</span>
+		<div class="reviews__wrapp js-grid">
+			<div class="reviews__item-sizer js-grid-sizer"></div>
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Могу согласиться со всеми позитивными высказываниями об этой школе, судя по моему преподавателю - Алексее Духовичу - это профи!!! У меня нет возможности посещать школу, т.к. я живу на большом расстоянии от прекрасного «Петра творенья&quot;. Как оказалось для таких профессиональных людей ничего невозможного нет (к счастью для меня))). И эта форма работы вполне отвечает ожиданиям и ученика, и преподавателя. Лишний раз убеждаюсь в том, что если есть желание - найдется тысяча возможностей, нет желания - найдется тысяча причин! Так вот отказывать себе в удовольствии играть на гитаре и услаждать свой слух звуками прекрасных мелодий нет ни единой причины! Друзья, у кого еще желание научиться играть на гитаре осталось неудовлетворенным - вперед, дерзайте! Здесь вас этому научат! Спасибо, Алексей! P.S. Как только буду в Петербурге, с удовольствием посещу вашу (т.е. нашу))) школу!!!</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-16.png" alt="">
+						</div>
+						<span class="reviews__name-text">Оксана Кутрань, 35 лет</span>
+					</div>
+				</div>
+			</div>
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Школа очень понравилась, хорошо мотивировала. Вдохновил Алексей, человек зарядил меня энергией изначально через Pima. Безумно привлекало то, что со школой дружны многие музыканты, чьим творчеством я восхищаюсь, хотелось приблизится к их духу, энергетика просто поразительная. Спасибо Вам что вы существуете, именно Ваш коллектив дал мне толчок для занятия музыкой.</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-1.png" alt="">
+						</div>
+						<span class="reviews__name-text">Евгений Семенов, 29 лет</span>
+					</div>
+				</div>
+			</div>
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Алексей невероятный учитель. На пару занятий всего лишь сходила, но с тех пор отношение к игре на гитаре кардинально другое. Только после встречи с ним, стало многое получаться. Да и человек он очень добрый. Надеюсь все таки походить на его уроки в будущем</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-2.png" alt="">
+						</div>
+						<span class="reviews__name-text">Яна Андреева, 23 годa</span>
+					</div>
+				</div>
+			</div>
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Алексей - крутейший преподаватель, располагает к себе с первой секунды. Научит, покажет, расскажет, укажет верное направление, придаст ускорения пинком под зад).</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-3.png" alt="">
+						</div>
+						<span class="reviews__name-text">Оксана, 26 лет</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Спасибо большое! За недельное пребывании в СПб ваша школа будет одним из самых ярких и приятных воспоминаний. За 2 часа я поняла все свои ошибки. Теперь я знаю, что хочу играть и знаю, к кому бежать, когда не получается) Алексей, Вы прекрасный педагог! С Вами все так легко и понятно)</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-4.png" alt="">
+						</div>
+						<span class="reviews__name-text">Анна, 27 лет</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Я сменил 2-х преподавателей с которыми мой прогресс был практическин не заметен. Алексей Духович — настоящий профессионал с большим опытом преподавания. Благодаря ему, я полностью переосмыслил сам подход к обучению игре на гитаре. Он умеет с легкостью и юмором донести те моменты которые прежде являлись для меня непреодолимыми. Спасибо Алексею. Всем рекомендую! Продолжаем учиться играть музыку :)</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-5.png" alt="">
+						</div>
+						<span class="reviews__name-text">Владислав, 36 лет</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Самое главное, что обучаясь, получаешь то, чего никогда бы не смог получить в своем родном городе. К тому же, хороший коллектив, домашняя атмосфера и порой сложный, но занимательный процесс обучения заставляет возвращаться к музыке вновь и вновь. И если не эти клевые ребята, было бы тяжело сделать первый шаг потом. За это я хочу сказать спасибо всему коллективу, за правильный и особенный подход к обучению на музыкальном инструменте.</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-6.png" alt="">
+						</div>
+						<span class="reviews__name-text">Иван Канищев, 18 лет</span>
+					</div>
+				</div>
+			</div>
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">О, боги всевышние, вот и настал тот день, когда я сама могу всего за несколько минут услышать и подобрать нужные аккорды, чтобы сыграть одну из своих любимых песен. А все потому, что мой преподаватель Алексей Духович научил меня ДУМАТЬ :) Терпение и труд, все дела, а душа поёт !!!! И, о ДА, настал тот день, когда песенки на 3-4 аккордах - уже скучно играть. Хочется научиться играть сложные и серьезные вещи.</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-7.png" alt="">
+						</div>
+						<span class="reviews__name-text">Ясенька Ясненькая, 25 лет</span>
+					</div>
+				</div>
+			</div>
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Учителя с большим опытом за спиной, как игры на гитаре, так и преподавания, все грамотно и довольно понятно объясняют, что схватываешь на лету, за что им и Огроменное Спасибо!! Сейчас понимаю что основу мне дали, остается только практиковаться в этом направлении изучая новые произведения, результатом безусловно доволен, хоть еще и не закончил обучение. Для всех кто захочет и мечтает играть на гитаре - советую, не пожалеете ни разу!</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-8.png" alt="">
+						</div>
+						<span class="reviews__name-text">Евгений Палатников, 24 годa</span>
+					</div>
+				</div>
+			</div>
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">"Эта музыка выносит мне мозг" К.Кобейн. Музыка, которую я воспроизвожу, доставляет мне огромное удовольствие. Наконец-то:) благодаря такому преподавателю как Алексей. Спасибо школе за всё, Алексею за терпение, хорошее настроение и замечательный подход к ученику, папе за то, что его отсутствие слуха и голоса не передалось по наследству :D</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-9.png" alt="">
+						</div>
+						<span class="reviews__name-text">Сальникова Алёна, 23 года</span>
+					</div>
+				</div>
+			</div>
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Думаю, что второе, что я всегда любила с детства после рисования было музыкой. Но так уж сложилось все вокруг, что музыкой прежде мне не довелось заниматься. И в один момент, было решено - либо прямо сейчас, либо ник. И долго не блуждая по тропам интернета, я наткнулась на этот сайт, чему очень очень очень рада! Потрясающая школа! Алексей спасибо вам большое, вы самый потрясающий преподаватель!!! Я очень рада, что попала именно сюда!!! :)</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-10.png" alt="">
+						</div>
+						<span class="reviews__name-text">Анна Лаби, 25 лет</span>
+					</div>
+				</div>
+			</div>
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Однажды я пробовал освоить игру на гитаре самостоятельно, но после тщетных трудов свыкся с тем, что руки мои для гитары не предназначены. И вот, случай привел меня на курсы гитары к Алексею. Поле полугода занятий я научился: читать ноты, понимать ритм, развил технику пальцев и что самое главное проникся классической музыкой. Алексей раздвинул привычные для меня рамки гитары, как инструмента и показал, сколь богатой может быть игра на классической гитаре. Теперь я ежедневно беру в руки гитару, с радостью тренируясь часами.</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-11.png" alt="">
+						</div>
+						<span class="reviews__name-text">Станислав, 28 лет</span>
+					</div>
+				</div>
+			</div>
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Занимаюсь несколько месяцев, учусь играть на гитаре. Впечатления – только положительные! Собственно, вот они:
+						<ul class="reviews__list">
+							<li class="reviews__item-text">+ Алексей Духович – профессиональный музыкант и талантливый преподаватель</li>
+							<li class="reviews__item-text">+ Сам процесс обучения очень интересен вне зависимости от получаемого результата</li>
+							<li class="reviews__item-text">+ Результат имеется :)</li>
+							<li class="reviews__item-text">+ На занятиях всегда приятная и веселая атмосфера</li>
+						</ul>
+						Всем-всем-всем, кто хочет научиться играть на гитаре, рекомендую!</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-12.png" alt="">
+						</div>
+						<span class="reviews__name-text">Наташа Крылова, 25 лет</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Это замечательная школа!!! На занятиях я получаю бесценную массу эмоций! В этой школе уроки очень прогрессивные. Моя техника стала гораздо профессиональнее =) Если бы я выполняла домашнюю работу – цены бы моей игре не было! И все благодаря таланту преподавателя! Гитара для меня - это душевный отдых. Я поняла, что именно таких уроков мне не хватала всю жизнь! В любом занятии важно найти хорошего учителя! Алексей не просто хороший учитель, он Учитель с большой буквы. С ним хочется играть на гитаре лучше и лучше. И находить свободные минуты, чтобы дарить себе удовольствие от своего совершенствования.</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-15.png" alt="">
+						</div>
+						<span class="reviews__name-text">Маша Котляр, 24 годa</span>
+					</div>
+				</div>
+			</div>
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Давно хотел научиться играть на гитаре, но казалось, что это слишком сложно и нудно. Знакомый порекомендовал Алексея. Теперь сам рекомендую всем уроки игры на гитаре у Алексея! Алексей легко и доступно объясняет кажущиеся крайне сложными для понимания вещи, не грузит сложной теорией и не заставляет часами заниматься дома. Благодаря Алексею у меня начинает получаться то, что раньше казалось невозможным. Друзья оценили!</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-17.png" alt="">
+						</div>
+						<span class="reviews__name-text">Иван, 25 лет</span>
+					</div>
+				</div>
+			</div>
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Я мама двух учеников школы! Мне было приятно видеть, как мой сын Павел с радостью шёл на уроки гитары , а потом с удовольствием «дорабатывал» &quot;День в ноябре&quot;. Произведение зазвучало по-другому, более изящно, что-ли... Паша вечерами играл для меня!!! Мой младший сын Петя по другому взглянул на музыкальную школу — перестал бояться учителей ( отдельное спасибо Алексею!). Петя отметил огромное терпение своего преподавателя , чему я очень радуюсь! Приятно, что к каждому ребёнку индивидуальный подход - мои сыновья такие разные. Петя в любое свободное время брал гитару и играл Калифорникейшн )) - « мама, послушай, я почти всё выучил!&quot;. Огромное-огромное спасибо! С нетерпением ждём сентября!!! до встречи!</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-13.png" alt="">
+						</div>
+						<span class="reviews__name-text">Анжелика Жуковская, 37 лет</span>
+					</div>
+				</div>
+			</div>
+			<div class="reviews__item js-grid-item">
+				<div class="reviews__inner">
+					<span class="reviews__text">Пришел в школу без какого либо опыта игры на гитаре. Самое важное, что по сравнению с другими увлечениями, именно гитара в этой школе не приносит «тяжести» и дискомфорта - даже если что то не получается сделать дома, Алексей всегда уделит этому внимание, и все начнет получатся! Здесь появляется цель - которую хочется достигать, руки не опускаются, да их и не дадут опустить =) Все возможно и я уверен, что буду играть на гитаре!!!!! =)</span>
+					<div class="reviews__name">
+						<div class="reviews__name-photo">
+							<img src="pic/reviews-people/reviews-14.png" alt="">
+						</div>
+						<span class="reviews__name-text">Антон Жердецкий, 24 годa</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="contacts">
+	<div class="container">
+		<div class="contacts__holder">
+			<div class="contacts__head">
+				<h2 class="contacts__title">
+					Штаб PimaLIVE и PimaSCHOOL
+				</h2>
+				<span class="contacts__address">
+					Санкт-Петербург, ул. Гороховая, 73
+				</span>
+				<div class="contacts__address-inner">
+					<span class="contacts__address-item">
+						Пушкинская <span>220 м</span>
+					</span>
+					<span class="contacts__address-item">
+						Звенигородская <span>300 м</span>
+					</span>
+				</div>
+			</div>
+			<div class="contacts__map">
+				<div class="contacts__map-inner" id="map"></div>
+			</div>
+			<div class="contacts__help">
+				<span class="contacts__help-title">
+					Нужна помощь? 
+				</span>
+				<span class="contacts__help-txt">
+					Пишите нам 
+					<a href="mailto: help@pimaschool.ru">
+						help@pimaschool.ru
+					</a>
+				</span>
+				<div class="contacts__help-social">
+					<a href="tel: +88129897420" class="contacts__help-phone">8 812 989-74-20</a>
+					<div class="contacts__help-icons">
+						<a href="#" class="contacts__help-icon">
+							<svg class="icon-twitter">
+								<use xlink:href="#twitter"></use>
+							</svg>
+						</a>
+						<a href="#" class="contacts__help-icon">
+							<svg class="icon-whatsapp">
+								<use xlink:href="#whatsapp"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__holder">
+			<div class="footer__copy">
+				<span class="footer__copy-year">&copy 2018</span>
+				<a href="#" class="footer__copy-link">
+					Пользовательское соглашение
+				</a>
+				<span class="footer__name">ИП Духович Ю.В.</span>
+			</div>
+			<div class="footer__social">
+				<div class="footer__social-inner">
+					<div class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<span class="footer__social-icon">
+								<span class="footer__social-icon-inner">
+									<svg class="icon-youtube">
+										<use xlink:href="#youtube"></use>
+									</svg>
+								</span>
+							</span>
+							<span class="footer__social-txt">YouTube</span>
+						</a>
+					</div>
+					<div class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<span class="footer__social-icon">
+								<span class="footer__social-icon-inner">
+									<svg class="icon-vk">
+										<use xlink:href="#vk"></use>
+									</svg>
+								</span>
+							</span>
+							<span class="footer__social-txt">VK</span>
+						</a>
+					</div>
+					<div class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<span class="footer__social-icon">
+								<span class="footer__social-icon-inner">
+									<svg class="icon-instagram">
+										<use xlink:href="#instagram"></use>
+									</svg>						
+								</span>
+							</span>
+							<span class="footer__social-txt">Instagram</span>
+						</a>
+					</div>
+					<div class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<span class="footer__social-icon">
+								<span class="footer__social-icon-inner">
+									<svg class="icon-facebook">
+										<use xlink:href="#facebook"></use>
+									</svg>
+								</span>
+							</span>
+							<span class="footer__social-txt">Facebook</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer__copy-mob">
+				<span class="footer__copy-year">&copy 2018</span>
+				<div class="footer__copy-mob-wrapp">
+					<a href="#" class="footer__copy-link">
+						Пользовательское соглашение
+					</a>
+					<span class="footer__name">ИП Духович Ю.В.</span>
+				</div>
+				
+			</div>
+			<div class="footer__login">
+				<div class="footer__registration">
+					<a href="#" class="btn footer__btn">Регистрация</a>
+				</div>
+				<div class="footer__enter">
+					<a href="#" class="btn btn--border-white">Вход</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Попап</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+	<div>
+		<a data-fancybox data-src="#popup" href="javascript:;">Задать вопрос</a>
+	</div>
+	<div>
+		<a data-fancybox data-src="#popup-success" href="javascript:;">Спасибо за ваш вопрос</a>
+	</div>
+	<div>
+		<a data-fancybox data-src="#popup-registration" href="javascript:;">Регистрация</a>
+	</div>
+
+
+</div>
+<div class="popup" id="popup">
+	<div class="popup__holder">
+		<span class="popup__title">Задать вопрос</span>
+		<form action="question.php" method="POST" class="popup__form js-valid-form">
+			<div class="popup__form-item">
+				<input type="text" class="popup__form-input" placeholder="Имя" name="name" required>
+			</div>
+			<div class="popup__form-item">
+				<input type="tel" class="popup__form-input js-submit-phone" placeholder="Телефон" name="phone" required>
+			</div>
+			<div class="popup__form-item">
+				<select class="popup__form-select js-select" name="session">
+					<option value="">Сессия</option>
+					<option value="1">Two</option>
+					<option value="2">Three</option>
+				</select>
+			</div>
+			<div class="popup__form-item">
+				<select class="popup__form-select js-select" name="speaker">
+					<option value="">Спикер</option>
+					<option value="1">Two</option>
+					<option value="2">Three</option>
+					<option value="3">Two</option>
+					<option value="4">Three</option>
+				</select>
+			</div>
+			<div class="popup__form-item">
+				<textarea class="popup__form-textarea" name="question" placeholder="Вопрос"></textarea>
+			</div>
+			<div class="popup__form-item popup__form-item--btn">
+				<button type="submit" class="popup__form-btn" class="btn">
+					Задать вопрос
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="popup-success" id="popup-success">
+	<div class="popup-success__holder">
+		<span class="popup-success__icon icon-question"></span>
+		<span class="popup-success__title">
+			Спасибо за ваш вопрос
+		</span>
+		<span class="popup-success__txt">
+			Наши спикеры обязательно на него ответят
+		</span>
+	</div>
+</div>
+<div class="popup" id="popup-registration">
+	<div class="popup__holder">
+		<span class="popup__title">Регистрация</span>
+		<form action="registration.php" method="POST" class="popup__form js-valid-form">
+			<div class="popup__form-item">
+				<input type="text" class="popup__form-input" placeholder="ФИО" name="name" required>
+			</div>
+			<div class="popup__form-item">
+				<input type="email" class="popup__form-input" placeholder="Эл. почта" name="email" required>
+			</div>
+			<div class="popup__form-item">
+				<select class="popup__form-select js-select" name="phoneSelect">
+					<option value="">Телефон</option>
+					<option value="1">+7 (967) 437 11 53</option>
+					<option value="2">+7 (967) 657 22 52</option>
+				</select>
+			</div>
+			<div class="popup__form-item">
+				<select class="popup__form-select js-select" name="position">
+					<option value="">Должность</option>
+					<option value="1">Ceo</option>
+					<option value="2">manager</option>
+					<option value="3">teamlead</option>
+					<option value="4">project Manager</option>
+				</select>
+			</div>
+			<div class="popup__form-item">
+				<input type="text" class="popup__form-input" placeholder="Компания" name="company" required>
+			</div>
+			<div class="popup__form-item popup__form-item--btn">
+				<button class="popup__form-btn" type="submit" class="btn">
+					Зарегистрироваться
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+<footer class="footer">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__inner">
+				<ul class="footer__social">
+					<li class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-facebook">
+								<use xlink:href="#facebook"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-vk">
+								<use xlink:href="#vk"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-instagram">
+								<use xlink:href="#instagram"></use>
+							</svg>
+						</a>
+					</li>
+				</ul>
+				<div class="footer__create">
+					<a href="#" class="footer__create-logo">
+						<span class="footer__create-txt">Создано в</span>
+						<img src="pic/logo-nix.png" alt="">
+					</a>
+				</div>
+			</div>
+			<span class="footer__logo">e-коммерсъ</span>
+			<ul class="footer__partner">
+				<li class="footer__partner-item">
+					<a href="#" class="footer__partner-link">
+						<img src="pic/partner/partner-1.png" alt="">
+					</a>
+				</li>
+				<li class="footer__partner-item">
+					<a href="#" class="footer__partner-link">
+						<img src="pic/partner/partner-2.png" alt="">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,678 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+<header class="header ">
+	<div class="container">
+  
+	  <div class="header__holder header__holder--info">
+	    <div class="header__left">
+	      <span class="header__address">115088, г. Москва, проезд Южнопортовый 2-й, д. 20 А, стр. 2</span>
+	      <a href="mailto:info@came.ru" class="header__mail">info@came.ru</a>
+	    </div>
+	    <div class="header__right">
+	      <a href="tel:+74957390069 " class="header__phone">+7 (495) 739-00-69</a>
+	      <a href="#" class="btn btn--border header__btn">Заказать звонок</a>
+	    </div>
+	  </div>
+	  <div class="header__holder header__holder--nav">
+	    <div class="header__logo">
+	      <a href="#" class="header__logo-link">
+	        <svg class="icon-logo">
+            <use xlink:href="#logo"></use>
+          </svg>
+	      </a>
+	    </div>
+	    <nav class="header__nav">
+	      <ul class="header__nav-list">
+	        <li class="header__nav-item">
+	          <a href="#software" class="header__nav-link">Программное обеспечение</a>
+	        </li>
+	        <li class="header__nav-item">
+	          <a href="#goods" class="header__nav-link">Замки</a>
+	        </li>
+	        <li class="header__nav-item">
+	          <a href="#solution" class="header__nav-link">Решения</a>
+	        </li>
+	      </ul>
+	    </nav>
+	  </div>
+	  
+	  
+	</div>
+</header>
+
+<div class="main-slider">
+  <div class="container">
+    <div class="main-slider__wrap-box">
+      <div class="main-slider__left">
+        <div class="main-slider__bg js-main-slider-bg">
+          <div class="main-slider__bg-slide js-change-img" style="background-image: url(pic/bg/bg-main-slider.png);" data-desktop="background-image: url(pic/bg/bg-main-slider.png)" data-mobile="background-image: url(pic/goods/goods-1.png)">
+            
+          </div>
+          <div class="main-slider__bg-slide js-change-img" style="background-image: url(pic/bg/bg-main-slider.png);" data-desktop="background-image: url(pic/bg/bg-main-slider.png)" data-mobile="background-image: url(pic/goods/goods-2.png)">
+            
+          </div>
+          <div class="main-slider__bg-slide js-change-img" style="background-image: url(pic/bg/bg-main-slider.png);" data-desktop="background-image: url(pic/bg/bg-main-slider.png)" data-mobile="background-image: url(pic/goods/goods-3.png)">
+            
+          </div>
+        </div>
+        <div class="main-slider__holder">
+          <div class="main-slider__slider js-main-slider">
+            <div class="main-slider__slide">
+              <span class="main-slider__slide-txt">Электронные системы хранения</span>
+            </div>
+            <div class="main-slider__slide">
+              <span class="main-slider__slide-txt">Электронные системы хранения</span>
+            </div>
+            <div class="main-slider__slide">
+              <span class="main-slider__slide-txt">Электронные системы хранения</span>
+            </div>
+          </div>
+        </div>
+        <div class="main-slider__nav js-main-nav"></div>
+      </div>
+      <div class="main-slider__right">
+        <span class="main-slider__title">Оставьте заявку на консультацию</span>
+        <form action="" class="main-slider__form">
+          <div class="main-slider__form-row">
+            <input type="text" class="main-slider__form-input js-name" placeholder="Имя">
+          </div>        
+          <div class="main-slider__form-row">
+            <input type="tel" class="main-slider__form-input js-phone" placeholder="Телефон">
+          </div>
+          <div class="main-slider__form-row main-slider__form-row--email">
+            <input type="email" class="main-slider__form-input" placeholder="E-mail">
+          </div>
+          <div class="main-slider__form-row main-slider__form-row--check">
+            <label class="checkbox">
+              <input type="checkbox" name="check" checked>
+              <span>Я согласен с условиями обработки <a href="#" class="main-slider__form-more">и храниения информации</a></span>
+            </label>
+          </div>
+          <div class="main-slider__form-row">
+            <button type="submit" class="btn main-slider__form-btn">Оставить заявку</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="software" id="software">
+  <div class="container">
+    <div class="software__top">
+      <span class="software__title">Программное обеспечение</span>
+      <span class="software__name">SPHERIO</span>
+      <span class="software__txt">Интуитивно-понятное ПО, которое позволит сделать больше за меньший срок</span>
+    </div>
+    <div class="software__middle">
+      <div class="software__left">
+        <ul class="software__list">
+          <li class="software__item">Позволяет программировать замки в разных режимах;</li>
+          <li class="software__item">Свободный режим - шкафчик доступен  любому клиенту;</li>
+          <li class="software__item">Индивидуальный режим — для конкретного 	пользователя или на конкретный период времени;</li>
+          <li class="software__item">Множественная авторизация — доступ к локерам в разных зонах или даже зданиях;</li>
+          <li class="software__item">Программная разблокировка — встроенные часы позволяют;</li>
+          <li class="software__item">Организовать доступ в конкретный временной промежуток;</li>
+          <li class="software__item">Автоматически открыть замки в заданное время</li>
+        </ul>
+      </div>
+      <div class="software__right">
+        <img src="pic/software/software-01.png" alt="" class="software__img">
+      </div>
+    </div>
+    <div class="software__bottom" data-software="SPHERIO">
+      <span class="software__caption"><span class="software__caption-decor"></span><b>NEXO NLX1</b> и <b>SPHERIO</b> дают возможность улучшить уровень безопасности на объекте</span>
+      
+      <div class="software__info-list js-software-slider">
+        <div class="software__info-item">
+          <span class="software__info-top">
+            <span class="software__info-icon">
+              <svg class="icon-safe">
+                <use xlink:href="#safe"></use>
+              </svg>              
+            </span>
+            <span class="software__info-subject">Безопасность в режиме онлайн</span>
+          </span>
+          <span class="software__info-desc">Любая попытка взлома шкафчика активирует тревожное событие, которое в режиме онлайн транслируется на рабочее место оператора</span>
+        </div>
+        <div class="software__info-item">
+          <span class="software__info-top">
+            <span class="software__info-icon">
+              <svg class="icon-events">
+                <use xlink:href="#events"></use>
+              </svg>
+            </span>
+            <span class="software__info-subject">События</span>
+          </span>
+          <span class="software__info-desc">Система постоянно записывает все действия, производимые с замком и данные о пользователе</span>
+        </div>
+        <div class="software__info-item">
+          <span class="software__info-top">
+            <span class="software__info-icon">
+              <svg class="icon-notif">
+                <use xlink:href="#notif"></use>
+              </svg>
+            </span>
+            <span class="software__info-subject">Предупреждения</span>
+          </span>
+          <span class="software__info-desc">Если дверца некорректно закрыта, система уведомит пользователя звуковым сигналом и подсветкой. Также информация будет отправлена оператору</span>
+        </div>
+        <div class="software__info-item">
+          <span class="software__info-top">
+            <span class="software__info-icon">
+              <svg class="icon-refresh">
+                <use xlink:href="#refresh"></use>
+              </svg>
+            </span>
+            <span class="software__info-subject">Сброс данных</span>
+          </span>
+          <span class="software__info-desc">В случае утери ключа, оператор может моментально удалить данные о нем из системы, чтобы злоумышленник не открыл чужой локер</span>
+        </div>
+      </div>
+      <span class="software__info-txt">Интересует программное обеспечение Spherio?</span>
+      <a href="#" class="btn software__btn">Оставить заявку на консультацию</a>
+    </div>
+  </div>
+</div>
+
+<div class="goods " id="goods">
+	<div class="container">
+		<span class="goods__caption">Замки и программаторы</span>
+		<div class="goods__wrap ">
+    
+			<div class="goods__item goods__item--full">
+				<div class="goods__inner">
+					<span class="goods__img js-slider-goods js-height">
+						<a href="#" class="goods__img-item" style="background-image: url(pic/goods/goods-4.png);"></a>
+						<a href="#" class="goods__img-item" style="background-image: url(pic/goods/goods-4.png);"></a>
+					</span>
+					<div class="goods__bottom js-info-wrap js-height">
+						<div class="goods__head js-head-btn">
+							<a href="#" class="goods__title">
+								<span class="goods__category">Электронный Wi-Fi замок </span>
+								<span class="goods__name">NEXO NLX1</span>
+							</a>
+							<p class="goods__descr">Система беспроводного управления локерами в реальном времени</p>
+						</div>
+						<ul class="goods__list js-list-info">
+							<li class="goods__list-item">Свободный или индивидуальный режимы;</li>
+							<li class="goods__list-item">Ограничение времени использования замка;</li>
+							<li class="goods__list-item">Автоматическое открытие по таймеру;</li>
+							<li class="goods__list-item">Получение лога последних 40 событий;</li>
+							<li class="goods__list-item">Беспроводное программирование и сбор данных;</li>
+							<li class="goods__list-item">Возможность передачи данных в ПО OTS Advance;</li>
+							<li class="goods__list-item">Индикация низкого заряда батареи;</li>
+							<li class="goods__list-item">Звуковая и светодиодная индикация;</li>
+						</ul>
+						<div class="goods__btn-wrap">
+							<a href="#" class="btn btn--border">Подробнее</a>
+						</div>
+					</div>
+				</div>
+			</div>  
+      
+			<div class="goods__item">
+				<div class="goods__inner js-height">
+					<span class="goods__img js-slider-goods js-height-col">
+						<a href="#" class="goods__img-item" style="background-image: url(pic/goods/goods-1.png);"></a>
+						<a href="#" class="goods__img-item" style="background-image: url(pic/goods/goods-1.png);"></a>
+					</span>
+					<div class="goods__bottom js-info-wrap js-height-col">
+						<div class="goods__head js-head-btn">
+							<a href="#" class="goods__title">
+								<span class="goods__category">Программатор</span>
+								<span class="goods__name">NEXO NLX1/P</span>
+							</a>
+							<p class="goods__descr">Портативный NFC-программатор для электронных замков NEXO NLX1</p>
+						</div>
+						<ul class="goods__list js-list-info">
+							<li class="goods__list-item">Свободный или индивидуальный режимы;</li>
+							<li class="goods__list-item">Ограничение времени использования замка;</li>
+							<li class="goods__list-item">Автоматическое открытие по таймеру;</li>
+							<li class="goods__list-item">Получение лога последних 40 событий;</li>
+						</ul>
+						<div class="goods__btn-wrap">
+							<a href="#" class="btn btn--border">Подробнее</a>
+						</div>
+					</div>
+				</div>
+			</div>  
+
+			<div class="goods__item">
+				<div class="goods__inner js-height">
+					<span class="goods__img js-slider-goods js-height-col">
+						<a href="#" class="goods__img-item" style="background-image: url(pic/goods/goods-2.png);"></a>
+						<a href="#" class="goods__img-item" style="background-image: url(pic/goods/goods-2.png);"></a>
+					</span>
+					<div class="goods__bottom js-info-wrap js-height-col">
+						<div class="goods__head js-head-btn">
+							<a href="#" class="goods__title">
+								<span class="goods__category">Замок Ojmar</span>
+								<span class="goods__name">OTS Basic</span>
+							</a>
+							<p class="goods__descr">Электронный беспроводной замок</p>
+						</div>
+						<ul class="goods__list js-list-info">
+							<li class="goods__list-item">Беспроводной замок;</li>
+							<li class="goods__list-item">Активация при нажатии кнопки;</li>
+							<li class="goods__list-item">Протокол Mifare Classic 1K;</li>
+							<li class="goods__list-item">Браслеты, карточки, брелоки;</li>
+							<li class="goods__list-item">Установка на дверцы толщиной от 9 до 20 мм;</li>
+						</ul>
+						<div class="goods__btn-wrap">
+							<a href="#" class="btn btn--border">Подробнее</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="goods__item">
+				<div class="goods__inner js-height">
+					<span class="goods__img js-slider-goods js-height-col">
+						<a href="#" class="goods__img-item" style="background-image: url(pic/goods/goods-3.png);"></a>
+						<a href="#" class="goods__img-item" style="background-image: url(pic/goods/goods-3.png);"></a>
+					</span>
+					<div class="goods__bottom js-info-wrap js-height-col">
+						<div class="goods__head js-head-btn">
+							<a href="#" class="goods__title">
+								<span class="goods__category">Замок Ojmar</span>
+								<span class="goods__name">OTS Advance</span>
+							</a>
+							<p class="goods__descr">Электронный беспроводной замок</p>
+						</div>
+						<ul class="goods__list js-list-info">
+							<li class="goods__list-item">Беспроводной замок;</li>
+							<li class="goods__list-item">Активация при нажатии кнопки;</li>
+							<li class="goods__list-item">Шифрование данных;</li>
+							<li class="goods__list-item">Поддержка NFC;</li>
+							<li class="goods__list-item">Степень защиты IP55;</li>
+							<li class="goods__list-item">Температурный режим -20 до +70;</li>
+						</ul>
+						<div class="goods__btn-wrap">
+							<a href="#" class="btn btn--border">Подробнее</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="complete-solution" id="solution">
+  <div class="container">
+    <div class="complete-solution__wrap js-tabs">
+      <div class="complete-solution__bg js-bg-slider">
+        <!-- <div class="complete-solution__decor"></div>        -->
+        <div class="complete-solution__bg-item js-tabs-img js-change-img" style="background-image: url(pic/bg/bg-main-slider.png)" data-desktop="background-image: url(pic/bg/bg-main-slider.png)" data-mobile="background-image: url(pic/goods/goods-1.png)"></div>
+        <div class="complete-solution__bg-item js-tabs-img js-change-img" style="background-image: url(pic/bg/bg-control.jpg)" data-desktop="background-image: url(pic/bg/bg-control.jpg)" data-mobile="background-image: url(pic/goods/goods-2.png)"></div>
+        <div class="complete-solution__bg-item js-tabs-img js-change-img" style="background-image: url(pic/bg/bg-main-slider.png)" data-desktop="background-image: url(pic/bg/bg-main-slider.png)" data-mobile="background-image: url(pic/goods/goods-3.png)"></div>
+        <div class="complete-solution__bg-item js-tabs-img js-change-img active" style="background-image: url(pic/bg/bg-control.jpg)" data-desktop="background-image: url(pic/bg/bg-control.jpg)" data-mobile="background-image: url(pic/goods/goods-4.png)"></div>
+        <div class="complete-solution__bg-item js-tabs-img js-change-img" style="background-image: url(pic/bg/bg-main-slider.png)" data-desktop="background-image: url(pic/bg/bg-main-slider.png)" data-mobile="background-image: url(pic/goods/goods-1.png)"></div>
+        <div class="complete-solution__bg-item js-tabs-img js-change-img" style="background-image: url(pic/bg/bg-control.jpg)" data-desktop="background-image: url(pic/bg/bg-control.jpg)" data-mobile="background-image: url(pic/goods/goods-2.png)"></div>
+        <div class="complete-solution__bg-item js-tabs-img js-change-img" style="background-image: url(pic/bg/bg-main-slider.png)" data-desktop="background-image: url(pic/bg/bg-main-slider.png)" data-mobile="background-image: url(pic/goods/goods-3.png)"></div>
+      </div>
+      <div class="complete-solution__holder">
+        
+        <span class="complete-solution__title">Комплексное решение</span>
+
+        <div class="complete-solution__tabs ">
+          <div class="complete-solution__nav js-comlete-nav">
+            <div class="complete-solution__nav-item">
+              <a href="#" class="complete-solution__nav-link js-tabs-link">
+                <span class="complete-solution__nav-icon">
+                  <svg class="icon-object">
+                    <use xlink:href="#object"></use>
+                  </svg>
+                </span>
+                <span class="complete-solution__nav-txt">Один объект - множество решений</span>
+              </a>
+            </div>
+            <div class="complete-solution__nav-item">
+              <a href="#" class="complete-solution__nav-link js-tabs-link">
+                <span class="complete-solution__nav-icon">
+                  <svg class="icon-inspector">
+                    <use xlink:href="#inspector"></use>
+                  </svg>
+                </span>
+                <span class="complete-solution__nav-txt">Единый идентификатор</span>
+              </a>
+            </div>
+            <div class="complete-solution__nav-item">
+              <a href="#" class="complete-solution__nav-link js-tabs-link">
+                <span class="complete-solution__nav-icon">
+                  <svg class="icon-control-traffic">
+                    <use xlink:href="#control-traffic"></use>
+                  </svg>
+                </span>
+                <span class="complete-solution__nav-txt">Контроль проезда</span>
+              </a>
+            </div>
+            <div class="complete-solution__nav-item">
+              <a href="#" class="complete-solution__nav-link js-tabs-link active">
+                <span class="complete-solution__nav-icon">
+                  <svg class="icon-control-access">
+                    <use xlink:href="#control-access"></use>
+                  </svg>
+                </span>
+                <span class="complete-solution__nav-txt">Контроль доступа</span>
+              </a>
+            </div>
+            <div class="complete-solution__nav-item">
+              <a href="#" class="complete-solution__nav-link js-tabs-link">
+                <span class="complete-solution__nav-icon">
+                  <svg class="icon-safety">
+                    <use xlink:href="#safety"></use>
+                  </svg>
+                </span>
+                <span class="complete-solution__nav-txt">Сохранность вещей</span>
+              </a>
+            </div>
+            <div class="complete-solution__nav-item">
+              <a href="#" class="complete-solution__nav-link js-tabs-link">
+                <span class="complete-solution__nav-icon">
+                  <svg class="icon-data-collection">
+                    <use xlink:href="#data-collection"></use>
+                  </svg>
+                </span>
+                <span class="complete-solution__nav-txt">Сбор данных</span>
+              </a>
+            </div>
+            <div class="complete-solution__nav-item">
+              <a href="#" class="complete-solution__nav-link js-tabs-link">
+                <span class="complete-solution__nav-icon">
+                  <svg class="icon-integration">
+                    <use xlink:href="#integration"></use>
+                  </svg>
+                </span>
+                <span class="complete-solution__nav-txt">Интеграция</span>
+              </a>
+            </div>
+          </div>
+          <div class="complete-solution__slider js-comlete-slider">
+            <div class="complete-solution__tabs-content js-tabs-content">
+              <div class="complete-solution__tabs-top">
+                <div class="complete-solution__tabs-icon">
+                  <svg class="icon-object">
+                    <use xlink:href="#object"></use>
+                  </svg>
+                </div>
+                <span class="complete-solution__tabs-title">Один объект - множество решений</span>
+              </div>
+              <span class="complete-solution__tabs-desc">Вход на территорию осуществляется через турникеты CAME. На объекте можно использовать систему контроля доступа любого уровня сложности: от считывателей на дверях</span>
+              <a href="#" class="btn complete-solution__tabs-btn">Оставить заявку на консультацию</a>
+            </div>
+            <div class="complete-solution__tabs-content js-tabs-content">
+              <div class="complete-solution__tabs-top">
+                <div class="complete-solution__tabs-icon">
+                  <svg class="icon-inspector">
+                    <use xlink:href="#inspector"></use>
+                  </svg>
+                </div>
+                <span class="complete-solution__tabs-title">Единый идентификатор</span>
+              </div>
+              <span class="complete-solution__tabs-desc">Вход на территорию осуществляется через турникеты CAME. На объекте можно использовать систему контроля доступа любого уровня сложности: от считывателей на дверях и турникетах до профессиональной системы учета рабочего времени и посещений</span>
+              <a href="#" class="btn complete-solution__tabs-btn">Оставить заявку на консультацию</a>
+            </div>
+            <div class="complete-solution__tabs-content js-tabs-content">
+              <div class="complete-solution__tabs-top">
+                <div class="complete-solution__tabs-icon">
+                  <svg class="icon-control-traffic">
+                    <use xlink:href="#control-traffic"></use>
+                  </svg>
+                </div>
+                <span class="complete-solution__tabs-title">Контроль проезда</span>
+              </div>
+              <span class="complete-solution__tabs-desc">Вход на территорию осуществляется через турникеты CAME. На объекте можно использовать систему контроля доступа любого уровня сложности: от считывателей на дверях</span>
+              <a href="#" class="btn complete-solution__tabs-btn">Оставить заявку на консультацию</a>
+            </div>
+            <div class="complete-solution__tabs-content js-tabs-content active">
+              <div class="complete-solution__tabs-top">
+                <div class="complete-solution__tabs-icon">
+                  <svg class="icon-control-access">
+                    <use xlink:href="#control-access"></use>
+                  </svg>
+                </div>
+                <span class="complete-solution__tabs-title">Контроль доступа</span>
+              </div>
+              <span class="complete-solution__tabs-desc">Вход на территорию осуществляется через турникеты CAME. На объекте можно использовать систему контроля доступа любого уровня сложности: от считывателей на дверях и турникетах до профессиональной системы учета рабочего времени и посещений</span>
+              <a href="#" class="btn complete-solution__tabs-btn">Оставить заявку на консультацию</a>
+            </div>
+            <div class="complete-solution__tabs-content js-tabs-content">
+              <div class="complete-solution__tabs-top">
+                <div class="complete-solution__tabs-icon">
+                  <svg class="icon-safety">
+                    <use xlink:href="#safety"></use>
+                  </svg>
+                </div>
+                <span class="complete-solution__tabs-title">Сохранность вещей</span>
+              </div>
+              <span class="complete-solution__tabs-desc">Вход на территорию осуществляется через турникеты CAME. На объекте можно использовать систему контроля доступа любого уровня сложности: от считывателей на дверях</span>
+              <a href="#" class="btn complete-solution__tabs-btn">Оставить заявку на консультацию</a>
+            </div>
+            <div class="complete-solution__tabs-content js-tabs-content">
+              <div class="complete-solution__tabs-top">
+                <div class="complete-solution__tabs-icon">
+                  <svg class="icon-data-collection">
+                    <use xlink:href="#data-collection"></use>
+                  </svg>
+                </div>
+                <span class="complete-solution__tabs-title">Сбор данных</span>
+              </div>
+              <span class="complete-solution__tabs-desc">Вход на территорию осуществляется через турникеты CAME. На объекте можно использовать систему контроля доступа любого уровня сложности: от считывателей на дверях и турникетах до профессиональной системы учета рабочего времени и посещений</span>
+              <a href="#" class="btn complete-solution__tabs-btn">Оставить заявку на консультацию</a>
+            </div>
+            <div class="complete-solution__tabs-content js-tabs-content">
+              <div class="complete-solution__tabs-top">
+                <div class="complete-solution__tabs-icon">
+                  <svg class="icon-integration">
+                    <use xlink:href="#integration"></use>
+                  </svg>
+                </div>
+                <span class="complete-solution__tabs-title">Интеграция</span>
+              </div>
+              <span class="complete-solution__tabs-desc">Вход на территорию осуществляется через турникеты CAME. На объекте можно использовать систему контроля доступа любого уровня сложности: от считывателей на дверях</span>
+              <a href="#" class="btn complete-solution__tabs-btn">Оставить заявку на консультацию</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="about-company">
+  <div class="container">
+    <span class="about-company__title">О компании</span>
+    <div class="about-company__body">
+      <div class="about-company__left">
+        <span class="about-company__desc">Мы работаем для более 90 лет. Именно поэтому мы знаем, насколько важно индивидуальное решение, адаптированное к особым потребностям каждого проекта и клиента.</span>
+      </div>
+      <div class="about-company__right">
+        <ul class="about-company__list">
+          <li class="about-company__item about-company__item--people">
+            <span class="about-company__value">140</span>
+            <span class="about-company__txt">человек</span>
+          </li>
+          <li class="about-company__item about-company__item--management">
+            <span class="about-company__value">50<small>%</small></span>
+            <span class="about-company__txt">менеджмент и офисные сотрудники</span>
+          </li>
+          <li class="about-company__item about-company__item--employees">
+            <span class="about-company__value">50<small>%</small></span>
+            <span class="about-company__txt">сотрудники производства</span>
+          </li>
+          <li class="about-company__item about-company__item--shifts">
+            <span class="about-company__value">3</span>
+            <span class="about-company__txt">Смены производства (пятница 2 смены)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="about-company__certificates">
+      <span class="about-company__certificates-title">Сертификаты</span>
+      <ul class="about-company__certificates-list">
+        <li class="about-company__certificates-item">
+          <a href="#" class="about-company__certificates-link">
+            <span class="about-company__certificates-txt">EAC. Автономные замки Ojmar</span>
+            <span class="about-company__certificates-icon">
+              <svg class="icon-pdf">
+                <use xlink:href="#pdf"></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class="about-company__certificates-item">
+          <a href="#" class="about-company__certificates-link">
+            <span class="about-company__certificates-txt">EAC. Программаторы OJMAR</span>
+            <span class="about-company__certificates-icon">
+              <svg class="icon-pdf">
+                <use xlink:href="#pdf"></use>
+              </svg>              
+            </span>
+          </a>
+        </li>
+        <li class="about-company__certificates-item">
+          <a href="#" class="about-company__certificates-link">
+            <span class="about-company__certificates-txt">EAC. Серверы OJMAR</span>
+            <span class="about-company__certificates-icon">
+              <svg class="icon-pdf">
+                <use xlink:href="#pdf"></use>
+              </svg>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="contact">
+	<div class="container">
+		<span class="contact__caption">Контакты</span>
+		<div class="contact__wrap">
+			<div class="contact__map-wrap">
+				<div class="contact__map-inner js-map">
+					<div class="contact__map" id="map"></div>
+				</div>
+			</div>
+			<div class="contact__inner">
+				<ul class="contact__top">
+					<li class="contact__top-row contact__top-row--address">
+						115088, г. Москва, проезд Южнопортовый 2-й, д. 20 А, стр. 2  
+					</li>
+					<li class="contact__top-row">
+						<a href="mailto:info@came.ru" class="contact__email">info@came.ru</a>
+					</li>
+					<li class="contact__top-row">
+						<a href="tel:+74957390069" class="contact__phone">+7 (495) 739-00-69 </a>
+					</li>
+				</ul>
+				<div class="contact__form">
+					<span class="contact__form-title">Оставьте заявку на консультацию</span>
+					<form action="">
+						<div class="contact__form-inputs">
+							<div class="contact__form-row">
+								<input type="text" placeholder="Имя" class="js-name">
+							</div>
+							<div class="contact__form-row">
+								<input type="tel" placeholder="Телефон" class="js-phone">
+							</div>
+							<div class="contact__form-row">
+								<input type="email" placeholder="E-mail">
+							</div>
+						</div>
+						<div class="contact__form-inner">
+							<div class="contact__form-row contact__form-row--consent">
+								<label class="checkbox">
+									<input type="checkbox" checked name="check">
+									<span>Я согласен с условиями <a href="#">обработки и храниения информации</a></span>
+								</label>
+							</div>
+							<div class="contact__form-row contact__form-row--btn">
+								<button class="btn contact__btn" type="submit">Оставить заявку</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<footer class="footer">
+	<div class="container">
+	  <div class="footer__left">
+	    <span class="footer__copyright">Copyright &copy; 2018 ООО "УМС Рус" - официальное представительство CAME GROUP в России. Все права защищены.</span>
+	    <ul class="footer__list">
+	      <li class="footer__item">
+	        <a href="#" class="footer__link">О персональных данных</a>
+	      </li>
+	      <li class="footer__item">
+	        <a href="#" class="footer__link">Правила использования ресурса</a>
+	      </li>
+	      <li class="footer__item">
+	        <a href="#" class="footer__link">Условия использования материалов</a>
+	      </li>
+	    </ul>
+	  </div>
+	  <div class="footer__social">
+	    <div class="footer__social-item">
+	      <a href="#" class="footer__social-link">
+	        <svg class="icon-facebook">
+            <use xlink:href="#facebook"></use>
+          </svg>
+	      </a>
+	    </div>
+	    <div class="footer__social-item">
+	      <a href="#" class="footer__social-link">
+	        <svg class="icon-youtube">
+            <use xlink:href="#youtube"></use>
+          </svg>
+	      </a>
+	    </div>
+	    <div class="footer__social-item">
+	      <a href="#" class="footer__social-link">
+	        <svg class="icon-instagram">
+            <use xlink:href="#instagram"></use>
+          </svg>
+	      </a>
+	    </div>
+	  </div>
+	</div>
+</footer>
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

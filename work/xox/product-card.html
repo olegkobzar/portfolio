@@ -1,0 +1,1354 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Product-card</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+    
+    <div class="wrapper">
+
+    	<header class="header">
+	<div class="header__top">
+		<div class="container">
+			<div class="header__top-left">
+				<ul class="header__social-list">
+					<li class="header__social-item">
+						<a href="" class="header__social-link">
+							<svg class="icon-facebook">
+								<use xlink:href="#facebook"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="header__social-item">
+						<a href="" class="header__social-link">
+							<svg class="icon-instagram">
+								<use xlink:href="#instagram"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="header__social-item">
+						<a href="" class="header__social-link">
+							<svg class="icon-vk">
+								<use xlink:href="#vk"></use>
+							</svg>
+						</a>
+					</li>
+				</ul>
+				<div class="header__location">
+					<a href="" class="header__location-link">
+						<span class="header__location-icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<span class="header__location-text">Москва</span>
+					</a>
+					
+				</div>
+			</div>
+			
+				<div class="header__top-right">
+					<a href="#" class="header__entrance">
+						<span class="header__entrance-text">Войти</span>
+					</a>
+				</div>
+			
+			
+		</div>
+	</div> 
+	<div class="header__bott">
+		<div class="container">
+			<div class="header__bott-wrapp js-bott-wrapp">
+				<div class="header__logo">
+					<a href="#" class="header__logo-link">
+						<span class="header__logo-img-wrapp">
+							<img src="pic/logo/logo.png" alt="">
+						</span>
+						<span class="header__logo-text">Сервис для обмена вещами и услугами</span>
+					</a>
+				</div>
+				<div class="header__form-search">
+					<form action="">
+						<div class="header__form-inner">
+							<div class="header__btn-wrapp">
+								<button class="btn header__btn">
+									<svg class="icon-search">
+										<use xlink:href="#search"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="header__input-wrapp">
+								<input type="text" placeholder="Что Вы ищете?" class="header__input">
+							</div>
+							<div class="header__select-wrapp">
+								<select name="Select" id="" class="select select--category js-select" data-placeholder="Категория">
+									<option></option>
+									<option value="Название категории">Название 1</option>
+									<option value="Название категории">Название 2</option>
+									<option value="Название категории">Название 3</option>
+									<option value="Название категории">Название 4</option>
+									<option value="Название категории">Название 5</option>
+									<option value="Название категории">Название 6</option>
+									<option value="Название категории">Название 7</option>
+									<option value="Название категории">Название 8</option>
+									<option value="Название категории">Название 9</option>
+									<option value="Название категории">Название 10</option>
+								</select>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="header__added-btn">
+					<a data-fancybox data-src="#popup-new-goal" href="javascript:;" class="btn header__add">Добавить вещь или услугу</a>
+				</div>
+				<div class="header__mobile-open js-btn-menu">
+					<span class="header__mobile-line"></span>
+					<span class="header__mobile-line"></span>
+					<span class="header__mobile-line"></span>
+				</div>
+			</div>
+			<div class="header__menu js-wrapp-nav">
+				<nav class="header__nav js-menu-open">
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Все</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Животные</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Электроника</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Транспорт</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Работа</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Услуги</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Дом и дача</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Личные вещи</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Прочее</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			
+		</div>
+	</div>
+</header>
+			
+    	<div class="breadcrumbs">
+	<div class="container">
+		<ul class="breadcrumbs__list">
+			
+			<li class="breadcrumbs__item">
+				<a href="#" class="breadcrumbs__link">Каталог</a>
+			</li>
+			
+			<li class="breadcrumbs__item">
+				<a href="#" class="breadcrumbs__link">Животные</a>
+			</li>
+			
+			<li class="breadcrumbs__item">Кошки</li>
+		</ul>
+	</div>
+</div>
+
+			<div class="container">
+	<div class="product-slider js-slider-products">
+		
+			<a href="#" class="product-slider__item">
+				<span class="product-slider__item-inner">
+					<span class="product-slider__item-date">26 марта</span>
+					<span class="product-slider__item-date product-slider__item-date--mob">
+						26.03
+					</span>
+					<span class="product-slider__item-day">вторник</span>
+					<span class="product-slider__item-day product-slider__item-day--mob">
+						вт
+					</span>
+				</span>
+			</a>
+		
+			<a href="#" class="product-slider__item">
+				<span class="product-slider__item-inner">
+					<span class="product-slider__item-date">26 марта</span>
+					<span class="product-slider__item-date product-slider__item-date--mob">
+						26.03
+					</span>
+					<span class="product-slider__item-day">вторник</span>
+					<span class="product-slider__item-day product-slider__item-day--mob">
+						вт
+					</span>
+				</span>
+			</a>
+		
+			<a href="#" class="product-slider__item">
+				<span class="product-slider__item-inner">
+					<span class="product-slider__item-date">26 марта</span>
+					<span class="product-slider__item-date product-slider__item-date--mob">
+						26.03
+					</span>
+					<span class="product-slider__item-day">вторник</span>
+					<span class="product-slider__item-day product-slider__item-day--mob">
+						вт
+					</span>
+				</span>
+			</a>
+		
+			<a href="#" class="product-slider__item">
+				<span class="product-slider__item-inner">
+					<span class="product-slider__item-date">26 марта</span>
+					<span class="product-slider__item-date product-slider__item-date--mob">
+						26.03
+					</span>
+					<span class="product-slider__item-day">вторник</span>
+					<span class="product-slider__item-day product-slider__item-day--mob">
+						вт
+					</span>
+				</span>
+			</a>
+		
+			<a href="#" class="product-slider__item">
+				<span class="product-slider__item-inner">
+					<span class="product-slider__item-date">26 марта</span>
+					<span class="product-slider__item-date product-slider__item-date--mob">
+						26.03
+					</span>
+					<span class="product-slider__item-day">вторник</span>
+					<span class="product-slider__item-day product-slider__item-day--mob">
+						вт
+					</span>
+				</span>
+			</a>
+		
+			<a href="#" class="product-slider__item">
+				<span class="product-slider__item-inner">
+					<span class="product-slider__item-date">26 марта</span>
+					<span class="product-slider__item-date product-slider__item-date--mob">
+						26.03
+					</span>
+					<span class="product-slider__item-day">вторник</span>
+					<span class="product-slider__item-day product-slider__item-day--mob">
+						вт
+					</span>
+				</span>
+			</a>
+		
+			<a href="#" class="product-slider__item">
+				<span class="product-slider__item-inner">
+					<span class="product-slider__item-date">26 марта</span>
+					<span class="product-slider__item-date product-slider__item-date--mob">
+						26.03
+					</span>
+					<span class="product-slider__item-day">вторник</span>
+					<span class="product-slider__item-day product-slider__item-day--mob">
+						вт
+					</span>
+				</span>
+			</a>
+		
+			<a href="#" class="product-slider__item">
+				<span class="product-slider__item-inner">
+					<span class="product-slider__item-date">26 марта</span>
+					<span class="product-slider__item-date product-slider__item-date--mob">
+						26.03
+					</span>
+					<span class="product-slider__item-day">вторник</span>
+					<span class="product-slider__item-day product-slider__item-day--mob">
+						вт
+					</span>
+				</span>
+			</a>
+		
+	</div>
+</div>
+
+
+			<div class="container">
+	<div class="products js-sticky-container">
+		<div class="products__left">
+			<div class="products-card js-sticky-block-mobile">
+	<div class="products-card__main">
+		<div class="products-card__main-inner">
+			<div class="products-card__slider js-slider-for">
+				
+					<a href="#" class="products-card__item products-card__item--big">
+						<ul class="products-card__list-mob">
+							<li class="products__info-list-elem">
+								<span class="products__info-list-icon">
+									<svg class="icon-calendar">
+										<use xlink:href="#calendar"></use>
+									</svg>
+								</span>
+								<span class="products__info-list-txt">
+									20.02.18 г.
+								</span>
+							</li>
+							<li class="products__info-list-elem">
+								<span class="products__info-list-icon">
+									<svg class="icon-star">
+										<use xlink:href="#star"></use>
+									</svg>
+								</span>
+								<span class="products__info-list-txt">
+									<b>8.9</b> / 10.0
+								</span>
+							</li>
+						</ul>
+						<div class="products-card__item-img js-zoom" data-img="pic/card/card-01.jpg" style="background-image: url(pic/card/card-01.jpg);">
+							<span class="products-card__item-img-icon">
+								<svg class="icon-heart">
+									<use xlink:href="#heart"></use>
+								</svg>
+							</span>
+						</div>
+						<ul class="products-card__list-mob products-card__list-mob--mod">
+							<li class="products-card__list-item">
+								#98456123
+							</li>
+							<li class="products-card__list-item">
+								<span class="products__info-head-link">
+									<span>
+										<svg class="icon-eye">
+											<use xlink:href="#eye"></use>
+										</svg>
+									</span>
+									<span>1 234</span>
+								</span>
+							</li>
+							<li class="products-card__list-item">
+								<span class="products__info-head-link">
+									<span>
+										<svg class="icon-heart">
+											<use xlink:href="#heart"></use>
+										</svg>
+									</span>
+									<span>534</span>
+								</span>
+							</li>
+						</ul>
+						<div class="products__info-head-location products__info-head-location--mob">
+							<span class="products__info-head-icon">
+								<svg class="icon-map">
+									<use xlink:href="#map"></use>
+								</svg>
+							</span>
+							<span class="products__info-head-txt">
+								Россия / Москва / Ст. метро Ленинский пр-т
+							</span>
+						</div>
+					</a>
+				
+					<a href="#" class="products-card__item products-card__item--big">
+						<ul class="products-card__list-mob">
+							<li class="products__info-list-elem">
+								<span class="products__info-list-icon">
+									<svg class="icon-calendar">
+										<use xlink:href="#calendar"></use>
+									</svg>
+								</span>
+								<span class="products__info-list-txt">
+									20.02.18 г.
+								</span>
+							</li>
+							<li class="products__info-list-elem">
+								<span class="products__info-list-icon">
+									<svg class="icon-star">
+										<use xlink:href="#star"></use>
+									</svg>
+								</span>
+								<span class="products__info-list-txt">
+									<b>8.9</b> / 10.0
+								</span>
+							</li>
+						</ul>
+						<div class="products-card__item-img js-zoom" data-img="pic/card/card-01.jpg" style="background-image: url(pic/card/card-01.jpg);">
+							<span class="products-card__item-img-icon">
+								<svg class="icon-heart">
+									<use xlink:href="#heart"></use>
+								</svg>
+							</span>
+						</div>
+						<ul class="products-card__list-mob products-card__list-mob--mod">
+							<li class="products-card__list-item">
+								#98456123
+							</li>
+							<li class="products-card__list-item">
+								<span class="products__info-head-link">
+									<span>
+										<svg class="icon-eye">
+											<use xlink:href="#eye"></use>
+										</svg>
+									</span>
+									<span>1 234</span>
+								</span>
+							</li>
+							<li class="products-card__list-item">
+								<span class="products__info-head-link">
+									<span>
+										<svg class="icon-heart">
+											<use xlink:href="#heart"></use>
+										</svg>
+									</span>
+									<span>534</span>
+								</span>
+							</li>
+						</ul>
+						<div class="products__info-head-location products__info-head-location--mob">
+							<span class="products__info-head-icon">
+								<svg class="icon-map">
+									<use xlink:href="#map"></use>
+								</svg>
+							</span>
+							<span class="products__info-head-txt">
+								Россия / Москва / Ст. метро Ленинский пр-т
+							</span>
+						</div>
+					</a>
+				
+					<a href="#" class="products-card__item products-card__item--big">
+						<ul class="products-card__list-mob">
+							<li class="products__info-list-elem">
+								<span class="products__info-list-icon">
+									<svg class="icon-calendar">
+										<use xlink:href="#calendar"></use>
+									</svg>
+								</span>
+								<span class="products__info-list-txt">
+									20.02.18 г.
+								</span>
+							</li>
+							<li class="products__info-list-elem">
+								<span class="products__info-list-icon">
+									<svg class="icon-star">
+										<use xlink:href="#star"></use>
+									</svg>
+								</span>
+								<span class="products__info-list-txt">
+									<b>8.9</b> / 10.0
+								</span>
+							</li>
+						</ul>
+						<div class="products-card__item-img js-zoom" data-img="pic/card/card-01.jpg" style="background-image: url(pic/card/card-01.jpg);">
+							<span class="products-card__item-img-icon">
+								<svg class="icon-heart">
+									<use xlink:href="#heart"></use>
+								</svg>
+							</span>
+						</div>
+						<ul class="products-card__list-mob products-card__list-mob--mod">
+							<li class="products-card__list-item">
+								#98456123
+							</li>
+							<li class="products-card__list-item">
+								<span class="products__info-head-link">
+									<span>
+										<svg class="icon-eye">
+											<use xlink:href="#eye"></use>
+										</svg>
+									</span>
+									<span>1 234</span>
+								</span>
+							</li>
+							<li class="products-card__list-item">
+								<span class="products__info-head-link">
+									<span>
+										<svg class="icon-heart">
+											<use xlink:href="#heart"></use>
+										</svg>
+									</span>
+									<span>534</span>
+								</span>
+							</li>
+						</ul>
+						<div class="products__info-head-location products__info-head-location--mob">
+							<span class="products__info-head-icon">
+								<svg class="icon-map">
+									<use xlink:href="#map"></use>
+								</svg>
+							</span>
+							<span class="products__info-head-txt">
+								Россия / Москва / Ст. метро Ленинский пр-т
+							</span>
+						</div>
+					</a>
+				
+					<a href="#" class="products-card__item products-card__item--big">
+						<ul class="products-card__list-mob">
+							<li class="products__info-list-elem">
+								<span class="products__info-list-icon">
+									<svg class="icon-calendar">
+										<use xlink:href="#calendar"></use>
+									</svg>
+								</span>
+								<span class="products__info-list-txt">
+									20.02.18 г.
+								</span>
+							</li>
+							<li class="products__info-list-elem">
+								<span class="products__info-list-icon">
+									<svg class="icon-star">
+										<use xlink:href="#star"></use>
+									</svg>
+								</span>
+								<span class="products__info-list-txt">
+									<b>8.9</b> / 10.0
+								</span>
+							</li>
+						</ul>
+						<div class="products-card__item-img js-zoom" data-img="pic/card/card-01.jpg" style="background-image: url(pic/card/card-01.jpg);">
+							<span class="products-card__item-img-icon">
+								<svg class="icon-heart">
+									<use xlink:href="#heart"></use>
+								</svg>
+							</span>
+						</div>
+						<ul class="products-card__list-mob products-card__list-mob--mod">
+							<li class="products-card__list-item">
+								#98456123
+							</li>
+							<li class="products-card__list-item">
+								<span class="products__info-head-link">
+									<span>
+										<svg class="icon-eye">
+											<use xlink:href="#eye"></use>
+										</svg>
+									</span>
+									<span>1 234</span>
+								</span>
+							</li>
+							<li class="products-card__list-item">
+								<span class="products__info-head-link">
+									<span>
+										<svg class="icon-heart">
+											<use xlink:href="#heart"></use>
+										</svg>
+									</span>
+									<span>534</span>
+								</span>
+							</li>
+						</ul>
+						<div class="products__info-head-location products__info-head-location--mob">
+							<span class="products__info-head-icon">
+								<svg class="icon-map">
+									<use xlink:href="#map"></use>
+								</svg>
+							</span>
+							<span class="products__info-head-txt">
+								Россия / Москва / Ст. метро Ленинский пр-т
+							</span>
+						</div>
+					</a>
+				
+			</div>
+		</div>
+	</div>
+	<div class="products-card__gallery">
+		<div class="products-card__slider-nav js-slider-nav">
+			
+				<div class="products-card__item">
+					<div class="products-card__item-img">
+						<img src="pic/card/card-01.jpg" alt="img">
+					</div>
+				</div>
+			
+				<div class="products-card__item">
+					<div class="products-card__item-img">
+						<img src="pic/card/card-01.jpg" alt="img">
+					</div>
+				</div>
+			
+				<div class="products-card__item">
+					<div class="products-card__item-img">
+						<img src="pic/card/card-01.jpg" alt="img">
+					</div>
+				</div>
+			
+				<div class="products-card__item">
+					<div class="products-card__item-img">
+						<img src="pic/card/card-01.jpg" alt="img">
+					</div>
+				</div>
+			
+		</div>
+	</div>
+</div>
+		</div>
+		<div class="products__right">
+			<div class="products__info">
+				<div class="products__info-head">
+					<div class="products__info-head-item">
+						<ul class="products__info-list">
+							<li class="products__info-list-elem">
+								<span class="products__info-list-txt">
+									#98456123
+								</span>
+							</li>
+							<li class="products__info-list-elem">
+								<span class="products__info-list-icon">
+									<svg class="icon-calendar">
+										<use xlink:href="#calendar"></use>
+									</svg>
+								</span>
+								<span class="products__info-list-txt">
+									20.02.18 г.
+								</span>
+							</li>
+							<li class="products__info-list-elem">
+								<span class="products__info-list-icon">
+									<svg class="icon-star">
+										<use xlink:href="#star"></use>
+									</svg>
+								</span>
+								<span class="products__info-list-txt">
+									<b>8.9</b> / 10.0
+								</span>
+							</li>
+						</ul>
+						<div class="products__info-head-location">
+							<span class="products__info-head-icon">
+								<svg class="icon-map">
+									<use xlink:href="#map"></use>
+								</svg>
+							</span>
+							<span class="products__info-head-txt">
+								Россия / Москва / Ст. метро Ленинский проспект
+							</span>
+						</div>
+					</div>
+					<div class="products__info-head-box">
+						<div class="products__info-head-elem">
+							<a href="#" class="products__info-head-link">
+								<span>
+									<svg class="icon-eye">
+										<use xlink:href="#eye"></use>
+									</svg>
+								</span>
+								<span  class="products__info-head-num">1 234</span>
+							</a>
+						</div>
+						<div class="products__info-head-elem">
+							<a href="#" class="products__info-head-link">
+								<span>
+									<svg class="icon-heart">
+										<use xlink:href="#heart"></use>
+									</svg>
+								</span>
+								<span class="products__info-head-num">534</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="products__info-box">
+					<span class="products__info-title">
+						название товара возможно в две строки
+					</span>
+					<div class="products__info-price">
+						<span class="products__info-price-txt">
+							1 000 000 <span>руб.</span>
+						</span>
+						<ul class="products__info-price-list">
+							<li class="products__info-price-elem active">
+								<a href="#">Активно</a>
+							</li>
+							<li class="products__info-price-elem">
+								<a href="#">В архиве</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="products__info-item">
+					<span class="products__info-item-title">
+						доступен для:
+					</span>
+					<div class="products__info-item-content">
+						<div class="products__info-item-inner">
+							<span class="products__info-item-checkbox">
+								<label class="checkbox">
+          				<input type="checkbox" name="check" checked>
+          				<span>обмен</span>
+        				</label>
+							</span>
+							<span class="products__info-item-checkbox">
+								<label class="checkbox">
+          				<input type="checkbox" name="check">
+          				<span>аренда</span>
+        				</label>
+							</span>
+							<span class="products__info-item-checkbox">
+								<label class="checkbox">
+          				<input type="checkbox" name="check">
+          				<span>даром</span>
+        				</label>
+							</span>
+							<span class="products__info-item-checkbox">
+								<label class="checkbox">
+          				<input type="checkbox" name="check" checked>
+          				<span>продажа</span>
+        				</label>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="products__info-item">
+					<span class="products__info-item-title">
+						Хочу получить:
+					</span>
+					<div class="products__info-item-content">
+						<span class="products__info-item-txt">
+							Велосипед, коньки, лыжи, сноуборд
+						</span>
+					</div>
+				</div>
+				<div class="products__info-buttons">
+					<div class="products__info-btn-wrap">
+						<a href="#" class="btn products__info-btn">
+							<span class="products__info-btn-icon">
+								<svg class="icon-exchange">
+									<use xlink:href="#exchange"></use>
+								</svg>
+							</span>
+							<span>Обменять</span>
+						</a>
+					</div>
+					<div class="products__info-btn-wrap">
+						<a href="#" class="btn btn--green products__info-btn">
+							<span class="products__info-btn-icon">
+								<svg class="icon-purse">
+									<use xlink:href="#purse"></use>
+								</svg>
+							</span>
+							<span>Купить</span>
+						</a>
+					</div>
+					<div class="products__info-btn-wrap products__info-btn-wrap--mod">
+						<a href="#" class="btn btn--gray products__info-btn">
+							<span class="products__info-btn-icon">
+								<svg class="icon-share">
+									<use xlink:href="#share"></use>
+								</svg>
+							</span>
+							<span>Поделиться</span>
+						</a>
+					</div>
+				</div>
+				<div class="products__info-desc js-tabs-wrap">
+					<ul class="products__info-desc-list">
+						<li class="products__info-desc-elem js-tab active">
+							<a href="#">Описание</a>
+						</li>
+						<li class="products__info-desc-elem js-tab">
+							<a href="#">Доставка</a>
+						</li>
+						<li class="products__info-desc-elem js-tab">
+							<a href="#">Самовывоз</a>
+						</li>
+					</ul>
+					<div class="products__info-desc-txt js-tab-content active">
+						<span class="products__info-desc-title">Описание</span>
+						<p class="js-read-more">
+							Значимость этих проблем настолько очевидна, что начало работы по формированию позиции играет важную роль в формировании новых предложений Значимость этих проблем настолько очевидна, что начало работы по формированию позиции играет важную роль в формировании новых предложений
+						</p>
+					</div>
+					<div class="products__info-desc-txt js-tab-content">
+						<span class="products__info-desc-title">Доставка</span>
+						<p class="js-read-more">
+							Значимость этих проблем настолько очевидна, что начало работы по формированию позиции играет важную роль в формировании новых предложений Значимость этих проблем настолько очевидна, что начало работы по формированию позиции играет важную роль в формировании новых предложений
+						</p>
+					</div>
+					<div class="products__info-desc-txt js-tab-content">
+						<span class="products__info-desc-title">Самовывоз</span>
+						<p class="js-read-more">
+							Значимость этих проблем настолько очевидна, что начало работы по формированию позиции играет важную роль в формировании новых предложений Значимость этих проблем настолько очевидна, что начало работы по формированию позиции играет важную роль в формировании новых предложений
+						</p>
+					</div>
+				</div>
+				<div class="products__info-tag-wrap">
+					<div class="products__info-tag">
+						<a href="#" class="products__info-tag-item">Лампа</a>
+					</div>
+					<div class="products__info-tag">
+						<a href="#" class="products__info-tag-item">Свет</a>
+					</div>
+					<div class="products__info-tag">
+						<a href="#" class="products__info-tag-item">Товары для дома</a>
+					</div>
+					<div class="products__info-tag">
+						<a href="#" class="products__info-tag-item">Лампа</a>
+					</div>
+					<div class="products__info-tag">
+						<a href="#" class="products__info-tag-item">Свет</a>
+					</div>
+					<div class="products__info-tag">
+						<a href="#" class="products__info-tag-item">Товары для дома</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="seller">
+	<span class="seller__title">Сведения о продавце</span>
+	<div class="seller__inner">
+		<div class="seller__img">
+			<a href="#" class="seller__img-inner">
+				<img src="pic/photo/man.png" alt="">
+			</a>
+		</div>
+		<div class="seller__info">
+			<div class="seller__rating">
+				<span class="products__info-list-icon">
+					<svg class="icon-star">
+						<use xlink:href="#star"></use>
+					</svg>
+				</span>
+				<span class="products__info-list-txt">
+					<b>8.9</b> / 10.0
+				</span>
+			</div>
+			<span class="seller__name">Анатолий</span>
+			<span class="seller__person">Частное лицо</span>
+			<div class="seller__trade">
+				<span class="seller__trade-goods">
+					<a href="#" class="seller__trade-link">32 товара</a>
+				</span>
+				<span class="seller__trade-goods">
+					<a href="#" class="seller__trade-link">15 обменов</a>
+				</span>
+			</div>
+			<span class="seller__location">
+				<span class="seller__location-icon">
+					<svg class="icon-map">
+						<use xlink:href="#map"></use>
+					</svg>
+				</span>
+				<span class="seller__location-txt">Россия / Москва</span>
+			</span>
+			<div class="seller__phone">
+				<span class="seller__phone-item">+7 (495) 000 - 00 -  <span class="seller__phone-last js-last-number">**</span></span>
+				<a class="seller__phone-link js-phone-btn" data-phone="00">показать телефон</a>
+			</div>
+			<div class="seller__btn-box">
+				<a href="#" class="btn seller__btn">
+					Написать продавцу
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="seller__map-holder">
+		<div class="seller__map" id="sellmap"></div>
+	</div>
+</div>
+
+
+			<div class="reviews">
+	<span class="reviews__title">Отзывы</span>
+	<div class="reviews__holder">
+		
+			<div class="reviews__item">
+				<div class="reviews__img">
+					<div class="reviews__img-inner">
+						<img src="pic/photo/woman.png" alt="photo">
+					</div>
+				</div>
+				<div class="reviews__content">
+					<span class="reviews__name">Алина</span>
+					<div class="reviews__date">
+						<span class="products__info-list-icon">
+							<svg class="icon-calendar">
+								<use xlink:href="#calendar"></use>
+							</svg>
+						</span>
+						<span class="products__info-list-txt">
+							20.02.18 г.
+						</span>
+					</div>
+					<div class="reviews__text">
+						<p class="js-read-more">
+							Значимость этих проблем настолько очевидна, что начало работы по формированию позиции играет важную роль в формировании новых предложений Значимость этих проблем настолько очевидна, что начало работы по формированию позиции играет важную роль в формировании новых предложений
+							
+						</p>
+					</div>
+				</div>
+			</div>
+		
+			<div class="reviews__item">
+				<div class="reviews__img">
+					<div class="reviews__img-inner">
+						<img src="pic/photo/man.png" alt="photo">
+					</div>
+				</div>
+				<div class="reviews__content">
+					<span class="reviews__name">Иван</span>
+					<div class="reviews__date">
+						<span class="products__info-list-icon">
+							<svg class="icon-calendar">
+								<use xlink:href="#calendar"></use>
+							</svg>
+						</span>
+						<span class="products__info-list-txt">
+							20.02.18 г.
+						</span>
+					</div>
+					<div class="reviews__text">
+						<p class="js-read-more">
+							Значимость этих проблем настолько очевидна, что начало работы по формированию позиции играет важную роль в формировании новых предложений Значимость этих проблем настолько очевидна, что начало работы по формированию позиции играет важную роль в формировании новых предложений
+							
+						</p>
+					</div>
+				</div>
+			</div>
+		
+			<div class="reviews__item">
+				<div class="reviews__img">
+					<div class="reviews__img-inner">
+						<img src="pic/photo/woman.png" alt="photo">
+					</div>
+				</div>
+				<div class="reviews__content">
+					<span class="reviews__name">Алина</span>
+					<div class="reviews__date">
+						<span class="products__info-list-icon">
+							<svg class="icon-calendar">
+								<use xlink:href="#calendar"></use>
+							</svg>
+						</span>
+						<span class="products__info-list-txt">
+							20.02.18 г.
+						</span>
+					</div>
+					<div class="reviews__text">
+						<p class="js-read-more">
+							Значимость этих проблем настолько очевидна, что начало работы по формированию позиции играет важную роль в формировании новых предложений Значимость этих проблем настолько очевидна, что начало работы по формированию позиции играет важную роль в формировании новых предложений
+							
+						</p>
+					</div>
+				</div>
+			</div>
+		
+	</div>
+	<div class="reviews__item reviews__item--new">
+		<div class="reviews__img">
+			<div class="reviews__img-inner">
+				<img src="pic/photo/woman.png" alt="photo">
+			</div>
+		</div>
+		<div class="reviews__content">
+			<form action="#">
+				<span class="reviews__name">Добавить свой отзыв</span>
+				<textarea name="message" placeholder="Введите ваш текст..." class="reviews__textarea"></textarea>
+				<div class="reviews__btn-box">
+					<button class="btn btn--green reviews__btn">
+						Добавить
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+		</div>
+	</div>
+</div>
+
+			<div class="products__goal">
+				<div class="new-goal">
+    <div class="container">
+        <div class="new-goal__header">
+            <h1 class="new-goal__title">Добавить новую вещь или услугу</h1>
+            <span class="new-goal__txt">Заполните все поля максимально полно и загрузите фото хорошего качества</span>
+        </div>
+        <div class="new-goal__body">
+            <form action="" class="new-goal__form">
+                <div class="new-goal__form-wrap">
+                    <div class="new-goal__form-holder">
+                        <div class="new-goal__form-inner new-goal__form-inner--multi">
+                            <div class="new-goal__form-add">
+                                <label class="file file--inverse">
+                                    <input name="input" type="file">
+                                    <span>Добавьте фото</span>
+                                </label>
+                            </div>
+                            <div class="new-goal__form-add">
+                                <label class="file file--inverse">
+                                    <input name="input" type="file">
+                                    <span>Добавьте фото</span>
+                                </label>
+                            </div>
+                            <div class="new-goal__form-add">
+                                <label class="file file--inverse">
+                                    <input name="input" type="file">
+                                    <span>Добавьте фото</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="new-goal__form-inner">
+                            <input type="search" class="input inverse new-goal__form-input" placeholder="Название вещи / услуги">
+                        </div>
+                        <div class="new-goal__form-inner new-goal__form-inner--value">
+                            <div class="new-goal__form-value new-goal__form-value--large">
+                                <input type="number" class="input inverse new-goal__form-input" placeholder="Стоимость">
+                            </div>
+                            <div class="new-goal__form-value new-goal__form-value--small">
+                                <select name="" id="" class="select select--inverse js-select">
+                                    <option value="">рубли</option>
+                                    <option value="">доллары</option>
+                                    <option value="">евро</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="new-goal__form-inner">
+                            <select name="" id="" class="select select--inverse js-select" data-placeholder="Город">
+                                <option></option>
+                                <option value="">Москва</option>
+                                <option value="">Санкт-Петербург</option>
+                                <option value="">Новосибирск</option>
+                                <option value="">Екатеринбург</option>
+                                <option value="">Нижний Новгород</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="new-goal__form-holder">
+                        <div class="new-goal__form-inner new-goal__form-inner--multi">
+                            <div class="new-goal__form-conditions">
+                                <label class="radio radio--inverse">
+                                    <input type="radio" name="conditions" checked>
+                                    <span><span class="new-goal__form-icon"><svg class="icon-exchange"><use xlink:href="#exchange"></use></svg></span> Обмен</span>
+                                </label>
+                            </div>
+                            <div class="new-goal__form-conditions">
+                                <label class="radio radio--inverse">
+                                    <input type="radio" name="conditions">
+                                    <span><span class="new-goal__form-icon"><svg class="icon-purse"><use xlink:href="#purse"></use></svg></span> Продажа</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="new-goal__form-inner">
+                            <select name="" id="" class="select select--inverse js-select" data-placeholder="Категория">
+                                <option></option>
+                                <option value="">Название категории</option>
+                                <option value="">Название категории</option>
+                                <option value="">Название категории</option>
+                                <option value="">Название категории</option>
+                                <option value="">Название категории</option>
+                            </select>
+                        </div>
+                        <div class="new-goal__form-inner">
+                            <textarea name="" class="inverse new-goal__form-textarea" placeholder="Комментарий"></textarea>
+                        </div>
+                    </div>
+                    <div class="new-goal__form-holder new-goal__form-holder--large">
+                        <button type="button" class="btn new-goal__form-btn">Добавить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+			</div>
+			
+			<div class="catalog-list ">
+	<div class="container">
+		
+		<div class="catalog-list__holder">
+			<ul class="catalog-list__item">
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link" >
+						Личные вещи
+					</a>
+					<span class="catalog-list__item-num">57 415</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Транспорт
+					</a>
+					<span class="catalog-list__item-num">77 665</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Хобби и отдых
+					</a>
+					<span class="catalog-list__item-num">154 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Для дома и дачи
+					</a>
+					<span class="catalog-list__item-num">84 132</span>
+				</li>
+			</ul>
+			<ul class="catalog-list__item">
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Бытовая электроника
+					</a>
+					<span class="catalog-list__item-num">94 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Недвижимость 
+					</a>
+					<span class="catalog-list__item-num">14 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Работа
+					</a>
+					<span class="catalog-list__item-num">54 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Услуги
+					</a>
+					<span class="catalog-list__item-num">15 637</span>
+				</li>
+			</ul>
+			<ul class="catalog-list__item">
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Животные
+					</a>
+					<span class="catalog-list__item-num">354 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Прочее
+					</a>
+					<span class="catalog-list__item-num">1 254 037</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Личные вещи
+					</a>
+					<span class="catalog-list__item-num">57 415</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						 Транспорт
+					</a>
+					<span class="catalog-list__item-num">77 665</span>
+				</li>
+			</ul>
+			<ul class="catalog-list__item">
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Бытовая электроника
+					</a>
+					<span class="catalog-list__item-num">94 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Недвижимость
+					</a>
+					<span class="catalog-list__item-num">14 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Работа
+					</a>
+					<span class="catalog-list__item-num">54 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Услуги
+					</a>
+					<span class="catalog-list__item-num">15 637</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+    	
+    </div>
+
+  <footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__inner">		
+			<span class="footer__btn-box">
+				<a data-fancybox data-src="#popup-new-goal" href="javascript:;" class="btn footer__btn">
+					Добавить вещь или услугу
+				</a>
+			</span>
+			<span class="footer__txt">
+				Не является публичной офертой
+			</span>
+			<span class="footer__rulers">
+				<a href="#" class="footer__link">
+					Правила и термины
+				</a>
+			</span>
+			<span class="footer__copy">
+				<a href="#" class="footer__link">
+					© All rights reserved, 2018, Xox
+				</a>
+			</span>
+		</div>
+	</div>
+</footer>
+
+<div style="display: none;" id="popup-new-goal" class="popup">
+  <div class="new-goal--popup">
+    <form action="" class="new-goal__form">
+      <div class="new-goal__form-wrap">
+        <div class="new-goal__form-holder">
+          <div class="new-goal__form-inner new-goal__form-inner--multi">
+            <div class="new-goal__form-add">
+              <label class="file file--inverse">
+                <input name="input" type="file">
+                <span>Добавьте фото</span>
+              </label>
+            </div>
+            <div class="new-goal__form-add">
+              <label class="file file--inverse">
+                <input name="input" type="file">
+                <span>Добавьте фото</span>
+              </label>
+            </div>
+            <div class="new-goal__form-add">
+              <label class="file file--inverse">
+                <input name="input" type="file">
+                <span>Добавьте фото</span>
+              </label>
+            </div>
+          </div>
+          <div class="new-goal__form-inner">
+            <input type="search" class="input inverse new-goal__form-input" placeholder="Название вещи / услуги">
+          </div>
+          <div class="new-goal__form-inner new-goal__form-inner--value">
+            <div class="new-goal__form-value new-goal__form-value--large">
+              <input type="number" class="input inverse new-goal__form-input" placeholder="Стоимость">
+            </div>
+            <div class="new-goal__form-value new-goal__form-value--small">
+              <select name="" id="" class="select select--inverse js-select">
+                <option value="">рубли</option>
+                <option value="">доллары</option>
+                <option value="">евро</option>
+              </select>
+            </div>
+          </div>
+          <div class="new-goal__form-inner">
+            <select name="" id="" class="select select--inverse js-select" data-placeholder="Город">
+              <option></option>
+              <option value="">Москва</option>
+              <option value="">Санкт-Петербург</option>
+              <option value="">Новосибирск</option>
+              <option value="">Екатеринбург</option>
+              <option value="">Нижний Новгород</option>
+            </select>
+          </div>
+        </div>
+        <div class="new-goal__form-holder">
+          <div class="new-goal__form-inner new-goal__form-inner--multi">
+            <div class="new-goal__form-conditions">
+              <label class="radio radio--inverse">
+                <input type="radio" name="conditions" checked>
+                <span><span class="new-goal__form-icon"><svg class="icon-exchange"><use xlink:href="#exchange"></use></svg></span> Обмен</span>
+              </label>
+            </div>
+            <div class="new-goal__form-conditions">
+              <label class="radio radio--inverse">
+                <input type="radio" name="conditions">
+                <span><span class="new-goal__form-icon"><svg class="icon-purse"><use xlink:href="#purse"></use></svg></span> Продажа</span>
+              </label>
+            </div>
+          </div>
+          <div class="new-goal__form-inner">
+            <select name="" id="" class="select select--inverse js-select" data-placeholder="Категория">
+              <option></option>
+              <option value="">Название категории</option>
+              <option value="">Название категории</option>
+              <option value="">Название категории</option>
+              <option value="">Название категории</option>
+              <option value="">Название категории</option>
+            </select>
+          </div>
+          <div class="new-goal__form-inner">
+            <textarea name="" class="inverse new-goal__form-textarea" placeholder="Комментарий"></textarea>
+          </div>
+        </div>
+        <div class="new-goal__form-holder new-goal__form-holder--large">
+          <button type="button" class="btn new-goal__form-btn">Добавить</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+
+

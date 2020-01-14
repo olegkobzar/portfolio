@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Статьи</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css?rel=11933">
+    <!-- @endif -->
+
+    <!--[if lt IE 9]>
+		<link rel="stylesheet" href="/reject/reject.css" media="all" />
+		<script type="text/javascript" src="/reject/reject.min.js"></script>
+	<![endif]-->
+</head>
+<body class=" @@class ">
+
+	
+
+	<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<header class="header">
+	<div class="header__top">
+		<div class="container">
+			<div class="header__top-wrap">
+				<div class="header__left">
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">
+							<img src="pic/logo.png" alt="">
+						</a>
+					</div>
+					<span class="header__descr">Хирургическое и медицинское оборудование. Высокого качества по хорошим ценам</span>
+				</div>
+				<div class="header__location">
+					<span class="header__location-icon">
+						<svg class="icon-location">
+							<use xlink:href="#location"></use>
+						</svg>
+					</span>
+					<div class="header__location-inner">
+						<a href="#" class="header__location-link">г. Москва, ул. Каргопольская, д17</a>
+						<span class="header__location-time">По будням 9:00 - 18:00</span>
+					</div>
+				</div>
+				<div class="header__contact">
+					<span class="header__contact-icon">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<div class="header__contact-inner">
+						<a href="tel:+74957390906" class="header__contact-phone">+7 (495) 739 09 06</a>
+						<a href="#popup" data-fancybox class="header__contact-callback">Заказать звонок</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header__bottom">
+		<div class="container">
+			<nav class="header__nav">
+				<ul class="header__nav-list">
+					<li class="header__nav-item header__nav-item--catalog js-nav-catalog">
+						<a href="#" class="header__nav-link header__nav-link--catalog">
+							<span>Каталог оборудования</span>
+						</a>
+						<ul class="header__subnav js-sub-menu">
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Эндоскопия</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Гинекологий</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Ультразвуковая диагностика</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Реанимация</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Лучевая диагностика</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Неонатология</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Функциональная диагностика</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Оборудование оториноларингологии</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Стерилизация и дезинфекция</a>
+							</li>
+						</ul>
+					</li>
+					<li class="header__nav-item-other js-mobile-menu">
+						<ul class="header__nav-other">
+							<li class="header__nav-item hide-desktop">
+								<a href="#" class="header__nav-link">Каталог</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Наша компания</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Доставка и оплата </a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Статьи</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Контакты</a>
+							</li>
+						</ul>
+						<div class="header__location header__location--nav">
+							<span class="header__location-icon">
+								<svg class="icon-location">
+									<use xlink:href="#location"></use>
+								</svg>
+							</span>
+							<div class="header__location-inner">
+								<a href="#" class="header__location-link">г. Москва, ул. Каргопольская, д17</a>
+								<span class="header__location-time">По будням 9:00 - 18:00</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<span class="header__nav-btn-mobile js-btn-nav">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</nav>
+		</div>
+	</div>
+</header>
+
+
+	<div class="article">
+	<div class="container">
+		<div class="article__outer">
+			<div class="article__head">
+				<span class="article__caption">Статьи</span>
+				<div class="breadcrumbs">
+	<ul class="breadcrumbs__list">
+		
+			<li class="breadcrumbs__item">
+				<a href="#" class="breadcrumbs__link">Главная</a>
+			</li>
+		
+		<li class="breadcrumbs__item">
+			Статьи
+		</li>
+	</ul>
+</div>
+			</div>
+			<div class="article__top">
+				<div class="article__top-item">
+					<a href="#" class="article__top-link" style="background-image: url(pic/article/article-1.jpg);">
+						<span class="article__top-text">Правила пользования расходными материалами</span>
+					</a>
+				</div>
+				<div class="article__top-item">
+					<a href="#" class="article__top-link" style="background-image: url(pic/article/article-2.jpg);">
+						<span class="article__top-text">Обзор Pentax EPK-i7010</span>
+					</a>
+				</div>
+			</div>
+			<div class="article__wrap">
+				<div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-3.jpg);"></span>
+		<span class="article-item__name">Amazon отослала 1700 аудиозаписей пользователя Alexa случайному человеку</span>
+	</a>
+</div><div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-4.jpg);"></span>
+		<span class="article-item__name">Развёртывание встраиваемой системы на базе Windows и Linux</span>
+	</a>
+</div><div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-5.jpg);"></span>
+		<span class="article-item__name">Почему так сложно непрерывно измерять уровень глюкозы?</span>
+	</a>
+</div><div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-6.jpg);"></span>
+		<span class="article-item__name">Красивая и познавательная анимация: случаи кругового движения и колебаний</span>
+	</a>
+</div><div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-7.jpg);"></span>
+		<span class="article-item__name">Включаем GPU acceleration у Photoshop под Wine</span>
+	</a>
+</div><div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-8.jpg);"></span>
+		<span class="article-item__name">Нужно просто «брать и делать»: новый подкаст о редакторских проектах и карьере в медиа</span>
+	</a>
+</div><div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-9.jpg);"></span>
+		<span class="article-item__name">Heisenbug 2018 Moscow: взгляд из толпы</span>
+	</a>
+</div><div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-10.jpg);"></span>
+		<span class="article-item__name">Воспроизведение медиафайлов с помощью библиотеки VLCj</span>
+	</a>
+</div><div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-11.jpg);"></span>
+		<span class="article-item__name">Computer Vision Annotation Tool: универсальный подход к разметке данных</span>
+	</a>
+</div><div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-3.jpg);"></span>
+		<span class="article-item__name">Amazon отослала 1700 аудиозаписей пользователя Alexa случайному человеку</span>
+	</a>
+</div><div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-4.jpg);"></span>
+		<span class="article-item__name">Развёртывание встраиваемой системы на базе Windows и Linux</span>
+	</a>
+</div><div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-5.jpg);"></span>
+		<span class="article-item__name">Почему так сложно непрерывно измерять уровень глюкозы?</span>
+	</a>
+</div>
+			</div>
+			<div class="pagination">
+	<div class="container">
+		<ul class="pagination__wrap">
+			<li class="pagination__item">
+				<a href="#" class="pagination__link">1</a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link active" style="background-image: url(pic/bg/btn-fon.jpg);">2</a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link">3</a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link">4</a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link">5</a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link">6</a>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<footer class="footer ">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__logo">
+				<a href="#" class="footer__logo-link">
+					<img src="pic/logo.png" alt="">
+				</a>
+			</div>
+			<ul class="footer__list">
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Каталог оборудования</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Статьи</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Наша компания</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Контакты</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Доставка и оплата</a>
+				</li>
+			</ul>
+			<div class="footer__right">
+				<div class="footer__location">
+					<span class="footer__location-icon">
+						<svg class="icon-location">
+							<use xlink:href="#location"></use>
+						</svg>
+					</span>
+					<div class="footer__location-inner">
+						<a href="#" class="footer__location-link">г. Москва, ул. Каргопольская, д17</a>
+						<span class="footer__location-time">По будням 9:00 - 18:00</span>
+					</div>
+				</div>
+				<div class="footer__contact">
+					<span class="footer__contact-icon">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<div class="footer__contact-inner">
+						<a href="tel:+74957390906" class="footer__contact-phone">+7 (495) 739 09 06</a>
+						<a href="#" class="footer__contact-callback">Заказать звонок</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div class="popup" id="popup">
+	<span class="popup__caption">Заказать звонок</span>
+	<form action="">
+		<div class="popup__form">
+			<div class="popup__row">
+				<input type="text" placeholder="Имя">
+			</div>
+			<div class="popup__row">
+				<input type="text" placeholder="Телефон">
+			</div>
+			<div class="popup__btn-wrap">
+				<button class="btn btn--image" style="background-image: url(pic/bg/btn-fon.jpg);">Отправить</button>
+			</div>
+		</div>
+	</form>
+</div>
+<script src="js/vendor.js?rel=11933"></script>
+
+
+<script src="pages-list.js"></script>
+
+
+<script src="js/main.js?rel=11933"></script>
+
+
+</body>
+</html>
+

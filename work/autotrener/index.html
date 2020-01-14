@@ -1,0 +1,1018 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css?rel=85285">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <a href="#" class="header__logo">
+        <svg class="icon-logo">
+          <use xlink:href="#logo"></use>
+        </svg>
+        <div class="header__logo-descr">
+          <div>Федеральная</div>
+          <div>сеть автошкол</div>
+        </div>
+      </a>
+      <div class="header__phone">
+        <a href="#" class="header__phone-link">
+          <svg class="icon-phone">
+            <use xlink:href="#phone"></use>
+          </svg>
+          <span>8 (495) 369-43-49</span>
+        </a>
+        <a href="#" class="header__phone-call">Заказать звонок</a>
+      </div>
+      <div class="header__links">
+        <a href="#popup-city" data-fancybox class="header__link">
+          <svg class="icon-pin">
+            <use xlink:href="#pin"></use>
+          </svg>
+          <span class="js-city-selected">Москва</span>
+        </a>
+        <a href="#" class="header__link">
+          <svg class="icon-tag">
+            <use xlink:href="#tag"></use>
+          </svg>
+          <span>Наши цены</span>
+        </a>
+        <a href="#" class="header__link">
+          <svg class="icon-file">
+            <use xlink:href="#file"></use>
+          </svg>
+          <span>Наши документы</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+ 
+
+	<div class="f-section">
+  <div class="container">
+    <div class="f-section__left">
+      <span class="f-section__title">Очное обучение в разных городах России</span>
+      <span class="f-section__title f-section__title--icon">
+        Авторская программа <span class="upper">онлайн-обучения</span>
+      </span>
+      <div class="f-section__row">
+        <div class="f-section__row-col">
+          <svg class="icon-svg">
+            <use xlink:href="#marker"></use>
+          </svg>
+          <div class="f-section__row-title">Прямая дорога </div>
+          <div class="f-section__row-descr">к водительским правам и безаварийной езде</div>
+        </div>
+        <div class="f-section__row-col">
+          <svg class="icon-svg">
+            <use xlink:href="#marker"></use>
+          </svg>
+          <div class="f-section__row-title">99,8% учеников сдают</div>
+          <div class="f-section__row-descr">экзамены в ГИБДД с первого раза</div>
+        </div>
+      </div>
+    </div>
+    <div class="f-section__right">
+      <div class="f-section__form">
+        <form action="#">
+          <div class="f-section__form-top">
+            <div class="f-section__form-title">Оставьте заявку</div>
+            <div class="f-section__form-subtitle">прямо сейчас и получите курс онлайн-обучения </div>
+            <div class="f-section__form-title f-section__form-title--red">Оставьте заявку</div>
+          </div>
+          <div class="f-section__form-inputbox">
+            <input type="text" placeholder="Введите Ваше имя">
+          </div>
+          <div class="f-section__form-inputbox">
+            <input type="text" placeholder="Введите Ваш телефон">
+          </div>
+          <div class="f-section__form-btn-box">
+            <button class="btn" type="submit">Оставить заявку</button>
+          </div>
+          <div class="f-section__form-checkbox">
+            <label class="checkbox">
+              <input type="checkbox" name="check222">
+              <span>Согласие на обработку <a href="#">персональных данных</a></span>
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<div class="m-section">
+  <div class="container">
+    <div class="caption">
+      <span class="caption-icon">
+        <svg class="icon-marker">
+          <use xlink:href="#marker"></use>
+        </svg>
+      </span>
+      <span class="caption-text">Федеральная сеть автошкол «Автотренер» известна по всей России</span>
+    </div>
+    <div class="m-section__left">
+      <div class="m-section__left-wrap">
+        <div class="m-section__left-col">
+          <div class="m-section__block">
+            <div class="m-section__block-caption">
+              <span class="m-section__block-title">3</span>
+              <span class="m-section__block-bold">Года</span>
+              <span class="m-section__block-descr">опыт работы и развития</span>
+            </div>
+          </div>
+        </div>
+        <div class="m-section__left-col">
+          <div class="m-section__block">
+            <div class="m-section__block-caption">
+              <span class="m-section__block-title">120</span>
+              <span class="m-section__block-bold">Городов</span>
+            </div>
+          </div>
+        </div>
+        <div class="m-section__left-col">
+          <div class="m-section__block">
+            <div class="m-section__block-caption">
+              <span class="m-section__block-title">315</span>
+              <span class="m-section__block-bold">Автошкол</span>
+            </div>
+          </div>
+        </div>
+        <div class="m-section__left-col">
+          <div class="m-section__block">
+            <div class="m-section__block-caption">
+              <span class="m-section__block-title">>30<span class="sm">тыс.</span></span>
+              <span class="m-section__block-bold">Учеников</span>
+            </div>
+          </div>
+        </div>
+      </div>        
+    </div>
+    <div class="m-section__right">
+      <div class="m-section__map">
+        <img src="pic/map.svg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+	<div class="students">
+	<div class="container">
+		<div class="students__holder">
+			<div class="students__inner students__inner--left">
+				<div class="caption">
+					<span class="caption-icon">
+						<svg class="icon-marker">
+							<use xlink:href="#marker"></use>
+						</svg>
+					</span>
+					<span class="caption-text">Наши ученики получают только лучшее</span>
+				</div>
+				<div class="students__img">
+					<img src="pic/phone.png" alt="">
+				</div>
+				<div class="students__banner">
+					<div class="students__banner-info">
+						<span class="students__banner-subtitle">Использование мультимедиа</span>
+						<span class="students__banner-title">БЕСПЛАТНО!</span>
+					</div>
+					<div class="students__banner-btn">
+						<a href="#popup-callback" data-fancybox class="btn">Начать обучение</a>
+					</div>
+				</div>
+			</div>
+			<div class="students__inner students__inner--right">
+				<div class="students__item students__item--mod">
+					<span class="students__item-title">Эффективные методики изучения ПДД</span>
+					<div class="students__item-inner">
+						<ul class="students__item-list">
+							<li class="students__item-list-elem">Просто</li>
+							<li class="students__item-list-elem">Доступно</li>
+							<li class="students__item-list-elem">Нескучно</li>
+							<li class="students__item-list-elem">Надолго</li>
+						</ul>
+					</div>
+				</div>
+				<div class="students__item">
+					<span class="students__item-title">Вспомогательные учебные материалы</span>
+					<div class="students__item-inner">
+						<ul class="students__item-list">
+							<li class="students__item-list-elem">
+								Вся необходимая методическая информация
+							</li>
+							<li class="students__item-list-elem">
+								Опорные конспекты для лучшего усвоения
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="students__item">
+					<span class="students__item-title">Мультимедиа</span>
+					<div class="students__item-inner">
+						<ul class="students__item-list">
+							<li class="students__item-list-elem">
+								Использование уникальной системы «Автотренер» делает обучение максимально эффективным
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="students__item students__item--last">
+					<span class="students__item-title">В стоимость обучения включены:</span>
+					<div class="students__item-inner">
+						<ul class="students__item-list">
+							<li class="students__item-list-elem">Бензин;</li>
+							<li class="students__item-list-elem">Сопровождение в ГИБДД.</li>
+							<li class="students__item-list-elem">Методические материалы;</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="courses">
+	<div class="container">
+		<div class="courses__head">
+			<div class="caption">
+				<span class="caption-icon">
+					<svg class="icon-marker">
+						<use xlink:href="#marker"></use>
+					</svg>
+				</span>
+				<span class="caption-text">ФС «Автотренер» – разработчик инновационного онлайн-курса</span>
+			</div>
+			<div class="courses__head-descr">
+				<p>
+					из <span>62 3D-уроков,</span> помогающего максимально полно овладеть теоретической частью
+				</p>
+			</div>
+		</div>
+		<div class="courses__holder">
+			<div class="courses__inner">
+				<div class="courses__item">
+					<div class="courses__item-icon">
+						<svg class="icon-student">
+							<use xlink:href="#student"></use>
+						</svg>
+					</div>
+					<div class="courses__item-txt">
+						<p>
+							<span>Занимайтесь теорией где удобно и когда удобно –</span> очная форма, заочная форма, комбинированная форма
+						</p>
+					</div>
+				</div>
+				<div class="courses__item"> 
+					<div class="courses__item-icon">
+						<svg class="icon-taxi">
+							<use xlink:href="#taxi"></use>
+						</svg>
+					</div>
+					<div class="courses__item-txt">
+						<span>Не тратьте время на дорогу</span>
+					</div>
+				</div>
+				<div class="courses__item">
+					<div class="courses__item-icon">
+						<svg class="icon-transportation">
+							<use xlink:href="#transportation"></use>
+						</svg>
+					</div>
+					<div class="courses__item-txt">
+						<span>Обучайтесь в игровой форме и усваивайте знания с интересом</span>
+					</div>
+				</div>
+				<div class="courses__item">
+					<div class="courses__item-icon">
+						<svg class="icon-exam">
+							<use xlink:href="#exam"></use>
+						</svg>
+					</div>
+					<div class="courses__item-txt">
+						<span>Повышайте свои шансы сдать экзамен в ГИБДД с первого раза</span>
+					</div>
+				</div>
+
+			</div>
+			<div class="courses__inner courses__inner--mod">
+				<div class="courses__banner">
+					<div class="courses__banner-inner">
+						<div class="courses__banner-icon">
+							<svg class="icon-software">
+								<use xlink:href="#software"></use>
+							</svg>
+						</div>
+						<div class="courses__banner-descr">
+							<p>
+								Продукт общей стоимостью <span>50 000 000 рублей</span>,  над которым <span>3 года работали</span> десятки специалистов, наши ученики используют
+							</p>
+						</div>
+						<span class="courses__banner-txt">Бесплатно</span>
+					</div>
+				</div>
+				<div class="courses__img">
+					<img src="pic/comp.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="garant">
+	<div class="container">
+		<div class="garant__head">
+			<div class="caption">
+				<span class="caption-icon">
+					<svg class="icon-marker">
+						<use xlink:href="#marker"></use>
+					</svg>
+				</span>
+				<span class="caption-text">Только «Автотренер» гарантирует тройное закрепление знаний!</span>
+			</div>
+		</div>
+		<div class="garant__steps">
+			<div class="garant__steps-item">
+				<span class="garant__steps-num">1</span>
+				<span class="garant__steps-txt">
+					Просмотр <span>видеоурока</span>
+				</span>
+			</div>
+			<div class="garant__steps-item">
+				<span class="garant__steps-num">2</span>
+				<span class="garant__steps-txt">
+					Тестирование <span>с подсказками</span> <span>и разбором ошибок</span>
+				</span>
+			</div>
+			<div class="garant__steps-item">
+				<span class="garant__steps-num">3</span>
+				<span class="garant__steps-txt">
+					Зачет по <span>видеоуроку</span>
+				</span>
+			</div>
+		</div>
+		<div class="garant__holder">
+			<div class="garant__decor">
+				<img src="pic/y.png" alt="">
+			</div>
+			<div class="garant__inner garant__inner--left">
+				<div class="garant__video">
+					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/-KBxKJKUVKM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="garant__inner garant__inner--right">
+				<div class="garant__info">
+					<span class="garant__info-title">Оставляю заявку</span>
+					<span class="garant__info-descr">Прямо сейчас и получаю курс онлайн-обучения</span>
+					<span class="garant__info-subtitle">
+						Бесплатно
+					</span>
+					<div class="garant__info-bottom">
+						<div class="garant__info-btn">
+							<a href="#popup-callback" data-fancybox class="btn">Оставить заявку</a>
+						</div>
+						<div class="garant__info-more">
+							<a href="#" class="garant__info-link">
+								<span class="garant__info-link-txt">Почитаю еще</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="classes">
+  <div class="container">
+    <div class="caption">
+      <span class="caption-icon">
+        <svg class="icon-marker">
+          <use xlink:href="#marker"></use>
+        </svg>
+      </span>
+      <span class="caption-text">Наши классы: Учебный процесс</span>
+    </div>
+    <div class="classes__slider js-classes-slider">
+      
+      <div class="classes__slider-item">
+  <div class="classes__slider-block">
+    <div class="classes__slider-img" style="background-image: url(pic/bg/bg-1.jpg);"></div>
+    <div class="classes__slider-box">
+      <span class="classes__slider-caption">
+        <span class="classes__slider-icon">
+          <svg class="icon-marker-slider">
+            <use xlink:href="#marker"></use>
+          </svg>
+        </span>
+        Автошкола "Первая миля"
+      </span>
+      <span class="classes__slider-text">г. Киров ул. Карла Маркса, 101</span>
+    </div>
+  </div>
+</div>
+      
+      <div class="classes__slider-item">
+  <div class="classes__slider-block">
+    <div class="classes__slider-img" style="background-image: url(pic/bg/bg-1.jpg);"></div>
+    <div class="classes__slider-box">
+      <span class="classes__slider-caption">
+        <span class="classes__slider-icon">
+          <svg class="icon-marker-slider">
+            <use xlink:href="#marker"></use>
+          </svg>
+        </span>
+        Автошкола "Первая миля"
+      </span>
+      <span class="classes__slider-text">г. Киров ул. Карла Маркса, 101</span>
+    </div>
+  </div>
+</div>
+      
+      <div class="classes__slider-item">
+  <div class="classes__slider-block">
+    <div class="classes__slider-img" style="background-image: url(pic/bg/bg-1.jpg);"></div>
+    <div class="classes__slider-box">
+      <span class="classes__slider-caption">
+        <span class="classes__slider-icon">
+          <svg class="icon-marker-slider">
+            <use xlink:href="#marker"></use>
+          </svg>
+        </span>
+        Автошкола "Первая миля"
+      </span>
+      <span class="classes__slider-text">г. Киров ул. Карла Маркса, 101</span>
+    </div>
+  </div>
+</div>
+      
+      <div class="classes__slider-item">
+  <div class="classes__slider-block">
+    <div class="classes__slider-img" style="background-image: url(pic/bg/bg-1.jpg);"></div>
+    <div class="classes__slider-box">
+      <span class="classes__slider-caption">
+        <span class="classes__slider-icon">
+          <svg class="icon-marker-slider">
+            <use xlink:href="#marker"></use>
+          </svg>
+        </span>
+        Автошкола "Первая миля"
+      </span>
+      <span class="classes__slider-text">г. Киров ул. Карла Маркса, 101</span>
+    </div>
+  </div>
+</div>
+      
+      <div class="classes__slider-item">
+  <div class="classes__slider-block">
+    <div class="classes__slider-img" style="background-image: url(pic/bg/bg-1.jpg);"></div>
+    <div class="classes__slider-box">
+      <span class="classes__slider-caption">
+        <span class="classes__slider-icon">
+          <svg class="icon-marker-slider">
+            <use xlink:href="#marker"></use>
+          </svg>
+        </span>
+        Автошкола "Первая миля"
+      </span>
+      <span class="classes__slider-text">г. Киров ул. Карла Маркса, 101</span>
+    </div>
+  </div>
+</div>
+      
+      <div class="classes__slider-item">
+  <div class="classes__slider-block">
+    <div class="classes__slider-img" style="background-image: url(pic/bg/bg-1.jpg);"></div>
+    <div class="classes__slider-box">
+      <span class="classes__slider-caption">
+        <span class="classes__slider-icon">
+          <svg class="icon-marker-slider">
+            <use xlink:href="#marker"></use>
+          </svg>
+        </span>
+        Автошкола "Первая миля"
+      </span>
+      <span class="classes__slider-text">г. Киров ул. Карла Маркса, 101</span>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+</div>
+
+	<div class="advantages">
+	<div class="container">
+		<div class="advantages__wrap">
+			<div class="caption advantages__caption">
+				<span class="caption-icon">
+					<svg class="icon-marker">
+						<use xlink:href="#marker"></use>
+					</svg>
+				</span>
+				<span>Почему тысячи людей, планирующих получить права или восстановить утраченные навыки вождения, выбирают нас:</span>
+			</div>
+			<ul class="advantages__list">
+				<li class="advantages__list-item"><b>Вариативность обучения.</b> Можно изучать теорию как очно, так и дистанционно</li>
+				<li class="advantages__list-item"><b>Геймификация обучения</b> — «нет!» скучным занятиям</li>
+				<li class="advantages__list-item"><b>Экономия времени и денег</b> на дорогу в автошколу и обратно</li>
+				<li class="advantages__list-item"><b>Пропустить занятие невозможно:</b> вы всегда можете посмотреть его онлайн</li>
+				<li class="advantages__list-item">Нет необходимости ждать формирования группы: <b>начать обучение можно уже сегодня</b></li>
+				<li class="advantages__list-item"><b>Глубокое усвоение знаний</b> — путь к успешной сдаче экзамена в ГИБДД</li>
+			</ul>
+			<span class="advantages__descr" data-number="99,8%">А главное: 99,8% наших учеников <br> сдают экзамены в ГИБДД с первого раза</span>
+			<div class="advantages__btn-wrap">
+				<a href="#popup-callback" data-fancybox class="btn">Приступить к обучению</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="secret">
+	<div class="container">
+		<div class="secret__wrap">
+			<div class="secret__col secret__col--left">
+				<div class="caption secret__caption">
+					<span class="caption-icon">
+						<svg class="icon-marker">
+							<use xlink:href="#marker"></use>
+						</svg>
+					</span>
+					<span>Открываем секреты успеха наших учеников:</span>
+				</div>
+				<ul class="secret__list">
+					<li class="secret__list-item"><b>350 часов теории</b> в легкой, понятной игровой форме</li>
+					<li class="secret__list-item"><b>Специалисты,</b> которые знают свое дело и умеют передавать знания</li>
+					<li class="secret__list-item"><b>96 часов практического</b> вождения с крутыми инструкторами</li>
+					<li class="secret__list-item"><b>Современные технологии обучения</b></li>
+					<li class="secret__list-item">Обучение на <b>современных надежных</b> и маневренных автомобилях</li>
+					<li class="secret__list-item"><b>Наше сопровождение в ГИБДД —</b> регистрация, подготовка документов, подача автомобиля, на котором вы обучались</li>
+				</ul>
+			</div>
+			<div class="secret__col secret__col--right">
+				<span class="secret__title">ИТОГО:</span>
+				<span class="secret__text">
+					<span>1 посещение ГИБДД</span> — и у вас на руках свидетельство об <b>окончании автошколы «Автотренер» с отметкой ГИБДД</b>
+				</span>
+				<div class="secret__btn-wrap">
+					<a href="#" class="btn">Хочу так же!</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__slider js-slider-foot">
+				<div class="footer__slider-item">
+					<div class="footer__slider-img" style="background-image: url(pic/bg/bg-1.jpg);"></div>
+					<div class="footer__slider-box">
+						<span class="footer__slider-caption">
+							<span class="footer__slider-icon">
+								<svg class="icon-marker-slider">
+									<use xlink:href="#marker"></use>
+								</svg>
+							</span>
+							Автошкола "Первая миля"
+						</span>
+						<span class="footer__slider-text">г. Киров ул. Карла Маркса, 101</span>
+					</div>
+				</div>
+				<div class="footer__slider-item">
+					<div class="footer__slider-img" style="background-image: url(pic/bg/bg-1.jpg);"></div>
+					<div class="footer__slider-box">
+						<span class="footer__slider-caption">
+							<span class="footer__slider-icon">
+								<svg class="icon-marker-slider">
+									<use xlink:href="#marker"></use>
+								</svg>
+							</span>
+							Автошкола "Первая миля"
+						</span>
+						<span class="footer__slider-text">г. Киров ул. Карла Маркса, 101</span>
+					</div>
+				</div>
+				<div class="footer__slider-item">
+					<div class="footer__slider-img" style="background-image: url(pic/bg/bg-1.jpg);"></div>
+					<div class="footer__slider-box">
+						<span class="footer__slider-caption">
+							<span class="footer__slider-icon">
+								<svg class="icon-marker-slider">
+									<use xlink:href="#marker"></use>
+								</svg>
+							</span>
+							Автошкола "Первая миля"
+						</span>
+						<span class="footer__slider-text">г. Киров ул. Карла Маркса, 101</span>
+					</div>
+				</div>
+				<div class="footer__slider-item">
+					<div class="footer__slider-img" style="background-image: url(pic/bg/bg-1.jpg);"></div>
+					<div class="footer__slider-box">
+						<span class="footer__slider-caption">
+							<span class="footer__slider-icon">
+								<svg class="icon-marker-slider">
+									<use xlink:href="#marker"></use>
+								</svg>
+							</span>
+							Автошкола "Первая миля"
+						</span>
+						<span class="footer__slider-text">г. Киров ул. Карла Маркса, 101</span>
+					</div>
+				</div>
+				<div class="footer__slider-item">
+					<div class="footer__slider-img" style="background-image: url(pic/bg/bg-1.jpg);"></div>
+					<div class="footer__slider-box">
+						<span class="footer__slider-caption">
+							<span class="footer__slider-icon">
+								<svg class="icon-marker-slider">
+									<use xlink:href="#marker"></use>
+								</svg>
+							</span>
+							Автошкола "Первая миля"
+						</span>
+						<span class="footer__slider-text">г. Киров ул. Карла Маркса, 101</span>
+					</div>
+				</div>
+			</div>
+			<div class="caption footer__caption">
+				<span class="caption-icon">
+					<svg class="icon-marker">
+						<use xlink:href="#marker"></use>
+					</svg>
+				</span>
+				<span class="caption-text">Когда лучше один раз увидеть</span>
+			</div>
+			<div class="footer__address">
+				<span class="footer__address-text">ООО “АвтоТренер”</span>
+				<span class="footer__address-text">Россия, г. Москва, ул. Неглинная, д.9.</span>
+				<span class="footer__address-text"><a href="tel:84953694349">8 (495) 369-43-49</a></span>
+			</div>
+			<div class="footer__question">
+				<span class="footer__question-text">Остались вопросы?</span>
+				<span class="footer__question-descr">Спрашивайте — наши менеджеры ответят в течение суток</span>
+				<div class="footer__question-btn-wrap">
+					<a href="#popup-callback" data-fancybox class="btn btn--border">Задать вопрос</a>
+				</div>
+			</div>
+			<div class="footer__info">
+				Правообладатель автотренер предупреждает пользователей о запрете на дальнейшее перераспространение получаемой информации и о необходимости соблюдения исключительных прав на размещаемый на сайте контент, при этом никакой контент не может быть скопирован, воспроизведен, переработан, распространен, опубликован, скачан, передан, продан или иным способом использован целиком или по частям, без предварительного разрешения правообладателя, кроме случаев, когда правообладатель явным образом выразил свое согласие на свободное пользование материалов любым лицом.
+			</div>
+			<ul class="footer__bottom">
+				<li class="footer__bottom-item">
+					<a href="#" class="footer__bottom-link">Реквизиты компании</a>
+				</li>
+				<li class="footer__bottom-item">
+					<a href="#" class="footer__bottom-link">Номер лицензии</a>
+				</li>
+				<li class="footer__bottom-item">
+					<a href="#" class="footer__bottom-link">Политика конфиденциальности</a>
+				</li>
+				<li class="footer__bottom-item">
+					© АвтоТренер, 2018 
+				</li>
+			</ul>
+		</div>
+	</div>
+</footer>
+  
+<div class="popup popup--form" id="popup-callback">
+  <div class="popup__inner">
+    <form action="#">
+      <div class="f-section__form-top">
+        <div class="f-section__form-title">ОСтались вопросы?</div>
+        <div class="popup__subtitle">Спрашивайте — наши менеджеры ответят в течение суток</div>
+      </div>
+      <div class="f-section__form-inputbox">
+        <input type="text" placeholder="Введите Ваше имя">
+      </div>
+      <div class="f-section__form-inputbox">
+        <input type="text" placeholder="Введите Ваш телефон">
+      </div>
+      <div class="f-section__form-btn-box">
+        <button class="btn" type="submit">Оставить заявку</button>
+      </div>
+      <div class="f-section__form-checkbox">
+        <label class="checkbox">
+          <input type="checkbox" name="check222">
+          <span>Согласие на обработку <a href="#">персональных данных</a></span>
+        </label>
+      </div>
+    </form>
+  </div>
+</div>
+ 
+
+<div class="popup popup--city" id="popup-city">
+  <div class="popup__inner">
+    <div class="popup__title">Выберите ваш город</div>
+    <div class="popup__subtitle">наши филиалы в вашем городе</div>
+    <div class="popup__search">
+      <input type="text" class="popup__search-input js-city-search-input" placeholder="Введите Ваш город">
+      <div class="btn popup__search-btn">
+        <svg class="icon-search">
+          <use xlink:href="#search"></use>
+        </svg>
+      </div> 
+    </div>  
+    <div class="popup__row">
+      <div class="popup__col">
+        <div class="popup__scroll js-custom-scroll">
+  <ul class="popup__city-list">
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-link active">Москва</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-link">Московская обл.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-link">Санкт-Петербург</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-link">Башкортостан Респ.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-link">Брянская обл.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-link">Калужская обл.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-link">Кировская обл.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-link">Коми Респ.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-link">Санкт-Петербург</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-link">Башкортостан Респ.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-link">Брянская обл.</a>
+    </li>
+    
+  </ul>
+</div>
+      </div>
+      <div class="popup__col">
+        <div class="popup__contents">
+          <div class="popup__contents-result js-search-result">
+            <a href="#" class="popup__contents-back js-city-content-back">
+              <svg class="icon-arrow-left">
+                <use xlink:href="#arrow-left"></use>
+              </svg>
+              <span>Назад</span>
+            </a>
+            <div class="popup__scroll js-custom-scroll">
+              <ul class="popup__city-list">
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="popup__contents">
+          <div class="popup__contents-item js-city-content active">
+            <a href="#" class="popup__contents-back js-city-content-back">
+              <svg class="icon-arrow-left">
+                <use xlink:href="#arrow-left"></use>
+              </svg>
+              <span>Назад</span>
+            </a>
+            <div class="popup__scroll js-custom-scroll">
+  <ul class="popup__city-list">
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Москва</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Московская обл.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Санкт-Петербург</a>
+    </li>
+    
+  </ul>
+</div>
+          </div>
+          <div class="popup__contents-item js-city-content">
+            <a href="#" class="popup__contents-back js-city-content-back">
+              <svg class="icon-arrow-left">
+                <use xlink:href="#arrow-left"></use>
+              </svg>
+              <span>Назад</span>
+            </a>
+            <div class="popup__scroll js-custom-scroll">
+  <ul class="popup__city-list">
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Санкт-Петербург</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Башкортостан Респ.</a>
+    </li>
+    
+  </ul>
+</div>
+          </div>
+          <div class="popup__contents-item js-city-content">
+            <a href="#" class="popup__contents-back js-city-content-back">
+              <svg class="icon-arrow-left">
+                <use xlink:href="#arrow-left"></use>
+              </svg>
+              <span>Назад</span>
+            </a>
+            <div class="popup__scroll js-custom-scroll">
+  <ul class="popup__city-list">
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Санкт-Петербург</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Башкортостан Респ.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Брянская обл.</a>
+    </li>
+    
+  </ul>
+</div> 
+          </div>
+          <div class="popup__contents-item js-city-content">
+            <a href="#" class="popup__contents-back js-city-content-back">
+              <svg class="icon-arrow-left">
+                <use xlink:href="#arrow-left"></use>
+              </svg>
+              <span>Назад</span>
+            </a>
+            <div class="popup__scroll js-custom-scroll">
+  <ul class="popup__city-list">
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Башкортостан Респ.</a>
+    </li>
+    
+  </ul>
+</div>
+          </div>
+          <div class="popup__contents-item js-city-content">
+            <a href="#" class="popup__contents-back js-city-content-back">
+              <svg class="icon-arrow-left">
+                <use xlink:href="#arrow-left"></use>
+              </svg>
+              <span>Назад</span>
+            </a>
+            <div class="popup__scroll js-custom-scroll">
+  <ul class="popup__city-list">
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Санкт-Петербург</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Башкортостан Респ.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Брянская обл.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Башкортостан Респ.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Брянская обл.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Башкортостан Респ.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Брянская обл.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Башкортостан Респ.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Брянская обл.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Башкортостан Респ.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Брянская обл.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Башкортостан Респ.</a>
+    </li>
+    
+    <li class="popup__city-list-item">
+      <a href="#" class="popup__city-link js-city-select-link">Брянская обл.</a>
+    </li>
+    
+  </ul>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/vendor.js?rel=85285"></script>
+
+
+<script src="pages-list.js"></script>
+
+
+<script src="js/main.js?rel=85285"></script>
+
+
+</body>
+</html>

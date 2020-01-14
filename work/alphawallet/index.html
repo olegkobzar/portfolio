@@ -1,0 +1,528 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+	<div class="wrapper">
+
+		<div class="info">
+
+    <header class="header wow bounceInDown" data-wow-delay="2s">
+	<div class="container">
+		<div class="header__wrap">
+			<div class="header__logo">
+				<a href="#" class="header__logo-link">
+                    <svg class="icon-logo">
+                        <use xlink:href="#logo"></use>
+                    </svg>
+					<!--<img src="pic/logo/logo.png" alt="" class="header__logo-img">-->
+				</a>
+			</div>
+
+			<span class="header__toggler js-toggler" data-href="nav"><span class="header__toggler-decor"></span></span>
+
+			<div class="header__inner js-collapse" data-nav="nav">
+
+				<div class="header__services">
+					<a href="#" class="header__services-link">Услуги</a>
+				</div>
+
+				<nav class="header__nav">
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">Преимущества</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">Возможности</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">Посмотреть код</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+    <div class="container">
+        <div class="info__wrap wow bounceInLeft" data-wow-delay="2s">
+
+            <div class="info__inner">
+                <span class="info__subtitle">Безопасный</span>
+                <h1 class="info__title">Криптовалютный кошелек с открытым исходным кодом</h1>
+                <ul class="info__list">
+                    <li class="info__item info__item--btn">
+                        <a href="#" class="btn info__btn">Установить</a>
+                    </li>
+                    <li class="info__item">
+                        <a href="#" class="info__link">
+                            <svg class="icon-apple">
+                                <use xlink:href="#apple"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="info__item">
+                        <a href="#" class="info__link">
+                            <svg class="icon-google-play">
+                                <use xlink:href="#google-play"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="info__bottom">
+                <a href="#" class="info__more">Подробнее</a>
+            </div>
+        </div>
+    </div>
+    <div class="info__decor wow bounceInRight" data-wow-delay="2s">
+        <img src="pic/bg/bg-info-01.jpg" alt="" class="info__decor-img">
+        <img src="pic/bg/bg-info-02.png" alt="" class="info__decor-logo">
+    </div>
+
+</div>
+
+
+		<div class="advantages">
+	<div class="triangle-one triangle-one--small" style="bottom: 12%; left: 7%; z-index: -1; transform: rotate(0deg);"></div>
+	<div class="triangle-one triangle-one--ultra-small" style="top: 14%; right: 10%; z-index: -1; transform: rotate(0deg);"></div>
+	<div class="triangle-one" style="top: 53%; right: 2%; z-index: -1"></div>
+	<div class="triangle-two" style="top: 45%; right: 2%; z-index: -2;"></div>
+	<div class="container">
+		<div class="advantages__wrap">
+			<div class="advantages__header">
+				<span class="advantages__subtitle">почему выбирают alpha wallet</span>
+				<h2 class="advantages__title">Преимущества alpha wallet</h2>
+			</div>
+			<div class="advantages__body">
+				<ul class="advantages__list">
+				
+					<li class="advantages__item">
+						<div class="advantages__inner">
+							<svg class="icon-anonymity">
+								<use xlink:href="#anonymity"></use>
+							</svg>
+						</div>
+						<span class="advantages__caption">Высокая надежность</span>
+						<span class="advantages__desc">Криптовалюта хранится исключительно на Вашем устройстве</span>
+					</li>
+				
+					<li class="advantages__item">
+						<div class="advantages__inner">
+							<svg class="icon-anonymity">
+								<use xlink:href="#anonymity"></use>
+							</svg>
+						</div>
+						<span class="advantages__caption">полная Анонимность</span>
+						<span class="advantages__desc">Информация и данные о балансах защищены и доступны только для владельца кошелька</span>
+					</li>
+				
+					<li class="advantages__item">
+						<div class="advantages__inner">
+							<svg class="icon-security">
+								<use xlink:href="#security"></use>
+							</svg>
+						</div>
+						<span class="advantages__caption">Абсолютная Безопасность</span>
+						<span class="advantages__desc">Приватные ключи от кошелька хранятся только на Вашем устройстве.</span>
+					</li>
+				
+					<li class="advantages__item">
+						<div class="advantages__inner">
+							<svg class="icon-security">
+								<use xlink:href="#security"></use>
+							</svg>
+						</div>
+						<span class="advantages__caption">Защищенность в полной мере</span>
+						<span class="advantages__desc">Отсутствуют уязвимости для внешнего вторжения.</span>
+					</li>
+				
+					<li class="advantages__item">
+						<div class="advantages__inner">
+							<svg class="icon-security">
+								<use xlink:href="#security"></use>
+							</svg>
+						</div>
+						<span class="advantages__caption">Мультиподпись</span>
+						<span class="advantages__desc">Создайте совместный счет в криптовалюте и подключайте сразу несколько пользователей к вашему кошельку</span>
+					</li>
+				
+					<li class="advantages__item">
+						<div class="advantages__inner">
+							<svg class="icon-restoring">
+								<use xlink:href="#restoring"></use>
+							</svg>
+						</div>
+						<span class="advantages__caption">Быстрое восстановление</span>
+						<span class="advantages__desc">Восстановление вашего кошелька по Touch Id/Face Id.</span>
+					</li>
+				
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+		
+
+		<div class="cap">
+	<div class="delta-big" style="top: -17%; left: -3%; z-index: -1;"></div>
+	<div class="triangle-one" style="bottom: 23.7%; left: 2%; z-index: -1"></div>
+	<div class="triangle-two" style="bottom: 22%; left: 2%; z-index: -2;"></div>
+	<div class="triangle-one triangle-one--small" style="top: 45%; left: 3%; z-index: -1"></div>
+	<div class="triangle-two" style="bottom: 14%; right: 35%; z-index: -2;"></div>
+	<div class="triangle-two triangle-two--medium" style="bottom: 27%; right: -3.5%; z-index: -1;"></div>
+	<div class="triangle-one" style="top: 1%; right: 25%; z-index: -1"></div>
+	<div class="triangle-two" style="top: -2%; right: 26%; z-index: -2;"></div>
+	<div class="triangle-one triangle-one--grey" style="top: 29%; right: 10%; z-index: -1"></div>
+	<div class="triangle-two triangle-two--grey" style="top: 26%; right: 5%; z-index: -2;"></div>
+	<div class="container">
+		<div class="cap__wrapp">
+			<div class="cap__item">
+				<div class="cap__img-wrapp wow bounceInLeft" data-wow-delay="1s">
+					<img src="pic/phone/phone-1.png" alt="">
+				</div>
+				<div class="cap__content wow bounceInRight" data-wow-delay="1s">
+					<div class="cap__content-inner">
+						<span class="cap__title">— alpha wallet</span>
+						<span class="cap__caption">Безопасность</span>
+						<p class="cap__descr">Один из первых криптовалютных кошельков с поддержкой полного протокола оплаты биткойнов (BIP 0070-0073).</p>
+						<p class="cap__descr">Другими словами, когда вы отправляете перевод с данным протоколом, Alpha Wallet проверяет, что ваш платеж пойдет в нужное место.</p>
+					</div>
+					
+				</div>
+			</div>
+			<div class="cap__item">
+				<div class="cap__content wow bounceInLeft" data-wow-delay="1s">
+					<div class="cap__content-inner">
+						<span class="cap__title">— заботимся о каждом клиенте</span>
+						<span class="cap__caption">Качество</span>
+						<p class="cap__descr">Каждая часть кошелька Alpha Wallet доступна для обзора, что позволяет просмотреть исходный код разработчикам, оставить свой комментарий по оптимизации и улучшению продукта.</p>
+						<p class="cap__descr">Вы также можете присоединиться к сообществу разработчиков и начать следить, обсуждать и вносить свои рекомендации по улучшению продукта и повышению качества его работы.</p>
+					</div>
+				</div>
+				<div class="cap__img-wrapp wow bounceInRight" data-wow-delay="1s">
+					<img src="pic/phone/phone-2.png" alt="">
+				</div>
+			</div>
+			<div class="cap__item">
+				<div class="cap__img-wrapp wow bounceInLeft" data-wow-delay="1s">
+					<img src="pic/phone/phone-3.png" alt="">
+				</div>
+				<div class="cap__content wow bounceInRight" data-wow-delay="1s">
+					<div class="cap__content-inner">
+						<span class="cap__title">— всегда и везде</span>
+						<span class="cap__caption">Поддержка Testnet</span>
+						<p class="cap__descr">Alpha Wallet – первый биткойн-кошелек для с поддержкой как iOS, так Windows Phone.</p>
+						<p class="cap__descr">Сервис включает встроенную поддержку Bitcoin Testnet, идеально подходящую для тестирования новых приложений на нескольких платформах.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="payment">
+	<div class="payment__outher">
+		<div class="container">
+			<span class="payment__sub-title">Присоединяйтесь</span>
+			<h2 class="payment__title">
+				Установите удобный для Вас кошелек
+			</h2>
+				<div class="payment__holder">
+				<div class="payment__inner">
+			<div class="payment__item">
+				<a href="#" class="payment__item-inner">
+                    <svg class="payment__item-apple icon-apple">
+                        <use xlink:href="#apple"></use>
+                    </svg>
+                    <span class="payment__desc">
+                        <span class="payment__desc-txt">Find it on the</span>
+                        <span class="payment__desc-name">iOS App Store</span>
+                    </span>
+				</a>
+			</div>
+			<div class="payment__item">
+				<a href="#" class="payment__item-inner">
+                    <svg class="icon-g-play">
+                        <use xlink:href="#g-play"></use>
+                    </svg>
+                    <span class="payment__desc">
+                        <span class="payment__desc-txt">Get it on</span>
+                        <span class="payment__desc-name">Google Play</span>
+                    </span>
+				</a>
+			</div>
+			<div class="payment__item">
+				<a href="#" class="payment__item-inner">
+                    <svg class="icon-windows">
+                        <use xlink:href="#windows"></use>
+                    </svg>
+                    <span class="payment__desc">
+                        <span class="payment__desc-txt">Download for</span>
+                        <span class="payment__desc-name">Windows</span>
+                    </span>
+				</a>
+			</div>
+			<div class="payment__item">
+				<a href="#" class="payment__item-inner">
+                    <svg class="icon-linux">
+                        <use xlink:href="#linux"></use>
+                    </svg>
+                    <span class="payment__desc">
+                        <span class="payment__desc-txt">Get it for</span>
+                        <span class="payment__desc-name">Linux</span>
+                    </span>
+				</a>
+			</div>
+			<div class="payment__item">
+				<a href="#" class="payment__item-inner">
+                    <svg class="icon-mac">
+                        <use xlink:href="#mac"></use>
+                    </svg>
+                    <span class="payment__desc">
+                        <span class="payment__desc-txt">Available for</span>
+                        <span class="payment__desc-name">Mac OS X </span>
+                    </span>
+				</a>
+			</div>
+			<div class="payment__item">
+				<a href="#" class="payment__item-inner">
+                    <svg class="icon-chrome">
+                        <use xlink:href="#chrome"></use>
+                    </svg>
+                    <span class="payment__desc">
+                        <span class="payment__desc-txt">Get the</span>
+                        <span class="payment__desc-name">Chrome App</span>
+                    </span>
+				</a>
+			</div>
+			<div class="payment__item">
+				<a href="#" class="payment__item-inner">
+                    <svg class="icon-windows-store">
+                        <use xlink:href="#windows-store"></use>
+                    </svg>
+                    <span class="payment__desc">
+                        <span class="payment__desc-txt">Download for</span>
+                        <span class="payment__desc-name">Windows Store</span>
+                    </span>
+				</a>
+			</div>
+
+				</div>
+				<span class="payment__text">
+					устанавливайте alpha wallet прямо сейчас
+				</span>
+				<div class="payment__btn-wrap">
+					<a href="#" class="btn btn--arrow">Установить</a>
+				</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+
+		<div class="consultate">
+	<div class="triangle-one" style="top: 11.4%; left: 8%; z-index: -1"></div>
+	<div class="triangle-two" style="top: 3%; left: 2%; z-index: -2;"></div>
+	<div class="triangle-one triangle-one--small" style="top: 4.4%; right: 13.3%; z-index: -1"></div>
+	<div class="triangle-two triangle-two--medium" style="	bottom: 17%; right: -5.7%; z-index: -1;"></div>
+
+	<div class="container">
+		<h2 class="consultate__title">все только для вас</h2>
+		<div class="consultate__holder">
+			<a href="#" class="consultate__item">
+				<div class="consultate__item-img">
+					<svg class="icon-purchase">
+						<use xlink:href="#purchase"></use>
+					</svg>
+				</div>
+				<span class="consultate__item-title">
+					Моментальная Покупка Криптовалюты с Mastercard или Visa
+				</span>
+			</a>
+			<a href="#" class="consultate__item">
+				<div class="consultate__item-img">
+					<svg class="icon-languages">
+						<use xlink:href="#languages"></use>
+					</svg>
+				</div>
+				<span class="consultate__item-title">
+					Поддержка 28 Языков
+				</span>
+			</a>
+			<a href="#" class="consultate__item">
+				<div class="consultate__item-img">
+					<svg class="icon-interface">
+						<use xlink:href="#interface"></use>
+					</svg>
+				</div>
+				<span class="consultate__item-title">
+					Простой и Удобный интерфейс
+				</span>
+			</a>
+			<a href="#" class="consultate__item">
+				<div class="consultate__item-img">
+					<svg class="icon-support">
+						<use xlink:href="#support"></use>
+					</svg>
+				</div>
+				<span class="consultate__item-title">
+					Поддержка 15 перспективных монет
+				</span>
+			</a>
+		</div>
+		<span class="consultate__text">
+			заказать звонок прямо сейчас
+		</span>
+		<div class="consultate__btn-wrap">
+			<a href="#" class="btn btn--arrow btn--arrow-orange consultate__btn">Консультация</a>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__wrapp">
+			<div class="footer__right">
+				<div class="footer__inner">
+					<span class="footer__title">Услуги</span>
+					<ul class="footer__list">
+						<li class="footer__item"><a href="#" class="footer__link">Преимущества</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Возможности</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Посмотреть код</a></li>
+					</ul>
+				</div>
+				<div class="footer__inner">
+					<span class="footer__title">Наш сервис</span>
+					<ul class="footer__list footer__list--service">
+						<li class="footer__item"><a href="#" class="footer__link">Alpha Hold</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Alpha pay</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Alpha cash</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Alpha wallet</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Alpha broker</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Alpha change</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Alpha Brain</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Alpha Market</a></li>
+					</ul>
+				</div>
+				<div class="footer__inner">
+					<span class="footer__title">Подтвердить</span>
+					<span class="footer__subscribe-text">Подпишитесь и будьте в курсе последних новостей и событий!</span>
+					<form action="callback.php" method="post" class="js-form">
+						<div class="footer__subscribe-wrapp">
+							<div class="footer__subscribe-input">
+								<input type="email" class="footer__input" placeholder="Mail" name="mail" required>
+							</div>
+							<div class="footer__subscribe-btn">
+								<button type="submit" class="btn btn--arrow btn--arrow-orange footer__btn"></button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="footer__inner">
+					<span class="footer__title">Контакты</span>
+					<ul class="footer__list footer__list--contact">
+						<li class="footer__item">Alpha Hold, Sociedad Limitada</li>
+						<li class="footer__item">Alpha Hold S.L.</li>
+						<li class="footer__item">Address: Passeig Esplanada d'Espanya, 2</li>
+						<li class="footer__item">City: Alicante</li>
+						<li class="footer__item">Country: Spain</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer__left">
+				<div class="footer__logo">
+					<a href="#">
+                        <svg class="icon-logo-transparent">
+                            <use xlink:href="#logo-transparent"></use>
+                        </svg>
+						<!--<img src="pic/logo/logo-2.png" alt="">-->
+					</a>
+				</div>
+				<span class="footer__legal">2018. alphawallet</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

@@ -1,0 +1,340 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@@title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class="">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+  <div class="wrapper">
+
+  	<header class="header">
+	<div class="container">
+		<div class="header__holder js-header">
+			<div class="header__inner">
+				<div class="header__top">
+					<div class="header__menu-btn js-menu-btn">
+						<span class="line"></span>
+					</div>
+					<ul class="header__nav">
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">КЕЙСЫ</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">СТУДИЯ</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">СТОИМОСТЬ</a>
+						</li>
+					</ul>
+					<div class="header__contacts">
+						<div class="header__contacts-item">
+							<a href="mailto:hello@sensens.ru" class="header__contacts-link">hello@sensens.ru</a>
+						</div>
+						<div class="header__contacts-item">
+							<a href="tel:+74952680112" class="header__contacts-link">+74952680112</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="header__logo-small">
+					<a href="#" class="header__logo-small-link">
+						<img src="pic/logo/logo-sm.png" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class="header__popup js-header-popup">
+	<div class="container">
+		<div class="header__popup-outer">
+			<div class="header__popup-inner">
+				<div class="header__popup-holder">
+					<span class="header__popup-close js-popup-close"></span>
+					<div class="header__popup-decor">
+						<img src="pic/logo/logo-popup.png" alt="">
+					</div>
+					<ul class="header__popup-list">
+						<li class="header__popup-list-item">
+							<a href="#" class="header__popup-list-link">Главная</a>
+						</li>
+						<li class="header__popup-list-item">
+							<a href="#" class="header__popup-list-link">Проекты</a>
+						</li>
+						<li class="header__popup-list-item">
+							<a href="#" class="header__popup-list-link active">Услуги</a>
+						</li>
+						<li class="header__popup-list-item">
+							<a href="#" class="header__popup-list-link">Контакты</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__popup-foot">
+					<span class="footer__title">Связаться с нами</span>
+					<div class="footer__holder">
+						<div class="footer__contacts">
+							<div class="footer__contacts-item">
+								<a href="tel:+74952680112" class="footer__contacts-link">
+									+7 495 268 01 12
+								</a>
+							</div>
+							<div class="footer__contacts-item">
+								<a href="mailto:hello@TheID.ru" class="footer__contacts-link">
+									hello@TheID.ru
+								</a>
+							</div>
+						</div>
+						<div class="footer__copy">
+							<span>
+								&copy;Sensens. 2015-2018
+							</span>
+						</div>
+
+						<div class="footer__social">
+							<span class="footer__social-txt">Следить</span>
+							<a href="#" class="footer__social-link">Fb<span style="color: #2F78DD;">.</span></a>
+							<a href="#" class="footer__social-link">Ins<span style="color: #E543A7;">.</span></a>
+							<a href="#" class="footer__social-link">Vk<span style="color: #2F5EDD;">.</span></a>
+							<a href="#" class="footer__social-link">YT<span style="color: #FF0808;">.</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+		<div class="container">
+			<div>
+				<a data-fancybox data-src="#popup-success" href="javascript:;">popup-success</a>
+			</div>
+			<div>
+				<a data-fancybox data-src="#popup-thank" href="javascript:;">popup-thank</a>
+			</div>
+			<div>
+				<a data-fancybox data-src="#popup-callback" href="javascript:;">popup-callback</a>
+			</div>
+			<div>
+				<a data-fancybox data-src="#popup-question" href="javascript:;">popup-question</a>
+			</div>
+			<div>
+				<a data-fancybox data-src="#popup-request" href="javascript:;">popup-request</a>
+			</div>
+    </div>
+   </div>
+	<div class="popup popup--success" id="popup-success">
+	<div class="popup__holder">
+		<div class="popup__inner">
+			<span class="popup__title">Отлично!</span>
+			<div class="popup__txt">
+				<span>Ваша скидка в почте!</span>
+				<span>Успешных проектов!</span>
+			</div>
+		</div>
+	</div>
+</div>
+	<div class="popup popup--thank" id="popup-thank">
+	<div class="popup__holder">
+		<div class="popup__inner">
+			<span class="popup__title">Спасибо!</span>
+			<div class="popup__txt">
+				<p>
+					Ваша заявка уже летит к нам, а пока <a href="#">заберите свою скидку на разработку сайта </a>
+				</p>
+			</div>
+			<a href="#" class="btn popup__form-btn">Забрать скидку</a>
+		</div>
+	</div>
+</div>
+	<div class="popup popup--callback" id="popup-callback">
+	<div class="popup__holder">
+		<div class="popup__inner">
+			<span class="popup__title">Вам позвонить?</span>
+			<form action="callback.php" method="POST" class="popup__form js-valid-form">
+				<label class="popup__form-box">
+					<span class="popup__form-title">Имя Отчество</span>
+					<input type="text" name="name" class="popup__form-input">
+				</label>
+				<label class="popup__form-box">
+					<span class="popup__form-title">Телефон</span>
+					<input type="tel" name="phone" class="popup__form-input js-input-phone">
+				</label>
+
+				<button class="popup__form-btn">ОТПРАВИТЬ</button>
+			</form>
+		</div>
+	</div>
+</div>
+	<div class="popup popup--question" id="popup-question">
+	<div class="popup__holder">
+		<div class="popup__inner">
+			<span class="popup__title">Оставить запрос</span>
+			<form action="question.php" method="POST" class="popup__form js-valid-form">
+				<label class="popup__form-box">
+					<span class="popup__form-title">Имя Отчество</span>
+					<input type="text" name="name" class="popup__form-input">
+				</label>
+				<label class="popup__form-box">
+					<span class="popup__form-title">E-mail</span>
+					<input type="email" name="email" class="popup__form-input">
+				</label>
+
+				<button class="popup__form-btn">ОТПРАВИТЬ</button>
+			</form>
+		</div>
+	</div>
+</div>
+	<div class="popup popup--request" id="popup-request">
+	<div class="popup__holder">
+		<div class="popup__inner">
+			<span class="popup__title">Оставить заявку</span>
+			<form action="request.php" method="POST" class="popup__form js-valid-form">
+				<div class="popup__form-row">
+					<div class="popup__form-col">
+						<label class="popup__form-box">
+							<span class="popup__form-title">Имя Отчество</span>
+							<input type="text" name="name" class="popup__form-input">
+						</label>
+						<label class="popup__form-box">
+							<span class="popup__form-title">E-mail</span>
+							<input type="email" name="email" class="popup__form-input">
+						</label>
+						<label class="popup__form-box">
+							<span class="popup__form-title">Телефон</span>
+							<input type="tel" name="phone" class="popup__form-input js-input-phone">
+						</label>
+					</div>
+					<div class="popup__form-col">
+						<label class="popup__form-box popup__form-box--mess">
+							<span class="popup__form-title">О проекте</span>
+							<textarea name="message" class="popup__form-message"></textarea>
+						</label>
+						<div class="popup__form-box">
+							<span class="popup__form-title">Приложить файл</span>
+							<label class="popup__form-load">
+            		<input type="file" name="file">
+            		<span>Выбрать файл</span>
+							</label>
+							<span class="popup__form-file">Название файл.PDF</span>
+						</div>
+					</div>
+				</div>
+				<button class="popup__form-btn">ОТПРАВИТЬ</button>
+			</form>
+		</div>
+	</div>
+</div>
+	
+  <footer class="footer ">
+	<div class="container">
+		<span class="footer__title">Связаться с нами</span>
+		<div class="footer__holder">
+			<div class="footer__contacts">
+				<div class="footer__contacts-item">
+					<a href="tel:+74952680112" class="footer__contacts-link">
+						+7 495 268 01 12
+					</a>
+				</div>
+				<div class="footer__contacts-item">
+					<a href="mailto:hello@TheID.ru" class="footer__contacts-link">
+						hello@TheID.ru
+					</a>
+				</div>
+			</div>
+
+			
+			<div class="footer__copy">
+				<span>
+					&copy;АЙДИ. 2015-2018
+				</span>
+			</div>
+			
+			
+
+			<div class="footer__social">
+				<span class="footer__social-txt">Следить</span>
+				<a href="#" class="footer__social-link">Fb<span style="color: #2F78DD;">.</span></a>
+				<a href="#" class="footer__social-link">Ins<span style="color: #E543A7;">.</span></a>
+				<a href="#" class="footer__social-link">Vk<span style="color: #2F5EDD;">.</span></a>
+				<a href="#" class="footer__social-link">YT<span style="color: #FF0808;">.</span></a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+
+

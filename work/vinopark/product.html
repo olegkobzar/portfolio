@@ -1,0 +1,4460 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Страница товара</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+	<div class="wrapper">
+
+		<header class="header compensate-for-scrollbar">
+  <div class="container">
+    <div class="header-top">
+      <div class="header-top__left">
+        <div class="header-top__city js-tooltip-city">
+  <div class="header-top__city-title">Ваш город
+    <strong>
+      <span class="header-top__city-trigger js-tooltip-city-trigger">
+        Москва
+      </span>?</strong>
+  </div>
+  <div class="header-top__city-answer">
+    <button class="header-top__city-btn active">Да</button>
+    <button class="header-top__city-btn">Нет</button>
+  </div>
+  
+  <div class="js-tooltip-city-drop tooltip tooltip--sm tooltip--city">
+    <div class="tooltip__container ">
+      <div class="tooltip-city">
+        <input type="text" class="input tooltip-city__input js-tooltip-city-search">
+        <div class="tooltip-city__no-result js-tooltip-city-search-not-found">Not found...</div>
+        <ul class="tooltip-city__result">
+          <li class="tooltip-city__result-item">Ростов Великий</li>
+          <li class="tooltip-city__result-item">Ростов-на-Дону</li>
+          <li class="tooltip-city__result-item">Москва</li>
+          <li class="tooltip-city__result-item">City 1</li>
+          <li class="tooltip-city__result-item">City 2</li>
+          <li class="tooltip-city__result-item">City 3</li>          
+          <li class="tooltip-city__result-item">Paris</li>          
+        </ul>
+      </div>
+    </div>
+  </div>
+    
+</div>
+
+        <ul class="header-top__nav">
+          <li class="header-top__nav-item">
+            <a href="#" class="header-top__nav-link">О компании</a>
+          </li>
+          <li class="header-top__nav-item">
+            <a href="#" class="header-top__nav-link">Винные Клубы</a>
+          </li>
+          <li class="header-top__nav-item">
+            <a href="#" class="header-top__nav-link">Статьи</a>
+          </li>
+          <li class="header-top__nav-item">
+            <a href="#" class="header-top__nav-link">Адреса магазинов</a>
+          </li>
+        </ul>
+      </div>
+      <div class="header-top__right">
+        <a href="#" class="header-top__lang">Eng</a>
+        <div class="header-top__tel tooltip-callback">
+  <span>8 800 123 12 12</span>
+  <div class="tooltip tooltip--arrow-right">
+    <div class="tooltip__container">
+      <div class="tooltip-callback__time">пн-пт 09:00 — 20:00, сб-вс 11:00 — 18:00</div>
+      <a data-fancybox data-src="#popup-callback" href="javascript:;" class="tooltip-callback__btn">Обратный звонок</a>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <div class="header-body">
+      <a href="#" class="header-body__logo">
+        <div class="header-body__logo-img">
+          <img src="pic/logo.svg" alt="logo">
+        </div>
+        <div class="header-body__logo-text">Вино<span>Парк</span></div>
+      </a>
+      <div class="header-body__search">
+        <form method="get" action="" class="search">
+  <input type="search" name="search" class="input" placeholder="Поиск по каталогу" required>
+  <button type="submit" class="search__icon">
+    <svg>
+      <use xlink:href="#search"></use>
+    </svg>
+  </button>
+</form>
+
+      </div>
+      <div class="header-body__ctrl">
+        
+<div class="header-body__ctrl-item header-body__ctrl-item--profile tooltip-profile">
+  <svg class="icon-user">
+    <use xlink:href="#user"></use>
+  </svg>
+  <span class="header-body__ctrl-label">Профиль</span>
+  <div class="tooltip tooltip--sm tooltip--arrow-left">
+    <div class="tooltip__container">
+      <div class="tooltip-profile__title">mad_max_92@gmail.com</div>
+      <ul class="tooltip-city__result">
+        <li class="tooltip-city__result-item shown"><a href="#">Мои данные</a></li>
+        <li class="tooltip-city__result-item shown"><a href="#">Редактировать</a></li>
+      </ul>
+      <div class="tooltip-profile__btn">
+        <a href="#" class="btn btn--border">Выйти</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+       
+        <div class="header-body__ctrl-item header-body__ctrl-item--cnn tooltip-compare">
+  <svg class="icon-cnn">
+    <use xlink:href="#cnn"></use>
+  </svg>
+
+
+  <div class="tooltip tooltip--arrow-right js-compare-tooltip">
+    <div class="tooltip__container">
+      <div class="tooltip-basket__holder">
+        <div class="tooltip__item">
+          <div class="card-sm">
+  <div class="basket-item">
+    
+    <span class="basket-item__remove js-tooltip-remover"></span>
+    
+    
+    <div class="basket-item__col basket-item__col--img">
+      <div class="basket-item__img-wrap">
+        <img src="pic/products/products-02.png" alt="">
+      </div>
+
+    </div>
+
+    <div class="basket-item__col basket-item__col--name">
+      <span class="basket-item__name">Campo del Verdejo</span>
+      <span class="basket-item__name-sub">Bodegas Gallegas</span>
+      <div class="basket-item__descr">
+        <a href="#" class="basket-item__link">Белое вино</a>
+        <span class="basket-item__amount">0.7 л</span>
+        
+        <span class="basket-item__amount">1 шт</span>
+        
+
+        <span class="basket-item__price-text accent">
+          1 078 <span class="basket-item__price-rub">Р.</span>
+        </span>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="tooltip__item">
+          <div class="card-sm">
+  <div class="basket-item">
+    
+    <span class="basket-item__remove js-tooltip-remover"></span>
+    
+    
+    <div class="basket-item__col basket-item__col--img">
+      <div class="basket-item__img-wrap">
+        <img src="pic/products/products-03.png" alt="">
+      </div>
+
+    </div>
+
+    <div class="basket-item__col basket-item__col--name">
+      <span class="basket-item__name">Campo del Verdejo</span>
+      <span class="basket-item__name-sub">Bodegas Gallegas</span>
+      <div class="basket-item__descr">
+        <a href="#" class="basket-item__link">Белое вино</a>
+        <span class="basket-item__amount">0.7 л</span>
+        
+        <span class="basket-item__amount">1 шт</span>
+        
+
+        <span class="basket-item__price-text ">
+          178 <span class="basket-item__price-rub">Р.</span>
+        </span>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="tooltip__item">
+          <div class="card-sm">
+  <div class="basket-item">
+    
+    <span class="basket-item__remove js-tooltip-remover"></span>
+    
+    
+    <div class="basket-item__col basket-item__col--img">
+      <div class="basket-item__img-wrap">
+        <img src="pic/products/products-02.png" alt="">
+      </div>
+
+    </div>
+
+    <div class="basket-item__col basket-item__col--name">
+      <span class="basket-item__name">Campo del Verdejo</span>
+      <span class="basket-item__name-sub">Bodegas Gallegas</span>
+      <div class="basket-item__descr">
+        <a href="#" class="basket-item__link">Белое вино</a>
+        <span class="basket-item__amount">0.7 л</span>
+        
+        <span class="basket-item__amount">1 шт</span>
+        
+
+        <span class="basket-item__price-text ">
+          1 078 <span class="basket-item__price-rub">Р.</span>
+        </span>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+        </div>
+      </div>
+      
+      <div class="tooltip-compare__clear js-compare-clear">Очистить список</div>
+      
+      <div class="tooltip-compare__btn">
+        <a href="#" class="btn">Перейти к сравнению</a>
+      </div>
+     
+
+      <div class="tooltip__no">
+        <div class="tooltip__no-title">Сравнение товаров</div>
+        <div class="tooltip__no-sub">Добавьте сюда товары из каталога</div>
+        <div class="tooltip__no-btn">
+          <a href="#" class="btn">Каталог</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>        
+
+        <div class="header-body__ctrl-item header-body__ctrl-item--heart tooltip-like">
+  <svg class="icon-heart">
+    <use xlink:href="#heart"></use>
+  </svg>
+
+  <div class="tooltip tooltip--arrow-right js-like-tooltip">
+    <div class="tooltip__container">
+      <div class="tooltip-basket__holder">
+        <div class="tooltip__item">
+          <div class="card-sm">
+  <div class="basket-item">
+    
+    
+    <span class="favorites-toggle js-tooltip-remover">
+					<span class="like">
+						<svg class="icon-heart">
+							<use xlink:href="#heart"></use>
+						</svg>
+					</span>
+		</span>
+    
+    <div class="basket-item__col basket-item__col--img">
+      <div class="basket-item__img-wrap">
+        <img src="pic/products/products-02.png" alt="">
+      </div>
+
+    </div>
+
+    <div class="basket-item__col basket-item__col--name">
+      <span class="basket-item__name">Campo del Verdejo</span>
+      <span class="basket-item__name-sub">Bodegas Gallegas</span>
+      <div class="basket-item__descr">
+        <a href="#" class="basket-item__link">Белое вино</a>
+        <span class="basket-item__amount">0.7 л</span>
+        
+        <span class="basket-item__amount">1 шт</span>
+        
+
+        <span class="basket-item__price-text ">
+          978 <span class="basket-item__price-rub">Р.</span>
+        </span>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="tooltip__item">
+          <div class="card-sm">
+  <div class="basket-item">
+    
+    
+    <span class="favorites-toggle js-tooltip-remover">
+					<span class="like">
+						<svg class="icon-heart">
+							<use xlink:href="#heart"></use>
+						</svg>
+					</span>
+		</span>
+    
+    <div class="basket-item__col basket-item__col--img">
+      <div class="basket-item__img-wrap">
+        <img src="pic/products/products-02.png" alt="">
+      </div>
+
+    </div>
+
+    <div class="basket-item__col basket-item__col--name">
+      <span class="basket-item__name">Campo del Verdejo</span>
+      <span class="basket-item__name-sub">Bodegas Gallegas</span>
+      <div class="basket-item__descr">
+        <a href="#" class="basket-item__link">Белое вино</a>
+        <span class="basket-item__amount">0.7 л</span>
+        
+        <span class="basket-item__amount">1 шт</span>
+        
+
+        <span class="basket-item__price-text ">
+          978 <span class="basket-item__price-rub">Р.</span>
+        </span>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+        </div>
+      </div>       
+      <div class="tooltip-like__btn">
+        <a href="#" class="btn">Смотреть все избранные</a>
+      </div>
+      <div class="tooltip__no">
+        <div class="tooltip__no-title">Избранное</div>
+        <div class="tooltip__no-sub">Добавьте сюда ваше любимое</div>
+        <div class="tooltip__no-btn">
+          <a href="#" class="btn">Каталог</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="header-body__ctrl-item header-body__ctrl-item--basket tooltip-basket">
+  <span class="header-body__ctrl-label">Корзина</span>
+  <span class="header-body__ctrl-num">
+            <span class="header-body__ctrl-num-count">3</span>
+            <svg class="icon-basket">
+              <use xlink:href="#basket"></use>
+            </svg>     
+          </span>
+
+  <div class="tooltip tooltip--arrow-right js-basket-tooltip">
+    <div class="tooltip__container">
+      <div class="tooltip-basket__holder">
+        <div class="tooltip__item">
+          <div class="card-sm">
+  <div class="basket-item">
+    
+    <span class="basket-item__remove js-tooltip-remover"></span>
+    
+    
+    <div class="basket-item__col basket-item__col--img">
+      <div class="basket-item__img-wrap">
+        <img src="pic/products/products-02.png" alt="">
+      </div>
+
+    </div>
+
+    <div class="basket-item__col basket-item__col--name">
+      <span class="basket-item__name">Campo del Verdejo</span>
+      <span class="basket-item__name-sub">Bodegas Gallegas</span>
+      <div class="basket-item__descr">
+        <a href="#" class="basket-item__link">Белое вино</a>
+        <span class="basket-item__amount">0.7 л</span>
+        
+        <span class="basket-item__amount">1 шт</span>
+        
+
+        <span class="basket-item__price-text accent">
+          978 <span class="basket-item__price-rub">Р.</span>
+        </span>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+        </div>
+        <div class="tooltip__item">
+          <div class="card-sm">
+  <div class="basket-item">
+    
+    <span class="basket-item__remove js-tooltip-remover"></span>
+    
+    
+    <div class="basket-item__col basket-item__col--img">
+      <div class="basket-item__img-wrap">
+        <img src="pic/products/products-02.png" alt="">
+      </div>
+
+    </div>
+
+    <div class="basket-item__col basket-item__col--name">
+      <span class="basket-item__name">Campo del Verdejo</span>
+      <span class="basket-item__name-sub">Bodegas Gallegas</span>
+      <div class="basket-item__descr">
+        <a href="#" class="basket-item__link">Белое вино</a>
+        <span class="basket-item__amount">0.7 л</span>
+        
+        <span class="basket-item__amount">1 шт</span>
+        
+
+        <span class="basket-item__price-text ">
+          1 978 <span class="basket-item__price-rub">Р.</span>
+        </span>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+        </div>
+      </div>
+      <div class="tooltip-basket__total">
+        <div class="tooltip-basket__total-title">Итого:</div>
+        <div class="tooltip-basket__total-price">
+          <div class="tooltip-basket__total-num">3 товара</div>
+          <div class="tooltip-basket__total-sum">5 728</div>
+          <div class="tooltip-basket__total-currency">Р.</div>
+        </div>
+      </div>
+      <div class="tooltip-basket__btn">
+        <a href="#" class="btn btn--border">Перейти в корзину</a>
+      </div>
+      <div class="tooltip-basket__btn">
+        <a href="#" class="btn btn--red">Оформить заказ</a>
+      </div>
+      
+      <div class="tooltip__no">
+        <div class="tooltip__no-title">Пусто</div>
+        <div class="tooltip__no-sub">Алкоголь? — Это к нам</div>
+        <div class="tooltip__no-btn">
+          <a href="#" class="btn">Каталог</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="header-nav js-header-nav">
+  <div class="header-nav__block header-nav__main">
+    <div class="container">
+      <div class="header-nav__holder">
+        <a href="#" class="header-nav__title">Каталог</a>
+        <div class="header-nav__list-holder">
+          <ul class="header-nav__list js-main-nav">
+            <li class="header-nav__list-item">
+              <div class="header-nav__list-link">Арманьяк</div>
+              <div class="nav-sub">
+  <div class="container">
+    <div class="clearfix">
+      <div class="nav-sub__info">
+        <div class="nav-sub__info-holder">
+          <div class="nav-sub__list">
+            <div class="nav-sub__list-item nav-sub__list-item--title">Регионы</div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Франция</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Италия</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Россия</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Грузия</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Испания</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Германия</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Чили</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">ЮАР</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Португалия</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Новая Зеландия</a>
+            </div>
+          </div>        
+          
+          <div class="nav-sub__list">
+            <div class="nav-sub__list-item nav-sub__list-item--title">Типы</div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Красные вина</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Каберне Совиньон</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Белые вина</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Шардоне</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Рислинг</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Розовые вина</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Игристые</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Портвейн</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Херес</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Шираз</a>
+            </div>
+          </div> 
+          
+          <div class="nav-sub__list">
+            <div class="nav-sub__list-item nav-sub__list-item--title">Популярное</div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Кьянти</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link"> Бордо</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Просекко</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Риоха</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Шабли</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Бургундия</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Тоскана</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Сицилия</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Вина Нового Света</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Вина Шато</a>
+            </div>
+          </div>
+          
+          <div class="nav-sub__list">
+            <div class="nav-sub__list-item nav-sub__list-item--title">Рейтинг и цена</div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">80+</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">85+</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">90+</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">95+</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">80+ до 1 000 Р.</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">90+ до 3 000 Р.</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">500 — 1 000 Р.</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link"> 1 000 — 1 500 Р.</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">1 500 — 3 000 Р.</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">более 3 000 Р.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-sub__item">
+        <div class="card__inner">
+
+          <div class="card__rating">
+            <span class="card__rating-value">4.5</span>
+            <span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+          </div>
+
+          <div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+          </div>
+
+          <div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+          </div>
+
+
+          <div class="card__img-wrap">
+            <a href="#" class="card__img-link" tabindex="-1">
+              <img src="pic/products/products-07.png" alt="">
+            </a>
+          </div>
+
+          <div class="card__content">
+            <div class="card__name-wrap js-name" style="height: 25px;">
+              <a href="#" class="card__link-name" tabindex="-1">Vega del Campo Verdejo</a>
+            </div>
+            <div class="card__brand-wrap js-brand" style="height: 31px;">
+              <a href="#" class="card__link-brand" tabindex="-1">Bodegas Gallegas</a>
+            </div>
+            <div class="card__descr-wrap js-descr" style="height: 41px;">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link" tabindex="-1">Белое вино</a>
+				</span>
+              <span class="card__descr-value">0.7 л</span>
+
+              <span class="card__descr-one">1 шт</span>
+
+              <span class="card__descr-country">
+					<img src="pic/flag/flag_it.png" alt="">
+				</span>
+            </div>
+            <div class="card__bott">
+				
+					<span class="card__price">
+						1 650
+						<span class="card__price-rub">Р.</span>
+					</span>
+
+
+              <div class="card__btn-wrap">
+                <a data-fancybox data-src="#popup-basket" href="javascript:;" class="btn btn--basket" tabindex="-1">В корзину</a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>    
+  </div>
+</div>
+
+            </li>
+            <li class="header-nav__list-item">
+              <a href="#" class="header-nav__list-link">Бренди</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="#" class="header-nav__list-link">Вино</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="#" class="header-nav__list-link">Виски</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="#" class="header-nav__list-link">Водка</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="#" class="header-nav__list-link">Джин</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="#" class="header-nav__list-link">Кальвадос</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="#" class="header-nav__list-link">Коньяк</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="#" class="header-nav__list-link">Пиво</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="#" class="header-nav__list-link">Ром</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="#" class="header-nav__list-link">Сыры</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="#" class="header-nav__list-link">Шоколад</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="#" class="header-nav__list-link">Бокалы</a>
+            </li>
+            <li class="header-nav__list-item">
+              <div class="header-nav__list-link">Аксессуары</div>
+              <div class="nav-sub">
+  <div class="container">
+    <div class="clearfix">
+      <div class="nav-sub__info">
+        <div class="nav-sub__info-holder">
+          <div class="nav-sub__list">
+            <div class="nav-sub__list-item nav-sub__list-item--title">Регионы 1</div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Франция</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Италия</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Россия</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Грузия</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Испания</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Германия</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Чили</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">ЮАР</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Португалия</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Новая Зеландия</a>
+            </div>
+          </div>
+
+          <div class="nav-sub__list">
+            <div class="nav-sub__list-item nav-sub__list-item--title">Типы 2</div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Красные вина</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Каберне Совиньон</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Белые вина</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Шардоне</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Рислинг</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Розовые вина</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Игристые</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Портвейн</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Херес</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Шираз</a>
+            </div>
+          </div>
+
+          <div class="nav-sub__list">
+            <div class="nav-sub__list-item nav-sub__list-item--title">Популярное 3</div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Кьянти</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link"> Бордо</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Просекко</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Риоха</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Шабли</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Бургундия</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Тоскана</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Сицилия</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Вина Нового Света</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">Вина Шато</a>
+            </div>
+          </div>
+
+          <div class="nav-sub__list">
+            <div class="nav-sub__list-item nav-sub__list-item--title">Рейтинг и цена 4</div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">80+</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">85+</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">90+</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">95+</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">80+ до 1 000 Р.</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">90+ до 3 000 Р.</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">500 — 1 000 Р.</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link"> 1 000 — 1 500 Р.</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">1 500 — 3 000 Р.</a>
+            </div>
+            <div class="nav-sub__list-item">
+              <a href="#" class="nav-sub__list-link">более 3 000 Р.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-sub__item">
+        <div class="card__inner">
+
+          <div class="card__rating">
+            <span class="card__rating-value">4.5</span>
+            <span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+          </div>
+
+          <div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+          </div>
+
+          <div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+          </div>
+
+
+          <div class="card__img-wrap">
+            <a href="#" class="card__img-link" tabindex="-1">
+              <img src="pic/products/products-07.png" alt="">
+            </a>
+          </div>
+
+          <div class="card__content">
+            <div class="card__name-wrap js-name" style="height: 25px;">
+              <a href="#" class="card__link-name" tabindex="-1">Vega del Campo Verdejo</a>
+            </div>
+            <div class="card__brand-wrap js-brand" style="height: 31px;">
+              <a href="#" class="card__link-brand" tabindex="-1">Bodegas Gallegas</a>
+            </div>
+            <div class="card__descr-wrap js-descr" style="height: 41px;">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link" tabindex="-1">Белое вино</a>
+				</span>
+              <span class="card__descr-value">0.7 л</span>
+
+              <span class="card__descr-one">1 шт</span>
+
+              <span class="card__descr-country">
+					<img src="pic/flag/flag_it.png" alt="">
+				</span>
+            </div>
+            <div class="card__bott">
+				
+					<span class="card__price">
+						1 650
+						<span class="card__price-rub">Р.</span>
+					</span>
+
+
+              <div class="card__btn-wrap">
+                <a data-fancybox data-src="#popup-basket" href="javascript:;" class="btn btn--basket" tabindex="-1">В корзину</a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+            </li>
+          </ul>
+        </div>
+        <div class="header-nav__more js-nav-hover">
+          <svg class="icon-more">
+            <use xlink:href="#more"></use>
+          </svg>
+          <div class="header-nav__btn">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--mob-->
+    <div class="header-mob-menu">
+      <div class="header-mob-menu__top">
+        <span>Магазин качественных вин</span>
+      </div>
+      <div class="header-mob-menu__body">
+        <div class="header-mob-menu__body-search">
+          <form method="get" action="" class="search">
+  <input type="search" name="search" class="input" placeholder="Поиск по каталогу" required>
+  <button type="submit" class="search__icon">
+    <svg>
+      <use xlink:href="#search"></use>
+    </svg>
+  </button>
+</form>
+
+        </div>
+        <div class="header-mob-menu__contact">
+          <div class="header-mob-menu__contact-top">
+            <a href="tel:88001231212" class="header-top__tel"><span>8 800 123 12 12</span></a>
+            <a href="#" class="header-top__lang">Eng</a>
+          </div>
+          <div class="header-mob-menu__contact-callback">
+           <a data-fancybox data-src="#popup-callback" href="javascript:;">Обратный звонок</a>
+          </div>
+        </div>
+        <ul class="header-mob-menu__list">
+          <li class="header-mob-menu__list-item">
+            <a href="#" class="header-mob-menu__list-link">О компании</a>
+          </li>
+          <li class="header-mob-menu__list-item">
+            <a href="#" class="header-mob-menu__list-link">Винные Клубы</a>
+          </li>
+          <li class="header-mob-menu__list-item">
+            <a href="#" class="header-mob-menu__list-link">Статьи</a>
+          </li>
+          <li class="header-mob-menu__list-item">
+            <a href="#" class="header-mob-menu__list-link">Адреса магазинов</a>
+          </li>
+        </ul>
+
+        <div class="header-mob-menu__ctrl">
+
+          <div class="header-mob-menu__ctrl-profile">
+            <a data-fancybox data-src="#popup-enter" href="javascript:;" class="header-body__ctrl-item header-body__ctrl-item--profile">
+              <svg class="icon-user">
+                <use xlink:href="#user"></use>
+              </svg>
+              <span class="header-body__ctrl-label">Войти в профиль</span>
+            </a>
+
+            <a data-fancybox data-src="#popup-registration" href="javascript:;" class="header-body__ctrl-label header-mob-menu__ctrl-profile-label">Зарегистрироваться</a>
+          </div>
+
+          <div class="header-mob-menu__ctrl-cnn">
+            <a href="#" class="header-body__ctrl-item header-body__ctrl-item--cnn">
+              <svg class="icon-cnn">
+                <use xlink:href="#cnn"></use>
+              </svg>
+              <span class="header-body__ctrl-label">Сравнение товаров</span>
+            </a>
+          </div>
+
+          <div class="header-mob-menu__ctrl-heart">
+            <a href="#" class="header-body__ctrl-item header-body__ctrl-item--heart">
+                <span class="header-body__ctrl-num">
+                  <span class="header-body__ctrl-num-count">2</span>
+                  <svg class="icon-heart">
+                    <use xlink:href="#heart"></use>
+                  </svg>     
+                 </span>
+              <span class="header-body__ctrl-label">Избранное</span>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="header-mob-menu__city">
+          <div class="header-top__city js-tooltip-city">
+  <div class="header-top__city-title">Ваш город
+    <strong>
+      <span class="header-top__city-trigger js-tooltip-city-trigger">
+        Москва
+      </span>?</strong>
+  </div>
+  <div class="header-top__city-answer">
+    <button class="header-top__city-btn active">Да</button>
+    <button class="header-top__city-btn">Нет</button>
+  </div>
+  
+  <div class="js-tooltip-city-drop tooltip tooltip--sm tooltip--city">
+    <div class="tooltip__container ">
+      <div class="tooltip-city">
+        <input type="text" class="input tooltip-city__input js-tooltip-city-search">
+        <div class="tooltip-city__no-result js-tooltip-city-search-not-found">Not found...</div>
+        <ul class="tooltip-city__result">
+          <li class="tooltip-city__result-item">Ростов Великий</li>
+          <li class="tooltip-city__result-item">Ростов-на-Дону</li>
+          <li class="tooltip-city__result-item">Москва</li>
+          <li class="tooltip-city__result-item">City 1</li>
+          <li class="tooltip-city__result-item">City 2</li>
+          <li class="tooltip-city__result-item">City 3</li>          
+          <li class="tooltip-city__result-item">Paris</li>          
+        </ul>
+      </div>
+    </div>
+  </div>
+    
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div class="header-mob-nav">
+      <div class="header-mob-nav__top">
+        <div class="header-mob-nav__top-title js-mob-nav-title" data-default="Каталог">Каталог</div>
+        <div class="header-mob-nav__top-close js-close-mob-nav"></div>
+      </div>
+      <div class="header-mob-nav__body js-mob-nav-body is-no-more-btn">
+        <ul class="header-mob-nav__list js-mob-nav-list-main">
+          <li class="header-nav__list-item js-mob-nav-list-item">
+            <div class="header-nav__list-link">Арманьяк</div>
+            <ul class="header-mob-nav__list js-mob-nav-list">
+              <li class="header-nav__list-item js-mob-nav-list-item">
+                <a href="#" class="header-nav__list-link">sublist 1</a>
+              </li>
+              <li class="header-nav__list-item js-mob-nav-list-item">
+                <a href="#" class="header-nav__list-link">sublist 2</a>
+              </li>
+              <li class="header-nav__list-item header-mob-nav__all">
+                <a href="#" class="btn">Показать все товары</a>
+              </li>
+            </ul>
+          </li>
+          <li class="header-nav__list-item js-mob-nav-list-item">
+            <div class="header-nav__list-link">Бренди</div>
+            <ul class="header-mob-nav__list js-mob-nav-list">
+              <li class="header-nav__list-item js-mob-nav-list-item">
+                <a href="#" class="header-nav__list-link">ss 1</a>
+              </li>
+              <li class="header-nav__list-item js-mob-nav-list-item">
+                <a href="#" class="header-nav__list-link">ss 2</a>
+              </li>
+              <li class="header-nav__list-item header-mob-nav__all">
+                <a href="#" class="btn">Показать все товары</a>
+              </li>
+            </ul>
+          </li>
+          <li class="header-nav__list-item js-mob-nav-list-item">
+            <div class="header-nav__list-link">Вино</div>
+            <ul class="header-mob-nav__list js-mob-nav-list">
+              <li class="header-nav__list-item js-mob-nav-list-item">
+                <div class="header-nav__list-link">Регионы</div>
+                <ul class="header-mob-nav__list js-mob-nav-list">
+                  <li class="header-nav__list-item js-mob-nav-list-item">
+                    <a href="#" class="header-nav__list-link">sublist inside other sublist 1</a>
+                  </li>
+                  <li class="header-nav__list-item js-mob-nav-list-item">
+                    <a href="#" class="header-nav__list-link">sublist inside other sublist 1</a>
+                  </li>
+                  <li class="header-nav__list-item header-mob-nav__all">
+                    <a href="#" class="btn">Показать все товары</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-nav__list-item js-mob-nav-list-item">
+                <a href="#" class="header-nav__list-link">Типы</a>
+              </li>
+              <li class="header-nav__list-item js-mob-nav-list-item">
+                <a href="#" class="header-nav__list-link">Популярное</a>
+              </li>
+              <li class="header-nav__list-item js-mob-nav-list-item">
+                <a href="#" class="header-nav__list-link">Рейтинг и цена</a>
+              </li>
+              <li class="header-nav__list-item header-mob-nav__all">
+                <a href="#" class="btn">Показать все товары</a>
+              </li>
+            </ul>
+          </li>
+          <li class="header-nav__list-item js-mob-nav-list-item">
+            <div class="header-nav__list-link">Виски</div>
+            <ul class="header-mob-nav__list js-mob-nav-list">
+              <li class="header-nav__list-item js-mob-nav-list-item">
+                <a href="#" class="header-nav__list-link">no sublists below!</a>
+              </li>
+              <li class="header-nav__list-item js-mob-nav-list-item">
+                <a href="#" class="header-nav__list-link">no sublists below!</a>
+              </li>
+              <li class="header-nav__list-item js-mob-nav-list-item">
+                <a href="#" class="header-nav__list-link">no sublists below!</a>
+              </li>
+              <li class="header-nav__list-item js-mob-nav-list-item">
+                <a href="#" class="header-nav__list-link">no sublists below!</a>
+              </li>
+              <li class="header-nav__list-item js-mob-nav-list-item">
+                <a href="#" class="header-nav__list-link">no sublists below!</a>
+              </li>
+              <li class="header-nav__list-item header-mob-nav__all">
+                <a href="#" class="btn">Показать все товары</a>
+              </li>
+            </ul>
+          </li>
+          <li class="header-nav__list-item js-mob-nav-list-item">
+            <a href="#" class="header-nav__list-link">Водка</a>
+          </li>
+          <li class="header-nav__list-item js-mob-nav-list-item">
+            <a href="#" class="header-nav__list-link">Джин</a>
+          </li>
+          <li class="header-nav__list-item js-mob-nav-list-item">
+            <a href="#" class="header-nav__list-link">Кальвадос</a>
+          </li>
+          <li class="header-nav__list-item js-mob-nav-list-item">
+            <a href="#" class="header-nav__list-link">Коньяк</a>
+          </li>
+          <li class="header-nav__list-item js-mob-nav-list-item">
+            <a href="#" class="header-nav__list-link">Пиво</a>
+          </li>
+          <li class="header-nav__list-item js-mob-nav-list-item">
+            <a href="#" class="header-nav__list-link">Ром</a>
+          </li>
+          <li class="header-nav__list-item js-mob-nav-list-item">
+            <a href="#" class="header-nav__list-link">Сыры</a>
+          </li>
+          <li class="header-nav__list-item js-mob-nav-list-item">
+            <a href="#" class="header-nav__list-link">Шоколад</a>
+          </li>
+          <li class="header-nav__list-item js-mob-nav-list-item">
+            <a href="#" class="header-nav__list-link">Бокалы</a>
+          </li>
+          <li class="header-nav__list-item js-mob-nav-list-item">
+            <a href="#" class="header-nav__list-link">Аксессуары</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="header-nav__block header-nav__sub-drop">
+    <div class="container">
+      <!--Do not put anything into the list below. This will do with JavaScript-->
+      <ul class="header-nav__list header-nav__list--revert js-sub-nav"></ul>
+    </div>
+  </div>
+</div>
+
+  
+</header>
+
+		
+		<div itemscope itemtype="http://schema.org/Product">
+
+      <div class="product">
+	<div class="container">
+		<div class="product__wrapp">
+			<div class="product__col product__col--descr">
+
+				<ul class="product__category" itemscope itemtype="http://schema.org/BreadcrumbList">
+					<li class="product__category-item" itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+						<a href="#" class="product__category-link" itemprop="item">
+							<span itemprop="name">Вино</span>	
+						</a>
+						<meta itemprop="position" content="1" />
+					</li>
+					<li class="product__category-item" itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+						<a href="#" class="product__category-link" itemprop="item">
+							<span itemprop="name">Белые вина</span>	
+						</a>
+						<meta itemprop="position" content="2" />
+					</li>
+					<li class="product__category-item" itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+						<a href="#" class="product__category-link" itemprop="item">
+							<span itemprop="name">Шардоне</span>	
+						</a>
+						<meta itemprop="position" content="3" />
+					</li>
+				</ul>
+
+				<h1 class="product__caption" itemprop="name">Chardonnay Escudo Rojo</h1>
+
+				<div class="product__vendor">
+					<span class="product__vendor-text">Арт. 100.100.456</span>
+					<span class="product__vendor-name">Шардоне Эскудо Ройо</span>
+				</div>
+
+				<div class="product__rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+					<span class="product__rating-text">7.5</span>
+					<meta itemprop="itemReviewed" content="Название вина" />
+					<meta itemprop="worstRating" content="1" />
+					<meta itemprop="ratingValue" content="4.5" />
+					<meta itemprop="bestRating" content="9" />
+					<meta itemprop="reviewCount" content="10" />
+					<div class="product__rating-wrap">
+						<div class="product__rating-back">
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+						</div>
+						<div class="product__rating-top" style="width: 147px;">
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="product__rating-link-wrap">
+						<a href="#" class="product__rating-link">2</a>
+					</div>
+				</div>
+
+				<div class="product__reward-outer" itemprop="description">
+					<span class="product__top-title">Рейтинги и награды:</span>
+					<div class="product__reward-wrap">
+						<span class="product__reward">Vivino 4.2</span>
+					</div>
+					<div class="product__reward-wrap">
+						<span class="product__reward">+2</span>
+						<span class="product__reward-text">за другие винтажи</span>
+					</div>
+					<ul class="product__list-info">
+						<li class="product__item-info">
+							<span class="product__name-info">Вино:</span>
+							<span class="product__link-wrap">
+								<a href="#" class="product__link">Белое</a>,
+								<a href="#" class="product__link">сухое</a>
+							</span>
+						</li>
+						<li class="product__item-info">
+							<span class="product__name-info">Регион:</span>
+							<span class="product__link-wrap">
+								<a href="#" class="product__link">Новая Зеландия</a>,
+								<a href="#" class="product__link">Мальборо</a>
+							</span>
+						</li>
+						<li class="product__item-info">
+							<span class="product__name-info">Производитель:</span>
+							<span class="product__link-wrap">
+								<a href="#" class="product__link">Yealands</a>
+							</span>
+						</li>
+						<li class="product__item-info">
+							<span class="product__name-info">Бренд:</span>
+							<span class="product__link-wrap">
+								<a href="#" class="product__link">Clearwater Cove</a>
+							</span>
+						</li>
+						<li class="product__item-info">
+							<span class="product__name-info">Крепость:</span>
+							<span class="product__link-wrap">
+								12%
+							</span>
+						</li>
+						<li class="product__item-info">
+							<span class="product__name-info">Объем:</span>
+							<span class="product__link-wrap">
+								<a href="#" class="product__link">0.75 л</a>
+							</span>
+						</li>
+						<li class="product__item-info">
+							<span class="product__name-info">Виноград:</span>
+							<span class="product__link-wrap">
+								<a href="#" class="product__link">Совиньон Блан:</a>
+								<span class="product__item-info-text">100%</span>
+							</span>
+						</li>
+						<li class="product__item-info">
+							<span class="product__name-info">Сочетается с:</span>
+							<span class="product__link-wrap">
+								<svg class="icon-combined-1">
+									<use xlink:href="#combined-1"></use>
+								</svg>
+								<svg class="icon-combined-2">
+									<use xlink:href="#combined-2"></use>
+								</svg>
+								<svg class="icon-combined-3">
+									<use xlink:href="#combined-3"></use>
+								</svg>
+								<svg class="icon-combined-4">
+									<use xlink:href="#combined-4"></use>
+								</svg>
+							</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="product__descr-link-wrap">
+					<a href="#" class="product__descr-link">Описание</a>
+				</div>
+			</div>
+
+
+			<div class="product__col product__col--slider">
+				<span class="product__col-sale">-10%</span>
+				<div class="product__col-top js-product-slider">
+					<div class="product__col-item">
+						<img src="pic/products/products-07.png" alt="" itemprop="image">
+					</div>
+					<div class="product__col-item">
+						<img src="pic/products/products-02.png" alt="" itemprop="image">
+					</div>
+				</div>
+				<div class="product__col-bott">
+					<span class="descr__counter js-product-count">1</span> /
+					<span class="descr__all js-product-all">3</span>
+				</div>
+			</div>
+
+
+			<div class="product__col product__col--card">
+				<div class="product__card">
+					<div class="product__card-inner">
+						<span class="product__card-title">Выбор объема</span>
+						<ul class="product__card-list">
+							<li class="product__card-item">
+								<label class="radio-choice">
+									<input type="radio" name="radio" disabled="disabled">
+									<span>0.5 л</span>
+								</label>
+							</li>
+							<li class="product__card-item">
+								<label class="radio-choice">
+									<input type="radio" name="radio">
+									<span>0.7 л</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+
+					<div class="product__card-inner">
+						<span class="product__card-title">Выбор винтажа</span>
+						<ul class="product__card-list">
+							<li class="product__card-item">
+								<label class="radio-choice">
+									<input type="radio" name="radio-year" disabled="disabled">
+									<span>2013</span>
+								</label>
+							</li>
+							<li class="product__card-item">
+								<label class="radio-choice">
+									<input type="radio" name="radio-year" checked>
+									<span>2014</span>
+								</label>
+							</li>
+							<li class="product__card-item">
+								<label class="radio-choice">
+									<input type="radio" name="radio-year">
+									<span>2015</span>
+								</label>
+							</li>
+							<li class="product__card-item">
+								<label class="radio-choice">
+									<input type="radio" name="radio-year">
+									<span>2016</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+
+					<div class="product__card-old-wrap">
+						<span class="product__card-old-price">1 650 <span class="product__card-rub">Р.</span></span>
+						<span class="product__card-sale">Скидка 165 Р.</span>
+					</div>
+
+					<div class="product__card-price-wrap">
+						<span class="product__card-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+							1 485
+							<meta itemprop="price" content="1485"/>
+							<span class="product__card-rub-big" itemprop="priceCurrency" content="RUB">Р.</span>
+							<link itemprop="availability" href="http://schema.org/InStock">
+						</span>
+						<div class="product__card-spinner">
+							<div class="spinner js-spinner" data-min="1" data-max="99">
+								<a href="#" class="spinner__minus js-spinner-minus"></a>
+								<div class="spinner__input">
+									<input type="text" class="spinner__text" readonly>
+								</div>
+								<a href="#" class="spinner__plus js-spinner-plus"></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="product__card-add-btn">
+						<a data-fancybox data-src="#popup-basket" href="javascript:;" class="btn btn--red product__card-btn">Добавить в корзину</a>
+					</div>
+
+					<div class="product__card-row">
+						<span class="product__card-left">За одну бутылку</span>
+						<span class="product__card-right">1 250 <span class="product__card-rub">Р.</span></span>
+					</div>
+
+					<div class="product__card-row product__card-row--box">
+						<span class="product__card-left">Ящик, 12 бутылок</span>
+						<span class="product__card-right">15 000 <span class="product__card-rub">Р.</span></span>
+					</div>
+
+					<div class="product__card-btn-box">
+						<a data-fancybox data-src="#popup-basket" href="javascript:;" class="btn product__card-box">
+							<span class="product__btn-text">Купить ящик</span>
+							<span class="product__btn-icon">
+								<svg class="icon-trash">
+									<use xlink:href="#trash"></use>
+								</svg>
+							</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="product__add">
+					<div class="product__add-row js-toggle-active" data-text="Добавить в избранное" data-new="В избранном">
+						<span class="product__add-text js-toggle-text">Добавить в избранное</span>
+						<span class="product__add-icon">
+							<svg class="icon-heart">
+								<use xlink:href="#heart"></use>
+							</svg>
+						</span>
+					</div>
+					<div class="product__add-row js-toggle-active" data-text="Сравнить вино" data-new="В сравнении">
+						<span class="product__add-text js-toggle-text">Сравнить вино</span>
+						<span class="product__add-icon">
+							<svg class="icon-cnn">
+								<use xlink:href="#cnn"></use>
+							</svg>
+						</span>
+					</div>
+					<div class="product__social">
+						<span class="product__social-text">Поделиться</span>
+						<div class="product__social-wrap">
+							<a href="#" class="product__social-item">
+								<svg class="icon-facebook">
+									<use xlink:href="#facebook"></use>
+								</svg>
+							</a>
+							<a href="#" class="product__social-item">
+								<svg class="icon-vk">
+									<use xlink:href="#vk"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+      <div class="stock">
+	<div class="container">
+		<div class="stock__wrap js-stock-slider">
+			
+				<div class="stock__item">
+					<span class="stock__item-icon">
+						<svg class="icon-car">
+							<use xlink:href="#car"></use>
+						</svg>
+					</span>
+					<span class="stock__item-text">
+						Доставка в Краснодар <b>300 рублей</b>
+					</span>
+				</div>
+			
+				<div class="stock__item">
+					<span class="stock__item-icon">
+						<svg class="icon-percent">
+							<use xlink:href="#percent"></use>
+						</svg>
+					</span>
+					<span class="stock__item-text">
+						<b>+5%</b> к скидке постоянного клиента за заказ
+					</span>
+				</div>
+			
+				<div class="stock__item">
+					<span class="stock__item-icon">
+						<svg class="icon-gift">
+							<use xlink:href="#gift"></use>
+						</svg>
+					</span>
+					<span class="stock__item-text">
+						При заказе <b> от 10 шт.</b> - подарок
+					</span>
+				</div>
+			
+				<div class="stock__item">
+					<span class="stock__item-icon">
+						<svg class="icon-percent">
+							<use xlink:href="#percent"></use>
+						</svg>
+					</span>
+					<span class="stock__item-text">
+						При покупке <b>скидка 10%</b> на товары «к вину»
+					</span>
+				</div>
+			
+		</div>
+		<div class="stock__bott">
+			<span class="stock__counter js-stock-count">1</span> /
+			<span class="stock__all js-stock-all">3</span>
+		</div>
+	</div>
+</div>
+
+      <div class="benefit">
+	<div class="container">
+		<div class="benefit__wrap js-benefit-slider">
+			<div class="benefit__item">
+				<div class="card js-height card--benefit">
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-07.png" alt="">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span>Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+					<span class="card__descr-one">1 шт</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_it.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price">
+						1 650
+						<span class="card__price-rub">Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+
+				<span class="benefit__sign">+</span>
+				<div class="card js-height card--benefit">
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-01.png" alt="">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span>Fiore Sardo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Philippe de Rothsch</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Твёрдый сыр</a>
+          
+				</span>
+
+				<span class="card__descr-value">300 гр</span>
+				
+					<span class="card__descr-one">1 шт</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_fr.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price">
+						1 270
+						<span class="card__price-rub">Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+
+				<span class="benefit__sign">=</span>
+				<div class="benefit__card js-height">
+					<div class="benefit__card-inner">
+						<span class="benefit__card-sale">– 25 %</span>
+						<span class="benefit__card-text">Скидка для настоящих ценителей изысканного вкуса</span>
+						<span class="benefit__card-price-old">2 920 <span class="benefit__price-old-rub">Р.</span></span>
+						<span class="benefit__card-price">2 190 <span class="benefit__price-rub">Р.</span></span>
+						<div class="benefit__btn-wrap">
+							<a data-fancybox data-src="#popup-basket" href="javascript:;" class="btn btn--red benefit__btn">Добавить в корзину</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="benefit__item">
+				<div class="card js-height card--benefit">
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-07.png" alt="">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span>Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+					<span class="card__descr-one">1 шт</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_it.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price">
+						1 650
+						<span class="card__price-rub">Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+
+				<span class="benefit__sign">+</span>
+				<div class="card js-height card--benefit">
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-01.png" alt="">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span>Fiore Sardo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Philippe de Rothsch</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Твёрдый сыр</a>
+          
+				</span>
+
+				<span class="card__descr-value">300 гр</span>
+				
+					<span class="card__descr-one">1 шт</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_fr.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price">
+						1 270
+						<span class="card__price-rub">Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+
+				<span class="benefit__sign">=</span>
+				<div class="benefit__card js-height">
+					<div class="benefit__card-inner">
+						<span class="benefit__card-sale">– 25 %</span>
+						<span class="benefit__card-text">Скидка для настоящих ценителей изысканного вкуса</span>
+						<span class="benefit__card-price-old">2 920 <span class="benefit__price-old-rub">Р.</span></span>
+						<span class="benefit__card-price">2 190 <span class="benefit__price-rub">Р.</span></span>
+						<div class="benefit__btn-wrap">
+							<a data-fancybox data-src="#popup-basket" href="javascript:;" class="btn btn--red benefit__btn">Добавить в корзину</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="benefit__item">
+				<div class="card js-height card--benefit">
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-07.png" alt="">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span>Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+					<span class="card__descr-one">1 шт</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_it.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price">
+						1 650
+						<span class="card__price-rub">Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+
+				<span class="benefit__sign">+</span>
+				<div class="card js-height card--benefit">
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-01.png" alt="">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span>Fiore Sardo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Philippe de Rothsch</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Твёрдый сыр</a>
+          
+				</span>
+
+				<span class="card__descr-value">300 гр</span>
+				
+					<span class="card__descr-one">1 шт</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_fr.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price">
+						1 270
+						<span class="card__price-rub">Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+
+				<span class="benefit__sign">=</span>
+				<div class="benefit__card js-height">
+					<div class="benefit__card-inner">
+						<span class="benefit__card-sale">– 25 %</span>
+						<span class="benefit__card-text">Скидка для настоящих ценителей изысканного вкуса</span>
+						<span class="benefit__card-price-old">2 920 <span class="benefit__price-old-rub">Р.</span></span>
+						<span class="benefit__card-price">2 190 <span class="benefit__price-rub">Р.</span></span>
+						<div class="benefit__btn-wrap">
+							<a data-fancybox data-src="#popup-basket" href="javascript:;" class="btn btn--red benefit__btn">Добавить в корзину</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+      <div class="fixed-item js-fixed-item">
+	<div class="container">
+		<div class="fixed-item__wrap">
+			<div class="fixed-item__col fixed-item__col--name">
+				Chardonnay por «Escudo Rojo»
+			</div>
+			<div class="fixed-item__col fixed-item__col--select">
+				<div class="fixed-item__select-wrap js-select-wrap">
+					<select name="" id="" class="js-select">
+						<option value="">0.2 л</option>
+						<option value="">0.5 л</option>
+						<option value="" selected>0.7 л</option>
+						<option value="">0.9 л</option>
+						<option value="">1.5 л</option>
+					</select>
+				</div>
+				<div class="fixed-item__select-wrap js-select-wrap">
+					<select name="" id="" class="js-select">
+						<option value="">2011</option>
+						<option value="">2012</option>
+						<option value="">2013</option>
+						<option value="" selected>2014</option>
+						<option value="">2015</option>
+						<option value="">2016</option>
+						<option value="">2017</option>
+					</select>
+				</div>
+			</div>
+			<div class="fixed-item__col fixed-item__col--price">
+				1 485 <span class="fixed-item__rub">Р.</span>
+			</div>
+			<div class="fixed-item__col fixed-item__col--spiner">
+				<div class="spinner js-spinner" data-min="1" data-max="99">
+					<a href="#" class="spinner__minus js-spinner-minus"></a>
+					<div class="spinner__input">
+						<input type="text" class="spinner__text" readonly>
+					</div>
+					<a href="#" class="spinner__plus js-spinner-plus"></a>
+				</div>
+			</div>
+			<div class="fixed-item__col fixed-item__col--btn">
+				<a data-fancybox data-src="#popup-basket" href="javascript:;" class="btn btn--red fixed-item__btn">Добавить в корзину</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+      <div class="descr">
+	<div class="container">
+		<span class="descr__caption">Chardonnay por «Escudo Rojo»</span>
+		<div class="descr__top">
+			<div class="descr__col descr__col--reward">
+				<span class="descr__top-title">Рейтинги и награды:</span>
+				<div class="descr__reward-wrap">
+					<span class="descr__reward">Vivino 4.2</span>
+				</div>
+				<div class="descr__reward-wrap">
+					<span class="descr__reward">+2</span>
+					<span class="descr__reward-text">за другие винтажи</span>
+				</div>
+
+				<ul class="descr__list-info">
+					<li class="descr__item-info">
+						<span class="descr__name-info">Вино:</span>
+						<span class="descr__link-wrap">
+							<a href="#" class="descr__link">Белое</a>,
+							<a href="#" class="descr__link">сухое</a>
+						</span>
+					</li>
+					<li class="descr__item-info">
+						<span class="descr__name-info">Регион:</span>
+						<span class="descr__link-wrap">
+							<a href="#" class="descr__link">Новая Зеландия</a>,
+							<a href="#" class="descr__link">Мальборо</a>
+						</span>
+					</li>
+					<li class="descr__item-info">
+						<span class="descr__name-info">Производитель:</span>
+						<span class="descr__link-wrap">
+							<a href="#" class="descr__link">Yealands</a>
+						</span>
+					</li>
+					<li class="descr__item-info">
+						<span class="descr__name-info">Бренд:</span>
+						<span class="descr__link-wrap">
+							<a href="#" class="descr__link">Clearwater Cove</a>
+						</span>
+					</li>
+					<li class="descr__item-info">
+						<span class="descr__name-info">Крепость:</span>
+						<span class="descr__link-wrap">
+							12%
+						</span>
+					</li>
+					<li class="descr__item-info">
+						<span class="descr__name-info">Объем:</span>
+						<span class="descr__link-wrap">
+							<a href="#" class="descr__link">0.75 л</a>
+						</span>
+					</li>
+					<li class="descr__item-info">
+						<span class="descr__name-info">Виноград:</span>
+						<span class="descr__link-wrap">
+							<a href="#" class="descr__link">Совиньон Блан:</a>
+							<span class="descr__item-info-text">100%</span>
+						</span>
+					</li>
+				</ul>
+			</div>
+
+			<div class="descr__col">
+				<span class="descr__title">Сервировка и подача</span>
+				<span class="descr__recomendation">
+					Рекомендуется подавать при 10-12°С к салатам с теплой печенью, холодным закускам из рыбы и сыра, жюльену с грибами, стейкам из красной рыбы, жареной кефали, курице с черносливом, тушеному катрану, паэлье и пасте с субпродуктами.
+				</span>
+				<div class="descr__wineglass-wrap">
+					<span class="descr__wineglass-icon">
+						<svg class="icon-wineglass">
+							<use xlink:href="#wineglass"></use>
+						</svg>
+					</span>
+					<span class="descr__wineglass-text-wrap">
+						<span class="descr__wineglass-text descr__wineglass-text--name">Форма бокала</span>
+						<b class="descr__wineglass-text">«Бордо» для белых вин</b>
+					</span>
+				</div>
+			</div>
+
+			<div class="descr__col">
+				<span class="descr__title">Сочетается с</span>
+				<ul class="descr__list-combined">
+					<li class="descr__item-combined">
+						<span class="descr__icon-combined">
+							<svg class="icon-combined-1">
+								<use xlink:href="#combined-1"></use>
+							</svg>
+						</span>
+						<span class="descr__text-combined">Японская кухня</span>
+					</li>
+					<li class="descr__item-combined">
+						<span class="descr__icon-combined">
+							<svg class="icon-combined-2">
+								<use xlink:href="#combined-2"></use>
+							</svg>
+						</span>
+						<span class="descr__text-combined">Рыба</span>
+					</li>
+					<li class="descr__item-combined">
+						<span class="descr__icon-combined">
+							<svg class="icon-combined-3">
+								<use xlink:href="#combined-3"></use>
+							</svg>
+						</span>
+						<span class="descr__text-combined">Морепродукты</span>
+					</li>
+					<li class="descr__item-combined">
+						<span class="descr__icon-combined">
+							<svg class="icon-combined-4">
+								<use xlink:href="#combined-4"></use>
+							</svg>
+						</span>
+						<span class="descr__text-combined">Сыр</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="descr__bott">
+			<div class="descr__left">
+				<span class="descr__title">О бренде Philippe de Rothschild</span>
+				<p class="descr__brand-text">В конце 18-го века у майера Амшеля Ротшильда, купца во Франкфурте-гетто, было пять сыновей. В 1789 году, после того, как они начали заниматься бизнесом, он решил отправить четыре из них в четыре крупные европейские столицы того времени: Саломон в Вену, Натаниэль в Лондон, Карл в Неаполь и Джеймс в Париж, Амшель Младший, остающийся на его отца во Франкфурте. Миф о Ротшильде был готов принять крыло. Исходя из сплоченной семьи, братья Ротшильды остались в постоянном контакте и стали пионером в области обмена информацией быстрее и эффективнее, чем кто-либо другой. Именно эти коммуникативные навыки позволили им предвидеть далеко идущие изменения, а затем охватить всю Европу. В XIX веке банкиры в Европе Наполеона, а затем в индустриальную эпоху, строители современной экономики, говорили, что они равны правительствам.</p>
+				<a href="#" class="descr__brand-link">www.bpdr.com</a>
+			</div>
+			<div class="descr__right">
+				<h2 class="descr__title descr__title--right">Рейтинг и отзывы</h2>
+				<div class="descr__rating">
+					<span class="descr__rating-text">7.5</span>
+					<div class="descr__rating-wrap">
+						<div class="descr__rating-back">
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+						</div>
+						<div class="descr__rating-top" style="width: 147px;">
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+							<svg class="icon-rating-star">
+								<use xlink:href="#rating-star"></use>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="descr__slider-wrap js-descr-slider">
+					
+						<div class="descr__slider-item" itemprop="review" itemscope itemtype="http://schema.org/Review">
+							<div class="descr__slider-head">
+								<span class="descr__slider-name" itemprop="author">Максим Шестопалов</span>
+						    <meta itemprop="itemReviewed" content="Вино Trivento Tribu Malbec" />
+								<span class="descr__slider-date" itemprop="datePublished">20 февраля 2016</span>
+							</div>
+							<div class="descr__slider-rating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+							  <meta itemprop="worstRating" content = "1"/>
+								<span class="descr__slider-value" itemprop="ratingValue">9.0</span>
+								<meta itemprop="bestRating" content = "10"/>
+								<span class="descr__slider-icon">
+									<svg class="icon-rating-star">
+										<use xlink:href="#rating-star"></use>
+									</svg>
+								</span>
+							</div>
+							<span class="descr__slider-text" itemprop="description">Вкус вина одновременно фруктовый, сочный, долгий и продолжительный, нежный, изысканный и элегантный. Вино станет важным украшением ужина. Эскудо Рохо Шардоне безупречно подчеркнет вкус таких блюд как рыба, омар и лобстер, салат, овощи, карпаччо, мясо. Отведав Эскудо Рохо Шардоне, вам непременно захочется еще раз получить удовольствие от этого чудесного напитка.</span>
+						</div>
+					
+						<div class="descr__slider-item" itemprop="review" itemscope itemtype="http://schema.org/Review">
+							<div class="descr__slider-head">
+								<span class="descr__slider-name" itemprop="author">Кирилов Кирил</span>
+						    <meta itemprop="itemReviewed" content="Вино Trivento Tribu Malbec" />
+								<span class="descr__slider-date" itemprop="datePublished">20 мая 2016</span>
+							</div>
+							<div class="descr__slider-rating" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+							  <meta itemprop="worstRating" content = "1"/>
+								<span class="descr__slider-value" itemprop="ratingValue">8.9</span>
+								<meta itemprop="bestRating" content = "10"/>
+								<span class="descr__slider-icon">
+									<svg class="icon-rating-star">
+										<use xlink:href="#rating-star"></use>
+									</svg>
+								</span>
+							</div>
+							<span class="descr__slider-text" itemprop="description">Вкус вина одновременно фруктовый, сочный, долгий и продолжительный, нежный, изысканный и элегантный.  Эскудо Рохо Шардоне безупречно подчеркнет вкус таких блюд как рыба, омар и лобстер, салат, овощи, карпаччо, мясо.</span>
+						</div>
+					
+				</div>
+				<div class="descr__count-wrap js-wrap-descr">
+					<span class="descr__counter js-descr-count">1</span> /
+					<span class="descr__all js-descr-all">3</span>
+				</div>
+				<div class="descr__btn-wrap">
+					<a data-fancybox data-src="#popup-reviews" href="javascript:;" class="btn">Оставить отзыв</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+   
+    </div>
+    
+		<div class="callback" style="background-image: url(pic/art/art-14.jpg);">
+	<div class="container">
+		<div class="callback__wrapp">
+			<div class="callback__col callback__col--left">
+				<img src="pic/art/art-19.png" alt="">
+			</div>
+			<div class="callback__col callback__col--right">
+				<span class="callback__caption">Позвоните специалисту</span>
+				<span class="callback__text">Наш специалист отлично разбирается в вине и поможет Вам сделать правильный выбор.</span>
+				<div class="callback__bott">
+					<span class="callback__phone">
+						<a href="tel:88001231212" class="callback__phone-link">8 800 123 12 12</a>
+					</span>
+					<span class="callback__popup">
+						<a data-fancybox data-src="#popup-callback" href="javascript:;" class="callback__popup-link">Обратный звонок</a>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="product__slider">
+
+			<div class="container">
+
+				<div class="basket__goods js-wrap-basket">
+					<span class="basket__goods-caption">Похожие товары</span>
+					<div class="basket__goods-wrap js-basket-slider">
+						<div class="card card--sale">
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+			<span class="card__sale">-15%</span>
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-02.png" alt="">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span>Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_fr.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+				
+					<span class="card__price">
+						978
+						<span class="card__price-rub">Р.</span>
+						<span class="card__price-old">1 150</span>
+					</span>
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+<div class="card ">
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-03.png" alt="">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span>Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_fr.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price">
+						1 240
+						<span class="card__price-rub">Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+<div class="card ">
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-07.png" alt="">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span>Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_it.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price">
+						1 240
+						<span class="card__price-rub">Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+<div class="card ">
+	<div class="card__inner">
+		
+		
+		
+		
+			<div class="card__rating card__rating--absent">
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-04.png" alt="">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span>Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_fr.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price">
+						1 450
+						<span class="card__price-rub">Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+
+					</div>
+					<div class="basket__goods-bott">
+						<div class="container">
+							<div class="basket__goods-bott-left">
+								<span class="basket__counter js-basket-count">1</span> /
+								<span class="basket__all js-basket-all">3</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="basket__goods js-wrap-basket">
+					<span class="basket__goods-caption">Рекомендуем приобрести</span>
+					<div class="basket__goods-wrap js-basket-slider">
+						<div class="card ">
+	<div class="card__inner">
+		
+		
+		
+		
+			<div class="card__rating card__rating--absent">
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-07.png" alt="">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span>Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_it.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price">
+						1 650
+						<span class="card__price-rub">Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+<div class="card ">
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-05.png" alt="">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span>Emmentaler AOC</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Margot Fromages</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Твёрдый сыр</a>
+          
+				</span>
+
+				<span class="card__descr-value">150 гр</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_fr.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price">
+						583
+						<span class="card__price-rub">Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+<div class="card ">
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-06.png" alt="">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span>Poires et Amandes Grillees</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Dolfin</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Тёмный шоколад</a>
+          
+				</span>
+
+				<span class="card__descr-value">70 гр</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_be.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price">
+						650
+						<span class="card__price-rub">Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+<div class="card ">
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-01.png" alt="">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span>Fiore Sardo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Philippe de Rothsch</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Твёрдый сыр</a>
+          
+				</span>
+
+				<span class="card__descr-value">300 гр</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_fr.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price">
+						1 270
+						<span class="card__price-rub">Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+
+					</div>
+					<div class="basket__goods-bott">
+						<div class="container">
+							<div class="basket__goods-bott-left">
+								<span class="basket__counter js-basket-count">1</span> /
+								<span class="basket__all js-basket-all">3</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="contacts">
+  <div class="container">
+    
+      <span class="contacts__title">Контакты</span>
+    
+  </div>
+  <div class="contacts__outer">
+    <div class="contacts__map" id="map"></div>
+    <div class="contacts__holder">
+      <div class="container">
+        <div class="contacts__inner">
+          <div class="contacts__item">  
+            <span class="contacts__item-title">Остались вопросы?</span>
+            <span class="contacts__item-txt">
+              Напишите и наш специалист ответит вам в течение часа.
+            </span>
+            <form method="get" action="#" class="contacts__form">
+              <div class="contacts__form-item js-input-size">
+                <input name="name" type="text" placeholder="ФИО" required>
+              </div>
+               <div class="contacts__form-item js-input-size">
+                <input name="contacts" type="text" placeholder="Телефон или e-mail" required>
+              </div>
+               <div class="contacts__form-item js-input-size">
+                <textarea name="message" class="contacts__form-textarea" placeholder="Текст сообщения" required></textarea>
+              </div>
+              <button type="submit" class="btn">Отправить вопрос</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+		<div class="subscribe">
+	<div class="container">
+		<div class="subscribe__wrapp">
+       <form method="get" action="" class="subscribe__form">
+        <div class="subscribe__top">
+          <span class="subscribe__top-left">Подпишитесь на нашу рассылку — читайте свежие новости о скидках и получите подарок</span>
+          <span class="subscribe__top-right">500 <span class="subscribe__top-rubl">Р.*</span></span>
+        </div>
+        <div class="subscribe__middle">
+          <div class="subscribe__col">
+            <input type="text" name="name" class="subscribe__input" placeholder="Ваше имя" required>
+          </div>
+          <div class="subscribe__col">
+            <input type="email" name="email" class="subscribe__input" placeholder="Ваш e-mail" required>
+          </div>
+          <div class="subscribe__col">
+            <button type="submit" class="btn btn--black">Подписаться</button>
+          </div>
+        </div>
+        <div class="subscribe__bott">
+          <span class="subscribe__bott-col">Отправляя свои данные вы соглашаетесь на обработку персональных данных</span>
+          <span class="subscribe__bott-col">* Подарок зачисляется на счет пользователя и используется при оплате товаров.</span>
+        </div>
+      </form>
+		</div>
+	</div>
+</div>
+
+
+	</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__holder">
+			<div class="footer__inner footer__inner--left">
+				<div class="footer__logo">
+					<a href="#" class="footer__logo-link"><span class="bold">Вино</span>парк</a>
+					<span class="footer__logo-txt">Магазин качественных вин</span>
+				</div>
+				<div class="footer__menu">
+					<div class="footer__menu-item">
+						<span class="footer__menu-title">По цвету вина</span>
+						<ul class="footer__menu-list">
+							<li class="footer__menu-list-item">
+								<a href="#">Белые вина</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Розовые вина</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Красные вина</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__menu-item">
+						<span class="footer__menu-title">Столовые вина</span>
+						<ul class="footer__menu-list">
+							<li class="footer__menu-list-item">
+								<a href="#">Сухие</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Полусухие</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Полусладкие</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Сладкие</a>
+							</li>			
+						</ul>
+					</div>
+					<div class="footer__menu-item">
+						<span class="footer__menu-title">Крепленые вина</span>
+						<ul class="footer__menu-list">
+							<li class="footer__menu-list-item">
+								<a href="#">Сладкие</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Крепкие</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Полудесертные</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Десертные</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Ликерные</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__menu-item">
+						<span class="footer__menu-title">Игристые вина</span>
+						<ul class="footer__menu-list">
+							<li class="footer__menu-list-item">
+								<a href="#">Брют-бюве</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Экстрабрют</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Брют</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Сухие</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Полусухие</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Полусладкие</a>
+							</li>
+							<li class="footer__menu-list-item">
+								<a href="#">Сладкие</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer__inner footer__inner--right">
+				<div class="footer__contacts">
+					<div class="footer__contacts-phone">
+						<a href="tel:+88001231212" class="footer__contacts-phone-link">
+							8 800 123 12 12
+						</a>
+					</div>
+					<span class="footer__contacts-address">
+						Москва, ул. Ногина, дом 66
+					</span>
+					<span class="footer__contacts-txt">
+						Пн-Пт c 09:00 до 18:00
+					</span>
+					<span class="footer__contacts-txt">
+						Суббота, воскресенье выходной
+					</span>
+					<span class="footer__contacts-txt footer__contacts-txt--mod">
+						<a href="tel:+79184133172" class="footer__contacts-link">
+							+7 (918) 413-31-72,
+						</a>
+						<a href="tel:+79182738571" class="footer__contacts-link">
+							+7 (918) 273-85-71
+						</a>
+					</span>
+					<span class="footer__contacts-txt">
+						<a href="#" class="footer__contacts-link">
+							Реквизиты компании
+						</a>
+					</span>
+				</div>
+				<div class="footer__social">
+					<a href="#" class="footer__social-link">
+						<svg class="icon-facebook">
+							<use xlink:href="#facebook"></use>
+						</svg>
+					</a>
+					<a href="#" class="footer__social-link">
+						<svg class="icon-vk">
+							<use xlink:href="#vk"></use>
+						</svg>
+					</a>
+					<a href="#" class="footer__social-link">
+						<svg class="icon-insta">
+							<use xlink:href="#insta"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div class="popup popup--callback" id="popup-callback">
+  <span class="popup__title">Обратный звонок</span>
+  <div class="popup__txt">
+    <p>
+      Наш менеджер перезвонит Вам в рабочее время: пн-пт с 09:00 до 20:00, сб-вс с 11:00 до 18:00
+    </p>
+  </div>
+  <form  method="get" action="" class="popup__form">
+    <div class="popup__form-input js-input-size">
+      <input name="name" type="text" placeholder="ФИО" required>
+    </div>
+    <div class="popup__form-input js-input-size">
+      <input class="phone" name="phone" type="tel" placeholder="Ваш телефон" required>
+    </div>
+    <div class="popup__form-inner">
+      <div class="popup__form-select ">
+        <div class="popup__form-select-wrap js-select-wrap">
+          <select name="time-to" class="js-select" required>
+            <option disabled selected>с 09:00</option>
+            <option value="">
+              с 10:00
+            </option>
+            <option value="">
+              с 11:00  
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="popup__form-select">
+        <div class="popup__form-select-wrap js-select-wrap">
+          <select name="time-after" class="js-select" required>
+            <option disabled selected>до 20:00</option>
+            <option value="">
+              до 18:00
+            </option>
+            <option value="">
+              до 19:00 
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn popup__btn">Войти</button>
+
+  </form>
+</div>
+
+<div class="popup popup--enter" id="popup-enter">
+  <span class="popup__title">Вход</span>
+  <form method="get" action="" class="popup__form">
+    <div class="popup__form-input js-input-size">
+      <input name="email" type="email" placeholder="E-mail" required>
+    </div>
+    <div class="popup__form-input js-input-size">
+      <input name="pass" type="password" placeholder="Пароль" required>
+    </div>
+    <button type="submit" class="btn popup__btn">Войти</button>
+    <a href="#" class="popup__link">Забыли пароль</a>
+  </form>
+
+  <div class="popup__btn-wrap">
+    <a href="#" class="popup__btn-yellow">Зарегистрироваться</a>
+  </div>
+</div>
+
+<div class="popup popup--registration" id="popup-registration">
+  <span class="popup__title">Регистрация</span>
+  <form method="get" action="" class="popup__form">
+    <div class="popup__form-input js-input-size">
+      <input name="name" type="text" placeholder="ФИО" required>
+    </div>
+    <div class="popup__form-input js-input-size">
+      <input name="email" type="email" placeholder="Ваш e-mail" required>
+    </div>
+    <div class="popup__form-input js-input-size">
+      <input class="phone" name="phone" type="tel" placeholder="Ваш телефон" required>
+    </div>
+    <div class="popup__form-input js-input-size">
+      <input name="pass" type="password" placeholder="Пароль" required>
+    </div>
+    <div class="popup__form-input js-input-size">
+      <input name="password" type="password" placeholder="Подтвердите пароль" required>
+    </div>
+    <button type="submit" class="btn popup__btn">Зарегистрироваться</button>
+    <div class="popup__form-checkbox">
+      <label class="checkbox">
+        <input type="checkbox" name="news" checked>
+        <span>Получать информацию о скидках и акциях</span>
+      </label>          
+    </div>
+    <div class="popup__form-checkbox">
+      <label class="checkbox">
+        <input type="checkbox" name="compliance" required>
+        <span>Согласен на обработку моих данных</span>
+      </label>          
+    </div>
+  </form>
+  <div class="popup__btn-wrap">
+    <a href="#" class="popup__btn-yellow">Войти в профиль</a>
+  </div>
+</div>
+
+<div class="popup popup--reviews" id="popup-reviews">
+  <span class="popup__title">Оставить отзыв</span>
+  
+  <div class="popup__item">
+    <div class="popup__item-inner">
+      <div class="card-sm">
+  <div class="basket-item">
+    
+    
+    <span class="favorites-toggle js-tooltip-remover">
+					<span class="like">
+						<svg class="icon-heart">
+							<use xlink:href="#heart"></use>
+						</svg>
+					</span>
+		</span>
+    
+    <div class="basket-item__col basket-item__col--img">
+      <div class="basket-item__img-wrap">
+        <img src="pic/products/products-02.png" alt="">
+      </div>
+
+    </div>
+
+    <div class="basket-item__col basket-item__col--name">
+      <span class="basket-item__name">Campo del Verdejo</span>
+      <span class="basket-item__name-sub">Bodegas Gallegas</span>
+      <div class="basket-item__descr">
+        <a href="#" class="basket-item__link">Белое вино</a>
+        <span class="basket-item__amount">0.7 л</span>
+        
+
+        <span class="basket-item__price-text ">
+          978 <span class="basket-item__price-rub">Р.</span>
+        </span>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    </div>
+  </div>
+  
+  <form method="get" action="" class="popup__form">
+
+    <div class="popup__rating">
+
+      <div class="popup__rating-field">
+        <input type="radio" id="rating-10" name="rating"/>
+        <label for="rating-10" data-rate="10.0">
+          <svg class="icon-rating-star">
+            <use xlink:href="#rating-star"></use>
+          </svg>
+        </label>
+
+        <input type="radio" id="rating-9" name="rating"/>
+        <label for="rating-9" data-rate="9.0">
+          <svg class="icon-rating-star">
+            <use xlink:href="#rating-star"></use>
+          </svg>
+        </label>
+
+        <input type="radio" id="rating-8" name="rating"/>
+        <label for="rating-8" data-rate="8.0">
+          <svg class="icon-rating-star">
+            <use xlink:href="#rating-star"></use>
+          </svg>
+        </label>
+
+        <input type="radio" id="rating-7" name="rating"/>
+        <label for="rating-7" data-rate="7.0">
+          <svg class="icon-rating-star">
+            <use xlink:href="#rating-star"></use>
+          </svg>
+        </label>
+
+        <input type="radio" id="rating-6" name="rating"/>
+        <label for="rating-6" data-rate="6.0">
+          <svg class="icon-rating-star">
+            <use xlink:href="#rating-star"></use>
+          </svg>
+        </label>
+
+        <input type="radio" id="rating-5" name="rating"/>
+        <label for="rating-5" data-rate="5.0">
+          <svg class="icon-rating-star">
+            <use xlink:href="#rating-star"></use>
+          </svg>
+        </label>
+
+
+        <input type="radio" id="rating-4" name="rating"/>
+        <label for="rating-4" data-rate="4.0">
+          <svg class="icon-rating-star">
+            <use xlink:href="#rating-star"></use>
+          </svg>
+        </label>
+
+
+        <input type="radio" id="rating-3" name="rating"/>
+        <label for="rating-3" data-rate="3.0">
+          <svg class="icon-rating-star">
+            <use xlink:href="#rating-star"></use>
+          </svg>
+        </label>
+
+
+        <input type="radio" id="rating-2" name="rating"/>
+        <label for="rating-2" data-rate="2.0">
+          <svg class="icon-rating-star">
+            <use xlink:href="#rating-star"></use>
+          </svg>
+        </label>
+
+
+        <input type="radio" id="rating-1" name="rating"/>
+        <label for="rating-1" data-rate="1.0">
+          <svg class="icon-rating-star">
+            <use xlink:href="#rating-star"></use>
+          </svg>
+        </label>
+
+        <span class="popup__rating-num">
+          0.0
+        </span>
+      </div>
+    </div>
+    
+    <div class="popup__form-input js-input-size">
+      <input name="name" type="text" placeholder="ФИО" required>
+    </div>
+    <div class="popup__form-input js-input-size">
+      <input name="email" type="email" placeholder="Ваш e-mail" required>
+    </div>
+    <div class="popup__form-input js-input-size">
+      <textarea name="message" class="popup__form-textarea" placeholder="Ваш отзыв" required></textarea>
+    </div>
+    <button class="btn popup__btn">Отправить</button>
+    <div class="popup__form-checkbox">
+      <label class="checkbox">
+        <input type="checkbox" name="news" checked>
+        <span>Получать информацию о скидках и акциях</span>
+      </label>          
+    </div>
+    <div class="popup__form-checkbox">
+      <label class="checkbox">
+        <input type="checkbox" name="compliance" required>
+        <span>Согласен на обработку моих данных</span>
+      </label>          
+    </div>
+  </form>
+
+</div>
+
+<div class="popup popup--basket" id="popup-basket">
+  <div class="popup__icon">
+    <svg class="icon-basket">
+      <use xlink:href="#basket"></use>
+    </svg>
+  </div>
+  <span class="popup__title">Товар успешно добавлен в корзину</span>
+  <div class="popup__holder">
+    <div class="popup__holder-inner">
+      <div class="popup__holder-item">
+        <button class="btn popup__btn">Перейти к корзине</button>
+      </div>
+      <div class="popup__holder-item">
+        <button class="btn btn--white popup__btn">Продолжить покупки</button>
+      </div>
+    </div>
+  </div>
+  <span class="popup__desc popup__desc--basket">
+    Вместе с этим часто покупают:
+  </span>
+  <div class="popup__slider-wrap">
+    <div class="popup__slider js-popup-slider">
+      <div class="card card--sale" >
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+			<span class="card__sale">-15%</span>
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-02.png" alt="" itemprop="image">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span >Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_fr.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+				
+					<span class="card__price" >
+						978
+						 
+						<span class="card__price-rub" >Р.</span>
+						<span class="card__price-old">1 150</span>
+					</span>
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+<div class="card " >
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-03.png" alt="" itemprop="image">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span >Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_fr.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price" >
+						1 240
+						 
+						<span class="card__price-rub" >Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+<div class="card " >
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-07.png" alt="" itemprop="image">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span >Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_it.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price" >
+						1 240
+						 
+						<span class="card__price-rub" >Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+<div class="card " >
+	<div class="card__inner">
+		
+		
+		
+		
+			<div class="card__rating card__rating--absent">
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-04.png" alt="" itemprop="image">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span >Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_fr.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price" >
+						1 450
+						 
+						<span class="card__price-rub" >Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+<div class="card " >
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-02.png" alt="" itemprop="image">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span >Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_ar.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+				
+					<span class="card__price" >
+						978
+						 
+						<span class="card__price-rub" >Р.</span>
+						<span class="card__price-old">1 150</span>
+					</span>
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+<div class="card " >
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-03.png" alt="" itemprop="image">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span >Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_fr.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price" >
+						1 240
+						 
+						<span class="card__price-rub" >Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+<div class="card card--sale" >
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+			<span class="card__sale">-15%</span>
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-07.png" alt="" itemprop="image">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span >Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_it.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price" >
+						1 240
+						 
+						<span class="card__price-rub" >Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+<div class="card " >
+	<div class="card__inner">
+		
+		
+		
+		
+			<div class="card__rating card__rating--absent">
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-04.png" alt="" itemprop="image">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span >Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_fr.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+					<span class="card__price" >
+						1 450
+						 
+						<span class="card__price-rub" >Р.</span>
+					</span>
+				
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+<div class="card card--sale" >
+	<div class="card__inner">
+		
+		
+			<div class="card__rating" >
+				<span class="card__rating-value">4.5</span>
+				
+				<span class="card__rating-icon">
+					<svg class="icon-rating-star">
+						<use xlink:href="#rating-star"></use>
+					</svg>
+				</span>
+			</div>
+		
+		
+		
+		
+		<div class="favorites-toggle card__favorites-toggle js-toggle-favorites">
+			<span class="card__like">
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+		</div>
+
+		<div class="favorites-toggle card__res js-toggle-favorites">
+			<span class="card__res-icon">
+				<svg class="icon-cnn">
+					<use xlink:href="#cnn"></use>
+				</svg>
+			</span>
+		</div>
+		
+		
+			<span class="card__sale">-15%</span>
+		
+		
+
+		<div class="card__img-wrap">
+			<a href="#" class="card__img-link">
+				<img src="pic/products/products-02.png" alt="" itemprop="image">
+			</a>
+		</div>
+
+		<div class="card__content">
+			<div class="card__name-wrap js-name">
+				<a href="#" class="card__link-name">
+					<span >Vega del Campo Verdejo</span>
+				</a>
+			</div>
+			<div class="card__brand-wrap js-brand">
+				<a href="#" class="card__link-brand">Bodegas Gallegas</a>
+        
+			</div>
+
+			<div class="card__descr-wrap js-descr">
+				<span class="card__descr-category">
+					<a href="#" class="card__descr-category-link">Белое вино</a>
+          
+				</span>
+
+				<span class="card__descr-value">0.7 л</span>
+				
+				<span class="card__descr-country">
+					<img src="pic/flag/flag_fr.png" alt="">
+				</span>
+			</div>
+
+			<div class="card__bott">
+				
+				
+					<span class="card__price" >
+						978
+						 
+						<span class="card__price-rub" >Р.</span>
+						<span class="card__price-old">1 150</span>
+					</span>
+				
+				<div class="card__btn-wrap">
+					<a class="btn btn--basket" data-fancybox data-src="#popup-basket" href="javascript:;">В корзину</a>
+				</div>
+			</div>
+		</div>
+    
+	</div>
+</div>
+
+    </div>
+    <div class="popup__slider-bottom">
+      <span class="popup__counter js-popup-count">1</span> /
+      <span class="popup__all js-popup-all"></span>
+    </div>
+  </div>
+</div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

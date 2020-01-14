@@ -1,0 +1,1584 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+<header class="header ">
+	<div class="container">
+		<div class="header__holder">
+			<div class="header__item header__item--toggler">
+				<span class="header__toggler js-toggler-open">
+					<span class="header__toggler-decor"></span>
+				</span>
+			</div>
+			<div class="header__item header__item--logo">
+				<a href="#" class="header__logo">GT</a>
+			</div>
+			<div class="header__item header__item--nav js-toggler-menu">
+				<div class="header__nav-overlay js-nav-overlay"></div>
+				<nav class="header__nav">
+					<span class="header__nav-close js-toggler-close"></span>
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Блог
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Рейтинг продавцов
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Розыгрыши
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Поддержка
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Вопросы и ответы
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Правила
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			
+
+			
+			
+			<div class="header__item header__item--user js-user-wrap">
+				<a href="#" class="header__user js-user-link">
+					<img src="pic/users/users-5.png" alt="user">
+				</a>
+				<div class="header__user-info js-user-drop">
+					<div class="header__user-head">
+						<div class="header__user-img">
+							<img src="pic/users/users-5.png" alt="user">
+						</div>
+						<div class="header__user-txt">
+							<span class="header__user-name">
+								Chack Norris
+							</span>
+							<a href="#" class="header__user-mail">
+								Norris@gmail.com
+							</a>
+						</div>
+					</div>
+					<ul class="header__user-list">
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои покупки</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои продажи</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои операции</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Заработать</a>
+						</li>
+					</ul>
+					<div class="header__user-logout">
+						<a href="#" class="header__user-logout-link">
+							<span class="header__user-icon">
+
+							</span>
+							<span class="header__user-logout-txt">Выйти</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="wrapper">
+		<div class="heading" style="background-image: url('pic/bg/bg-1.jpg');">
+	<div class="container">
+		<div class="heading__outer">
+			<div class="heading__holder">
+				<div class="heading__inner heading__inner--left">
+					<div class="heading__inner-info">
+						<h1 class="heading__inner-caption">
+							Game Transfer
+						</h1>
+						<span class="heading__inner-desc">
+							Торговая площадка игровых ценностей: аккаунтов с играми, предметов, услуг, ключей активации. 
+						</span>
+						<div class="heading__inner-btn-wrap">
+							<a href="#" class="btn heading__inner-btn">
+								Стать продавцом
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="heading__inner heading__inner--right">
+					<div class="heading__item">
+						<div class="heading__item-inner">
+							<div class="heading__item-icon">
+								<svg class="icon-cup">
+									<use xlink:href="#cup"></use> 
+								</svg>
+							</div>
+							<span class="heading__item-text">
+								Розыгрыши ценных игровых атрибутов
+							</span>
+						</div>
+					</div>
+					<div class="heading__item">
+						<div class="heading__item-inner">
+							<div class="heading__item-icon">
+								<svg class="icon-bag">
+									<use xlink:href="#bag"></use> 
+								</svg>
+							</div>
+							<span class="heading__item-text">
+								До 95% экономии при покупке лицензионных игр
+							</span>
+						</div>
+					</div>
+					<div class="heading__item">
+						<div class="heading__item-inner">
+							<div class="heading__item-icon">
+								<svg class="icon-account">
+									<use xlink:href="#account"></use> 
+								</svg>
+							</div>
+							<span class="heading__item-text">
+								Исключительно чистые аккаунты
+							</span>
+						</div>
+					</div>
+					<div class="heading__item">
+						<div class="heading__item-inner">
+							<div class="heading__item-icon">
+								<svg class="icon-rocket">
+									<use xlink:href="#rocket"></use> 
+								</svg>
+							</div>
+							<span class="heading__item-text">
+								Мгновенные сделки, с отчетом в online-режиме
+							</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="sort">
+	<div class="container">
+		<form action="">
+			<div class="sort__wrapp">
+				<div class="sort__search">
+					<input type="text" placeholder="Поиск по базе Game Transfer">
+				</div>
+				<div class="sort__btn-wrapp">
+					<button class="btn" type="submit">Найти</button>
+				</div>
+				<div class="sort__select-wrapp">
+					<div class="sort__select-inner">
+						<select id="" class="js-select">
+							<option value="hide">Платформа</option>
+							<option value="">Stalker Online</option>
+							<option value="">GanjaWars</option>
+							<option value="">Granado Espada</option>
+							<option value="">ArcheAge</option>
+							<option value="">War Thunder</option>
+							<option value="">Heroes of Newerth</option>
+							<option value="">Blade & Soul</option>
+							<option value="">ArcheAge</option>
+							<option value="">War Thunder</option>
+							<option value="">Heroes of Newerth</option>
+							<option value="">Blade & Soul</option>
+						</select>
+					</div>
+					<div class="sort__select-inner">
+						<select id="" class="js-select">
+							<option value="hide">Игра</option>
+							<option value="">Stalker Online</option>
+							<option value="">GanjaWars</option>
+							<option value="">Granado Espada</option>
+							<option value="">ArcheAge</option>
+							<option value="">War Thunder</option>
+							<option value="">Heroes of Newerth</option>
+							<option value="">Blade & Soul</option>
+							<option value="">ArcheAge</option>
+							<option value="">War Thunder</option>
+							<option value="">Heroes of Newerth</option>
+							<option value="">Blade & Soul</option>
+						</select>
+					</div>
+					<div class="sort__select-inner">
+						<select id="" class="js-select">
+							<option value="hide">Игровая ценность</option>
+							<option value="">Stalker Online</option>
+							<option value="">GanjaWars</option>
+							<option value="">Granado Espada</option>
+							<option value="">ArcheAge</option>
+							<option value="">War Thunder</option>
+							<option value="">Heroes of Newerth</option>
+							<option value="">Blade & Soul</option>
+							<option value="">ArcheAge</option>
+							<option value="">War Thunder</option>
+							<option value="">Heroes of Newerth</option>
+							<option value="">Blade & Soul</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+		<div class="platform">
+	<div class="container">
+		<div class="platform__wrapp">
+			<div class="platform__item">
+				<div class="platform__inner">
+					<div class="platform__head js-height">
+						<div class="platform__head-top">
+							<a href="#" class="platform__caption">Steam</a>
+							<div class="platform__all">
+								<a href="#" class="platform__all-link">Все игры</a>
+							</div>
+						</div>
+						<div class="platform__head-bott">
+							<ul class="platform__head-list">
+								<li class="platform__head-item">
+									<a href="#" class="platform__head-link">Аккаунты</a>
+								</li>
+								<li class="platform__head-item">
+									<a href="#" class="platform__head-link">Пополнение баланса</a>
+								</li>
+								<li class="platform__head-item">
+									<a href="#" class="platform__head-link">Услуги</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="platform__game">
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">GTA SAMP, CRMP</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Золото</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Бриллианты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Услуги</a>
+								</li>
+							</ul>
+						</div>
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-2.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">Life is Feudal: MMO</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Золото</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Серебро</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Скины</a>
+								</li>
+							</ul>
+						</div>
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">World of Warcraft</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Золото</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+							</ul>
+						</div>
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">Elder Scrolls (TESO)</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="platform__item">
+				<div class="platform__inner">
+					<div class="platform__head js-height">
+						<div class="platform__head-top">
+							<a href="#" class="platform__caption">Uplay</a>
+							<div class="platform__all">
+								<a href="#" class="platform__all-link">Все игры</a>
+							</div>
+						</div>
+						<div class="platform__head-bott">
+							<ul class="platform__head-list">
+								<li class="platform__head-item">
+									<a href="#" class="platform__head-link">Аккаунты</a>
+								</li>
+								<li class="platform__head-item">
+									<a href="#" class="platform__head-link">Пополнение баланса</a>
+								</li>
+								<li class="platform__head-item">
+									<a href="#" class="platform__head-link">Услуги</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="platform__game">
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">Time Zero</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Золото</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Бриллианты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Услуги</a>
+								</li>
+							</ul>
+						</div>
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">Stalker Online</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Золото</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Серебро</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Скины</a>
+								</li>
+							</ul>
+						</div>
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">GanjaWars</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Золото</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+							</ul>
+						</div>
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">Granado Espada</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Серебро</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Скины</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Золото</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="platform__item">
+				<div class="platform__inner">
+					<div class="platform__head js-height">
+						<div class="platform__head-top">
+							<a href="#" class="platform__caption">Origin</a>
+							<div class="platform__all">
+								<a href="#" class="platform__all-link">Все игры</a>
+							</div>
+						</div>
+						<div class="platform__head-bott">
+							<ul class="platform__head-list">
+								<li class="platform__head-item">
+									<a href="#" class="platform__head-link">Аккаунты</a>
+								</li>
+								<li class="platform__head-item">
+									<a href="#" class="platform__head-link">Пополнение баланса</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="platform__game">
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">ArcheAge</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Золото</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Бриллианты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Услуги</a>
+								</li>
+							</ul>
+						</div>
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">War Thunder</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Золото</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Серебро</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Скины</a>
+								</li>
+							</ul>
+						</div>
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">Heroes of Newerth</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Золото</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+							</ul>
+						</div>
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">Blade & Soul</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="platform__item">
+				<div class="platform__inner">
+					<div class="platform__head js-height">
+						<div class="platform__head-top">
+							<a href="#" class="platform__caption">Blizzard</a>
+							<div class="platform__all">
+								<a href="#" class="platform__all-link">Все игры</a>
+							</div>
+						</div>
+						<div class="platform__head-bott">
+							<ul class="platform__head-list">
+								<li class="platform__head-item">
+									<a href="#" class="platform__head-link">Аккаунты</a>
+								</li>
+								<li class="platform__head-item">
+									<a href="#" class="platform__head-link">Пополнение баланса</a>
+								</li>
+								<li class="platform__head-item">
+									<a href="#" class="platform__head-link">Услуги</a>
+								</li>
+								<li class="platform__head-item">
+									<a href="#" class="platform__head-link">Предметы</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="platform__game">
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">R2 Online</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Золото</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+							</ul>
+						</div>
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">Tom Clancy's The Division</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Золото</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Серебро</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Скины</a>
+								</li>
+							</ul>
+						</div>
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">World of Warships</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Золото</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+							</ul>
+						</div>
+						<div class="platform__game-wrapp">
+							<div class="platform__game-img">
+								<img src="pic/game/game-1.png" alt="">
+							</div>
+							<a href="#" class="platform__game-name">Rocket League</a>
+							<ul class="platform__game-list">
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Аккаунты</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Предметы</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Услуги</a>
+								</li>
+								<li class="platform__game-item">
+									<a href="#" class="platform__game-link">Бриллианты</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="recommend">
+	<div class="container">
+		<h2 class="recommend__caption">Рекомендуем</h2>
+		<div class="recommend__wrapp js-recommend-slider">
+			<div class="recommend__item">
+				<div class="recommend__inner">
+					<div class="recommend__top">
+						<span class="recommend__price">
+							1700 <span class="rub">o</span>
+						</span>
+						<div class="recommend__img">
+							<a href="#" class="recommend__img-link">
+								<img src="pic/recommendation/recommendation-1.png" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="recommend__bott">
+						<div class="recommend__name">
+							<a href="#" class="recommend__name-link">Вещи на снайпера</a>
+						</div>
+						<div class="recommend__platform">
+							<span class="recommend__platform-name">Steam:</span>
+							<span class="recommend__platform-text"> ARK: Survival Evolved</span>
+						</div>
+						<div class="recommend__seller">
+							<div class="recommend__seller-img">
+								<img src="pic/users/users-1.png" alt="">
+							</div>
+							<div class="recommend__seller-user">
+								<span class="recommend__seller-name">Chak Norris</span>
+								<div class="recommend__seller-rating">
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star icon-star--white">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="recommend__btn-wrapp">
+							<a href="#" class="btn">Купить</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="recommend__item">
+				<div class="recommend__inner">
+					<div class="recommend__top">
+						<span class="recommend__price">
+							1700 <span class="rub">o</span>
+						</span>
+						<div class="recommend__img">
+							<a href="#" class="recommend__img-link">
+								<img src="pic/recommendation/recommendation-2.png" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="recommend__bott">
+						<span class="recommend__name">
+							<a href="#" class="recommend__name-link">Личный аккаунт</a>
+						</span>
+						<div class="recommend__platform">
+							<span class="recommend__platform-name">Uplay:</span>
+							<span class="recommend__platform-text">Star Wars: TOR</span>
+						</div>
+						<div class="recommend__seller">
+							<div class="recommend__seller-img">
+								<img src="pic/users/users-2.png" alt="">
+							</div>
+							<div class="recommend__seller-user">
+								<span class="recommend__seller-name">Ray Thompson</span>
+								<div class="recommend__seller-rating">
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star icon-star--white">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="recommend__btn-wrapp">
+							<a href="#" class="btn">Купить</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="recommend__item">
+				<div class="recommend__inner">
+					<div class="recommend__top">
+						<span class="recommend__price">
+							1700 <span class="rub">o</span>
+						</span>
+						<div class="recommend__img">
+							<a href="#" class="recommend__img-link">
+								<img src="pic/recommendation/recommendation-3.png" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="recommend__bott">
+						<span class="recommend__name">
+							<a href="#" class="recommend__name-link">Продам квадратные прозрачные очки</a>
+						</span>
+						<div class="recommend__platform">
+							<span class="recommend__platform-name">Origin:</span>
+							<span class="recommend__platform-text">Stalker Online</span>
+						</div>
+						<div class="recommend__seller">
+							<div class="recommend__seller-img">
+								<img src="pic/users/users-3.png" alt="">
+							</div>
+							<div class="recommend__seller-user">
+								<span class="recommend__seller-name">Arnold Schwarzenegger</span>
+								<div class="recommend__seller-rating">
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star icon-star--white">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="recommend__btn-wrapp">
+							<a href="#" class="btn">Купить</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="recommend__item">
+				<div class="recommend__inner">
+					<div class="recommend__top">
+						<span class="recommend__price">
+							1700 <span class="rub">o</span>
+						</span>
+						<div class="recommend__img">
+							<a href="#" class="recommend__img-link">
+								<img src="pic/recommendation/recommendation-4.png" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="recommend__bott">
+						<span class="recommend__name">
+							<a href="#" class="recommend__name-link">Лицензионный ключ</a>
+						</span>
+						<div class="recommend__platform">
+							<span class="recommend__platform-name">Uplay:</span>
+							<span class="recommend__platform-text">World of Tanks</span>
+						</div>
+						<div class="recommend__seller">
+							<div class="recommend__seller-img">
+								<img src="pic/users/users-4.png" alt="">
+							</div>
+							<div class="recommend__seller-user">
+								<span class="recommend__seller-name">Raymond Simpson</span>
+								<div class="recommend__seller-rating">
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star icon-star--white">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="recommend__btn-wrapp">
+							<a href="#" class="btn">Купить</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="recommend__item">
+				<div class="recommend__inner">
+					<div class="recommend__top">
+						<span class="recommend__price">
+							1700 <span class="rub">o</span>
+						</span>
+						<div class="recommend__img">
+							<a href="#" class="recommend__img-link">
+								<img src="pic/recommendation/recommendation-1.png" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="recommend__bott">
+						<div class="recommend__name">
+							<a href="#" class="recommend__name-link">Вещи на снайпера</a>
+						</div>
+						<div class="recommend__platform">
+							<span class="recommend__platform-name">Steam:</span>
+							<span class="recommend__platform-text"> ARK: Survival Evolved</span>
+						</div>
+						<div class="recommend__seller">
+							<div class="recommend__seller-img">
+								<img src="pic/users/users-1.png" alt="">
+							</div>
+							<div class="recommend__seller-user">
+								<span class="recommend__seller-name">Chak Norris</span>
+								<div class="recommend__seller-rating">
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star icon-star--white">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="recommend__btn-wrapp">
+							<a href="#" class="btn">Купить</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="recommend__item">
+				<div class="recommend__inner">
+					<div class="recommend__top">
+						<span class="recommend__price">
+							1700 <span class="rub">o</span>
+						</span>
+						<div class="recommend__img">
+							<a href="#" class="recommend__img-link">
+								<img src="pic/recommendation/recommendation-2.png" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="recommend__bott">
+						<span class="recommend__name">
+							<a href="#" class="recommend__name-link">Личный аккаунт</a>
+						</span>
+						<div class="recommend__platform">
+							<span class="recommend__platform-name">Uplay:</span>
+							<span class="recommend__platform-text">Star Wars: TOR</span>
+						</div>
+						<div class="recommend__seller">
+							<div class="recommend__seller-img">
+								<img src="pic/users/users-2.png" alt="">
+							</div>
+							<div class="recommend__seller-user">
+								<span class="recommend__seller-name">Ray Thompson</span>
+								<div class="recommend__seller-rating">
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star icon-star--white">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="recommend__btn-wrapp">
+							<a href="#" class="btn">Купить</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="recommend__item">
+				<div class="recommend__inner">
+					<div class="recommend__top">
+						<span class="recommend__price">
+							1700 <span class="rub">o</span>
+						</span>
+						<div class="recommend__img">
+							<a href="#" class="recommend__img-link">
+								<img src="pic/recommendation/recommendation-3.png" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="recommend__bott">
+						<span class="recommend__name">
+							<a href="#" class="recommend__name-link">Продам квадратные прозрачные очки</a>
+						</span>
+						<div class="recommend__platform">
+							<span class="recommend__platform-name">Origin:</span>
+							<span class="recommend__platform-text">Stalker Online</span>
+						</div>
+						<div class="recommend__seller">
+							<div class="recommend__seller-img">
+								<img src="pic/users/users-3.png" alt="">
+							</div>
+							<div class="recommend__seller-user">
+								<span class="recommend__seller-name">Arnold Schwarzenegger</span>
+								<div class="recommend__seller-rating">
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star icon-star--white">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="recommend__btn-wrapp">
+							<a href="#" class="btn">Купить</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="recommend__item">
+				<div class="recommend__inner">
+					<div class="recommend__top">
+						<span class="recommend__price">
+							1700 <span class="rub">o</span>
+						</span>
+						<div class="recommend__img">
+							<a href="#" class="recommend__img-link">
+								<img src="pic/recommendation/recommendation-4.png" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="recommend__bott">
+						<span class="recommend__name">
+							<a href="#" class="recommend__name-link">Лицензионный ключ</a>
+						</span>
+						<div class="recommend__platform">
+							<span class="recommend__platform-name">Uplay:</span>
+							<span class="recommend__platform-text">World of Tanks</span>
+						</div>
+						<div class="recommend__seller">
+							<div class="recommend__seller-img">
+								<img src="pic/users/users-4.png" alt="">
+							</div>
+							<div class="recommend__seller-user">
+								<span class="recommend__seller-name">Raymond Simpson</span>
+								<div class="recommend__seller-rating">
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+									<span class="recommend__icon">
+										<svg class="icon-star icon-star--white">
+											<use xlink:href="#star"></use>
+										</svg>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="recommend__btn-wrapp">
+							<a href="#" class="btn">Купить</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="last-deals">
+	<div class="container">
+		<h2 class="last-deals__caption">Последние сделки</h2>
+		<div class="last-deals__wrapp">
+			<div class="last-deals__outher">
+				<div class="last-deals__item">
+					<div class="last-deals__inner js-inner" data-height="">
+						<div class="last-deals__content js-content">
+							<div class="last-deals__head js-head">
+								<span class="last-deals__head-text"><span class="last-deals__user-name">Leraks</span> купил бриллианты, кирасу, тараску, манту и рапиру</span>
+								<span class="last-deals__head-time">10:31</span>
+							</div>
+							<ul class="last-deals__list js-show">
+								<li class="last-deals__list-item">
+									<span class="last-deals__name">Цена: </span>
+									<span class="last-deals__descr">1300 <span class="rub">o</span></span>
+								</li>
+								<li class="last-deals__list-item">
+									<span class="last-deals__name">Steam: </span>
+									<span class="last-deals__descr last-deals__descr--name">ARK: Survival Evolved</span>
+								</li>
+								<li class="last-deals__list-item">
+									<span class="last-deals__name">Продавец: </span>
+									<span class="last-deals__descr">Chak Norris</span>
+								</li>
+							</ul>
+						</div>
+						<div class="last-deals__img js-img">
+							<img src="pic/last/last-1.png" alt="">
+						</div>
+					</div>
+					<div class="last-deals__time">
+						12:23
+					</div>
+				</div>
+
+				<div class="last-deals__item">
+					<div class="last-deals__inner js-inner" data-height="">
+						<div class="last-deals__content js-content">
+							<div class="last-deals__head js-head">
+								<span class="last-deals__head-text"><span class="last-deals__user-name">Mad Max </span>купил бронежелет и еще что-то</span>
+								<span class="last-deals__head-time">10:31</span>
+							</div>
+							<ul class="last-deals__list js-show">
+								<li class="last-deals__list-item">
+									<span class="last-deals__name">Цена: </span>
+									<span class="last-deals__descr">200 <span class="rub">o</span></span>
+								</li>
+								<li class="last-deals__list-item">
+									<span class="last-deals__name">Steam: </span>
+									<span class="last-deals__descr last-deals__descr--name">ARK: Survival Evolved</span>
+								</li>
+								<li class="last-deals__list-item">
+									<span class="last-deals__name">Продавец: </span>
+									<span class="last-deals__descr">Chak Norris</span>
+								</li>
+							</ul>
+						</div>
+						<div class="last-deals__img js-img">
+							<img src="pic/last/last-2.png" alt="">
+						</div>
+					</div>
+					<div class="last-deals__time">
+						10:45
+					</div>
+				</div>
+
+				<div class="last-deals__item">
+					<div class="last-deals__inner js-inner" data-height="">
+						<div class="last-deals__content js-content">
+							<div class="last-deals__head js-head">
+								<span class="last-deals__head-text"><span class="last-deals__user-name">Gamer</span> купил ключ к Cleo стиллеру и доступу к ПУ</span>
+								<span class="last-deals__head-time">10:31</span>
+							</div>
+							<ul class="last-deals__list js-show">
+								<li class="last-deals__list-item">
+									<span class="last-deals__name">Цена: </span>
+									<span class="last-deals__descr">2540 <span class="rub">o</span></span>
+								</li>
+								<li class="last-deals__list-item">
+									<span class="last-deals__name">Steam: </span>
+									<span class="last-deals__descr last-deals__descr--name">ARK: Survival Evolved</span>
+								</li>
+								<li class="last-deals__list-item">
+									<span class="last-deals__name">Продавец: </span>
+									<span class="last-deals__descr">Chak Norris</span>
+								</li>
+							</ul>
+						</div>
+						<div class="last-deals__img js-img">
+							<img src="pic/last/last-3.png" alt="">
+						</div>
+					</div>
+					<div class="last-deals__time">
+						9:35
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="static-content">
+			<div class="container">
+				<div class="content-info content-info--top js-content-info">
+					<p>
+						<span class="content-info__white">Game Transfer:</span> не просто магазин игровых аккаунтов. Это целый супермаркет. Наш проект объединяет продавцов игровых аккаунтов и покупателей. Именно тут вы найдете исчерпывающий ассортимент под любые платформы: PS4, Xbox. Uplay, Origin, Blizzard и аккаунты Steam с играми. Прямо сейчас, вы можете не только купить аккаунт, но и приобрести скины, предметы, артефакты и другую атрибутику для инвентаря своей любимой игры. И всё это как минимум вдвое дешевле рыночной стоимости.
+					</p>
+					<h6>Как купить аккаунты с играми</h6>
+					<span class="content-info__descr">Чтобы приобрести лицензионную игру, нужно выполнить 5 простых шагов:</span>
+					
+					<div class="step ">
+	
+		<div class="step__item">
+			<span class="step__number">1</span>
+			<span class="step__descr">Зарегистрируйтесь, это займет не более пяти минут</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">2</span>
+			<span class="step__descr">Выберите платформу, тип игровой ценности или введите её название в строке поиска</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">3</span>
+			<span class="step__descr">Выберите лучшее предложение из списка</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">4</span>
+			<span class="step__descr">Оплатите заказ, чтобы купить игровой аккаунт</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">5</span>
+			<span class="step__descr">Получите трансфер в течение нескольких минут</span>
+		</div>
+	
+</div>
+
+					<p>
+						Game Transfer лично проверяет все предложения продавцов и выступает гарантом при оформлении сделок. Это значит, что мы замораживаем средства до тех пор, пока вы не получите свою покупку и не проверите её на соответствие описанию. Лишь после этого деньги передаются продавцу. Это лучшая гарантия честности и безопасности покупок.
+					</p>
+					<span class="content-info__more js-more-info">Подробнее</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="advantages" style="background-image: url(pic/bg/bg-2.jpg);">
+	<div class="container">
+		<div class="advantages__wrapp">
+			<div class="advantages__item">
+				<span class="advantages__icon">
+					<svg class="icon-money">
+						<use xlink:href="#money"></use>
+					</svg>
+				</span>
+				<span class="advantages__title">Доступность</span>
+				<span class="advantages__descr">С нами, вы экономите до 95%</span>
+			</div>
+			<div class="advantages__item">
+				<span class="advantages__icon">
+					<svg class="icon-package">
+						<use xlink:href="#package"></use>
+					</svg>
+				</span>
+				<span class="advantages__title">Честность</span>
+				<span class="advantages__descr">Сделки защищены гарантом</span>
+			</div>
+			<div class="advantages__item">
+				<span class="advantages__icon">
+					<svg class="icon-gift">
+						<use xlink:href="#gift"></use>
+					</svg>
+				</span>
+				<span class="advantages__title">Мгновенная выдача</span>
+				<span class="advantages__descr">Сделки осуществляются автоматически</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="static-content">
+			<div class="container">
+				<div class="content-info content-info--bottom js-content-info">
+					<h6>Самый доступный магазин игр в интернете</h6>
+					<p>
+						Стоимость игр и предметов для инвентаря регулируется на платформе по рыночным законам. То есть вы всегда сможете купить цифровой продукт по самой низкой цене. При этом, ассортимент каждый час увеличивается на сотни новых позиций. Наши условия настолько выгодны, что лоты стабильно выкупают другие площадки.
+					</p>
+					<span class="content-info__title-white">Game Transfer в цифрах:</span>
+					
+					<div class="step step--statistics">
+	
+		<div class="step__item">
+			<span class="step__number">18%</span>
+			<span class="step__descr">Наши цены почти на 18% ниже среднерыночной стоимости среди других платформ;</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">95%</span>
+			<span class="step__descr">Вы можете купить аккаунты с играми на 50%, 70% или даже 95% дешевле официальной стоимости</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">183</span>
+			<span class="step__descr">В среднем, каждый час наш ресурс обрабатывает 183 сделки, потому что нам доверяют</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">$ 370 000</span>
+			<span class="step__descr">Общая стоимость наших лотов превышает 370 000 долларов, и это только начало</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">100%</span>
+			<span class="step__descr">За всё время работы мы получили 100% положительных отзывов, без исключений</span>
+		</div>
+	
+</div>
+
+					<h6>Уникальные преимущества нашей торговой площадки игр</h6>
+					<span class="content-info__descr">Как и все, мы предлагаем оперативную техническую поддержку и регулярное пополнение ассортимента. Но это не те причины, почему вам действительно стоит купить аккаунты с играми именно в нашем магазине:</span>
+					<ul>
+						<li>Все сделки проходят под надсмотром арбитража;</li>
+						<li>У нас есть не только аккаунты стим с играми, но и предложения под другие популярные платформы;</li>
+						<li>Среди всех пользователей Game Transfer мы проводим регулярные розыгрыши;</li>
+						<li>Все наши отзывы оставлены реальными людьми по результатам настоящих сделок;</li>
+						<li>Наша комиссия почти втрое меньше, чем у других магазинов игр;</li>
+						<li>Только у нас постоянно проводятся распродажи, где можно купить аккаунт с играми по самой низкой в интернете цене;</li>
+						<li>Нашей платформой пользуются даже игроки pro-сцены, а это говорит о многом.</li>
+					</ul>
+					<h6>Покупка и продажа игр в одном месте</h6>
+					<span class="content-info__descr">На Game Transfer вы можете не только купить игровые аккаунты Steam, Blizzard и других платформ, но и быстро продать свои игры или предметы инвентаря. Мы предоставляем вам эффективный инструмент для взаимовыгодного обмена между пользователями, с нашим участием в качестве гаранта.</span>
+					<span class="content-info__descr-big">Если хотите продать аккаунт с играми, то наш ресурс обеспечит вам следующие преимущества:</span>
+					<ol>
+						<li>Удобный личный кабинет с историей всех операций;</li>
+						<li>Мгновенный вывод средств;</li>
+						<li>В случае спорных ситуаций, вы можете бесплатно воспользоваться услугой арбитража;</li>
+						<li>Нашему проекту доверяют, поэтому мы обеспечиваем высокий спрос на любые лицензионные игры и предметы инвентаря.</li>
+					</ol>
+					<span class="content-info__more js-more-info">Подробнее</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="social">
+	<div class="container">
+		<span class="social__title">Следите за нами в социальных сетях:</span>
+		<div class="social__wrapp">
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-vk">
+						<use xlink:href="#vk"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-g-plus">
+						<use xlink:href="#g-plus"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-telegram">
+						<use xlink:href="#telegram"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-facebook">
+						<use xlink:href="#facebook"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__wrapp">
+			<div class="footer__inner footer__inner--nav">
+				<ul class="footer__list">
+					<li class="footer__item">
+						<a href="#" class="footer__link">Поддержка</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Вопросы и ответы</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Правила</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Рейтинг продавцов</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Розыгрыши</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Информация</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Пользовательское соглашение</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Отказ от ответственности</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Разрешение споров</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__inner footer__inner--info">
+				<span class="footer__descr">© 2018 Game Transfer - торговая площадка игровых ценностей</span>
+				<span class="footer__icon">
+					<img src="pic/webmoney.png" alt="">
+				</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

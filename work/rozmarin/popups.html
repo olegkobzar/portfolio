@@ -1,0 +1,366 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+		var outer = document.createElement("div");
+		outer.style.visibility = "hidden";
+		outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+}
+var scrollW = getScrollbarWidth();
+document.body.style.paddingRight = scrollW + 'px';
+document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader" class="preloader">
+	<div class="preloader__center">
+		<svg class="icon-logo">
+			<use xlink:href="#logo"></use>
+		</svg>
+		<div class="preloader__dots">
+			<span class="preloader__dots-item"></span>
+			<span class="preloader__dots-item"></span>
+			<span class="preloader__dots-item"></span>
+		</div>
+	</div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+<div class="container">
+  <div style="margin-bottom: 20px;">
+    <a data-fancybox data-src="#popup-question" href="javascript:;">Задать вопрос</a>
+  </div>
+  <div style="margin-bottom: 20px;">
+    <a data-fancybox data-src="#popup-request" href="javascript:;">Оставить заявку</a>
+  </div>
+  <div style="margin-bottom: 20px;">
+    <a data-fancybox data-src="#popup-get-price" href="javascript:;">Получить прайс</a>
+  </div>
+  <div style="margin-bottom: 20px;">
+    <a data-fancybox data-src="#popup-apartment" href="javascript:;">Подобрать квартиру</a>
+  </div>
+  <div style="margin-bottom: 20px;">
+    <a data-fancybox data-src="#popup-feedback" href="javascript:;">Заказать звонок</a>
+  </div>
+  <div style="margin-bottom: 20px;">
+    <a data-fancybox data-src="#popup-mortgage" href="javascript:;">Рассчитать стоимость ипотеки</a>
+  </div>
+  <div style="margin-bottom: 20px;">
+    <a data-fancybox data-src="#popup-apartment-view" href="javascript:;">Квартира с 2 спальнями</a>
+  </div>
+</div>
+
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__col footer__col--logo wow fadeIn" data-wow-duration="1s">
+				<a href="#" class="footer__logo">
+					<svg class="icon-logo-foot">
+						<use xlink:href="#logo-foot"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="footer__col footer__col--info wow fadeIn" data-wow-duration="1s" data-wow-delay=".2s">
+				<span class="footer__info-item">ООО «МЕГАСТРОЙ»</span>
+				<span class="footer__info-item">ИНН 7107081069</span>
+				<span class="footer__info-item">ОГРН 1047101124256</span>
+			</div>
+			<div class="footer__col footer__col--tashir wow fadeIn" data-wow-duration="1s" data-wow-delay=".4s">
+				<img src="pic/tashir.png" alt="">
+			</div>
+			<div class="footer__col footer__col--document wow fadeIn" data-wow-duration="1s" data-wow-delay=".6s">
+				<span class="footer__title">Документация проекта</span>
+				<div class="footer__document-item">
+					<a href="#" class="footer__document-link">Согласие на обработку персональных данных</a>
+				</div>
+				<div class="footer__document-item">
+					<a href="#" class="footer__document-link">Положение об обработке персональных данных</a>
+				</div>
+			</div>
+			<div class="footer__col footer__col--social wow fadeIn" data-wow-duration="1s" data-wow-delay=".8s">
+				<div class="footer__social-wrap">
+					<div class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-vk">
+								<use xlink:href="#vk"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-facebook">
+								<use xlink:href="#facebook"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-odnoklassniki">
+								<use xlink:href="#odnoklassniki"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-instagram">
+								<use xlink:href="#instagram"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div style="display: none;" class="popup" id="popup-question">
+  <span class="popup__title">Задать вопрос</span>
+  <form action="" class="popup__form">
+    <div class="popup__form-row">
+      <input type="text" class="popup__form-input" placeholder="Ваше имя">
+    </div>
+    <div class="popup__form-row">
+      <input type="tel" class="popup__form-input" placeholder="Ваш телефон">
+    </div>
+    <div class="popup__form-row">
+      <textarea class="popup__form-textarea" placeholder="Комментарий...."></textarea>
+    </div>
+    <div class="popup__form-row">
+      <button type="submit" class="btn popup__form-btn">Отправить</button>
+    </div>
+  </form>
+  <span class="popup__info">Нажимая на кнопку <a href="#" class="popup__info-link">Вы соглашаетесь на обработку персональных данных</a></span>
+</div>
+
+<div style="display: none;" class="popup" id="popup-request">
+  <span class="popup__title">Оставить заявку</span>
+  <form action="" class="popup__form">
+    <div class="popup__form-row">
+      <input type="text" class="popup__form-input" placeholder="Ваше имя">
+    </div>
+    <div class="popup__form-row">
+      <input type="tel" class="popup__form-input" placeholder="Ваш телефон">
+    </div>
+    <div class="popup__form-row">
+      <button type="submit" class="btn popup__form-btn">Оставить заявку</button>
+    </div>
+  </form>
+  <span class="popup__info">Нажимая на кнопку <a href="#" class="popup__info-link">Вы соглашаетесь на обработку персональных данных</a></span>
+</div>
+
+<div style="display: none;" class="popup" id="popup-get-price">
+  <span class="popup__title">Получить прайс</span>
+  <form action="" class="popup__form">
+    <div class="popup__form-row">
+      <input type="text" class="popup__form-input" placeholder="Ваше имя">
+    </div>
+    <div class="popup__form-row">
+      <input type="tel" class="popup__form-input" placeholder="Ваш телефон">
+    </div>
+    <div class="popup__form-row">
+      <button type="submit" class="btn popup__form-btn">Получить прайс</button>
+    </div>
+  </form>
+  <span class="popup__info">Нажимая на кнопку <a href="#" class="popup__info-link">Вы соглашаетесь на обработку персональных данных</a></span>
+</div>
+
+<div style="display: none;" class="popup" id="popup-apartment">
+  <span class="popup__title">Подобрать квартиру</span>
+  <form action="" class="popup__form">
+    <div class="popup__form-row">
+      <input type="text" class="popup__form-input" placeholder="Ваше имя">
+    </div>
+    <div class="popup__form-row">
+      <input type="tel" class="popup__form-input" placeholder="Ваш телефон">
+    </div>
+    <div class="popup__form-row">
+      <button type="submit" class="btn popup__form-btn">Подобрать квартиру</button>
+    </div>
+  </form>
+  <span class="popup__info">Нажимая на кнопку <a href="#" class="popup__info-link">Вы соглашаетесь на обработку персональных данных</a></span>
+</div>
+
+<div style="display: none;" class="popup" id="popup-feedback">
+  <span class="popup__title">Заказать звонок</span>
+  <form action="" class="popup__form">
+    <div class="popup__form-row">
+      <input type="text" class="popup__form-input" placeholder="Ваше имя">
+    </div>
+    <div class="popup__form-row">
+      <input type="tel" class="popup__form-input" placeholder="Ваш телефон">
+    </div>
+    <div class="popup__form-row">
+      <button type="submit" class="btn popup__form-btn">Заказать звонок</button>
+    </div>
+  </form>
+  <span class="popup__info">Нажимая на кнопку <a href="#" class="popup__info-link">Вы соглашаетесь на обработку персональных данных</a></span>
+</div>
+
+<div style="display: none;" class="popup popup--large" id="popup-mortgage">
+	<form action="" class="popup__form">
+		<div class="popup__form-top">
+			<span class="popup__title">Рассчитать стоимость ипотеки</span>
+			<div class="popup__form-row popup__form-row--multy">
+				<div class="popup__form-col">
+					<span class="popup__form-label">Стоимость квартиры <span class="rubl">o</span></span>
+					<input type="text" class="input--border popup__form-input js-value-price" value="7 393 440" readonly>
+					<div class="popup__form-slider">
+						<span class="popup__form-txt popup__form-txt--min">3 463 440</span>
+						<span class="popup__form-txt popup__form-txt--max">13 700 278</span>
+						<div class="popup__form-slide js-form-slide-price" data-min="3463440" data-max="13700278" data-value="7393440" data-step="10000"></div>
+					</div>
+				</div>
+				<div class="popup__form-col">
+					<span class="popup__form-label">Первоначальный взнос <span class="rubl">o</span></span>
+					<div class="popup__form-inner">
+						<input type="text" class="input--border popup__form-input js-value-first" value="2 219 344">
+						<span class="popup__form-info">30%</span>
+					</div>          
+					<div class="popup__form-slider">
+						<span class="popup__form-txt popup__form-txt--min">739 344</span>
+						<span class="popup__form-txt popup__form-txt--max">7 393 440</span>
+						<div class="popup__form-slide js-form-slide-first" data-min="739344" data-max="7393440" data-value="2219344" data-step="10000"></div>
+					</div>
+				</div>
+				<div class="popup__form-col">
+					<span class="popup__form-label">Срок кредита лет</span>
+					<input type="text" class="input--border popup__form-input js-value-year" value="15" readonly>
+					<div class="popup__form-slider">
+						<span class="popup__form-txt popup__form-txt--min">1</span>
+						<span class="popup__form-txt popup__form-txt--max">30</span>
+						<div class="popup__form-slide js-form-slide-year" data-min="1" data-max="30" data-value="15" data-step="1"></div>
+					</div>
+				</div>
+
+				<div class="popup__form-col">
+					<span class="popup__form-label">Ежемесячный платеж</span>
+					<input type="text" class="input--border popup__form-input js-value-mounth" value="15" readonly>
+					<div class="popup__form-slider">
+						<span class="popup__form-txt popup__form-txt--min">10 000</span>
+						<span class="popup__form-txt popup__form-txt--max">1 000 000</span>
+						<div class="popup__form-slide js-form-slide-mounth" data-min="10000" data-max="1000000" data-value="100000" data-step="10000"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup__form-bottom">
+			<span class="popup__title">Оставить заявку</span>
+			<div class="popup__form-holder">
+				<div class="popup__form-row">
+					<input type="text" class="popup__form-input" placeholder="Ваше имя">
+				</div>
+				<div class="popup__form-row">
+					<input type="tel" class="popup__form-input" placeholder="Ваш телефон">
+				</div>
+				<div class="popup__form-row">
+					<button type="submit" class="btn popup__form-btn">Отправить заявку</button>
+				</div>
+				<span class="popup__info">Нажимая на кнопку <a href="#" class="popup__info-link">Вы соглашаетесь на обработку персональных данных</a></span>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div style="display: none;" class="popup popup--large popup--view" id="popup-apartment-view">
+	<a href="#" class="popup__btn popup__btn--left"></a>
+	<a href="#" class="popup__btn popup__btn--right"></a>
+	<div class="popup__wrap">
+		<div class="popup__holder popup__holder--small">
+			<img src="pic/popup-room.png" alt="" class="popup__img js-img-popup">
+		</div>
+		<div class="popup__holder popup__holder--large">
+			<span class="popup__title js-title-popup">...</span>
+			<span class="popup__txt">Общая лощадь — 
+				<span class="js-square-popup">...</span> м<sup>2</sup>
+			</span>
+			<span class="popup__txt popup__txt--last">
+				Цена за м<sup>2</sup> — 
+				<span>
+					<span class="js-price-one-popup">...</span> <span class="rubl">o</span>
+				</span>
+			</span>
+			<span class="popup__price">Стоимость — 
+				<span class="js-price-popup">...</span> <span class="rubl">o</span>
+			</span>
+			<form action="" class="popup__form">
+				<div class="popup__form-row popup__form-row--booking">
+					<span class="popup__form-booking">Забронировать на:</span>
+					<select class="popup__form-select">
+						<option value="">1 день</option>
+						<option value="">2 дня</option>
+						<option value="">3 дня</option>
+						<option value="">4 дня</option>
+						<option value="">5 дней</option>
+						<option value="">6 дней</option>
+						<option value="">7 дней</option>
+						<option value="">8 дней</option>
+						<option value="">9 дней</option>
+						<option value="">10 дней</option>
+					</select>
+				</div>
+				<div class="popup__form-row">
+					<input type="text" class="popup__form-input" placeholder="Ваше имя">
+				</div>
+				<div class="popup__form-row">
+					<input type="tel" class="popup__form-input" placeholder="Ваш телефон">
+				</div>
+				<div class="popup__form-row">
+					<button type="submit" class="btn popup__form-btn">Забронировать</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,1808 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calendar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+	<header class="header">
+	<div class="container">
+		<div class="header__wrapp">
+			<div class="header__left">
+				<a href="#" class="header__logo">
+					<span class="header__logo-img">
+						<img src="pic/logo/logo.png" alt="logo">
+					</span>
+					<span class="header__logo-text">Unicket</span>
+				</a>
+				<div class="header__service">
+					<span class="header__service-text">
+						Авиабилеты
+					</span>
+					<span class="header__service-icon"></span>
+				</div>
+			</div>
+			<div class="header__right">
+
+				<div class="header__inner header__inner--subscribe">
+					<a data-fancybox data-src="#popup" href="javascript:;" class="header__inner--subscribe-link">
+						<span class="header__inner--subscribe-icon"></span>
+						<span class="header__inner--subscribe-text">
+							Подписаться
+						</span>
+					</a>
+					<div class="popup" id="popup">
+	<span class="popup__caption">
+		Оформление подписки
+	</span>
+	<div class="popup__bott">
+		<div class="popup__left">
+			<img src="pic/article/art-2.png" alt="mail">
+		</div>
+		<div class="popup__right">
+			<p class="popup__descr">
+				Оформите подписку, чтобы регулярно получать новости об изменениях цен на билеты, которые вы ищете.
+			</p>
+			<p class="popup__descr">
+				Для активации и редактирования данных подписки укажите адрес своей электронной почты.
+			</p>
+			<form action="">
+				<div class="popup__form">
+					<div class="popup__wrapp-inp">
+						<input type="email" class="popup__inp" placeholder="Ваш E-mail">
+					</div>
+					<div class="popup__wrapp-btn">
+						<button type="submit" class="btn btn--popup">Подписаться</button>
+					</div>
+				</div>
+			</form>
+			<span class="popup__descr--link">
+				Нажимая «Подписаться», вы соглашаетесь с правилами <a href="#" class="popup__link">использования сервиса</a> и <a href="#" class="popup__link">обработки персональных данных.</a>
+			</span>
+		</div>
+	</div>
+</div>
+				</div>
+
+				<div class="header__inner header__inner--lang js-bg-lang">
+					<div class="header__inner-element js-lang-btn">
+						<div class="header__inner--lang-img">
+							<img src="pic/flag/flag-rus.png" alt="">
+						</div>
+						<div class="header__inner--lang-text">
+							<span class="header__inner--lang-name">RU</span>
+							<span>/</span>
+							<span class="header__inner--lang-currency">RUB</span>
+						</div>
+					</div>
+					<div class="header__lang-open js-header-lang">
+						<span class="header__lang-caption">Выберите региональные настройки</span>
+						<form action="">
+							<div class="header__lang-form">
+								<div class="header__lang-wrapp">
+									<span class="header__lang-title">Доставка в</span>
+									<div class="header__lang-select js-delivery-box">
+									    <select name="delivery" id="header-delivery" class="js-delivery">
+									    	<option value="United States" data-class="flag" data-style="background-image: url(pic/flag/usa.png);">United States</option>
+											<option value="Russian Federation" selected data-class="flag" data-style="background-image: url(pic/flag/russia.png);">Russian Federation</option>
+											<option value="Spain" data-class="flag" data-style="background-image: url(pic/flag/spain.png);">Spain</option>
+											<option value="France" data-class="flag" data-style="background-image: url(pic/flag/france.png);">France</option>
+											<option value="United Kingdom" data-class="flag" data-style="background-image: url(pic/flag/uk.png);">United Kingdom</option>
+											<option value="Brazil" data-class="flag" data-style="background-image: url(pic/flag/brazil.png);">Brazil</option>
+											<option value="Israel" data-class="flag" data-style="background-image: url(pic/flag/israel.png);">Israel</option>
+											<option value="Netherlands" data-class="flag" data-style="background-image: url(pic/flag/netherland.png);">Netherlands</option>
+											<option value="Canada" data-class="flag" data-style="background-image: url(pic/flag/canada.png);">Canada</option>
+											<option value="United States" data-class="flag" data-style="background-image: url(pic/flag/usa.png);">United States</option>
+											<option value="Russian Federation" data-class="flag" data-style="background-image: url(pic/flag/russia.png);">Russian Federation</option>
+											<option value="Spain" data-class="flag" data-style="background-image: url(pic/flag/spain.png);">Spain</option>
+											<option value="France" data-class="flag" data-style="background-image: url(pic/flag/france.png);">France</option>
+											<option value="United Kingdom" data-class="flag" data-style="background-image: url(pic/flag/uk.png);">United Kingdom</option>
+											<option value="Brazil" data-class="flag" data-style="background-image: url(pic/flag/brazil.png);">Brazil</option>
+											<option value="Israel" data-class="flag" data-style="background-image: url(pic/flag/israel.png);">Israel</option>
+											<option value="Netherlands" data-class="flag" data-style="background-image: url(pic/flag/netherland.png);">Netherlands</option>
+											<option value="Canada" data-class="flag" data-style="background-image: url(pic/flag/canada.png);">Canada</option>
+									    </select>
+									</div>
+								</div>
+								<div class="header__lang-wrapp">
+									<span class="header__lang-title">Доставка в</span>
+									<div class="header__lang-select">
+										<select name="currency" id="header-currency" class="js-currency">
+											<option value="">USD</option>
+											<option value="">RUB</option>
+											<option value="">GBP</option>
+											<option value="">AUD</option>
+											<option value="">EUR</option>
+											<option value="">USD</option>
+											<option value="">RUB</option>
+											<option value="">GBP</option>
+											<option value="">AUD</option>
+											<option value="">EUR</option>
+										</select>
+									</div>
+								</div>
+								<div class="header__lang-wrapp-btn">
+									<button type="submit" class="btn btn--lang">Сравнить</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="header__inner header__inner--login js-bg-login">
+					<div class="header__inner-element js-login-btn">
+						<span class="header__inner--login-icon"></span>
+						<span class="header__inner--login-text">
+							Войти
+						</span>
+					</div>
+					<div class="header__login-open js-header-login">
+						<span class="header__login-caption">
+							Выполните вход или зарегистрируйтесь
+						</span>
+						<div class="header__login-content">
+							<div class="header__login-left">
+								<span class="header__login-title">Вход через социальные сети</span>
+								<span class="header__login-descr">Это быстро, просто, и мы не будем ничего публиковать, не спросив вас</span>
+								<ul class="header__login-social-list">
+									<li class="header__login-social-item">
+										<a href="#" class="header__login-wrapp">
+											<span class="header__login-icon header__login-icon--facebook"></span>
+											<span class="header__login-text">Вход через Facebook</span>
+										</a>
+									</li>
+									<li class="header__login-social-item">
+										<a href="#" class="header__login-wrapp">
+											<span class="header__login-icon header__login-icon--google"></span>
+											<span class="header__login-text">Вход через Google+</span>
+										</a>
+									</li>
+									<li class="header__login-social-item">
+										<a href="#" class="header__login-wrapp">
+											<span class="header__login-icon header__login-icon--vk"></span>
+											<span class="header__login-text">Войти через ВКонтакте</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="header__login-right">
+								
+								
+									<span class="header__login-title">Завести личный кабинет на Unicket</span>
+									<span class="header__login-descr">У вас уже есть учетная запись Unicket?</span>
+									<a href="#" class="header__login-account">Вход в личный кабинет</a>
+								
+								<form action="">
+									<div class="header__login-form">
+										<div class="header__login-wrapp-inp">
+											<input type="email" class="header__login-input" id="login-inp-mail" placeholder="E-mail">
+											<label class="header__login-inp-label header__login-inp-label--mail" for="login-inp-mail"></label>
+										</div>
+										<div class="header__login-wrapp-inp">
+											<input type="password" class="header__login-input" id="login-inp-pass" placeholder="Пароль">
+											<label class="header__login-inp-label header__login-inp-label--pass" for="login-inp-pass"></label>
+										</div>
+										<div class="header__login-group">
+											<div class="header__login-wrapp-checkbox">
+												<input type="checkbox" id="login-pass" class="header__login-inp">
+												<label for="login-pass">Показать пароль</label>
+											</div>
+											<div class="header__login-wrapp-checkbox">
+												<input type="checkbox" id="login-remember" class="header__login-inp" checked>
+												<label for="login-remember">Запомнить меня</label>
+											</div>
+										</div>
+										
+										
+											<div class="header__login-btn header__login-btn--reg">
+												<button type="submit" class="btn btn--login">Регистрация</button>
+											</div>
+										
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="header__login-bottom">
+							<span class="header__login-bottom-text">
+								Регистрируясь, вы тем самым принимаете <a href="#" class="header__login-link">условия обслуживания</a> и <a href="#" class="header__login-link">политику конфиденциальности</a> Unicket
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="header__inner header__inner--btn js-bg-nav">
+					<div class="header__inner--btn-group js-nav-btn">
+						<span class="header__btn-line"></span>
+						<span class="header__btn-line"></span>
+						<span class="header__btn-line"></span>
+					</div>
+					<nav class="header__nav js-header-nav">
+						<ul class="header__nav-list-top">
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Календарь низких цен
+								</a>
+							</li>
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Карта низких цен
+								</a>
+							</li>
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Спецпредложения
+								</a>
+							</li>
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Топ 100 билетов
+								</a>
+							</li>
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Горящие авиабилеты
+								</a>
+							</li>
+						</ul>
+						<ul class="header__nav-list-bott">
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Блог
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Помощь
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									О компании
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Вакансии
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Авиакомпании
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Страны
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Города
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Аэропорты
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+    
+    <div class="wrapper">
+    	<div class="calendar-top-bg">
+   <div class="container">
+    <div class="calendar-header">
+        <div class="calendar-header__inner">
+          <span class="calendar-header__text">Календарь низких цен</span>
+          <span class="calendar-header__text calendar-header__text--right">Цены на авиабилеты, обнаруженные посетителями за последние 48 часов</span>
+        </div>
+    </div>
+
+    <div class="calendar-top">
+        <div class="calendar-top__inner">
+          <form>
+            <div class="calendar-top__cities js-selection-item">
+              <div class="calendar-top__cities-item">
+                <span class="calendar-top__cities-title">Город / страна вылета</span>
+                <div class="calendar-top__cities-box">
+                  <input type="text" class="calendar-top__cities-input calendar-top__cities-input--button js-selection-first-city js-selection-city-input" value="Москва, Россия">
+                  <span class="calendar-top__cities-city-code">MOW</span> 
+                  <button class="calendar-top__cities-round js-selection-change-city"></button> 
+                </div>
+              </div>
+              <div class="calendar-top__cities-item">
+                <input type="radio" name="trip-type" id="one-way" value="one-way">
+                <label for="one-way" class="calendar-top__cities-radio calendar-top__cities-radio--oneway"></label>
+              </div>
+              <div class="calendar-top__cities-item">
+                <input type="radio" name="trip-type" id="round-trip" value="round-trip">
+                <label for="round-trip" class="calendar-top__cities-radio calendar-top__cities-radio--roundtrip"></label>
+              </div>
+              <div class="calendar-top__cities-item">
+                <span class="calendar-top__cities-title">Город / страна назначения</span>
+                <div class="calendar-top__cities-box">
+                  <input type="text" class="calendar-top__cities-input js-selection-second-city js-selection-city-input" value="Любая страна">
+                </div>
+              </div>
+            </div>
+            <div class="calendar-top__dates js-tabs-wrap">
+              <div class="calendar-top__dates-nav">
+                <a href="#" class="calendar-top__dates-nav-item js-tab active">Выберите возможные месяцы</a>
+                <a href="#" class="calendar-top__dates-nav-item js-tab">Точные даты вылета</a>
+              </div>
+              <div class="calendar-top__dates-tabs">
+                <div class="calendar-top__dates-content js-tab-content active">
+                    <span class="calendar-top__dates-error">Выберите хотя бы один месяц</span>
+<div class="calendar-top__dates-wrapper">
+<ul class="calendar-top__dates-list" data-year="2018">
+  <li class="calendar-top__dates-year"><span class="calendar-top__dates-year-number">2018</span></li>
+  <li class="calendar-top__dates-month calendar-top__dates-month--first" data-month="4">
+    <input id="month4-18" name="month" type="checkbox" value="4-18" checked />
+    <label for="month4-18" class="calendar-top__dates-label js-month-label">апр</label>
+  </li>
+  <li class="calendar-top__dates-month" data-month="5">
+    <input id="month5-18" name="month" type="checkbox" value="5-18" />
+    <label for="month5-18" class="calendar-top__dates-label js-month-label">май</label>
+  </li>
+  <li class="calendar-top__dates-month" data-month="4">
+    <input id="month6-18" name="month" type="checkbox" value="6-18" />
+    <label for="month6-18" class="calendar-top__dates-label js-month-label">июн</label>
+  </li>
+  <li class="calendar-top__dates-month" data-month="4">
+    <input id="month7-18" name="month" type="checkbox" value="7-18" />
+    <label for="month7-18" class="calendar-top__dates-label js-month-label">июл</label>
+  </li>
+  <li class="calendar-top__dates-month" data-month="4">
+    <input id="month8-18" name="month" type="checkbox" value="8-18" />
+    <label for="month8-18" class="calendar-top__dates-label js-month-label">авг</label>
+  </li>
+  <li class="calendar-top__dates-month" data-month="4">
+    <input id="month9-18" name="month" type="checkbox" value="9-18" />
+    <label for="month9-18" class="calendar-top__dates-label js-month-label">сен</label>
+  </li>
+  <li class="calendar-top__dates-month" data-month="4">
+    <input id="month10-18" name="month" type="checkbox" value="10-18" />
+    <label for="month10-18" class="calendar-top__dates-label js-month-label">окт</label>
+  </li>
+  <li class="calendar-top__dates-month" data-month="4">
+    <input id="month11-18" name="month" type="checkbox" value="11-18" />
+    <label for="month11-18" class="calendar-top__dates-label js-month-label">ноя</label>
+  </li>
+  <li class="calendar-top__dates-month" data-month="12">
+    <input id="month12-18" name="month" type="checkbox" value="12-18" />
+    <label for="month12-18" class="calendar-top__dates-label js-month-label">дек</label>
+  </li>
+</ul>
+<ul class="calendar-top__dates-list" data-year="2019">
+  <li class="calendar-top__dates-year calendar-top__dates-year--next"><span class="calendar-top__dates-year-number">2019</span></li>
+  <li class="calendar-top__dates-month" data-month="1">
+    <input id="month1-19" name="month" type="checkbox" value="1-19" />
+    <label for="month1-19" class="calendar-top__dates-label js-month-label">янв</label>
+  </li>
+  <li class="calendar-top__dates-month" data-month="2">
+    <input id="month2-19" name="month" type="checkbox" value="2-19" />
+    <label for="month2-19" class="calendar-top__dates-label js-month-label">фев</label>
+  </li>
+  <li class="calendar-top__dates-month calendar-top__dates-month--last" data-month="3">
+    <input id="month3-19" name="month" type="checkbox" value="3-19" />
+    <label for="month3-19" class="calendar-top__dates-label js-month-label">мар</label>
+  </li>
+</ul>
+</div>
+                </div>
+                <div class="calendar-top__dates-content js-tab-content">
+                  здесь календарь по дням
+                </div>
+              </div>
+            </div>
+            <div class="calendar-top__holiday">
+              <div class="calendar-top__duration">
+                  <span class="calendar-top__duration-label js-duration-label">
+                    Продолжительность отпуска<span class="calendar-top__duration-disabled">&nbsp;не доступна: выбран перелет в одну сторону</span>
+                  </span>
+                  <div class="calendar-top__duration-range yellow-round-slider js-duration-range" data-max="30" data-min="1" data-start="1" data-end="25">
+                    <input name="duration-min" type="hidden" value="7" class="js-duration-min"/>
+                    <input name="duration-max" type="hidden" value="14" class="js-duration-max" />
+                  </div>
+                  <ul class="calendar-top__duration-list">
+                    <li class="calendar-top__duration-item">1</li>
+                    <li class="calendar-top__duration-item">5</li>
+                    <li class="calendar-top__duration-item">10</li>
+                    <li class="calendar-top__duration-item">15</li>
+                    <li class="calendar-top__duration-item">20</li>
+                    <li class="calendar-top__duration-item">25</li>
+                    <li class="calendar-top__duration-item">30</li>
+                  </ul>
+              </div>
+            </div>
+            <div class="calendar-top__buttons">
+              <button type="submit" class="btn btn--search calendar-top__submit">Показать цены</button>
+              <button type="reset" class=" calendar-top__reset">Очистить форму</button>
+            </div>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>
+    	<div class="calendar">
+	<div class="container">
+		<div class="content-holder">
+			<div class="sidebar">
+             
+              <div class="calendar-highlights item-box">
+                <p class="calendar-highlights__title">Лучшие билеты</p>
+                <div class="calendar-highlights__list">
+                  <a href="#" class="calendar-highlights__item calendar-highlights__item--lowcost js-calendar-highlight" data-highlight="lowcost">
+                    <span class="calendar-highlights__item-title">Самый дешевый</span>
+                    <span class="calendar-highlights__item-qty">1 545 <span class="calendar-highlights__item-units">р.</span></span>
+                  </a>
+                  <a href="#" class="calendar-highlights__item calendar-highlights__item--fastest js-calendar-highlight" data-highlight="fastest">
+                    <span class="calendar-highlights__item-title">Быстрые перелеты</span>
+                    <span class="calendar-highlights__item-qty">50 <span class="calendar-highlights__item-units">м.</span></span>
+                  </a>
+                  <a href="#" class="calendar-highlights__item calendar-highlights__item--long js-calendar-highlight" data-highlight="long">
+                    <span class="calendar-highlights__item-title">Долгий отпуск</span>
+                    <span class="calendar-highlights__item-qty">21</span>
+                  </a>
+                </div>
+              </div>
+              
+              <div class="calendar-filters item-box">
+               
+                <div class="calendar-filters__item">
+                  <p class="calendar-filters__title js-accordeon-link active">Длительность отпуска</p>
+                  <div class="calendar-filters__content js-accordeon" style="display: block">
+                    <div class="calendar-filters__range js-filters-range">
+                      <div class="calendar-filters__range-slider yellow-round-slider js-filters-range-slider" data-max="12" data-min="1" data-start="1" data-end="12">
+                        <input name="duration-min1" type="hidden" value="1" class="js-filters-range-min"/>
+                        <input name="duration-max1" type="hidden" value="12" class="js-filters-range-max" />
+                      </div>
+                      <span class="calendar-filters__range-text"><span class="js-filters-range-min-text">7</span>-<span class="js-filters-range-max-text">12</span></span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="calendar-filters__item">
+                  <p class="calendar-filters__title js-accordeon-link">Цена билета</p>
+                  <div class="calendar-filters__content js-accordeon">
+                    <div class="calendar-filters__range js-filters-range">
+                      <div class="calendar-filters__range-slider yellow-round-slider js-filters-range-slider" data-max="9820" data-min="1125" data-start="1125" data-end="9820">
+                        <input name="duration-min2" type="hidden" value="1125" class="js-filters-range-min"/>
+                        <input name="duration-max2" type="hidden" value="9820" class="js-filters-range-max" />
+                      </div>
+                      <span class="calendar-filters__range-text"><span class="js-filters-range-min-text">1 125</span>Р. - <span class="js-filters-range-max-text">9 820</span>Р.</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="calendar-filters__item">
+                  <p class="calendar-filters__title js-accordeon-link">Пересадки</p>
+                  <div class="calendar-filters__content js-accordeon">
+                    <div class="calendar-filters__box calendar-filters__box--checkbox">
+                      <input type="checkbox" name="calendar-filters-check" id="calendar-filters-check">
+                      <label for="calendar-filters-check">Только рейсы без пересадок</label>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="calendar-filters__item">
+                  <p class="calendar-filters__title js-accordeon-link">Валюта</p>
+                  <div class="calendar-filters__content js-accordeon">
+                    <div class="calendar-filters__box">
+                      <select class="js-select-ui" id="calendar-filters-currency">
+                          <option value="RUB" selected>Российский рубль</option>
+                          <option value="USD">Доллар США</option>
+                          <option value="EUR">Евро</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              
+            </div>
+            <div class="content">
+              <div class="calendar-schedule item-box">
+                <div class="calendar-month">
+  <p class="calendar-month__title">Июнь 2018</p> 
+  <div class="calendar-month__list">
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">1</span>
+          <span class="calendar-day__price">2 572 Р.</span>
+        </a>
+      </div> 
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">2</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">3</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">4</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">5</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">6</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">7</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>   
+          
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">8</span>
+          <span class="calendar-day__price">2 572 Р.</span>
+        </a>
+      </div> 
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">9</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">10</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">11</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">12</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">13</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day highlight" data-highlight="lowcost">
+          <span class="calendar-day__number">14</span>
+          <span class="calendar-day__price">8 572 Р.</span>
+        </a>
+        <!--<div class="calendar-day__drop js-calendar-drop">
+          this is the dropdown block
+        </div>-->
+      </div>    
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">15</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">16</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">17</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>   
+          
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">18</span>
+          <span class="calendar-day__price">2 572 Р.</span>
+        </a>
+      </div> 
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">19</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">20</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">21</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">22</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">23</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">24</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>
+            
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">25</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">26</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">27</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">28</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">29</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">30</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>                                 
+             
+    
+  </div> 
+</div><div class="calendar-month">
+  <p class="calendar-month__title">Июль 2018</p> 
+  <div class="calendar-month__list">
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">1</span>
+          <span class="calendar-day__price">2 572 Р.</span>
+        </a>
+      </div> 
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">2</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">3</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">4</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">5</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">6</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">7</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>   
+          
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">8</span>
+          <span class="calendar-day__price">2 572 Р.</span>
+        </a>
+      </div> 
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">9</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">10</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">11</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">12</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">13</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day longclass" data-highlight="long">
+          <span class="calendar-day__number">14</span>
+          <span class="calendar-day__price">8 572 Р.</span>
+        </a>
+        <!--<div class="calendar-day__drop js-calendar-drop">
+          this is the dropdown block
+        </div>-->
+      </div>    
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">15</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">16</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">17</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>   
+          
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">18</span>
+          <span class="calendar-day__price">2 572 Р.</span>
+        </a>
+      </div> 
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">19</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">20</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">21</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">22</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">23</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">24</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>
+            
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">25</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">26</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">27</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">28</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">29</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">30</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>                                 
+             
+    
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">31</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+    
+  </div> 
+</div><div class="calendar-month">
+  <p class="calendar-month__title">Август 2018</p> 
+  <div class="calendar-month__list">
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">1</span>
+          <span class="calendar-day__price">2 572 Р.</span>
+        </a>
+      </div> 
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">2</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">3</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">4</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">5</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">6</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">7</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>   
+          
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">8</span>
+          <span class="calendar-day__price">2 572 Р.</span>
+        </a>
+      </div> 
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">9</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">10</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">11</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">12</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">13</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day fastestclass" data-highlight="fastest">
+          <span class="calendar-day__number">14</span>
+          <span class="calendar-day__price">8 572 Р.</span>
+        </a>
+        <!--<div class="calendar-day__drop js-calendar-drop">
+          this is the dropdown block
+        </div>-->
+      </div>    
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">15</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">16</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">17</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>   
+          
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">18</span>
+          <span class="calendar-day__price">2 572 Р.</span>
+        </a>
+      </div> 
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">19</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">20</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">21</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">22</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">23</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">24</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>
+            
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">25</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">26</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">27</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">28</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">29</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">30</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>                                 
+             
+    
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">31</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+    
+  </div> 
+</div><div class="calendar-month">
+  <p class="calendar-month__title">Сентябрь 2018</p> 
+  <div class="calendar-month__list">
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+        <div class="calendar-day calendar-day--empty"></div>
+      
+
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">1</span>
+          <span class="calendar-day__price">2 572 Р.</span>
+        </a>
+      </div> 
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">2</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">3</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">4</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">5</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">6</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">7</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>   
+          
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">8</span>
+          <span class="calendar-day__price">2 572 Р.</span>
+        </a>
+      </div> 
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">9</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">10</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">11</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">12</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">13</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day class" data-highlight="">
+          <span class="calendar-day__number">14</span>
+          <span class="calendar-day__price">8 572 Р.</span>
+        </a>
+        <!--<div class="calendar-day__drop js-calendar-drop">
+          this is the dropdown block
+        </div>-->
+      </div>    
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">15</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">16</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">17</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>   
+          
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">18</span>
+          <span class="calendar-day__price">2 572 Р.</span>
+        </a>
+      </div> 
+      
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">19</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">20</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">21</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">22</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">23</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">24</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>
+            
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">25</span>
+          <span class="calendar-day__price">4 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">26</span>
+          <span class="calendar-day__price">9 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">27</span>
+          <span class="calendar-day__price">6 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">28</span>
+          <span class="calendar-day__price">1 572 Р.</span>
+        </a>
+      </div>
+       
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">29</span>
+          <span class="calendar-day__price">5 572 Р.</span>
+        </a>
+      </div>                               
+        
+      <div class="calendar-day">
+        <a href="#" class="calendar-day__link js-calendar-day">
+          <span class="calendar-day__number">30</span>
+          <span class="calendar-day__price">7 572 Р.</span>
+        </a>
+      </div>                                 
+             
+    
+  </div> 
+</div>
+              </div>
+            </div>
+      </div>
+  </div>
+</div>
+
+    	
+    </div>
+
+  <footer class="footer  js-footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">Страны</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Россия
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Таиланд
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Черногория
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Кипр
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Болгария
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Грузия
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="footer__item-link">Все страны</a>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">Города</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Москва
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Санкт-Петербург
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Симферополь
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Адлер
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Екатеринбург
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Лондон
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="footer__item-link">Все страны</a>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">авиакомпании</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Air Berlin
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Air France
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Alitalia
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Air Baltic
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Emirates
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							KLM
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="footer__item-link">Все авиакомпании</a>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">аэропорты</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Шереметьево
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Курумоч
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Домодедово
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Толмачево
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Владивосток
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Гамбург
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="footer__item-link">Все аэропорты</a>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">Направления</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – SIP
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – AER
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – TIV
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – MRV
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							LED – MOW
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – BKK
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">Сервисы</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Горящие авиабилеты
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Календарь низких цен
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Карта низких цен
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Спецпредложения
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Таблица цен
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Блог
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Помощь
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer__nav-wrap">
+			<div class="footer__nav">
+			<ul class="footer__nav-list">
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						О компании    
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Партнёрская программа 
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Реклама 
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Вакансии 
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Помощь
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Правила
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						White Label авиабилеты
+					</a>
+				</li>
+
+			</ul>
+			</div>
+			<div class="footer__copi-box">
+			<div class="footer__social">
+				<span class="footer__social-txt">
+					Следуйте на за нами:
+				</span>
+				<div class="footer__social-items">
+					<a href="#" class="footer__social-link footer__social-link--vk"></a>
+					<a href="#" class="footer__social-link footer__social-link--fb"></a>
+					<a href="#" class="footer__social-link footer__social-link--twitter"></a>
+					<a href="#" class="footer__social-link footer__social-link--insta"></a>
+				</div>
+			</div>
+			<div class="footer__copiright">
+				<span>
+					© 2007–2018, Superaviatickets — дешевые авиабилеты
+				</span>
+			</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+
+

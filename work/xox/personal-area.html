@@ -1,0 +1,1507 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Личный кабинет</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+    <div class="wrapper">
+
+        <header class="header">
+	<div class="header__top">
+		<div class="container">
+			<div class="header__top-left">
+				<ul class="header__social-list">
+					<li class="header__social-item">
+						<a href="" class="header__social-link">
+							<svg class="icon-facebook">
+								<use xlink:href="#facebook"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="header__social-item">
+						<a href="" class="header__social-link">
+							<svg class="icon-instagram">
+								<use xlink:href="#instagram"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="header__social-item">
+						<a href="" class="header__social-link">
+							<svg class="icon-vk">
+								<use xlink:href="#vk"></use>
+							</svg>
+						</a>
+					</li>
+				</ul>
+				<div class="header__location">
+					<a href="" class="header__location-link">
+						<span class="header__location-icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<span class="header__location-text">Москва</span>
+					</a>
+					
+				</div>
+			</div>
+			
+			
+				<div class="header__top-right">
+					<div class="header__user">
+						<span class="header__user-icon">
+							<svg class="icon-user">
+								<use xlink:href="#user"></use>
+							</svg>
+						</span>
+						<span class="header__user-name">Никнейм</span>
+					</div>
+					<a href="#" class="header__entrance">
+						<span class="header__entrance-text">Выйти</span>
+					</a>
+				</div>
+			
+		</div>
+	</div> 
+	<div class="header__bott">
+		<div class="container">
+			<div class="header__bott-wrapp js-bott-wrapp">
+				<div class="header__logo">
+					<a href="#" class="header__logo-link">
+						<span class="header__logo-img-wrapp">
+							<img src="pic/logo/logo.png" alt="">
+						</span>
+						<span class="header__logo-text">Сервис для обмена вещами и услугами</span>
+					</a>
+				</div>
+				<div class="header__form-search">
+					<form action="">
+						<div class="header__form-inner">
+							<div class="header__btn-wrapp">
+								<button class="btn header__btn">
+									<svg class="icon-search">
+										<use xlink:href="#search"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="header__input-wrapp">
+								<input type="text" placeholder="Что Вы ищете?" class="header__input">
+							</div>
+							<div class="header__select-wrapp">
+								<select name="Select" id="" class="select select--category js-select" data-placeholder="Категория">
+									<option></option>
+									<option value="Название категории">Название 1</option>
+									<option value="Название категории">Название 2</option>
+									<option value="Название категории">Название 3</option>
+									<option value="Название категории">Название 4</option>
+									<option value="Название категории">Название 5</option>
+									<option value="Название категории">Название 6</option>
+									<option value="Название категории">Название 7</option>
+									<option value="Название категории">Название 8</option>
+									<option value="Название категории">Название 9</option>
+									<option value="Название категории">Название 10</option>
+								</select>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="header__added-btn">
+					<a data-fancybox data-src="#popup-new-goal" href="javascript:;" class="btn header__add">Добавить вещь или услугу</a>
+				</div>
+				<div class="header__mobile-open js-btn-menu">
+					<span class="header__mobile-line"></span>
+					<span class="header__mobile-line"></span>
+					<span class="header__mobile-line"></span>
+				</div>
+			</div>
+			<div class="header__menu js-wrapp-nav">
+				<nav class="header__nav js-menu-open">
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Все</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Животные</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Электроника</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Транспорт</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Работа</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Услуги</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Дом и дача</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Личные вещи</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="" class="header__nav-link">Прочее</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			
+		</div>
+	</div>
+</header>
+
+        <div class="breadcrumbs">
+	<div class="container">
+		<ul class="breadcrumbs__list">
+			
+			<li class="breadcrumbs__item">
+				<a href="#" class="breadcrumbs__link">Главная</a>
+			</li>
+			
+			<li class="breadcrumbs__item">Личный кабинет</li>
+		</ul>
+	</div>
+</div>
+
+        <div class="container">
+            <div class="content-wrapp js-sticky-container">
+                <aside class="sidebar">
+                    <div class="area js-sticky-block">
+	<div class="area__user">
+		<div class="area__user-icon">
+			<svg class="icon-user-area">
+				<use xlink:href="#user-area"></use>
+			</svg>
+		</div>
+		<div class="area__user-info">
+			<span class="area__user-name">Иван</span>
+			<span class="area__user-surname">Иванов</span>
+		</div>
+	</div>
+	<ul class="area__list">
+		<li class="area__item active">
+			<a data-fancybox data-src="#popup-new-goal" href="javascript:;" class="area__link">Добавить вещь / услугу</a>
+		</li>
+		<li class="area__item">
+			<a href="#" class="area__link">Мои вещи</a>
+		</li>
+		<li class="area__item">
+			<a href="#" class="area__link">Мои услуги</a>
+		</li>
+		<li class="area__item">
+			<a href="#" class="area__link">История сделок</a>
+		</li>
+		<li class="area__item">
+			<a href="#" class="area__link">Сообщения</a>
+		</li>
+		<li class="area__item">
+			<a href="#" class="area__link">Настройки</a>
+		</li>
+	</ul>
+</div>
+                </aside>
+
+                <div class="main" style="padding-bottom: 33px;">
+
+                    <div class="order-head">
+	<span class="order-head__caption">Вам передали вещи / услуги</span>
+	
+		<span class="order-head__subtitle">Подтвердите их получение</span>
+	
+</div>
+                    <div class="area-item__wrapp">
+	
+		<div class="area-item js-area-item ">
+			<div class="area-item__top">
+				<div class="area-item__top-wrapp js-visible-wrapp">
+					<div class="area-item__inner area-item__inner--accept">
+						<span class="area-item__btn js-btn-accept">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Принять</span>
+						</span>
+					</div>
+					<div class="area-item__inner area-item__inner--refuse">
+						<span class="area-item__btn js-btn-refuse">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Отказать</span>
+						</span>
+					</div>
+				</div>
+
+				<div class="area-item__result area-item__result--provided js-hidden-btn-provided">
+					<span class="area-item__btn">
+						<span class="area-item__decor">
+							<span class="area-item__circle"></span>
+						</span>
+						<span class="area-item__text">Услуга оказана</span>
+					</span>
+				</div>
+				<div class="area-item__result area-item__result--unprovided js-hidden-btn-unprovided">
+					<span class="area-item__btn">
+						<span class="area-item__decor">
+							<span class="area-item__circle"></span>
+						</span>
+						<span class="area-item__text">Услуга не оказана</span>
+					</span>
+				</div>
+			</div>
+
+			<div class="area-item__bott js-card-goods">
+				<div class="goods__card goods__card--area">
+	<a href="#" class="goods__inner-top">
+		<div class="goods__img-wrapp">
+			<img src="pic/card/card-01.jpg" alt="">
+		</div>
+		<span class="goods__sale">20%</span>
+		<span class="goods__date-sale">01 - 10 мая</span>
+		<span class="goods__heart">
+			<svg class="icon-heart">
+				<use xlink:href="#heart"></use>
+			</svg>
+		</span>
+	</a>
+	<div class="goods__inner-bott">
+		<div class="goods__head">
+			<div class="goods__popularity">
+				<span class="goods__icon goods__icon--star">
+					<svg class="icon-star">
+						<use xlink:href="#star"></use>
+					</svg>
+				</span>
+				<span class="goods__rating">8.9</span> /
+				<span class="goods__max">10</span>
+			</div>
+			<div class="goods__date">
+				<span class="goods__icon">
+					<svg class="icon-calendar">
+						<use xlink:href="#calendar"></use>
+					</svg>
+				</span>
+				<span class="goods__date-text">20.02.18 г.</span>
+			</div>
+		</div>
+		<span class="goods__number">#98456123</span>
+		<div class="goods__location">
+			<span class="goods__icon goods__icon--map">
+				<svg class="icon-map">
+					<use xlink:href="#map"></use>
+				</svg>
+			</span>
+			<span class="goods__location-text">Москва / Ст. метро Ленинский проспект</span>
+		</div>
+		<a href="#" class="goods__name">Название вещи возможно в две строки</a>
+		<div class="goods__foot">
+			<span class="goods__price">2 000 <span class="goods__price-rub">руб.</span></span>
+			<div class="goods__exchange">
+				<a href="#" class="goods__exchange-link">
+					<span class="btn goods__exchange-btn">Обменять</span>
+					<span class="goods__exchange-text">Обменять</span>
+					<span class="goods__arrow"></span>
+					<span class="goods__arrow goods__arrow--reverse"></span>
+				</a>
+			</div>
+			<div class="goods__buy">
+				<a href="#" class="goods__buy-link">
+					<span class="btn btn--green goods__buy-btn">Купить</span>
+					<span class="goods__buy-text">Купить</span>
+					<svg class="icon-buy">
+						<use xlink:href="#purse"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+			</div>
+		</div>
+
+		<div class="area-item js-area-item ">
+			<div class="area-item__top">
+				<div class="area-item__top-wrapp js-visible-wrapp">
+					<div class="area-item__inner area-item__inner--accept">
+						<span class="area-item__btn js-btn-accept">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Принять</span>
+						</span>
+					</div>
+					<div class="area-item__inner area-item__inner--refuse">
+						<span class="area-item__btn js-btn-refuse">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Отказать</span>
+						</span>
+					</div>
+				</div>
+
+				<div class="area-item__result area-item__result--provided js-hidden-btn-provided">
+					<span class="area-item__btn">
+						<span class="area-item__decor">
+							<span class="area-item__circle"></span>
+						</span>
+						<span class="area-item__text">Услуга оказана</span>
+					</span>
+				</div>
+				<div class="area-item__result area-item__result--unprovided js-hidden-btn-unprovided">
+					<span class="area-item__btn">
+						<span class="area-item__decor">
+							<span class="area-item__circle"></span>
+						</span>
+						<span class="area-item__text">Услуга не оказана</span>
+					</span>
+				</div>
+			</div>
+
+			<div class="area-item__bott js-card-goods">
+				<div class="goods__card goods__card--area">
+	<a href="#" class="goods__inner-top">
+		<div class="goods__img-wrapp">
+			<img src="pic/card/card-01.jpg" alt="">
+		</div>
+		<span class="goods__sale">20%</span>
+		<span class="goods__date-sale">01 - 10 мая</span>
+		<span class="goods__heart">
+			<svg class="icon-heart">
+				<use xlink:href="#heart"></use>
+			</svg>
+		</span>
+	</a>
+	<div class="goods__inner-bott">
+		<div class="goods__head">
+			<div class="goods__popularity">
+				<span class="goods__icon goods__icon--star">
+					<svg class="icon-star">
+						<use xlink:href="#star"></use>
+					</svg>
+				</span>
+				<span class="goods__rating">8.9</span> /
+				<span class="goods__max">10</span>
+			</div>
+			<div class="goods__date">
+				<span class="goods__icon">
+					<svg class="icon-calendar">
+						<use xlink:href="#calendar"></use>
+					</svg>
+				</span>
+				<span class="goods__date-text">20.02.18 г.</span>
+			</div>
+		</div>
+		<span class="goods__number">#98456123</span>
+		<div class="goods__location">
+			<span class="goods__icon goods__icon--map">
+				<svg class="icon-map">
+					<use xlink:href="#map"></use>
+				</svg>
+			</span>
+			<span class="goods__location-text">Москва / Ст. метро Ленинский проспект</span>
+		</div>
+		<a href="#" class="goods__name">Название вещи возможно в две строки</a>
+		<div class="goods__foot">
+			<span class="goods__price">2 000 <span class="goods__price-rub">руб.</span></span>
+			<div class="goods__exchange">
+				<a href="#" class="goods__exchange-link">
+					<span class="btn goods__exchange-btn">Обменять</span>
+					<span class="goods__exchange-text">Обменять</span>
+					<span class="goods__arrow"></span>
+					<span class="goods__arrow goods__arrow--reverse"></span>
+				</a>
+			</div>
+			<div class="goods__buy">
+				<a href="#" class="goods__buy-link">
+					<span class="btn btn--green goods__buy-btn">Купить</span>
+					<span class="goods__buy-text">Купить</span>
+					<svg class="icon-buy">
+						<use xlink:href="#purse"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+			</div>
+		</div>
+
+		<div class="area-item js-area-item ">
+			<div class="area-item__top">
+				<div class="area-item__top-wrapp js-visible-wrapp">
+					<div class="area-item__inner area-item__inner--accept">
+						<span class="area-item__btn js-btn-accept">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Принять</span>
+						</span>
+					</div>
+					<div class="area-item__inner area-item__inner--refuse">
+						<span class="area-item__btn js-btn-refuse">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Отказать</span>
+						</span>
+					</div>
+				</div>
+
+				<div class="area-item__result area-item__result--provided js-hidden-btn-provided">
+					<span class="area-item__btn">
+						<span class="area-item__decor">
+							<span class="area-item__circle"></span>
+						</span>
+						<span class="area-item__text">Услуга оказана</span>
+					</span>
+				</div>
+				<div class="area-item__result area-item__result--unprovided js-hidden-btn-unprovided">
+					<span class="area-item__btn">
+						<span class="area-item__decor">
+							<span class="area-item__circle"></span>
+						</span>
+						<span class="area-item__text">Услуга не оказана</span>
+					</span>
+				</div>
+			</div>
+
+			<div class="area-item__bott js-card-goods">
+				<div class="goods__card goods__card--area">
+	<a href="#" class="goods__inner-top">
+		<div class="goods__img-wrapp">
+			<img src="pic/card/card-01.jpg" alt="">
+		</div>
+		<span class="goods__sale">20%</span>
+		<span class="goods__date-sale">01 - 10 мая</span>
+		<span class="goods__heart">
+			<svg class="icon-heart">
+				<use xlink:href="#heart"></use>
+			</svg>
+		</span>
+	</a>
+	<div class="goods__inner-bott">
+		<div class="goods__head">
+			<div class="goods__popularity">
+				<span class="goods__icon goods__icon--star">
+					<svg class="icon-star">
+						<use xlink:href="#star"></use>
+					</svg>
+				</span>
+				<span class="goods__rating">8.9</span> /
+				<span class="goods__max">10</span>
+			</div>
+			<div class="goods__date">
+				<span class="goods__icon">
+					<svg class="icon-calendar">
+						<use xlink:href="#calendar"></use>
+					</svg>
+				</span>
+				<span class="goods__date-text">20.02.18 г.</span>
+			</div>
+		</div>
+		<span class="goods__number">#98456123</span>
+		<div class="goods__location">
+			<span class="goods__icon goods__icon--map">
+				<svg class="icon-map">
+					<use xlink:href="#map"></use>
+				</svg>
+			</span>
+			<span class="goods__location-text">Москва / Ст. метро Ленинский проспект</span>
+		</div>
+		<a href="#" class="goods__name">Название вещи возможно в две строки</a>
+		<div class="goods__foot">
+			<span class="goods__price">2 000 <span class="goods__price-rub">руб.</span></span>
+			<div class="goods__exchange">
+				<a href="#" class="goods__exchange-link">
+					<span class="btn goods__exchange-btn">Обменять</span>
+					<span class="goods__exchange-text">Обменять</span>
+					<span class="goods__arrow"></span>
+					<span class="goods__arrow goods__arrow--reverse"></span>
+				</a>
+			</div>
+			<div class="goods__buy">
+				<a href="#" class="goods__buy-link">
+					<span class="btn btn--green goods__buy-btn">Купить</span>
+					<span class="goods__buy-text">Купить</span>
+					<svg class="icon-buy">
+						<use xlink:href="#purse"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+			</div>
+		</div>
+	
+
+
+	
+
+</div>
+
+
+                    <div class="order-head">
+	<span class="order-head__caption">Ваши вещи</span>
+	
+</div>
+                    <div class="area-item__wrapp">
+	
+
+
+	
+		<div class="area-item js-area-item area-item--goods">
+			<div class="area-item__top">
+				<div class="area-item__top-wrapp">
+					<div class="area-item__inner area-item__inner--accept js-area-inner-activate">
+						<span class="area-item__btn js-area-activate">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Активировать</span>
+						</span>
+					</div>
+					<div class="area-item__inner area-item__inner--refuse js-area-inner-deactivate">
+						<span class="area-item__btn js-area-deactivate">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Деактивировать</span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="area-item__bott js-card-goods">
+				<div class="goods__card goods__card--area">
+	<a href="#" class="goods__inner-top">
+		<div class="goods__img-wrapp">
+			<img src="pic/card/card-01.jpg" alt="">
+		</div>
+		<span class="goods__sale">20%</span>
+		<span class="goods__date-sale">01 - 10 мая</span>
+		<span class="goods__heart">
+			<svg class="icon-heart">
+				<use xlink:href="#heart"></use>
+			</svg>
+		</span>
+	</a>
+	<div class="goods__inner-bott">
+		<div class="goods__head">
+			<div class="goods__popularity">
+				<span class="goods__icon goods__icon--star">
+					<svg class="icon-star">
+						<use xlink:href="#star"></use>
+					</svg>
+				</span>
+				<span class="goods__rating">8.9</span> /
+				<span class="goods__max">10</span>
+			</div>
+			<div class="goods__date">
+				<span class="goods__icon">
+					<svg class="icon-calendar">
+						<use xlink:href="#calendar"></use>
+					</svg>
+				</span>
+				<span class="goods__date-text">20.02.18 г.</span>
+			</div>
+		</div>
+		<span class="goods__number">#98456123</span>
+		<div class="goods__location">
+			<span class="goods__icon goods__icon--map">
+				<svg class="icon-map">
+					<use xlink:href="#map"></use>
+				</svg>
+			</span>
+			<span class="goods__location-text">Москва / Ст. метро Ленинский проспект</span>
+		</div>
+		<a href="#" class="goods__name">Название вещи возможно в две строки</a>
+		<div class="goods__foot">
+			<span class="goods__price">2 000 <span class="goods__price-rub">руб.</span></span>
+			<div class="goods__exchange">
+				<a href="#" class="goods__exchange-link">
+					<span class="btn goods__exchange-btn">Обменять</span>
+					<span class="goods__exchange-text">Обменять</span>
+					<span class="goods__arrow"></span>
+					<span class="goods__arrow goods__arrow--reverse"></span>
+				</a>
+			</div>
+			<div class="goods__buy">
+				<a href="#" class="goods__buy-link">
+					<span class="btn btn--green goods__buy-btn">Купить</span>
+					<span class="goods__buy-text">Купить</span>
+					<svg class="icon-buy">
+						<use xlink:href="#purse"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+			</div>
+		</div>
+
+		<div class="area-item js-area-item area-item--goods">
+			<div class="area-item__top">
+				<div class="area-item__top-wrapp">
+					<div class="area-item__inner area-item__inner--accept js-area-inner-activate">
+						<span class="area-item__btn js-area-activate">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Активировать</span>
+						</span>
+					</div>
+					<div class="area-item__inner area-item__inner--refuse js-area-inner-deactivate">
+						<span class="area-item__btn js-area-deactivate">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Деактивировать</span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="area-item__bott js-card-goods">
+				<div class="goods__card goods__card--area">
+	<a href="#" class="goods__inner-top">
+		<div class="goods__img-wrapp">
+			<img src="pic/card/card-01.jpg" alt="">
+		</div>
+		<span class="goods__sale">20%</span>
+		<span class="goods__date-sale">01 - 10 мая</span>
+		<span class="goods__heart">
+			<svg class="icon-heart">
+				<use xlink:href="#heart"></use>
+			</svg>
+		</span>
+	</a>
+	<div class="goods__inner-bott">
+		<div class="goods__head">
+			<div class="goods__popularity">
+				<span class="goods__icon goods__icon--star">
+					<svg class="icon-star">
+						<use xlink:href="#star"></use>
+					</svg>
+				</span>
+				<span class="goods__rating">8.9</span> /
+				<span class="goods__max">10</span>
+			</div>
+			<div class="goods__date">
+				<span class="goods__icon">
+					<svg class="icon-calendar">
+						<use xlink:href="#calendar"></use>
+					</svg>
+				</span>
+				<span class="goods__date-text">20.02.18 г.</span>
+			</div>
+		</div>
+		<span class="goods__number">#98456123</span>
+		<div class="goods__location">
+			<span class="goods__icon goods__icon--map">
+				<svg class="icon-map">
+					<use xlink:href="#map"></use>
+				</svg>
+			</span>
+			<span class="goods__location-text">Москва / Ст. метро Ленинский проспект</span>
+		</div>
+		<a href="#" class="goods__name">Название вещи возможно в две строки</a>
+		<div class="goods__foot">
+			<span class="goods__price">2 000 <span class="goods__price-rub">руб.</span></span>
+			<div class="goods__exchange">
+				<a href="#" class="goods__exchange-link">
+					<span class="btn goods__exchange-btn">Обменять</span>
+					<span class="goods__exchange-text">Обменять</span>
+					<span class="goods__arrow"></span>
+					<span class="goods__arrow goods__arrow--reverse"></span>
+				</a>
+			</div>
+			<div class="goods__buy">
+				<a href="#" class="goods__buy-link">
+					<span class="btn btn--green goods__buy-btn">Купить</span>
+					<span class="goods__buy-text">Купить</span>
+					<svg class="icon-buy">
+						<use xlink:href="#purse"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+			</div>
+		</div>
+
+		<div class="area-item js-area-item area-item--goods">
+			<div class="area-item__top">
+				<div class="area-item__top-wrapp">
+					<div class="area-item__inner area-item__inner--accept js-area-inner-activate">
+						<span class="area-item__btn js-area-activate">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Активировать</span>
+						</span>
+					</div>
+					<div class="area-item__inner area-item__inner--refuse js-area-inner-deactivate">
+						<span class="area-item__btn js-area-deactivate">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Деактивировать</span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="area-item__bott js-card-goods">
+				<div class="goods__card goods__card--area">
+	<a href="#" class="goods__inner-top">
+		<div class="goods__img-wrapp">
+			<img src="pic/card/card-01.jpg" alt="">
+		</div>
+		<span class="goods__sale">20%</span>
+		<span class="goods__date-sale">01 - 10 мая</span>
+		<span class="goods__heart">
+			<svg class="icon-heart">
+				<use xlink:href="#heart"></use>
+			</svg>
+		</span>
+	</a>
+	<div class="goods__inner-bott">
+		<div class="goods__head">
+			<div class="goods__popularity">
+				<span class="goods__icon goods__icon--star">
+					<svg class="icon-star">
+						<use xlink:href="#star"></use>
+					</svg>
+				</span>
+				<span class="goods__rating">8.9</span> /
+				<span class="goods__max">10</span>
+			</div>
+			<div class="goods__date">
+				<span class="goods__icon">
+					<svg class="icon-calendar">
+						<use xlink:href="#calendar"></use>
+					</svg>
+				</span>
+				<span class="goods__date-text">20.02.18 г.</span>
+			</div>
+		</div>
+		<span class="goods__number">#98456123</span>
+		<div class="goods__location">
+			<span class="goods__icon goods__icon--map">
+				<svg class="icon-map">
+					<use xlink:href="#map"></use>
+				</svg>
+			</span>
+			<span class="goods__location-text">Москва / Ст. метро Ленинский проспект</span>
+		</div>
+		<a href="#" class="goods__name">Название вещи возможно в две строки</a>
+		<div class="goods__foot">
+			<span class="goods__price">2 000 <span class="goods__price-rub">руб.</span></span>
+			<div class="goods__exchange">
+				<a href="#" class="goods__exchange-link">
+					<span class="btn goods__exchange-btn">Обменять</span>
+					<span class="goods__exchange-text">Обменять</span>
+					<span class="goods__arrow"></span>
+					<span class="goods__arrow goods__arrow--reverse"></span>
+				</a>
+			</div>
+			<div class="goods__buy">
+				<a href="#" class="goods__buy-link">
+					<span class="btn btn--green goods__buy-btn">Купить</span>
+					<span class="goods__buy-text">Купить</span>
+					<svg class="icon-buy">
+						<use xlink:href="#purse"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+			</div>
+		</div>
+	
+
+</div>
+
+
+                    <div class="order-head">
+	<span class="order-head__caption">Ваши услуги</span>
+	
+</div>
+                    <div class="area-item__wrapp">
+	
+
+
+	
+		<div class="area-item js-area-item area-item--goods">
+			<div class="area-item__top">
+				<div class="area-item__top-wrapp">
+					<div class="area-item__inner area-item__inner--accept js-area-inner-activate">
+						<span class="area-item__btn js-area-activate">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Активировать</span>
+						</span>
+					</div>
+					<div class="area-item__inner area-item__inner--refuse js-area-inner-deactivate">
+						<span class="area-item__btn js-area-deactivate">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Деактивировать</span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="area-item__bott js-card-goods">
+				<div class="goods__card goods__card--area">
+	<a href="#" class="goods__inner-top">
+		<div class="goods__img-wrapp">
+			<img src="pic/card/card-01.jpg" alt="">
+		</div>
+		<span class="goods__sale">20%</span>
+		<span class="goods__date-sale">01 - 10 мая</span>
+		<span class="goods__heart">
+			<svg class="icon-heart">
+				<use xlink:href="#heart"></use>
+			</svg>
+		</span>
+	</a>
+	<div class="goods__inner-bott">
+		<div class="goods__head">
+			<div class="goods__popularity">
+				<span class="goods__icon goods__icon--star">
+					<svg class="icon-star">
+						<use xlink:href="#star"></use>
+					</svg>
+				</span>
+				<span class="goods__rating">8.9</span> /
+				<span class="goods__max">10</span>
+			</div>
+			<div class="goods__date">
+				<span class="goods__icon">
+					<svg class="icon-calendar">
+						<use xlink:href="#calendar"></use>
+					</svg>
+				</span>
+				<span class="goods__date-text">20.02.18 г.</span>
+			</div>
+		</div>
+		<span class="goods__number">#98456123</span>
+		<div class="goods__location">
+			<span class="goods__icon goods__icon--map">
+				<svg class="icon-map">
+					<use xlink:href="#map"></use>
+				</svg>
+			</span>
+			<span class="goods__location-text">Москва / Ст. метро Ленинский проспект</span>
+		</div>
+		<a href="#" class="goods__name">Название вещи возможно в две строки</a>
+		<div class="goods__foot">
+			<span class="goods__price">2 000 <span class="goods__price-rub">руб.</span></span>
+			<div class="goods__exchange">
+				<a href="#" class="goods__exchange-link">
+					<span class="btn goods__exchange-btn">Обменять</span>
+					<span class="goods__exchange-text">Обменять</span>
+					<span class="goods__arrow"></span>
+					<span class="goods__arrow goods__arrow--reverse"></span>
+				</a>
+			</div>
+			<div class="goods__buy">
+				<a href="#" class="goods__buy-link">
+					<span class="btn btn--green goods__buy-btn">Купить</span>
+					<span class="goods__buy-text">Купить</span>
+					<svg class="icon-buy">
+						<use xlink:href="#purse"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+			</div>
+		</div>
+
+		<div class="area-item js-area-item area-item--goods">
+			<div class="area-item__top">
+				<div class="area-item__top-wrapp">
+					<div class="area-item__inner area-item__inner--accept js-area-inner-activate">
+						<span class="area-item__btn js-area-activate">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Активировать</span>
+						</span>
+					</div>
+					<div class="area-item__inner area-item__inner--refuse js-area-inner-deactivate">
+						<span class="area-item__btn js-area-deactivate">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Деактивировать</span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="area-item__bott js-card-goods">
+				<div class="goods__card goods__card--area">
+	<a href="#" class="goods__inner-top">
+		<div class="goods__img-wrapp">
+			<img src="pic/card/card-01.jpg" alt="">
+		</div>
+		<span class="goods__sale">20%</span>
+		<span class="goods__date-sale">01 - 10 мая</span>
+		<span class="goods__heart">
+			<svg class="icon-heart">
+				<use xlink:href="#heart"></use>
+			</svg>
+		</span>
+	</a>
+	<div class="goods__inner-bott">
+		<div class="goods__head">
+			<div class="goods__popularity">
+				<span class="goods__icon goods__icon--star">
+					<svg class="icon-star">
+						<use xlink:href="#star"></use>
+					</svg>
+				</span>
+				<span class="goods__rating">8.9</span> /
+				<span class="goods__max">10</span>
+			</div>
+			<div class="goods__date">
+				<span class="goods__icon">
+					<svg class="icon-calendar">
+						<use xlink:href="#calendar"></use>
+					</svg>
+				</span>
+				<span class="goods__date-text">20.02.18 г.</span>
+			</div>
+		</div>
+		<span class="goods__number">#98456123</span>
+		<div class="goods__location">
+			<span class="goods__icon goods__icon--map">
+				<svg class="icon-map">
+					<use xlink:href="#map"></use>
+				</svg>
+			</span>
+			<span class="goods__location-text">Москва / Ст. метро Ленинский проспект</span>
+		</div>
+		<a href="#" class="goods__name">Название вещи возможно в две строки</a>
+		<div class="goods__foot">
+			<span class="goods__price">2 000 <span class="goods__price-rub">руб.</span></span>
+			<div class="goods__exchange">
+				<a href="#" class="goods__exchange-link">
+					<span class="btn goods__exchange-btn">Обменять</span>
+					<span class="goods__exchange-text">Обменять</span>
+					<span class="goods__arrow"></span>
+					<span class="goods__arrow goods__arrow--reverse"></span>
+				</a>
+			</div>
+			<div class="goods__buy">
+				<a href="#" class="goods__buy-link">
+					<span class="btn btn--green goods__buy-btn">Купить</span>
+					<span class="goods__buy-text">Купить</span>
+					<svg class="icon-buy">
+						<use xlink:href="#purse"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+			</div>
+		</div>
+
+		<div class="area-item js-area-item area-item--goods">
+			<div class="area-item__top">
+				<div class="area-item__top-wrapp">
+					<div class="area-item__inner area-item__inner--accept js-area-inner-activate">
+						<span class="area-item__btn js-area-activate">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Активировать</span>
+						</span>
+					</div>
+					<div class="area-item__inner area-item__inner--refuse js-area-inner-deactivate">
+						<span class="area-item__btn js-area-deactivate">
+							<span class="area-item__decor">
+								<span class="area-item__circle"></span>
+							</span>
+							<span class="area-item__text">Деактивировать</span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="area-item__bott js-card-goods">
+				<div class="goods__card goods__card--area">
+	<a href="#" class="goods__inner-top">
+		<div class="goods__img-wrapp">
+			<img src="pic/card/card-01.jpg" alt="">
+		</div>
+		<span class="goods__sale">20%</span>
+		<span class="goods__date-sale">01 - 10 мая</span>
+		<span class="goods__heart">
+			<svg class="icon-heart">
+				<use xlink:href="#heart"></use>
+			</svg>
+		</span>
+	</a>
+	<div class="goods__inner-bott">
+		<div class="goods__head">
+			<div class="goods__popularity">
+				<span class="goods__icon goods__icon--star">
+					<svg class="icon-star">
+						<use xlink:href="#star"></use>
+					</svg>
+				</span>
+				<span class="goods__rating">8.9</span> /
+				<span class="goods__max">10</span>
+			</div>
+			<div class="goods__date">
+				<span class="goods__icon">
+					<svg class="icon-calendar">
+						<use xlink:href="#calendar"></use>
+					</svg>
+				</span>
+				<span class="goods__date-text">20.02.18 г.</span>
+			</div>
+		</div>
+		<span class="goods__number">#98456123</span>
+		<div class="goods__location">
+			<span class="goods__icon goods__icon--map">
+				<svg class="icon-map">
+					<use xlink:href="#map"></use>
+				</svg>
+			</span>
+			<span class="goods__location-text">Москва / Ст. метро Ленинский проспект</span>
+		</div>
+		<a href="#" class="goods__name">Название вещи возможно в две строки</a>
+		<div class="goods__foot">
+			<span class="goods__price">2 000 <span class="goods__price-rub">руб.</span></span>
+			<div class="goods__exchange">
+				<a href="#" class="goods__exchange-link">
+					<span class="btn goods__exchange-btn">Обменять</span>
+					<span class="goods__exchange-text">Обменять</span>
+					<span class="goods__arrow"></span>
+					<span class="goods__arrow goods__arrow--reverse"></span>
+				</a>
+			</div>
+			<div class="goods__buy">
+				<a href="#" class="goods__buy-link">
+					<span class="btn btn--green goods__buy-btn">Купить</span>
+					<span class="goods__buy-text">Купить</span>
+					<svg class="icon-buy">
+						<use xlink:href="#purse"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+			</div>
+		</div>
+	
+
+</div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="new-goal">
+    <div class="container">
+        <div class="new-goal__header">
+            <h1 class="new-goal__title">Добавить новую вещь или услугу</h1>
+            <span class="new-goal__txt">Заполните все поля максимально полно и загрузите фото хорошего качества</span>
+        </div>
+        <div class="new-goal__body">
+            <form action="" class="new-goal__form">
+                <div class="new-goal__form-wrap">
+                    <div class="new-goal__form-holder">
+                        <div class="new-goal__form-inner new-goal__form-inner--multi">
+                            <div class="new-goal__form-add">
+                                <label class="file file--inverse">
+                                    <input name="input" type="file">
+                                    <span>Добавьте фото</span>
+                                </label>
+                            </div>
+                            <div class="new-goal__form-add">
+                                <label class="file file--inverse">
+                                    <input name="input" type="file">
+                                    <span>Добавьте фото</span>
+                                </label>
+                            </div>
+                            <div class="new-goal__form-add">
+                                <label class="file file--inverse">
+                                    <input name="input" type="file">
+                                    <span>Добавьте фото</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="new-goal__form-inner">
+                            <input type="search" class="input inverse new-goal__form-input" placeholder="Название вещи / услуги">
+                        </div>
+                        <div class="new-goal__form-inner new-goal__form-inner--value">
+                            <div class="new-goal__form-value new-goal__form-value--large">
+                                <input type="number" class="input inverse new-goal__form-input" placeholder="Стоимость">
+                            </div>
+                            <div class="new-goal__form-value new-goal__form-value--small">
+                                <select name="" id="" class="select select--inverse js-select">
+                                    <option value="">рубли</option>
+                                    <option value="">доллары</option>
+                                    <option value="">евро</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="new-goal__form-inner">
+                            <select name="" id="" class="select select--inverse js-select" data-placeholder="Город">
+                                <option></option>
+                                <option value="">Москва</option>
+                                <option value="">Санкт-Петербург</option>
+                                <option value="">Новосибирск</option>
+                                <option value="">Екатеринбург</option>
+                                <option value="">Нижний Новгород</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="new-goal__form-holder">
+                        <div class="new-goal__form-inner new-goal__form-inner--multi">
+                            <div class="new-goal__form-conditions">
+                                <label class="radio radio--inverse">
+                                    <input type="radio" name="conditions" checked>
+                                    <span><span class="new-goal__form-icon"><svg class="icon-exchange"><use xlink:href="#exchange"></use></svg></span> Обмен</span>
+                                </label>
+                            </div>
+                            <div class="new-goal__form-conditions">
+                                <label class="radio radio--inverse">
+                                    <input type="radio" name="conditions">
+                                    <span><span class="new-goal__form-icon"><svg class="icon-purse"><use xlink:href="#purse"></use></svg></span> Продажа</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="new-goal__form-inner">
+                            <select name="" id="" class="select select--inverse js-select" data-placeholder="Категория">
+                                <option></option>
+                                <option value="">Название категории</option>
+                                <option value="">Название категории</option>
+                                <option value="">Название категории</option>
+                                <option value="">Название категории</option>
+                                <option value="">Название категории</option>
+                            </select>
+                        </div>
+                        <div class="new-goal__form-inner">
+                            <textarea name="" class="inverse new-goal__form-textarea" placeholder="Комментарий"></textarea>
+                        </div>
+                    </div>
+                    <div class="new-goal__form-holder new-goal__form-holder--large">
+                        <button type="button" class="btn new-goal__form-btn">Добавить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+        <div class="catalog-list ">
+	<div class="container">
+		
+		<div class="catalog-list__holder">
+			<ul class="catalog-list__item">
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link" >
+						Личные вещи
+					</a>
+					<span class="catalog-list__item-num">57 415</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Транспорт
+					</a>
+					<span class="catalog-list__item-num">77 665</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Хобби и отдых
+					</a>
+					<span class="catalog-list__item-num">154 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Для дома и дачи
+					</a>
+					<span class="catalog-list__item-num">84 132</span>
+				</li>
+			</ul>
+			<ul class="catalog-list__item">
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Бытовая электроника
+					</a>
+					<span class="catalog-list__item-num">94 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Недвижимость 
+					</a>
+					<span class="catalog-list__item-num">14 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Работа
+					</a>
+					<span class="catalog-list__item-num">54 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Услуги
+					</a>
+					<span class="catalog-list__item-num">15 637</span>
+				</li>
+			</ul>
+			<ul class="catalog-list__item">
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Животные
+					</a>
+					<span class="catalog-list__item-num">354 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Прочее
+					</a>
+					<span class="catalog-list__item-num">1 254 037</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Личные вещи
+					</a>
+					<span class="catalog-list__item-num">57 415</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						 Транспорт
+					</a>
+					<span class="catalog-list__item-num">77 665</span>
+				</li>
+			</ul>
+			<ul class="catalog-list__item">
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Бытовая электроника
+					</a>
+					<span class="catalog-list__item-num">94 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Недвижимость
+					</a>
+					<span class="catalog-list__item-num">14 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Работа
+					</a>
+					<span class="catalog-list__item-num">54 637</span>
+				</li>
+				<li class="catalog-list__item-elem">
+					<a href="#" class="catalog-list__item-link">
+						Услуги
+					</a>
+					<span class="catalog-list__item-num">15 637</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+    
+    </div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__inner">		
+			<span class="footer__btn-box">
+				<a data-fancybox data-src="#popup-new-goal" href="javascript:;" class="btn footer__btn">
+					Добавить вещь или услугу
+				</a>
+			</span>
+			<span class="footer__txt">
+				Не является публичной офертой
+			</span>
+			<span class="footer__rulers">
+				<a href="#" class="footer__link">
+					Правила и термины
+				</a>
+			</span>
+			<span class="footer__copy">
+				<a href="#" class="footer__link">
+					© All rights reserved, 2018, Xox
+				</a>
+			</span>
+		</div>
+	</div>
+</footer>
+
+<div style="display: none;" id="popup-new-goal" class="popup">
+  <div class="new-goal--popup">
+    <form action="" class="new-goal__form">
+      <div class="new-goal__form-wrap">
+        <div class="new-goal__form-holder">
+          <div class="new-goal__form-inner new-goal__form-inner--multi">
+            <div class="new-goal__form-add">
+              <label class="file file--inverse">
+                <input name="input" type="file">
+                <span>Добавьте фото</span>
+              </label>
+            </div>
+            <div class="new-goal__form-add">
+              <label class="file file--inverse">
+                <input name="input" type="file">
+                <span>Добавьте фото</span>
+              </label>
+            </div>
+            <div class="new-goal__form-add">
+              <label class="file file--inverse">
+                <input name="input" type="file">
+                <span>Добавьте фото</span>
+              </label>
+            </div>
+          </div>
+          <div class="new-goal__form-inner">
+            <input type="search" class="input inverse new-goal__form-input" placeholder="Название вещи / услуги">
+          </div>
+          <div class="new-goal__form-inner new-goal__form-inner--value">
+            <div class="new-goal__form-value new-goal__form-value--large">
+              <input type="number" class="input inverse new-goal__form-input" placeholder="Стоимость">
+            </div>
+            <div class="new-goal__form-value new-goal__form-value--small">
+              <select name="" id="" class="select select--inverse js-select">
+                <option value="">рубли</option>
+                <option value="">доллары</option>
+                <option value="">евро</option>
+              </select>
+            </div>
+          </div>
+          <div class="new-goal__form-inner">
+            <select name="" id="" class="select select--inverse js-select" data-placeholder="Город">
+              <option></option>
+              <option value="">Москва</option>
+              <option value="">Санкт-Петербург</option>
+              <option value="">Новосибирск</option>
+              <option value="">Екатеринбург</option>
+              <option value="">Нижний Новгород</option>
+            </select>
+          </div>
+        </div>
+        <div class="new-goal__form-holder">
+          <div class="new-goal__form-inner new-goal__form-inner--multi">
+            <div class="new-goal__form-conditions">
+              <label class="radio radio--inverse">
+                <input type="radio" name="conditions" checked>
+                <span><span class="new-goal__form-icon"><svg class="icon-exchange"><use xlink:href="#exchange"></use></svg></span> Обмен</span>
+              </label>
+            </div>
+            <div class="new-goal__form-conditions">
+              <label class="radio radio--inverse">
+                <input type="radio" name="conditions">
+                <span><span class="new-goal__form-icon"><svg class="icon-purse"><use xlink:href="#purse"></use></svg></span> Продажа</span>
+              </label>
+            </div>
+          </div>
+          <div class="new-goal__form-inner">
+            <select name="" id="" class="select select--inverse js-select" data-placeholder="Категория">
+              <option></option>
+              <option value="">Название категории</option>
+              <option value="">Название категории</option>
+              <option value="">Название категории</option>
+              <option value="">Название категории</option>
+              <option value="">Название категории</option>
+            </select>
+          </div>
+          <div class="new-goal__form-inner">
+            <textarea name="" class="inverse new-goal__form-textarea" placeholder="Комментарий"></textarea>
+          </div>
+        </div>
+        <div class="new-goal__form-holder new-goal__form-holder--large">
+          <button type="button" class="btn new-goal__form-btn">Добавить</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

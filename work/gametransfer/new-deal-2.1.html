@@ -1,0 +1,382 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Новая сделка</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+<header class="header header--profile">
+	<div class="container">
+		<div class="header__holder">
+			<div class="header__item header__item--toggler">
+				<span class="header__toggler js-toggler-open">
+					<span class="header__toggler-decor"></span>
+				</span>
+			</div>
+			<div class="header__item header__item--logo">
+				<a href="#" class="header__logo">GT</a>
+			</div>
+			<div class="header__item header__item--nav js-toggler-menu">
+				<div class="header__nav-overlay js-nav-overlay"></div>
+				<nav class="header__nav">
+					<span class="header__nav-close js-toggler-close"></span>
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Блог
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Рейтинг продавцов
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Розыгрыши
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Поддержка
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Вопросы и ответы
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Правила
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			
+				<div class="header__btn-search js-btn-search"></div>
+				<div class="header__search js-search-input">
+					<input type="text">
+				</div>
+			
+
+			
+				<div class="header__add-wrap">
+					<a href="#" class="header__add-link">
+						<span class="header__add-link-icon">
+							
+						</span>
+						<span class="header__add-link-text">Добавить сделку</span>
+					</a>
+				</div>
+			
+			
+			<div class="header__item header__item--user js-user-wrap">
+				<a href="#" class="header__user js-user-link">
+					<img src="pic/users/users-5.png" alt="user">
+				</a>
+				<div class="header__user-info js-user-drop">
+					<div class="header__user-head">
+						<div class="header__user-img">
+							<img src="pic/users/users-5.png" alt="user">
+						</div>
+						<div class="header__user-txt">
+							<span class="header__user-name">
+								Chack Norris
+							</span>
+							<a href="#" class="header__user-mail">
+								Norris@gmail.com
+							</a>
+						</div>
+					</div>
+					<ul class="header__user-list">
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои покупки</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои продажи</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои операции</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Заработать</a>
+						</li>
+					</ul>
+					<div class="header__user-logout">
+						<a href="#" class="header__user-logout-link">
+							<span class="header__user-icon">
+
+							</span>
+							<span class="header__user-logout-txt">Выйти</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="wrapper">
+
+		<div class="new-deal">
+	<div class="container">
+		<form class="new-deal__wrap">
+			<span class="new-deal__caption">Добавить сделку</span>
+			<div class="new-deal__row new-deal__row--several">
+				<div class="new-deal__col">
+					<span class="new-deal__title">
+						Платформа товара
+						<span class="new-deal__title-required">*</span>
+					</span>
+					<div class="new-deal__select-wrap">
+						<select name="" id="" class="select-single js-select-single">
+							<option value="">Steam</option>
+							<option value="">Uplay</option>
+							<option value="">Origin</option>
+							<option value="">Blizzard</option>
+							<option value="">Steam</option>
+							<option value="">Uplay</option>
+							<option value="">Origin</option>
+							<option value="">Blizzard</option>
+						</select>
+					</div>
+				</div>
+				<div class="new-deal__col">
+					<span class="new-deal__title">
+						Игровая ценность
+						<span class="new-deal__title-required">*</span>
+					</span>
+					<div class="new-deal__select-wrap">
+						<select name="" id="" class="select-single js-select-single">
+							<option value="">Аккаунт</option>
+							<option value="">Предметы</option>
+							<option value="">Золото</option>
+							<option value="">Бриллианты</option>
+							<option value="">Серебро</option>
+							<option value="">Пополнение баланса</option>
+							<option value="">Скины</option>
+							<option value="">Услуги</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="new-deal__row">
+				<span class="new-deal__title">
+					Ссылка на профиль аккаунта
+				</span>
+				<div class="new-deal__link-wrap">
+<!--					<a href="#" class="new-deal__link">http://example.com/profile/id122342</a>-->
+        <input type="text" class="new-deal__link" value="http://example.com/profile/id122342">
+					<span class="new-deal__icon-link">
+						<svg class="icon-copy">
+							<use xlink:href="#copy"></use>
+						</svg>
+					</span>
+				</div>
+			</div>
+
+			<div class="new-deal__row new-deal__row--line">
+				<span class="new-deal__title">
+					Игры на аккаунте
+				</span>
+				<div class="new-deal__select-wrap select-multi">
+					<select id="" class="js-select-multi" multiple="multiple">
+						<option value="" data-img="pic/recommendation/recommendation-1.png">World Of Warcraft</option>
+						<option value="" data-img="pic/recommendation/recommendation-2.png">GTA SAMP, CRMP</option>
+						<option value="" data-img="pic/recommendation/recommendation-3.png">Life is Feudal: MMO</option>
+						<option value="" data-img="pic/recommendation/recommendation-4.png">Time Zero</option>
+						<option value="" data-img="pic/recommendation/recommendation-5.png">Stalker Online</option>
+						<option value="" data-img="pic/recommendation/recommendation-6.png">Star Wars: TOR</option>
+						<option value="" data-img="pic/recommendation/recommendation-1.png">World Of Warcraft</option>
+						<option value="" data-img="pic/recommendation/recommendation-2.png">GTA SAMP, CRMP</option>
+						<option value="" data-img="pic/recommendation/recommendation-3.png">Life is Feudal: MMO</option>
+						<option value="" data-img="pic/recommendation/recommendation-4.png">Time Zero</option>
+						<option value="" data-img="pic/recommendation/recommendation-5.png">Stalker Online</option>
+						<option value="" data-img="pic/recommendation/recommendation-6.png">Star Wars: TOR</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="new-deal__row">
+				<span class="new-deal__title">
+					Краткое описание товара
+				</span>
+				<textarea name="" id="" placeholder="Введите текст описания..."></textarea>
+			</div>
+
+			<div class="new-deal__row">
+				<span class="new-deal__title">
+					Цена товара
+					<span class="new-deal__title-required">*</span>
+				</span>
+				<div class="new-deal__input-wrap">
+					<span class="rub new-deal__rub">o</span>
+					<input type="text" class="js-deal-price" placeholder="Введите цену товара">
+				</div>
+			</div>
+
+			<div class="new-deal__row new-deal__row--btn">
+				<button class="btn new-deal__btn" type="submit">Отправить</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+		<div class="social">
+	<div class="container">
+		<span class="social__title">Следите за нами в социальных сетях:</span>
+		<div class="social__wrapp">
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-vk">
+						<use xlink:href="#vk"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-g-plus">
+						<use xlink:href="#g-plus"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-telegram">
+						<use xlink:href="#telegram"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-facebook">
+						<use xlink:href="#facebook"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__wrapp">
+			<div class="footer__inner footer__inner--nav">
+				<ul class="footer__list">
+					<li class="footer__item">
+						<a href="#" class="footer__link">Поддержка</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Вопросы и ответы</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Правила</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Рейтинг продавцов</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Розыгрыши</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Информация</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Пользовательское соглашение</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Отказ от ответственности</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Разрешение споров</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__inner footer__inner--info">
+				<span class="footer__descr">© 2018 Game Transfer - торговая площадка игровых ценностей</span>
+				<span class="footer__icon">
+					<img src="pic/webmoney.png" alt="">
+				</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

@@ -1,0 +1,474 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Вакансии</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<div class="heading heading--about" style="background-image: url(pic/bg/bg-10.jpg);">
+
+	<header class="header header--transparent">
+	<div class="container">
+		<div class="header__wrap">
+			<div class="header__btn-menu js-btn-menu">
+				<span class="header__btn-line"></span>
+				<span class="header__btn-line"></span>
+				<span class="header__btn-line"></span>
+			</div>
+			<div class="header__logo">
+				<a href="index.html" class="header__logo-link">
+					<img src="pic/logo-altai.gif" alt="">
+				</a>
+			</div>
+			<div class="header__menu-wrap js-menu">
+				<nav class="header__nav">
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="about-company.html" class="header__nav-link">Компания</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="catalog.html" class="header__nav-link">Продукция</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="all-projects.html" class="header__nav-link">Портфолио</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="contacts.html" class="header__nav-link">Контакты</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header__contact">
+					<div class="header__phone">
+						<a href="tel:3852581450" class="header__phone-link">
+							<span class="header__phone-icon">
+								<svg class="icon-phone">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="header__phone-text">(3852) 58-14-50</span>
+						</a>
+					</div>
+					<div class="header__callback">
+						<a data-fancybox data-src="#popup-callback" href="javascript:;" class="header__callback-link">Перезвоните мне</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class="popup-consultate" id="popup-callback">
+  <h2 class="popup-consultate__title">Мы позвоним вам</h2>
+  <form action="send.php" method="POST" class="popup-consultate__form js-popup-validate">
+    <div class="popup-consultate__form-item form-group">
+      <input type="tel" class="popup-consultate__form-input" id="customer_phone" value="7" size="25" placeholder="Телефонный номер" name="phone">
+    </div>
+    <input type="hidden" name="id" value="consultate">
+    <div class="popup-consultate__form-txt">
+      Мы перезвоними ответим на ваши вопросы в течние 10 минут
+    </div>
+    <button type="submit" class="btn popup-consultate__form-btn js-send-request" data-type="consultate">
+      Жду звонка
+    </button>
+    <div class="popup-consultate__form-check">
+      <label class="checkbox">
+        <input type="checkbox" name="check" checked>
+        <span>Нажимая на кнопку отправить вопрос я даю согласие на обработку своих персональных данных, и соглашаюсь с <a href="#">политикой конфиденциальности</a></span>
+      </label>
+    </div>
+  </form>
+</div>
+
+
+<!-- <form>
+	<input type="hidden" name="type" value="Задать вопрос">
+	<div class="grid-row grid-row_form">
+		<div class="fl-col sm-12 form-group">
+			<input name="name" type="text" class="form-el" placeholder="Имя">
+		</div>
+		<div class="fl-col sm-12 form-group">
+			<input name="email" type="text" class="form-el" placeholder="Адрес эл. почты">
+		</div>
+	</div>
+	<div class="form-group">
+		<textarea name="comment" placeholder="Текст вопроса" class="form-el"></textarea>
+	</div>
+	<div class="btn-note">
+		<div class="btn-note__c btn-note__c_btn">
+			<button type="button" class="btn js-send-request" data-type="question">Отправить</button>
+		</div>
+	</div>
+</form> -->
+
+
+	<div class="heading__outer">
+
+		<div class="container">
+			<div class="heading__wrap">
+				<h1 class="heading__caption">ООО “АЛТАЙРЕЗЕРВУАР”</h1>
+				<p class="heading__descr">Мы изготавливаем высококачественные резервуары и металлоконструкции более 10 лет, чтобы предоставить вам лучшую цену и выполнить работу в минимальные сроки.</p>
+				
+
+				
+
+				
+					<div class="heading__tab-wrap">
+						<div class="heading__tab">
+							<div class="heading__tab-item active">
+								<a href="about-company.html" class="heading__tab-text">О нас</a>
+							</div>
+							<div class="heading__tab-item">
+								<a href="about-doc.html" class="heading__tab-text">Документы</a>
+							</div>
+							<div class="heading__tab-item">
+								<a href="about-job.html" class="heading__tab-text">Вакансии</a>
+							</div>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+
+	</div>
+</div>
+
+	<div class="container">
+		<ul class="breadcrumbs breadcrumbs--about">
+	
+		<li class="breadcrumbs__item">
+			<a href="#" class="breadcrumbs__link">Главная</a>
+		</li>
+	
+	<li class="breadcrumbs__item">
+		Вакансии
+	</li>
+</ul>
+	</div>
+
+	<div class="job">
+	<div class="container">
+		<h2 class="job__caption">РАБОТАЙ В КОМАНДЕ ПРОФЕССИОНАЛОВ!</h2>
+		<span class="job__text">Спонсорство продуцирует рейтинг. Позиционирование на рынке непосредственно раскручивает ролевой инструмент маркетинга. Маркетингово-ориентированное издание пока плохо определяет тактический маркетинг.</span>
+		<div class="job__wrap">
+			<div class="job__item">
+				<div class="job__descr">
+					<h3 class="job__name">Вакансия <span class="job__name-text">сварщик</span></h3>
+					<p class="job__descr-text">Спонсорство продуцирует рейтинг. Позиционирование на рынке непосредственно раскручивает ролевой инструмент маркетинга. Маркетингово-ориентированное издание пока плохо определяет тактический маркетинг</p>
+					<div class="job__inner">
+						<div class="job__col">
+							<span class="job__col-title">Требования</span>
+							<ul>
+								<li>Опыт работы сварщиком от двух лет</li>
+								<li>Работа на нашей территории</li>
+								<li>Возможность выходить на допольнительные смены при необходимости</li>
+							</ul>
+						</div>
+						<div class="job__col">
+							<span class="job__col-title">Условия</span>
+							<ul>
+								<li>Своевременная оплата 2 раза в месяц</li>
+								<li>Отпуск 40 дней в году</li>
+								<li>Бесплатные печенюшки в цеху каждый вторник</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="job__price">
+					<span class="job__price-value">до 80000 руб/мес.</span>
+					<div class="job__btn-wrap">
+						<a data-fancybox data-src="#popup-vacancy" href="javascript:;" class="btn job__btn">ОТКЛИКНУТЬСЯ</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="job__item">
+				<div class="job__descr">
+					<h3 class="job__name">Вакансия <span class="job__name-text">сварщик</span></h3>
+					<p class="job__descr-text">Спонсорство продуцирует рейтинг. Позиционирование на рынке непосредственно раскручивает ролевой инструмент маркетинга. Маркетингово-ориентированное издание пока плохо определяет тактический маркетинг</p>
+					<div class="job__inner">
+						<div class="job__col">
+							<span class="job__col-title">Требования</span>
+							<ul>
+								<li>Опыт работы сварщиком от двух лет</li>
+								<li>Работа на нашей территории</li>
+								<li>Возможность выходить на допольнительные смены при необходимости</li>
+							</ul>
+						</div>
+						<div class="job__col">
+							<span class="job__col-title">Условия</span>
+							<ul>
+								<li>Своевременная оплата 2 раза в месяц</li>
+								<li>Отпуск 40 дней в году</li>
+								<li>Бесплатные печенюшки в цеху каждый вторник</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="job__price">
+					<span class="job__price-value">до 80000 руб/мес.</span>
+					<div class="job__btn-wrap">
+						<a data-fancybox data-src="#popup-vacancy" href="javascript:;" class="btn job__btn">ОТКЛИКНУТЬСЯ</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<div class="popup-success" id="popup-success">
+	<span>Успешно отправлено</span>
+</div>
+
+<div class="popups" id="popup-vacancy">
+	<h2 class="popups__title">Вакансия сварщик</h2>
+	
+		<span class="popups__money">до 80 000 руб/мес.</span>
+	
+
+	<form action="send.php" method="POST" class="popups__form js-popup-validate">
+		<div class="popups__form-row">
+			<div class="popups__form-col">
+				
+				<div class="popups__form-item form-group">
+					<input type="text" class="popups__form-input" name="name" placeholder="ФИО">
+				</div>
+				<div class="popups__form-item form-group">
+					<input type="email" class="popups__form-input" name="email" placeholder="Эл. почта">
+					<span class="popups__form-txt">
+						Пришлем ответ на заявку, без спама!
+					</span>
+				</div>
+				<div class="popups__form-item form-group">
+					<input type="tel" class="popups__form-input" data-phone-mask name="phone" placeholder="Номер телефона">
+					<span class="popups__form-txt">
+						Позвоним назначить встречу
+					</span>
+				</div>
+				<input type="hidden" name="id" value="vacancy">
+				<div class="popups__form-item form-group">
+					<textarea name="message" class="popups__form-message" placeholder="Ваш вопрос"></textarea>
+				</div>
+			</div>
+			<div class="popups__form-col">
+				<div class="popups__form-load popups__form-load--vacancy">
+					<label class="popups__form-load-item">
+						<input type="file" name="file" id="file">
+						<span class="popups__form-load-txt"><a href="#">Выберете</a> или перетащите сюда файл с вашим резюме</span>
+					</label>
+					<span class="filename"></span>
+				</div>
+
+				<button type="submit" class="btn popups__form-btn js-send-request" data-type="vacancy">
+					Отправить
+				</button>
+				<div class="popups__form-check">
+					<label class="checkbox">
+						<input type="checkbox" name="check" checked>
+						<span>Нажимая на кнопку отправить вопрос я даю согласие на обработку своих персональных данных, и соглашаюсь с <a href="#">	политикой конфиденциальности</a></span>
+					</label>
+				</div>
+			</div>
+		</div>
+	</form>
+
+</div>
+
+<footer class="footer">
+	<div class="container">
+  
+	  <div class="footer__wrap">
+	    <div class="footer__left">
+      
+	      <div class="footer__logo">
+	        <a href="#" class="footer__logo-link">
+	          <img src="pic/logo-footer.png" alt="footer-logo" class="footer__logo-img">
+	        </a>
+	      </div>
+	      
+	      <ul class="footer__nav-list">
+	        <li class="footer__nav-item">
+	          <a href="#" class="footer__nav-link">Компания</a>
+	        </li>
+	        <li class="footer__nav-item">
+	          <a href="#" class="footer__nav-link">Продукция</a>
+	        </li>
+	        <li class="footer__nav-item">
+	          <a href="#" class="footer__nav-link">Портфолио</a>
+	        </li>
+	        <li class="footer__nav-item">
+	          <a href="#" class="footer__nav-link">Контакты</a>
+	        </li>
+	      </ul>
+	    </div>
+	    
+	    <div class="footer__right">
+      
+        <ul class="footer__contact-list">
+          <li class="footer__contact-item">
+            <div class="footer__contact-holder footer__contact-holder--icon">
+              <svg class="icon-location">
+                <use xlink:href="#location"></use>
+              </svg>
+            </div>
+            <div class="footer__contact-holder footer__contact-holder--name">
+              <span class="footer__contact-txt">656023, Алтайский край, г.Барнаул, проезд 9-й заводской 42-е</span>
+            </div>
+          </li>
+          <li class="footer__contact-item">
+            <div class="footer__contact-holder footer__contact-holder--icon">
+              <svg class="icon-phone">
+                <use xlink:href="#phone"></use>
+              </svg>
+            </div>
+            <div class="footer__contact-holder footer__contact-holder--name">
+              <div class="footer__contact-inner">
+                <a href="tel:+73852581450" class="footer__contact-txt footer__contact-txt--link">+7 (3852) 58-14-50</a>
+              </div>
+              <div class="footer__contact-inner">
+                <a href="tel:+73852601522" class="footer__contact-txt footer__contact-txt--link">+7 (3852) 60-15-22</a>
+              </div>
+              <div class="footer__contact-inner">
+                <a href="tel:+73852330016" class="footer__contact-txt footer__contact-txt--link">+7 (3852) 33-00-16</a>
+              </div>
+            </div>
+          </li>
+          <li class="footer__contact-item">
+            <div class="footer__contact-holder footer__contact-holder--icon">
+              <svg class="icon-email">
+                <use xlink:href="#email"></use>
+              </svg>              
+            </div>
+            <div class="footer__contact-holder footer__contact-holder--name">
+              <a href="mailto:info@bzmc.ru" class="footer__contact-txt footer__contact-txt--mail">info@bzmc.ru</a>
+            </div>
+          </li>
+        </ul>
+        
+        <a data-fancybox data-src="#popup-question" href="javascript:;" class="btn footer__ask">ЗАДАТЬ ВОПРОС</a>
+	      
+	    </div>
+	  </div>
+	  
+	  <div class="footer__wrap">
+	    <span class="footer__copyright">2018 ООО Алтайрезервуар</span>
+	    <ul class="footer__info-list">
+	      <li class="footer__info-item">
+	        <a href="#" class="footer__info-link">Политика конфиденциальности</a>
+	      </li>
+	      <li class="footer__info-item">
+	        <span class="footer__info-txt">Создание сайта -</span>
+	        <a href="#" class="footer__info-link">Next</a>
+	      </li>
+	    </ul>
+	  </div>
+	  
+	</div>
+</footer>
+
+<div class="popups-question" id="popup-question">
+	<h2 class="popups-question__title">Задайте нам вопрос</h2>
+	<form action="send.php" method="POST" class="popups-question__form js-popup-validate">
+		<div class="popups-question__form-item form-group">
+			<input type="text" class="popups-question__form-input" name="name" placeholder="ФИО">
+		</div>
+		<div class="popups-question__form-item form-group">
+			<input type="email" class="popups-question__form-input" name="email" placeholder="Эл. почта">
+			<span class="popups-question__form-txt">
+				Пришлем ответ на заявку, без спама!
+			</span>
+		</div>
+		<div class="popups-question__form-item form-group">
+			<input type="tel" class="popups-question__form-input" name="phone" placeholder="Номер телефона">
+			<span class="popups-question__form-txt">
+				Пришлем ответ на заявку, без спама!
+			</span>
+		</div>
+		<input type="hidden" name="id" value="question">
+		<div class="popups-question__form-item form-group">
+			<textarea name="message" class="popups-question__form-message" placeholder="Ваш вопрос"></textarea>
+		</div>
+		<button type="submit" class="btn popups-question__form-btn js-send-request" data-type="question">
+			Отправить
+		</button>
+		<div class="popups-question__form-check">
+			<label class="checkbox">
+				<input type="checkbox" name="check" checked>
+				<span>Нажимая на кнопку отправить вопрос я даю согласие на обработку своих персональных данных, и соглашаюсь с <a href="#">политикой конфиденциальности</a></span>
+			</label>
+		</div>
+	</form>
+</div>
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

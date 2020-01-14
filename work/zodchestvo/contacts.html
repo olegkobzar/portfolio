@@ -1,0 +1,551 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Contacts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body>
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+
+ 	</div>
+ 
+
+  <header class="header">
+	<div class="header__visible-mobile">
+		<div class="header__logo">
+			<a href="#" class="header__logo-link">
+				<!-- <span class="header__logo-icon">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</span>
+				<span class="header__logo-text">Зодчество</span>
+				<span class="header__logo-fest">международный фестиваль</span> -->
+				<svg class="icon-logo-header">
+					<use xlink:href="#logo-header"></use>
+				</svg>
+			</a>
+		</div>
+		<div class="header__menu-mobile js-menu-mobile">
+			<span class="header__menu-mobile-item"></span>
+			<span class="header__menu-mobile-item"></span>
+			<span class="header__menu-mobile-item"></span>
+		</div>
+	</div>
+	<div class="header__wrapp js-nav-mobile">
+		<div class="header__top">
+			<div class="container">
+				<div class="header__top-wrapp">
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">
+							<!-- <span class="header__logo-icon">
+								<svg class="icon-logo">
+									<use xlink:href="#logo"></use>
+								</svg>
+							</span>
+							<span class="header__logo-text">Зодчество</span>
+							<span class="header__logo-fest">международный фестиваль</span> -->
+
+							<svg class="icon-logo-header">
+								<use xlink:href="#logo-header"></use>
+							</svg>
+						</a>
+					</div>
+					<nav class="header__nav js-nav js-wrapp-nav">
+						<div class="header__close-mobile js-close-mobile">
+							<span class="header__close-mobile-item"></span>
+							<span class="header__close-mobile-item"></span>
+						</div>
+						<ul class="header__list">
+							<li class="header__item active" data-text="01_">
+								<a href="#" class="header__link">О фестивале</a>
+								<div class="header__submenu">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Фестиваль 2018</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Каталог</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Награды</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="02_">
+								<a href="#" class="header__link">Конкурсы</a>
+							</li>
+							<li class="header__item" data-text="03_">
+								<a href="#" class="header__link">Выставки</a>
+							</li>
+							<li class="header__item" data-text="04_">
+								<a href="#" class="header__link">Участники</a>
+								<div class="header__submenu header__submenu--mod">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Все участники</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Работы участников</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="05_">
+								<a href="#" class="header__link">Итоги</a>
+							</li>
+							<li class="header__item" data-text="06_">
+								<a href="#" class="header__link">Медиа</a>
+								<div class="header__submenu">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Новости</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">СМИ о нас</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Аккредитация</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Фотогалерея</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="07_">
+								<a href="#" class="header__link">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="header__login">
+						<a href="#" class="header__login-link">
+							<span class="header__login-icon-circle"></span>
+							<span class="header__login-text">Вход в личный кабинет</span>
+						</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="header__menu-mobile js-menu-mobile">
+				<span class="header__menu-mobile-item"></span>
+				<span class="header__menu-mobile-item"></span>
+				<span class="header__menu-mobile-item"></span>
+			</div>
+			<div class="header__bott">
+				<div class="container">
+					<div class="header__bott-wrapp">
+						<div class="header__left">
+							<ul class="header__left-list">
+								<li class="header__left-item">
+									<a href="#" class="header__left-link">Вопросы и ответы</a>
+								</li>
+								<li class="header__left-item">
+									<a href="#" class="header__left-link">Eng</a>
+								</li>
+							</ul>
+						</div>
+						<div class="header__right">
+							<ul class="header__right-list">
+								<li class="header__right-item">
+									<a href="#" class="btn btn--border header__right-link header__right-link--ticket">Получить билет на выставку</a>
+								</li>
+								<li class="header__right-item">
+									<a href="#" class="btn header__right-link header__right-link--registration">Регистрация на конкурс</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+    
+    <div class="wrapper">
+    	<div class="heading " style="background-image: url(pic/bg/bg-heading-05.jpg);">
+  <div class="container">
+    <div class="heading__wrap">
+      <div class="heading__holder">
+        
+        <h1 class="heading__title">Контакты</h1>
+        
+        
+      </div>
+    </div>
+  </div>
+  <div class="heading__decor">
+    <div class="heading__decor-col heading__decor-col--large"></div>
+    <div class="heading__decor-col heading__decor-col--small"></div>
+  </div>
+</div>
+
+    	<div class="contacts">
+	<div class="container">
+		<div class="contacts__holder">
+			<div class="contacts__info">
+				<span class="contacts__info-desc">
+					Фестиваль «Зодчество» пройдёт в центральном выстовочном зале Манежа по адресу: Манежная площадь, 1 
+				</span>
+				<div class="contacts__info-box">
+					<span class="contacts__info-title">
+						<span class="contacts__info-icon">
+							<svg class="icon-calendar">
+								<use xlink:href="#calendar"></use>
+							</svg>
+						</span>
+						<span class="contacts__info-txt">
+							<span class="contacts__info-date">19</span>
+							<span class="contacts__info-date">21</span>
+							ноября
+						</span>
+					</span>
+					<span class="contacts__info-title">
+						<span class="contacts__info-icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<span class="contacts__info-txt">
+							Москва, Манеж
+						</span>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="contacts__map" id="contactsmap"></div>
+	<div class="contacts__management">
+		<div class="container">
+			<span class="contacts__management-caption">
+				Дирекция Зодчество
+			</span>
+			<div class="contacts__holder contacts__holder--management">
+				<div class="contacts__management-item">
+					<span class="contacts__management-title">Директор Фестиваля</span>
+					<span class="contacts__management-name">Шаповалова Марина Сергеевна </span>
+					<div class="contacts__management-phones">
+						<span class="contacts__management-phone">
+							<a href="tel:+7(495)6915321">
+								+7 (495) 691-53-21
+							</a>
+						</span>
+						<span class="contacts__management-phone">
+							<a href="tel:+7(903)9696073">
+								+7 (903) 969-60-73
+							</a>
+						</span>
+					</div>
+					<a href="mailto:shapovalova@zodchestvo.com" class="contacts__management-mail">shapovalova@zodchestvo.com</a>
+				</div>
+				<div class="contacts__management-item">
+					<span class="contacts__management-title">Event-менеджер</span>
+					<span class="contacts__management-name">Кандейкина Надежда</span>
+					<div class="contacts__management-phones">
+						<span class="contacts__management-phone">
+							<a href="tel:+7(495)6906865">
+								+7 (495) 690-68-65
+							</a>
+						</span>
+						<span class="contacts__management-phone">
+							<a href="tel:+7(915)4653788">
+								+7 (915) 465-37-88
+							</a>
+						</span>
+					</div>
+					<a href="mailto:info@zodchestvo.com" class="contacts__management-mail">info@zodchestvo.com</a>
+				</div>
+				<div class="contacts__management-item">
+					<span class="contacts__management-title">PR-менеджер</span>
+					<span class="contacts__management-name">Шоколова Мария</span>
+					<div class="contacts__management-phones">
+						<span class="contacts__management-phone">
+							<a href="tel:+7(495)6906865">
+								+7 (495) 690-68-65
+							</a>
+						</span>
+						<span class="contacts__management-phone">
+							<a href="tel:+7(916)2838972">
+								+7 (916) 283-89-72
+							</a>
+						</span>
+					</div>
+					<a href="mailto:pr@zodchestvo.com" class="contacts__management-mail">pr@zodchestvo.com</a>
+				</div>
+				<div class="contacts__management-item">
+					<span class="contacts__management-title">Менеджер по работе с участниками:</span>
+					<span class="contacts__management-name">Панкратова Ольга</span>
+					<div class="contacts__management-phones">
+						<span class="contacts__management-phone">
+							<a href="tel:+7(495)6911432">
+								+7 (495) 691-14-32
+							</a>
+						</span>
+						<span class="contacts__management-phone">
+							<a href="tel:+7(966)0715475">
+								+7 (966) 071-54-75
+							</a>
+						</span>
+					</div>
+					<a href="mailto:project@zodchestvo.com" class="contacts__management-mail">project@zodchestvo.com</a>
+				</div>
+				<div class="contacts__management-item">
+					<span class="contacts__management-title">Менеджер по застройке</span>
+					<span class="contacts__management-name">Дегтярёва Наталья</span>
+					<div class="contacts__management-phones">
+						<span class="contacts__management-phone">
+							<a href="tel:+7(495)6919845">
+								+7 (495) 691-98-45
+							</a>
+						</span>
+						<span class="contacts__management-phone">
+							<a href="tel:+7(985)2585026">
+								+7 (985) 258-50-26
+							</a>
+						</span>
+					</div>
+					<a href="mailto:stend@zodchestvo.com" class="contacts__management-mail">stend@zodchestvo.com</a>
+				</div>
+				<div class="contacts__management-item">
+					<div class="contacts__management-address">
+						<span class="contacts__management-icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<span class="contacts__management-address-txt">
+							123001, Москва, Гранатный пер., д. 12, оф.12
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="contacts__map" id="contactsmap2"></div>
+</div>
+    	<div class="contacts__form">
+	<div class="container">
+		<div class="contacts__form-holder">
+			<span class="contacts__form-title">
+				Напишите нам сообщение
+			</span>
+			<div class="contacts__form-inner">
+			<form action="#">
+				<div class="contacts__form-box">
+					<div class="contacts__form-input-wrap">
+						<input type="text" class="contacts__form-input" placeholder="Имя">
+					</div>
+					<div class="contacts__form-input-wrap">
+						<input type="text" class="contacts__form-input" placeholder="Телефон">
+					</div>
+					<div class="contacts__form-input-wrap">
+						<input type="email" class="contacts__form-input" placeholder="Электронная почта">
+					</div>
+				</div>
+				<div class="contacts__form-box">
+					<textarea class="contacts__form-textarea" placeholder="Текст"></textarea>
+				</div>
+				<div class="contacts__form-confirm">
+					<div class="contacts__form-checkbox-wrap">
+						<label class="checkbox">
+ 		  		    <input type="checkbox" name="contacts-check" id="contacts-check" checked>
+ 		  		    <span class="contacts__form-checkbox-txt">Я согласен на обработку моих персональных данных</span>
+ 		  		  </label>
+					</div>
+					<div class="contacts__form-btn-wrap">
+						<button class="btn btn--border contacts__form-btn">Отправить сообщение</button>
+					</div>
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>
+    	<div class="support ">
+	<div class="container">
+		<div class="support__holder">
+			<span class="support__title">При поддержке</span>
+			<div class="support__inner slick slick--support js-support-slider">
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-01.png" alt="img">
+					</div>
+					<span class="support__item-txt">Минстрой России</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-02.png" alt="img">
+					</div>
+					<span class="support__item-txt">Сайт президента России</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-03.png" alt="img">
+					</div>
+					<span class="support__item-txt">Совет Федераций</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-04.png" alt="img">
+					</div>
+					<span class="support__item-txt">Официальный сайт Мэра Москвы</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img support__item-img--mod">
+						<img src="pic/support/support-05.png" alt="img">
+					</div>
+					<span class="support__item-txt">Правительство Московской области</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="heading__decor support__decor">
+  	<div class="heading__decor-col heading__decor-col--large"></div>
+  	<div class="heading__decor-col heading__decor-col--small"></div>
+  </div>
+</div>
+
+    	
+    </div>
+
+  <footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__inner">
+			<div class="footer__logo">
+				<a href="#" class="footer__logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="footer__info-box">
+				<div class="footer__info">
+					<div class="footer__info-item">
+						<span class="footer__info-title footer__info-title--mod">
+							Зодчество
+						</span>
+						<span class="footer__info-txt">XXVI архитектурный фестиваль</span>
+					</div>
+					<div class="footer__info-item">
+						<span class="footer__info-title">Москва</span>
+						<span class="footer__info-txt">ЦВЗ «Манеж»</span>
+					</div>
+					<div class="footer__info-item">
+						<span class="footer__info-title">
+							<span class="footer__info-date">19</span>
+							<span class="footer__info-date">21</span>
+						</span>
+						<span class="footer__info-txt">ноября 2018</span>
+					</div>
+				</div>
+				<div class="footer__copy">
+					<div class="footer__copy-box">
+						<span class="footer__copy-txt">
+							Дирекция международного фестиваля «Зодчество»
+						</span>
+						<span class="footer__copy-txt">
+							123001, Москва, Гранатный пер. 12
+						</span>
+					</div>
+					<div class="footer__copy-phone-wrap">
+						<span class="footer__copy-phone">
+							<a href="tel:+7(495)6906865" class="footer__copy-link">
+								+7 (495) 690-68-65
+							</a>
+						</span>
+						<span class="footer__copy-phone">
+							<a href="tel:+7(495)6915321" class="footer__copy-link">
+								+7 (495) 691-53-21
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="footer__contacts">
+				<a href="#"class="footer__contacts-head">
+					<span class="footer__contacts-title">Контакты</span>
+					<span class="icon-arrow icon-arrow--next"></span>
+				</a>
+				<div class="footer__contacts-social">
+					<a href="#" class="footer__contacts-link">Facebook,</a>
+					<a href="#" class="footer__contacts-link">Vkontakte,</a>
+					<a href="#" class="footer__contacts-link">Instagram</a>
+				</div>
+				<a href="mailto:info@zodchestvo.com" class="footer__contacts-mail">info@zodchestvo.com</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+
+

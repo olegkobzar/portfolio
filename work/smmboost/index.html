@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Регистрация</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+	<div class="wrapper">
+		
+		<div class="form form--login">
+	<div class="form__col form__col--left" style="background-image: url();">
+
+		<div class="form__graph-one" style="background-image: url(pic/graph/blue.png);"></div>
+		<div class="form__graph-two" style="background-image: url(pic/graph/green.png);"></div>
+		<div class="form__graph-three" style="background-image: url(pic/graph/orange.png);"></div>
+		
+		<div class="form__overlay"></div>
+
+		<video loop muted autoplay poster="pic/video/Maple-wing.jpg" class="form__video">
+			<source src="pic/video/video.mp4" type="video/mp4">
+		</video>
+
+		<span class="form__logo">SMMBoost</span>
+		<span class="form__text">Сервис для раскрутки в соц сетях</span>
+		<ul class="form__list-adv">
+			<li class="form__item-adv">Скорость</li>
+			<li class="form__item-adv">Надежность</li>
+			<li class="form__item-adv">Качество</li>
+		</ul>
+	</div>
+
+	
+		<div class="form__col">
+			<form action="">
+				<span class="form__caption">Регистрация</span>
+
+				<div class="form__control">
+					<div class="form__row form__row--border">
+						<label for="login" class="label">
+							<span class="label__text">Логин</span>
+							<input name="input" value="smmboost" type="text" id="login" placeholder="">
+						</label>
+					</div>
+					<div class="form__row">
+						<label for="email" class="label">
+							<span class="label__text">E-mail</span>
+							<input name="input" value="admin@smmboost.ru" type="email" id="email" placeholder="">
+						</label>
+					</div>
+					<div class="form__row">
+						<label for="pass" class="label">
+							<span class="label__text">Пароль</span>
+							<input name="input" value="1234567" type="password" id="pass" placeholder="">
+						</label>
+					</div>
+					<div class="form__row">
+						<label for="pass2" class="label">
+							<span class="label__text">Повторите пароль</span>
+							<input name="input" value="1234567" type="password" id="pass2" placeholder="">
+						</label>
+					</div>
+				</div>
+
+				<div class="form__captcha">
+					<img src="pic/captcha.png" alt="">
+				</div>
+
+				<div class="form__checkbox">
+					<label class="checkbox">
+						<input type="checkbox" name="check" checked>
+						<span>Регистрируясь, Вы соглашаетесь с <a href="#">Условиями использования</a> и <a href="#">политикой конфиденциальности</a></span>
+					</label>
+				</div>
+
+				<div class="form__bottom">
+					<div class="form__bottom-login" style="order: 1;">
+						<button class="btn">Зарегистрироваться</button>
+					</div>
+					<div class="form__bottom-entry" style="order: 2;">
+						<button class="btn btn--tr">Войти</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	
+
+	
+
+	
+</div>
+
+
+	</div>
+
+
+<footer class="footer">
+	
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

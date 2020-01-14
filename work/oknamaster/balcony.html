@@ -1,0 +1,1841 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Балконы</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+<div class="wrapper">
+
+	<header class="header">
+	<div class="container">
+		<div class="header__top">
+
+			<div class="header__logo">
+				<a href="#" class="header__logo-link">
+					<img src="pic/logo.png" alt="">
+				</a>
+			</div>
+
+			<div class="header__contact js-header-contact">
+				<div class="header__phone">
+					<div class="header__phone-top">
+						<span class="header__phone-icon">
+							<svg class="icon-phone">
+								<use xlink:href="#phone"></use>
+							</svg>
+						</span>
+						<a href="tel:+74998774708" class="header__phone-link">+7 499 877-47-08</a>
+					</div>
+					<span class="header__phone-bott">
+						Пн-Вс: 09:00—23:00
+					</span>
+				</div>
+				<div class="header__callback">
+					<a data-fancybox data-src="#popup-callback" href="javascript:;" class="btn header__btn">
+						<span class="header__btn-icon">
+							<svg class="icon-phone-btn">
+								<use xlink:href="#phone"></use>
+							</svg>
+						</span>
+						<span class="header__btn-text">Перезвоните мне</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="header__menu">
+				<ul class="header__menu-list">
+					<li class="header__menu-item">
+						<a href="#" class="header__menu-link">
+							<span class="header__menu-icon">
+								<svg class="icon-calc">
+									<use xlink:href="#calc"></use>
+								</svg>
+							</span>
+							<span class="header__menu-text">Калькулятор окон</span>
+						</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="#" class="header__menu-link">
+							<span class="header__menu-icon">
+								<svg class="icon-about">
+									<use xlink:href="#about"></use>
+								</svg>
+							</span>
+							<span class="header__menu-text">О компании</span>
+						</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="#" class="header__menu-link">
+							<span class="header__menu-icon">
+								<svg class="icon-type-house">
+									<use xlink:href="#type-house"></use>
+								</svg>
+							</span>
+							<span class="header__menu-text">Подобрать по типу дома</span>
+						</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="#" class="header__menu-link">
+							<span class="header__menu-icon">
+								<svg class="icon-price">
+									<use xlink:href="#price"></use>
+								</svg>
+							</span>
+							<span class="header__menu-text">Цены</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="header__partner">
+				<div class="header__partner-wrap">
+					<span class="header__partner-text">Официальный партнер с 2003 года</span>
+					<img src="pic/rehau.png" alt="">
+				</div>
+			</div>
+			
+			<div class="header__mobile-wrap">
+				<div class="header__phone-mobile-visible js-toggle-contact">
+					<svg class="icon-phone-mobile">
+						<use xlink:href="#phone"></use>
+					</svg>
+				</div>
+
+				<div class="header__btn-mobile-visible js-toggle-nav">
+					<span class="header__btn-line"></span>
+					<span class="header__btn-line"></span>
+					<span class="header__btn-line"></span>
+				</div>
+			</div>
+		</div>
+
+		<nav class="header__nav js-nav">
+			<ul class="header__nav-list">
+				<li class="header__nav-item js-item-wrap">
+					<a href="#" class="header__nav-link js-open-subnav ">Окна</a>
+					<div class="header__subnav js-subnav">
+						<div class="header__subnav-col header__subnav-col--category">
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Профили</a>
+							</div>
+							<ul class="header__subnav-list">
+								<li class="header__subnav-item">
+									<a href="#" class="header__subnav-link">Rehau Blitz New</a>
+								</li>
+								<li class="header__subnav-item">
+									<a href="#" class="header__subnav-link">Rehau Delight-Design</a>
+								</li>
+								<li class="header__subnav-item">
+									<a href="#" class="header__subnav-link">Rehau Grazio</a>
+								</li>
+								<li class="header__subnav-item">
+									<a href="#" class="header__subnav-link">Rehau Intelio</a>
+								</li>
+							</ul>
+						</div>
+						<div class="header__subnav-col">
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Цветные окна</a>
+							</div>
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Пластиковые окна</a>
+							</div>
+						</div>
+						<div class="header__subnav-col">
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Готовые окна</a>
+							</div>
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Нестандартные окна</a>
+							</div>
+						</div>
+						<div class="header__subnav-col">
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Арочные окна</a>
+							</div>
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Витражные окна</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link ">Двери</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link active">Балконы</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link ">Коттеджи</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link ">Контакты</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link ">Услуги</a>
+				</li>
+			</ul>
+
+			<div class="header__nav-bott">
+				<div class="header__menu">
+					<ul class="header__menu-list">
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">
+								<span class="header__menu-icon">
+									<svg class="icon-calc">
+										<use xlink:href="#calc"></use>
+									</svg>
+								</span>
+								<span class="header__menu-text">Калькулятор окон</span>
+							</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">
+								<span class="header__menu-icon">
+									<svg class="icon-about">
+										<use xlink:href="#about"></use>
+									</svg>
+								</span>
+								<span class="header__menu-text">О компании</span>
+							</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">
+								<span class="header__menu-icon">
+									<svg class="icon-type-house">
+										<use xlink:href="#type-house"></use>
+									</svg>
+								</span>
+								<span class="header__menu-text">Подобрать по типу дома</span>
+							</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">
+								<span class="header__menu-icon">
+									<svg class="icon-price">
+										<use xlink:href="#price"></use>
+									</svg>
+								</span>
+								<span class="header__menu-text">Цены</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="header__partner">
+					<div class="header__partner-wrap">
+						<span class="header__partner-text">Официальный партнер с 2003 года</span>
+						<img src="pic/rehau.png" alt="">
+					</div>
+				</div>
+			</div>
+		</nav>
+
+	</div>
+</header>
+
+
+	<div class="heading heading--balcony" style="background-image: url(pic/bg/bg-19.jpg);">
+	<div class="container">
+		<div class="heading__wrap">
+			<h1 class="heading__caption">Остекление балконов и лоджий</h1>
+			<p class="heading__descr">Компания «Окна Мастер» осуществляет комплекс работ по остеклению балконов современным надежным профилем ПВХ или алюминиевым профилем. Обращаясь к нам, вы получаете полностью готовый результат.</p>
+			<form action="" class="form-callback">
+				<div class="heading__form">
+					<div class="heading__form-input">
+						<label for="name" class="label">
+							<span class="label-icon">
+								<svg class="icon-phone-input">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="label-error-message">Вы не заполнили поле!</span>
+							<input name="phone_number" autocomplete="off" class="js-phone" type="tel" placeholder="Номер телефона">
+						</label>
+					</div>
+					<div class="heading__form-btn">
+						<button class="btn heading__btn" type="submit">Узнать стоимость</button>
+					</div>
+				</div>
+			</form>
+			<div class="heading__consent">
+				Нажимая на кнопку, вы принимаете <a href="#">Положение</a> и <a href="#">Согласие</a> на обработку персональных данных
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="card">
+	<div class="container">
+		<div class="card__wrap">
+			
+				<div class="card__item">
+					<div class="card__inner">
+						<div class="card__content" style="background-image: url(pic/card/card-5.jpg);">
+							<div class="card__caption-wrap js-height-caption">
+								<a href="#" class="card__caprion-link">
+									<h4 class="card__caption">Холодное остекление</h4>
+								</a>
+							</div>
+							<span class="card__descr js-height-descr">Простота конструкции и монтажа алюминиевых окон позволяет остеклить балкон быстро и не дорого</span>
+							<div class="card__bottom">
+								<div class="card__col">
+									<span class="card__price-text">цена за м2</span>
+									<span class="card__price">2 820  <span class="rubl">o</span></span>
+								</div>
+								<div class="card__col card__col--btn">
+									<a href="#" class="btn card__btn">Подробнее</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div class="card__item">
+					<div class="card__inner">
+						<div class="card__content" style="background-image: url(pic/card/card-6.jpg);">
+							<div class="card__caption-wrap js-height-caption">
+								<a href="#" class="card__caprion-link">
+									<h4 class="card__caption">Теплое остекление</h4>
+								</a>
+							</div>
+							<span class="card__descr js-height-descr">Благодаря качественной фурнитуре обеспечивается легкое открывание и плотное закрытие окон без лишних усилий.</span>
+							<div class="card__bottom">
+								<div class="card__col">
+									<span class="card__price-text">цена за м2</span>
+									<span class="card__price">4 140  <span class="rubl">o</span></span>
+								</div>
+								<div class="card__col card__col--btn">
+									<a href="#" class="btn card__btn">Подробнее</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div class="card__item">
+					<div class="card__inner">
+						<div class="card__content" style="background-image: url(pic/card/card-7.jpg);">
+							<div class="card__caption-wrap js-height-caption">
+								<a href="#" class="card__caprion-link">
+									<h4 class="card__caption">Остекление балкона с выносом</h4>
+								</a>
+							</div>
+							<span class="card__descr js-height-descr">Выносное остекление подразумевает совокупность работ по расширению пола и выносу балконного остекления с подоконником.</span>
+							<div class="card__bottom">
+								<div class="card__col">
+									<span class="card__price-text">цена за м2</span>
+									<span class="card__price">5 750  <span class="rubl">o</span></span>
+								</div>
+								<div class="card__col card__col--btn">
+									<a href="#" class="btn card__btn">Подробнее</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div class="card__item">
+					<div class="card__inner">
+						<div class="card__content" style="background-image: url(pic/card/card-8.jpg);">
+							<div class="card__caption-wrap js-height-caption">
+								<a href="#" class="card__caprion-link">
+									<h4 class="card__caption">Панорамное остекление</h4>
+								</a>
+							</div>
+							<span class="card__descr js-height-descr">На сегодняшний день панорамное остекление балконов пользуется большой полярностью.</span>
+							<div class="card__bottom">
+								<div class="card__col">
+									<span class="card__price-text">цена за м2</span>
+									<span class="card__price">3 940  <span class="rubl">o</span></span>
+								</div>
+								<div class="card__col card__col--btn">
+									<a href="#" class="btn card__btn">Подробнее</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+		</div>
+	</div>
+</div>
+
+	<div class="adv" style="background-image: url(pic/bg/bg-2.jpg);">
+	<div class="container">
+		<div class="adv__wrap">
+			<div class="adv__col adv__col--static">
+				<h2>Окна Мастер - крупнейший производитель пластиковых окон в России</h2>
+				<p>Современное автоматизированное производство по запатентованных технологиях, контроль качества на каждом этапе, адаптированные под российские климатические условия системы установки делают наши окна лидирующими по количеству продаж вот уже более 25 лет. </p>
+				<p></p>
+			</div>
+			<div class="adv__col adv__col--icons">
+				
+					<div class="adv__item">
+						<span class="adv__item-icon">
+							<svg class="icon-descr-1">
+								<use xlink:href="#descr-1"></use>
+							</svg>
+						</span>
+						<span class="adv__item-text">Современные пластиковые окна пвх и балконные конструкции по доступным ценам</span>
+					</div>
+				
+					<div class="adv__item">
+						<span class="adv__item-icon">
+							<svg class="icon-descr-2">
+								<use xlink:href="#descr-2"></use>
+							</svg>
+						</span>
+						<span class="adv__item-text">Квалифицированный подход к решению задач любой сложности</span>
+					</div>
+				
+					<div class="adv__item">
+						<span class="adv__item-icon">
+							<svg class="icon-descr-3">
+								<use xlink:href="#descr-3"></use>
+							</svg>
+						</span>
+						<span class="adv__item-text">Оперативный монтаж пластиковых окон по ГОСТу, который выполняется специалистами с опытом</span>
+					</div>
+				
+					<div class="adv__item">
+						<span class="adv__item-icon">
+							<svg class="icon-descr-4">
+								<use xlink:href="#descr-4"></use>
+							</svg>
+						</span>
+						<span class="adv__item-text">Гарантию высочайшего качества нашей продукции</span>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="balcony">
+	<div class="container">
+		<h2 class="balcony__caption">Цены на типовые конструкции</h2>
+		<div class="balcony__wrap js-wrap-type">
+			<div class="balcony__head">
+				<div class="balcony__head-item js-head-cold active">
+					<span class="balcony__head-icon">
+						<svg class="icon-cold">
+							<use xlink:href="#cold"></use>
+						</svg>
+					</span>
+					<span class="balcony__head-text">Холодное остекление</span>
+				</div>
+				<div class="balcony__head-item js-head-heat">
+					<span class="balcony__head-icon">
+						<svg class="icon-heat">
+							<use xlink:href="#heat"></use>
+						</svg>
+					</span>
+					<span class="balcony__head-text">Теплое остекление</span>
+				</div>
+			</div>
+
+			<div class="balcony__type js-balcony-slider-head">
+				<div class="balcony__type-item">
+					<span class="balcony__type-text">Серия П-3</span>
+				</div>
+				<div class="balcony__type-item">
+					<span class="balcony__type-text">Полукруг</span>
+				</div>
+				<div class="balcony__type-item">
+					<span class="balcony__type-text">Сапог</span>
+				</div>
+				<div class="balcony__type-item">
+					<span class="balcony__type-text">Балкон в хрущевском доме</span>
+				</div>
+				<div class="balcony__type-item">
+					<span class="balcony__type-text">Балкон в сталинском доме</span>
+				</div>
+				<div class="balcony__type-item">
+					<span class="balcony__type-text">Книжка</span>
+				</div>
+				<div class="balcony__type-item">
+					<span class="balcony__type-text">Лоджия</span>
+				</div>
+			</div>
+
+			<div class="balcony__bottom js-balcony-slider-content">
+
+				<div class="balcony__item">
+					<div class="balcony__left" style="background-image: url(pic/balcony/balcony-1.jpg);">
+						<div class="balcony__profile-img">
+							<img src="" alt="">
+						</div>
+					</div>
+					<div class="balcony__right">
+						<span class="balcony__title">Алюминиевый профиль</span>
+						<div class="balcony__col-content">
+							<span class="balcony__price-text">цена за м2 от</span>
+							<div class="balcony__price-wrap">
+								<span class="balcony__price" 
+									data-price-cold="2 434" 
+									data-price-heat="2 700">
+									<span class="balcony__price-value">2 434</span> 
+									<span class="rubl">o</span>
+								</span>
+								<span class="balcony__price-old" 
+									data-price-cold-old="4 869" 
+									data-price-heat-old="5 200">
+									<span class="balcony__price-old-value">4 869</span>
+									<span class="rubl">o</span>
+								</span>
+							</div>
+							<div class="balcony__btn-wrap">
+								<a href="#" class="btn balcony__btn">Заказать</a>
+							</div>
+							<div class="balcony__descr">
+								<span class="balcony__descr-title">В цену не включены:</span>
+								<ul class="balcony__descr-list">
+									<li class="balcony__descr-item">Подоконник</li>
+									<li class="balcony__descr-item">Эркер</li>
+									<li class="balcony__descr-item">Отлив</li>
+									<li class="balcony__descr-item">Нащельник</li>
+									<li class="balcony__descr-item">Козырек</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="balcony__item">
+					<div class="balcony__left" style="background-image: url(pic/balcony/balcony-1.jpg);">
+						<div class="balcony__profile-img">
+							<img src="" alt="">
+						</div>
+					</div>
+					<div class="balcony__right">
+						<span class="balcony__title">Алюминиевый профиль</span>
+						<div class="balcony__col-content">
+							<span class="balcony__price-text">цена за м2 от</span>
+							<div class="balcony__price-wrap">
+								<span class="balcony__price" 
+									data-price-cold="2 434" 
+									data-price-heat="2 700">
+									<span class="balcony__price-value">2 434</span> 
+									<span class="rubl">o</span>
+								</span>
+								<span class="balcony__price-old" 
+									data-price-cold-old="4 869" 
+									data-price-heat-old="5 200">
+									<span class="balcony__price-old-value">4 869</span>
+									<span class="rubl">o</span>
+								</span>
+							</div>
+							<div class="balcony__btn-wrap">
+								<a href="#" class="btn balcony__btn">Заказать</a>
+							</div>
+							<div class="balcony__descr">
+								<span class="balcony__descr-title">В цену не включены:</span>
+								<ul class="balcony__descr-list">
+									<li class="balcony__descr-item">Подоконник</li>
+									<li class="balcony__descr-item">Эркер</li>
+									<li class="balcony__descr-item">Отлив</li>
+									<li class="balcony__descr-item">Нащельник</li>
+									<li class="balcony__descr-item">Козырек</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="balcony__item">
+					<div class="balcony__left" style="background-image: url(pic/balcony/balcony-1.jpg);">
+						<div class="balcony__profile-img">
+							<img src="" alt="">
+						</div>
+					</div>
+					<div class="balcony__right">
+						<span class="balcony__title">Алюминиевый профиль</span>
+						<div class="balcony__col-content">
+							<span class="balcony__price-text">цена за м2 от</span>
+							<div class="balcony__price-wrap">
+								<span class="balcony__price" 
+									data-price-cold="2 434" 
+									data-price-heat="2 700">
+									<span class="balcony__price-value">2 434</span> 
+									<span class="rubl">o</span>
+								</span>
+								<span class="balcony__price-old" 
+									data-price-cold-old="4 869" 
+									data-price-heat-old="5 200">
+									<span class="balcony__price-old-value">4 869</span>
+									<span class="rubl">o</span>
+								</span>
+							</div>
+							<div class="balcony__btn-wrap">
+								<a href="#" class="btn balcony__btn">Заказать</a>
+							</div>
+							<div class="balcony__descr">
+								<span class="balcony__descr-title">В цену не включены:</span>
+								<ul class="balcony__descr-list">
+									<li class="balcony__descr-item">Подоконник</li>
+									<li class="balcony__descr-item">Эркер</li>
+									<li class="balcony__descr-item">Отлив</li>
+									<li class="balcony__descr-item">Нащельник</li>
+									<li class="balcony__descr-item">Козырек</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="balcony__item">
+					<div class="balcony__left" style="background-image: url(pic/balcony/balcony-1.jpg);">
+						<div class="balcony__profile-img">
+							<img src="" alt="">
+						</div>
+					</div>
+					<div class="balcony__right">
+						<span class="balcony__title">Алюминиевый профиль</span>
+						<div class="balcony__col-content">
+							<span class="balcony__price-text">цена за м2 от</span>
+							<div class="balcony__price-wrap">
+								<span class="balcony__price" 
+									data-price-cold="2 434" 
+									data-price-heat="2 700">
+									<span class="balcony__price-value">2 434</span> 
+									<span class="rubl">o</span>
+								</span>
+								<span class="balcony__price-old" 
+									data-price-cold-old="4 869" 
+									data-price-heat-old="5 200">
+									<span class="balcony__price-old-value">4 869</span>
+									<span class="rubl">o</span>
+								</span>
+							</div>
+							<div class="balcony__btn-wrap">
+								<a href="#" class="btn balcony__btn">Заказать</a>
+							</div>
+							<div class="balcony__descr">
+								<span class="balcony__descr-title">В цену не включены:</span>
+								<ul class="balcony__descr-list">
+									<li class="balcony__descr-item">Подоконник</li>
+									<li class="balcony__descr-item">Эркер</li>
+									<li class="balcony__descr-item">Отлив</li>
+									<li class="balcony__descr-item">Нащельник</li>
+									<li class="balcony__descr-item">Козырек</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="balcony__item">
+					<div class="balcony__left" style="background-image: url(pic/balcony/balcony-1.jpg);">
+						<div class="balcony__profile-img">
+							<img src="" alt="">
+						</div>
+					</div>
+					<div class="balcony__right">
+						<span class="balcony__title">Алюминиевый профиль</span>
+						<div class="balcony__col-content">
+							<span class="balcony__price-text">цена за м2 от</span>
+							<div class="balcony__price-wrap">
+								<span class="balcony__price" 
+									data-price-cold="2 434" 
+									data-price-heat="2 700">
+									<span class="balcony__price-value">2 434</span> 
+									<span class="rubl">o</span>
+								</span>
+								<span class="balcony__price-old" 
+									data-price-cold-old="4 869" 
+									data-price-heat-old="5 200">
+									<span class="balcony__price-old-value">4 869</span>
+									<span class="rubl">o</span>
+								</span>
+							</div>
+							<div class="balcony__btn-wrap">
+								<a href="#" class="btn balcony__btn">Заказать</a>
+							</div>
+							<div class="balcony__descr">
+								<span class="balcony__descr-title">В цену не включены:</span>
+								<ul class="balcony__descr-list">
+									<li class="balcony__descr-item">Подоконник</li>
+									<li class="balcony__descr-item">Эркер</li>
+									<li class="balcony__descr-item">Отлив</li>
+									<li class="balcony__descr-item">Нащельник</li>
+									<li class="balcony__descr-item">Козырек</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="balcony__item">
+					<div class="balcony__left" style="background-image: url(pic/balcony/balcony-1.jpg);">
+						<div class="balcony__profile-img">
+							<img src="" alt="">
+						</div>
+					</div>
+					<div class="balcony__right">
+						<span class="balcony__title">Алюминиевый профиль</span>
+						<div class="balcony__col-content">
+							<span class="balcony__price-text">цена за м2 от</span>
+							<div class="balcony__price-wrap">
+								<span class="balcony__price" 
+									data-price-cold="2 434" 
+									data-price-heat="2 700">
+									<span class="balcony__price-value">2 434</span> 
+									<span class="rubl">o</span>
+								</span>
+								<span class="balcony__price-old" 
+									data-price-cold-old="4 869" 
+									data-price-heat-old="5 200">
+									<span class="balcony__price-old-value">4 869</span>
+									<span class="rubl">o</span>
+								</span>
+							</div>
+							<div class="balcony__btn-wrap">
+								<a href="#" class="btn balcony__btn">Заказать</a>
+							</div>
+							<div class="balcony__descr">
+								<span class="balcony__descr-title">В цену не включены:</span>
+								<ul class="balcony__descr-list">
+									<li class="balcony__descr-item">Подоконник</li>
+									<li class="balcony__descr-item">Эркер</li>
+									<li class="balcony__descr-item">Отлив</li>
+									<li class="balcony__descr-item">Нащельник</li>
+									<li class="balcony__descr-item">Козырек</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="balcony__item">
+					<div class="balcony__left" style="background-image: url(pic/balcony/balcony-1.jpg);">
+						<div class="balcony__profile-img">
+							<img src="" alt="">
+						</div>
+					</div>
+					<div class="balcony__right">
+						<span class="balcony__title">Алюминиевый профиль</span>
+						<div class="balcony__col-content">
+							<span class="balcony__price-text">цена за м2 от</span>
+							<div class="balcony__price-wrap">
+								<span class="balcony__price" 
+									data-price-cold="2 434" 
+									data-price-heat="2 700">
+									<span class="balcony__price-value">2 434</span> 
+									<span class="rubl">o</span>
+								</span>
+								<span class="balcony__price-old" 
+									data-price-cold-old="4 869" 
+									data-price-heat-old="5 200">
+									<span class="balcony__price-old-value">4 869</span>
+									<span class="rubl">o</span>
+								</span>
+							</div>
+							<div class="balcony__btn-wrap">
+								<a href="#" class="btn balcony__btn">Заказать</a>
+							</div>
+							<div class="balcony__descr">
+								<span class="balcony__descr-title">В цену не включены:</span>
+								<ul class="balcony__descr-list">
+									<li class="balcony__descr-item">Подоконник</li>
+									<li class="balcony__descr-item">Эркер</li>
+									<li class="balcony__descr-item">Отлив</li>
+									<li class="balcony__descr-item">Нащельник</li>
+									<li class="balcony__descr-item">Козырек</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<span class="go" data-text="20 12"></span>
+<span class="go" data-text="20 17"></span>
+
+	<div class="certificate js-wrap-box-all">
+	<div class="container">
+		<h3 class="certificate__caption">Сертифицированный монтаж Rehau</h3>
+		<p class="certificate__descr">Многие компании привлекают для установки окон сторонние – сомнительные бригады. Наши монтажные бригады проходят обучение и обязательную сертификацию в компании Rehau, поскольку мы являемся одним из крупнейших производителей окон из профильных систем Rehau в России.</p>
+		<div class="certificate__wrap js-wrap-certificate">
+			<div class="certificate__col certificate__col--big">
+				<a href="pic/doc/doc-2.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+					<img src="pic/doc/doc-2.jpg" alt="">
+				</a>
+			</div>
+			<div class="certificate__col">
+				<div class="certificate__item">
+					<a href="pic/doc/doc-1.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-1.jpg" alt="">
+					</a>
+				</div>
+				<div class="certificate__item">
+					<a href="pic/doc/doc-2.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-2.jpg" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="certificate__col">
+				<div class="certificate__item">
+					<a href="pic/doc/doc-1.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-1.jpg" alt="">
+					</a>
+				</div>
+				<div class="certificate__item">
+					<a href="pic/doc/doc-2.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-2.jpg" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="certificate__col">
+				<div class="certificate__item">
+					<a href="pic/doc/doc-1.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-1.jpg" alt="">
+					</a>
+				</div>
+				<div class="certificate__item">
+					<a href="pic/doc/doc-2.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-2.jpg" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="certificate__col">
+				<div class="certificate__item">
+					<a href="pic/doc/doc-1.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-1.jpg" alt="">
+					</a>
+				</div>
+				<div class="certificate__item">
+					<a href="pic/doc/doc-2.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-2.jpg" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="certificate__col">
+				<div class="certificate__item">
+					<a href="pic/doc/doc-1.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-1.jpg" alt="">
+					</a>
+				</div>
+				<div class="certificate__item">
+					<a href="pic/doc/doc-2.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-2.jpg" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="certificate__col">
+				<div class="certificate__item">
+					<a href="pic/doc/doc-1.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-1.jpg" alt="">
+					</a>
+				</div>
+				<div class="certificate__item">
+					<a href="pic/doc/doc-2.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-2.jpg" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="certificate__col">
+				<div class="certificate__item">
+					<a href="pic/doc/doc-1.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-1.jpg" alt="">
+					</a>
+				</div>
+				<div class="certificate__item">
+					<a href="pic/doc/doc-2.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-2.jpg" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="certificate__col">
+				<div class="certificate__item">
+					<a href="pic/doc/doc-1.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-1.jpg" alt="">
+					</a>
+				</div>
+				<div class="certificate__item">
+					<a href="pic/doc/doc-2.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+						<img src="pic/doc/doc-2.jpg" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="certificate__col certificate__col--big">
+				<a href="pic/doc/doc-2.jpg" data-fancybox="images-certificate" data-width="736" data-height="1016" class="certificate__link">
+					<img src="pic/doc/doc-2.jpg" alt="">
+				</a>
+			</div>
+		</div>
+		<div class="certificate__btn-wrap js-btn-all">
+			<a href="#" class="btn btn--still">
+				<span class="btn-icon">
+					<svg class="icon-reinit">
+						<use xlink:href="#reinit"></use>
+					</svg>
+				</span>
+				<span>Показать еще</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+	<div class="gallery">
+	<div class="container">
+		<h3 class="gallery__caption">Галерея наших работ</h3>
+		<div class="gallery__wrap js-grid">
+			<!-- <div class="gallery__sizer js-grid-sizer"></div> -->
+			<div class="gallery__item js-grid-item">
+				<a href="pic/gallery/gallery-1.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+					<span class="gallery__img" style="background-image: url(pic/gallery/gallery-1.jpg);"></span>
+					<span class="gallery__icon">
+						<svg class="icon-search">
+							<use xlink:href="#search"></use>
+						</svg>
+					</span>
+				</a>
+			</div>
+
+			<div class="gallery__item js-grid-item">
+				<a href="pic/gallery/gallery-2.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+					<span class="gallery__img" style="background-image: url(pic/gallery/gallery-2.jpg);"></span>
+					<span class="gallery__icon">
+						<svg class="icon-search">
+							<use xlink:href="#search"></use>
+						</svg>
+					</span>
+				</a>
+			</div>
+
+			<div class="gallery__item gallery__item--some js-grid-item">
+				<div class="gallery__item-col">
+					<a href="pic/gallery/gallery-10.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+						<span class="gallery__img" style="background-image: url(pic/gallery/gallery-10.jpg);"></span>
+						<span class="gallery__icon">
+							<svg class="icon-search">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+					</a>
+				</div>
+				<div class="gallery__item-col">
+					<a href="pic/gallery/gallery-5.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+						<span class="gallery__img" style="background-image: url(pic/gallery/gallery-5.jpg);"></span>
+						<span class="gallery__icon">
+							<svg class="icon-search">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="gallery__item gallery__item--some js-grid-item">
+				<div class="gallery__item-col">
+					<a href="pic/gallery/gallery-6.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+						<span class="gallery__img" style="background-image: url(pic/gallery/gallery-6.jpg);"></span>
+						<span class="gallery__icon">
+							<svg class="icon-search">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+					</a>
+				</div>
+				<div class="gallery__item-col">
+					<a href="pic/gallery/gallery-7.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+						<span class="gallery__img" style="background-image: url(pic/gallery/gallery-7.jpg);"></span>
+						<span class="gallery__icon">
+							<svg class="icon-search">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="gallery__item js-grid-item">
+				<a href="pic/gallery/gallery-3.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+					<span class="gallery__img" style="background-image: url(pic/gallery/gallery-3.jpg);"></span>
+					<span class="gallery__icon">
+						<svg class="icon-search">
+							<use xlink:href="#search"></use>
+						</svg>
+					</span>
+				</a>
+			</div>
+
+			<!-- <div class="gallery__item gallery__item--small js-grid-item">
+				<a href="pic/gallery/gallery-10.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+					<span class="gallery__img" style="background-image: url(pic/gallery/gallery-10.jpg);"></span>
+					<span class="gallery__icon">
+						<svg class="icon-search">
+							<use xlink:href="#search"></use>
+						</svg>
+					</span>
+				</a>
+			</div> -->
+
+			<!-- <div class="gallery__item gallery__item--small js-grid-item">
+				<a href="pic/gallery/gallery-5.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+					<span class="gallery__img" style="background-image: url(pic/gallery/gallery-5.jpg);"></span>
+					<span class="gallery__icon">
+						<svg class="icon-search">
+							<use xlink:href="#search"></use>
+						</svg>
+					</span>
+				</a>
+			</div> -->
+
+			<!-- <div class="gallery__item gallery__item--small js-grid-item">
+				<a href="pic/gallery/gallery-6.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+					<span class="gallery__img" style="background-image: url(pic/gallery/gallery-6.jpg);"></span>
+					<span class="gallery__icon">
+						<svg class="icon-search">
+							<use xlink:href="#search"></use>
+						</svg>
+					</span>
+				</a>
+			</div> -->
+
+			<!-- <div class="gallery__item gallery__item--small js-grid-item">
+				<a href="pic/gallery/gallery-7.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+					<span class="gallery__img" style="background-image: url(pic/gallery/gallery-7.jpg);"></span>
+				</a>
+			</div> -->
+
+			<!-- <div class="gallery__item gallery__item--small js-grid-item">
+				<a href="pic/gallery/gallery-8.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+					<span class="gallery__img" style="background-image: url(pic/gallery/gallery-8.jpg);"></span>
+					<span class="gallery__icon">
+						<svg class="icon-search">
+							<use xlink:href="#search"></use>
+						</svg>
+					</span>
+				</a>
+			</div> -->
+
+			<div class="gallery__item js-grid-item">
+				<a href="pic/gallery/gallery-9.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+					<span class="gallery__img" style="background-image: url(pic/gallery/gallery-9.jpg);"></span>
+					<span class="gallery__icon">
+						<svg class="icon-search">
+							<use xlink:href="#search"></use>
+						</svg>
+					</span>
+				</a>
+			</div>
+
+			<div class="gallery__item gallery__item--some js-grid-item">
+				<div class="gallery__item-col">
+					<a href="pic/gallery/gallery-8.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+						<span class="gallery__img" style="background-image: url(pic/gallery/gallery-8.jpg);"></span>
+						<span class="gallery__icon">
+							<svg class="icon-search">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+					</a>
+				</div>
+				<div class="gallery__item-col">
+					<a href="pic/gallery/gallery-7.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+						<span class="gallery__img" style="background-image: url(pic/gallery/gallery-7.jpg);"></span>
+						<span class="gallery__icon">
+							<svg class="icon-search">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+					</a>
+				</div>
+			</div>
+
+			<!-- <div class="gallery__item js-grid-item">
+				<a href="pic/gallery/gallery-10.jpg" data-fancybox="images-gallery" data-width="736" data-height="1016" class="gallery__link">
+					<span class="gallery__img" style="background-image: url(pic/gallery/gallery-10.jpg);"></span>
+					<span class="gallery__icon">
+						<svg class="icon-search">
+							<use xlink:href="#search"></use>
+						</svg>
+					</span>
+				</a>
+			</div> -->
+		</div>
+
+
+		<div class="gallery__btn-wrap">
+			<a href="#" class="btn btn--still">
+				<span class="btn-icon">
+					<svg class="icon-reinit">
+						<use xlink:href="#reinit"></use>
+					</svg>
+				</span>
+				<span>Показать еще</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+	<div class="manager " style="background-image: url(pic/bg/bg-14.jpg);">
+	<div class="container">
+		<div class="manager__wrap">
+			<div class="manager__col manager__col--content">
+				<span class="manager__icon manager__icon--one">
+					<svg class="icon-arrow">
+						<use xlink:href="#arrow"></use>
+					</svg>
+				</span>
+				<span class="manager__icon manager__icon--two">
+					<svg class="icon-arrow">
+						<use xlink:href="#arrow"></use>
+					</svg>
+				</span>
+				<div class="manager__head">
+					<h3 class="manager__name">Алексей Ермолаев</h3>
+					<span class="manager__position">персональный менеджер</span>
+				</div>
+				<p class="manager__descr">Я приеду на замер в тот же или на следующий день после заявки.</p>
+				<p class="manager__descr">На всех этапах работы, буду контролировать работу производства, службу доставки и монтажную бригаду. Вы в надежных руках.</p>
+				<p class="manager__descr">Проконсультирую по климату в квартире, дам рекомендации которые позволят жить безопаснее и комфортнее.</p>
+				<div class="manager__autograph">
+					<img src="pic/autograph.png" alt="">
+				</div>
+				<div class="manager__btn-wrap">
+					<a href="#" class="btn">Заявка на замер</a>
+				</div>
+			</div>
+
+			<div class="manager__col manager__col--bg" style="background-image: url(pic/bg/bg-13.png);"></div>
+		</div>
+	</div>
+</div>
+
+	<div class="accessories ">
+	<div class="container">
+		<h3 class="accessories__caption">Дополнительные аксессуары для ваших окон</h3>
+		<span class="accessories__descr">Сделать окна удобнее и функциональнее помогут дополнительные опции</span>
+		<div class="accessories__wrap">
+			<div class="accessories__item">
+				<a href="#" class="accessories__link">
+					<span class="accessories__top" style="background-image: url(pic/accessories/accessories-1.jpg);"></span>
+					<span class="accessories__bottom">
+						<span>Ламинирование окон</span>
+					</span>
+				</a>
+			</div>
+
+			<div class="accessories__item">
+				<a href="#" class="accessories__link">
+					<span class="accessories__top" style="background-image: url(pic/accessories/accessories-2.jpg);"></span>
+					<span class="accessories__bottom">
+						<span>Нестандартные окна</span>
+					</span>
+				</a>
+			</div>
+
+			<div class="accessories__item">
+				<a href="#" class="accessories__link">
+					<span class="accessories__top" style="background-image: url(pic/accessories/accessories-3.jpg);"></span>
+					<span class="accessories__bottom">
+						<span>Витражные окна</span>
+					</span>
+				</a>
+			</div>
+
+			<div class="accessories__item">
+				<a href="#" class="accessories__link">
+					<span class="accessories__top" style="background-image: url(pic/accessories/accessories-4.jpg);"></span>
+					<span class="accessories__bottom">
+						<span>Декоративная раскладка</span>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="stat">
+	<div class="container">
+		<div class="stat__wrap" style="background-image: url(pic/bg/bg-6.png);">
+			<div class="stat__top">
+				<h3 class="stat__caption">Наша работа в цифрах</h3>
+				<div class="stat__counter">
+					<span class="stat__counter-col">
+						<svg class="icon-window">
+							<use xlink:href="#window"></use>
+						</svg>
+					</span>
+					<span class="stat__counter-col">
+						<span class="stat__counter-number">789 471</span>
+						<span class="stat__counter-descr">Установлено пластиковых окон и дверей за все время работы на рынке</span>
+					</span>
+				</div>
+			</div>
+			<div class="stat__middle">
+				<div class="stat__middle-item">
+					<span class="stat__number"><span class="js-square">9 600</span> <span class="stat__number-square">м2</span></span>
+					<span class="stat__text">производственный комплекс</span>
+				</div>
+				<div class="stat__middle-item">
+					<span class="stat__number js-manager">50</span>
+					<span class="stat__text">менеджеров</span>
+				</div>
+				<div class="stat__middle-item">
+					<span class="stat__number js-enginer">40</span>
+					<span class="stat__text">инженеров</span>
+				</div>
+				<div class="stat__middle-item">
+					<span class="stat__number js-driver">30</span>
+					<span class="stat__text">водителей</span>
+				</div>
+				<div class="stat__middle-item">
+					<span class="stat__number js-montag">130</span>
+					<span class="stat__text">монтажников</span>
+				</div>
+			</div>
+
+			<div class="stat__bottom" style="background-image: url(pic/bg/bg-16.png);">
+				<div class="stat__video">
+					<iframe class="video" src="https://www.youtube.com/embed/B9_DhonlVQQ?rel=0&showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+				<div class="stat__hide-play">
+					<div class="stat__play">
+						<span class="stat__play-icon"></span>
+						<span class="stat__play-content">
+							<span class="stat__play-title">Наше производство</span>
+							<span class="stat__play-time">20 минут</span>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="stat__banner">
+				<span class="stat__banner-icon">
+					<svg class="icon-happy">
+						<use xlink:href="#happy"></use>
+					</svg>
+				</span>
+				<span class="stat__banner-year">15 лет</span>
+				<span class="stat__banner-text">на рынке окон!</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="reward js-wrap-box-all" style="background-image: url(pic/bg/bg-15.jpg);">
+	<div class="container">
+		<h3 class="reward__caption">Награды и сертификаты</h3>
+		<div class="reward__wrap js-wrap-certificate">
+			<div class="reward__col">
+				<a href="pic/doc/doc-3.jpg" data-fancybox="images-reward" data-width="736" data-height="1016" class="reward__link">
+					<span class="reward__name">Официальный партнер Rehau</span>
+					<img src="pic/doc/doc-3.jpg" alt="">
+				</a>
+			</div>
+			<div class="reward__col">
+				<a href="pic/doc/doc-4.jpg" data-fancybox="images-reward" data-width="736" data-height="1016" class="reward__link">
+					<span class="reward__name">Сертификат качества Rehau</span>
+					<img src="pic/doc/doc-4.jpg" alt="">
+				</a>
+			</div>
+
+			<div class="reward__col reward__col--some">
+				<div class="reward__row">
+					<a href="pic/doc/doc-5.jpg" data-fancybox="images-reward" data-width="736" data-height="1016" class="reward__link reward__link--row">
+						<span class="reward__name">Компания года</span>
+						<img src="pic/doc/doc-5.jpg" alt="">
+					</a>
+				</div>
+				<div class="reward__row reward__row--small">
+					<div class="reward__row-item">
+						<a href="pic/doc/doc-6.jpg" data-fancybox="images-reward" data-width="736" data-height="1016" class="reward__link">
+							<img src="pic/doc/doc-6.jpg" alt="">
+						</a>
+					</div>
+					<div class="reward__row-item">
+						<a href="pic/doc/doc-7.jpg" data-fancybox="images-reward" data-width="736" data-height="1016" class="reward__link">
+							<img src="pic/doc/doc-7.jpg" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="reward__col">
+				<a href="pic/doc/doc-3.jpg" data-fancybox="images-reward" data-width="736" data-height="1016" class="reward__link">
+					<span class="reward__name">Официальный партнер Rehau</span>
+					<img src="pic/doc/doc-3.jpg" alt="">
+				</a>
+			</div>
+			<div class="reward__col">
+				<a href="pic/doc/doc-4.jpg" data-fancybox="images-reward" data-width="736" data-height="1016" class="reward__link">
+					<span class="reward__name">Сертификат качества Rehau</span>
+					<img src="pic/doc/doc-4.jpg" alt="">
+				</a>
+			</div>
+			<div class="reward__col">
+				<a href="pic/doc/doc-3.jpg" data-fancybox="images-reward" data-width="736" data-height="1016" class="reward__link">
+					<span class="reward__name">Официальный партнер Rehau</span>
+					<img src="pic/doc/doc-3.jpg" alt="">
+				</a>
+			</div>
+
+		</div>
+		<div class="reward__btn-wrap js-btn-all">
+			<a href="#" class="btn btn--still">
+				<span class="btn-icon">
+					<svg class="icon-reinit">
+						<use xlink:href="#reinit"></use>
+					</svg>
+				</span>
+				<span>Показать еще</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+	<div class="heading heading--sale" style="background-image: url(pic/bg/bg-7.jpg);">
+	<div class="container">
+		<div class="heading__wrap">
+			<h1 class="heading__caption">Закажите <br> <span>бесплатный</span> замер</h1>
+			<p class="heading__descr"><span>Акция до 17 августа:</span> закажите немецкие Термоокна с защитой от холода и жары по цене обычных со скидкой до 50%. Отправьте заявку прямо сейчас!</p>
+			<form action="" class="form-callback">
+				<div class="heading__form">
+					<div class="heading__form-input">
+						<label for="name" class="label">
+							<span class="label-icon">
+								<svg class="icon-phone-input">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="label-error-message">Вы не заполнили поле!</span>
+							<input name="phone_number" autocomplete="off" class="js-phone" type="tel" placeholder="Номер телефона">
+						</label>
+					</div>
+					<div class="heading__form-btn">
+						<button class="btn heading__btn" type="submit">Оставить заявку</button>
+					</div>
+				</div>
+			</form>
+			<div class="heading__consent">
+				Нажимая на кнопку, вы принимаете <a href="#">Положение</a> и <a href="#">Согласие</a> на обработку персональных данных
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="contact">
+	<div class="container">
+		<div class="contact__wrap">
+			<div class="contact__head">
+				<h3 class="contact__caption">Контактная информация</h3>
+			</div>
+
+			<div class="contact__middle" style="background-image: url(pic/bg/bg-8.jpg);">
+				<div class="contact__col">
+					<div class="contact__row">
+						<span class="contact__icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<span class="contact__text">Центральный офис</span>
+					</div>
+					<span class="contact__row-adress">г. Москва, ул. Кусковская, 20а</span>
+				</div>
+				<div class="contact__col">
+					<div class="contact__phone-wrap">
+						<a href="tel:84957301441" class="contact__phone-link">
+							<span class="contact__phone-icon">
+								<svg class="icon-phone-contact">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="contact__phone-text">8 (495) 730-14-41</span>
+						</a>
+					</div>
+					<span class="contact__time-work">Пн-Вс: 09:00—23:00</span>
+				</div>
+			</div>
+
+			<div class="contact__bottom js-slider-contact">
+
+				<div class="contact__item js-height">
+					<div class="contact__title-wrap js-height-caption">
+						<span class="contact__title-icon">
+							<svg class="icon-location-small">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<span class="contact__title-text">
+							<a href="#">Офис в Химках</a>
+						</span>
+					</div>
+					<ul class="contact__adress js-height-descr">
+						<li>м. «Речной вокзал»,</li>
+						<li>ул.Ленинградское шоссе,</li>
+						<li>влад. 5, ТЦ «Лига»</li>
+					</ul>
+					<div class="contact__phone-wrap">
+						<a href="tel:84957301441" class="contact__phone-link">
+							<span class="contact__phone-icon">
+								<svg class="icon-phone-contact">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="contact__phone-text">8 (495) 730-14-41</span>
+						</a>
+					</div>
+					<span class="contact__time-work">Пн-Вс: 09:00—23:00</span>
+				</div>
+
+				<div class="contact__item js-height">
+					<div class="contact__title-wrap js-height-caption">
+						<span class="contact__title-icon">
+							<svg class="icon-location-small">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<span class="contact__title-text">
+							<a href="#">Офис (метро Профсоюзная)</a>
+						</span>
+					</div>
+					<ul class="contact__adress js-height-descr">
+						<li>м. «Профсоюзная»,</li>
+						<li>Нахимовский пр-т, д. 24,</li>
+						<li>Выстовочный Комплекс «ЭКСПОСТРОЙ»</li>
+					</ul>
+					<div class="contact__phone-wrap">
+						<a href="tel:84957301441" class="contact__phone-link">
+							<span class="contact__phone-icon">
+								<svg class="icon-phone-contact">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="contact__phone-text">8 (495) 508-02-54</span>
+						</a>
+					</div>
+					<span class="contact__time-work">Пн-Вс: 09:00—23:00</span>
+				</div>
+
+				<div class="contact__item js-height">
+					<div class="contact__title-wrap js-height-caption">
+						<span class="contact__title-icon">
+							<svg class="icon-location-small">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<span class="contact__title-text">
+							<a href="#">Офис Ленинский район, Совхоз им. Ленина</a>
+						</span>
+					</div>
+					<ul class="contact__adress js-height-descr">
+						<li>м. «Домодедовская»,</li>
+						<li>25-й км. МКАДа, влад. 4,</li>
+						<li>стр. 2, ТОСК</li>
+						<li>«Конструктор», пав. Г2.2.2</li>
+					</ul>
+					<div class="contact__phone-wrap">
+						<a href="tel:84957301441" class="contact__phone-link">
+							<span class="contact__phone-icon">
+								<svg class="icon-phone-contact">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="contact__phone-text">8 (495) 968-43-61</span>
+						</a>
+					</div>
+					<span class="contact__time-work">Пн-Вс: 10:00—23:00</span>
+				</div>
+
+				<div class="contact__item js-height">
+					<div class="contact__title-wrap js-height-caption">
+						<span class="contact__title-icon">
+							<svg class="icon-location-small">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<span class="contact__title-text">
+							<a href="#">Офис в Зюзино</a>
+						</span>
+					</div>
+					<ul class="contact__adress js-height-descr">
+						<li>м. «Севастопольская»,</li>
+						<li>Симферопольский бульвар,</li>
+						<li>д. 29, корпус 1</li>
+					</ul>
+					<div class="contact__phone-wrap contact__phone-wrap--second">
+						<a href="tel:84957301441" class="contact__phone-link">
+							<span class="contact__phone-icon">
+								<svg class="icon-phone-contact">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="contact__phone-text">8 (495) 978-24-72</span>
+						</a>
+					</div>
+					<div class="contact__phone-wrap">
+						<a href="tel:84957301441" class="contact__phone-link">
+							<span class="contact__phone-icon">
+								<svg class="icon-phone-contact">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="contact__phone-text">8 (495) 961-17-22</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="contact__item js-height">
+					<div class="contact__title-wrap js-height-caption">
+						<span class="contact__title-icon">
+							<svg class="icon-location-small">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<span class="contact__title-text">
+							<a href="#">Офис в Химках</a>
+						</span>
+					</div>
+					<ul class="contact__adress js-height-descr">
+						<li>м. «Речной вокзал»,</li>
+						<li>ул.Ленинградское шоссе,</li>
+						<li>влад. 5, ТЦ «Лига»</li>
+					</ul>
+					<div class="contact__phone-wrap">
+						<a href="tel:84957301441" class="contact__phone-link">
+							<span class="contact__phone-icon">
+								<svg class="icon-phone-contact">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="contact__phone-text">8 (495) 730-14-41</span>
+						</a>
+					</div>
+					<span class="contact__time-work">Пн-Вс: 09:00—23:00</span>
+				</div>
+
+				<div class="contact__item js-height">
+					<div class="contact__title-wrap js-height-caption">
+						<span class="contact__title-icon">
+							<svg class="icon-location-small">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<span class="contact__title-text">
+							<a href="#">Офис (метро Профсоюзная)</a>
+						</span>
+					</div>
+					<ul class="contact__adress js-height-descr">
+						<li>м. «Профсоюзная»,</li>
+						<li>Нахимовский пр-т, д. 24,</li>
+						<li>Выстовочный Комплекс «ЭКСПОСТРОЙ»</li>
+					</ul>
+					<div class="contact__phone-wrap">
+						<a href="tel:84957301441" class="contact__phone-link">
+							<span class="contact__phone-icon">
+								<svg class="icon-phone-contact">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="contact__phone-text">8 (495) 508-02-54</span>
+						</a>
+					</div>
+					<span class="contact__time-work">Пн-Вс: 09:00—23:00</span>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="contact__map" id="map">
+			
+		</div>
+
+	</div>
+</div>
+
+	<div class="about-window ">
+	<div class="container">
+		<div class="about-window__wrap">
+			<div class="about-window__item">
+				<a href="#" class="about-window__inner">
+					<div class="about-window__top">
+						<div class="about-window__caption-wrap js-height-caption">
+							<h4 class="about-window__caption">Балконы</h4>
+						</div>
+						<p class="about-window__descr js-height-descr">Пластиковым или алюминевым профилем</p>
+					</div>
+					<div class="about-window__bottom" style="background-image: url(pic/bg/bg-9.jpg);">
+						<span class="about-window__icon"></span>
+					</div>
+				</a>
+			</div>
+			<div class="about-window__item">
+				<a href="#" class="about-window__inner">
+					<div class="about-window__top">
+						<div class="about-window__caption-wrap js-height-caption">
+							<h4 class="about-window__caption">Окна для дачи или остекление балконов КОПЭ</h4>
+						</div>
+						<p class="about-window__descr js-height-descr">Термо–окна по цене обычных</p>
+					</div>
+					<div class="about-window__bottom" style="background-image: url(pic/bg/bg-10.jpg);">
+						<span class="about-window__icon"></span>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="article">
+	<div class="container">
+		<div class="article__wrap">
+			
+				<div class="article__item">
+					<a href="#" class="article__inner">
+						<div class="article__content" style="background-image: url(pic/bg/bg-1.jpg);">
+							<div class="article__caption-wrap js-height-caption">
+								<h4 class="article__caption">Какие пластиковые окна лучше: какой профиль и фирма лучше</h4>
+							</div>
+							<span class="article__descr js-height-descr">Собираясь заменить старые рамы в доме, многие сталкиваются с вопросом - какие пластиковые окна лучше?</span>
+							<span class="article__link"></span>
+						</div>
+					</a>
+				</div>
+			
+				<div class="article__item">
+					<a href="#" class="article__inner">
+						<div class="article__content" style="background-image: url(pic/bg/bg-5.1.jpg);">
+							<div class="article__caption-wrap js-height-caption">
+								<h4 class="article__caption">Как отрегулировать пластиковые окна своими руками</h4>
+							</div>
+							<span class="article__descr js-height-descr">Многие обладатели окон из ПВХ удивятся, узнав, что регулировка пластиковых окон должна быть процедурой обязательной. </span>
+							<span class="article__link"></span>
+						</div>
+					</a>
+				</div>
+			
+				<div class="article__item">
+					<a href="#" class="article__inner">
+						<div class="article__content" style="background-image: url(pic/bg/bg-11.jpg);">
+							<div class="article__caption-wrap js-height-caption">
+								<h4 class="article__caption">Как выбрать пластиковые окна</h4>
+							</div>
+							<span class="article__descr js-height-descr">Иногда для остекления балкона требуется сначала установить прочное и надежное основание — парапет. </span>
+							<span class="article__link"></span>
+						</div>
+					</a>
+				</div>
+			
+		</div>
+	</div>
+</div>
+
+</div>
+
+<div class="popup" id="popup-callback">
+	<span class="popup__caption">Перезвоните мне</span>
+	<span class="popup__text">Мы готовы ответить на любые ваши вопросы</span>
+	<form action="" class="form-popup">
+		<div class="popup__wrap">
+			<div class="popup__row">
+				<label for="name" class="label">
+					<span class="label-icon">
+						<svg class="icon-man-user">
+							<use xlink:href="#man-user"></use>
+						</svg>
+					</span>
+					<span class="label-error-message">Вы не заполнили поле!</span>
+					<input autocomplete="off" name="name_user" type="text" placeholder="Имя">
+				</label>
+			</div>
+			<div class="popup__row">
+				<label for="name" class="label">
+					<span class="label-icon">
+						<svg class="icon-phone-input">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<span class="label-error-message">Вы не заполнили поле!</span>
+					<input autocomplete="off" name="phone_number" class="js-phone" type="tel" placeholder="Телефон">
+				</label>
+			</div>
+			<div class="popup__row">
+				<button class="btn popup__btn" type="submit">Отправить сообщение</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__top">
+				<div class="footer__col js-item-wrap">
+					<div class="footer__col-head js-open-subnav">
+						<span class="footer__title">Покупателям</span>
+					</div>
+					<ul class="footer__col-list js-subnav">
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Качество</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Собственное производство</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Вопросы и ответы</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Гарантия</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__col js-item-wrap">
+					<div class="footer__col-head js-open-subnav">
+						<span class="footer__title">Услуги</span>
+					</div>
+					<ul class="footer__col-list js-subnav">
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Бесплатный вызов на замер</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Демонтаж старых окон</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Установка пластиковых окон</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Сервисное обслуживание</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Доставка</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__col js-item-wrap">
+					<div class="footer__col-head js-open-subnav">
+						<span class="footer__title">О компании</span>
+					</div>
+					<ul class="footer__col-list js-subnav">
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">История компании</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Сертификаты</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Благодарности</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Партнёры</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Отзывы партнеров</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Вакансии</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__col js-item-wrap">
+					<div class="footer__col-head js-open-subnav">
+						<span class="footer__title">Оптовое направление</span>
+					</div>
+					<ul class="footer__col-list js-subnav">
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Дилерам</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Застройщикам</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer__bott">
+
+				<div class="footer__logo">
+					<a href="#" class="footer__logo-link">
+						<img src="pic/logo.png" alt="">
+					</a>
+				</div>
+
+				<div class="footer__contact">
+					<div class="footer__phone">
+						<div class="footer__phone-top">
+							<span class="footer__phone-icon">
+								<svg class="icon-phone">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<a href="tel:84957301441" class="footer__phone-link">8 (495) 730-14-41</a>
+						</div>
+						<span class="footer__phone-bott">
+							Пн-Вс: 09:00—23:00
+						</span>
+					</div>
+					<div class="footer__callback">
+						<a data-fancybox data-src="#popup-callback" href="javascript:;" class="btn footer__btn">
+							<span class="footer__btn-icon">
+								<svg class="icon-phone-btn">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="footer__btn-text">Перезвоните мне</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="footer__bott-wrap">
+					<div class="footer__info">
+						<span class="footer__info-text">© 2003 — 2018 </span>
+						<span class="footer__info-text">ООО «Окна Мастер»</span>
+					</div>
+
+					<div class="footer__social">
+						<div class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<svg class="icon-facebook">
+									<use xlink:href="#facebook"></use>
+								</svg>
+							</a>
+						</div>
+						<div class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<svg class="icon-vk">
+									<use xlink:href="#vk"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

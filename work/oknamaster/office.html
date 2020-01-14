@@ -1,0 +1,841 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Контакты</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+<div class="wrapper">
+
+	<header class="header">
+	<div class="container">
+		<div class="header__top">
+
+			<div class="header__logo">
+				<a href="#" class="header__logo-link">
+					<img src="pic/logo.png" alt="">
+				</a>
+			</div>
+
+			<div class="header__contact js-header-contact">
+				<div class="header__phone">
+					<div class="header__phone-top">
+						<span class="header__phone-icon">
+							<svg class="icon-phone">
+								<use xlink:href="#phone"></use>
+							</svg>
+						</span>
+						<a href="tel:+74998774708" class="header__phone-link">+7 499 877-47-08</a>
+					</div>
+					<span class="header__phone-bott">
+						Пн-Вс: 09:00—23:00
+					</span>
+				</div>
+				<div class="header__callback">
+					<a data-fancybox data-src="#popup-callback" href="javascript:;" class="btn header__btn">
+						<span class="header__btn-icon">
+							<svg class="icon-phone-btn">
+								<use xlink:href="#phone"></use>
+							</svg>
+						</span>
+						<span class="header__btn-text">Перезвоните мне</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="header__menu">
+				<ul class="header__menu-list">
+					<li class="header__menu-item">
+						<a href="#" class="header__menu-link">
+							<span class="header__menu-icon">
+								<svg class="icon-calc">
+									<use xlink:href="#calc"></use>
+								</svg>
+							</span>
+							<span class="header__menu-text">Калькулятор окон</span>
+						</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="#" class="header__menu-link">
+							<span class="header__menu-icon">
+								<svg class="icon-about">
+									<use xlink:href="#about"></use>
+								</svg>
+							</span>
+							<span class="header__menu-text">О компании</span>
+						</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="#" class="header__menu-link">
+							<span class="header__menu-icon">
+								<svg class="icon-type-house">
+									<use xlink:href="#type-house"></use>
+								</svg>
+							</span>
+							<span class="header__menu-text">Подобрать по типу дома</span>
+						</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="#" class="header__menu-link">
+							<span class="header__menu-icon">
+								<svg class="icon-price">
+									<use xlink:href="#price"></use>
+								</svg>
+							</span>
+							<span class="header__menu-text">Цены</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="header__partner">
+				<div class="header__partner-wrap">
+					<span class="header__partner-text">Официальный партнер с 2003 года</span>
+					<img src="pic/rehau.png" alt="">
+				</div>
+			</div>
+			
+			<div class="header__mobile-wrap">
+				<div class="header__phone-mobile-visible js-toggle-contact">
+					<svg class="icon-phone-mobile">
+						<use xlink:href="#phone"></use>
+					</svg>
+				</div>
+
+				<div class="header__btn-mobile-visible js-toggle-nav">
+					<span class="header__btn-line"></span>
+					<span class="header__btn-line"></span>
+					<span class="header__btn-line"></span>
+				</div>
+			</div>
+		</div>
+
+		<nav class="header__nav js-nav">
+			<ul class="header__nav-list">
+				<li class="header__nav-item js-item-wrap">
+					<a href="#" class="header__nav-link js-open-subnav ">Окна</a>
+					<div class="header__subnav js-subnav">
+						<div class="header__subnav-col header__subnav-col--category">
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Профили</a>
+							</div>
+							<ul class="header__subnav-list">
+								<li class="header__subnav-item">
+									<a href="#" class="header__subnav-link">Rehau Blitz New</a>
+								</li>
+								<li class="header__subnav-item">
+									<a href="#" class="header__subnav-link">Rehau Delight-Design</a>
+								</li>
+								<li class="header__subnav-item">
+									<a href="#" class="header__subnav-link">Rehau Grazio</a>
+								</li>
+								<li class="header__subnav-item">
+									<a href="#" class="header__subnav-link">Rehau Intelio</a>
+								</li>
+							</ul>
+						</div>
+						<div class="header__subnav-col">
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Цветные окна</a>
+							</div>
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Пластиковые окна</a>
+							</div>
+						</div>
+						<div class="header__subnav-col">
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Готовые окна</a>
+							</div>
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Нестандартные окна</a>
+							</div>
+						</div>
+						<div class="header__subnav-col">
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Арочные окна</a>
+							</div>
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Витражные окна</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link ">Двери</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link ">Балконы</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link ">Коттеджи</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link active">Контакты</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link ">Услуги</a>
+				</li>
+			</ul>
+
+			<div class="header__nav-bott">
+				<div class="header__menu">
+					<ul class="header__menu-list">
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">
+								<span class="header__menu-icon">
+									<svg class="icon-calc">
+										<use xlink:href="#calc"></use>
+									</svg>
+								</span>
+								<span class="header__menu-text">Калькулятор окон</span>
+							</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">
+								<span class="header__menu-icon">
+									<svg class="icon-about">
+										<use xlink:href="#about"></use>
+									</svg>
+								</span>
+								<span class="header__menu-text">О компании</span>
+							</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">
+								<span class="header__menu-icon">
+									<svg class="icon-type-house">
+										<use xlink:href="#type-house"></use>
+									</svg>
+								</span>
+								<span class="header__menu-text">Подобрать по типу дома</span>
+							</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">
+								<span class="header__menu-icon">
+									<svg class="icon-price">
+										<use xlink:href="#price"></use>
+									</svg>
+								</span>
+								<span class="header__menu-text">Цены</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="header__partner">
+					<div class="header__partner-wrap">
+						<span class="header__partner-text">Официальный партнер с 2003 года</span>
+						<img src="pic/rehau.png" alt="">
+					</div>
+				</div>
+			</div>
+		</nav>
+
+	</div>
+</header>
+
+
+	<div class="map" id="map"></div>
+
+	<div class="breadcrumbs">
+	<div class="container">
+			<ul class="breadcrumbs__list">
+				
+					<li class="breadcrumbs__item">
+						<a href="#" class="breadcrumbs__link">Главная</a>
+					</li>
+				
+				<li class="breadcrumbs__item">Контакты</li>
+			</ul>
+	</div>
+</div>
+
+	<div class="office office--contact">
+	<div class="container">
+		<span class="office__caption">Контакты</span>
+		
+		
+			<div class="office__center" style="background-image: url(pic/bg/bg-18.jpg);">
+				<div class="office__inner">
+					<div class="office__caption-wrap js-height-caption">
+						<span class="office__caption-icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<div class="office__caption-link-wrap">
+							<a href="#" class="office__caption-link">Центральный офис</a>
+						</div>
+					</div>
+					<span class="office__address js-height-descr">г. Москва, ул. Кусковская, 20а</span>
+					<div class="office__bottom js-height-box">
+						<div class="office__phone">
+							<span class="office__phone-icon">
+								<svg class="icon-phone-address">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="office__phone-tel">
+								<a href="tel:84957301441" class="office__phone-link">8 (495) 730-14-41</a>
+							</span>
+						</div>
+						<span class="office__time">Пн-Вс: 09:00—23:00</span>
+					</div>
+					<a href="#" class="office__link"></a>
+				</div>
+			</div>
+		
+
+		<div class="office__wrap">
+
+			<div class="office__item">
+				<div class="office__inner">
+					<div class="office__caption-wrap js-height-caption">
+						<span class="office__caption-icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<div class="office__caption-link-wrap">
+							<a href="#" class="office__caption-link">Офис в Химках</a>
+						</div>
+					</div>
+					<span class="office__address js-height-descr">м. «Речной вокзал», ул. Ленинградское шоссе, влад. 5, ТЦ «Лига»</span>
+					<div class="office__bottom js-height-box">
+						<div class="office__phone">
+							<span class="office__phone-icon">
+								<svg class="icon-phone-address">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="office__phone-tel">
+								<a href="tel:84955080224" class="office__phone-link">8 (495) 508-02-24</a>
+							</span>
+						</div>
+						<span class="office__time">Пн-Вс: 10:00—22:00</span>
+					</div>
+					<a href="#" class="office__link"></a>
+				</div>
+			</div>
+
+			<div class="office__item">
+				<div class="office__inner">
+					<div class="office__caption-wrap js-height-caption">
+						<span class="office__caption-icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<div class="office__caption-link-wrap">
+							<a href="#" class="office__caption-link">Офис (метро Профсоюзная)</a>
+						</div>
+					</div>
+					<span class="office__address js-height-descr">м. «Профсоюзная», Нахимовский пр-т, д. 24, Выстовочный Комплекс «ЭКСПОСТРОЙ»</span>
+					<div class="office__bottom js-height-box">
+						<div class="office__phone">
+							<span class="office__phone-icon">
+								<svg class="icon-phone-address">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="office__phone-tel">
+								<a href="tel:84955080254" class="office__phone-link">8 (495) 508-02-54</a>
+							</span>
+						</div>
+						<span class="office__time">Пн-Вс: 10:00—20:00</span>
+					</div>
+					<a href="#" class="office__link"></a>
+				</div>
+			</div>
+
+			<div class="office__item">
+				<div class="office__inner">
+					<div class="office__caption-wrap js-height-caption">
+						<span class="office__caption-icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<div class="office__caption-link-wrap">
+							<a href="#" class="office__caption-link">Офис в Зюзино</a>
+						</div>
+					</div>
+					<span class="office__address js-height-descr">м. «Севастопольская», Симферопольский бульвар, д. 29, корпус 1</span>
+					<div class="office__bottom js-height-box">
+						<div class="office__phone">
+							<span class="office__phone-icon">
+								<svg class="icon-phone-address">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="office__phone-tel">
+								<a href="tel:84955080254" class="office__phone-link">8 (495) 508-02-54</a>
+								<a href="tel:84959611722" class="office__phone-link">8 (495) 961-17-22</a>
+							</span>
+							
+						</div>
+						<span class="office__time">Пн-Вс: 9:00—23:00</span>
+					</div>
+					<a href="#" class="office__link"></a>
+				</div>
+			</div>
+
+			<div class="office__item">
+				<div class="office__inner">
+					<div class="office__caption-wrap js-height-caption">
+						<span class="office__caption-icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<div class="office__caption-link-wrap">
+							<a href="#" class="office__caption-link">Офис Ленинский район, Совхоз им. Ленина</a>
+						</div>
+					</div>
+					<span class="office__address js-height-descr">м. «Домодедовская», 25-й км. МКАДа, влад. 4, стр. 2, ТОСК «Конструктор», пав. Г2.2.2</span>
+					<div class="office__bottom js-height-box">
+						<div class="office__phone">
+							<span class="office__phone-icon">
+								<svg class="icon-phone-address">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="office__phone-tel">
+								<a href="tel:84957301441" class="office__phone-link">8 (495) 730-14-41</a>
+							</span>
+						</div>
+						<span class="office__time">Пн-Вс: 10:00—20:00</span>
+					</div>
+					<a href="#" class="office__link"></a>
+				</div>
+			</div>
+			
+			<div class="office__item">
+				<div class="office__inner">
+					<div class="office__caption-wrap js-height-caption">
+						<span class="office__caption-icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<div class="office__caption-link-wrap">
+							<a href="#" class="office__caption-link">Офис в Голицыно</a>
+						</div>
+					</div>
+					<span class="office__address js-height-descr">Московская обл., Одинцовский р-н., г. Голицыно, ул. Петровский проезд, д. 1, ТЦ «Фонтанка», 2 этаж</span>
+					<div class="office__bottom js-height-box">
+						<div class="office__phone">
+							<span class="office__phone-icon">
+								<svg class="icon-phone-address">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="office__phone-tel">
+								<a href="tel:89104687247" class="office__phone-link">8 (910) 468-72-47</a>
+								<a href="tel:84994080613" class="office__phone-link">8 (499) 408-06-13</a>
+							</span>
+						</div>
+						<span class="office__time">Пн-Пт: 10:00—19:00</span>
+					</div>
+					<a href="#" class="office__link"></a>
+				</div>
+			</div>
+
+			<div class="office__item">
+				<div class="office__inner">
+					<div class="office__caption-wrap js-height-caption">
+						<span class="office__caption-icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<div class="office__caption-link-wrap">
+							<a href="#" class="office__caption-link">Офис (метро Калужская)</a>
+						</div>
+					</div>
+					<span class="office__address js-height-descr">м. «Калужская», Научный проезд, д. 8, стр. 1, «ОртОстФасад»</span>
+					<div class="office__bottom js-height-box">
+						<div class="office__phone">
+							<span class="office__phone-icon">
+								<svg class="icon-phone-address">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="office__phone-tel">
+								<a href="tel:84991951218" class="office__phone-link">8 (499) 195-12-18</a>
+							</span>
+						</div>
+						<span class="office__time">Пн-Вс: 09:00—23:00</span>
+					</div>
+					<a href="#" class="office__link"></a>
+				</div>
+			</div>
+
+			<div class="office__item">
+				<div class="office__inner">
+					<div class="office__caption-wrap js-height-caption">
+						<span class="office__caption-icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<div class="office__caption-link-wrap">
+							<a href="#" class="office__caption-link">Офис в Митино</a>
+						</div>
+					</div>
+					<span class="office__address js-height-descr">ул. Митинская, д. 51, ТЦ «ТукТук», ИП Хомякова О. А.</span>
+					<div class="office__bottom js-height-box">
+						<div class="office__phone">
+							<span class="office__phone-icon">
+								<svg class="icon-phone-address">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="office__phone-tel">
+								<a href="tel:89035080289" class="office__phone-link">8 (903) 508-02-89</a>
+							</span>
+						</div>
+						<span class="office__time">Пн-Пт: 10:00—20:00</span>
+					</div>
+					<a href="#" class="office__link"></a>
+				</div>
+			</div>
+			
+			<div class="office__item">
+				<div class="office__inner">
+					<div class="office__caption-wrap js-height-caption">
+						<span class="office__caption-icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<div class="office__caption-link-wrap">
+							<a href="#" class="office__caption-link">Производство</a>
+						</div>
+					</div>
+					<span class="office__address js-height-descr">г. Москва, д. Милюково, 54</span>
+					<div class="office__bottom js-height-box">
+						
+					</div>
+					<a href="#" class="office__link"></a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+	<div class="props">
+	<div class="container">
+		<div class="props__wrap">
+			<span class="props__caption">Реквизиты ООО «Московские окна!»</span>
+			<div class="props__inner">
+				<ul class="props__col">
+					<li class="props__item">
+						<span class="props__title">ИНН:</span>
+						<span class="props__line"></span>
+						<span class="props__value">7701042682</span>
+					</li>
+					<li class="props__item">
+						<span class="props__title">ОГРН:</span>
+						<span class="props__line"></span>
+						<span class="props__value">1027700473987</span>
+					</li>
+					<li class="props__item">
+						<span class="props__title">Юридический адрес:</span>
+						<span class="props__line"></span>
+						<span class="props__value props__value--address">117342, г Москва, улица Бутлерова, дом 17б</span>
+					</li>
+					<li class="props__item">
+						<span class="props__title">р/сч:</span>
+						<span class="props__line"></span>
+						<span class="props__value props__value--bank">40702810400000026686 в ОАО «РосДорБанк»</span>
+					</li>
+				</ul>
+				<ul class="props__col">
+					<li class="props__item">
+						<span class="props__title">к/с:</span>
+						<span class="props__line"></span>
+						<span class="props__value">30101810945250000666</span>
+					</li>
+					<li class="props__item">
+						<span class="props__title">БИК:</span>
+						<span class="props__line"></span>
+						<span class="props__value">044525666</span>
+					</li>
+					<li class="props__item">
+						<span class="props__title">ОКВЭД:</span>
+						<span class="props__line"></span>
+						<span class="props__value">52.48.39</span>
+					</li>
+					<li class="props__item">
+						<span class="props__title">ОКПО:</span>
+						<span class="props__line"></span>
+						<span class="props__value">29316729</span>
+					</li>
+					<li class="props__item">
+						<span class="props__title">КПП:</span>
+						<span class="props__line"></span>
+						<span class="props__value">772801001</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="callback">
+	<div class="container">
+		<div class="callback__wrap">
+			<div class="callback__head">
+				<span class="callback__caption">Обратная связь</span>
+				<span class="callback__text">наш менеджер ответит Вам в ближайшее время</span>
+			</div>
+			<form action="" class="form-message">
+				<div class="callback__row">
+					<div class="callback__col">
+						<label for="name" class="label">
+							<span class="label-icon">
+								<svg class="icon-man-user">
+									<use xlink:href="#man-user"></use>
+								</svg>
+							</span>
+							<span class="label-error-message">Вы не заполнили поле!</span>
+							<input name="name_user" autocomplete="off" type="text" placeholder="Имя">
+						</label>
+					</div>
+					<div class="callback__col">
+						<label for="name" class="label">
+							<span class="label-icon">
+								<svg class="icon-mail-input">
+									<use xlink:href="#mail"></use>
+								</svg>
+							</span>
+							<span class="label-error-message">Вы не заполнили поле!</span>
+							<input name="mail_user" autocomplete="off" type="email" placeholder="Электронная почта">
+						</label>
+					</div>
+				</div>
+				<div class="callback__message">
+					<textarea name="message__user" placeholder="Сообщение"></textarea>
+				</div>
+				<div class="callback__row">
+					<div class="callback__btn-wrap">
+						<button class="btn callback__btn" type="submit">Отправить сообщение</button>
+					</div>
+					<span class="callback__varning">Нажимая на кнопку, вы принимаете <a href="#">Положение</a> и <a href="#">Согласие</a> на обработку персональных данных</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+    
+</div>
+
+<div class="popup" id="popup-callback">
+	<span class="popup__caption">Перезвоните мне</span>
+	<span class="popup__text">Мы готовы ответить на любые ваши вопросы</span>
+	<form action="" class="form-popup">
+		<div class="popup__wrap">
+			<div class="popup__row">
+				<label for="name" class="label">
+					<span class="label-icon">
+						<svg class="icon-man-user">
+							<use xlink:href="#man-user"></use>
+						</svg>
+					</span>
+					<span class="label-error-message">Вы не заполнили поле!</span>
+					<input autocomplete="off" name="name_user" type="text" placeholder="Имя">
+				</label>
+			</div>
+			<div class="popup__row">
+				<label for="name" class="label">
+					<span class="label-icon">
+						<svg class="icon-phone-input">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<span class="label-error-message">Вы не заполнили поле!</span>
+					<input autocomplete="off" name="phone_number" class="js-phone" type="tel" placeholder="Телефон">
+				</label>
+			</div>
+			<div class="popup__row">
+				<button class="btn popup__btn" type="submit">Отправить сообщение</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__top">
+				<div class="footer__col js-item-wrap">
+					<div class="footer__col-head js-open-subnav">
+						<span class="footer__title">Покупателям</span>
+					</div>
+					<ul class="footer__col-list js-subnav">
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Качество</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Собственное производство</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Вопросы и ответы</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Гарантия</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__col js-item-wrap">
+					<div class="footer__col-head js-open-subnav">
+						<span class="footer__title">Услуги</span>
+					</div>
+					<ul class="footer__col-list js-subnav">
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Бесплатный вызов на замер</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Демонтаж старых окон</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Установка пластиковых окон</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Сервисное обслуживание</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Доставка</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__col js-item-wrap">
+					<div class="footer__col-head js-open-subnav">
+						<span class="footer__title">О компании</span>
+					</div>
+					<ul class="footer__col-list js-subnav">
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">История компании</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Сертификаты</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Благодарности</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Партнёры</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Отзывы партнеров</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Вакансии</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__col js-item-wrap">
+					<div class="footer__col-head js-open-subnav">
+						<span class="footer__title">Оптовое направление</span>
+					</div>
+					<ul class="footer__col-list js-subnav">
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Дилерам</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Застройщикам</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer__bott">
+
+				<div class="footer__logo">
+					<a href="#" class="footer__logo-link">
+						<img src="pic/logo.png" alt="">
+					</a>
+				</div>
+
+				<div class="footer__contact">
+					<div class="footer__phone">
+						<div class="footer__phone-top">
+							<span class="footer__phone-icon">
+								<svg class="icon-phone">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<a href="tel:84957301441" class="footer__phone-link">8 (495) 730-14-41</a>
+						</div>
+						<span class="footer__phone-bott">
+							Пн-Вс: 09:00—23:00
+						</span>
+					</div>
+					<div class="footer__callback">
+						<a data-fancybox data-src="#popup-callback" href="javascript:;" class="btn footer__btn">
+							<span class="footer__btn-icon">
+								<svg class="icon-phone-btn">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="footer__btn-text">Перезвоните мне</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="footer__bott-wrap">
+					<div class="footer__info">
+						<span class="footer__info-text">© 2003 — 2018 </span>
+						<span class="footer__info-text">ООО «Окна Мастер»</span>
+					</div>
+
+					<div class="footer__social">
+						<div class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<svg class="icon-facebook">
+									<use xlink:href="#facebook"></use>
+								</svg>
+							</a>
+						</div>
+						<div class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<svg class="icon-vk">
+									<use xlink:href="#vk"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

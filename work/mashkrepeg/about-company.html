@@ -1,0 +1,934 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>О компании</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css?rel=42761">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+<div class="wrapper"> 
+
+	<header class="header">
+	<div class="header__top compensate-for-scrollbar">
+		<div class="container">
+			<div class="header__top-inner">
+				<a href="#" class="header__logo">
+					<img src="pic/logo.png" alt="">
+					<span class="header__logo-text">Работаем с 1998</span>
+				</a>
+				<div class="header__top-main">
+					<div class="header__top-box">
+						<span class="header__worktime">Режим работы 8:00 - 21:00</span>
+						<a href="#" class="header__mail-link">
+							<svg class="icon-email">
+								<use xlink:href="#email"></use>
+							</svg>
+							<span>sales@rusbolt.ru</span>
+						</a>
+					</div>            
+					<div class="header__phones">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+						<a href="tel:+74993727777" class="header__phones-link"><span class="code">+7(499)</span> 372-77-77</a>
+						<a href="tel:+7(495)9808925" class="header__phones-link"><span class="code">+7(495)</span> 980-89-25</a> 
+					</div>
+					<a href="#" class="header__callback">Заказать звонок</a>
+					
+					<div class="header__login">
+						<svg class="icon-man-user">
+							<use xlink:href="#man-user"></use>
+						</svg>
+						<a href="#" class="header__login-link header__login-link--border">
+							<svg class="icon-man-user">
+								<use xlink:href="#man-user"></use>
+							</svg>
+							Вход
+						</a>
+						<a href="#" class="header__login-link">Регистрация</a>
+					</div>
+					
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header__bottom">
+		<div class="container">
+			<div class="header__bottom-inner">
+				<div class="header__catalog-title js-catalog-nav-btn">
+					<span class="burger"></span>
+					Каталог товаров
+				</div>
+				<div class="header__actions">
+					<a href="#" class="header__actions-link">
+						<svg class="icon-rating">
+							<use xlink:href="#rating"></use>
+						</svg>
+
+						<span class="compare-box">
+							<span class="compare-box__wrap">
+								<span class="compare-box__item">
+									<span class="compare-box__link">
+										<span class="compare-box__img">
+											<img src="pic/bolt/bolt-4.jpg" alt="">
+										</span>
+										<span class="compare-box__name">Анкер забивной (закладной)</span>
+									</span>
+								</span>
+								<span class="compare-box__item">
+									<span class="compare-box__link">
+										<span class="compare-box__img">
+											<img src="pic/bolt/bolt-5.jpg" alt="">
+										</span>
+										<span class="compare-box__name">Анкер клиновой</span>
+									</span>
+								</span>
+							</span>
+							<span class="btn compare-box__link-btn">Сравнить товары</span>
+						</span>
+					</a>
+					<a href="#" class="header__actions-link">
+						<svg class="icon-heart">
+							<use xlink:href="#heart"></use>
+						</svg>
+					</a>
+					<a href="#" class="header__actions-link">
+						<svg class="icon-basket">
+							<use xlink:href="#basket"></use>
+						</svg>
+						<span class="header__actions-count">99</span>
+					</a>
+					<div class="header__actions-info">
+						<span class="header__actions-info-num">Вы заказали на <b>1850 Р</b></span>
+						<span class="header__actions-info-min">Минимальная сумма заказа 3000 Р</span>
+					</div>
+					<div class="header__actions-burger js-header-nav-btn">
+						<div class="line"></div>
+					</div>
+				</div>
+				<div class="header__nav js-header-nav">
+					<ul class="header__nav-list">
+						<li class="header__nav-list-item">
+							<a href="#" class="header__nav-link">О компании</a>
+							<div class="header__nav-drop">
+								<ul class="header__nav-drop-list">
+									<li class="header__nav-drop-item">
+										<a href="#" class="header__nav-drop-link">Дипломы и сертификаты</a>
+									</li>
+									<li class="header__nav-drop-item">
+										<a href="#" class="header__nav-drop-link">Вакансии</a>
+									</li>
+									<li class="header__nav-drop-item">
+										<a href="#" class="header__nav-drop-link">Поставщики метизов</a>
+									</li>
+									<li class="header__nav-drop-item">
+										<a href="#" class="header__nav-drop-link">Новости отрасли</a>
+									</li>
+									<li class="header__nav-drop-item">
+										<a href="#" class="header__nav-drop-link">Новости компании</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="header__nav-list-item">
+							<a href="#" class="header__nav-link">Услуги</a>
+						</li>
+						<li class="header__nav-list-item">
+							<a href="#" class="header__nav-link">Информация</a>
+						</li>
+						<li class="header__nav-list-item">
+							<a href="#" class="header__nav-link">Контакты</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="container container--wrapper">
+		<div class="sidebar">
+			<div class="cat-nav js-catalog-nav ">
+  <ul class="cat-nav__list">
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-1.png" alt="">
+        Анкеры
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-2.png" alt="">
+        Болты
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-3.png" alt="">
+        Винты
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-4.png" alt="">
+        Гайки
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-5.png" alt="">
+        Гвозди
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-6.png" alt="">
+        Гровер
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-7.png" alt="">
+        Дюбель-гвозди
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-8.png" alt="">
+        Заклепки
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-9.png" alt="">
+        Круги отрезные
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-10.png" alt="">
+        Мебельные оси
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-11.png" alt="">
+        Проволока
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-12.png" alt="">
+        Саморезы
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-13.png" alt="">
+        Такелаж
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-14.png" alt="">
+        Шпильки
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-15.png" alt="">
+        Шплинты
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-16.png" alt="">
+        Шурупы
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-17.png" alt="">
+        Электроды
+      </a>
+    </li>
+  </ul>
+</div>
+
+		</div>
+		<div class="content">
+			<div class="search js-search">
+	<div class="search__inner">
+		<div class="search__main">
+			<input type="text" class="search__input js-search-input" placeholder="Поиск по каталогу">
+			<a href="#" class="search__btn">
+				<svg class="icon-search">
+					<use xlink:href="#search"></use>
+				</svg>
+			</a>
+			<a href="#" class="search__link js-search-filter-link">
+				<span class="search__link-main">Показать расширенный поиск</span>
+				<span class="search__link-opened">Скрыть расширенный поиск</span>
+			</a>
+			<div class="search__drop js-search-drop">
+				<div class="search__drop-left js-custom-scroll">
+					<ul class="search__drop-list js-search-autolist"></ul>
+				</div>
+				<div class="search__drop-right">
+					<div class="search__drop-cols-wrap">
+						<div class="search__drop-col">
+							<a href="#" class="search-card">
+  <div class="search-card__row">
+    <div class="search-card__img">
+      <img src="pic/bolt/bolt-3.jpg" alt="">
+    </div>
+    <div class="search-card__title">Забиваемый металлический дюбель-гвоздь</div>
+  </div>
+  <span class="search-card__availability">
+    <svg class="icon-checked">
+      <use xlink:href="#checked"></use>
+    </svg>
+    <span>В наличии. Все размеры</span>
+  </span>
+</a>
+
+						</div>
+						<div class="search__drop-col">
+							<a href="#" class="search-card">
+  <div class="search-card__row">
+    <div class="search-card__img">
+      <img src="pic/bolt/bolt-3.jpg" alt="">
+    </div>
+    <div class="search-card__title">Забиваемый металлический дюбель-гвоздь</div>
+  </div>
+  <span class="search-card__availability">
+    <svg class="icon-checked">
+      <use xlink:href="#checked"></use>
+    </svg>
+    <span>В наличии. Все размеры</span>
+  </span>
+</a>
+
+						</div>
+						<div class="search__drop-col">
+							<a href="#" class="search-card">
+  <div class="search-card__row">
+    <div class="search-card__img">
+      <img src="pic/bolt/bolt-5.jpg" alt="">
+    </div>
+    <div class="search-card__title">Анкер клиновой</div>
+  </div>
+  <span class="search-card__availability">
+    <svg class="icon-checked">
+      <use xlink:href="#checked"></use>
+    </svg>
+    <span>В наличии. Все размеры</span>
+  </span>
+</a>
+
+						</div>
+						<div class="search__drop-col">
+							<a href="#" class="search-card">
+  <div class="search-card__row">
+    <div class="search-card__img">
+      <img src="pic/bolt/bolt-5.jpg" alt="">
+    </div>
+    <div class="search-card__title">Анкер клиновой</div>
+  </div>
+  <span class="search-card__availability">
+    <svg class="icon-checked">
+      <use xlink:href="#checked"></use>
+    </svg>
+    <span>В наличии. Все размеры</span>
+  </span>
+</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a href="#" class="search__online-btn">
+		<svg class="icon-calculator">
+			<use xlink:href="#calculator"></use>
+		</svg>
+		<span>Онлайн калькукятор</span>
+	</a>
+	</div>
+	<div class="search__filter js-search-filter">
+		<div class="search__filter-col">
+			<input type="text" class="input input--gray" placeholder="Din/En/Ico/арт.">
+		</div>
+		<div class="search__filter-col">
+			<select class="js-select select-gray">
+				<option value="">Материал</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+			</select>
+		</div>
+		<div class="search__filter-col">
+			<select class="js-select select-gray">
+				<option value="">Покрытие</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+			</select>
+		</div>
+		<div class="search__filter-col">
+			<select class="js-select select-gray">
+				<option value="">Форма</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+			</select>
+		</div>
+		<div class="search__filter-col">
+			<select class="js-select select-gray">
+				<option value="">Диаметр</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+			</select>
+		</div>
+		<div class="search__filter-col">
+			<select class="js-select select-gray">
+				<option value="">Длина</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+			</select>
+		</div>
+		<div class="search__filter-btnbox">
+			<a href="#" class="btn search__filter-btn">        
+				<span>
+					<svg class="icon-search">
+						<use xlink:href="#search"></use>
+					</svg>
+					Найти
+				</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+			<ul class="breadcrumbs">
+	
+	<li class="breadcrumbs__item">
+		<a href="#" class="breadcrumbs__link">Главная</a>
+	</li>
+	
+	<li class="breadcrumbs__item">О компании</li>
+</ul>
+			<div class="hero">
+	<span class="hero__caption">Основной поставщик к крепежа и метизов в России</span>
+	<img src="pic/bolt/bolt-1.jpg" alt="">
+	<div class="hero__wrap">
+		<div class="hero__item">
+			<span class="hero__icon">
+				<svg class="icon-security">
+					<use xlink:href="#security"></use>
+				</svg>
+			</span>
+			<span class="hero__text">Соответствующие стандартам ISO</span>
+		</div>
+		
+		<div class="hero__item">
+			<span class="hero__icon">
+				<svg class="icon-quality">
+					<use xlink:href="#quality"></use>
+				</svg>
+			</span>
+			<span class="hero__text">Индивидуальный подход</span>
+		</div>
+		<div class="hero__item">
+			<span class="hero__icon">
+				<svg class="icon-product-realise">
+					<use xlink:href="#product-realise"></use>
+				</svg>
+			</span>
+			<span class="hero__text">Выгодные цены</span>
+		</div>
+	</div>
+</div>
+
+<div class="hero__content">
+	<div class="content-seo">
+		<h2>«Машкрепеж» - <br> основной поставщик крепежа и метизов в России</h2>
+		<p>Компания «Машкрепеж», официальный дилер крупнейших предприятий-производителей, осуществляет поставки крепежа и метизов оптом во все регионы России, ближнего и дальнего зарубежья. Наши товары – это свыше 8 000 видов крепежных и метизных изделий безукоризненно высокого качества для всех отраслей промышленности, строительства и сельского хозяйства. Нас выбрали более 14 000 машиностроительных, монтажно-строительных, железнодорожных, автотранспортных предприятий, производственно-коммерческих фирм и частных предпринимателей.</p>
+		<span class="title">В нашем каталоге Вы можете увидеть:</span>
+		<ul>
+			<li>- Анкеры для монтажа конструкций к основаниям из бетона, строительного камня, кирпича, пено- и газобетона, гипсокартона</li>
+			<li>- Болты, винты, гайки, плоские и пружинные шайбы в полной комплектации</li>
+			<li>- Гвозди, дюбели-гвозди, дюбели для всех видов строительных и отделочных работ</li>
+			<li>- Саморезы и шурупы по дереву, металлу, пластику, для гипсокартона, фанеры, OSB</li>
+			<li>- Электроды для сварки</li>
+			<li>- Вязальную проволоку</li>
+			<li>- Отрезные круги по металлу</li>
+			<li>- Заклепки под молоток и вытяжные</li>
+			<li>- Талрепы, зажимы и другой такелаж</li>
+			<li>- Рым-крепеж</li>
+			<li>- Мебельные крепления</li>
+			<li>- Другие виды продукции, характеристики и рекомендации для которых приведены на страницах сайта нашей компании</li>
+		</ul>
+		<p>У нас Вы можете приобрести крепеж оптом: нержавеющий, оцинкованный и высокопрочный, прогрессивный, строительный и для фланцевых соединений, стандартный крепеж ГОСТ, DIN, ISO, а также метизы, изготовленные по специальным чертежам и техническим условиям предприятий.</p>
+	</div>
+</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="about">
+  <div class="about__col">
+    <div class="about__block about__block--mod">
+      <div class="about__block-title about__block-title--main">Компания «Машкрепеж» — это:</div>
+      <div class="about__arrows">
+        <a href="#" class="about__arrow about__arrow--prev js-about-slider-prev"></a>
+        <a href="#" class="about__arrow about__arrow--next js-about-slider-next"></a>
+      </div>
+    </div>
+    <div class="about__slider js-about-slider">
+      <div class="about__block">
+        <div class="about__block-inner">
+          <div class="about__block-sub">оперативное</div>
+          <div class="about__block-title">решение</div>
+          <div class="about__block-descr">всех Ваших задач по оформлению документов, закупке, погрузке и доставке</div>
+        </div>
+      </div>
+      <div class="about__block">
+        <div class="about__block-inner">
+          <div class="about__block-sub">Lorem ipsum.</div>
+          <div class="about__block-title">Lorem ipsum dolor.</div>
+          <div class="about__block-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, quaerat.</div>
+        </div>
+      </div>
+      <div class="about__block">
+        <div class="about__block-inner">
+          <div class="about__block-sub">dolor sit amet.</div>
+          <div class="about__block-title">ipsum dolor</div>
+          <div class="about__block-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe doloribus cumque molestiae eveniet ea est!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about__col">
+    <div class="about__slider js-about-slider">
+      <div class="about__block about__block--height">
+        <div class="about__block-inner">
+          <div class="about__block-title"><span class="let">></span> 9 000 <span class="about__block-sub">кв.м.</span></div>
+          <div class="about__block-descr">складских площадей в Москве и Житнево, современная техника, оборудование, постоянный контроль наличия и условий хранения всего ассортимента товаров</div>
+        </div>
+      </div>
+      <div class="about__block about__block--height">
+        <div class="about__block-inner">
+          <div class="about__block-title"><span class="let">></span> 11 000 <span class="about__block-sub">кв.м.</span></div>
+          <div class="about__block-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati suscipit, ipsam. Atque, veritatis!</div>
+        </div>
+      </div>
+      <div class="about__block about__block--height">
+        <div class="about__block-inner">
+          <div class="about__block-title"><span class="let">></span> 15 000 <span class="about__block-sub">кв.м.</span></div>
+          <div class="about__block-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem quidem voluptatum, ex nisi ad ducimus corporis. Tenetur quidem, adipisci doloribus eos!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about__col about__col--mod">
+    <div class="about__slider js-about-slider">
+      <div class="about__block">
+        <div class="about__block-inner">
+          <div class="about__block-sub">центральный офис</div>
+          <div class="about__block-title">в Москве</div>
+          <div class="about__block-descr">и филиал в Житнево со штатом квалифицированных менеджеров, технических специалистов и консультантов</div>
+        </div>
+      </div>
+      <div class="about__block">
+        <div class="about__block-inner">
+          <div class="about__block-sub">Lorem ipsum dolor.</div>
+          <div class="about__block-title">Lorem ipsum.</div>
+          <div class="about__block-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, tempore veritatis ipsam id nostrum ab minus repudiandae molestias, alias autem fugiat!</div>
+        </div>
+      </div>
+      <div class="about__block">
+        <div class="about__block-inner">
+          <div class="about__block-sub">Lorem.</div>
+          <div class="about__block-title">Minima, pariatur.</div>
+          <div class="about__block-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet iste quam ea est adipisci error, labore et veniam fugit dolores!</div>
+        </div>
+      </div>
+    </div>
+    <div class="about__slider js-about-slider">
+      <div class="about__block">
+        <div class="about__block-inner">
+          <div class="about__block-sub">работаем с </div>
+          <div class="about__block-title">1998 года</div>
+          <div class="about__block-descr">За прошедшее время получила заслуженное признание всех своих клиентов, как ответственный, надежный партнер, уверенно и последовательно отстаивающий принципы качества, гарантий и поддержки.</div>
+        </div>
+      </div>
+      <div class="about__block">
+        <div class="about__block-inner">
+          <div class="about__block-sub">Lorem ipsum dolor.</div>
+          <div class="about__block-title">Lorem ipsum.</div>
+          <div class="about__block-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, tempore veritatis ipsam id nostrum ab minus repudiandae molestias, alias autem fugiat!</div>
+        </div>
+      </div>
+      <div class="about__block">
+        <div class="about__block-inner">
+          <div class="about__block-sub">Lorem.</div>
+          <div class="about__block-title">Minima, pariatur.</div>
+          <div class="about__block-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet iste quam ea est adipisci error, labore et veniam fugit dolores!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+		<div class="partners partners--about">
+  <div class="content-title">Наши надежные партнеры</div>
+  <p>Производство и поставку крупных оптовых партий креплений для нас осуществляют предприятия с безукоризненной репутацией из России, ближнего зарубежья, стран из европейского региона и Юго-Восточной Азии. Мы организовали поставки сертифицированной продукции в современной упаковке по надежным каналам и поддерживаем постоянные контакты с производителями.</p>
+  
+  <div class="partners__slider js-partners-slider">
+    <div class="partners__slider-item">
+      <div class="partners__slider-img">
+        <img src="pic/partner/partner-1.png" alt="">
+      </div>
+      <div class="partners__slider-title">Дружковский метизный завод</div>
+    </div>
+    <div class="partners__slider-item">
+      <div class="partners__slider-img">
+        <img src="pic/partner/partner-2.png" alt="">
+      </div>
+      <div class="partners__slider-title">Северсталь-Метиз</div>
+    </div>
+    <div class="partners__slider-item">
+      <div class="partners__slider-img">
+        <img src="pic/partner/partner-3.png" alt="">
+      </div>
+      <div class="partners__slider-title">ММК-МЕТИЗ</div>
+    </div>
+    <div class="partners__slider-item">
+      <div class="partners__slider-img">
+        <img src="pic/partner/partner-4.png" alt="">
+      </div>
+      <div class="partners__slider-title">Белебеевский Завод Автонормаль</div>
+    </div>
+    <div class="partners__slider-item">
+      <div class="partners__slider-img">
+        <img src="pic/partner/partner-5.png" alt="">
+      </div>
+      <div class="partners__slider-title"> Речицкий метизный завод</div>
+    </div>
+    <div class="partners__slider-item">
+      <div class="partners__slider-img">
+        <img src="pic/partner/partner-1.png" alt="">
+      </div>
+      <div class="partners__slider-title">Дружковский метизный завод</div>
+    </div>
+    <div class="partners__slider-item">
+      <div class="partners__slider-img">
+        <img src="pic/partner/partner-2.png" alt="">
+      </div>
+      <div class="partners__slider-title">Северсталь-Метиз</div>
+    </div>
+  </div>
+</div>
+	</div>
+	
+</div>
+
+<footer class="footer">
+	<div class="footer__top">
+		<div class="container">
+			<div class="footer__wrap">
+				<div class="footer__col footer__col--first">
+					<div class="footer__inner footer__inner--catalog">
+						<span class="footer__title">Каталог</span>
+						<ul class="footer__list footer__list--col">
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Анкеры</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Мебельные оси</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Болты</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Проволока</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Винты</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Саморезы</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Гайки</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Такелаж</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Гвозди</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Шпильки</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Гровер</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Шплинты</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Дюбель-гвозди</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Шурупы</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Заклепки</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Электроды</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Круги отрезные</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__inner footer__inner--form">
+						<span class="footer__title">Получать письма с промокодами на спецпредложения и скидки</span>
+						<form action="">
+							<div class="footer__form">
+								<div class="footer__input-wrap">
+									<input type="email" placeholder="Ваш e-mail">
+								</div>
+								<div class="footer__form-btn">
+									<button type="submit" class="btn footer__btn">Подписаться</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="footer__col footer__col--two">
+					<div class="footer__inner footer__inner--services">
+						<span class="footer__title">Услуги</span>
+						<ul class="footer__list">
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Термодиффузионное цинкование</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Гальваническое цинкование</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Горячее цинкование</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Доставка</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__inner footer__inner--about">
+						<span class="footer__title">О компании</span>
+						<ul class="footer__list">
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Дипломы и сертификаты</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Вакансии</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Поставщики метизов</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Новости отрасли</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Новости компании</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__policy">
+						<a href="#" class="footer__policy-link">Политика конфиденциальности</a>
+					</div>
+				</div>
+				<div class="footer__col footer__col--three">
+					<div class="footer__inner footer__inner--info">
+						<span class="footer__title">Полезная информация</span>
+						<ul class="footer__list">
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Советы по выбору крепежных изделий</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Стандарты ГОСТ и DIN</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Часто задаваемые вопросы</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__inner footer__inner--contact">
+						<span class="footer__title">Контакты</span>
+						<span class="footer__address">121357, г. Москва, Верейская ул, дом № 29, строение 154, оф.24</span>
+						<ul class="footer__contact">
+							<li class="footer__contact-item">
+								<a href="tel:+74993727777" class="footer__contact-link">
+									<span class="footer__contact-icon">
+										<svg class="icon-phone-foot">
+											<use xlink:href="#phone"></use>
+										</svg>
+									</span>
+									<span class="footer__contact-text">+7 (499) 372-77-77</span>
+								</a>
+							</li>
+							<li class="footer__contact-item">
+								<a href="mailto:info@zevs-r.ru" class="footer__contact-link">
+									<span class="footer__contact-icon">
+										<svg class="icon-email-foot">
+											<use xlink:href="#email"></use>
+										</svg>
+									</span>
+									<span class="footer__contact-text">info@zevs-r.ru </span>
+								</a>
+							</li>
+							<li class="footer__contact-item">
+								<a href="#" class="footer__contact-link">
+									<span class="footer__contact-icon">
+										<svg class="icon-skype-foot">
+											<use xlink:href="#skype"></use>
+										</svg>
+									</span>
+									<span class="footer__contact-text">rusbolt.ru</span>
+								</a>
+							</li>
+						</ul>
+						<div class="footer__callback-btn">
+							<a href="#" class="btn footer__btn">Обратная связь</a>
+						</div>
+						<ul class="footer__social">
+							<li class="footer__social-item">
+								<a href="#" class="footer__social-link">
+									<svg class="icon-vk-foot">
+										<use xlink:href="#vk"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="footer__social-item">
+								<a href="#" class="footer__social-link">
+									<svg class="icon-instagram-foot">
+										<use xlink:href="#instagram"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="footer__social-item">
+								<a href="#" class="footer__social-link">
+									<svg class="icon-facebook-foot">
+										<use xlink:href="#facebook"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer__bottom">
+		<div class="container">
+			<span class="footer__copyright">© Компания Машкрепеж - основной поставщик крепежа в России, 1998-2018</span>
+		</div>
+	</div>
+</footer>
+
+<script src="js/vendor.js?rel=42761"></script>
+
+
+<script src="pages-list.js"></script>
+
+
+<script src="js/main.js?rel=42761"></script>
+
+
+</body>
+</html>
+

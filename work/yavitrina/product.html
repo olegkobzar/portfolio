@@ -1,0 +1,804 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Карточка товара</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<div class="cookie js-cookie">
+	<div class="container">
+		<div class="wrap">
+			<span class="text">ЯВитрина использует cookie (файлы с данными о прошлых посещениях сайта) для персонализации сервисов и удобства пользователей. ЯВитрина серьезно относится к защите персональных данных - ознакомьтесь с <a href="#">условиями и принципами их обработки</a>.</span>
+			<span class="ban">Вы можете запретить сохранение cookie в настройках своего браузера.</span>
+
+			<span class="close js-close-cookie">X</span>
+		</div>
+	</div>
+</div>
+
+	<header class="header ">
+
+	<div class="container">
+		<div class="header-wrap">
+
+			<div class="circle circle-1"></div>
+			<div class="circle circle-3"></div>
+			<div class="circle circle-5"></div>
+			<div class="circle circle-6"></div>
+
+			
+
+			
+				<div class="circle circle-10"></div>
+				<div class="circle circle-11"></div>
+				<div class="circle circle-12"></div>
+				<div class="circle circle-13"></div>
+				<div class="circle circle-14"></div>
+			
+			<div class="logo">
+				<a href="#" class="logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<form action="" class="search-form">
+				<div class="search-input-wrap">
+					<input type="text" placeholder="Введите название товара">
+				</div>
+				<button class="btn search-btn">
+					<svg class="icon-search">
+						<use xlink:href="#search"></use>
+					</svg>
+				</button>
+			</form>
+			<div class="city">
+				<div class="city-btn js-city-btn">
+					<span class="city-icon">
+						<svg class="icon-marker">
+							<use xlink:href="#marker"></use>
+						</svg>
+					</span>
+					<span class="city-text js-city-name">Москва</span>
+				</div>
+
+				<div class="city-drop js-select-wrap-city">
+					<div class="city-head">
+						<span class="city-title">Выбор города</span>
+						<a href="#" class="city-back js-close-select"></a>
+					</div>
+					<div class="city-select">
+						<select name="city" id="" class="js-select-city">
+							<optgroup label="Адыгея Республика">
+								<option value="Майкоп">Майкоп</option>
+							</optgroup>
+							<optgroup label="Алтайский край">
+								<option value="Барнаул">Барнаул</option>
+								<option value="Бийск">Бийск</option>
+								<option value="Рубцовск">Рубцовск</option>
+							</optgroup>
+							<optgroup label="Амурская область">
+								<option value="Благовещенск">Благовещенск</option>
+							</optgroup>
+							<optgroup label="Архангельская область">
+								<option value="Архангельск">Архангельск</option>
+								<option value="Северодвинск">Северодвинск</option>
+							</optgroup>
+							<optgroup label="Адыгея Республика">
+								<option value="Майкоп">Майкоп</option>
+							</optgroup>
+							<optgroup label="Алтайский край">
+								<option value="Барнаул">Барнаул</option>
+								<option value="Бийск">Бийск</option>
+								<option value="Рубцовск">Рубцовск</option>
+							</optgroup>
+							<optgroup label="Амурская область">
+								<option value="Благовещенск">Благовещенск</option>
+							</optgroup>
+							<optgroup label="Архангельская область">
+								<option value="Архангельск">Архангельск</option>
+								<option value="Северодвинск">Северодвинск</option>
+							</optgroup>
+							<optgroup label="Адыгея Республика">
+								<option value="Майкоп">Майкоп</option>
+							</optgroup>
+							<optgroup label="Алтайский край">
+								<option value="Барнаул">Барнаул</option>
+								<option value="Бийск">Бийск</option>
+								<option value="Рубцовск">Рубцовск</option>
+							</optgroup>
+							<optgroup label="Амурская область">
+								<option value="Благовещенск">Благовещенск</option>
+							</optgroup>
+							<optgroup label="Архангельская область">
+								<option value="Архангельск">Архангельск</option>
+								<option value="Северодвинск">Северодвинск</option>
+							</optgroup>
+							<optgroup label="Московская область">
+								<option value="Москва" selected>Москва</option>
+							</optgroup>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="card">
+	<div class="container">
+		<div class="card-wrap">
+			<div class="head">
+				<div class="seller-wrap">
+					<div class="seller">
+						<span class="seller-icon">
+							<svg class="icon-seller">
+								<use xlink:href="#seller"></use>
+							</svg>
+						</span>
+						<span class="seller-text">Продавец: <a href="#">YYEES!</a></span>
+					</div>
+					<div class="seller">
+						<span class="seller-icon">
+							<svg class="icon-car">
+								<use xlink:href="#car"></use>
+							</svg>
+						</span>
+						<span class="seller-text">Компания из Москвы, бесплатная доставка (завтра)</span>
+					</div>
+				</div>
+				<div class="card-rating">
+					<div class="rating">
+						<div class="rating-back">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+						<div class="rating-top" style="width: 60%;">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+					</div>
+				</div>
+
+				<div class="btn-call">
+					<a href="#" class="btn">Позвонить в магазин</a>
+				</div>
+			</div>
+
+			<div class="card-bottom">
+				<div class="images">
+					<div class="tabs">
+						<div class="item js-item active">
+							<img src="pic/goods/goods-3.png" alt="">
+						</div>
+						<div class="item js-item">
+							<img src="pic/goods/goods-1.png" alt="">
+						</div>
+						<div class="item js-item">
+							<img src="pic/goods/goods-2.png" alt="">
+						</div>
+						<div class="item js-item">
+							<img src="pic/goods/goods-3.png" alt="">
+						</div>
+					</div>
+					<div class="card-img">
+						<img src="pic/goods/goods-3.png" alt="" class="js-img-big">
+					</div>
+				</div>
+
+				<div class="info">
+					<h1>Ботинки KEDDO</h1>
+					<div class="descr">
+						<span class="title">Описание:</span>
+						<p>Розовые женские ботинки KEDDO – самая стильная зимняя обувь в этом сезоне. Модель отличается простотой и лаконичностью дизайнерского решения, главная черта которого – отсутствие фурнитуры. Эффектный и броский образ на каждый день тебе подарит стильное цветовое решение ботинок KEDDO, коралловый оттенок – женственный и изящный элемент молодежной зимней обуви.</p>
+						<canvas id="c6"></canvas>
+					</div>
+					<div class="row">
+						<div class="price">
+							<span class="price-text">Цена:</span>
+							<span class="price-value">от <span>1.640</span> руб.</span>
+						</div>
+						<span class="presence">В наличии</span>
+						<div class="review">
+							<span class="review-icon">
+								<svg class="icon-heart-card">
+									<use xlink:href="#heart"></use>
+								</svg>
+							</span>
+							<a href="#" class="review-text">2 522 отзывов</a>
+						</div>
+					</div>
+					<div class="website">
+						<span class="website-icon">
+							<svg class="icon-question">
+								<use xlink:href="#question"></use>
+							</svg>
+						</span>
+						<a href="#">Посмотреть товар на сайте продавца </a>
+					</div>
+					<div class="foot">
+						<div class="btn-shop">
+							<a href="#" class="btn">В магазин</a>
+						</div>
+						<div class="question">
+							<span class="question-icon">
+								<svg class="icon-links">
+									<use xlink:href="#links"></use>
+								</svg>
+							</span>
+							<a href="#">Как купить товар?</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<canvas id="c4"></canvas>
+	<canvas id="c5"></canvas>
+
+</div>
+
+<div class="container">
+	<span class="slider-title">Популярные видео</span>
+	<div class="slider slider-card js-slider-goods">
+		<div class="item">
+			<a href="#" class="img"></a>
+			<div class="text">
+				<a href="#" class="slider-icon">
+					<svg class="icon-video-call">
+						<use xlink:href="#video-call"></use>
+					</svg>
+				</a>
+				<a href="#">100-летнюю эволюцию обуви на каблуках показали за две минуты.</a>
+			</div>
+		</div>
+		<div class="item">
+			<a href="#" class="img"></a>
+			<div class="text">
+				<a href="#" class="slider-icon">
+					<svg class="icon-video-call">
+						<use xlink:href="#video-call"></use>
+					</svg>
+				</a>
+				<a href="#">100-летнюю эволюцию обуви на каблуках показали за две минуты.</a>
+			</div>
+		</div>
+		<div class="item">
+			<a href="#" class="img"></a>
+			<div class="text">
+				<a href="#" class="slider-icon">
+					<svg class="icon-video-call">
+						<use xlink:href="#video-call"></use>
+					</svg>
+				</a>
+				<a href="#">100-летнюю эволюцию обуви на каблуках показали за две минуты.</a>
+			</div>
+		</div>
+		<div class="item">
+			<a href="#" class="img"></a>
+			<div class="text">
+				<a href="#" class="slider-icon">
+					<svg class="icon-video-call">
+						<use xlink:href="#video-call"></use>
+					</svg>
+				</a>
+				<a href="#">100-летнюю эволюцию обуви на каблуках показали за две минуты.</a>
+			</div>
+		</div>
+		<div class="item">
+			<a href="#" class="img"></a>
+			<div class="text">
+				<a href="#" class="slider-icon">
+					<svg class="icon-video-call">
+						<use xlink:href="#video-call"></use>
+					</svg>
+				</a>
+				<a href="#">100-летнюю эволюцию обуви на каблуках показали за две минуты.</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="wrap-btn">
+		<div class="row-btn">
+			<a href="#" class="btn">В магазин</a>
+		</div>
+		<div class="row-btn">
+			<a href="#" class="btn btn-turquoise">Позвонить</a>
+		</div>
+	</div>
+</div>
+
+<div class="card-goods">
+	<div class="container">
+		<span class="card-goods-title">С этим товаром смотрят</span>
+		<div class="goods-wrap">
+			<div class="item">
+				<div class="inner">
+					<div class="image">
+						<a href="#">
+							<img src="pic/goods/goods-2.png" alt="">
+						</a>
+					</div>
+					<div class="brand">
+						<span>Спортдепо</span>
+					</div>
+					<div class="name">
+						<a href="#">Кроссовки ASICS</a>
+					</div>
+					<div class="rating">
+						<div class="rating-back">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+						<div class="rating-top" style="width: 60%;">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="review">
+						<svg class="icon-heart">
+							<use xlink:href="#heart"></use>
+						</svg>
+						<a href="#">2 522 отзывов</a>
+					</div>
+					<span class="shop">Цены в 84 магазинах</span>
+					<span class="price">от <strong>2.190</strong> руб.</span>
+
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="inner">
+					<div class="image">
+						<a href="#">
+							<img src="pic/goods/goods-2.png" alt="">
+						</a>
+					</div>
+					<div class="brand">
+						<span>Спортдепо</span>
+					</div>
+					<div class="name">
+						<a href="#">Кроссовки ASICS</a>
+					</div>
+					<div class="rating">
+						<div class="rating-back">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+						<div class="rating-top" style="width: 60%;">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="review">
+						<svg class="icon-heart">
+							<use xlink:href="#heart"></use>
+						</svg>
+						<a href="#">2 522 отзывов</a>
+					</div>
+					<span class="shop">Цены в 84 магазинах</span>
+					<span class="price">от <strong>2.190</strong> руб.</span>
+
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="inner">
+					<div class="image">
+						<a href="#">
+							<img src="pic/goods/goods-2.png" alt="">
+						</a>
+					</div>
+					<div class="brand">
+						<span>Спортдепо</span>
+					</div>
+					<div class="name">
+						<a href="#">Кроссовки ASICS</a>
+					</div>
+					<div class="rating">
+						<div class="rating-back">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+						<div class="rating-top" style="width: 60%;">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="review">
+						<svg class="icon-heart">
+							<use xlink:href="#heart"></use>
+						</svg>
+						<a href="#">2 522 отзывов</a>
+					</div>
+					<span class="shop">Цены в 84 магазинах</span>
+					<span class="price">от <strong>2.190</strong> руб.</span>
+
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="inner">
+					<div class="image">
+						<a href="#">
+							<img src="pic/goods/goods-2.png" alt="">
+						</a>
+					</div>
+					<div class="brand">
+						<span>Спортдепо</span>
+					</div>
+					<div class="name">
+						<a href="#">Кроссовки ASICS</a>
+					</div>
+					<div class="rating">
+						<div class="rating-back">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+						<div class="rating-top" style="width: 60%;">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="review">
+						<svg class="icon-heart">
+							<use xlink:href="#heart"></use>
+						</svg>
+						<a href="#">2 522 отзывов</a>
+					</div>
+					<span class="shop">Цены в 84 магазинах</span>
+					<span class="price">от <strong>2.190</strong> руб.</span>
+
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="inner">
+					<div class="image">
+						<a href="#">
+							<img src="pic/goods/goods-2.png" alt="">
+						</a>
+					</div>
+					<div class="brand">
+						<span>Спортдепо</span>
+					</div>
+					<div class="name">
+						<a href="#">Кроссовки ASICS</a>
+					</div>
+					<div class="rating">
+						<div class="rating-back">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+						<div class="rating-top" style="width: 60%;">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="review">
+						<svg class="icon-heart">
+							<use xlink:href="#heart"></use>
+						</svg>
+						<a href="#">2 522 отзывов</a>
+					</div>
+					<span class="shop">Цены в 84 магазинах</span>
+					<span class="price">от <strong>2.190</strong> руб.</span>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<footer class="footer" style="background-image: url(pic/bg/bg-2.png);">
+	<div class="container">
+		<div class="footer-top">
+			<span class="footer-logo">
+				<a href="#">
+					<svg class="icon-logo-footer">
+						<use xlink:href="#logo-2"></use>
+					</svg>
+				</a>
+			</span>
+			<div>
+				<span>Покупателям</span>
+				<ul>
+					<li>
+						<a href="#">Как сделать заказ</a>
+					</li>
+					<li>
+						<a href="#">Доставка и возврат</a>
+					</li>
+					<li>
+						<a href="#">Добавить магазин</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<span>О компании</span>
+				<ul>
+					<li>
+						<a href="#">Что такое ЯВитрина</a>
+					</li>
+					<li>
+						<a href="#">Реклама на сайте</a>
+					</li>
+					<li>
+						<a href="#">Сотрудничество</a>
+					</li>
+				</ul>
+			</div>
+			<div class="hide">
+				<span>Партнёрам</span>
+				<ul>
+					<li>
+						<a href="#">Реклама на сайте</a>
+					</li>
+					<li>
+						<a href="#">Сотрудничество</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="footer-info">
+				<span class="footer-email">
+					По вопросам сайта пишите на 
+					<a href="mailto:info@yavitrina.ru">info@yavitrina.ru</a>
+				</span>
+				<span>© 2018 Yavitrina.ru</span>
+			</div>
+			<div class="footer-social">
+				<div>
+					<a href="#">
+						<svg class="icon-yandex-market">
+							<use xlink:href="#yandex-market"></use>
+						</svg>
+					</a>
+				</div>
+				<div>
+					<a href="#">
+						<svg class="icon-youtube">
+							<use xlink:href="#youtube"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

@@ -1,0 +1,725 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ПРОЕКТ ВОДОНАПОРНОЙ БАШНИ СИСТЕМЫ РОЖНОВСКОГО</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<header class="header ">
+	<div class="container">
+		<div class="header__wrap">
+			<div class="header__btn-menu js-btn-menu">
+				<span class="header__btn-line"></span>
+				<span class="header__btn-line"></span>
+				<span class="header__btn-line"></span>
+			</div>
+			<div class="header__logo">
+				<a href="index.html" class="header__logo-link">
+					<img src="pic/logo-altai.gif" alt="">
+				</a>
+			</div>
+			<div class="header__menu-wrap js-menu">
+				<nav class="header__nav">
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="about-company.html" class="header__nav-link">Компания</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="catalog.html" class="header__nav-link">Продукция</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="all-projects.html" class="header__nav-link">Портфолио</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="contacts.html" class="header__nav-link">Контакты</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header__contact">
+					<div class="header__phone">
+						<a href="tel:3852581450" class="header__phone-link">
+							<span class="header__phone-icon">
+								<svg class="icon-phone">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="header__phone-text">(3852) 58-14-50</span>
+						</a>
+					</div>
+					<div class="header__callback">
+						<a data-fancybox data-src="#popup-callback" href="javascript:;" class="header__callback-link">Перезвоните мне</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class="popup-consultate" id="popup-callback">
+  <h2 class="popup-consultate__title">Мы позвоним вам</h2>
+  <form action="send.php" method="POST" class="popup-consultate__form js-popup-validate">
+    <div class="popup-consultate__form-item form-group">
+      <input type="tel" class="popup-consultate__form-input" id="customer_phone" value="7" size="25" placeholder="Телефонный номер" name="phone">
+    </div>
+    <input type="hidden" name="id" value="consultate">
+    <div class="popup-consultate__form-txt">
+      Мы перезвоними ответим на ваши вопросы в течние 10 минут
+    </div>
+    <button type="submit" class="btn popup-consultate__form-btn js-send-request" data-type="consultate">
+      Жду звонка
+    </button>
+    <div class="popup-consultate__form-check">
+      <label class="checkbox">
+        <input type="checkbox" name="check" checked>
+        <span>Нажимая на кнопку отправить вопрос я даю согласие на обработку своих персональных данных, и соглашаюсь с <a href="#">политикой конфиденциальности</a></span>
+      </label>
+    </div>
+  </form>
+</div>
+
+
+<!-- <form>
+	<input type="hidden" name="type" value="Задать вопрос">
+	<div class="grid-row grid-row_form">
+		<div class="fl-col sm-12 form-group">
+			<input name="name" type="text" class="form-el" placeholder="Имя">
+		</div>
+		<div class="fl-col sm-12 form-group">
+			<input name="email" type="text" class="form-el" placeholder="Адрес эл. почты">
+		</div>
+	</div>
+	<div class="form-group">
+		<textarea name="comment" placeholder="Текст вопроса" class="form-el"></textarea>
+	</div>
+	<div class="btn-note">
+		<div class="btn-note__c btn-note__c_btn">
+			<button type="button" class="btn js-send-request" data-type="question">Отправить</button>
+		</div>
+	</div>
+</form> -->
+
+  
+  <div class="container">
+    <ul class="breadcrumbs ">
+	
+		<li class="breadcrumbs__item">
+			<a href="#" class="breadcrumbs__link">Главная</a>
+		</li>
+	
+		<li class="breadcrumbs__item">
+			<a href="#" class="breadcrumbs__link">Каталог</a>
+		</li>
+	
+	<li class="breadcrumbs__item">
+		Водонапорные башни системы рожновского
+	</li>
+</ul>	
+  </div>	
+	
+	<div class="card-product">
+	<div class="container">
+
+		<span class="card-product__title">ВОДОНАПОРНЫЕ БАШНИ СИСТЕМЫ РОЖНОВСКОГО</span>
+
+		<div class="card-product__top">
+			<div class="card-product__left">
+				<div class="card-product__slider js-card-product-slider">
+					<div class="card-product__slide" style="background-image: url(pic/bg/bg-6.jpg);">
+
+					</div>
+					<div class="card-product__slide" style="background-image: url(pic/bg/bg-7.jpg);">
+
+					</div>
+					<div class="card-product__slide" style="background-image: url(pic/bg/bg-8.jpg);">
+
+					</div>
+					<div class="card-product__slide" style="background-image: url(pic/bg/bg-9.jpg);">
+
+					</div>
+					<div class="card-product__slide" style="background-image: url(pic/bg/bg-8.jpg);">
+
+					</div>
+					<div class="card-product__slide" style="background-image: url(pic/bg/bg-9.jpg);">
+
+					</div>
+					<div class="card-product__slide" style="background-image: url(pic/bg/bg-8.jpg);">
+
+					</div>
+					<div class="card-product__slide" style="background-image: url(pic/bg/bg-9.jpg);">
+
+					</div>
+				</div>
+				<div class="card-product__slider card-product__slider--nav js-card-product-slider-nav">
+					<div class="card-product__slide" style="background-image: url(pic/bg/bg-6.jpg);">
+
+					</div>
+					<div class="card-product__slide" style="background-image: url(pic/bg/bg-7.jpg);">
+
+					</div>
+					<div class="card-product__slide" style="background-image: url(pic/bg/bg-8.jpg);">
+
+					</div>
+					<div class="card-product__slide" style="background-image: url(pic/bg/bg-9.jpg);">
+
+					</div>
+					<div class="card-product__slide" style="background-image: url(pic/bg/bg-8.jpg);">
+
+					</div>
+					<div class="card-product__slide" style="background-image: url(pic/bg/bg-9.jpg);">
+
+					</div>
+				</div>
+			</div>
+			<div class="card-product__right">
+				<span class="card-product__caption">Используются для:</span>
+				<ul class="card-product__list">
+					<li class="card-product__item">
+						<span class="card-product__icon">
+							<svg class="icon-water">
+								<use xlink:href="#water"></use>
+							</svg>
+						</span>
+						<span class="card-product__name">Хранение воды</span>
+					</li>
+					<li class="card-product__item">
+						<span class="card-product__icon">
+							<svg class="icon-oil">
+								<use xlink:href="#oil"></use>
+							</svg>
+						</span>
+						<span class="card-product__name">Хранение нефтепродуктов</span>
+					</li>
+				</ul>
+				<a data-fancybox data-src="#popup-price" href="javascript:;" class="btn card-product__btn">УЗНАТЬ СТОИМОСТЬ</a>
+				<span class="card-product__desc card-product__desc--hide">Мы изготавливаем высококачественные резервуары и металлоконструкции более 10 лет, чтобы предоставить вам лучшую цену и выполнить работу в минимальные сроки. Мы изготавливаем высококачественные резервуары и металлоконструкции более 10 лет, чтобы предоставить вам лучшую цену и выполнить работу в минимальные сроки.</span>
+				<a href="#tabs" class="card-product__more js-toggle-btn">Подробные характеристики</a>
+			</div>
+		</div>
+		<span class="card-product__desc card-product__desc--mob">Мы изготавливаем высококачественные резервуары и металлоконструкции более 10 лет, чтобы предоставить вам лучшую цену и выполнить работу в минимальные сроки. Мы изготавливаем высококачественные резервуары и металлоконструкции более 10 лет, чтобы предоставить вам лучшую цену и выполнить работу в минимальные сроки.</span>
+	</div>
+
+	<div class="card-product__middle">
+		<div class="container">
+			<ul class="card-product__advantages-list">
+				<li class="card-product__advantages-item">
+					<div class="card-product__advantages-icon">
+						<svg class="icon-compass">
+							<use xlink:href="#compass"></use>
+						</svg>
+					</div>
+					<span class="card-product__advantages-name">Любая конструкция по вашим эскизам</span>
+				</li>
+				<li class="card-product__advantages-item">
+					<div class="card-product__advantages-icon">
+						<svg class="icon-coin">
+							<use xlink:href="#coin"></use>
+						</svg>
+					</div>
+					<span class="card-product__advantages-name">Справедливые цены</span>
+				</li>
+				<li class="card-product__advantages-item">
+					<div class="card-product__advantages-icon">
+						<svg class="icon-sketch">
+							<use xlink:href="#sketch"></use>
+						</svg>
+					</div>
+					<span class="card-product__advantages-name">Свой конструкторский отдел</span>
+				</li>
+				<li class="card-product__advantages-item">
+					<div class="card-product__advantages-icon">
+						<svg class="icon-medal">
+							<use xlink:href="#medal"></use>
+						</svg>
+					</div>
+					<span class="card-product__advantages-name">Высокое качество продукции</span>
+				</li>
+			</ul>
+
+			<div class="card-product__tab js-tabs" id="tabs">
+
+				<div class="card-product__tab-nav js-tabs-slider">
+					<div class="card-product__tab-item js-tab-item active">
+						<div class="card-product__tab-item-inner">
+							<a href="#application-area" class="card-product__tab-link js-tab-link"><span>Область применения</span></a>
+						</div>
+					</div>
+					<div class="card-product__tab-item js-tab-item">
+						<div class="card-product__tab-item-inner">
+							<a href="#specifications" class="card-product__tab-link js-tab-link"><span>Характеристики</span></a>
+						</div>
+					</div>
+					<div class="card-product__tab-item js-tab-item">
+						<div class="card-product__tab-item-inner">
+							<a href="#constructive-decisions" class="card-product__tab-link js-tab-link"><span>Конструктивные решения</span></a>
+						</div>
+					</div>
+					<div class="card-product__tab-item js-tab-item">
+						<div class="card-product__tab-item-inner">
+							<a href="#documents-certificates" class="card-product__tab-link js-tab-link"><span>Документы и сертификаты</span></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="card-product__tab-content active js-tab-content" id="application-area">
+					<span class="card-product__tab-title">Область применения</span>
+					<div class="card-product__numb">
+						<span class="card-product__numb-item" data-numb="1.">Водонапорные башни предназначены для регулирования расхода и напора воды в водопроводной сети, для выравнивания графика работы насосных станций, а так же создания запаса воды, используются в системах хозяйственно-питьевого, производственного и противопожарного водоснабжения промышленных объектов, сельскохозяйственных комплексов и населенных пунктов</span>
+						<span class="card-product__numb-item" data-numb="2.">Башни рассчитаны для строительства в районах со следующими характеристиками:</span>
+
+						<ul class="card-product__info-list">
+							<li class="card-product__info-item">Сейсмичностью не выше 6 баллов;</li>
+							<li class="card-product__info-item">Грунты в основании однородные, непросадочные; </li>
+							<li class="card-product__info-item">Расчетные зимние температуры воздуха -34 ºС до +40 ºС;</li>
+							<li class="card-product__info-item">Вес снегового покрова 100 кг/м2(третий географический район);</li>
+							<li class="card-product__info-item">Скоростной напор ветра 45 кг/м2 (третий географический район);</li>
+							<li class="card-product__info-item">Не предусматривается применение типового проекта в районах с особыми условиями строительства.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="card-product__tab-content js-tab-content" id="specifications">
+					<span class="card-product__tab-title card-product__tab-title--mod">Характеристики</span>
+					<div class="static-content">
+						<table>
+							<thead>
+								<tr>
+									<th>Тип башни</th>
+									<th>Объем бака, м<sup>3</sup></th>
+									<th>Высота опоры</th>
+									<th>Диаметр опоры</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>БР-15-9</td>
+									<td>15</td>
+									<td>9</td>
+									<td>1020</td>
+								</tr>
+								<tr>
+									<td>БР-15-12</td>
+									<td>15</td>
+									<td>12</td>
+									<td>1020</td>
+								</tr>
+								<tr>
+									<td>БР-15-15</td>
+									<td>15</td>
+									<td>15</td>
+									<td>1020</td>
+								</tr>
+								<tr>
+									<td>БР-25-9</td>
+									<td>25</td>
+									<td>9</td>
+									<td>1020</td>
+								</tr>
+								<tr>
+									<td>БР-25-12</td>
+									<td>25</td>
+									<td>12</td>
+									<td>1020</td>
+								</tr>
+								<tr>
+									<td>БР-25-15</td>
+									<td>25</td>
+									<td>15</td>
+									<td>1020</td>
+								</tr>
+								<tr>
+									<td>БР-50-15</td>
+									<td>50</td>
+									<td>15</td>
+									<td>1500</td>
+								</tr>
+								<tr>
+									<td>БР-50-18</td>
+									<td>50</td>
+									<td>18</td>
+									<td>1500</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="card-product__tab-content js-tab-content" id="constructive-decisions">
+					<span class="card-product__tab-title card-product__tab-title--const">Конструктивные решения</span>
+
+					<div class="card-product__content-item-box">
+						<div class="card-product__content-inner">
+							<img class="card-product__content-img" src="pic/scheme/scheme-1.jpg" alt="">
+						</div>
+						<div class="card-product__content-holder card-product__content-holder--right">
+							<ol class="card-product__content-list">
+								<li class="card-product__content-item">Водонапорная башня состоит из бака и опоры, составляемой из частей длиной 6 и 9 метров. </li>
+								<li class="card-product__content-item">Стальной бак сварной, цилиндрической формы, не имеет днища и переходит конической частью (горловиной в цилиндрическую опору, заполненную водой).</li>
+								<li class="card-product__content-item">Стальная крышка приваривается на заводе изготовителя к цилиндрической стенке бака и является диафрагмой жесткости. В крышке имеется смотровой люк. На внутренних стенках бака приварены скобы-льдоудержатели.</li>
+								<li class="card-product__content-item">Наружная лестница стальная, с предохранительным ограждением. </li>
+								<li class="card-product__content-item">Внутри башни предусмотрены скобы для пуска обслуживающего персонала при очистке и ремонте башни.</li>
+								<li class="card-product__content-item">Оборудование башни состоит из напорно-разводящего трубопровода</li>
+								<li class="card-product__content-item">Для возможности использования башни при пожаротушении и отбора проб воды на напорно-разводящий трубопровод устанавливается стояк с двумя запорными вентиляциями и двумя соединительными головками. </li>
+							</ol>
+						</div>
+					</div>
+
+					<div class="card-product__content-item-box">
+						<div class="card-product__content-inner">
+							<img class="card-product__content-img" src="pic/scheme/scheme-2.jpg" alt="">
+						</div>
+						<div class="card-product__content-holder card-product__content-holder--right">
+							<ol class="card-product__content-list">
+								<li class="card-product__content-item">Водонапорная башня состоит из бака и опоры, составляемой из частей длиной 6 и 9 метров. </li>
+								<li class="card-product__content-item">Стальной бак сварной, цилиндрической формы, не имеет днища и переходит конической частью (горловиной в цилиндрическую опору, заполненную водой).</li>
+								<li class="card-product__content-item">Стальная крышка приваривается на заводе изготовителя к цилиндрической стенке бака и является диафрагмой жесткости. В крышке имеется смотровой люк. На внутренних стенках бака приварены скобы-льдоудержатели.</li>
+								<li class="card-product__content-item">Наружная лестница стальная, с предохранительным ограждением. </li>
+								<li class="card-product__content-item">Внутри башни предусмотрены скобы для пуска обслуживающего персонала при очистке и ремонте башни.</li>
+								<li class="card-product__content-item">Оборудование башни состоит из напорно-разводящего трубопровода</li>
+								<li class="card-product__content-item">Для возможности использования башни при пожаротушении и отбора проб воды на напорно-разводящий трубопровод устанавливается стояк с двумя запорными вентиляциями и двумя соединительными головками. </li>
+							</ol>
+						</div>
+					</div>
+				</div>
+				<div class="card-product__tab-content js-tab-content" id="documents-certificates">
+					<span class="card-product__tab-title card-product__tab-title--doc">Документы и сертификаты</span>
+
+					<div class="card-product__doc-list">
+						<div class="card-product__doc-item">
+							<a download="#" class="card-product__doc-download">
+								<div class="card-product__doc-icon">
+									<svg class="icon-file">
+										<use xlink:href="#file"></use>
+									</svg>
+								</div>
+								<div class="card-product__doc-inner">
+									<span class="card-product__doc-name">Название документа который можно скачать</span>
+									<span class="card-product__doc-val">doc. 153 кб.</span>
+								</div>
+							</a>
+						</div>
+						<div class="card-product__doc-item">
+							<a download="#" class="card-product__doc-download">
+								<div class="card-product__doc-icon">
+									<svg class="icon-file">
+										<use xlink:href="#file"></use>
+									</svg>
+								</div>
+								<div class="card-product__doc-inner">
+									<span class="card-product__doc-name">Название документа который можно скачать</span>
+									<span class="card-product__doc-val">doc. 153 кб.</span>
+								</div>
+							</a>
+						</div>
+						<div class="card-product__doc-item">
+							<a download="#" class="card-product__doc-download">
+								<div class="card-product__doc-icon">
+									<svg class="icon-file">
+										<use xlink:href="#file"></use>
+									</svg>
+								</div>
+								<div class="card-product__doc-inner">
+									<span class="card-product__doc-name">Название документа который можно скачать</span>
+									<span class="card-product__doc-val">doc. 153 кб.</span>
+								</div>
+							</a>
+						</div>
+						<div class="card-product__doc-item">
+							<a download="#" class="card-product__doc-download">
+								<div class="card-product__doc-icon">
+									<svg class="icon-file">
+										<use xlink:href="#file"></use>
+									</svg>
+								</div>
+								<div class="card-product__doc-inner">
+									<span class="card-product__doc-name">Название документа который можно скачать</span>
+									<span class="card-product__doc-val">doc. 153 кб.</span>
+								</div>
+							</a>
+						</div>
+						<div class="card-product__doc-item">
+							<a download="#" class="card-product__doc-download">
+								<div class="card-product__doc-icon">
+									<svg class="icon-file">
+										<use xlink:href="#file"></use>
+									</svg>
+								</div>
+								<div class="card-product__doc-inner">
+									<span class="card-product__doc-name">Название документа который можно скачать</span>
+									<span class="card-product__doc-val">doc. 153 кб.</span>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+  <div class="popups" id="popup-price">
+	<h2 class="popups__title">Узнать стоимость</h2>
+	
+
+	<form action="send.php" method="POST" class="popups__form js-popup-validate">
+		<div class="popups__form-row">
+			<div class="popups__form-col">
+				
+					<div class="popups__form-item">
+						<select name="select" id="" class="js-select">
+							<option value="">Водонапорная башня системы какой-то там</option>
+							<option value="">Вертикальный резервуар</option>
+							<option value="">Горизонтальный резервуар</option>
+							<option value="">Вертикальный резервуар</option>
+							<option value="">Горизонтальный резервуар</option>
+							<option value="">Вертикальный резервуар</option>
+						</select>
+					</div>
+				
+				<div class="popups__form-item form-group">
+					<input type="text" class="popups__form-input" name="name" placeholder="ФИО">
+				</div>
+				<div class="popups__form-item form-group">
+					<input type="email" class="popups__form-input" name="email" placeholder="Эл. почта">
+					<span class="popups__form-txt">
+						Пришлем ответ на заявку, без спама!
+					</span>
+				</div>
+				<div class="popups__form-item form-group">
+					<input type="tel" class="popups__form-input" data-phone-mask name="phone" placeholder="Номер телефона">
+					<span class="popups__form-txt">
+						Позвоним уточнить вопрос
+					</span>
+				</div>
+				<input type="hidden" name="id" value="price">
+				<div class="popups__form-item form-group">
+					<textarea name="message" class="popups__form-message" placeholder="Ваш вопрос"></textarea>
+				</div>
+			</div>
+			<div class="popups__form-col">
+				<div class="popups__form-load ">
+					<label class="popups__form-load-item">
+						<input type="file" name="file" id="file">
+						<span class="popups__form-load-txt"><a href="#">Выберете</a> или перетащите сюда файл с эскизом, чертежом или описанием задачи</span>
+					</label>
+					<span class="filename"></span>
+				</div>
+
+				<button type="submit" class="btn popups__form-btn js-send-request" data-type="price">
+					Отправить
+				</button>
+				<div class="popups__form-check">
+					<label class="checkbox">
+						<input type="checkbox" name="check" checked>
+						<span>Нажимая на кнопку отправить вопрос я даю согласие на обработку своих персональных данных, и соглашаюсь с <a href="#">	политикой конфиденциальности</a></span>
+					</label>
+				</div>
+			</div>
+		</div>
+	</form>
+
+</div>
+
+</div>
+
+<div class="popup-success" id="popup-success">
+	<span>Успешно отправлено</span>
+</div>
+
+<footer class="footer">
+	<div class="container">
+  
+	  <div class="footer__wrap">
+	    <div class="footer__left">
+      
+	      <div class="footer__logo">
+	        <a href="#" class="footer__logo-link">
+	          <img src="pic/logo-footer.png" alt="footer-logo" class="footer__logo-img">
+	        </a>
+	      </div>
+	      
+	      <ul class="footer__nav-list">
+	        <li class="footer__nav-item">
+	          <a href="#" class="footer__nav-link">Компания</a>
+	        </li>
+	        <li class="footer__nav-item">
+	          <a href="#" class="footer__nav-link">Продукция</a>
+	        </li>
+	        <li class="footer__nav-item">
+	          <a href="#" class="footer__nav-link">Портфолио</a>
+	        </li>
+	        <li class="footer__nav-item">
+	          <a href="#" class="footer__nav-link">Контакты</a>
+	        </li>
+	      </ul>
+	    </div>
+	    
+	    <div class="footer__right">
+      
+        <ul class="footer__contact-list">
+          <li class="footer__contact-item">
+            <div class="footer__contact-holder footer__contact-holder--icon">
+              <svg class="icon-location">
+                <use xlink:href="#location"></use>
+              </svg>
+            </div>
+            <div class="footer__contact-holder footer__contact-holder--name">
+              <span class="footer__contact-txt">656023, Алтайский край, г.Барнаул, проезд 9-й заводской 42-е</span>
+            </div>
+          </li>
+          <li class="footer__contact-item">
+            <div class="footer__contact-holder footer__contact-holder--icon">
+              <svg class="icon-phone">
+                <use xlink:href="#phone"></use>
+              </svg>
+            </div>
+            <div class="footer__contact-holder footer__contact-holder--name">
+              <div class="footer__contact-inner">
+                <a href="tel:+73852581450" class="footer__contact-txt footer__contact-txt--link">+7 (3852) 58-14-50</a>
+              </div>
+              <div class="footer__contact-inner">
+                <a href="tel:+73852601522" class="footer__contact-txt footer__contact-txt--link">+7 (3852) 60-15-22</a>
+              </div>
+              <div class="footer__contact-inner">
+                <a href="tel:+73852330016" class="footer__contact-txt footer__contact-txt--link">+7 (3852) 33-00-16</a>
+              </div>
+            </div>
+          </li>
+          <li class="footer__contact-item">
+            <div class="footer__contact-holder footer__contact-holder--icon">
+              <svg class="icon-email">
+                <use xlink:href="#email"></use>
+              </svg>              
+            </div>
+            <div class="footer__contact-holder footer__contact-holder--name">
+              <a href="mailto:info@bzmc.ru" class="footer__contact-txt footer__contact-txt--mail">info@bzmc.ru</a>
+            </div>
+          </li>
+        </ul>
+        
+        <a data-fancybox data-src="#popup-question" href="javascript:;" class="btn footer__ask">ЗАДАТЬ ВОПРОС</a>
+	      
+	    </div>
+	  </div>
+	  
+	  <div class="footer__wrap">
+	    <span class="footer__copyright">2018 ООО Алтайрезервуар</span>
+	    <ul class="footer__info-list">
+	      <li class="footer__info-item">
+	        <a href="#" class="footer__info-link">Политика конфиденциальности</a>
+	      </li>
+	      <li class="footer__info-item">
+	        <span class="footer__info-txt">Создание сайта -</span>
+	        <a href="#" class="footer__info-link">Next</a>
+	      </li>
+	    </ul>
+	  </div>
+	  
+	</div>
+</footer>
+
+<div class="popups-question" id="popup-question">
+	<h2 class="popups-question__title">Задайте нам вопрос</h2>
+	<form action="send.php" method="POST" class="popups-question__form js-popup-validate">
+		<div class="popups-question__form-item form-group">
+			<input type="text" class="popups-question__form-input" name="name" placeholder="ФИО">
+		</div>
+		<div class="popups-question__form-item form-group">
+			<input type="email" class="popups-question__form-input" name="email" placeholder="Эл. почта">
+			<span class="popups-question__form-txt">
+				Пришлем ответ на заявку, без спама!
+			</span>
+		</div>
+		<div class="popups-question__form-item form-group">
+			<input type="tel" class="popups-question__form-input" name="phone" placeholder="Номер телефона">
+			<span class="popups-question__form-txt">
+				Пришлем ответ на заявку, без спама!
+			</span>
+		</div>
+		<input type="hidden" name="id" value="question">
+		<div class="popups-question__form-item form-group">
+			<textarea name="message" class="popups-question__form-message" placeholder="Ваш вопрос"></textarea>
+		</div>
+		<button type="submit" class="btn popups-question__form-btn js-send-request" data-type="question">
+			Отправить
+		</button>
+		<div class="popups-question__form-check">
+			<label class="checkbox">
+				<input type="checkbox" name="check" checked>
+				<span>Нажимая на кнопку отправить вопрос я даю согласие на обработку своих персональных данных, и соглашаюсь с <a href="#">политикой конфиденциальности</a></span>
+			</label>
+		</div>
+	</form>
+</div>
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Иные сферы</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+  <header class="header">
+	<div class="container">
+		<div class="header__top">
+			<div class="header__left">
+				<a href="index.html" class="header__logo">
+					<span class="header__img-wrapp">
+						<img src="pic/logo/logo-1.png" alt="logo">
+					</span>
+					<span class="header__text">
+						<span class="header__text-top">
+							Деловой партнер
+						</span>
+						<span class="header__text-bott">
+							Коллекторское агентство
+						</span>
+					</span>	
+				</a>
+			</div>
+			<div class="header__right">
+				<div class="header__tel header__tel--top">
+					<a href="tel:88003332920">8-800-333-29-20</a>
+				</div>
+				<div class="header__tel header__tel--bott">
+					<a href="tel:89184189393">8-918-418-93-93</a>
+				</div>
+				<div class="header__call-back">
+					<a data-fancybox data-src="#popup" href="javascript:;">Заказать звонок</a>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div class="header__bott">
+		<div class="container">
+			<nav class="header__nav">
+				<ul class="header__list">
+					<li class="header__item"><a href="index.html" class="active" >Главная</a></li>
+					<li class="header__item"><a href="about.html" class="" >О компании</a></li>
+					<li class="header__item"><a href="contacts.html" class="" >Контакты</a></li>
+					<li class="header__item"><a href="notice.html" class="" >Закупки</a></li>
+					<li class="header__item"><a href="documents.html" class="" >Документы</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+    
+    <div class="wrapper">
+    	
+    	<div class="other">
+	<div class="container">
+		<div class="other__wrapper static-content">
+			<h4>Иные сферы</h4>
+			<p>
+				ООО Коллекторское агентство «ДЕЛОВОЙ ПАРТНЕР» предлагает Вашему предприятию услуги по взысканию дебиторской задолженности с физических и юридических лиц.
+			</p>
+			<p>
+				Агентство готово вести процесс взыскания в досудебном порядке, на стадии судебного разбирательства, в процессе исполнительного производства.
+			</p>
+			<p>
+				Агентство осуществляет свою деятельность на территории всей Российской Федерации.
+			</p>
+			<p>
+				Работа на досудебном этапе включает в себя мероприятия: розыск должников, установление мест их работы, рассылка претензий, телефонные переговоры, проведение личных встреч, а также сбор дополнительной информации.
+			</p>
+			<p>
+				Благодаря имеющимся информационным ресурсам индивидуальный портрет должника формируется полным и облегчает процесс дальнейшего взыскания.
+			</p>
+			<p>
+				Судебная обработка должников и исполнительная стадия предусматривает полное сопровождение судебного процесса, представительство в судах всех инстанций и последующее сопровождение исполнения судебных решений в территориальных ОСП. Имеется опыт взыскания по долговым обязательствам с истекшим сроком исковой давности.
+			</p>
+			<p>
+				В работе имеется программно-аппаратный комплекс, который обеспечивает технологичность рабочего процесса, осуществляет полный контроль над взысканием и гарантирует оперативность предоставления Заказчику сведений о промежуточных итогах работ.
+			</p>
+			<p>
+				Агентство зарегистрировано как оператор, осуществляющий обработку персональных данных. Использование персональных сведений осуществляется строго в соответствии с ФЗ РФ «О персональных данных».
+			</p>
+			<p>Готовы рассмотреть любые варианты выкупа долгов.</p>
+			<div class="btn__wrapper btn__wrapper--other">
+				<a data-fancybox data-src="#popup" href="javascript:;" class="btn">Обратиться в агентство</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+    	<div class="popup" id="popup">
+	<form action="ajax-form.php" class="popup__form js-ajax-form" id="popup__form" method="post">
+		<div class="popup__inner">
+			<div class="popup__input-wrapp">
+				<input type="text" name="firstname" id="firstname" placeholder="Фамилия, имя, отчество" autocomplete="off">
+			</div>
+			<div class="popup__input-wrapp">
+				<input type="tel" name="phone" id="phone" placeholder="Контактный номер телефона" autocomplete="off">
+			</div>
+			<div class="popup__input-wrapp">
+				<textarea name="message" id="message" placeholder="Текст сообщения"></textarea>
+			</div>
+			<div class="popup__btn-wrapp">
+				<button class="btn btn--grey" type="submit">Отправить</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="popup__success" id="popup__success">
+	<div class="popup__text">
+		Сообщение успешно отправлено!
+	</div>
+</div>
+    	
+    </div>
+
+  <footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__info">
+			<span class="footer__copy">
+				© ООО Коллекторское агентство «ДЕЛОВОЙ ПАРТНЕР», 2018
+			</span>
+			<div class="footer__phone">
+				<span class="footer__phone-item">
+					<a href="tel:88003332920">8-800-333-29-20</a>
+				</span>
+				<span class="footer__phone-item">
+					<a href="tel:89184189393">8-918-418-93-93</a>
+				</span>	
+			</div>
+			<a href="mailto:control@roszaym.com" class="footer__mail">
+				control@roszaym.com
+			</a>
+		</div>
+		<div class="footer__logo">
+			<a href="#">
+				<span class="footer__logo-img">
+					<svg class="icon-logo-2">
+						<use xlink:href="#logo-2"></use>
+					</svg>
+				</span>
+				<span class="footer__logo-txt">
+					Мы в реестре <span>РОСКОМНАДЗОРА</span>
+				</span>
+			</a>
+		</div>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,1829 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Приемка квартир в новостройке</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+	<div class="wrapper">
+
+        <header class="header ">
+	<div class="container">
+		<div class="header__wrapp">
+			<div class="header__logo">
+				<a href="#" class="header__logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="header__logo-mob">
+				<a href="#" class="header__logo-mob-link">
+					<svg class="icon-logo-mob">
+						<use xlink:href="#logo-mob"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="header__contact">
+				<div class="header__contact-callback">
+					<span class="btn-border">
+						<a data-fancybox data-src="#popup-callback" class="btn">Обратный звонок</a>
+					</span>
+				</div>
+				<div class="header__contact-time">
+					<span class="header__contact-icon">
+						<svg class="icon-clock">
+							<use xlink:href="#clock"></use>
+						</svg>
+					</span>
+					<div class="header__contact-descr">
+						<span class="header__contact-text">Работаем для вас</span>
+						<span class="header__contact-time-work">с 9:00 до 21:00</span>
+					</div>
+				</div>
+				<div class="header__contact-email">
+					<span class="header__contact-icon">
+						<svg class="icon-email">
+							<use xlink:href="#email"></use>
+						</svg>
+					</span>
+					<div class="header__contact-descr">
+						<span class="header__contact-text">E-mail</span>
+						<span class="header__contact-link-wrapp">
+							<a href="mailto:sales@rusmaster.spb.ru" class="header__contact-link">sales@rusmaster.spb.ru</a>
+						</span>
+					</div>
+				</div>
+				<div class="header__contact-phone">
+					<a href="tel:+78126423828" class="header__contact-phone-link">
+						<span class="header__contact-phone-small">+7 (812)</span>
+						<span class="header__contact-phone-big">642-38-28</span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		
+			<nav class="header__nav js-width js-wrapp-nav">
+				<div class="header__btn-open js-btn-open">
+					<div class="header__btn-open-wrapp">
+						<span class="header__btn-open-line"></span>
+						<span class="header__btn-open-line"></span>
+						<span class="header__btn-open-line"></span>
+					</div>
+					<span class="header__btn-open-text">Меню</span>
+				</div>
+				<ul class="header__list js-menu-open">
+					<div class="header__btn-close js-menu-close"></div>
+					<li class="header__item active-page">
+						<a class="header__link header__link--more js-more-big">Ремонт квартир</a>
+						<div class="header__submenu-wrapp js-submenu">
+							<div class="header__back-menu">
+								<a class="header__back-text italic js-back">Ремонт квартир</a>
+							</div>
+							<div class="header__submenu">
+								<div class="header__submenu-col">
+									<div class="header__submenu-inner">
+										<h6 class="header__submenu-title">Тип квартиры</h6>
+										<ul class="header__submenu-list">
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Студия</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Однокомнатная</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Двухкомнатная</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Трехкомнатная</a>
+											</li>
+										</ul>
+									</div>
+									<div class="header__submenu-inner">
+										<h6 class="header__submenu-title">Тип дома</h6>
+										<ul class="header__submenu-list">
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Новостройка</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Старый фонд</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="header__submenu-col">
+									<div class="header__submenu-inner">
+										<h6 class="header__submenu-title">Тип ремонта</h6>
+										<ul class="header__submenu-list">
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Косметический</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Капитальный</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Элитный</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Эконом</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Комфорт</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Евро</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Дизайнерский</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Комплексный</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="header__submenu-col">
+									<div class="header__submenu-inner">
+										<h6 class="header__submenu-title">Тип помещения</h6>
+										<ul class="header__submenu-list">
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Комната</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Кухня</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Прихожая</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Санузел совмещенный</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Ванна</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Туалет</a>
+											</li>
+										</ul>
+									</div>
+									<div class="header__submenu-inner">
+										<h6 class="header__submenu-title">Ремонт коттеджей</h6>
+									</div>
+								</div>
+								<div class="header__submenu-col">
+									<div class="header__submenu-inner">
+										<h6 class="header__submenu-title">Другое</h6>
+										<ul class="header__submenu-list">
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Для иногородних</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Под сдачу</a>
+											</li>
+										</ul>
+									</div>
+									<div class="header__submenu-btn-wrapp">
+										<span class="btn-plus">
+											<a href="#" class="btn">Калькулятор</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">Приемка квартир</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">Дизайн интерьера</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link header__link--more js-more-small">Для бизнеса</a>
+						<div class="header__submenu-small js-submenu-small">
+							<div class="header__back-menu">
+								<a class="header__back-text italic js-back">Для бизнеса</a>
+							</div>
+							<ul class="header__submenu-small-list">
+								<li class="header__submenu-small-item">
+									<a href="#" class="header__submenu-small-link">Офис</a>
+								</li>
+								<li class="header__submenu-small-item">
+									<a href="#" class="header__submenu-small-link">Коммерческое помещений</a>
+								</li>
+								<li class="header__submenu-small-item">
+									<a href="#" class="header__submenu-small-link">Кафе/Ресторан/бар</a>
+								</li>
+								<li class="header__submenu-small-item">
+									<a href="#" class="header__submenu-small-link">Магазин</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">Цены</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">Контакты</a>
+					</li>
+				</ul>
+			</nav>
+		
+	</div>
+</header>
+
+
+        <div class="acceptance-heading">
+    <div class="acceptance-heading__outer" style="background-image: url(pic/bg/bg-acceptance-heading.png);">
+        <div class="container">
+            <div class="acceptance-heading__wrap">
+                <div class="acceptance-heading__holder acceptance-heading__holder--left">
+                    <h1 class="acceptance-heading__title">Приемка квартир в новостройке</h1>
+                    <p class="acceptance-heading__desc">Приемка квартиры – ответственный шаг перед получением заветных ключей от застройщика. Увы, многие новоселы в порыве радости подписывают акт практически не глядя, в результате получая в собственность жилье с изъянами.</p>
+                    <p class="acceptance-heading__desc acceptance-heading__desc--bold">Чтобы квартира радовала качеством ремонта, а недоработки застройщика не пришлось устранять за свой счет, доверьте процедуру приемки профессионалам.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="hidden-developer">
+    <div class="hidden-developer__outer">
+        <div class="container">
+            <div class="hidden-developer__wrap">
+                <div class="hidden-developer__holder">
+                    <span class="hidden-developer__title">Что может скрывать застройщик?</span>
+                    <div class="hidden-developer__info">
+                        <ul class="hidden-developer__info-list">
+                            <li class="hidden-developer__info-item">
+                                <div class="hidden-developer__info-top">
+                                    <span class="hidden-developer__info-number">99%</span>
+                                </div>
+                                <div class="hidden-developer__info-bottom">
+                                    <span class="hidden-developer__info-desc">квартир сдаются с дефектами</span>
+                                </div>
+                            </li>
+                            <li class="hidden-developer__info-item">
+                                <div class="hidden-developer__info-top">
+                                    <span class="hidden-developer__info-number">7%</span>
+                                </div>
+                                <div class="hidden-developer__info-bottom">
+                                    <span class="hidden-developer__info-desc">квартир не соответствуют метражу, указанному в документах</span>
+                                </div>
+                            </li>
+                            <li class="hidden-developer__info-item">
+                                <div class="hidden-developer__info-top">
+                                    <span class="hidden-developer__info-number">82%</span>
+                                </div>
+                                <div class="hidden-developer__info-bottom">
+                                    <span class="hidden-developer__info-desc">дефектов являются скрытыми</span>
+                                </div>
+                            </li>
+                            <li class="hidden-developer__info-item">
+                                <div class="hidden-developer__info-top">
+                                    <span class="hidden-developer__info-number">68%</span>
+                                </div>
+                                <div class="hidden-developer__info-bottom">
+                                    <span class="hidden-developer__info-desc">сданных квартир имеют нарушения теплового контура</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hidden-developer__holder">
+                    <span class="hidden-developer__subtitle">Большинство квартир сдаются с дефектами. Как явными, так и скрытыми, выявить  которые могут только специалисты с использованием оборудования.</span>
+
+                    <h4 class="hidden-developer__caption">Часто встречающиеся дефекты в квартирах с чистовой и  предчистовой отделкой:</h4>
+
+                    <ul class="hidden-developer__list line">
+                        <li class="hidden-developer__item">установленные со щелями и зазорами стеклопакеты и двери;</li>
+                        <li class="hidden-developer__item">кривые стены, полы и потолок;</li>
+                        <li class="hidden-developer__item">некачественно установленные радиаторы;</li>
+                        <li class="hidden-developer__item">неработающая вентиляция.</li>
+                    </ul>
+
+                    <h4 class="hidden-developer__caption">В квартирах с чистовой отделкой:</h4>
+
+                    <ul class="hidden-developer__list line">
+                        <li class="hidden-developer__item">неработающая электрика;</li>
+                        <li class="hidden-developer__item">установленная с нарушениями сантехника;</li>
+                        <li class="hidden-developer__item">низкое качество штукатурных работ;</li>
+                        <li class="hidden-developer__item">криво установленная дверная коробка.</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="our-works our-works--defects">
+  <div class="our-works__header">
+    <div class="container">
+      <h2 class="our-works__title">Дефекты при приемке</h2>
+    </div>
+  </div>
+  <div class="our-works__row js-works-slider">
+    <div class="our-works__col">
+      <a href="#" class="our-works__link" style="background-image: url(pic/defects-acceptance/defects-acceptance-01.jpg);"></a>
+      <div class="our-works__info">
+        <div class="our-works__info-top">
+          <a href="#" class="our-works__info-link">ЖК «Петр Великий»</a>
+        </div>
+        <ul class="our-works__info-list">
+          <li class="our-works__info-item">Застройщик: ЛенСтройДом</li>
+          <li class="our-works__info-item">Тип помещения: квартира-студия</li>
+          <li class="our-works__info-item">Площадь помещения: 68 кв.м</li>
+          <li class="our-works__info-item">Состояние квартиры: новая отделка</li>
+          <li class="our-works__info-item">Обнаруженные дефекты: неровные полы, неправильные отступы, плохая проводка</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="our-works__col">
+      <a href="#" class="our-works__link" style="background-image: url(pic/defects-acceptance/defects-acceptance-02.jpg);"></a>
+      <div class="our-works__info">
+        <div class="our-works__info-top">
+          <a href="#" class="our-works__info-link">ЖК «Петр Великий»</a>
+        </div>
+        <ul class="our-works__info-list">
+          <li class="our-works__info-item">Застройщик: ЛенСтройДом</li>
+          <li class="our-works__info-item">Тип помещения: квартира-студия</li>
+          <li class="our-works__info-item">Площадь помещения: 68 кв.м</li>
+          <li class="our-works__info-item">Состояние квартиры: новая отделка</li>
+          <li class="our-works__info-item">Обнаруженные дефекты: неровные полы, неправильные отступы, плохая проводка</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="our-works__col">
+      <a href="#" class="our-works__link" style="background-image: url(pic/defects-acceptance/defects-acceptance-03.jpg);"></a>
+      <div class="our-works__info">
+        <div class="our-works__info-top">
+          <a href="#" class="our-works__info-link">ЖК «Петр Великий»</a>
+        </div>
+        <ul class="our-works__info-list">
+          <li class="our-works__info-item">Застройщик: ЛенСтройДом</li>
+          <li class="our-works__info-item">Тип помещения: квартира-студия</li>
+          <li class="our-works__info-item">Площадь помещения: 68 кв.м</li>
+          <li class="our-works__info-item">Состояние квартиры: новая отделка</li>
+          <li class="our-works__info-item">Обнаруженные дефекты: неровные полы, неправильные отступы, плохая проводка</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="our-works__col our-works__col--more">
+      <a href="#" class="our-works__link">
+        <div class="our-works__link-inner">
+          <span class="our-works__link-txt">Все дефекты</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="our-works__col our-works__col--hide">
+      <a href="#" class="our-works__link" style="background-image: url(pic/defects-acceptance/defects-acceptance-04.jpg);"></a>
+      <div class="our-works__info">
+        <div class="our-works__info-top">
+          <a href="#" class="our-works__info-link">ЖК «Петр Великий»</a>
+        </div>
+        <ul class="our-works__info-list">
+          <li class="our-works__info-item">Застройщик: ЛенСтройДом</li>
+          <li class="our-works__info-item">Тип помещения: квартира-студия</li>
+          <li class="our-works__info-item">Площадь помещения: 68 кв.м</li>
+          <li class="our-works__info-item">Состояние квартиры: новая отделка</li>
+          <li class="our-works__info-item">Обнаруженные дефекты: неровные полы, неправильные отступы, плохая проводка</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="our-works__col our-works__col--hide">
+      <a href="#" class="our-works__link" style="background-image: url(pic/defects-acceptance/defects-acceptance-05.jpg);"></a>
+      <div class="our-works__info">
+        <div class="our-works__info-top">
+          <a href="#" class="our-works__info-link">ЖК «Петр Великий»</a>
+        </div>
+        <ul class="our-works__info-list">
+          <li class="our-works__info-item">Застройщик: ЛенСтройДом</li>
+          <li class="our-works__info-item">Тип помещения: квартира-студия</li>
+          <li class="our-works__info-item">Площадь помещения: 68 кв.м</li>
+          <li class="our-works__info-item">Состояние квартиры: новая отделка</li>
+          <li class="our-works__info-item">Обнаруженные дефекты: неровные полы, неправильные отступы, плохая проводка</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="our-works__col our-works__col--hide">
+      <a href="#" class="our-works__link" style="background-image: url(pic/defects-acceptance/defects-acceptance-06.jpg);"></a>
+      <div class="our-works__info">
+        <div class="our-works__info-top">
+          <a href="#" class="our-works__info-link">ЖК «Петр Великий»</a>
+        </div>
+        <ul class="our-works__info-list">
+          <li class="our-works__info-item">Застройщик: ЛенСтройДом</li>
+          <li class="our-works__info-item">Тип помещения: квартира-студия</li>
+          <li class="our-works__info-item">Площадь помещения: 68 кв.м</li>
+          <li class="our-works__info-item">Состояние квартиры: новая отделка</li>
+          <li class="our-works__info-item">Обнаруженные дефекты: неровные полы, неправильные отступы, плохая проводка</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="our-works__col our-works__col--hide">
+      <a href="#" class="our-works__link" style="background-image: url(pic/defects-acceptance/defects-acceptance-07.jpg);"></a>
+      <div class="our-works__info">
+        <div class="our-works__info-top">
+          <a href="#" class="our-works__info-link">ЖК «Петр Великий»</a>
+        </div>
+        <ul class="our-works__info-list">
+          <li class="our-works__info-item">Застройщик: ЛенСтройДом</li>
+          <li class="our-works__info-item">Тип помещения: квартира-студия</li>
+          <li class="our-works__info-item">Площадь помещения: 68 кв.м</li>
+          <li class="our-works__info-item">Состояние квартиры: новая отделка</li>
+          <li class="our-works__info-item">Обнаруженные дефекты: неровные полы, неправильные отступы, плохая проводка</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="our-works__col our-works__col--hide-1650 our-works__col--hide">
+      <a href="#" class="our-works__link" style="background-image: url(pic/defects-acceptance/defects-acceptance-08.jpg);"></a>
+      <div class="our-works__info">
+        <div class="our-works__info-top">
+          <a href="#" class="our-works__info-link">ЖК «Петр Великий»</a>
+        </div>
+        <ul class="our-works__info-list">
+          <li class="our-works__info-item">Застройщик: ЛенСтройДом</li>
+          <li class="our-works__info-item">Тип помещения: квартира-студия</li>
+          <li class="our-works__info-item">Площадь помещения: 68 кв.м</li>
+          <li class="our-works__info-item">Состояние квартиры: новая отделка</li>
+          <li class="our-works__info-item">Обнаруженные дефекты: неровные полы, неправильные отступы, плохая проводка</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="our-works__col our-works__col--hide-1650 our-works__col--hide-1400 our-works__col--hide">
+      <a href="#" class="our-works__link" style="background-image: url(pic/defects-acceptance/defects-acceptance-09.jpg);"></a>
+      <div class="our-works__info">
+        <div class="our-works__info-top">
+          <a href="#" class="our-works__info-link">ЖК «Петр Великий»</a>
+        </div>
+        <ul class="our-works__info-list">
+          <li class="our-works__info-item">Застройщик: ЛенСтройДом</li>
+          <li class="our-works__info-item">Тип помещения: квартира-студия</li>
+          <li class="our-works__info-item">Площадь помещения: 68 кв.м</li>
+          <li class="our-works__info-item">Состояние квартиры: новая отделка</li>
+          <li class="our-works__info-item">Обнаруженные дефекты: неровные полы, неправильные отступы, плохая проводка</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="our-works__bottom">
+    <a href="#" class="our-works__more">
+      <div class="our-works__more-inner">
+        <span class="our-works__more-txt">Все дефекты</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+</div>
+
+        <div class="expert-advice">
+    <div class="container">
+        <div class="expert-advice__wrap">
+            <div class="expert-advice__holder">
+                <div class="expert-advice__top">
+                    <div class="question question--red">
+                        <div class="question__icon-wrapp">
+                            <div class="question__icon"></div>
+                        </div>
+                        <div class="question__text">
+                            Почему не стоит проводить приемку квартиры самостоятельно?
+                        </div>
+                    </div>
+                </div>
+                <div class="expert-advice__bottom">
+                    <span class="expert-advice__desc">Чтобы обнаружить недочеты, нужны не только специальные знания, но и профессиональное оборудование. У собственника, как правило, нет ни того, ни другого. И застройщики этим с успехом пользуются. Их задача – как можно быстрей подписать акт приемки, чтобы не платить за содержание жилья и неустойку за сорванные сроки. Поэтому на приемку застройщики зачастую выделяют не более 30 минут. За это время обнаружить все имеющиеся дефекты непрофессионалу невозможно.</span>
+                </div>
+            </div>
+            <div class="expert-advice__holder">
+                <div class="expert-advice__top">
+                    <div class="question question--green">
+                        <div class="question__icon-wrapp">
+                            <div class="question__icon"></div>
+                        </div>
+                        <div class="question__text">
+                            Сколько можно сэкономить, обратившись к специалистам?
+                        </div>
+                    </div>
+                </div>
+                <div class="expert-advice__bottom">
+                    <span class="expert-advice__desc">Средняя сумма – от 10 до 90 тысяч рублей. Хотя бывают случаи, что эксперты находят в квартире недочетов на 300 тысяч. Проведя приемку самостоятельно и, скорее всего, не заметив дефектов, устранять их придется из собственного кармана.</span>
+                    <span class="expert-advice__desc">Наши профессионалы имеют опыт работы в технадзоре, а также все необходимое оборудование, поэтому выявят все строительные изъяны. Обратившись в «РМ Ремонт», вы сэкономите деньги и время.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="why why--acceptance">
+	<div class="container">
+		<h2 class="why__caption">Почему мы делаем ремонт лучше других</h2>
+		<div class="why__holder">
+			
+			<div class="why__item">
+				<span class="why__item-icon">
+					<svg class="icon-specialists">
+						<use xlink:href="#specialists"></use>
+					</svg>
+				</span>
+				<span class="why__item-title">Специалисты с опытом работы в технадзоре</span>
+				<span class="why__item-text">Знаем все нормы и требования, поэтому найдем малейшие отклонения от них</span>
+			</div>
+			
+			<div class="why__item">
+				<span class="why__item-icon">
+					<svg class="icon-equipment">
+						<use xlink:href="#equipment"></use>
+					</svg>
+				</span>
+				<span class="why__item-title">Специализированное оборудование</span>
+				<span class="why__item-text">Есть все необходимое специализированное оборудование. Выявим даже неявные дефекты</span>
+			</div>
+			
+			<div class="why__item">
+				<span class="why__item-icon">
+					<svg class="icon-time">
+						<use xlink:href="#time"></use>
+					</svg>
+				</span>
+				<span class="why__item-title">Вовремя приезжаем на приемку</span>
+				<span class="why__item-text">Вы не потратите ни минуты на ожидание</span>
+			</div>
+			
+			<div class="why__item">
+				<span class="why__item-icon">
+					<svg class="icon-urgent-check-out">
+						<use xlink:href="#urgent-check-out"></use>
+					</svg>
+				</span>
+				<span class="why__item-title">Срочный выезд специалистов</span>
+				<span class="why__item-text">При необходимости организуем приемку в день обращения</span>
+			</div>
+			
+			<div class="why__item">
+				<span class="why__item-icon">
+					<svg class="icon-round-clock">
+						<use xlink:href="#round-clock"></use>
+					</svg>
+				</span>
+				<span class="why__item-title">Работаем без выходных</span>
+				<span class="why__item-text">Выезжаем на приемку квартир в субботу и воскресенье</span>
+			</div>
+			
+			<div class="why__item">
+				<span class="why__item-icon">
+					<svg class="icon-help">
+						<use xlink:href="#help"></use>
+					</svg>
+				</span>
+				<span class="why__item-title">Поможем заполнить смотровой лист</span>
+				<span class="why__item-text">Укажем все отклонения от СНИП, дадим рекомендаци</span>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+      <div class="ruler ruler--acceptance js-ruler">
+	<div class="container">
+		<div class="ruler__holder">
+			<div class="ruler__inner">
+				<h2 class="ruler__title">Узнать стоимость приемки квартир</h2>
+				<form action="#" class="ruler__form">
+					<div class="ruler__form-holder js-form-parent">
+						<div class="ruler__form-inner">
+							<div class="ruler__row">
+								<span class="ruler__txt">
+									Площадь квартиры, м<sup>2</sup>
+								</span>
+								<div class="ruler__box ruler__box--small">
+									<span class="js-ruler-acceptance-txt"></span>
+									<input type="number" class="ruler__input js-ruler-acceptance" min="10" max="350" placeholder="40">
+								</div>
+								<div class="ruler__box ruler__box--big">
+									<div class="ruler__range">
+										<span class="ruler__range-number ruler__range-number--min">10</span>
+                    <div class="ruler__range-inner js-ruler-range"></div>
+										<span class="ruler__range-number ruler__range-number--max">350</span>
+									</div>
+								</div>
+							</div>
+							<div class="ruler__row">
+								<div class="ruler__col">
+									<span class="ruler__options-caption">Тепловизионное обследование:</span>
+									<ul class="ruler__options-list js-ruler-options-wrap">
+										<li class="ruler__options-item js-ruler-options-item">
+											<label class="radio radio--light">
+												<input class="js-ruler-options-radio" type="radio" name="type-apartment" value="1000">
+												<span>студия</span>
+											</label>
+										</li>
+										<li class="ruler__options-item js-ruler-options-item">
+											<label class="radio radio--light">
+												<input class="js-ruler-options-radio" type="radio" name="type-apartment" value="1500">
+												<span>однокомнатная квартира</span>
+											</label>
+										</li>
+										<li class="ruler__options-item js-ruler-options-item">
+											<label class="radio radio--light">
+												<input class="js-ruler-options-radio" type="radio" name="type-apartment" value="2000">
+												<span>двухкомнатная квартира</span>
+											</label>
+										</li>
+										<li class="ruler__options-item js-ruler-options-item">
+											<label class="radio radio--light">
+												<input class="js-ruler-options-radio" type="radio" name="type-apartment" value="2500">
+												<span>трехкомнатная квартира</span>
+											</label>
+										</li>
+									</ul>
+								</div>
+								<div class="ruler__col ruler__col--mod">
+									<span class="ruler__options-caption">Дополнительные опции:</span>
+									<ul class="ruler__options-list js-ruler-add">
+										<li class="ruler__options-item js-ruler-add-item">
+											<label class="checkbox checkbox--light">
+												<input class="js-ruler-add-check" type="checkbox" name="add" value="25">
+												<span>план квартиры</span>
+											</label>
+										</li>
+										<li class="ruler__options-item js-ruler-add-item">
+											<label class="checkbox checkbox--light">
+												<input class="js-ruler-add-check" type="checkbox" name="add" value="5">
+												<span>поверка на аммиак</span>
+											</label>
+										</li>
+										<li class="ruler__options-item js-ruler-add-item">
+											<label class="checkbox checkbox--light">
+												<input class="js-ruler-add-check" type="checkbox" name="add" value="5">
+												<span>замер ЭМИ</span>
+											</label>
+										</li>
+										<li class="ruler__options-item js-ruler-add-item">
+											<label class="checkbox checkbox--light">
+												<input class="js-ruler-add-check" type="checkbox" name="add" value="5">
+												<span>замер радиации</span>
+											</label>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="ruler__bottom">
+								<span class="ruler__bottom-box ruler__price">
+									<span class="ruler__bottom-price-value"><span class="ruler__price-txt js-ruler-price-value">345.00</span> <input type="number" name="total" class="ruler__price-input js-ruler-price-value-input"> руб.</span>
+									<span class="ruler__bottom-price">Мин. стоимость заказа 1500 руб.</span>
+								</span>
+								<span class="ruler__bottom-txt">
+									Нажимая кнопку «Отправить заявку», я даю свое <a href="#">Согласие</a> на обработку персональных данных
+								</span>
+								<div class="ruler__bottom-box">
+									<button type="submit" class="btn ruler__btn js-form-btn active">Отправить заявку</button>
+								</div>
+							</div>
+						</div>
+						<div class="ruler__form-inner ruler__form-inner--mod js-form-more">
+							<div class="ruler__form-box">
+								<input type="text" class="ruler__form-input" name="name" placeholder="Контактное лицо *" required>
+							</div>
+							<div class="ruler__form-box">
+								<input type="tel" class="ruler__form-input" name="phone" placeholder="Телефон *" required>
+							</div>
+							<div class="ruler__form-box">
+								<input type="email" class="ruler__form-input" name="email" placeholder="E-mail *" required>
+							</div>
+							<div class="ruler__form-box">
+								<input type="text" class="ruler__form-input" name="address" placeholder="Адрес">
+							</div>
+							<div class="ruler__form-box">
+								<textarea name="message" class="ruler__form-textarea" placeholder="Комментарии"></textarea>
+							</div>
+
+							<a class="ruler__send-message js-send-ok" data-fancybox data-src="#popup-ok" href="javascript:;"></a>
+
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+      <div class="included-price">
+  <div class="container">
+    <div class="included-price__header">
+      <h2 class="included-price__title" style="background-image: url(pic/decor/decor-big.png);">Что входит в стоимость?</h2>
+    </div>
+    <div class="included-price__row">
+      <div class="included-price__col included-price__col--small">
+        <p class="included-price__desc">Цена услуги одинакова для квартир с отделкой и без и составляет</p>
+        <span class="included-price__value" style="background-image: url(pic/decor/decor-big.png);">40 руб/м<sup class="included-price__square">2</sup></span>
+      </div>
+      <div class="included-price__col included-price__col--large">
+        <ul class="included-price__list check">
+          <li class="included-price__item">выявление неровности потолков и стен;</li>
+          <li class="included-price__item">обнаружение неявных изъянов;</li>
+          <li class="included-price__item">проверка качественности отделки;</li>
+          <li class="included-price__item">диагностика функциональности электрики, сантехники;</li>
+          <li class="included-price__item">тестирование работы отопления и вентиляции;</li>
+          <li class="included-price__item">выявление дефектов окон и дверей, фасадного остекления;</li>
+          <li class="included-price__item">осмотр квартиры на соответствия СНиП, ГОСТ, ПУЭ и других технических регламентов;</li>
+          <li class="included-price__item">помощь в заполнении дефектной ведомости.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="price-info">
+  <div class="container">
+
+    <div class="price-info__row">
+
+      <div class="price-info__header">
+        <h2 class="price-info__title">Подробный план квартиры со всеми размерами</h2>
+      </div>
+
+      <div class="price-info__body">
+        <div class="price-info__col price-info__col--small">
+          <img src="pic/price-info/price-info-01.jpg" alt="" class="price-info__img">
+        </div>
+
+        <div class="price-info__col price-info__col--large">
+
+          <div class="price-info__inner">
+            <div class="price-icon">
+        			<div class="price-icon__inner">
+        				<span class="price-icon__text">цена</span>
+        				<span class="price-icon__value">+25 руб/м<sup>2</sup></span>
+        				<span class="price-icon__text-bott">к базовой услуге</span>
+        			</div>
+        		</div>
+          </div>
+
+          <div class="price-info__desc">
+            <p class="price-info__txt">План квартиры – важный документ с указанием площади каждой комнаты и всего жилья. Заказав его у нас, вам не придется тратить время и делать замеры самостоятельно. Готовый план, который мы сохраним у себя, вы получите по электронной почте в двух форматах – PDF и Autocad.С ним вы сможете продумать перепланировку,  расстановку мебели, а также сэкономить на вызове  специалистов. На основе плана строительная бригада составит смету, а дизайнер создаст дизайн-проект.</p>
+            <a href="#" class="price-info__more">подробнее</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-info__row">
+
+      <div class="price-info__header">
+        <h2 class="price-info__title">Тепловизионное обследование</h2>
+      </div>
+
+      <div class="price-info__body">
+        <div class="price-info__col price-info__col--small">
+          <img src="pic/price-info/price-info-02.jpg" alt="" class="price-info__img">
+        </div>
+
+        <div class="price-info__col price-info__col--large">
+
+          <div class="price-info__inner">
+            <div class="price-icon">
+              <div class="price-icon__inner">
+                <span class="price-icon__text">цена, от</span>
+                <span class="price-icon__value">1000 руб.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="price-info__desc">
+            <p class="price-info__txt">Теплопотери – распространенная проблема квартир в новостройках. Они приводят к простудам домочадцев и увеличению платы за обогрев жилья. Тепловизионное обследование поможет проверить  качество утепления, функциональность отопительной системы и выявить места потери тепла.</p>
+            <a href="#" class="price-info__more">подробнее</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+      <div class="services services--acceptance">
+  <div class="container">
+    <div class="services__row">
+      
+      <div class="services__col">
+        <div class="services__top">
+          <a  class="services__link">Приемка квартир с отделкой</a>
+        </div>
+        <div class="services__middle">
+          <a  class="services__link services__link--img">
+            <img src="pic/services/services-05.jpg" alt="" class="services__img">
+          </a>
+        </div>
+        <p class="services__desc">Квартира в новостройке – чистый лист. Поможем с реализацией самых смелых идей.</p>
+      </div>
+      
+      <div class="services__col">
+        <div class="services__top">
+          <a  class="services__link">Приемка квартир без отделки</a>
+        </div>
+        <div class="services__middle">
+          <a  class="services__link services__link--img">
+            <img src="pic/services/services-06.jpg" alt="" class="services__img">
+          </a>
+        </div>
+        <p class="services__desc">Бюджетное решение, которое освежит интерьер за короткие сроки.</p>
+      </div>
+      
+      <div class="services__col">
+        <div class="services__top">
+          <a  class="services__link">Тепловизор</a>
+        </div>
+        <div class="services__middle">
+          <a  class="services__link services__link--img">
+            <img src="pic/services/services-07.jpg" alt="" class="services__img">
+          </a>
+        </div>
+        <p class="services__desc">Ремонт квартиры в доме дореволюционной постройки требуется выполнять с учетом ряда особенностей.</p>
+      </div>
+      
+      <div class="services__col">
+        <div class="services__top">
+          <a  class="services__link">Технадзор и Контроль</a>
+        </div>
+        <div class="services__middle">
+          <a  class="services__link services__link--img">
+            <img src="pic/services/services-08.jpg" alt="" class="services__img">
+          </a>
+        </div>
+        <p class="services__desc">Разработаем дизайн-проект, 3D визуализацию, а после - воплотим в жизнь.</p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+      <div class="add-services">
+  <div class="container">
+    <div class="add-services__header">
+      <h2 class="add-services__title" style="background-image: url(pic/decor/decor-big.png);">Дополнительные услуги</h2>
+    </div>
+    <div class="add-services__body">
+      
+      <div class="add-services__row">
+        <div class="add-services__col add-services__col--x-small">
+          <svg class="icon-magnetic-field">
+            <use xlink:href="#magnetic-field"></use>
+          </svg>
+        </div>
+        <div class="add-services__col add-services__col--large">
+          <span class="add-services__caption">Измерение электромагнитных полей</span>
+          <p class="add-services__desc">Появление электромагнитных полей в квартире помогут спровоцировать  бытовые приборы, проводка или трансформаторы. При продолжительном воздействии приводят к образованию опухолей, бесплодию, проблемам при беременности и выкидышам. Данная услуга позволит определить уровень электромагнитных полей и выявить источники.</p>
+        </div>
+        <div class="add-services__col add-services__col--small">
+          <span class="add-services__value">цена</span>
+          <span class="add-services__price">+5 руб/м<sup class="add-services__square">2</sup></span>
+          <span class="add-services__txt">к базовой услуге</span>
+        </div>
+      </div>
+      
+      <div class="add-services__row">
+        <div class="add-services__col add-services__col--x-small">
+          <svg class="icon-ammonia-test">
+            <use xlink:href="#ammonia-test"></use>
+          </svg>
+        </div>
+        <div class="add-services__col add-services__col--large">
+          <span class="add-services__caption">Проверка квартиры на концентрацию аммиака</span>
+          <p class="add-services__desc">Главная причина повышенного содержания аммиака в квартирах – некачественный бетон. В материал добавляются вещества, делающие его устойчивым к морозам и ускоряющие затвердевание. Аммиачные испарения могут вызывать головные боли, воспаления дыхательных путей и даже нарушение психики. Особенно опасны для детей.</p>
+        </div>
+        <div class="add-services__col add-services__col--small">
+          <span class="add-services__value">цена</span>
+          <span class="add-services__price">+5 руб/м<sup class="add-services__square">2</sup></span>
+          <span class="add-services__txt">к базовой услуге</span>
+        </div>
+      </div>
+      
+      <div class="add-services__row">
+        <div class="add-services__col add-services__col--x-small">
+          <svg class="icon-radioactive-radiation">
+            <use xlink:href="#radioactive-radiation"></use>
+          </svg>
+        </div>
+        <div class="add-services__col add-services__col--large">
+          <span class="add-services__caption">Замер радиоактивных излучений</span>
+          <p class="add-services__desc">Радиоактивное излучение невозможно обнаружить без специального оборудования. Оно не имеет ни запаха, ни цвета, между тем разрушительно воздействует на весь организм. Услуга необходима тем, кто планирует приобретать новый дом, квартиру, земельный участок. Источником опасных излучений может быть все: от приборов и стройматериалов до почвы и воздуха.</p>
+        </div>
+        <div class="add-services__col add-services__col--small">
+          <span class="add-services__value">цена</span>
+          <span class="add-services__price">+5 руб/м<sup class="add-services__square">2</sup></span>
+          <span class="add-services__txt">к базовой услуге</span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+      <div class="used-equipment">
+  <div class="container">
+    <div class="used-equipment__header">
+      <h2 class="used-equipment__title" style="background-image: url(pic/decor/decor-big.png);">Используемое оборудование</h2>
+    </div>
+    <div class="used-equipment__body">
+      <div class="used-equipment__list js-mobile-used">
+        
+        <div class="used-equipment__item">
+          <div class="used-equipment__row">
+            <div class="used-equipment__col">
+              <img src="pic/used-equipment/used-equipment-01.jpg" alt="" class="used-equipment__img">
+            </div>
+            <div class="used-equipment__col">
+              <span class="used-equipment__caption">Монитор напряжения S-line V200</span>
+              <p class="used-equipment__desc">Определит уровень напряжения в электросети. Результаты замеров отобразятся на дисплее, достаточно вставить прибор в розетку.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="used-equipment__item">
+          <div class="used-equipment__row">
+            <div class="used-equipment__col">
+              <img src="pic/used-equipment/used-equipment-02.jpg" alt="" class="used-equipment__img">
+            </div>
+            <div class="used-equipment__col">
+              <span class="used-equipment__caption">Лазерный дальномер BOSCH DLE 40</span>
+              <p class="used-equipment__desc">Компактный прибор для быстрого и точного измерения расстояний до 40 метров с погрешностью 1.5 мм. Удобен для замеров помещений большой площади.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="used-equipment__item">
+          <div class="used-equipment__row">
+            <div class="used-equipment__col">
+              <img src="pic/used-equipment/used-equipment-03.jpg" alt="" class="used-equipment__img">
+            </div>
+            <div class="used-equipment__col">
+              <span class="used-equipment__caption">Газоанализатор СЕАН</span>
+              <p class="used-equipment__desc">Определяет концентрацию газов в воздухе – диоксида азота, аммиака, серы  и других углеводородов. Результат демонстрируется на графическом дисплее.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="used-equipment__item">
+          <div class="used-equipment__row">
+            <div class="used-equipment__col">
+              <img src="pic/used-equipment/used-equipment-04.jpg" alt="" class="used-equipment__img">
+            </div>
+            <div class="used-equipment__col">
+              <span class="used-equipment__caption">Тестер-пробник MS-48 (2A)</span>
+              <p class="used-equipment__desc">Тестер MS-48(2A)  проверяет функциональность электрооборудования. Позволит найти точки разрыва в электросети и определит, постоянен ли в ней ток.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="used-equipment__item">
+          <div class="used-equipment__row">
+            <div class="used-equipment__col">
+              <img src="pic/used-equipment/used-equipment-05.jpg" alt="" class="used-equipment__img">
+            </div>
+            <div class="used-equipment__col">
+              <span class="used-equipment__caption">Лазерный нивелир BOSCH LL 2-80 P</span>
+              <p class="used-equipment__desc">Прибор, выявляющий неровности в горизонтальной или вертикальной плоскости в зоне действия до 80 метров. Погрешность результатов – всего 0,2 мм/м.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="used-equipment__item">
+          <div class="used-equipment__row">
+            <div class="used-equipment__col">
+              <img src="pic/used-equipment/used-equipment-06.jpg" alt="" class="used-equipment__img">
+            </div>
+            <div class="used-equipment__col">
+              <span class="used-equipment__caption">Индикатор электромагнитных полей «Импульс»</span>
+              <p class="used-equipment__desc">Обнаружит зоны опасного электромагнитного излучения. На основе его показаний можно расположить электроприборы так, чтобы снизить их негативное воздействие на организм.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="used-equipment__item">
+          <div class="used-equipment__row">
+            <div class="used-equipment__col">
+              <img src="pic/used-equipment/used-equipment-07.jpg" alt="" class="used-equipment__img">
+            </div>
+            <div class="used-equipment__col">
+              <span class="used-equipment__caption">Индикатор радиоактивности «Импульс»</span>
+              <p class="used-equipment__desc">Измеряет уровень радиоактивного фона, а также выявит предметы, материалы и мебель, излучающие гамма- и бета-частицы.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="used-equipment__item">
+          <div class="used-equipment__row">
+            <div class="used-equipment__col">
+              <img src="pic/used-equipment/used-equipment-08.jpg" alt="" class="used-equipment__img">
+            </div>
+            <div class="used-equipment__col">
+              <span class="used-equipment__caption">Построитель плоскостей BOSH GSL 2 Professional</span>
+              <p class="used-equipment__desc">Выявляет неровности пола. Подходит для всех видов работ, начиная с заливки бетоном и заканчивая финишной отделкой.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="used-equipment__item">
+          <div class="used-equipment__row">
+            <div class="used-equipment__col">
+              <img src="pic/used-equipment/used-equipment-09.jpg" alt="" class="used-equipment__img">
+            </div>
+            <div class="used-equipment__col">
+              <span class="used-equipment__caption">Анемометр</span>
+              <p class="used-equipment__desc">Определяет скорость и направление движения газов и воздуха. Чаще всего используется для проверки качества работы системы вентиляции.</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="work">
+	<div class="container">
+		<div class="work__head">
+			<h2 class="work__caption" style="background-image: url(pic/decor/decor-big.png);">Как мы работаем</h2>
+		</div>
+		<div class="work__wrapp">
+			<div class="work__navigate js-slider-nav">
+				<div class="work__navigate-item">
+					<div class="work__navigate-inner">
+						<span class="work__navigate-number">1.</span>
+						<span class="work__navigate-text">Получение заявки</span>
+					</div>
+				</div>
+				<div class="work__navigate-item">
+					<div class="work__navigate-inner">
+						<span class="work__navigate-number">2.</span>
+						<span class="work__navigate-text">Выезд специалиста</span>
+					</div>
+				</div>
+				<div class="work__navigate-item">
+					<div class="work__navigate-inner">
+						<span class="work__navigate-number">3.</span>
+						<span class="work__navigate-text">Согласование работ</span>
+					</div>
+				</div>
+				<div class="work__navigate-item">
+					<div class="work__navigate-inner">
+						<span class="work__navigate-number">4.</span>
+						<span class="work__navigate-text">Дизайн-проект</span>
+					</div>
+				</div>
+				<div class="work__navigate-item">
+					<div class="work__navigate-inner">
+						<span class="work__navigate-number">5.</span>
+						<span class="work__navigate-text">Начало работ</span>
+					</div>
+				</div>
+				<div class="work__navigate-item">
+					<div class="work__navigate-inner">
+						<span class="work__navigate-number">6.</span>
+						<span class="work__navigate-text">Проверка качества</span>
+					</div>
+				</div>
+			</div>
+			<div class="work__slider js-slider-for">
+				<div class="work__slider-item">
+					<span class="work__slider-text">1. Получение заявки</span>
+					<span class="work__slider-descr">Наш менеджер звонит и договаривается о бесплатном приезде замерщика в удобное для вас время.</span>
+				</div>
+				<div class="work__slider-item">
+					<span class="work__slider-text">2. Выезд специалиста</span>
+					<span class="work__slider-descr">Приезжает технический специалист. Делает обмер помещения, записывает ваши пожелания по ремонту и консультирует. На следующий день вы получаете готовую смету.</span>
+				</div>
+				<div class="work__slider-item">
+					<span class="work__slider-text">3. Согласование работ</span>
+					<span class="work__slider-descr">Материалы и сроки ремонта. Подписываем договор и приступаем к работе.</span>
+				</div>
+				<div class="work__slider-item">
+					<span class="work__slider-text">4. Получение заявки</span>
+					<span class="work__slider-descr">Наш менеджер звонит и договаривается о бесплатном приезде замерщика в удобное для вас время.</span>
+				</div>
+				<div class="work__slider-item">
+					<span class="work__slider-text">5. Выезд специалиста</span>
+					<span class="work__slider-descr">Приезжает технический специалист. Делает обмер помещения, записывает ваши пожелания по ремонту и консультирует. На следующий день вы получаете готовую смету.</span>
+				</div>
+				<div class="work__slider-item">
+					<span class="work__slider-text">6. Согласование работ</span>
+					<span class="work__slider-descr">Материалы и сроки ремонта. Подписываем договор и приступаем к работе.</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+      <div class="question question--acceptance">
+	<div class="container">
+		<div class="accordeon__head">
+			<img src="pic/decor/decor-big.png" alt="decor" class="accordeon__img">
+			<h2 class="accordeon__caption">Вопрос-ответ</h2>
+		</div>
+		<div class="question__holder">
+			<div class="question__item">
+				
+				<div class="accordeon__item js-acc-item">
+					<div class="accordeon__title js-acc-title">
+						<span class="accordeon__title-text">
+							В какое время лучше проводить приемку квартиры?
+						</span>
+					</div>
+					<div class="accordeon__content js-acc-content">
+						<p>
+							Лучше всего делать ее днем - так можно увидеть все недостатки. Для осмотра углов и помещений без окон не помешает вооружиться фонариком.
+						</p>
+					</div>
+				</div>
+				
+				<div class="accordeon__item js-acc-item">
+					<div class="accordeon__title js-acc-title">
+						<span class="accordeon__title-text">
+							Я подписал уже акт приемки. Могу ли я требовать у застройщика устранить найденные дефекты?
+						</span>
+					</div>
+					<div class="accordeon__content js-acc-content">
+						<p>
+							Мы с радостью воплотим его в реальность и поможем сэкономить на материалах.
+						</p>
+					</div>
+				</div>
+				
+				<div class="accordeon__item js-acc-item">
+					<div class="accordeon__title js-acc-title">
+						<span class="accordeon__title-text">
+							Застройщик отказывается устранять дефекты. Что делать?
+						</span>
+					</div>
+					<div class="accordeon__content js-acc-content">
+						<p>
+							Мы с радостью воплотим его в реальность и поможем сэкономить на материалах.
+						</p>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="question__item">
+				
+				<div class="accordeon__item js-acc-item">
+					<div class="accordeon__title js-acc-title">
+						<span class="accordeon__title-text">
+							У нас 2 квартиры в одном ЖК, будут ли скидки на приемку?
+						</span>
+					</div>
+					<div class="accordeon__content js-acc-content">
+						<p>
+							Мы с радостью воплотим его в реальность и поможем сэкономить на материалах.
+						</p>
+					</div>
+				</div>
+				
+				<div class="accordeon__item js-acc-item">
+					<div class="accordeon__title js-acc-title">
+						<span class="accordeon__title-text">
+							Можно ли проводить тепловизионное обследование квартир летом?
+						</span>
+					</div>
+					<div class="accordeon__content js-acc-content">
+						<p>
+							Мы с радостью воплотим его в реальность и поможем сэкономить на материалах.
+						</p>
+					</div>
+				</div>
+				
+				<div class="accordeon__item js-acc-item">
+					<div class="accordeon__title js-acc-title">
+						<span class="accordeon__title-text">
+							Можете ли провести приемку квартиры по доверенности?
+						</span>
+					</div>
+					<div class="accordeon__content js-acc-content">
+						<p>
+							Мы с радостью воплотим его в реальность и поможем сэкономить на материалах.
+						</p>
+					</div>
+				</div>
+				
+				<div class="accordeon__item js-acc-item">
+					<div class="accordeon__title js-acc-title">
+						<span class="accordeon__title-text">
+							Какую из дополнительных услуг вы бы рекомендовали заказать в первую очередь?
+						</span>
+					</div>
+					<div class="accordeon__content js-acc-content">
+						<p>
+							Мы с радостью воплотим его в реальность и поможем сэкономить на материалах.
+						</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+      <div class="map " id="map">
+	<div class="container">
+		<div class="map__holder">
+				<div class="map__info">
+					<div class="map__info-holder">
+						<div class="map__info-inner">
+							<a href="tel:+78126423828" class="map__info-phone">
+								+7 (812) 642-38-28
+							</a>
+							<span class="map__info-address">
+								198035, г. Санкт-Петербург, ул. Двинская, д.3, лит.А БЦ “Бригантина”
+							</span>
+							<a href="mailto:sales@rusmaster.spb.ru" class="map__info-mail">
+								sales@rusmaster.spb.ru
+							</a>
+
+							<div class="map__info-bottom">
+								<a href="#" class="map__info-mail">Контакты</a>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+
+      <div class="choice-services">
+  <div class="container">
+    <div class="choice-services__wrap js-tabs-wrap">
+
+      <div class="choice-services__holder choice-services__holder--nav">
+        <ul class="choice-services__nav-list">
+          <li class="choice-services__nav-item js-tab active">
+            <span class="choice-services__nav-link">Ремонт квартир</span>
+          </li>
+          <li class="choice-services__nav-item js-tab">
+            <span class="choice-services__nav-link">Приемка квартир</span>
+          </li>
+          <li class="choice-services__nav-item js-tab">
+            <span class="choice-services__nav-link">Дизайн интерьера</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="choice-services__holder choice-services__holder--content">
+        <div class="choice-services__content-row js-tab-content active">
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Тип квартиры</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Студия</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Однокомнатная</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Двухкомнатная</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Трехкомнатная</a>
+              </li>
+            </ul>
+
+            <span class="choice-services__content-title">Тип дома</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Новостройка</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Старый фонд</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Тип ремонта</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Косметический</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Капитальный</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Элитный</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Эконом</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комфорт</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Евро</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Дизайнерский</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комплексный</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+            <span class="choice-services__content-title">Тип помещения</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комната</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Кухня</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Прихожая</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Санузел совмещенный</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Ванная комната</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Туалет</a>
+              </li>
+            </ul>
+
+            <a href="#" class="choice-services__content-link choice-services__content-link--cottage">Ремонт коттеджей</a>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Другое</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Для иногородних</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Под сдачу</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">По дизайн проекту</a>
+              </li>
+            </ul>
+
+            <span class="choice-services__content-title">Для бизнеса</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Офис</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Коммерческое помещений</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Кафе/Ресторан/бар</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Магазин</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">О компании</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Отзывы</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Акции</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Сметы</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Объекты в работе</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Галерея работ</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Советы по ремонту</a>
+              </li>
+            </ul>
+
+            <a href="#" class="choice-services__content-link choice-services__content-link--prices" style="background-image: url(pic/bg/bg-decor-prices.png);">Цены</a>
+
+          </div>
+        </div>
+
+        <div class="choice-services__content-row js-tab-content">
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Тип квартиры</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Студия</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Однокомнатная</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Двухкомнатная</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Трехкомнатная</a>
+              </li>
+            </ul>
+
+            <span class="choice-services__content-title">Тип дома</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Новостройка</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Старый фонд</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Тип ремонта</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Косметический</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Капитальный</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комфорт</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Евро</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Дизайнерский</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комплексный</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+            <span class="choice-services__content-title">Тип помещения</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комната</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Кухня</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Прихожая</a>
+              </li>
+            </ul>
+
+            <a href="#" class="choice-services__content-link choice-services__content-link--cottage">Ремонт коттеджей</a>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Другое</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Для иногородних</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Под сдачу</a>
+              </li>
+            </ul>
+
+            <span class="choice-services__content-title">Для бизнеса</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Офис</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Коммерческое помещений</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Кафе/Ресторан/бар</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Магазин</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">О компании</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Отзывы</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Акции</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Сметы</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Объекты в работе</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Галерея работ</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Советы по ремонту</a>
+              </li>
+            </ul>
+
+            <a href="#" class="choice-services__content-link choice-services__content-link--prices" style="background-image: url(pic/bg/bg-decor-prices.png);">Цены</a>
+
+          </div>
+        </div>
+
+        <div class="choice-services__content-row js-tab-content">
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Тип квартиры</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Студия</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Однокомнатная</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Двухкомнатная</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Трехкомнатная</a>
+              </li>
+            </ul>
+
+            <span class="choice-services__content-title">Тип дома</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Новостройка</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Старый фонд</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Тип ремонта</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Косметический</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Капитальный</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Элитный</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Эконом</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комфорт</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Евро</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Дизайнерский</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комплексный</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+            <span class="choice-services__content-title">Тип помещения</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комната</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Кухня</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Прихожая</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Санузел совмещенный</a>
+              </li>
+            </ul>
+
+            <a href="#" class="choice-services__content-link choice-services__content-link--cottage">Ремонт коттеджей</a>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Другое</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Для иногородних</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Под сдачу</a>
+              </li>
+            </ul>
+
+            <span class="choice-services__content-title">Для бизнеса</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Офис</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Коммерческое помещений</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">О компании</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Отзывы</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Акции</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Сметы</a>
+              </li>
+            </ul>
+
+            <a href="#" class="choice-services__content-link choice-services__content-link--prices" style="background-image: url(pic/bg/bg-decor-prices.png);">Цены</a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+	</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__row">
+			<div class="footer__col footer__col--copyright">
+				<span class="footer__txt">ООО «РМ-Ремонт» - ремонт квартир в Санкт-Петербурге</span>
+			</div>
+			<div class="footer__col footer__col--small">
+				<div class="footer__inner">
+					<a href="tel: +78126423828" class="footer__contacts-link footer__contacts-link--phone">+7 (812) 642-38-28</a>
+				</div>
+				<div class="footer__inner">
+					<a href="mailto: sales@rusmaster.spb.ru" class="footer__contacts-link footer__contacts-link--email">sales@rusmaster.spb.ru</a>
+				</div>
+			</div>
+			<div class="footer__col">
+				<span class="footer__txt">198035, г. Санкт-Петербург, ул. Двинская, д.3, лит.А БЦ “Бригантина”</span>
+			</div>
+			<div class="footer__col footer__col--large">
+				<div class="footer__social">
+					<ul class="footer__social-list">
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<span class="footer__social-inner">
+									<svg class="icon-vk">
+									  <use xlink:href="#vk"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<span class="footer__social-inner">
+									<svg class="icon-facebook">
+									  <use xlink:href="#facebook"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<span class="footer__social-inner">
+									<svg class="icon-twitter">
+									  <use xlink:href="#twitter"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<span class="footer__social-inner">
+									<svg class="icon-youtube">
+									  <use xlink:href="#youtube"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<span class="footer__social-inner">
+									<svg class="icon-social-l">
+									  <use xlink:href="#social-l"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div style="display: none;" id="popup-callback">
+	<div class="popup popup--callback">
+    <h2 class="popup__title">Обратный звонок</h2>
+    <div class="popup__body">
+      <form action="" class="popup__form">
+        <div class="popup__form-row">
+          <input type="text" class="popup__form-input" placeholder="Контактное лицо *">
+        </div>
+        <div class="popup__form-row popup__form-row--phone">
+          <input type="tel" class="popup__form-input" placeholder="Телефон *">
+        </div>
+        <div class="popup__form-row">
+          <button type="submit" name="button">Отправить заявку</button>
+        </div>
+        <div class="popup__form-row">
+          <span class="popup__form-txt">Нажимая кнопку «Отправить заявку», я даю свое <a href="#" class="popup__form-link">Согласие</a> на обработку персональных данных</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div style="display: none;" id="popup-ok" class="popup popup--sent">
+  <div class="popup__top">
+    <div class="popup__icon"></div>
+    <h2 class="popup__title">Заявка отправлена!</h2>
+  </div>
+  <p class="popup__desc">Спасибо за обращение!</p>
+  <p class="popup__desc">Наш менеджер свяжется с вами в ближайшее время</p>
+</div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

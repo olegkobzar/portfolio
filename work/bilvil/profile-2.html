@@ -1,0 +1,968 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Профиль</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="noindex, nofollow"/>
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<header class="header">
+	<div class="header__top">
+		<div class="container">
+			<div class="header__top-wrap">
+				<ul class="header__social">
+					<li class="header__social-item">
+						<a href="#" class="header__social-link">
+							<svg class="icon-instagram">
+								<use xlink:href="#instagram"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="header__social-item">
+						<a href="#" class="header__social-link">
+							<svg class="icon-facebook">
+								<use xlink:href="#facebook"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="header__social-item">
+						<a href="#" class="header__social-link">
+							<svg class="icon-vk">
+								<use xlink:href="#vk"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="header__social-item">
+						<a href="#" class="header__social-link">
+							<svg class="icon-youtube">
+								<use xlink:href="#youtube"></use>
+							</svg>
+						</a>
+					</li>
+				</ul>
+				<div class="header__contact">
+					<div class="header__city">
+						<select name="" class="js-select" id="">
+							<option value="">Санкт-Петербург</option>
+							<option value="">Москва</option>
+						</select>
+					</div>
+					<div class="header__phone-wrap js-phone">
+						<div class="header__phone">
+							<a href="tel:881254392011" class="header__phone-link">
+								8 812 543 920 11
+							</a>
+						</div>
+						<div class="header__phone">
+							<a href="tel:88003399209" class="header__phone-link">
+								8 800 339 92 09
+							</a>
+						</div>
+						<span class="header__phone-close js-close-phone"></span>
+					</div>
+					<span class="header__phone-icon js-phone-btn">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					
+					<div class="header__entry">
+						<a href="#" class="header__entry-link">Войти</a>
+					</div>
+				
+				
+		</div>
+	</div>
+</div>
+</div>
+<div class="header__bottom">
+	<div class="container">
+		<div class="header__bottom-wrap">
+			<div class="header__col header__col--menu js-menu-btn">
+				<span class="header__col-text">Меню</span>
+				<span class="header__close">Закрыть</span>
+			</div>
+			<div class="header__col header__col--logo">
+				<a href="#" class="header__logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="header__col header__col--search js-search-btn">
+				<span class="header__search-icon">
+					<svg class="icon-search">
+						<use xlink:href="#search"></use>
+					</svg>
+				</span>
+				<span class="header__col-text">Подбор картин</span>
+				<span class="header__close header__close--icon">Закрыть</span>
+			</div>
+			<div class="header__col header__col--catalog js-catalog-btn">
+				<span class="header__col-text">Каталог</span>
+				<span class="header__close">Закрыть</span>
+			</div>
+
+			<div class="header__col header__col--basket js-basket-btn">
+				<span class="header__basket-icon">
+					<svg class="icon-basket-header">
+						<use xlink:href="#basket"></use>
+					</svg>
+				</span>
+				<span class="header__basket-value">(0)</span>
+				<span class="header__col-text">Корзина <span>(0)</span></span>
+				<span class="header__close header__close--icon">Закрыть</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="header__catalog js-catalog">
+	<div class="container">
+		<span class="header__catalog-caption">Каталог картин</span>
+		<div class="header__catalog-wrap">
+
+			<div class="header__catalog-inner">
+				<span class="header__catalog-title">Коллекции месяца</span>
+				<ul class="header__catalog-list">
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Вершины мира</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="header__catalog-inner">
+				<span class="header__catalog-title">Портреты</span>
+				<ul class="header__catalog-list">
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Наши люди</a>
+					</li>
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Иконы стиля</a>
+					</li>
+				</ul>
+				<div class="header__catalog-all">
+					<a href="#" class="header__catalog-all-link">Посмотреть все</a>
+				</div>
+			</div>
+
+			<div class="header__catalog-inner">
+				<span class="header__catalog-title">Машины</span>
+				<ul class="header__catalog-list">
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Легендарные автомобили</a>
+					</li>
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Классические автомобили</a>
+					</li>
+				</ul>
+				<div class="header__catalog-all">
+					<a href="#" class="header__catalog-all-link">Посмотреть все</a>
+				</div>
+			</div>
+
+			<div class="header__catalog-inner">
+				<span class="header__catalog-title">Города</span>
+				<ul class="header__catalog-list">
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Мир будушего</a>
+					</li>
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Апокалипсис</a>
+					</li>
+				</ul>
+				<div class="header__catalog-all">
+					<a href="#" class="header__catalog-all-link">Посмотреть все</a>
+				</div>
+			</div>
+
+			<div class="header__catalog-inner">
+				<span class="header__catalog-title">Животные</span>
+				<ul class="header__catalog-list">
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Вершины мира</a>
+					</li>
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Неизвестная Земля</a>
+					</li>
+				</ul>
+				<div class="header__catalog-all">
+					<a href="#" class="header__catalog-all-link">Посмотреть все</a>
+				</div>
+			</div>
+
+			<div class="header__catalog-inner">
+				<span class="header__catalog-title">Механизмы</span>
+				<ul class="header__catalog-list">
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Стим Панк</a>
+					</li>
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Великие изобретения</a>
+					</li>
+				</ul>
+				<div class="header__catalog-all">
+					<a href="#" class="header__catalog-all-link">Посмотреть все</a>
+				</div>
+			</div>
+
+			<div class="header__catalog-inner">
+				<span class="header__catalog-title">Абстракции</span>
+				<ul class="header__catalog-list">
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Мир Джексон Поллок</a>
+					</li>
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Классические автомобили</a>
+					</li>
+				</ul>
+				<div class="header__catalog-all">
+					<a href="#" class="header__catalog-all-link">Посмотреть все</a>
+				</div>
+			</div>
+
+			<div class="header__catalog-inner">
+				<span class="header__catalog-title">Природа</span>
+				<ul class="header__catalog-list">
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Вершины мира</a>
+					</li>
+					<li class="header__catalog-item">
+						<a href="#" class="header__catalog-link">Неизвестная Земля</a>
+					</li>
+				</ul>
+				<div class="header__catalog-all">
+					<a href="#" class="header__catalog-all-link">Посмотреть все</a>
+				</div>
+			</div>
+
+		</div>
+
+		<a href="#" class="header__catalog-show-all js-btn-all">Показать все</a>
+
+		<div class="header__catalog-box-all js-show-all">
+			<div class="header__catalog-wrap">
+
+				<div class="header__catalog-inner">
+					<span class="header__catalog-title">Города</span>
+					<ul class="header__catalog-list">
+						<li class="header__catalog-item">
+							<a href="#" class="header__catalog-link">Мир будушего</a>
+						</li>
+						<li class="header__catalog-item">
+							<a href="#" class="header__catalog-link">Апокалипсис</a>
+						</li>
+					</ul>
+					<div class="header__catalog-all">
+						<a href="#" class="header__catalog-all-link">Посмотреть все</a>
+					</div>
+				</div>
+
+				<div class="header__catalog-inner">
+					<span class="header__catalog-title">Животные</span>
+					<ul class="header__catalog-list">
+						<li class="header__catalog-item">
+							<a href="#" class="header__catalog-link">Вершины мира</a>
+						</li>
+						<li class="header__catalog-item">
+							<a href="#" class="header__catalog-link">Неизвестная Земля</a>
+						</li>
+					</ul>
+					<div class="header__catalog-all">
+						<a href="#" class="header__catalog-all-link">Посмотреть все</a>
+					</div>
+				</div>
+
+				<div class="header__catalog-inner">
+					<span class="header__catalog-title">Механизмы</span>
+					<ul class="header__catalog-list">
+						<li class="header__catalog-item">
+							<a href="#" class="header__catalog-link">Стим Панк</a>
+						</li>
+						<li class="header__catalog-item">
+							<a href="#" class="header__catalog-link">Великие изобретения</a>
+						</li>
+					</ul>
+					<div class="header__catalog-all">
+						<a href="#" class="header__catalog-all-link">Посмотреть все</a>
+					</div>
+				</div>
+				
+				<div class="header__catalog-inner">
+					<span class="header__catalog-title">Природа</span>
+					<ul class="header__catalog-list">
+						<li class="header__catalog-item">
+							<a href="#" class="header__catalog-link">Вершины мира</a>
+						</li>
+						<li class="header__catalog-item">
+							<a href="#" class="header__catalog-link">Неизвестная Земля</a>
+						</li>
+					</ul>
+					<div class="header__catalog-all">
+						<a href="#" class="header__catalog-all-link">Посмотреть все</a>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+<div class="header__menu js-menu">
+	<div class="container">
+		<div class="header__menu-wrap">
+			<div class="header__menu-left">
+				<div class="header__menu-inner">
+					<span class="header__menu-title">Клиентам</span>
+					<ul class="header__menu-list">
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">Каталог картин</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">Подбор картин</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">Подарочные сертификаты</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">Доставка и оплата</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">Корпоратиыным клиентам</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__menu-inner">
+					<span class="header__menu-title">Bilvil</span>
+					<ul class="header__menu-list">
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">О проекте</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">Блог</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">Сотрудничество</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">Художникам</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">Контакты</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__menu-inner">
+					<span class="header__menu-title">Материалы</span>
+					<ul class="header__menu-list">
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">Из чего мы делаем наши картины? </a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="header__basket js-basket">
+	<div class="container">
+		<div class="header__basket-wrap">
+			<div class="header__basket-right">
+				<div class="header__card">
+					<div class="header__card-img">
+						<img src="pic/bg/bg-2.jpg" alt="">
+					</div>
+					<div class="header__card-info">
+						<div class="checkout__card-top">
+							<span class="checkout__card-name">Дом у реки</span>
+							<span class="checkout__card-price">2 500 <span class="rubl">o</span></span>
+						</div>
+						<span class="header__card-descr">Холст / без рамки / L (40x90 см)</span>
+						<div class="header__card-number">
+							<span class="header__card-descr">1 картина</span>
+							<div class="header__card-delete">
+								<a href="#" class="header__card-delete-link">Удалить</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<ul class="header__list">
+					<li class="header__list-item">
+						<span class="header__list-name">Сумма зказа</span>
+						<span class="header__list-value">2 500 <span class="rubl">o</span></span>
+					</li>
+					<li class="header__list-item">
+						<span class="header__list-name">Доставка</span>
+						<span class="header__list-value">0 <span class="rubl">o</span></span>
+					</li>
+				</ul>
+
+				<div class="header__basket-bottom">
+					<div class="header__basket-go">
+						<a href="#" class="header__basket-go-link">Перейти в корзину</a>
+					</div>
+					<div class="header__basket-btn-wrap">
+						<a href="#" class="btn btn--border header__basket-btn">Оформить заказ</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="header__search js-search">
+	<div class="container">
+		<span class="header__search-title">Введите запрос</span>
+		<div class="header__search-wrap">
+			<div class="header__search-input-wrap">
+				<input type="text" placeholder="Введите запрос">
+			</div>
+			<div class="header__search-btn-wrap">
+				<button class="btn header__search-btn">Найти</button>
+			</div>
+		</div>
+		<div class="header__search-hide">
+			<label class="checkbox">
+				<input type="checkbox" name="picture">
+				<span>Не показывать распроданные картины</span>
+			</label>
+		</div>
+
+		<div class="header__type">
+			<div class="header__type-top">
+				<span class="header__type-caption">Выберите настроение картины</span>
+				<div class="header__type-remove">
+					<a href="#" class="header__type-remove-link">Очистить</a>
+				</div>
+			</div>
+			<ul class="header__type-wrap">
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Спокойная</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Взволнованный</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Сердитый</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Веселая</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Мечтательный</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Шаловливая (+18)</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Спокойная</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Взволнованный</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Сердитый</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Веселая</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Мечтательный</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Шаловливая (+18)</span>
+					</label>
+				</li>
+			</ul>
+		</div>
+
+		<div class="header__type">
+			<div class="header__type-top">
+				<span class="header__type-caption">Выберите цвет картины</span>
+				<div class="header__type-remove">
+					<a href="#" class="header__type-remove-link">Очистить</a>
+				</div>
+			</div>
+			<ul class="header__type-wrap">
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Спокойная</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Взволнованный</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Сердитый</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Веселая</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Мечтательный</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Шаловливая (+18)</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Спокойная</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Взволнованный</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Сердитый</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Веселая</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Мечтательный</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Шаловливая (+18)</span>
+					</label>
+				</li>
+			</ul>
+		</div>
+
+		<div class="header__type">
+			<div class="header__type-top">
+				<span class="header__type-caption">Выберите тип помещения</span>
+				<div class="header__type-remove">
+					<a href="#" class="header__type-remove-link">Очистить</a>
+				</div>
+			</div>
+			<ul class="header__type-wrap">
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Спокойная</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Взволнованный</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Сердитый</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Веселая</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Мечтательный</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Шаловливая (+18)</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Спокойная</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Взволнованный</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Сердитый</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Веселая</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Мечтательный</span>
+					</label>
+				</li>
+				<li class="header__type-item">
+					<label class="checkbox-type">
+						<input type="checkbox" name="check">
+						<span>Шаловливая (+18)</span>
+					</label>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+
+</header>
+
+
+
+
+	<div class="profile">
+	<div class="profile__top">
+		<div class="container">
+			<span class="profile__top-text">Профиль</span>
+		</div>
+	</div>
+	<div class="profile__content profile__content--result">
+		<div class="container">
+			<div class="profile__wrap">
+				<div class="profile__head">
+					<span class="profile__head-title">Основные данные</span>
+					<div class="profile__cancellation">
+						<a href="#" class="profile__cancellation-link">Изменить данные</a>
+					</div>
+				</div>
+
+				<div class="profile__row">
+					<span class="profile__title">Фамилия</span>
+					<span class="profile__result-text">Константинопольский </span>
+				</div>
+				<div class="profile__row">
+					<span class="profile__title">Имя</span>
+					<span class="profile__result-text">Константин</span>
+				</div>
+				<div class="profile__row">
+					<span class="profile__title">Отчество</span>
+					<span class="profile__result-text">Константинович</span>
+				</div>
+				<div class="profile__row">
+					<span class="profile__title">Телефон</span>
+					<span class="profile__result-text">+7 921 023 92 84</span>
+				</div>
+				<div class="profile__row">
+					<span class="profile__title">E-mail</span>
+					<span class="profile__result-text">konstantinsuperstar@pipka.ru</span>
+				</div>
+			</div>
+
+			<div class="profile__wrap">
+				<div class="profile__head">
+					<span class="profile__head-title">Пароль</span>
+					<div class="profile__cancellation">
+						<a href="#" class="profile__cancellation-link">Изменить пароль</a>
+					</div>
+				</div>
+
+				<div class="profile__row">
+					<span class="profile__title">Пароль</span>
+					<span class="profile__result-text">***********</span>
+				</div>
+			</div>
+
+			<div class="profile__wrap">
+				<div class="profile__head">
+					<span class="profile__head-title">Дополнительные данные</span>
+					<div class="profile__cancellation">
+						<a href="#" class="profile__cancellation-link">Изменить данные</a>
+					</div>
+				</div>
+
+				<div class="profile__row">
+					<span class="profile__title">Дата рождения</span>
+					<span class="profile__result-text">14.02.1982</span>
+				</div>
+				<div class="profile__row">
+					<span class="profile__title">Пол</span>
+					<span class="profile__result-text">Мужской</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__top" itemscope itemtype="http://schema.org/Organization">
+			<meta itemprop="name" content="Bilvil" />
+			<div class="footer__col">
+				<div class="footer__logo">
+					<a href="#" class="footer__logo-link">
+						<svg class="icon-logo-footer">
+							<use xlink:href="#logo"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="footer__address-wrap" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+					<span class="footer__address">
+						<span itemprop="addressLocality">г. Санкт-Петербург</span>, 
+						<span itemprop="streetAddress">22-я линия, дом 3, корпус 1</span>
+					</span>
+				</div>
+				<span class="footer__phone">
+					<a href="tel:8123248803" class="footer__phone-link" itemprop="telephone">(812) 324 88 03</a>
+				</span>
+				<span class="footer__mail">
+					<a href="mailto:mail@bilvil.ru" class="footer__mail-link" itemprop="email">mail@bilvil.ru</a>
+				</span>
+			</div>
+
+			<div class="footer__col footer__col--nav">
+				<div class="footer__col-inner">
+					<span class="footer__title">Компания</span>
+					<ul class="footer__nav">
+						<li class="footer__nav-item">
+							<a href="#" class="footer__nav-link">О компании</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#" class="footer__nav-link">Блог</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#" class="footer__nav-link">Корпоративным клиентам</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#" class="footer__nav-link">Контакты</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__col-inner">
+					<span class="footer__title">Клиентам</span>
+					<ul class="footer__nav">
+						<li class="footer__nav-item">
+							<a href="#" class="footer__nav-link">Каталог картин</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#" class="footer__nav-link">Подбор картин</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#" class="footer__nav-link">Сертификаты</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#" class="footer__nav-link">Материалы</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#" class="footer__nav-link">Доставка и оплата</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer__col footer__col--contact">
+				<div class="footer__col-wrap footer__col-wrap--form">
+					<span class="footer__title">Подпишись на рассылку</span>
+					<form action="" class="footer__form">
+						<div class="footer__form-input">
+							<input type="email" placeholder="Ваш E-mail">
+						</div>
+						<div class="footer__form-btn">
+							<button class="btn btn--border" type="submit">Отправить</button>
+						</div>
+					</form>
+				</div>
+				<div class="footer__col-wrap footer__col-wrap--social">
+					<span class="footer__title">Социальные сети</span>
+					<ul class="footer__social">
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<svg class="icon-instagram">
+									<use xlink:href="#instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<svg class="icon-facebook">
+									<use xlink:href="#facebook"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<svg class="icon-vk">
+									<use xlink:href="#vk"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<svg class="icon-youtube">
+									<use xlink:href="#youtube"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<ul class="footer__bottom">
+			<li class="footer__bottom-item">
+				<a href="#" class="footer__bottom-link">Политика конфиденциальности</a>
+			</li>
+			<li class="footer__bottom-item">
+				<a href="#" class="footer__bottom-link">Положение офферты</a>
+			</li>
+			<li class="footer__bottom-item">Копирование материалов запрещено. Bilvil • 2018</li>
+		</ul>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,1186 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Игра</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+<header class="header header--other">
+	<div class="container">
+		<div class="header__holder">
+			<div class="header__item header__item--toggler">
+				<span class="header__toggler js-toggler-open">
+					<span class="header__toggler-decor"></span>
+				</span>
+			</div>
+			<div class="header__item header__item--logo">
+				<a href="#" class="header__logo">GT</a>
+			</div>
+			<div class="header__item header__item--nav js-toggler-menu">
+				<div class="header__nav-overlay js-nav-overlay"></div>
+				<nav class="header__nav">
+					<span class="header__nav-close js-toggler-close"></span>
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Блог
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Рейтинг продавцов
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Розыгрыши
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Поддержка
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Вопросы и ответы
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Правила
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			
+				<div class="header__btn-search js-btn-search"></div>
+				<div class="header__search js-search-input">
+					<input type="text">
+				</div>
+			
+
+			
+			
+			<div class="header__item header__item--user js-user-wrap">
+				<a href="#" class="header__user js-user-link">
+					<img src="pic/users/users-5.png" alt="user">
+				</a>
+				<div class="header__user-info js-user-drop">
+					<div class="header__user-head">
+						<div class="header__user-img">
+							<img src="pic/users/users-5.png" alt="user">
+						</div>
+						<div class="header__user-txt">
+							<span class="header__user-name">
+								Chack Norris
+							</span>
+							<a href="#" class="header__user-mail">
+								Norris@gmail.com
+							</a>
+						</div>
+					</div>
+					<ul class="header__user-list">
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои покупки</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои продажи</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои операции</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Заработать</a>
+						</li>
+					</ul>
+					<div class="header__user-logout">
+						<a href="#" class="header__user-logout-link">
+							<span class="header__user-icon">
+
+							</span>
+							<span class="header__user-logout-txt">Выйти</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="wrapper">
+
+		<div class="heading-game" style="background-image: url(pic/bg/bg-5.jpg);">
+	<div class="heading-game__decor">
+		<div class="container">
+			<span class="heading-game__caption">Stalker online</span>
+			<span class="heading-game__descr">Stalker Online — это многопользовательская игра жанра сурвайвал шутер с элементами РПГ. Это открытый мир, реалистичная графика и глубокая атмосфера «Зоны Отчуждения», где неразгаданные тайны природы и смертельные опасности поджидают смельчаков на каждом шагу.</span>
+		</div>
+	</div>
+	
+</div>
+
+		<div class="category">
+	<div class="container">
+		<ul class="category__wrapp">
+			<li class="category__item">
+				<a href="#" class="category__link active">
+					<span class="category__link-text">
+						Аккаунты
+					</span>
+				</a>
+			</li>
+			<li class="category__item">
+				<a href="#" class="category__link">
+					<span class="category__link-text">
+						Предметы
+					</span>
+				</a>
+			</li>
+			<li class="category__item">
+				<a href="#" class="category__link">
+					<span class="category__link-text">
+						Услуги
+					</span>
+				</a>
+			</li>
+			<li class="category__item">
+				<a href="#" class="category__link">
+					<span class="category__link-text">
+						Подарки
+					</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+		<div class="game-name">
+			<div class="container">
+				<div class="game-name__wrapp">
+					<div class="content">
+						<div class="sort-game">
+	<div class="sort-game__head">
+		<div class="sort-game__left">
+			<span class="sort-game__title"> <span class="sort-game__title-hide">Сортировка </span>по:</span>
+			<div class="sort-game__selects">
+				<div class="sort-game__inner">
+					<select name="Select" id="" class="js-select">
+						<option value="">Цене</option>
+						<option value="">Дешевым</option>
+						<option value="">Дорогим</option>
+						<option value="">Новым</option>
+					</select>
+				</div>
+				<div class="sort-game__inner">
+					<select name="Select" id="" class="js-select">
+						<option value="">Рейтингу продавца</option>
+						<option value="">Сначала дешевые</option>
+						<option value="">Сначала дорогие</option>
+						<option value="">Рейтингу</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="sort-game__right">
+			<div class="sort-game__btn-open js-btn-filter">
+				<span class="sort-game__btn-open-icon"></span>
+				<span class="sort-game__btn-open-text">Фильтр</span>
+			</div>
+			<div class="sort-game__view">
+				<div class="sort-game__view-item  active">
+					<a href="#" class="sort-game__view-item-link js-inline-item active">
+						<span class="sort-game__line"></span>
+						<span class="sort-game__line"></span>
+						<span class="sort-game__line"></span>
+					</a>
+				</div>
+				<div class="sort-game__view-item active">
+					<a href="#" class="sort-game__view-item-link js-block-item">
+						<span class="sort-game__req"></span>
+						<span class="sort-game__req"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="sort-game__content">
+
+		<div class="sort-game__item ">
+
+			<div class="sort-game__img" style="background-image: url(pic/recommendation/recommendation-2.png);">
+				
+			</div>
+
+			
+
+			<div class="sort-game__item-inner">
+				<div class="sort-game__goods">
+					<span class="sort-game__goods-text">
+						<a href="#" class="sort-game__goods-link">
+							Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ 
+						</a>
+					</span>
+					<span class="sort-game__goods-price"> 1700 <span class="rub">o</span></span>
+				</div>
+				<div class="sort-game__user">
+					<div class="sort-game__col sort-game__col--descr">
+						<div class="sort-game__user-descr">
+							<a href="#" class="sort-game__user-link">
+								<div class="sort-game__user-img">
+									<img src="pic/users/users-2.png" alt="">
+								</div>
+								<div class="sort-game__user-wrapp">
+									<span class="sort-game__user-name">
+										Arnold Schwarzenegger
+									</span>
+									<div class="sort-game__user-rating">
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating-white">
+											<use xlink:href="#star"></use> 
+										</svg>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--status">
+						<div class="sort-game__status">
+							<span class="sort-game__status-icon online"></span>
+							<span class="sort-game__status-text">Online</span>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--reviews">
+						<div class="sort-game__reviews">
+							<span class="sort-game__reviews-text">Отзывы<span class="sort-game__reviews-text-hide"> продавца:</span></span>
+							<div class="sort-game__reviews-wrapp">
+								<a href="#" class="sort-game__reviews-positive">+23</a>
+								<a href="#" class="sort-game__reviews-negative">-12</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="sort-game__item ">
+
+			<div class="sort-game__img" style="background-image: url(pic/recommendation/recommendation-2.png);">
+				
+			</div>
+
+			<div class="sort-game__item-inner">
+				<div class="sort-game__goods">
+					<span class="sort-game__goods-text">
+						<a href="#" class="sort-game__goods-link">
+							Бронежелет, набор оружия и ключ активации 
+						</a>
+					</span>
+					<span class="sort-game__goods-price"> 1700 <span class="rub">o</span></span>
+				</div>
+				<div class="sort-game__user">
+					<div class="sort-game__col sort-game__col--descr">
+						<div class="sort-game__user-descr">
+							<a href="#" class="sort-game__user-link">
+								<div class="sort-game__user-img">
+									<img src="pic/users/users-2.png" alt="">
+								</div>
+								<div class="sort-game__user-wrapp">
+									<span class="sort-game__user-name">
+										Ray Thompson
+									</span>
+									<div class="sort-game__user-rating">
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating-white">
+											<use xlink:href="#star"></use> 
+										</svg>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--status">
+						<div class="sort-game__status">
+							<span class="sort-game__status-icon offline"></span>
+							<span class="sort-game__status-text">Offline</span>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--reviews">
+						<div class="sort-game__reviews">
+							<span class="sort-game__reviews-text">Отзывы<span class="sort-game__reviews-text-hide"> продавца:</span></span>
+							<div class="sort-game__reviews-wrapp">
+								<a href="#" class="sort-game__reviews-positive">+23</a>
+								<a href="#" class="sort-game__reviews-negative">-12</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="sort-game__item ">
+
+			<div class="sort-game__img">
+				<img src="pic/recommendation/recommendation-3.png" alt="">
+			</div>
+			
+
+			<div class="sort-game__item-inner">
+				<div class="sort-game__goods">
+					<span class="sort-game__goods-text">
+						<a href="#" class="sort-game__goods-link">
+							Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу 
+						</a>
+					</span>
+					<span class="sort-game__goods-price"> 1700 <span class="rub">o</span></span>
+				</div>
+				<div class="sort-game__user">
+					<div class="sort-game__col sort-game__col--descr">
+						<div class="sort-game__user-descr">
+							<a href="#" class="sort-game__user-link">
+								<div class="sort-game__user-img">
+									<img src="pic/users/users-2.png" alt="">
+								</div>
+								<div class="sort-game__user-wrapp">
+									<span class="sort-game__user-name">
+										Arnold Schwarzenegger
+									</span>
+									<div class="sort-game__user-rating">
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating-white">
+											<use xlink:href="#star"></use> 
+										</svg>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--status">
+						<div class="sort-game__status">
+							<span class="sort-game__status-icon online"></span>
+							<span class="sort-game__status-text">Online</span>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--reviews">
+						<div class="sort-game__reviews">
+							<span class="sort-game__reviews-text">Отзывы<span class="sort-game__reviews-text-hide"> продавца:</span></span>
+							<div class="sort-game__reviews-wrapp">
+								<a href="#" class="sort-game__reviews-positive">+23</a>
+								<a href="#" class="sort-game__reviews-negative">-12</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="sort-game__item ">
+
+			<div class="sort-game__img" style="background-image: url(pic/recommendation/recommendation-4.png);">
+				
+			</div>
+			
+
+			<div class="sort-game__item-inner">
+				<div class="sort-game__goods">
+					<span class="sort-game__goods-text">
+						<a href="#" class="sort-game__goods-link">
+							Бронежелет, набор оружия и ключ активации 
+						</a>
+					</span>
+					<span class="sort-game__goods-price"> 1700 <span class="rub">o</span></span>
+				</div>
+				<div class="sort-game__user">
+					<div class="sort-game__col sort-game__col--descr">
+						<div class="sort-game__user-descr">
+							<a href="#" class="sort-game__user-link">
+								<div class="sort-game__user-img">
+									<img src="pic/users/users-2.png" alt="">
+								</div>
+								<div class="sort-game__user-wrapp">
+									<span class="sort-game__user-name">
+										Ray Thompson
+									</span>
+									<div class="sort-game__user-rating">
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating-white">
+											<use xlink:href="#star"></use> 
+										</svg>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--status">
+						<div class="sort-game__status">
+							<span class="sort-game__status-icon offline"></span>
+							<span class="sort-game__status-text">Offline</span>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--reviews">
+						<div class="sort-game__reviews">
+							<span class="sort-game__reviews-text">Отзывы<span class="sort-game__reviews-text-hide"> продавца:</span></span>
+							<div class="sort-game__reviews-wrapp">
+								<a href="#" class="sort-game__reviews-positive">+23</a>
+								<a href="#" class="sort-game__reviews-negative">-12</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="sort-game__item ">
+
+			<div class="sort-game__img" style="background-image: url(pic/recommendation/recommendation-5.png);">
+				
+			</div>
+
+			
+
+			<div class="sort-game__item-inner">
+				<div class="sort-game__goods">
+					<span class="sort-game__goods-text">
+						<a href="#" class="sort-game__goods-link">
+							Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ 
+						</a>
+					</span>
+					<span class="sort-game__goods-price"> 1700 <span class="rub">o</span></span>
+				</div>
+				<div class="sort-game__user">
+					<div class="sort-game__col sort-game__col--descr">
+						<div class="sort-game__user-descr">
+							<a href="#" class="sort-game__user-link">
+								<div class="sort-game__user-img">
+									<img src="pic/users/users-2.png" alt="">
+								</div>
+								<div class="sort-game__user-wrapp">
+									<span class="sort-game__user-name">
+										Arnold Schwarzenegger
+									</span>
+									<div class="sort-game__user-rating">
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating-white">
+											<use xlink:href="#star"></use> 
+										</svg>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--status">
+						<div class="sort-game__status">
+							<span class="sort-game__status-icon online"></span>
+							<span class="sort-game__status-text">Online</span>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--reviews">
+						<div class="sort-game__reviews">
+							<span class="sort-game__reviews-text">Отзывы<span class="sort-game__reviews-text-hide"> продавца:</span></span>
+							<div class="sort-game__reviews-wrapp">
+								<a href="#" class="sort-game__reviews-positive">+23</a>
+								<a href="#" class="sort-game__reviews-negative">-12</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="sort-game__item ">
+
+			<div class="sort-game__img" style="background-image: url(pic/recommendation/recommendation-2.png);">
+				
+			</div>
+
+			<div class="sort-game__item-inner">
+				<div class="sort-game__goods">
+					<span class="sort-game__goods-text">
+						<a href="#" class="sort-game__goods-link">
+							Бронежелет, набор оружия и ключ активации 
+						</a>
+					</span>
+					<span class="sort-game__goods-price"> 1700 <span class="rub">o</span></span>
+				</div>
+				<div class="sort-game__user">
+					<div class="sort-game__col sort-game__col--descr">
+						<div class="sort-game__user-descr">
+							<a href="#" class="sort-game__user-link">
+								<div class="sort-game__user-img">
+									<img src="pic/users/users-2.png" alt="">
+								</div>
+								<div class="sort-game__user-wrapp">
+									<span class="sort-game__user-name">
+										Ray Thompson
+									</span>
+									<div class="sort-game__user-rating">
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating-white">
+											<use xlink:href="#star"></use> 
+										</svg>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--status">
+						<div class="sort-game__status">
+							<span class="sort-game__status-icon offline"></span>
+							<span class="sort-game__status-text">Offline</span>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--reviews">
+						<div class="sort-game__reviews">
+							<span class="sort-game__reviews-text">Отзывы<span class="sort-game__reviews-text-hide"> продавца:</span></span>
+							<div class="sort-game__reviews-wrapp">
+								<a href="#" class="sort-game__reviews-positive">+23</a>
+								<a href="#" class="sort-game__reviews-negative">-12</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="sort-game__item ">
+
+			<div class="sort-game__img" style="background-image: url(pic/recommendation/recommendation-3.png);">
+				
+			</div>			
+
+			<div class="sort-game__item-inner">
+				<div class="sort-game__goods">
+					<span class="sort-game__goods-text">
+						<a href="#" class="sort-game__goods-link">
+							Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ 
+						</a>
+					</span>
+					<span class="sort-game__goods-price"> 1700 <span class="rub">o</span></span>
+				</div>
+				<div class="sort-game__user">
+					<div class="sort-game__col sort-game__col--descr">
+						<div class="sort-game__user-descr">
+							<a href="#" class="sort-game__user-link">
+								<div class="sort-game__user-img">
+									<img src="pic/users/users-2.png" alt="">
+								</div>
+								<div class="sort-game__user-wrapp">
+									<span class="sort-game__user-name">
+										Arnold Schwarzenegger
+									</span>
+									<div class="sort-game__user-rating">
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating-white">
+											<use xlink:href="#star"></use> 
+										</svg>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--status">
+						<div class="sort-game__status">
+							<span class="sort-game__status-icon online"></span>
+							<span class="sort-game__status-text">Online</span>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--reviews">
+						<div class="sort-game__reviews">
+							<span class="sort-game__reviews-text">Отзывы<span class="sort-game__reviews-text-hide"> продавца:</span></span>
+							<div class="sort-game__reviews-wrapp">
+								<a href="#" class="sort-game__reviews-positive">+23</a>
+								<a href="#" class="sort-game__reviews-negative">-12</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="sort-game__item ">
+
+			<div class="sort-game__img" style="background-image: url(pic/recommendation/recommendation-6.png);">
+				
+			</div>
+
+			<div class="sort-game__item-inner">
+				<div class="sort-game__goods">
+					<span class="sort-game__goods-text">
+						<a href="#" class="sort-game__goods-link">
+							Бронежелет, набор оружия и ключ активации 
+						</a>
+					</span>
+					<span class="sort-game__goods-price"> 1700 <span class="rub">o</span></span>
+				</div>
+				<div class="sort-game__user">
+					<div class="sort-game__col sort-game__col--descr">
+						<div class="sort-game__user-descr">
+							<a href="#" class="sort-game__user-link">
+								<div class="sort-game__user-img">
+									<img src="pic/users/users-2.png" alt="">
+								</div>
+								<div class="sort-game__user-wrapp">
+									<span class="sort-game__user-name">
+										Ray Thompson
+									</span>
+									<div class="sort-game__user-rating">
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating-white">
+											<use xlink:href="#star"></use> 
+										</svg>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--status">
+						<div class="sort-game__status">
+							<span class="sort-game__status-icon offline"></span>
+							<span class="sort-game__status-text">Offline</span>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--reviews">
+						<div class="sort-game__reviews">
+							<span class="sort-game__reviews-text">Отзывы<span class="sort-game__reviews-text-hide"> продавца:</span></span>
+							<div class="sort-game__reviews-wrapp">
+								<a href="#" class="sort-game__reviews-positive">+23</a>
+								<a href="#" class="sort-game__reviews-negative">-12</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="sort-game__item ">
+
+			<div class="sort-game__img" style="background-image: url(pic/recommendation/recommendation-5.png);">
+				
+			</div>			
+
+			<div class="sort-game__item-inner">
+				<div class="sort-game__goods">
+					<span class="sort-game__goods-text">
+						<a href="#" class="sort-game__goods-link">
+							Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ 
+						</a>
+					</span>
+					<span class="sort-game__goods-price"> 1700 <span class="rub">o</span></span>
+				</div>
+				<div class="sort-game__user">
+					<div class="sort-game__col sort-game__col--descr">
+						<div class="sort-game__user-descr">
+							<a href="#" class="sort-game__user-link">
+								<div class="sort-game__user-img">
+									<img src="pic/users/users-2.png" alt="">
+								</div>
+								<div class="sort-game__user-wrapp">
+									<span class="sort-game__user-name">
+										Arnold Schwarzenegger
+									</span>
+									<div class="sort-game__user-rating">
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating-white">
+											<use xlink:href="#star"></use> 
+										</svg>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--status">
+						<div class="sort-game__status">
+							<span class="sort-game__status-icon online"></span>
+							<span class="sort-game__status-text">Online</span>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--reviews">
+						<div class="sort-game__reviews">
+							<span class="sort-game__reviews-text">Отзывы<span class="sort-game__reviews-text-hide"> продавца:</span></span>
+							<div class="sort-game__reviews-wrapp">
+								<a href="#" class="sort-game__reviews-positive">+23</a>
+								<a href="#" class="sort-game__reviews-negative">-12</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="sort-game__item ">
+
+			<div class="sort-game__img" style="background-image: url(pic/recommendation/recommendation-3.png);">
+				
+			</div>
+
+			<div class="sort-game__item-inner">
+				<div class="sort-game__goods">
+					<span class="sort-game__goods-text">
+						<a href="#" class="sort-game__goods-link">
+							Бронежелет, набор оружия и ключ активации 
+						</a>
+					</span>
+					<span class="sort-game__goods-price"> 1700 <span class="rub">o</span></span>
+				</div>
+				<div class="sort-game__user">
+					<div class="sort-game__col sort-game__col--descr">
+						<div class="sort-game__user-descr">
+							<a href="#" class="sort-game__user-link">
+								<div class="sort-game__user-img">
+									<img src="pic/users/users-2.png" alt="">
+								</div>
+								<div class="sort-game__user-wrapp">
+									<span class="sort-game__user-name">
+										Ray Thompson
+									</span>
+									<div class="sort-game__user-rating">
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating">
+											<use xlink:href="#star"></use> 
+										</svg>
+										<svg class="icon-star-rating-white">
+											<use xlink:href="#star"></use> 
+										</svg>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--status">
+						<div class="sort-game__status">
+							<span class="sort-game__status-icon offline"></span>
+							<span class="sort-game__status-text">Offline</span>
+						</div>
+					</div>
+					<div class="sort-game__col sort-game__col--reviews">
+						<div class="sort-game__reviews">
+							<span class="sort-game__reviews-text">Отзывы<span class="sort-game__reviews-text-hide"> продавца:</span></span>
+							<div class="sort-game__reviews-wrapp">
+								<a href="#" class="sort-game__reviews-positive">+23</a>
+								<a href="#" class="sort-game__reviews-negative">-12</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="pagination">
+	<ul class="pagination__list">
+		<li class="pagination__item">
+			<a href="#" class="pagination__link pagination__link--prev"></a>
+		</li>
+		<li class="pagination__item">
+			<a href="#" class="pagination__link active">1</a>
+		</li>
+		<li class="pagination__item">
+			<a href="#" class="pagination__link">2</a>
+		</li>
+		<li class="pagination__item">
+			<a href="#" class="pagination__link">3</a>
+		</li>
+		<li class="pagination__item">
+			<a class="pagination__link disactive">...</a>
+		</li>
+		<li class="pagination__item">
+			<a href="#" class="pagination__link">12</a>
+		</li>
+		<li class="pagination__item">
+			<a href="#" class="pagination__link pagination__link--next"></a>
+		</li>
+	</ul>
+</div>
+</div>
+					</div>
+					<aside class="js-filter">
+						<div class="filter">
+	<div class="sidebar__close js-close-filter"></div>
+	<form action="">
+		<span class="filter__caption">Фильтр</span>
+		<div class="filter__group filter__group--slider">
+			<span class="filter__title">Цена</span>
+			<div class="filter__slider">
+				<div id="slider-range"></div>
+			</div>
+		</div>
+		<div class="filter__group">
+			<span class="filter__title">Рейтинг продавца</span>
+			<div class="filter__select-wrapp">
+				<select name="Select" id="" class="js-select">
+					<option value="hide">От</option>
+					<option value="">1</option>
+					<option value="">2</option>
+					<option value="">3</option>
+					<option value="">4</option>
+					<option value="">5</option>
+				</select>
+			</div>
+			<span class="filter__line"></span>
+			<div class="filter__select-wrapp">
+				<select name="Select" id="" class="js-select">
+					<option value="hide">До</option>
+					<option value="">1</option>
+					<option value="">2</option>
+					<option value="">3</option>
+					<option value="">4</option>
+					<option value="">5</option>
+				</select>
+			</div>
+		</div>
+		<div class="filter__group">
+			<span class="filter__title">Статус</span>
+			<ul class="filter__list">
+				<li class="filter__item">
+					<label class="radio">
+						<input type="radio" checked name="radio">
+						<span>Online</span>
+					</label>
+				</li>
+				<li class="filter__item">
+					<label class="radio">
+						<input type="radio" name="radio">
+						<span>Offline</span>
+					</label>
+				</li>
+			</ul>
+		</div>
+		<div class="filter__group filter__group--btn">
+			<div class="filter__btn-wrapp">
+				<button class="btn filter__btn" type="reset">Сбросить</button>
+			</div>
+		</div>
+	</form>
+	
+</div>
+					</aside>
+				</div>
+			</div>
+		</div>
+
+		<div class="static-content">
+			<div class="container">
+				<div class="content-info content-info--bottom js-content-info">
+					<h6>Самый доступный магазин игр в интернете</h6>
+					<p>
+						Стоимость игр и предметов для инвентаря регулируется на платформе по рыночным законам. То есть вы всегда сможете купить цифровой продукт по самой низкой цене. При этом, ассортимент каждый час увеличивается на сотни новых позиций. Наши условия настолько выгодны, что лоты стабильно выкупают другие площадки.
+					</p>
+					<span class="content-info__title-white">Game Transfer в цифрах:</span>
+					
+					<div class="step step--statistics">
+	
+		<div class="step__item">
+			<span class="step__number">18%</span>
+			<span class="step__descr">Наши цены почти на 18% ниже среднерыночной стоимости среди других платформ;</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">95%</span>
+			<span class="step__descr">Вы можете купить аккаунты с играми на 50%, 70% или даже 95% дешевле официальной стоимости</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">183</span>
+			<span class="step__descr">В среднем, каждый час наш ресурс обрабатывает 183 сделки, потому что нам доверяют</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">$ 370 000</span>
+			<span class="step__descr">Общая стоимость наших лотов превышает 370 000 долларов, и это только начало</span>
+		</div>
+	
+		<div class="step__item">
+			<span class="step__number">100%</span>
+			<span class="step__descr">За всё время работы мы получили 100% положительных отзывов, без исключений</span>
+		</div>
+	
+</div>
+
+					<h6>Уникальные преимущества нашей торговой площадки игр</h6>
+					<span class="content-info__descr">Как и все, мы предлагаем оперативную техническую поддержку и регулярное пополнение ассортимента. Но это не те причины, почему вам действительно стоит купить аккаунты с играми именно в нашем магазине:</span>
+					<ul>
+						<li>Все сделки проходят под надсмотром арбитража;</li>
+						<li>У нас есть не только аккаунты стим с играми, но и предложения под другие популярные платформы;</li>
+						<li>Среди всех пользователей Game Transfer мы проводим регулярные розыгрыши;</li>
+						<li>Все наши отзывы оставлены реальными людьми по результатам настоящих сделок;</li>
+						<li>Наша комиссия почти втрое меньше, чем у других магазинов игр;</li>
+						<li>Только у нас постоянно проводятся распродажи, где можно купить аккаунт с играми по самой низкой в интернете цене;</li>
+						<li>Нашей платформой пользуются даже игроки pro-сцены, а это говорит о многом.</li>
+					</ul>
+					<h6>Покупка и продажа игр в одном месте</h6>
+					<span class="content-info__descr">На Game Transfer вы можете не только купить игровые аккаунты Steam, Blizzard и других платформ, но и быстро продать свои игры или предметы инвентаря. Мы предоставляем вам эффективный инструмент для взаимовыгодного обмена между пользователями, с нашим участием в качестве гаранта.</span>
+					<span class="content-info__descr-big">Если хотите продать аккаунт с играми, то наш ресурс обеспечит вам следующие преимущества:</span>
+					<ol>
+						<li>Удобный личный кабинет с историей всех операций;</li>
+						<li>Мгновенный вывод средств;</li>
+						<li>В случае спорных ситуаций, вы можете бесплатно воспользоваться услугой арбитража;</li>
+						<li>Нашему проекту доверяют, поэтому мы обеспечиваем высокий спрос на любые лицензионные игры и предметы инвентаря.</li>
+					</ol>
+					<span class="content-info__more js-more-info">Подробнее</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="social">
+	<div class="container">
+		<span class="social__title">Следите за нами в социальных сетях:</span>
+		<div class="social__wrapp">
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-vk">
+						<use xlink:href="#vk"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-g-plus">
+						<use xlink:href="#g-plus"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-telegram">
+						<use xlink:href="#telegram"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-facebook">
+						<use xlink:href="#facebook"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__wrapp">
+			<div class="footer__inner footer__inner--nav">
+				<ul class="footer__list">
+					<li class="footer__item">
+						<a href="#" class="footer__link">Поддержка</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Вопросы и ответы</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Правила</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Рейтинг продавцов</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Розыгрыши</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Информация</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Пользовательское соглашение</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Отказ от ответственности</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Разрешение споров</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__inner footer__inner--info">
+				<span class="footer__descr">© 2018 Game Transfer - торговая площадка игровых ценностей</span>
+				<span class="footer__icon">
+					<img src="pic/webmoney.png" alt="">
+				</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

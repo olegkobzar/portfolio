@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Каталог</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+<header class="header ">
+	<div class="container">
+		<div class="header__holder">
+			<div class="header__item header__item--toggler">
+				<span class="header__toggler js-toggler-open">
+					<span class="header__toggler-decor"></span>
+				</span>
+			</div>
+			<div class="header__item header__item--logo">
+				<a href="#" class="header__logo">GT</a>
+			</div>
+			<div class="header__item header__item--nav js-toggler-menu">
+				<div class="header__nav-overlay js-nav-overlay"></div>
+				<nav class="header__nav">
+					<span class="header__nav-close js-toggler-close"></span>
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Блог
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Рейтинг продавцов
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Розыгрыши
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Поддержка
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Вопросы и ответы
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Правила
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			
+
+			
+			
+			<div class="header__item header__item--user js-user-wrap">
+				<a href="#" class="header__user js-user-link">
+					<img src="pic/users/users-5.png" alt="user">
+				</a>
+				<div class="header__user-info js-user-drop">
+					<div class="header__user-head">
+						<div class="header__user-img">
+							<img src="pic/users/users-5.png" alt="user">
+						</div>
+						<div class="header__user-txt">
+							<span class="header__user-name">
+								Chack Norris
+							</span>
+							<a href="#" class="header__user-mail">
+								Norris@gmail.com
+							</a>
+						</div>
+					</div>
+					<ul class="header__user-list">
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои покупки</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои продажи</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои операции</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Заработать</a>
+						</li>
+					</ul>
+					<div class="header__user-logout">
+						<a href="#" class="header__user-logout-link">
+							<span class="header__user-icon">
+
+							</span>
+							<span class="header__user-logout-txt">Выйти</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+<div class="wrapper">
+	<div class="hero" style="background-image: url('pic/bg/bg-3.jpg');">
+	<div class="container">
+		<div class="hero__holder">
+			<a href="#" class="hero__logo">
+				<span class="hero__logo-icon">
+					<img src="pic/logo/logo-steam.png" alt="logo">
+				</span>
+				<span class="hero__logo-txt">
+					Steam
+				</span>
+			</a>
+			<ul class="hero__list">
+				<li class="hero__list-item">
+					<a href="#" class="hero__list-link">
+						Золото
+					</a>
+				</li>
+				<li class="hero__list-item">
+					<a href="#" class="hero__list-link">
+						Аккаунты
+					</a>
+				</li>
+				<li class="hero__list-item">
+					<a href="#" class="hero__list-link">
+						Предметы
+					</a>
+				</li>
+				<li class="hero__list-item">
+					<a href="#" class="hero__list-link">
+						Бриллианты
+					</a>
+				</li>
+				<li class="hero__list-item">
+					<a href="#" class="hero__list-link">
+						Услуги
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+	<div class="catalog">
+	<div class="catalog__holder">
+		<div class="catalog__tabs">
+			<ul class="catalog__tabs-list">
+				<li class="catalog__tabs-item">
+					<span class="catalog__tabs-txt">
+						Сортировка по:
+					</span>
+				</li>
+				<li class="catalog__tabs-item">
+					<a href="#" class="catalog__tabs-link active"></a>
+				</li>
+			</ul>
+		</div>
+		<div class="catalog__filter">
+			
+		</div>
+	</div>
+</div>
+	
+	<div class="social">
+	<div class="container">
+		<span class="social__title">Следите за нами в социальных сетях:</span>
+		<div class="social__wrapp">
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-vk">
+						<use xlink:href="#vk"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-g-plus">
+						<use xlink:href="#g-plus"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-telegram">
+						<use xlink:href="#telegram"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-facebook">
+						<use xlink:href="#facebook"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__wrapp">
+			<div class="footer__inner footer__inner--nav">
+				<ul class="footer__list">
+					<li class="footer__item">
+						<a href="#" class="footer__link">Поддержка</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Вопросы и ответы</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Правила</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Рейтинг продавцов</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Розыгрыши</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Информация</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Пользовательское соглашение</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Отказ от ответственности</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Разрешение споров</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__inner footer__inner--info">
+				<span class="footer__descr">© 2018 Game Transfer - торговая площадка игровых ценностей</span>
+				<span class="footer__icon">
+					<img src="pic/webmoney.png" alt="">
+				</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

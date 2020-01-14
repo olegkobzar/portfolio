@@ -1,0 +1,1373 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript">
+    <title>Главная</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+  <header class="header">
+  <div class="header__top">
+    <div class="container">
+      <div class="header__page">
+        <div class="header__page-holder">
+          <a href="http://new.tinel.biz/master-classes/" target="_blank" class="header__page-link">
+            <svg class="icon-medal">
+              <use xlink:href="#medal"></use>
+            </svg>
+            Мастер-классы
+          </a>          
+        </div>
+        <div class="header__page-holder">
+          <a href="http://new.tinel.biz/blog/" target="_blank" class="header__page-link">
+            <svg class="icon-file">
+              <use xlink:href="#file"></use>
+            </svg>
+            Блог
+          </a>
+        </div>
+        <div class="header__page-holder">
+          <a href="http://new.tinel.biz/catalog/pigmenty-dlya-apparatnykh-tekhnik/pigmenty-dlya-brovey/" target="_blank" class="header__page-link">
+            <svg class="icon-cart">
+              <use xlink:href="#cart"></use>
+            </svg>
+            Продукция
+          </a>
+        </div>
+      </div>
+      <div class="header__contact">
+        <a href="tel:+77182781510" class="header__contact-link">
+          <svg class="icon-phone-handle">
+            <use xlink:href="#phone-handle"></use>
+          </svg>
+          +7 (7182) 78-15-10
+        </a>
+        <a href="tel:+77077781510" class="header__contact-link">
+          <svg class="icon-iphone">
+            <use xlink:href="#iphone"></use>
+          </svg>
+          +7 (707) 778-15-10
+        </a>
+        <a data-fancybox data-src="#popup-feedback" href="javascript:;" class="btn header__contact-btn">Заказать звонок</a>
+      </div>
+    </div>
+  </div>
+  <div class="header__bottom">
+    <div class="container">
+      <div class="header__bottom-wrap">
+        <div class="header__logo">
+          <a href="#" class="header__logo-link">
+            <img src="pic/logo.png" alt="" class="header__logo-img">
+          </a>
+        </div>
+        <nav class="header__nav js-header-collapse">
+          <span class="header__nav-close js-header-close"></span>
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Услуги и цены</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Фотогалерея</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">О нас</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Отзывы</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Контакты</a>
+            </li>
+          </ul>
+          <div class="header__nav-mobile">
+            <a data-fancybox data-src="#popup-feedback" href="javascript:;" class="btn header__nav-btn">Заказать звонок</a>
+          </div>
+        </nav>
+        <div class="header__toggler">
+          <span class="header__toggler-btn js-header-btn">
+            <span class="header__toggler-decor"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <div class="heading js-slider-heading">
+	<div class="heading__item" style="background-image: url(pic/bg/bg-slider-01.jpg);">
+		<div class="container">
+			<div class="heading__wrap">
+				<div class="heading__inner">
+					<div class="heading__content">
+						<span class="heading__caption">Перманентный макияж</span>
+						<span class="heading__descr">Позволяет всегда сохранять аккуратный внешний вид, освободит Вас от необходимости в ежедневном нанесении косметики.</span>
+						<span class="heading__price">от 15 000 тнг.</span>
+						<a data-fancybox data-src="#popup-record" href="javascript:;" class="btn heading__btn">консультация</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="heading__item" style="background-image: url(pic/bg/bg-slider-01.jpg);">
+		<div class="container">
+			<div class="heading__wrap">
+				<div class="heading__inner">
+					<div class="heading__content">
+						<span class="heading__caption">Перманентный макияж</span>
+						<span class="heading__descr">Позволяет всегда сохранять аккуратный внешний вид, освободит Вас от необходимости в ежедневном нанесении косметики.</span>
+						<span class="heading__price">от 15 000 тнг.</span>
+						<a data-fancybox data-src="#popup-record" href="javascript:;" class="btn heading__btn">консультация</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="heading__item" style="background-image: url(pic/bg/bg-slider-01.jpg);">
+		<div class="container">
+			<div class="heading__wrap">
+				<div class="heading__inner">
+					<div class="heading__content">
+						<span class="heading__caption">Перманентный макияж</span>
+						<span class="heading__descr">Позволяет всегда сохранять аккуратный внешний вид, освободит Вас от необходимости в ежедневном нанесении косметики.</span>
+						<span class="heading__price">от 15 000 тнг.</span>
+						<a data-fancybox data-src="#popup-record" href="javascript:;" class="btn heading__btn">консультация</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="heading__item" style="background-image: url(pic/bg/bg-slider-01.jpg);">
+		<div class="container">
+			<div class="heading__wrap">
+				<div class="heading__inner">
+					<div class="heading__content">
+						<span class="heading__caption">Перманентный макияж</span>
+						<span class="heading__descr">Позволяет всегда сохранять аккуратный внешний вид, освободит Вас от необходимости в ежедневном нанесении косметики.</span>
+						<span class="heading__price">от 15 000 тнг.</span>
+						<a data-fancybox data-src="#popup-record" href="javascript:;" class="btn heading__btn">консультация</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+  
+  <div class="card-info">
+  <div class="container">
+    <ul class="card-info__list">
+     
+      <li class="card-info__item">
+        <div class="card-info__top">
+          <svg class="icon-cup">
+            <use xlink:href="#cup"></use>
+          </svg>
+        </div>
+        <span class="card-info__caption">Используем лучшую косметику</span>
+        <span class="card-info__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
+      </li>
+      
+      <li class="card-info__item">
+        <div class="card-info__top">
+          <svg class="icon-file-large">
+            <use xlink:href="#file-large"></use>
+          </svg>
+        </div>
+        <span class="card-info__caption">Лицензии на все виды работ</span>
+        <span class="card-info__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
+      </li>
+      
+      <li class="card-info__item">
+        <div class="card-info__top">
+          <svg class="icon-shape">
+            <use xlink:href="#shape"></use>
+          </svg>
+        </div>
+        <span class="card-info__caption">Уютный интерьер студии</span>
+        <span class="card-info__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
+      </li>
+      
+      <li class="card-info__item">
+        <div class="card-info__top">
+          <svg class="icon-medal-large">
+            <use xlink:href="#medal-large"></use>
+          </svg>
+        </div>
+        <span class="card-info__caption">Богатый опыт мастеров</span>
+        <span class="card-info__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <div class="services services--main js-tabs-wrap">
+	<div class="container">
+    <div class="services__outer">
+      <span class="services__caption"><b>Услуги</b> и цены</span>
+      <div class="services__slider js-slider-services">
+        <div class="services__slider-item active js-tab">
+          <a href="#" class="services__slider-link">Перманентный макияж</a>
+        </div>
+        <div class="services__slider-item js-tab">
+          <a href="#" class="services__slider-link">Эпиляция</a>
+        </div>
+        <div class="services__slider-item js-tab">
+          <a href="#" class="services__slider-link">Косметология</a>
+        </div>
+        <div class="services__slider-item js-tab">
+          <a href="#" class="services__slider-link">Массаж</a>
+        </div>
+        <div class="services__slider-item js-tab">
+          <a href="#" class="services__slider-link">Наращивание волос</a>
+        </div>
+        <div class="services__slider-item js-tab">
+          <a href="#" class="services__slider-link">Кавитация</a>
+        </div>
+        <div class="services__slider-item js-tab">
+          <a href="#" class="services__slider-link">Пирсинг</a>
+        </div>
+      </div>
+
+      <div class="services__wrap js-tab-content active">
+        <div class="services__col">
+          <span class="services__title">Мастер <b>Альбина</b></span>
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Брови, веки, губы</span>
+                <span class="services__price" data-text="Подробнее">15 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Коррекция через месяц</span>
+                <span class="services__price" data-text="Подробнее">5 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Обновление</span>
+                <span class="services__price" data-text="Подробнее">12 000 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="services__col">
+          <span class="services__title">Мастер <b>Алия</b></span>
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Брови, веки, губы</span>
+                <span class="services__price" data-text="Подробнее">15 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Коррекция через месяц</span>
+                <span class="services__price" data-text="Подробнее">5 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Обновление</span>
+                <span class="services__price" data-text="Подробнее">12 000 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="services__col">
+          <span class="services__title">Мастер <b>Айгуль</b></span>
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Брови, веки, губы</span>
+                <span class="services__price" data-text="Подробнее">15 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Коррекция через месяц</span>
+                <span class="services__price" data-text="Подробнее">5 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Обновление</span>
+                <span class="services__price" data-text="Подробнее">12 000 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="services__wrap js-tab-content">
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Верхняя губа</span>
+                <span class="services__price" data-text="Подробнее">5 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Подбородок</span>
+                <span class="services__price" data-text="Подробнее">4 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Подмышечная область (ж.)</span>
+                <span class="services__price" data-text="Подробнее">6 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Подбородок</span>
+                <span class="services__price" data-text="Подробнее">4 000 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Лоб</span>
+                <span class="services__price" data-text="Подробнее">3 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Щеки</span>
+                <span class="services__price" data-text="Подробнее">4 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Подмышечная область (м.)</span>
+                <span class="services__price" data-text="Подробнее">7 200 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Щеки</span>
+                <span class="services__price" data-text="Подробнее">4 000 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Уши</span>
+                <span class="services__price" data-text="Подробнее">3 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Шеч</span>
+                <span class="services__price" data-text="Подробнее">4 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Руки (предплечье)</span>
+                <span class="services__price" data-text="Подробнее">10 200 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="services__wrap js-tab-content">
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Плазма лифтинг</span>
+                <span class="services__price" data-text="Подробнее">20 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Диспорт</span>
+                <span class="services__price" data-text="Подробнее">420 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Гидромезотерапия</span>
+                <span class="services__price" data-text="Подробнее">19 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Массаж лица</span>
+                <span class="services__price" data-text="Подробнее">3 500 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Чистка комплексная</span>
+                <span class="services__price" data-text="Подробнее">7 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Биоревитализация</span>
+                <span class="services__price" data-text="Подробнее">30 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Кислотный пилинг</span>
+                <span class="services__price" data-text="Подробнее">8 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Контурная пластика</span>
+                <span class="services__price" data-text="Подробнее">от 20 000 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Чистка ультразвуком</span>
+                <span class="services__price" data-text="Подробнее">4 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Мезотерапия</span>
+                <span class="services__price" data-text="Подробнее">20 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Карбоновый пилинг</span>
+                <span class="services__price" data-text="Подробнее">15 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Смас лифтинг</span>
+                <span class="services__price" data-text="Подробнее">200 000 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="services__wrap js-tab-content">
+        <div class="services__col">
+          <span class="services__title"><b>Наращивание</b></span>
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">1 лента</span>
+                <span class="services__price" data-text="Подробнее">400 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">1 капсула</span>
+                <span class="services__price" data-text="Подробнее">100 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="services__col">
+          <span class="services__title"><b>Коррекция</b></span>
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">1 лента</span>
+                <span class="services__price" data-text="Подробнее">600 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">1 капсула</span>
+                <span class="services__price" data-text="Подробнее">150 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="services__col">
+          <span class="services__title"><b>Снятие</b></span>
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">1 лента</span>
+                <span class="services__price" data-text="Подробнее">300 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">1 капсула</span>
+                <span class="services__price" data-text="Подробнее">50 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="services__wrap js-tab-content">
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Ноги (20 мин.)</span>
+                <span class="services__price" data-text="Подробнее">2 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Воротниковая зона</span>
+                <span class="services__price" data-text="Подробнее">2 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Общий массаж</span>
+                <span class="services__price" data-text="Подробнее">от 4 000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Релакс массаж</span>
+                <span class="services__price" data-text="Подробнее">5 500 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Руки (20 мин.)</span>
+                <span class="services__price" data-text="Подробнее">2 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Живот (20 мин.)</span>
+                <span class="services__price" data-text="Подробнее">2 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Антицеллюлитный</span>
+                <span class="services__price" data-text="Подробнее">от 4000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">С мешочками кижи</span>
+                <span class="services__price" data-text="Подробнее">7 000 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Спина (20 мин.)</span>
+                <span class="services__price" data-text="Подробнее">3 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Голова (20 мин.)</span>
+                <span class="services__price" data-text="Подробнее">2 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Скульптурирующий</span>
+                <span class="services__price" data-text="Подробнее">от 4000 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Для беременных</span>
+                <span class="services__price" data-text="Подробнее">3 5000 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="services__wrap js-tab-content">
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Подбородок + массаж</span>
+                <span class="services__price" data-text="Подробнее">2 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Ягодицы + массаж</span>
+                <span class="services__price" data-text="Подробнее">3 000 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Руки + массаж</span>
+                <span class="services__price" data-text="Подробнее">3 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Бедра + массаж</span>
+                <span class="services__price" data-text="Подробнее">6 000 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Живот + массаж</span>
+                <span class="services__price" data-text="Подробнее">4 200 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="services__wrap js-tab-content">
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Уши</span>
+                <span class="services__price" data-text="Подробнее">от 2 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Бровь</span>
+                <span class="services__price" data-text="Подробнее">2 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Микродермал</span>
+                <span class="services__price" data-text="Подробнее">5 000 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Пупок</span>
+                <span class="services__price" data-text="Подробнее">2 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Язык</span>
+                <span class="services__price" data-text="Подробнее">2 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Замена пирсинга</span>
+                <span class="services__price" data-text="Подробнее">1 000 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="services__col">
+          <ul class="services__list">
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Нос</span>
+                <span class="services__price" data-text="Подробнее">2 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Хрящ</span>
+                <span class="services__price" data-text="Подробнее">2 500 тнг.</span>
+              </a>
+            </li>
+            <li class="services__item">
+              <a href="http://htmlmarkup.pro/p/tinel/static-page.html" class="services__link">
+                <span class="services__label">Снятие микродермала</span>
+                <span class="services__price" data-text="Подробнее">2 500 тнг.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+<!--
+      <img src="pic/bg/bg-decor-03.png" alt="" class="services__decor services__decor--top">
+      <img src="pic/bg/bg-decor-02.png" alt="" class="services__decor services__decor--bottom">
+-->
+    </div>
+	</div>
+</div>
+
+
+  <div class="our-masters">
+  <div class="container">
+    <span class="our-masters__title">Наши <b>мастера</b></span>
+    <div class="our-masters__slider js-master-slider">
+    
+      <div class="our-masters__slide">
+        <div class="our-masters__slide-top">
+          <img src="pic/our-masters/our-masters-01.jpg" alt="" class="our-masters__slide-img">
+          <a href="#" class="our-masters__slide-social">
+            <svg class="icon-instagram-color">
+              <use xlink:href="#instagram-color"></use>
+            </svg>
+          </a>
+        </div>
+        <span class="our-masters__slide-name">Марина</span>
+        <span class="our-masters__slide-profession">Косметолог</span>
+        <span class="our-masters__slide-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua.</span>
+        <a data-fancybox data-src="#popup-record-cosmetologist" href="javascript:;" class="btn our-masters__slide-btn">записаться</a>
+      </div>
+    
+      <div class="our-masters__slide">
+        <div class="our-masters__slide-top">
+          <img src="pic/our-masters/our-masters-02.jpg" alt="" class="our-masters__slide-img">
+          <a href="#" class="our-masters__slide-social">
+            <svg class="icon-instagram-color">
+              <use xlink:href="#instagram-color"></use>
+            </svg>
+          </a>
+        </div>
+        <span class="our-masters__slide-name">Алия</span>
+        <span class="our-masters__slide-profession">Мастер ПМ</span>
+        <span class="our-masters__slide-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua.</span>
+        <a data-fancybox data-src="#popup-record-pm" href="javascript:;" class="btn our-masters__slide-btn">записаться</a>
+      </div>
+    
+      <div class="our-masters__slide">
+        <div class="our-masters__slide-top">
+          <img src="pic/our-masters/our-masters-03.jpg" alt="" class="our-masters__slide-img">
+          <a href="#" class="our-masters__slide-social">
+            <svg class="icon-instagram-color">
+              <use xlink:href="#instagram-color"></use>
+            </svg>
+          </a>
+        </div>
+        <span class="our-masters__slide-name">Асель</span>
+        <span class="our-masters__slide-profession">Массажист</span>
+        <span class="our-masters__slide-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua.</span>
+        <a data-fancybox data-src="#popup-record-massage" href="javascript:;" class="btn our-masters__slide-btn">записаться</a>
+      </div>
+    
+      <div class="our-masters__slide">
+        <div class="our-masters__slide-top">
+          <img src="pic/our-masters/our-masters-04.jpg" alt="" class="our-masters__slide-img">
+          <a href="#" class="our-masters__slide-social">
+            <svg class="icon-instagram-color">
+              <use xlink:href="#instagram-color"></use>
+            </svg>
+          </a>
+        </div>
+        <span class="our-masters__slide-name">Альбина</span>
+        <span class="our-masters__slide-profession">Мастер ПМ</span>
+        <span class="our-masters__slide-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua.</span>
+        <a data-fancybox data-src="#popup-record-pm" href="javascript:;" class="btn our-masters__slide-btn">записаться</a>
+      </div>
+    
+      <div class="our-masters__slide">
+        <div class="our-masters__slide-top">
+          <img src="pic/our-masters/our-masters-02.jpg" alt="" class="our-masters__slide-img">
+          <a href="#" class="our-masters__slide-social">
+            <svg class="icon-instagram-color">
+              <use xlink:href="#instagram-color"></use>
+            </svg>
+          </a>
+        </div>
+        <span class="our-masters__slide-name">Алия</span>
+        <span class="our-masters__slide-profession">Мастер ПМ</span>
+        <span class="our-masters__slide-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua.</span>
+        <a data-fancybox data-src="#popup-record-pm" href="javascript:;" class="btn our-masters__slide-btn">записаться</a>
+      </div>
+    
+    </div>
+  </div>
+</div>
+  <div class="certificates">
+  <div class="container">
+    <div class="certificates__wrap">
+      <span class="certificates__title"><b>Награды</b> и сертификаты</span>
+      <span class="certificates__desc">Наши мастера являются постоянными участниками топовых бьюти-конференций, мастер-классов и чемпионатов</span>
+      <div class="certificates__gallery js-gallery-scroll">
+        <div class="certificates__gallery-holder">
+          <img src="pic/certificates/certificates-01.jpg" alt="" class="certificates__gallery-img" data-src="pic/certificates/certificates-01.jpg" data-fancybox="images" data-width="660" data-height="450">
+        </div>
+        <div class="certificates__gallery-holder">
+          <img src="pic/certificates/certificates-02.jpg" alt="" class="certificates__gallery-img" data-src="pic/certificates/certificates-02.jpg" data-fancybox="images" data-width="660" data-height="450">
+        </div>
+        <div class="certificates__gallery-holder">
+          <img src="pic/certificates/certificates-03.jpg" alt="" class="certificates__gallery-img" data-src="pic/certificates/certificates-03.jpg" data-fancybox="images" data-width="660" data-height="450">
+        </div>
+        <div class="certificates__gallery-holder">
+          <img src="pic/certificates/certificates-04.jpg" alt="" class="certificates__gallery-img" data-src="pic/certificates/certificates-04.jpg" data-fancybox="images" data-width="660" data-height="450">
+        </div>
+        <div class="certificates__gallery-holder">
+          <img src="pic/certificates/certificates-01.jpg" alt="" class="certificates__gallery-img" data-src="pic/certificates/certificates-01.jpg" data-fancybox="images" data-width="660" data-height="450">
+        </div>
+        <div class="certificates__gallery-holder">
+          <img src="pic/certificates/certificates-02.jpg" alt="" class="certificates__gallery-img" data-src="pic/certificates/certificates-02.jpg" data-fancybox="images" data-width="660" data-height="450">
+        </div>
+        <div class="certificates__gallery-holder">
+          <img src="pic/certificates/certificates-03.jpg" alt="" class="certificates__gallery-img" data-src="pic/certificates/certificates-03.jpg" data-fancybox="images" data-width="660" data-height="450">
+        </div>
+        <div class="certificates__gallery-holder">
+          <img src="pic/certificates/certificates-04.jpg" alt="" class="certificates__gallery-img" data-src="pic/certificates/certificates-04.jpg" data-fancybox="images" data-width="660" data-height="450">
+        </div>
+      </div>
+      <div class="certificates__info">
+        <div class="certificates__info-holder certificates__info-holder--small">
+          <img src="pic/bg/bg-01.png" alt="" class="certificates__info-img">
+        </div>
+        <div class="certificates__info-holder certificates__info-holder--large">
+          <ul class="certificates__info-list">
+            <li class="certificates__info-item">
+              <span class="certificates__info-val">800</span>
+              <span class="certificates__info-txt">Свыше 800 реальных работ в портфолио</span>
+            </li>
+            <li class="certificates__info-item">
+              <span class="certificates__info-val">3000</span>
+              <span class="certificates__info-txt">Более 3000 довольных клиентов</span>
+            </li>
+            <li class="certificates__info-item">
+              <span class="certificates__info-val">6-12</span>
+              <span class="certificates__info-txt">Опыт наших мастеров составляет 6-12 лет</span>
+            </li>
+            <li class="certificates__info-item">
+              <span class="certificates__info-val">12</span>
+              <span class="certificates__info-txt">12 высококласных специалистов в штате</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <img src="pic/bg/bg-decor-01.png" alt="" class="certificates__decor">
+      
+    </div>
+  </div>
+</div>
+  <div class="we-instagram">
+  <div class="container">
+    <div class="we-instagram__wrap">      
+      <div class="we-instagram__top">
+        <span class="we-instagram__title">Мы в Instagram</span>
+        <span class="we-instagram__subtitle">Подписывайся и следи за новостями</span>
+        <a href="https://www.instagram.com/tinel_beauty_club/" target="_blank" class="btn btn--insta we-instagram__btn">Подписаться</a>
+      </div>
+      <div class="we-instagram__body js-instagram-scroll">
+      
+        <a href="#" class="we-instagram__link">
+          <img src="pic/instagram/instagram-01.jpg" alt="" class="we-instagram__img">
+        </a>
+      
+        <a href="#" class="we-instagram__link">
+          <img src="pic/instagram/instagram-02.jpg" alt="" class="we-instagram__img">
+        </a>
+      
+        <a href="#" class="we-instagram__link">
+          <img src="pic/instagram/instagram-03.jpg" alt="" class="we-instagram__img">
+        </a>
+      
+        <a href="#" class="we-instagram__link">
+          <img src="pic/instagram/instagram-04.jpg" alt="" class="we-instagram__img">
+        </a>
+      
+        <a href="#" class="we-instagram__link">
+          <img src="pic/instagram/instagram-01.jpg" alt="" class="we-instagram__img">
+        </a>
+      
+        <a href="#" class="we-instagram__link">
+          <img src="pic/instagram/instagram-02.jpg" alt="" class="we-instagram__img">
+        </a>
+      
+        <a href="#" class="we-instagram__link">
+          <img src="pic/instagram/instagram-03.jpg" alt="" class="we-instagram__img">
+        </a>
+      
+        <a href="#" class="we-instagram__link">
+          <img src="pic/instagram/instagram-04.jpg" alt="" class="we-instagram__img">
+        </a>
+      
+      </div>
+      <img src="pic/bg/bg-instagram.png" alt="" class="we-instagram__bg">
+    </div>
+  </div>
+</div>
+  <div class="about-studio">
+  <div class="container">
+    <div class="about-studio__wrap">
+      <div class="static-content">
+        <h2>О нашей студии</h2>
+        <p>«Tinel» принимает своих пациентов в комфортабельном здании в центре Павлодара. Комфортные условия приема клиентов, мировой уровень лечения и обслуживания, полная анонимность, настроенность на пациента, индивидуальный подход, вежливый персонал - это то, что отличает нашу клинику.</p>
+        <p>Наш салон имеет все лицензии и гигиенические сертификаты для проведение работ, на используемые нами материалы и оборудование. Все наши специалисты сертифицированы и профессиональны!</p>
+        <p>Качественное обслуживание и высокий уровень профессионализма мастера является основным критерием для выбора, т.к. перманентный макияж, пирсинг, или татуировка делаются на длительный срок и должны выглядеть соответствующе.</p>
+        <p>Качественное обслуживание и высокий уровень профессионализма мастера является основным критерием для выбора, т.к. перманентный макияж, пирсинг, или татуировка делаются на длительный срок и должны выглядеть соответствующе.</p>
+        <p>Забота наших администраторов даст Вам понять, что в этом месте Вас всегда любят, помнят и ждут. Даже самым искушенным гостям мы гарантируем море удовольствия. Наш коллектив состоит исключительно из высококвалифицированных специалистов, многие из которых проходили обучение не только в лучших институтах и школах красоты, но и за рубежом. В своей работе мы применяем только самые современные технологии и методы, мы всегда в курсе новинок и готовы предложить Вам все самое актуальное. Залог нашей популярности - постоянное развитие и самосовершенствование. </p>
+        <p>Благодаря большому опыту мастеров нашей студии каждый пришедший к нам посетитель получает не только качественную работу, но и квалифицированную помощь по уходу за уже сделанным или только планируемым татуировкам, пирсингу и татуажу.</p>
+        <h5>Хорошее настроение – Ваша путевка в мир красоты</h5>
+        <p>Чтобы сделать первый шаг, нужно создать правильное настроение. Для этого в студии эстетики «Bonjour» существуют услуги разовой консультации. Наши врачи убеждены, что все женщины от рождения красивы. Поэтому нужно лишь выгодно подчеркнуть то, что дано Вам от природы. С таким позитивным настроем легко почувствовать себя молодой и полной решимости двигаться дальше.</p>
+      </div>
+      <img src="pic/bg/bg-decor-04.png" alt="" class="about-studio__decor">
+    </div>
+  </div>
+  <div class="about-studio__gallery js-studio-scroll">
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-01.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-02.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-03.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-04.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-05.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-06.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-07.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-08.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-01.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-02.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-03.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-04.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-05.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-06.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-07.jpg" alt="" class="about-studio__img">
+    </div>
+    
+    <div class="about-studio__holder">
+      <img src="pic/about-studio/about-studio-08.jpg" alt="" class="about-studio__img">
+    </div>
+    
+  </div>
+</div>
+
+  <div class="contacts">
+  <div class="contacts__info">
+    <div class="container">
+      <div class="contacts__info-wrap">
+        <div class="contacts__info-holder">
+          <a href="tel:+77182781510" class="contacts__info-link"><svg class="icon-phone-large"><use xlink:href="#phone-large"></use></svg> +7 (7182) <b>78-15-10</b></a>
+          <a href="tel:+77077781510" class="contacts__info-link"><svg class="icon-iphone-large"><use xlink:href="#iphone-large"></use></svg> <b>+7 (707) 778-15-10</b></a>
+          <span class="contacts__info-time"><svg class="icon-clock">
+            <use xlink:href="#clock"></use>
+          </svg> <span class="contacts__info-txt">Ежедневно<br> с 9:00 до 20:00</span></span>
+        </div>
+        <a data-fancybox data-src="#popup-feedback" href="javascript:;" class="btn contacts__info-btn">Написать нам</a>
+      </div>
+    </div>
+  </div>
+  <div class="contacts__map">
+    
+    <div class="container">
+      <div class="contacts__map-wrap">
+        <div class="contacts__map-holder">
+          <div class="contacts__map-inner">
+            <span class="contacts__map-title">Посетите нас</span>
+            <span class="contacts__map-txt">«Tinel Beauty Club»</span>
+            <span class="contacts__map-txt">Казахстан, Павлодар ул. Естая, 91</span>
+            <svg class="contacts__map-icon icon-location">
+              <use xlink:href="#location"></use>
+            </svg>
+          </div>
+          <img src="pic/salon.jpg" alt="" class="contacts__map-img">
+        </div>
+      </div>
+    </div>
+
+    <div class="contacts__map-main" id="contact-map" data-lat="52.284101" data-lng="76.974341"></div>
+  </div>
+  <div class="contacts__bottom">
+    <div class="container">
+      <div class="contacts__bottom-wrap">
+        <span class="contacts__copyright">&copy; 2015-2018 Tinel Beauty Club</span>
+        <ul class="contacts__social-list">
+          <li class="contacts__social-item">
+            <a href="#" class="contacts__social-link"><svg class="icon-instagram">
+              <use xlink:href="#instagram"></use>
+            </svg></a>
+          </li>
+          <li class="contacts__social-item">
+            <a href="#" class="contacts__social-link"><svg class="icon-facebook">
+              <use xlink:href="#facebook"></use>
+            </svg></a>
+          </li>
+          <li class="contacts__social-item">
+            <a href="#" class="contacts__social-link"><svg class="icon-youtube">
+              <use xlink:href="#youtube"></use>
+            </svg></a>
+          </li>
+          <li class="contacts__social-item">
+            <a href="#" class="contacts__social-link"><svg class="icon-twitter">
+              <use xlink:href="#twitter"></use>
+            </svg></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="popup" style="display: none;" id="popup-feedback">
+  <div class="popup__wrap">
+    <span class="popup__title">Заказть звонок</span>
+    <form action="" method="get" class="popup__form">
+      <div class="popup__form-row">
+        <label class="popup__form-label">
+          <span class="popup__form-icon">
+            <svg class="icon-user">
+              <use xlink:href="#user"></use>
+            </svg>
+          </span>
+          <input type="text" name="name" class="popup__form-input" placeholder="Введите ФИО" required>
+        </label>
+      </div>
+      <div class="popup__form-row">
+        <label class="popup__form-label">
+          <span class="popup__form-icon">
+            <svg class="icon-phone-handle">
+              <use xlink:href="#phone-handle"></use>
+            </svg>
+          </span>
+          <input type="tel" name="phone" class="popup__form-input js-phone-mask" placeholder="Введите телефон" required>
+        </label>
+      </div>
+      <div class="popup__form-row popup__form-row--btn">
+        <button type="submit" class="btn popup__form-btn">Заказать</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="popup popup--record" style="display: none;" id="popup-record">
+  <div class="popup__wrap">
+    <span class="popup__title">Записаться</span>
+    <form action="#" method="get" class="popup__form">
+      <div class="popup__form-row">
+        <label class="popup__form-label">
+          <span class="popup__form-icon">
+            <svg class="icon-user">
+              <use xlink:href="#user"></use>
+            </svg>
+          </span>
+          <input type="text" name="name" class="popup__form-input" placeholder="Введите ФИО" required>
+        </label>
+      </div>
+      <div class="popup__form-row">
+        <label class="popup__form-label">
+          <span class="popup__form-icon">
+            <svg class="icon-phone-handle">
+              <use xlink:href="#phone-handle"></use>
+            </svg>
+          </span>
+          <input type="tel" class="popup__form-input js-phone-mask" placeholder="Введите телефон" name="phone" required>
+        </label>
+      </div>
+      <div class="popup__form-row">
+        <span class="popup__form-label">
+          <span class="popup__form-icon">
+            <svg class="icon-star">
+              <use xlink:href="#star"></use>
+            </svg>
+          </span>
+          <select class="popup__form-select" required name="service">
+            <option value="">Выберите услугу</option>
+            <option value="1">Косметология</option>
+            <option value="2">Массаж</option>
+            <option value="3">Татуаж</option>
+            <option value="4">Тату</option>
+          </select>
+        </span>
+      </div>
+      <div class="popup__form-row popup__form-row--btn">
+        <button type="submit" class="btn popup__form-btn">Записаться</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="popup popup--record" style="display: none;" id="popup-record-cosmetologist">
+  <div class="popup__wrap">
+    <span class="popup__title">Записаться</span>
+    <form action="#" method="get" class="popup__form">
+      <div class="popup__form-row">
+        <label class="popup__form-label">
+          <span class="popup__form-icon">
+            <svg class="icon-user">
+              <use xlink:href="#user"></use>
+            </svg>
+          </span>
+          <input type="text" class="popup__form-input" placeholder="Введите ФИО" required name="name">
+        </label>
+      </div>
+      <div class="popup__form-row">
+        <label class="popup__form-label">
+          <span class="popup__form-icon">
+            <svg class="icon-phone-handle">
+              <use xlink:href="#phone-handle"></use>
+            </svg>
+          </span>
+          <input type="tel" class="popup__form-input js-phone-mask" placeholder="Введите телефон" required name="phone">
+        </label>
+      </div>
+      <div class="popup__form-row">
+        <span class="popup__form-label">
+          <span class="popup__form-icon">
+            <svg class="icon-star">
+              <use xlink:href="#star"></use>
+            </svg>
+          </span>
+          <select class="popup__form-select" required name="service">
+            <option value="">Выберите услугу</option>
+            <option value="1" selected>Косметология</option>
+            <option value="2">Массаж</option>
+            <option value="3">Татуаж</option>
+            <option value="4">Тату</option>
+          </select>
+        </span>
+      </div>
+      <div class="popup__form-row popup__form-row--btn">
+        <button type="submit" class="btn popup__form-btn">Записаться</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="popup popup--record" style="display: none;" id="popup-record-pm">
+  <div class="popup__wrap">
+    <span class="popup__title">Записаться</span>
+    <form action="#" method="get" class="popup__form">
+      <div class="popup__form-row">
+        <label class="popup__form-label">
+          <span class="popup__form-icon">
+            <svg class="icon-user">
+              <use xlink:href="#user"></use>
+            </svg>
+          </span>
+          <input type="text" class="popup__form-input" placeholder="Введите ФИО" required name="name">
+        </label>
+      </div>
+      <div class="popup__form-row">
+        <label class="popup__form-label">
+          <span class="popup__form-icon">
+            <svg class="icon-phone-handle">
+              <use xlink:href="#phone-handle"></use>
+            </svg>
+          </span>
+          <input type="tel" class="popup__form-input js-phone-mask" placeholder="Введите телефон" required name="phone">
+        </label>
+      </div>
+      <div class="popup__form-row">
+        <span class="popup__form-label">
+          <span class="popup__form-icon">
+            <svg class="icon-star">
+              <use xlink:href="#star"></use>
+            </svg>
+          </span>
+          <select class="popup__form-select" required name="service">
+            <option value="">Выберите услугу</option>
+            <option value="1">Косметология</option>
+            <option value="2">Массаж</option>
+            <option value="3" selected>Татуаж</option>
+            <option value="4">Тату</option>
+          </select>
+        </span>
+      </div>
+      <div class="popup__form-row popup__form-row--btn">
+        <button type="submit" class="btn popup__form-btn">Записаться</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="popup popup--record" style="display: none;" id="popup-record-massage">
+  <div class="popup__wrap">
+    <span class="popup__title">Записаться</span>
+    <form action="#" class="popup__form">
+      <div class="popup__form-row">
+        <label class="popup__form-label">
+          <span class="popup__form-icon">
+            <svg class="icon-user">
+              <use xlink:href="#user"></use>
+            </svg>
+          </span>
+          <input type="text" class="popup__form-input" placeholder="Введите ФИО" required name="name">
+        </label>
+      </div>
+      <div class="popup__form-row">
+        <label class="popup__form-label">
+          <span class="popup__form-icon">
+            <svg class="icon-phone-handle">
+              <use xlink:href="#phone-handle"></use>
+            </svg>
+          </span>
+          <input type="tel" class="popup__form-input js-phone-mask" placeholder="Введите телефон" required name="phone">
+        </label>
+      </div>
+      <div class="popup__form-row">
+        <span class="popup__form-label">
+          <span class="popup__form-icon">
+            <svg class="icon-star">
+              <use xlink:href="#star"></use>
+            </svg>
+          </span>
+          <select class="popup__form-select" required name="service">
+            <option value="">Выберите услугу</option>
+            <option value="1">Косметология</option>
+            <option value="2" selected>Массаж</option>
+            <option value="3">Татуаж</option>
+            <option value="4">Тату</option>
+          </select>
+        </span>
+      </div>
+      <div class="popup__form-row popup__form-row--btn">
+        <button type="submit" class="btn popup__form-btn">Записаться</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

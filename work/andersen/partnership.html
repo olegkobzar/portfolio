@@ -1,0 +1,565 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Сотрудничество</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body>
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<img class="preloader-img" src="img/preloader.gif" alt="">
+</div>
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+
+ 	</div>
+
+
+    <div class="wrapper">
+
+      <!-- top of module headers -->
+      <header class="header">
+	<div class="header__top">
+		<div class="container">
+			<div class="header__wrapp">
+				<div class="header__phone">
+					<a href="tel:+79555228989" class="header__link-phone">+7 (955) <span class="header__link-phone--black">522-89-89</span></a>
+				</div>
+				<div class="header__logo">
+					<a href="#" class="header__link-logo">
+						<svg class="icon-logo">
+							<use xlink:href="#logo"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="header__panel js-panel">
+					<ul class="header__list-panel">
+						<li class="header__item-panel">
+							<a href="#" class="header__link-icon">
+								<span class="header__icon">
+									<svg class="icon-user">
+										<use xlink:href="#user"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="header__item-panel">
+							<a href="#" class="header__link-icon">
+								<span class="header__icon">
+									<svg class="icon-login">
+										<use xlink:href="#login"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="header__item-panel">
+							<a href="#" class="header__link-icon">
+								<span class="header__icon">
+									<svg class="icon-like">
+										<use xlink:href="#like"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="header__item-panel">
+							<a href="#" class="header__link-icon js-dropp-icon">
+								<span class="header__icon">
+									<svg class="icon-basket">
+										<use xlink:href="#basket"></use>
+									</svg>
+								</span>
+								<span class="header__basket-goods">
+									(<span class="header__basket-num">0</span>)
+								</span>
+							</a>
+						</li>
+					</ul>
+					<div class="drop-basket js-dropp-basket">
+	<div class="drop-basket__wrapp">
+		<span class="drop-basket__close js-close-basket"></span>
+		<div class="drop-basket__goods">
+			<div class="drop-basket__img-wrapp">
+				<img src="pic/goods/goods-2.png" alt="">
+			</div>
+			<div class="drop-basket__goods-descr">
+				<span class="drop-basket__goods-price">8 990 <span class="rubl">o</span></span>
+				<span class="drop-basket__goods-name">Детская дутая куртка Monki</span>
+				<ul class="drop-basket__goods-list">
+					<li class="drop-basket__goods-item">Зеленый</li>
+					<li class="drop-basket__goods-item">XS</li>
+					<li class="drop-basket__goods-item">Кол-во 2</li>
+				</ul>
+			</div>
+		</div>
+		<div class="drop-basket__total">
+			<span class="drop-basket__total-text">Всего:</span>
+			<span class="drop-basket__total-price">8 990 <span class="rubl drop-basket__rubl">o</span></span>
+		</div>
+		<div class="drop-basket__foot">
+			<div class="drop-basket__link-wrapp">
+				<a href="#" class="drop-basket__link">Посмотреть корзину</a>
+			</div>
+			<div class="drop-basket__btn-wrapp">
+				<button class="btn btn--dark drop-basket__btn">Оформить заказ</button>
+			</div>
+		</div>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header__bott">
+		<div class="container">
+			<div class="header__wrapp">
+				<div class="header__nav-wrapp js-wrapp-nav">
+					<div class="header__open-menu js-btn-menu">
+						<span class="header__line js-line"></span>
+						<span class="header__line js-line"></span>
+						<span class="header__line js-line"></span>
+					</div>
+					<nav class="header__nav js-nav">
+						<div class="header__close-btn js-close-btn">
+							<span class="header__line-close"></span>
+							<span class="header__line-close"></span>
+						</div>
+						<ul class="header__list">
+							<li class="header__item">
+								<a href="#" class="header__link">Для девочек</a>
+							</li>
+
+							<li class="header__item">
+								<a href="#" class="header__link js-acc-head">Для мальчиков</a>
+								<div class="header__submenu js-acc-body">
+									<div class="header__submenu-inner">
+										<ul class="header__list-submenu">
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Платья</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Юбки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Джинсы</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Шорты</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Топы и футболки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Рубашки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Джемперы</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Свитера</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Верхняя одежда</a>
+											</li>
+										</ul>
+										<div class="header__desc-right">
+											<div class="header__img-wrapp">
+												<img src="pic/image/menu-mini.png" alt="">
+											</div>
+											<span class="header__text-sale">Какой-нибудь текст про акции <span class="header__sale">Sale 10%</span></span>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="header__item">
+								<a href="#" class="header__link">Аксессуары</a>
+							</li>
+							<li class="header__item">
+								<a href="#" class="header__link">Бренды</a>
+							</li>
+							<li class="header__item">
+								<a href="#" class="header__link js-acc-head">Sales</a>
+								<div class="header__submenu js-acc-body">
+									<div class="header__submenu-inner">
+										<ul class="header__list-submenu">
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Платья</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Юбки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Джинсы</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Шорты</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Топы и футболки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Рубашки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Джемперы</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Свитера</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Верхняя одежда</a>
+											</li>
+										</ul>
+										<div class="header__desc-right">
+											<div class="header__img-wrapp">
+												<img src="pic/image/menu-mini.png" alt="">
+											</div>
+											<span class="header__text-sale">Какой-нибудь текст про акции <span class="header__sale">Sale 10%</span></span>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="header__search-wrapp js-wrapp-search">
+					<form action="">
+						<span class="header__search-btn-open js-search-open">
+							<svg class="icon-search">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+						<div class="header__form js-form-open">
+							<div class="header__input-wrapp">
+								<input type="text" class="header__input" placeholder="Поиск">
+							</div>
+							<div class="header__btn-wrapp">
+								<button class="header__btn-search">
+									<span class="header__icon">
+										<svg class="icon-search">
+											<use xlink:href="#search"></use>
+										</svg>
+									</span>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+      <!-- end of module headers -->
+
+      <!-- the beginning of the heading module -->
+      <div class="heading " style="background-image: url(pic/bg/bg-1.jpg);">
+  <div class="heading__outer">
+    <div class="container">
+      <h3 class="heading__title">Сотрудничество</h3>
+    </div>
+  </div>
+</div>
+
+      <!-- end of the heading module -->
+
+      <div class="container">
+        <div class="static-content">
+          <h2>Станьте нашим партнером</h2>
+          <h5>О бренде</h5>
+          <p>«Андерсен» — это аксессуары для мальчиков и девочек. Галстуки-бабочки, ремни, подтяжки, шапки, ободки, заколки и резинки для волос, браслеты и бусы, гармонично и стильно сочетаются друг с другом. Уникальныый дизайн, яркие цвета, современные материалы — все эти слагаемые делают коллекцию аксессуаров популярной среди детей и их родителей. Каждая модель послужит отличным дополнением к гардеробу и создаст завершенный образ.</p>
+          <blockquote>«Андерсен» — воспитание вкуса и стиля с детства. Это всегда лучшие, актуальные коллекции, которые отражают самые последние тенденции мировой моды.</blockquote>
+          <p>Аксессуары «Андерсен» создаются российскими дизайнерами и являются изделиями ручной работы. Вся продукция и большая часть сырья производится в России. Товар сертифицирован.</p>
+          <p>Наша компания тщательно следит за тем, чтобы предлагаемая продукция отвечала самым взыскательным требованиям покупателей и превосходила их ожидания. Высокое качество изделий, новейшие дизайнерские и конструкторские разработки, широта ассортимента, а так же высочайший уровень обслуживания — преимущество, которые делают нас конкурентоспособными и позволяют занимать одну из лидирующих позиций в детском сегменте.</p>
+          <img src="pic/image/img-1.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="adv">
+	<div class="container">
+		<ul class="adv__list">
+			<li class="adv__item">
+				<span class="adv__icon">
+					<svg class="icon-kremlin">
+						<use xlink:href="#kremlin"></use>
+					</svg>
+				</span>
+				<span class="adv__caption js-height">Произведено в России</span>
+				<span class="adv__desc">Вся продукция и большая часть сырья производится в России</span>
+			</li>
+			<li class="adv__item">
+				<span class="adv__icon">
+					<svg class="icon-diamond">
+						<use xlink:href="#diamond"></use>
+					</svg>
+				</span>
+				<span class="adv__caption js-height">Уникальный дизайн</span>
+				<span class="adv__desc">Модели содержат элементы ручной работы</span>
+			</li>
+			<li class="adv__item">
+				<span class="adv__icon">
+					<svg class="icon-medal">
+						<use xlink:href="#medal"></use>
+					</svg>
+				</span>
+				<span class="adv__caption js-height">Сертификат качества</span>
+				<span class="adv__desc">Наша продукция имеет сертификаты соответствия, которые предоставляются с каждым заказом.</span>
+			</li>
+			<li class="adv__item">
+				<span class="adv__icon">
+					<svg class="icon-shield">
+						<use xlink:href="#shield"></use>
+					</svg>
+				</span>
+				<span class="adv__caption js-height">Безопасные технологии</span>
+				<span class="adv__desc">Для производства используются только экологически безопасные ткани, пряжа и фурнитура</span>
+			</li>
+			<li class="adv__item">
+				<span class="adv__icon">
+					<svg class="icon-calendar">
+						<use xlink:href="#calendar"></use>
+					</svg>
+				</span>
+				<span class="adv__caption js-height">Четыре сезона</span>
+				<span class="adv__desc">Производственная программа включает в себя выпуск четырех линий, отражающих времена года и яркие события в жизни ребенка</span>
+			</li>
+			<li class="adv__item">
+				<span class="adv__icon">
+					<svg class="icon-award">
+						<use xlink:href="#award"></use>
+					</svg>
+				</span>
+				<span class="adv__caption js-height">Высокий уровень качества</span>
+				<span class="adv__desc">Еще на стадии проектирования уделяется внимание мельчайшим деталям производства</span>
+			</li>
+			<li class="adv__item">
+				<span class="adv__icon">
+					<svg class="icon-team">
+						<use xlink:href="#team"></use>
+					</svg>
+				</span>
+				<span class="adv__caption js-height">Комфортное сотрудничество</span>
+				<span class="adv__desc">Персональный менеджер на срок сделки, поддержка рекламными материалами и многое другое</span>
+			</li>
+			<li class="adv__item">
+				<span class="adv__icon">
+					<svg class="icon-hand-shake">
+						<use xlink:href="#hand-shake"></use>
+					</svg>
+				</span>
+				<span class="adv__caption js-height">Доверие покупателей</span>
+				<span class="adv__desc">Коллекции аксессуаров популярны среди детей и родителей. Продукция представлена в 86 городах России</span>
+			</li>
+		</ul>
+	</div>
+	<svg style="width: 0; height: 0;">
+		<!-- Градиент -->
+		<linearGradient id="linear-gradient">
+			<stop offset="0%" stop-color="#00bfd9"/>
+			<stop offset="100%" stop-color="#00dcc8"/>
+		</linearGradient>
+	</svg>
+</div>
+
+      <div class="questionnaire">
+	<div class="questionnaire__outher">
+		<div class="container">
+			<form action="" class="js-form-questionnaire">
+				<div class="questionnaire__form">
+					<div class="questionnaire__wrapp" data-text="Отправить заявку">
+						<span class="questionnaire__caption">Пожалуйста, заполните короткую анкету ниже</span>
+						<span class="questionnaire__caption questionnaire__caption--bold">и мы обязательно с Вами свяжемся</span>
+						<div class="questionnaire__input-wrapp">
+							<div class="questionnaire__item questionnaire__item--long">
+								<label for="questionnaire__name-company" class="questionnaire__label">Название компании</label>
+								<input type="text" id="questionnaire__name-company" placeholder="Название компании" class="questionnaire__input">
+							</div>
+							<div class="questionnaire__group">
+								<div class="questionnaire__item">
+									<label for="questionnaire__name" class="questionnaire__label">Имя*</label>
+									<input type="text" id="questionnaire__name" placeholder="Имя*" class="questionnaire__input" required>
+								</div>
+								<div class="questionnaire__item">
+									<label for="questionnaire__surname" class="questionnaire__label">Фамилия</label>
+									<input type="text" id="questionnaire__surname" placeholder="Фамилия" class="questionnaire__input">
+								</div>
+								<div class="questionnaire__item">
+									<label for="questionnaire__sity" class="questionnaire__label">Город*</label>
+									<input type="text" id="questionnaire__sity" placeholder="Город*" class="questionnaire__input" required>
+								</div>
+								<div class="questionnaire__item">
+									<label for="questionnaire__country" class="questionnaire__label">Страна*</label>
+									<input type="text" id="questionnaire__country" placeholder="Страна*" class="questionnaire__input" required>
+								</div>
+								<div class="questionnaire__item">
+									<label for="questionnaire__tel" class="questionnaire__label">Контактный телефон*</label>
+									<input type="text" id="questionnaire__tel" placeholder="Контактный телефон*" class="questionnaire__input" required>
+								</div>
+								<div class="questionnaire__item">
+									<label for="questionnaire__mail" class="questionnaire__label">E-mail*</label>
+									<input type="text" id="questionnaire__mail" placeholder="E-mail*" class="questionnaire__input" required>
+								</div>
+							</div>
+							<div class="questionnaire__item questionnaire__item--long">
+								<label for="questionnaire__message" class="questionnaire__label">Сообщение</label>
+								<input type="text" id="questionnaire__message" placeholder="Сообщение" class="questionnaire__input">
+							</div>
+						</div>
+						<div class="questionnaire__btn-wrapp">
+							<button class="btn questionnaire__btn">Получить прайс-лист</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+</div>
+
+    </div>
+
+  <footer class="footer js-footer">
+	<div class="footer__top">
+		<div class="container">
+			<div class="footer__wrapp">
+				<div class="footer__inner">
+					<span class="footer__caption">Продукция</span>
+					<ul class="footer__list">
+						<li class="footer__item"><a href="#" class="footer__link">Для девочек</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Для мальчиков</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Аксессуары и шапки</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Бренды</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Sale</a></li>
+					</ul>
+				</div>
+				<div class="footer__inner">
+					<span class="footer__caption">Для клиентов</span>
+					<ul class="footer__list">
+						<li class="footer__item"><a href="#" class="footer__link">Где купить</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Центр поддержки</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Как оформить заказ</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Как выбрать размер</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Доставка</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Оплата</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Возврат</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Оферта</a></li>
+					</ul>
+				</div>
+				<div class="footer__inner">
+					<div class="footer__item-wrapp">
+						<span class="footer__caption">О нас</span>
+						<ul class="footer__list">
+							<li class="footer__item"><a href="#" class="footer__link">О компании</a></li>
+							<li class="footer__item"><a href="#" class="footer__link">Вакансии</a></li>
+							<li class="footer__item"><a href="#" class="footer__link">Контакты</a></li>
+						</ul>
+					</div>
+					<span class="footer__caption">Сотрудничество</span>
+					<ul class="footer__list">
+						<li class="footer__item"><a href="#" class="footer__link">Стать нашим партнером</a></li>
+					</ul>
+				</div>
+				<div class="footer__inner">
+					<span class="footer__caption">Способы оплаты</span>
+					<div class="footer__img-wrapp">
+						<img src="pic/card-bank/visa-master.png" alt="">
+					</div>
+					<span class="footer__desc">Вы можете оплатить покупки наличными, либо выбрать <a href="#" class="footer__another-pay">другой способ оплаты</a></span>
+				</div>
+				<div class="footer__inner">
+					<span class="footer__caption">Социальные сети</span>
+					<ul class="footer__list footer__list--social">
+						<li class="footer__item">
+							<a href="#" class="footer__link footer__link--instagram">
+								<svg class="icon-instagram">
+									<use xlink:href="#instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link footer__link--facebook">
+								<svg class="icon-facebook">
+									<use xlink:href="#facebook"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link footer__link--vk">
+								<svg class="icon-vk">
+									<use xlink:href="#vk"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link footer__link--twitter">
+								<svg class="icon-twitter">
+									<use xlink:href="#twitter"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="footer__bott">
+		<div class="container">
+			<span class="footer__desc-bott">Личные данные, предоставленные посредством электронных сообщений или электронной анкеты, регистрируются согласно Федеральному Закону "О защите личных данных" 15/1999 от 13 декабря.</span>
+			<span class="footer__desc-bott">Регистрируемая база данных яляется собственностью компании LARSON retail. Компания гарантирует сохранность этих данных, обязуется не разглашать информацию третьим лицам.</span>
+		</div>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

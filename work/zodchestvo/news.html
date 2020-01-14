@@ -1,0 +1,412 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Новости</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body>
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+
+ 	</div>
+
+
+    <div class="wrapper">
+
+      <header class="header">
+	<div class="header__visible-mobile">
+		<div class="header__logo">
+			<a href="#" class="header__logo-link">
+				<!-- <span class="header__logo-icon">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</span>
+				<span class="header__logo-text">Зодчество</span>
+				<span class="header__logo-fest">международный фестиваль</span> -->
+				<svg class="icon-logo-header">
+					<use xlink:href="#logo-header"></use>
+				</svg>
+			</a>
+		</div>
+		<div class="header__menu-mobile js-menu-mobile">
+			<span class="header__menu-mobile-item"></span>
+			<span class="header__menu-mobile-item"></span>
+			<span class="header__menu-mobile-item"></span>
+		</div>
+	</div>
+	<div class="header__wrapp js-nav-mobile">
+		<div class="header__top">
+			<div class="container">
+				<div class="header__top-wrapp">
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">
+							<!-- <span class="header__logo-icon">
+								<svg class="icon-logo">
+									<use xlink:href="#logo"></use>
+								</svg>
+							</span>
+							<span class="header__logo-text">Зодчество</span>
+							<span class="header__logo-fest">международный фестиваль</span> -->
+
+							<svg class="icon-logo-header">
+								<use xlink:href="#logo-header"></use>
+							</svg>
+						</a>
+					</div>
+					<nav class="header__nav js-nav js-wrapp-nav">
+						<div class="header__close-mobile js-close-mobile">
+							<span class="header__close-mobile-item"></span>
+							<span class="header__close-mobile-item"></span>
+						</div>
+						<ul class="header__list">
+							<li class="header__item active" data-text="01_">
+								<a href="#" class="header__link">О фестивале</a>
+								<div class="header__submenu">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Фестиваль 2018</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Каталог</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Награды</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="02_">
+								<a href="#" class="header__link">Конкурсы</a>
+							</li>
+							<li class="header__item" data-text="03_">
+								<a href="#" class="header__link">Выставки</a>
+							</li>
+							<li class="header__item" data-text="04_">
+								<a href="#" class="header__link">Участники</a>
+								<div class="header__submenu header__submenu--mod">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Все участники</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Работы участников</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="05_">
+								<a href="#" class="header__link">Итоги</a>
+							</li>
+							<li class="header__item" data-text="06_">
+								<a href="#" class="header__link">Медиа</a>
+								<div class="header__submenu">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Новости</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">СМИ о нас</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Аккредитация</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Фотогалерея</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="07_">
+								<a href="#" class="header__link">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="header__login">
+						<a href="#" class="header__login-link">
+							<span class="header__login-icon-circle"></span>
+							<span class="header__login-text">Вход в личный кабинет</span>
+						</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="header__menu-mobile js-menu-mobile">
+				<span class="header__menu-mobile-item"></span>
+				<span class="header__menu-mobile-item"></span>
+				<span class="header__menu-mobile-item"></span>
+			</div>
+			<div class="header__bott">
+				<div class="container">
+					<div class="header__bott-wrapp">
+						<div class="header__left">
+							<ul class="header__left-list">
+								<li class="header__left-item">
+									<a href="#" class="header__left-link">Вопросы и ответы</a>
+								</li>
+								<li class="header__left-item">
+									<a href="#" class="header__left-link">Eng</a>
+								</li>
+							</ul>
+						</div>
+						<div class="header__right">
+							<ul class="header__right-list">
+								<li class="header__right-item">
+									<a href="#" class="btn btn--border header__right-link header__right-link--ticket">Получить билет на выставку</a>
+								</li>
+								<li class="header__right-item">
+									<a href="#" class="btn header__right-link header__right-link--registration">Регистрация на конкурс</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+      <div class="heading heading--news">
+  <div class="container">
+    <div class="heading__wrap">
+      <div class="heading__holder">
+        <a href="#" class="heading__link">Новости</a>
+        <h2 class="heading__title">Первый Всероссийский фестиваль «Архитектурное наследие»</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <article class="news-article">
+  <div class="container">
+    <div class="static-content">
+      <div class="content-contests content-contests--news">
+        <time datetime="2018-02-16">16 февраля <span class="news-article__year">2018</span></time>
+        <b>20 февраля 2018 года в 16.00 в Союзе архитекторов России (Гранатный пер., д.12) состоится пресс-конференция, посвященная первому всероссийскому фестивалю с международным участием «Архитектурное наследие», который пройдет со 2 по 5 июля 2018г. в Москве, в ЦВЗ «Манеж». Фестиваль учрежден Союзом архитекторов России при содействии Министерства культуры РФ.</b>
+        <figure>
+          <img src="pic/news/news-01.jpg" alt="">
+          <figcaption>Союз архитекторов России, Москва, Гранатный пер., д.12</figcaption>
+        </figure>
+        <p>Предстоящий Фестиваль определяет самую проблематичную и требующую внимания тему: "Архитектурное наследие XX века". Этот период обогатил мировую культуру такими уникальными архитектурно-художественными явлениями, как "Русский авангард", "Сталинский стиль", Советский модернизм".</p>
+        <p>Участники пресс-конференции ответят на актуальные вопросы, которые будут рассмотрены в рамках Фестиваля: современные методы сохранения архитектурного и градостроительного наследия, рациональное использование памятников архитектуры в структуре современного мегаполиса, популяризация и повышение доступности объектов культурного наследия.</p>
+        <p>На пресс-конференции будут презентованы специальные проекты Фестиваля, в том числе совместная с ВООПИК выставка «SOS. Спасем вместе» и «Спасаем вместе». В рамках этой выставки будут представлены объекты единого государственного реестра РФ, вновь выявленные объекты-кандидаты культурного наследия, нуждающиеся в безотлагательных мерах по их сохранению, реставрации и адаптации к жизнедеятельности современного города, а также примеры гражданских инициатив по сохранению архитектурных памятников.</p>
+      </div>
+    </div>
+    <div class="news-article__middle">
+      <h3 class="news-article__title">Участники пресс-конференции</h3>
+      <ul class="news-article__list">
+        <li class="news-article__item">
+          <span class="news-article__name">Олег Рыжков</span>
+          <span class="news-article__value">Заместитель Министра культуры Российской Федерации;</span>
+        </li>
+        <li class="news-article__item">
+          <span class="news-article__name">Олег Рыжков</span>
+          <span class="news-article__value">Президент Союза архитекторов России;</span>
+        </li>
+        <li class="news-article__item">
+          <span class="news-article__name">Артём Демидов</span>
+          <span class="news-article__value">Председатель Центрального Совета всероссийского общества охраны памятников истории и культуры;</span>
+        </li>
+        <li class="news-article__item">
+          <span class="news-article__name">Ирина Маркина</span>
+          <span class="news-article__value">Куратор Фестиваля, председатель Совета по наследию Союза архитекторов России.</span>
+        </li>
+      </ul>
+    </div>
+    <div class="static-content">
+      <div class="content-contests content-contests--news">
+        <h3>Контакты</h3>
+        <p>Пресс-конференция состоится в Союзе архитекторов России по адресу: Гранатный пер., д.12</p>
+        <p>Аккредитация СМИ: d.kachulina@mail.ru, +79688491178, Диана Баранова</p>
+        <a href="#" class="btn btn--border news-article__btn">Все новости</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+      <div class="support ">
+	<div class="container">
+		<div class="support__holder">
+			<span class="support__title">При поддержке</span>
+			<div class="support__inner slick slick--support js-support-slider">
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-01.png" alt="img">
+					</div>
+					<span class="support__item-txt">Минстрой России</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-02.png" alt="img">
+					</div>
+					<span class="support__item-txt">Сайт президента России</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-03.png" alt="img">
+					</div>
+					<span class="support__item-txt">Совет Федераций</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-04.png" alt="img">
+					</div>
+					<span class="support__item-txt">Официальный сайт Мэра Москвы</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img support__item-img--mod">
+						<img src="pic/support/support-05.png" alt="img">
+					</div>
+					<span class="support__item-txt">Правительство Московской области</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="heading__decor support__decor">
+  	<div class="heading__decor-col heading__decor-col--large"></div>
+  	<div class="heading__decor-col heading__decor-col--small"></div>
+  </div>
+</div>
+
+    </div>
+
+  <footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__inner">
+			<div class="footer__logo">
+				<a href="#" class="footer__logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="footer__info-box">
+				<div class="footer__info">
+					<div class="footer__info-item">
+						<span class="footer__info-title footer__info-title--mod">
+							Зодчество
+						</span>
+						<span class="footer__info-txt">XXVI архитектурный фестиваль</span>
+					</div>
+					<div class="footer__info-item">
+						<span class="footer__info-title">Москва</span>
+						<span class="footer__info-txt">ЦВЗ «Манеж»</span>
+					</div>
+					<div class="footer__info-item">
+						<span class="footer__info-title">
+							<span class="footer__info-date">19</span>
+							<span class="footer__info-date">21</span>
+						</span>
+						<span class="footer__info-txt">ноября 2018</span>
+					</div>
+				</div>
+				<div class="footer__copy">
+					<div class="footer__copy-box">
+						<span class="footer__copy-txt">
+							Дирекция международного фестиваля «Зодчество»
+						</span>
+						<span class="footer__copy-txt">
+							123001, Москва, Гранатный пер. 12
+						</span>
+					</div>
+					<div class="footer__copy-phone-wrap">
+						<span class="footer__copy-phone">
+							<a href="tel:+7(495)6906865" class="footer__copy-link">
+								+7 (495) 690-68-65
+							</a>
+						</span>
+						<span class="footer__copy-phone">
+							<a href="tel:+7(495)6915321" class="footer__copy-link">
+								+7 (495) 691-53-21
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="footer__contacts">
+				<a href="#"class="footer__contacts-head">
+					<span class="footer__contacts-title">Контакты</span>
+					<span class="icon-arrow icon-arrow--next"></span>
+				</a>
+				<div class="footer__contacts-social">
+					<a href="#" class="footer__contacts-link">Facebook,</a>
+					<a href="#" class="footer__contacts-link">Vkontakte,</a>
+					<a href="#" class="footer__contacts-link">Instagram</a>
+				</div>
+				<a href="mailto:info@zodchestvo.com" class="footer__contacts-mail">info@zodchestvo.com</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

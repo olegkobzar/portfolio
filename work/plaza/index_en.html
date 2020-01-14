@@ -1,0 +1,550 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@@title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class="">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+<div class="wrapper">
+
+	<div class="heading" id="heading" style="background-image: url(pic/bg/bg-1.jpg);">
+	
+	<div class="container">
+		<div class="heading__wrapp">
+			<header class="header compensate-for-scrollbar wow fadeInUp" data-wow-delay="1s">
+	<div class="container">
+		<div class="header__wrapp">
+			<div class="header__logo">
+				<a href="#heading" class="header__logo-link js-id">
+					<span class="header__logo-img">
+						<img src="pic/logo.png" alt="Plaza">
+					</span>
+					<span class="header__logo-text">Advertising agency</span>
+				</a>
+			</div>
+			<div class="header__btn-menu js-btn-menu">
+				<span class="header__line"></span>
+				<span class="header__line"></span>
+				<span class="header__line"></span>
+			</div>
+			<nav class="header__nav js-nav js-wrapp-nav">
+				<ul class="header__list">
+					<li class="header__item">
+						<a href="#about" class="header__link js-id">About us</a>
+					</li>
+					<li class="header__item">
+						<a href="#blog" class="header__link js-id">Our bloggers</a>
+					</li>
+					<li class="header__item">
+						<a href="#advertising" class="header__link js-id">Advertisers</a>
+					</li>
+					<li class="header__item">
+						<a href="#bloggers" class="header__link js-id">Bloggers</a>
+					</li>
+					<li class="header__item">
+						<a href="#footer" class="header__link js-id">Contacts</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+			
+			<div class="heading__top wow fadeInDown" data-wow-delay="0.5s">
+				<div class="heading__logo">
+					<a href="#" class="heading__logo-link">
+						<span class="heading__logo-img">
+							<img src="pic/logo.png" alt="Plaza">
+						</span>
+						<span class="heading__logo-text">Advertising agency</span>
+					</a>
+				</div>
+				<div class="heading__right">
+					<div class="heading__mail">
+						<a href="mailto:info@plaza.agency" class="heading__mail-link">info@plaza.agency</a>
+					</div>
+					<div class="heading__lang">
+						<div class="heading__lang-item">
+							<a href="index.html" class="heading__lang-link">RU</a>
+						</div>
+						<div class="heading__lang-item">
+							<a href="#" class="heading__lang-link active">ENG</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="heading__middle wow fadeInLeft" data-wow-delay="1s">
+				<div class="heading__middle-wrapp">
+					<div class="heading__inner">
+						<h2 class="heading__caption">Advertising agency PLAZA</h2>
+						<span class="heading__descr">we represent the most popular interests bloggers in Russia</span>
+						<div class="heading__about">
+							<a href="#" class="btn heading__about-link">Learn about us</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="heading__img-mob">
+				<img src="pic/bg/bg-11.jpg" alt="">
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+	<div class="about" id="about">
+  <div class="container">
+    <div class="about__wrap">
+      <img src="pic/bg/bg-2.png" alt="" class="about__bg-img">
+      <h1 class="about__title">About us</h1>
+      <div class="about__body">
+        <p class="about__desc">Advertising Agency PLAZA is engaged in carrying OUT advertising campaigns on YouTube and Instagram.</p>
+        <p class="about__desc">PLAZA represents the interests of the most popular bloggers in Russia.</p>
+        <p class="about__desc">We have extensive experience in advertising campaigns any level of complexity.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<div class="blog" id="blog">
+	<div class="container">
+		<h1 class="blog__title wow fadeInDown">Our bloggers</h1>
+		<div class="blog__holder">
+			
+	<div class="blog__item-wrap wow fadeIn" data-wow-delay="0s">
+		<a href="#" class="blog__item" target="blank">
+			<span class="blog__item-inner">
+				<span class="blog__item-img">
+					<img src="pic/bloggers/bloggers-1.png" alt="photo">
+				</span>
+				<span class="blog__item-info">
+					<span class="blog__item-name js-height">
+						Юрий Хованский
+						<span class="blog__item-icon"></span>
+					</span>
+					<span class="blog__item-bottom">
+						<span class="blog__item-youtube">
+							<svg class="icon-youtube">
+								<use xlink:href="#youtube"></use>
+							</svg>
+						</span>
+						<span class="blog__item-desc">
+							<span class="blog__item-num">3 386 000 +</span>
+							<span class="blog__item-txt">subscribers +</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</a>
+	</div>
+
+	<div class="blog__item-wrap wow fadeIn" data-wow-delay="0.3s">
+		<a href="#" class="blog__item" target="blank">
+			<span class="blog__item-inner">
+				<span class="blog__item-img">
+					<img src="pic/bloggers/bloggers-2.png" alt="photo">
+				</span>
+				<span class="blog__item-info">
+					<span class="blog__item-name js-height">
+						versusbattleru
+						<span class="blog__item-icon"></span>
+					</span>
+					<span class="blog__item-bottom">
+						<span class="blog__item-youtube">
+							<svg class="icon-youtube">
+								<use xlink:href="#youtube"></use>
+							</svg>
+						</span>
+						<span class="blog__item-desc">
+							<span class="blog__item-num">4 256 000 +</span>
+							<span class="blog__item-txt">subscribers +</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</a>
+	</div>
+
+	<div class="blog__item-wrap wow fadeIn" data-wow-delay="0.6">
+		<a href="#" class="blog__item" target="blank">
+			<span class="blog__item-inner">
+				<span class="blog__item-img">
+					<img src="pic/bloggers/bloggers-3.png" alt="photo">
+				</span>
+				<span class="blog__item-info">
+					<span class="blog__item-name js-height">
+						HiMan
+						<span class="blog__item-icon"></span>
+					</span>
+					<span class="blog__item-bottom">
+						<span class="blog__item-youtube">
+							<svg class="icon-youtube">
+								<use xlink:href="#youtube"></use>
+							</svg>
+						</span>
+						<span class="blog__item-desc">
+							<span class="blog__item-num">3 118 500 +</span>
+							<span class="blog__item-txt">subscribers +</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</a>
+	</div>
+
+	<div class="blog__item-wrap wow fadeIn" data-wow-delay="0.3s">
+		<a href="#" class="blog__item" target="blank">
+			<span class="blog__item-inner">
+				<span class="blog__item-img">
+					<img src="pic/bloggers/bloggers-4.png" alt="photo">
+				</span>
+				<span class="blog__item-info">
+					<span class="blog__item-name js-height">
+						CMH
+						<span class="blog__item-icon"></span>
+					</span>
+					<span class="blog__item-bottom">
+						<span class="blog__item-youtube">
+							<svg class="icon-youtube">
+								<use xlink:href="#youtube"></use>
+							</svg>
+						</span>
+						<span class="blog__item-desc">
+							<span class="blog__item-num">2 056 500 +</span>
+							<span class="blog__item-txt">subscribers +</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</a>
+	</div>
+
+	<div class="blog__item-wrap wow fadeIn" data-wow-delay="0.6s">
+		<a href="#" class="blog__item" target="blank">
+			<span class="blog__item-inner">
+				<span class="blog__item-img">
+					<img src="pic/bloggers/bloggers-5.png" alt="photo">
+				</span>
+				<span class="blog__item-info">
+					<span class="blog__item-name js-height">
+						itpedia
+						<span class="blog__item-icon"></span>
+					</span>
+					<span class="blog__item-bottom">
+						<span class="blog__item-youtube">
+							<svg class="icon-youtube">
+								<use xlink:href="#youtube"></use>
+							</svg>
+						</span>
+						<span class="blog__item-desc">
+							<span class="blog__item-num">1 602 300 +</span>
+							<span class="blog__item-txt">subscribers +</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</a>
+	</div>
+
+	<div class="blog__item-wrap wow fadeIn" data-wow-delay="0.9s">
+		<a href="#" class="blog__item" target="blank">
+			<span class="blog__item-inner">
+				<span class="blog__item-img">
+					<img src="pic/bloggers/bloggers-6.png" alt="photo">
+				</span>
+				<span class="blog__item-info">
+					<span class="blog__item-name js-height">
+						Иван Эфиров
+						<span class="blog__item-icon"></span>
+					</span>
+					<span class="blog__item-bottom">
+						<span class="blog__item-youtube">
+							<svg class="icon-youtube">
+								<use xlink:href="#youtube"></use>
+							</svg>
+						</span>
+						<span class="blog__item-desc">
+							<span class="blog__item-num">1 189 000 +</span>
+							<span class="blog__item-txt">subscribers +</span>
+						</span>
+					</span>
+				</span>
+			</span>
+		</a>
+	</div>
+
+		</div>
+		<div class="blog__btn wow fadeIn">
+			<a data-fancybox data-src="#popup-mail-en" href="javascript:;" class="btn">
+				all bloggers
+			</a>
+		</div>
+	</div>
+</div>
+
+	<div class="advertising" id="advertising">
+	<div class="container">
+		<h1 class="advertising__caption wow fadeInDown" data-wow-delay="0.3s">Advertisers</h1>
+		<span class="advertising__descr wow fadeInUp" data-wow-delay="0.6s">PLAZA advertising Agency offers a wide range of advertising opportunities:</span>
+		<ul class="advertising__list">
+			<li class="advertising__item wow fadeIn" data-wow-delay="0.3s">
+				<div class="advertising__img-wrapp">
+					<img src="pic/img/img-1.png" alt="">
+				</div>
+				<span class="advertising__title">Prerolls</span>
+			</li>
+			<li class="advertising__item wow fadeIn">
+				<div class="advertising__img-wrapp">
+					<img src="pic/img-decor.png" alt="">
+				</div>
+			</li>
+			<li class="advertising__item wow fadeIn" data-wow-delay="0.6s">
+				<div class="advertising__img-wrapp">
+					<img src="pic/img/img-2.png" alt="">
+				</div>
+				<span class="advertising__title">Native advertising</span>
+			</li>
+			<li class="advertising__item">
+				<div class="advertising__img-wrapp">
+					<img src="pic/img-decor.png" alt="">
+				</div>
+			</li>
+			<li class="advertising__item wow fadeIn" data-wow-delay="0.9s">
+				<div class="advertising__img-wrapp">
+					<img src="pic/img/img-3.png" alt="">
+				</div>
+				<span class="advertising__title">Integrations</span>
+			</li>
+			<li class="advertising__item">
+				<div class="advertising__img-wrapp">
+					<img src="pic/img-decor.png" alt="">
+				</div>
+			</li>
+			<li class="advertising__item wow fadeIn" data-wow-delay="0.6s">
+				<div class="advertising__img-wrapp">
+					<img src="pic/img/img-4.png" alt="">
+				</div>
+				<span class="advertising__title">Separate commercial</span>
+			</li>
+			<li class="advertising__item">
+				<div class="advertising__img-wrapp">
+					<img src="pic/img-decor.png" alt="">
+				</div>
+			</li>
+			<li class="advertising__item wow fadeIn" data-wow-delay="0.9s">
+				<div class="advertising__img-wrapp">
+					<img src="pic/img/img-5.png" alt="">
+				</div>
+				<span class="advertising__title">Viral marketing</span>
+			</li>
+			<li class="advertising__item">
+				<div class="advertising__img-wrapp">
+					<img src="pic/img-decor.png" alt="">
+				</div>
+			</li>
+		</ul>
+		<span class="advertising__descr-bott wow fadeInUp" data-wow-delay="0.5s">
+			<span class="advertising__descr-bott-text">We can conduct an advertising campaign at any YouTube or Instagram blogger in Russia and abroad.</span>
+			<span class="advertising__descr-bott-text">Turning to our Agency you can be sure of a quality approach, deadlines and the maximum efficiency of your tasks.</span>
+		</span>
+		<div class="advertising__btn-wrapp wow fadeIn" data-wow-delay="0s">
+			<a data-fancybox data-src="#popup-mail-en" href="javascript:;" class="btn advertising__btn">order advertising</a>
+		</div>
+	</div>
+</div>
+
+	<div class="bloggers" id="bloggers">
+  <div class="container">
+
+    <div class="bloggers__header">
+      <h1 class="bloggers__title wow fideInDown" data-wow-delay="0.6s">Bloggers</h1>
+      <p class="bloggers__desc wow fadeInUp" data-wow-delay="0.6s">PLAZA advertising Agency is ready to represent your interests on exclusive terms. We offer:</p>
+    </div>
+
+    <div class="bloggers__body">
+      <ul class="bloggers__list">
+
+        
+        <li class="bloggers__item wow fadeIn" data-wow-delay="0s">
+          <div class="bloggers__top" style="background-image: url(pic/bloggers-decor.png);">
+            <div class="bloggers__inner">
+              <svg class="icon-profits">
+                <use xlink:href="#profits"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="blogers__bottom">
+            <span class="bloggers__txt">High income from advertising</span>
+          </div>
+        </li>
+        
+        <li class="bloggers__item wow fadeIn" data-wow-delay="0.3s">
+          <div class="bloggers__top" style="background-image: url(pic/bloggers-decor.png);">
+            <div class="bloggers__inner">
+              <svg class="icon-pie-chart">
+                <use xlink:href="#pie-chart"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="blogers__bottom">
+            <span class="bloggers__txt">Stable level of sales</span>
+          </div>
+        </li>
+        
+        <li class="bloggers__item wow fadeIn" data-wow-delay="0.5s">
+          <div class="bloggers__top" style="background-image: url(pic/bloggers-decor.png);">
+            <div class="bloggers__inner">
+              <svg class="icon-helmet">
+                <use xlink:href="#helmet"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="blogers__bottom">
+            <span class="bloggers__txt">The protection of your interests</span>
+          </div>
+        </li>
+        
+        <li class="bloggers__item wow fadeIn" data-wow-delay="0.7s">
+          <div class="bloggers__top" style="background-image: url(pic/bloggers-decor.png);">
+            <div class="bloggers__inner">
+              <svg class="icon-credit-card">
+                <use xlink:href="#credit-card"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="blogers__bottom">
+            <span class="bloggers__txt">Payment of money convenient way</span>
+          </div>
+        </li>
+        
+        <li class="bloggers__item wow fadeIn" data-wow-delay="0.9s">
+          <div class="bloggers__top" style="background-image: url(pic/bloggers-decor.png);">
+            <div class="bloggers__inner">
+              <svg class="icon-contract">
+                <use xlink:href="#contract"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="blogers__bottom">
+            <span class="bloggers__txt">Decision bureaucratic questions'</span>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+
+    <div class="bloggers__footer wow fadeIn" data-wow-delay="0.3s">
+      <a data-fancybox data-src="#popup-mail-en" href="javascript:;" class="btn bloggers__btn">BECOME A BLOGGER</a>
+    </div>
+
+  </div>
+</div>
+
+</div>
+<footer class="footer" id="footer" style="background-image: url(pic/bg/bg-3.jpg);">
+	<div class="container">
+
+		<div class="footer__wrapp">
+			<span class="footer__text">For all questions, please contact us by email</span>
+			<div class="footer__contact-mail">
+				<a href="mailto:info@plaza.agency" class="footer__contact-link">info@plaza.agency</a>
+			</div>
+		</div>
+
+		<div class="footer__bottom wow fadeInUp" data-wow-delay="0.5s">
+			<div class="footer__holder footer__holder--left">
+				<span class="footer__copyright">&copy; Plaza Agency</span>
+			</div>
+			<div class="footer__holder footer__holder--right">
+				<div class="footer__upstairs">
+					<a href="#" class="footer__upstairs-link js-footer-upstairs"></a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</footer>
+
+<div class="popup-mail" id="popup-mail-en">
+	<span class="popup-mail__text">For all questions, please contact us by email</span>
+	<div class="popup-mail__wrapp">
+		<a href="mailto:info@plaza.agency" class="popup-mail__link">info@plaza.agency</a>
+	</div>
+</div>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+
+

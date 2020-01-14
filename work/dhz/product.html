@@ -1,0 +1,518 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Продукты</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+
+ 	</div>
+
+
+    <div class="wrapper">
+
+      <header class="header">
+	
+	<div class="header__language">
+		<ul class="header__language-list">
+			<li class="header__language-item">
+				<a href="" class="header__language-link">SP</a>
+			</li>
+			<li class="header__language-item">
+				<a href="" class="header__language-link">EN</a>
+			</li>
+			<li class="header__language-item">
+				<a href="" class="header__language-link header__language-link--active">RU</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="container">
+		<div class="header__holder">
+				<div class="header__inner header__inner--left">
+
+					<a class="header__toggler js-toggler" data-href="nav"><span class="header__toggler-decor"></span></a>
+
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">DHZ</a>
+					</div>
+
+					<nav class="header__nav js-collapse" data-nav="nav">
+						<ul class="header__nav-list">
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">О компании</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Продукция</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Статьи</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Документы</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Стоимость</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Поставщикам</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Экология</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+
+					<div class="header__search">
+						<form action="" class="header__search-form">
+							<a class="header__search-toggler" data-fancybox data-src="#popup-search" href="javascript:;">
+								<svg class="icon-search">
+								  <use xlink:href="#search"></use>
+								</svg>
+							</a>
+						</form>
+					</div>
+
+				</div>
+				<div class="header__inner header__inner--right">
+					<div class="header__callback">
+						<a href="tel: +74952042967" class="header__callback-link">+7 (495) 204-29-67</a>
+						<span class="header__callback-link header__callback-link--small" data-fancybox data-src="#popup-callback" href="javascript:;">Заказать звонок</span>
+					</div>
+				</div>
+		</div>
+	</div>
+</header>
+
+
+      <div class="product-desc">
+  <div class="container">
+    <div class="product-desc__wrap">
+      <div class="product-desc__header">
+
+        <ul class="breadcrumbs breadcrumbs--product">
+	
+	<li class="breadcrumbs__item">
+		<a class="breadcrumbs__link" href="#">Главная</a>
+	</li>
+
+	
+	<li class="breadcrumbs__item">
+		<a class="breadcrumbs__link" href="#">Каталог</a>
+	</li>
+
+	
+	<li class="breadcrumbs__item">
+		<a class="breadcrumbs__link" href="#">Растворители</a>
+	</li>
+
+	
+	<li class="breadcrumbs__item">P-646</li>
+</ul>
+
+
+        <div class="product-desc__holder product-desc__holder--right">
+          <div class="product-desc__gallery">
+            <img src="pic/solvents/solvents-big.jpg" alt="" class="product-desc__img js-img-link">
+          </div>
+          <div class="product-desc__packaging">
+            <span class="product-desc__packaging-title">Фасовка</span>
+            <ul class="product-desc__packaging-list">
+              <li class="product-desc__packaging-item">
+                <input type="radio" name="packaging" id="packaging1" data-img="pic/solvents/solvents-big.jpg" class="product__radio">
+                <label for="packaging1" class="product-desc__packaging-link js-radio" data-img="pic/solvents/solvents-1.jpg">0.5 литра</label>
+              </li>
+              <li class="product-desc__packaging-item">
+                <input type="radio" name="packaging" id="packaging2" checked data-img="pic/solvents/solvents-big.jpg" class="product__radio">
+                <label for="packaging2" class="product-desc__packaging-link js-radio" data-img="pic/solvents/solvents-big.jpg">1 литр</label>
+              </li>
+              <li class="product-desc__packaging-item">
+                <input type="radio" name="packaging" id="packaging3" data-img="pic/solvents/solvents-big.jpg" class="product__radio">
+                <label for="packaging3" class="product-desc__packaging-link js-radio" data-img="pic/solvents/solvents-2.jpg">5 литров</label>
+              </li>
+              <li class="product-desc__packaging-item">
+                <input type="radio" name="packaging" id="packaging4" data-img="pic/solvents/solvents-big.jpg" class="product__radio">
+                <label for="packaging4" class="product-desc__packaging-link js-radio" data-img="pic/solvents/solvents-3.jpg">10 литров</label>
+              </li>
+              <li class="product-desc__packaging-item">
+                <input type="radio" name="packaging" id="packaging5" class="product__radio">
+                <label for="packaging5" class="product-desc__packaging-link js-radio" data-img="pic/solvents/solvents-4.jpg">200 литров</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-desc__holder product-desc__holder--left">
+
+            <div class="product-desc__inner">
+              <span class="product-desc__name">Растворитель</span>
+              <h1 class="product-desc__mark">P-646</h1>
+              <p class="product-desc__txt">646 растворитель, изготовленный по ГОСТ 18188 72 – это бледно-желтая или же полностью бесцветная жидкость, имеющая специфический резкий запах. Он используется как в быту, так и в промышленности. Главная задача р-646 растворителя – это придать требуемую консистенцию для лакокрасочных материалов</p>
+              <ul class="product-desc__list">
+                <li class="product-desc__item">
+                  <span class="product-desc__rate">29,8%</span>
+                  <span class="product-desc__value">Бутилацетат</span>
+                </li>
+                <li class="product-desc__item">
+                  <span class="product-desc__rate">41,3%</span>
+                  <span class="product-desc__value">Толуол</span>
+                </li>
+                <li class="product-desc__item">
+                  <span class="product-desc__rate">7,7%</span>
+                  <span class="product-desc__value">Бутиловый спирт</span>
+                </li>
+                <li class="product-desc__item">
+                  <span class="product-desc__rate">21,2%</span>
+                  <span class="product-desc__value">Этилацетат</span>
+                </li>
+              </ul>
+              <a href="#" class="btn product-desc__btn">Рассчитать стоимость</a>
+            </div>
+
+            <div class="product-desc__more">
+              <ul class="product-desc__more-list js-slidetab">
+                <li class="product-desc__more-item js-slidetab-item">
+                  <a href="#prod-desc" class="product-desc__more-link js-slidetab-link">Описание</a>
+                </li>
+                <li class="product-desc__more-item js-slidetab-item">
+                  <a href="#prod-desc" class="product-desc__more-link js-slidetab-link">Применяется</a>
+                </li>
+                <li class="product-desc__more-item js-slidetab-item">
+                  <a href="#prod-desc" class="product-desc__more-link js-slidetab-link">Характеристики</a>
+                </li>
+                <li class="product-desc__more-item js-slidetab-item">
+                  <a href="#prod-desc" class="product-desc__more-link js-slidetab-link">Меры безопасности</a>
+                </li>
+                <li class="product-desc__more-item js-slidetab-item">
+                  <a href="#prod-desc" class="product-desc__more-link js-slidetab-link">Отзывы</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+
+      </div>
+      <div id="prod-desc" class="product-desc__body">
+        <div class="product-tabs js-tabs-product">
+
+  <div class="product-tabs__nav">
+    <ul class="product-tabs__nav-list">
+      <li class="product-tabs__nav-item js-product-accorderon">
+        <a href="#tabs-desc" class="product-tabs__nav-link js-tab-product-link active">Описание</a>
+      </li>
+      <li class="product-tabs__nav-item js-product-accorderon">
+        <a href="#tabs-applicable" class="product-tabs__nav-link js-tab-product-link">Применяется</a>
+      </li>
+      <li class="product-tabs__nav-item js-product-accorderon">
+        <a href="#tabs-characteristics" class="product-tabs__nav-link js-tab-product-link">Характеристики</a>
+      </li>
+      <li class="product-tabs__nav-item js-product-accorderon">
+        <a href="#tabs-security" class="product-tabs__nav-link js-tab-product-link">Мера безопасности</a>
+      </li>
+      <li class="product-tabs__nav-item js-product-accorderon">
+        <a href="#tabs-reviews" class="product-tabs__nav-link js-tab-product-link">Отзывы</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="product-tabs__content js-accordeon-body">
+
+    <div class="product-tabs__content-holder js-tabs-product-content active" id="tabs-desc">
+      <span class="product-tabs__content-accordeon js-accordion-btn">Описание</span>
+      <div class="product-tabs__content-inner js-accordion-mobile">
+        <div class="product-tabs__content-header">
+          <span class="product-tabs__content-title">Описание</span>
+          <div class="product-tabs__question">
+            <a href="#" class="product-tabs__question-link"><svg class="icon-question"><use xlink:href="#question"></use></svg>Задать вопрос по P - 646</a>
+          </div>
+        </div>
+        <div class="static-content">
+          <p>Растворитель 647 – это многокомпонентный растворитель, который может иметь в своем составе 4 разных компонента. К этим компонентам относятся: пиробензол или толуол, бутанол, амилацетат или бутилацетат, а также этилацетат. В зависимости от области применения производитель может менять некоторые компоненты растворителя на другие. Растворитель 647 считается одним из наиболее востребованных продуктов этого класса.</p>
+          <p>Дмитриевский химический завод – это одно из ведущих предприятий по производству растворителей р-647 не только в Ивановской области, но и в Москве. Обладая 70 летним опытом работы, современной технологичной базой и квалифицированными сотрудниками, наше предприятие способно продавать растворитель 647 оптом и очень высокого качества.</p>
+          <p>Растворитель 647 – это органическая многокомпонентная смесь, которая содержит в себе летучие органические вещества, такие как сложные эфиры, кетоны, спирты, а также ароматические углеводороды. Если производитель придерживается ГОСТ-ов, и изготовляет вещество в чистом виде, то такой растворитель р 647 не должен додержать прекурсоров. Что касается химического состава вещества, то растворитель 647 очень похож на р-646. В них даже присутствуют одинаковые компоненты, правда в различном процентном соотношении.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-tabs__content-holder js-tabs-product-content" id="tabs-applicable">
+      <span class="product-tabs__content-accordeon js-accordion-btn">Применяется</span>
+      <div class="product-tabs__content-inner js-accordion-mobile">
+        <div class="product-tabs__content-header">
+          <span class="product-tabs__content-title">Применяется</span>
+          <div class="product-tabs__question">
+            <a href="#" class="product-tabs__question-link"><svg class="icon-question"><use xlink:href="#question"></use></svg>Задать вопрос по P - 646</a>
+          </div>
+        </div>
+        <div class="static-content">
+          <p>Растворитель 647 – это многокомпонентный растворитель, который может иметь в своем составе 4 разных компонента. К этим компонентам относятся: пиробензол или толуол, бутанол, амилацетат или бутилацетат, а также этилацетат. В зависимости от области применения производитель может менять некоторые компоненты растворителя на другие. Растворитель 647 считается одним из наиболее востребованных продуктов этого класса.</p>
+          <p>Дмитриевский химический завод – это одно из ведущих предприятий по производству растворителей р-647 не только в Ивановской области, но и в Москве. Обладая 70 летним опытом работы, современной технологичной базой и квалифицированными сотрудниками, наше предприятие способно продавать растворитель 647 оптом и очень высокого качества.</p>
+          <p>Растворитель 647 – это органическая многокомпонентная смесь, которая содержит в себе летучие органические вещества, такие как сложные эфиры, кетоны, спирты, а также ароматические углеводороды. Если производитель придерживается ГОСТ-ов, и изготовляет вещество в чистом виде, то такой растворитель р 647 не должен додержать прекурсоров. Что касается химического состава вещества, то растворитель 647 очень похож на р-646. В них даже присутствуют одинаковые компоненты, правда в различном процентном соотношении.</p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-tabs__content-holder js-tabs-product-content" id="tabs-characteristics">
+      <span class="product-tabs__content-accordeon js-accordion-btn">Характеристики</span>
+      <div class="product-tabs__content-inner js-accordion-mobile">
+        <div class="product-tabs__content-header">
+          <span class="product-tabs__content-title">Характеристики</span>
+          <div class="product-tabs__question">
+            <a href="#" class="product-tabs__question-link"><svg class="icon-question"><use xlink:href="#question"></use></svg>Задать вопрос по P - 646</a>
+          </div>
+        </div>
+        <div class="static-content">
+          <p>Растворитель 647 – это многокомпонентный растворитель, который может иметь в своем составе 4 разных компонента. К этим компонентам относятся: пиробензол или толуол, бутанол, амилацетат или бутилацетат, а также этилацетат. В зависимости от области применения производитель может менять некоторые компоненты растворителя на другие. Растворитель 647 считается одним из наиболее востребованных продуктов этого класса.</p>
+          <p>Дмитриевский химический завод – это одно из ведущих предприятий по производству растворителей р-647 не только в Ивановской области, но и в Москве. Обладая 70 летним опытом работы, современной технологичной базой и квалифицированными сотрудниками, наше предприятие способно продавать растворитель 647 оптом и очень высокого качества.</p>
+          <p>Растворитель 647 – это органическая многокомпонентная смесь, которая содержит в себе летучие органические вещества, такие как сложные эфиры, кетоны, спирты, а также ароматические углеводороды. Если производитель придерживается ГОСТ-ов, и изготовляет вещество в чистом виде, то такой растворитель р 647 не должен додержать прекурсоров. Что касается химического состава вещества, то растворитель 647 очень похож на р-646. В них даже присутствуют одинаковые компоненты, правда в различном процентном соотношении.</p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-tabs__content-holder js-tabs-product-content" id="tabs-security">
+      <span class="product-tabs__content-accordeon js-accordion-btn">Мера безопасности</span>
+      <div class="product-tabs__content-inner js-accordion-mobile">
+        <div class="product-tabs__content-header">
+          <span class="product-tabs__content-title">Мера безопасности</span>
+          <div class="product-tabs__question">
+            <a href="#" class="product-tabs__question-link"><svg class="icon-question"><use xlink:href="#question"></use></svg>Задать вопрос по P - 646</a>
+          </div>
+        </div>
+        <div class="static-content">
+          <p>Растворитель 647 – это многокомпонентный растворитель, который может иметь в своем составе 4 разных компонента. К этим компонентам относятся: пиробензол или толуол, бутанол, амилацетат или бутилацетат, а также этилацетат. В зависимости от области применения производитель может менять некоторые компоненты растворителя на другие. Растворитель 647 считается одним из наиболее востребованных продуктов этого класса.</p>
+          <p>Дмитриевский химический завод – это одно из ведущих предприятий по производству растворителей р-647 не только в Ивановской области, но и в Москве. Обладая 70 летним опытом работы, современной технологичной базой и квалифицированными сотрудниками, наше предприятие способно продавать растворитель 647 оптом и очень высокого качества.</p>
+          <p>Растворитель 647 – это органическая многокомпонентная смесь, которая содержит в себе летучие органические вещества, такие как сложные эфиры, кетоны, спирты, а также ароматические углеводороды. Если производитель придерживается ГОСТ-ов, и изготовляет вещество в чистом виде, то такой растворитель р 647 не должен додержать прекурсоров. Что касается химического состава вещества, то растворитель 647 очень похож на р-646. В них даже присутствуют одинаковые компоненты, правда в различном процентном соотношении.</p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-tabs__content-holder js-tabs-product-content" id="tabs-reviews">
+      <span class="product-tabs__content-accordeon js-accordion-btn">Отзывы</span>
+      <div class="product-tabs__content-inner js-accordion-mobile">
+        <div class="product-tabs__content-header">
+          <span class="product-tabs__content-title">Отзывы</span>
+          <div class="product-tabs__question">
+            <a href="#" class="product-tabs__question-link"><svg class="icon-question"><use xlink:href="#question"></use></svg>Задать вопрос по P - 646</a>
+          </div>
+        </div>
+        <div class="static-content">
+          <p>Растворитель 647 – это многокомпонентный растворитель, который может иметь в своем составе 4 разных компонента. К этим компонентам относятся: пиробензол или толуол, бутанол, амилацетат или бутилацетат, а также этилацетат. В зависимости от области применения производитель может менять некоторые компоненты растворителя на другие. Растворитель 647 считается одним из наиболее востребованных продуктов этого класса.</p>
+          <p>Дмитриевский химический завод – это одно из ведущих предприятий по производству растворителей р-647 не только в Ивановской области, но и в Москве. Обладая 70 летним опытом работы, современной технологичной базой и квалифицированными сотрудниками, наше предприятие способно продавать растворитель 647 оптом и очень высокого качества.</p>
+          <p>Растворитель 647 – это органическая многокомпонентная смесь, которая содержит в себе летучие органические вещества, такие как сложные эфиры, кетоны, спирты, а также ароматические углеводороды. Если производитель придерживается ГОСТ-ов, и изготовляет вещество в чистом виде, то такой растворитель р 647 не должен додержать прекурсоров. Что касается химического состава вещества, то растворитель 647 очень похож на р-646. В них даже присутствуют одинаковые компоненты, правда в различном процентном соотношении.</p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="other-products">
+	<div class="container">
+		<span class="other-products__title">Другие продукты</span>
+		<div class="other-products__wrap">
+
+			
+			<div class="other-products__col">
+				<a href="#" class="other-products__link">
+					<img class="other-products__img" src="pic/solvents/solvents-1.jpg" alt="">
+					<div class="other-products__heading">
+						<span class="other-products__category">Растворитель</span>
+						<span class="other-products__name">P-646</span>
+					</div>
+				</a>
+			</div>
+			
+			<div class="other-products__col">
+				<a href="#" class="other-products__link">
+					<img class="other-products__img" src="pic/solvents/solvents-3.jpg" alt="">
+					<div class="other-products__heading">
+						<span class="other-products__category">Растворитель</span>
+						<span class="other-products__name">Р-4</span>
+					</div>
+				</a>
+			</div>
+			
+			<div class="other-products__col">
+				<a href="#" class="other-products__link">
+					<img class="other-products__img" src="pic/solvents/solvents-4.jpg" alt="">
+					<div class="other-products__heading">
+						<span class="other-products__category"></span>
+						<span class="other-products__name">Ацетон</span>
+					</div>
+				</a>
+			</div>
+			
+			<div class="other-products__col">
+				<a href="#" class="other-products__link">
+					<img class="other-products__img" src="pic/solvents/solvents-5.jpg" alt="">
+					<div class="other-products__heading">
+						<span class="other-products__category">Растворитель</span>
+						<span class="other-products__name">Уайт-спирит</span>
+					</div>
+				</a>
+			</div>
+			
+			
+			
+		</div>
+	</div>	
+</div>
+
+    </div>
+
+  <footer class="footer">
+	<div class="container">
+
+		<div class="footer__row">
+			<div class="footer__col footer__col--large">
+				<span class="footer__title">DHZ</span>
+				<p class="footer__txt">
+					Мы – это сплоченная команда профессионалов, которые
+					нацелены на производство высококачественной продукции.
+					В 2008 году завод был признал самым динамично
+					развивающимся предприятием Ивановской области и вошел
+					в десятку крупнейших предприятий региона.
+				</p>
+			</div>
+
+			<div class="footer__col footer__col--large">
+				<div class="footer__inner footer__inner--large">
+					<span class="footer__heading">О нас</span>
+					<ul class="footer__list">
+						<li class="footer__item">
+							<a href="#" class="footer__link">О компании</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Продукция</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Статьи</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Документы</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Стоимость</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Поставщикам</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Экология</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Контакты</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="footer__inner footer__inner--small">
+					<span class="footer__heading">Каталог</span>
+					<ul class="footer__list">
+						<li class="footer__item">
+							<a href="#" class="footer__link">Бутилацетат</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Растворители</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Пищевая уксусная кислота</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer__col footer__col--small">
+				<div class="footer__contacts">
+					<a href="#" class="footer__number">+7 (495) 204-29-67</a>
+					<a class="footer__callBack" data-fancybox data-src="#popup-callback" href="javascript:;">Заказать звонок</a>
+				</div>
+				<div class="footer__social">
+					<span class="footer__social-title">Мы в сети</span>
+					<ul class="footer__social-list">
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<svg class="icon-twitter">
+									<use xlink:href="#twitter"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<svg class="icon-instagram">
+									<use xlink:href="#instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link footer__social-link--linkedin">
+								<svg class="icon-linkedin">
+									<use xlink:href="#linkedin"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</footer>
+
+
+  <div id="popup-search" class="popup popup--search">
+
+	<form action="">
+		<input class="search__input" type="search" placeholder="Что ищем?">
+		<div class="search__btn"><button class="btn btn-search">ИСКАТЬ</button></div>
+	</form>
+
+</div>
+
+  <div id="popup-callback" class="popup popup--callback">
+	<div class="popup__holder">
+		<span class="popup__title">Заказать звонок</span>
+
+		<form action="">
+			<input class="popup__input" type="text" placeholder="Имя">
+			<input type="tel" name="phone" class="popup__input js-mask valid" placeholder="Телефон" required="" aria-invalid="false">
+			<div class="popup__btn"><button class="btn">Отправить</button></div>
+		</form>
+	</div>
+</div>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

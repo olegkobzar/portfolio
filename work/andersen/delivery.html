@@ -1,0 +1,554 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Доставка</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body>
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<img class="preloader-img" src="img/preloader.gif" alt="">
+</div>
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+
+ 	</div>
+
+    <div class="wrapper">
+
+      <!-- top of module headers -->
+      <header class="header">
+	<div class="header__top">
+		<div class="container">
+			<div class="header__wrapp">
+				<div class="header__phone">
+					<a href="tel:+79555228989" class="header__link-phone">+7 (955) <span class="header__link-phone--black">522-89-89</span></a>
+				</div>
+				<div class="header__logo">
+					<a href="#" class="header__link-logo">
+						<svg class="icon-logo">
+							<use xlink:href="#logo"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="header__panel js-panel">
+					<ul class="header__list-panel">
+						<li class="header__item-panel">
+							<a href="#" class="header__link-icon">
+								<span class="header__icon">
+									<svg class="icon-user">
+										<use xlink:href="#user"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="header__item-panel">
+							<a href="#" class="header__link-icon">
+								<span class="header__icon">
+									<svg class="icon-login">
+										<use xlink:href="#login"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="header__item-panel">
+							<a href="#" class="header__link-icon">
+								<span class="header__icon">
+									<svg class="icon-like">
+										<use xlink:href="#like"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="header__item-panel">
+							<a href="#" class="header__link-icon js-dropp-icon">
+								<span class="header__icon">
+									<svg class="icon-basket">
+										<use xlink:href="#basket"></use>
+									</svg>
+								</span>
+								<span class="header__basket-goods">
+									(<span class="header__basket-num">0</span>)
+								</span>
+							</a>
+						</li>
+					</ul>
+					<div class="drop-basket js-dropp-basket">
+	<div class="drop-basket__wrapp">
+		<span class="drop-basket__close js-close-basket"></span>
+		<div class="drop-basket__goods">
+			<div class="drop-basket__img-wrapp">
+				<img src="pic/goods/goods-2.png" alt="">
+			</div>
+			<div class="drop-basket__goods-descr">
+				<span class="drop-basket__goods-price">8 990 <span class="rubl">o</span></span>
+				<span class="drop-basket__goods-name">Детская дутая куртка Monki</span>
+				<ul class="drop-basket__goods-list">
+					<li class="drop-basket__goods-item">Зеленый</li>
+					<li class="drop-basket__goods-item">XS</li>
+					<li class="drop-basket__goods-item">Кол-во 2</li>
+				</ul>
+			</div>
+		</div>
+		<div class="drop-basket__total">
+			<span class="drop-basket__total-text">Всего:</span>
+			<span class="drop-basket__total-price">8 990 <span class="rubl drop-basket__rubl">o</span></span>
+		</div>
+		<div class="drop-basket__foot">
+			<div class="drop-basket__link-wrapp">
+				<a href="#" class="drop-basket__link">Посмотреть корзину</a>
+			</div>
+			<div class="drop-basket__btn-wrapp">
+				<button class="btn btn--dark drop-basket__btn">Оформить заказ</button>
+			</div>
+		</div>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header__bott">
+		<div class="container">
+			<div class="header__wrapp">
+				<div class="header__nav-wrapp js-wrapp-nav">
+					<div class="header__open-menu js-btn-menu">
+						<span class="header__line js-line"></span>
+						<span class="header__line js-line"></span>
+						<span class="header__line js-line"></span>
+					</div>
+					<nav class="header__nav js-nav">
+						<div class="header__close-btn js-close-btn">
+							<span class="header__line-close"></span>
+							<span class="header__line-close"></span>
+						</div>
+						<ul class="header__list">
+							<li class="header__item">
+								<a href="#" class="header__link">Для девочек</a>
+							</li>
+
+							<li class="header__item">
+								<a href="#" class="header__link js-acc-head">Для мальчиков</a>
+								<div class="header__submenu js-acc-body">
+									<div class="header__submenu-inner">
+										<ul class="header__list-submenu">
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Платья</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Юбки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Джинсы</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Шорты</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Топы и футболки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Рубашки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Джемперы</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Свитера</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Верхняя одежда</a>
+											</li>
+										</ul>
+										<div class="header__desc-right">
+											<div class="header__img-wrapp">
+												<img src="pic/image/menu-mini.png" alt="">
+											</div>
+											<span class="header__text-sale">Какой-нибудь текст про акции <span class="header__sale">Sale 10%</span></span>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="header__item">
+								<a href="#" class="header__link">Аксессуары</a>
+							</li>
+							<li class="header__item">
+								<a href="#" class="header__link">Бренды</a>
+							</li>
+							<li class="header__item">
+								<a href="#" class="header__link js-acc-head">Sales</a>
+								<div class="header__submenu js-acc-body">
+									<div class="header__submenu-inner">
+										<ul class="header__list-submenu">
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Платья</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Юбки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Джинсы</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Шорты</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Топы и футболки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Рубашки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Джемперы</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Свитера</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Верхняя одежда</a>
+											</li>
+										</ul>
+										<div class="header__desc-right">
+											<div class="header__img-wrapp">
+												<img src="pic/image/menu-mini.png" alt="">
+											</div>
+											<span class="header__text-sale">Какой-нибудь текст про акции <span class="header__sale">Sale 10%</span></span>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="header__search-wrapp js-wrapp-search">
+					<form action="">
+						<span class="header__search-btn-open js-search-open">
+							<svg class="icon-search">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+						<div class="header__form js-form-open">
+							<div class="header__input-wrapp">
+								<input type="text" class="header__input" placeholder="Поиск">
+							</div>
+							<div class="header__btn-wrapp">
+								<button class="header__btn-search">
+									<span class="header__icon">
+										<svg class="icon-search">
+											<use xlink:href="#search"></use>
+										</svg>
+									</span>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+      <!-- end of module headers -->
+
+      <!-- the beginning of the heading module -->
+      <div class="heading " style="background-image: url(pic/bg/bg-3.jpg);">
+  <div class="heading__outer">
+    <div class="container">
+      <h3 class="heading__title">Доставка</h3>
+    </div>
+  </div>
+</div>
+
+      <!-- end of the heading module -->
+
+      <div class="delivery">
+	<div class="container">
+		<div class="delivery__wrapp">
+			<h2 class="delivery__caption">Способы доставки</h2>
+			<div class="delivery__inner">
+				<ul class="delivery__list delivery__list--inline">
+					<li class="delivery__item delivery__item--inline">- Почта России</li>
+					<li class="delivery__item delivery__item--inline">- Курьерская служба СДЭК</li>
+					<li class="delivery__item delivery__item--inline">- Пункты выдачи заказов СДЭК</li>
+					<li class="delivery__item delivery__item--inline">- Самовывоз</li>
+				</ul>
+			</div>
+			<div class="delivery__inner delivery__inner--address">
+				<h5 class="delivery__title">Покупатель может самостоятельно забрать свой заказ в розничных магазинах UngeLarson, по следующим адресам:</h5>
+				<div class="delivery__lists-wrapp">
+					<ul class="delivery__list delivery__list--address">
+						<li class="delivery__item delivery__item--address">г. Ростов-на-Дону, ул. Большая Садовая, 46, ЦУМ, 4 этаж</li>
+						<li class="delivery__item delivery__item--address">Часы работы: 10:00 до 22:00</li>
+						<li class="delivery__item delivery__item--address">
+							тел.:<a href="tel:+78632801094" class="delivery__link-tel">+7 (863) 280-10-94</a>
+						</li>
+					</ul>
+					<ul class="delivery__list delivery__list--address">
+						<li class="delivery__item delivery__item--address">г. Ростов-на-Дону, пр. Михаила Нагибина, д. 32/2, ТРК «Мегацентр Горизонт»</li>
+						<li class="delivery__item delivery__item--address">Часы работы: 10:00 до 22:00</li>
+						<li class="delivery__item delivery__item--address">
+							тел.:<a href="tel:+78632801094" class="delivery__link-tel">+7 (863) 280-10-94</a>
+						</li>
+					</ul>
+					<ul class="delivery__list delivery__list--address">
+						<li class="delivery__item delivery__item--address">г. Ростов-на-Дону, пр. Аксайский, 23, Торговый Центр «МЕГА»</li>
+						<li class="delivery__item delivery__item--address">Часы работы: 10:00 до 22:00</li>
+						<li class="delivery__item delivery__item--address">
+							тел.:<a href="tel:+78632801094" class="delivery__link-tel">+7 (863) 280-10-94</a>
+						</li>
+					</ul>
+					<ul class="delivery__list delivery__list--address">
+						<li class="delivery__item delivery__item--address">г. Краснодар, ул. В. Головатого, 313, Торговый Центр «Галерея Краснодар», магазин детской одежды «Андерсен»</li>
+						<li class="delivery__item delivery__item--address">Часы работы: 10:00 до 22:00 </li>
+						<li class="delivery__item delivery__item--address">
+							тел.:<a href="tel:+78632801094" class="delivery__link-tel">+7 (863) 280-10-94</a>
+						</li>
+					</ul>
+					<ul class="delivery__list delivery__list--address">
+						<li class="delivery__item delivery__item--address">г. Краснодар, Тургеневское шоссе, 27, Торговый Центр «МЕГА», магазин детской одежды «Андерсен»</li>
+						<li class="delivery__item delivery__item--address">Часы работы: 10:00 до 22:00</li>
+						<li class="delivery__item delivery__item--address">
+							тел.:<a href="tel:+78632801094" class="delivery__link-tel">+7 (863) 280-10-94</a>
+						</li>
+					</ul>
+					<ul class="delivery__list delivery__list--address">
+						<li class="delivery__item delivery__item--address">г. Ейск, ТЦ "Олимп", ул. Победы 66/1, (4 этаж) Магазин детской одежды Button Blue</li>
+						<li class="delivery__item delivery__item--address">Часы работы:10:00 до 22:00</li>
+						<li class="delivery__item delivery__item--address">
+							тел.:<a href="tel:+78632801094" class="delivery__link-tel">+7 (863) 280-10-94</a>
+						</li>
+					</ul>
+					<ul class="delivery__list delivery__list--address">
+						<li class="delivery__item delivery__item--address">г. Ейск, ТЦ "Гелиос Холл", ул. Западная 1/1, (2 этаж), магазин детской одежды Button Blue</li>
+						<li class="delivery__item delivery__item--address">Часы работы:10:00 до 22:00</li>
+						<li class="delivery__item delivery__item--address">
+							тел.:<a href="tel:+78632801094" class="delivery__link-tel">+7 (863) 280-10-94</a>
+						</li>
+					</ul>
+					<ul class="delivery__list delivery__list--address">
+						<li class="delivery__item delivery__item--address">г. Новороссийск, Анапское ш., 2, Мегацентр "Красная Площадь", (3 этаж), магазин детской одежды Button Blue</li>
+						<li class="delivery__item delivery__item--address">Часы работы:10:00 до 22:00</li>
+						<li class="delivery__item delivery__item--address">
+							тел.:<a href="tel:+78632801094" class="delivery__link-tel">+7 (863) 280-10-94</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="delivery__group">
+				<div class="delivery__inner">
+					<h5 class="delivery__title">Стоимость доставки:</h5>
+					<p class="delivery__descr">Курьерская служба интернет-магазина <a href="www.ungelarson.ru" class="delivery__descr-link">www.ungelarson.ru</a> осуществляет бесплатную доставку по Ростову-на-Дону и Ростовской области</p>
+				</div>
+				<div class="delivery__inner">
+					<h5 class="delivery__title">Сроки доставки:</h5>
+					<p class="delivery__descr">Сроки доставки зависят от региона покупателя, а также от внутренних регламентов Почты России и курьерской службы  СДЭК. Узнать контрольные сроки почтовой доставки Покупатель может на сайте Почты РФ,  СДЭК - на сайте СДЭК. Срок доставки отсчитывается со дня завершения формирования заказа на складе и передачи его в службу доставки. Максимальный срок формирования заказа и передачи в службу доставки 3-4 рабочих дня. Срок доставки в пункт самовывоза: г. Краснодар, Тургеневское шоссе, 27, Торговый Центр «МЕГА», магазин детской одежды «Андерсен», г. Ейск ТЦ "Гелиос Холл", ул. Западная 1/1, (2 этаж), г. Ейск, ТЦ "Олимп", ул. Победы 66/1, (4 этаж), г. Новороссийск, Анапское ш.,2, Мегацентр "Красная Площадь", (3 этаж): 14-21 рабочих дней. </p>
+				</div>
+				<div class="delivery__inner">
+					<h5 class="delivery__title">Условия доставки:</h5>
+					<h5 class="delivery__title">Доставка курьерской службой СДЭК:</h5>
+					<ul class="delivery__list delivery__list--conditions">
+						<li class="delivery__item delivery__item--conditions">- курьерская служба заранее свяжется по телефону и согласует с Покупателем дату, время и место доставки;</li>
+						<li class="delivery__item delivery__item--conditions">- доставка совершается с Пн.-Пт., с 09.00 - 18.00;</li>
+						<li class="delivery__item delivery__item--conditions">- вскрыть посылку и примерить заказ Покупатель может до оплаты;</li>
+						<li class="delivery__item delivery__item--conditions">- в момент доставки, Покупатель имеет право полностью или частично отказаться от заказа;</li>
+						<li class="delivery__item delivery__item--conditions">- при принятии заказа, Покупатель оплачивает курьеру стоимость заказа, курьер в свою очередь вручает Покупателю кассовый чек и все необходимые документы;</li>
+						<li class="delivery__item delivery__item--conditions">- если Покупатель отказался от заказа, его необходимо будет вернуть курьеру;</li>
+						<li class="delivery__item delivery__item--conditions">- виды оплаты заказа в интернет-магазине Unge Larson</li>
+					</ul>
+					<p class="delivery__descr"><span class="delivery__descr delivery__descr--bold">Внимание!</span> Вы должны предоставить документ подтверждающий личность Покупателя (паспорт), если этого потребует курьерская служба. Заказы принятые в выходные дни доставляются по средам.</p>
+				</div>
+				<div class="delivery__inner">
+					<h5 class="delivery__title">Условия доставки:</h5>
+					<h5 class="delivery__title">Доставка курьерской службой СДЭК:</h5>
+					<ul class="delivery__list delivery__list--conditions">
+						<li class="delivery__item delivery__item--conditions">- курьерская служба заранее свяжется по телефону и согласует с Покупателем дату, время и место доставки;</li>
+						<li class="delivery__item delivery__item--conditions">- доставка совершается с Пн.-Пт., с 09.00 - 18.00;</li>
+						<li class="delivery__item delivery__item--conditions">- вскрыть посылку и примерить заказ Покупатель может до оплаты;</li>
+						<li class="delivery__item delivery__item--conditions">- в момент доставки, Покупатель имеет право полностью или частично отказаться от заказа;</li>
+						<li class="delivery__item delivery__item--conditions">- при принятии заказа, Покупатель оплачивает курьеру стоимость заказа, курьер в свою очередь вручает Покупателю кассовый чек и все необходимые документы;</li>
+						<li class="delivery__item delivery__item--conditions">- если Покупатель отказался от заказа, его необходимо будет вернуть курьеру;</li>
+						<li class="delivery__item delivery__item--conditions">- виды оплаты заказа в интернет-магазине Unge Larson</li>
+					</ul>
+					<p class="delivery__descr"><span class="delivery__descr delivery__descr--bold">Внимание!</span> Вы должны предоставить документ подтверждающий личность Покупателя (паспорт), если этого потребует курьерская служба. Заказы принятые в выходные дни доставляются по средам.</p>
+				</div>
+				<div class="delivery__inner">
+					<h5 class="delivery__title">Пункты выдачи заказов СДЭК:</h5>
+					<p class="delivery__descr delivery__descr--issue-point">Посмотреть пункты выдачи заказов СДЭК, вы сможете на сайте: <a href="http://www.edostavka.ru/contacts/city-list.html" class="delivery__link">http://www.edostavka.ru/contacts/city-list.html</a></p>
+					<p class="delivery__descr delivery__descr--issue-point"><a href="#" class="delivery__link">Виды оплаты заказа в интернет-магазине Unge Larson</a></p>
+					<p class="delivery__descr"><span class="delivery__descr delivery__descr--bold">Внимание!</span> При себе обязательно иметь паспорт!</p>
+				</div>
+				<div class="delivery__inner">
+					<h5 class="delivery__title">Доставка Почтой России:</h5>
+					<ul class="delivery__list delivery__list--post">
+						<li class="delivery__item delivery__item--post">- отследить отправку заказа можно на сайте Почты России 
+							<a href="http://www.russianpost.ru/Tracking20/" class="delivery__link delivery__link--post">http://www.russianpost.ru/Tracking20/</a>
+						</li>
+						<li class="delivery__item delivery__item--post">- по прибытии заказа Покупателя в ближайшее отделение Почты России, на его почтовый ящик будет отправлено извещение, с которым Покупателю будет необходимо прийти в отделение Почты России;</li>
+						<li class="delivery__item delivery__item--post">- при получении заказа Покупатель оплачивает стоимость товара и стоимость пересылки (кроме случая предоплаты);</li>
+						<li class="delivery__item delivery__item--post">- полученную посылку можно будет вскрыть только после оплаты;</li>
+						<li class="delivery__item delivery__item--post">- <a href="#" class="delivery__link">виды оплаты заказа в интернет-магазине Unge Larson</a></li>
+					</ul>
+					<p class="delivery__descr"><span class="delivery__descr delivery__descr--bold">Внимание!</span> При себе обязательно иметь паспорт!</p>
+				</div>
+			</div>
+			
+			<div class="delivery__inner">
+				<div class="delivery__wrapp-img">
+					<img src="pic/bg/table.jpg" alt="Таблица цен">
+				</div>
+			</div>
+			<div class="delivery__inner">
+				<p class="delivery__descr delivery__descr--last">Наш сайт, для корректной работы, собирает техническую информацию о посетителях сайта: cookie, данные об IP-адресе, местоположении и другую. Если вы не хотите оставлять о себе эту информацию для ее дальнейшей обработки - покиньте сайт. Вся информация собирается и обрабатывается согласно <a href="#" class="delivery__link">политике конфиденциальности.</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+    </div>
+
+  <footer class="footer js-footer">
+	<div class="footer__top">
+		<div class="container">
+			<div class="footer__wrapp">
+				<div class="footer__inner">
+					<span class="footer__caption">Продукция</span>
+					<ul class="footer__list">
+						<li class="footer__item"><a href="#" class="footer__link">Для девочек</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Для мальчиков</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Аксессуары и шапки</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Бренды</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Sale</a></li>
+					</ul>
+				</div>
+				<div class="footer__inner">
+					<span class="footer__caption">Для клиентов</span>
+					<ul class="footer__list">
+						<li class="footer__item"><a href="#" class="footer__link">Где купить</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Центр поддержки</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Как оформить заказ</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Как выбрать размер</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Доставка</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Оплата</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Возврат</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Оферта</a></li>
+					</ul>
+				</div>
+				<div class="footer__inner">
+					<div class="footer__item-wrapp">
+						<span class="footer__caption">О нас</span>
+						<ul class="footer__list">
+							<li class="footer__item"><a href="#" class="footer__link">О компании</a></li>
+							<li class="footer__item"><a href="#" class="footer__link">Вакансии</a></li>
+							<li class="footer__item"><a href="#" class="footer__link">Контакты</a></li>
+						</ul>
+					</div>
+					<span class="footer__caption">Сотрудничество</span>
+					<ul class="footer__list">
+						<li class="footer__item"><a href="#" class="footer__link">Стать нашим партнером</a></li>
+					</ul>
+				</div>
+				<div class="footer__inner">
+					<span class="footer__caption">Способы оплаты</span>
+					<div class="footer__img-wrapp">
+						<img src="pic/card-bank/visa-master.png" alt="">
+					</div>
+					<span class="footer__desc">Вы можете оплатить покупки наличными, либо выбрать <a href="#" class="footer__another-pay">другой способ оплаты</a></span>
+				</div>
+				<div class="footer__inner">
+					<span class="footer__caption">Социальные сети</span>
+					<ul class="footer__list footer__list--social">
+						<li class="footer__item">
+							<a href="#" class="footer__link footer__link--instagram">
+								<svg class="icon-instagram">
+									<use xlink:href="#instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link footer__link--facebook">
+								<svg class="icon-facebook">
+									<use xlink:href="#facebook"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link footer__link--vk">
+								<svg class="icon-vk">
+									<use xlink:href="#vk"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link footer__link--twitter">
+								<svg class="icon-twitter">
+									<use xlink:href="#twitter"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="footer__bott">
+		<div class="container">
+			<span class="footer__desc-bott">Личные данные, предоставленные посредством электронных сообщений или электронной анкеты, регистрируются согласно Федеральному Закону "О защите личных данных" 15/1999 от 13 декабря.</span>
+			<span class="footer__desc-bott">Регистрируемая база данных яляется собственностью компании LARSON retail. Компания гарантирует сохранность этих данных, обязуется не разглашать информацию третьим лицам.</span>
+		</div>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

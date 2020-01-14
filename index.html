@@ -1,0 +1,898 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Портфолио</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+
+<div class="wrapper">
+
+	<div class="portfolio">
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/polza.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Январь 2019</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Польза</span>
+							<a href="work/polza/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/galarmed.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Январь 2019</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Galarmed</span>
+							<a href="work/galarmed/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/verymany.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Декабрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Verymany Artists</span>
+							<a href="work/verymany/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/stroymontage.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Декабрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Строймонтаж</span>
+							<a href="work/stroymontage/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/sensens.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Декабрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Sensens</span>
+							<a href="work/sensens/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/mashkrepeg.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Декабрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Машкрепеж</span>
+							<a href="work/mashkrepeg/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/inkomauto.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Декабрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Инком авто</span>
+							<a href="work/inkomauto/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/autotrener.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Декабрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Автотренер</span>
+							<a href="work/autotrener/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/tinelsalon.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Ноябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Tinel салон</span>
+							<a href="work/tinelsalon/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/talkgold.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Ноябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Talk Gold</span>
+							<a href="work/talkgold/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/rozmarin.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Ноябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Розмарин</span>
+							<a href="work/rozmarin/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/ojmar.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Ноябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Ojmar</span>
+							<a href="work/ojmar/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/yavitrina.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Октябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Я витрина</span>
+							<a href="work/yavitrina/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/oknamaster.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Октябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Окна мастер</span>
+							<a href="work/oknamaster/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/miele.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Октябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Miele</span>
+							<a href="work/miele/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/bilvil.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Октябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Bilvil</span>
+							<a href="work/bilvil/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/altayrezervuar.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Октябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Алтай резервуар</span>
+							<a href="work/altayrezervuar/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/smmboost.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Сентябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Smm Boost</span>
+							<a href="work/smmboost/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/skyinvest.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Сентябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Sky invest</span>
+							<a href="work/skyinvest/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/nationalcollection.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Сентябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Национальная коллекция</span>
+							<a href="work/nationalcollection/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/legis.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Сентябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Легис</span>
+							<a href="work/legis/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/genvik.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Сентябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Генвик</span>
+							<a href="work/genvik/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/eventpr.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Сентябрь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Е-коммерсъ</span>
+							<a href="work/eventpr/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/vinopark.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Август 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Винопарк</span>
+							<a href="work/vinopark/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/jivestor.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Август 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Jivestor</span>
+							<a href="work/jivestor/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/avenueremont.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Август 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Авеню Ремонт</span>
+							<a href="work/avenueremont/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/domire.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Июль 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Domire</span>
+							<a href="work/domire/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/alivebe.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Июль 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">AliveBe</span>
+							<a href="work/alivebe/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/alekom.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Июль 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Алеком</span>
+							<a href="work/alekom/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/alaskar.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Июнь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Alaskar technologies</span>
+							<a href="work/alaskar/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/rusmaster.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Июнь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Ремонт под ключ</span>
+							<a href="work/rusmaster/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/poputchik.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Июнь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Попутчик</span>
+							<a href="work/poputchik/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/plaza.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Июнь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Plaza</span>
+							<a href="work/plaza/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/gametransfer.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Июнь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Game Transfer</span>
+							<a href="work/gametransfer/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/automarine.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Июнь 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Automarine25</span>
+							<a href="work/automarine/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/zodchestvo.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Май 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Зодчество</span>
+							<a href="work/zodchestvo/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/hoh.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Май 2018</span>
+							<!-- <span class="portfolio__category">Поисковый сайт</span> -->
+							<span class="portfolio__name">XOX</span>
+							<a href="work/xox/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/podarki.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Май 2018</span>
+							<!-- <span class="portfolio__category">Интернет-магазин</span> -->
+							<span class="portfolio__name">Хапи подарки</span>
+							<a href="work/podarki/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/pimalend.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Май 2018</span>
+							<!-- <span class="portfolio__category">Сайт-визитка</span> -->
+							<span class="portfolio__name">Pima School</span>
+							<a href="work/pimalend/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/institut.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Май 2018</span>
+							<!-- <span class="portfolio__category">Kорпоративный сайт</span> -->
+							<span class="portfolio__name">ИГП</span>
+							<a href="work/institut/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/andersen.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Май 2018</span>
+							<!-- <span class="portfolio__category">Интернет-магазин</span> -->
+							<span class="portfolio__name">Андерсен</span>
+							<a href="work/andersen/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/alphawalet.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Май 2018</span>
+							<!-- <span class="portfolio__category">Сайт-визитка</span> -->
+							<span class="portfolio__name">Alphawallet</span>
+							<a href="work/alphawallet/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/unicket.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Апрель 2018</span>
+							<!-- <span class="portfolio__category">Поисковый сайт</span> -->
+							<span class="portfolio__name">Unicket</span>
+							<a href="work/unicket/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/nikolino.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Апрель 2018</span>
+							<!-- <span class="portfolio__category">Сайт-визитка</span> -->
+							<span class="portfolio__name">Николино</span>
+							<a href="work/nikolino/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/autolab.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Апрель 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Autolab</span>
+							<a href="work/autolab/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/workout.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Март 2018</span>
+							<!-- <span class="portfolio__category">Сайт-визитка</span> -->
+							<span class="portfolio__name">Workout Краснодар</span>
+							<a href="work/workout/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/dhz.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Март 2018</span>
+							<!-- <span class="portfolio__category">Kорпоративный сайт</span> -->
+							<span class="portfolio__name">DHZ</span>
+							<a href="work/dhz/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/naturnapitki.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Март 2018</span>
+							<!-- <span class="portfolio__category">Сайт-визитка</span> -->
+							<span class="portfolio__name">Натуральные напитки</span>
+							<a href="work/naturNapitki/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/delovoy.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Март 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Деловой партнер</span>
+							<a href="work/delovoyPartner/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/fundplus.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Февраль 2018</span>
+							<!-- <span class="portfolio__category">Промо-сайт</span> -->
+							<span class="portfolio__name">Fund+</span>
+							<a href="work/fundPlus/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="portfolio__item js-img-box">
+			<div class="portfolio__scene">
+				<div class="portfolio__card">
+					<div class="portfolio__card-face portfolio__card-face--front" style="background-image: url(pic/project/certain.jpg);"></div>
+					<div class="portfolio__card-face portfolio__card-face--back">
+						<div class="portfolio__info">
+							<span class="portfolio__date">Февраль 2018</span>
+							<!-- <span class="portfolio__category">Сайт-визитка</span> -->
+							<span class="portfolio__name">CertChain</span>
+							<a href="work/certChain/index.html" target="_blank" class="portfolio__link">Посмотреть</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+</div>
+
+</div>
+
+
+		
+	<script src="js/vendor.js"></script>
+	
+	
+	<!-- <script src="pages-list.js"></script> -->
+	
+
+	<script src="js/main.js"></script>
+
+</body>
+</html>

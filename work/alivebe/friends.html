@@ -1,0 +1,1293 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Друзья</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+  <header class="header">
+	<div class="container">
+		<div class="header__holder">
+			<div class="header__item header__logo">
+        
+				  <a href="#" class="header__logo-link">
+				  	<img src="pic/logo/logo.png" alt="logo">
+				  </a>
+        
+        
+			</div>
+			<div class="header__item header__menu">
+				<nav class="header__nav">
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">Лента</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">Турниры</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">Рейтинги</a>
+						</li>
+						<li class="header__nav-item header__nav-item--mod">
+							<a data-fancybox data-src="#popup-enter" href="javascript:;" class="header__nav-link">Еще</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="header__item header__ctrl js-menu-wrap">
+				<div class="header__ctrl-item">
+          <div class="header__lang js-menu-parent">
+				    <span class="header__lang-item js-menu-link">RU</span>
+            <div class="header__lang-drop js-menu-drop">
+              <span class="header__lang-item header__lang-item--mod">EN</span>
+            </div>
+          </div>
+				</div>
+				<div class="header__ctrl-item header__ctrl-item--search header__search">
+					<span class="header__search-icon js-search-btn">
+						<svg class="icon-search">
+							<use xlink:href="#search"></use>
+						</svg>
+					</span>
+          <div class="header__search-more js-header-search">
+            <span class="header__search-more-icon">
+              <svg class="icon-search">
+                <use xlink:href="#search"></use>
+              </svg>
+            </span>
+            <input type="text" class="header__search-input" placeholder="Поиск">
+            <span class="header__search-close js-search-close"></span>
+          </div>
+				</div>
+				<div class="header__ctrl-item">
+          <div class="header__ctrl js-menu-parent">
+            <div class="header__notice js-menu-link">
+				      <span class="header__notice-tooltip" data-num="2"></span>
+				      <span class="header__notice-icon">
+				      	<svg class="icon-bell">
+				      		<use xlink:href="#bell"></use>
+				      	</svg>
+				      </span>
+            </div>
+            <div class="header__notice-drop js-menu-drop">
+              <ul class="header__notice-drop-list">
+                <li class="header__notice-drop-item">
+                  <a href="#" class="header__notice-drop-link">
+                    <span class="header__notice-drop-img">
+                      <img src="pic/users/users-11.png" alt="people">
+                    </span>
+                    <div class="header__notice-drop-txt">
+                      <span class="header__notice-drop-name">
+                        Петр Завацкий
+                      </span>
+                      <span class="header__notice-drop-date">
+                        Сегодня, 14 : 50
+                      </span>
+                      <span class="header__notice-drop-info">
+                        пригласил (-а)  в друзья
+                      </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="header__notice-drop-item">
+                  <a href="#" class="header__notice-drop-link">
+                    <span class="header__notice-drop-img">
+                      <img src="pic/users/users-12.png" alt="people">
+                    </span>
+                    <div class="header__notice-drop-txt">
+                      <span class="header__notice-drop-name">
+                        Светлана Петрова
+                      </span>
+                      <span class="header__notice-drop-date">
+                        Сегодня, 13 : 45
+                      </span>
+                      <span class="header__notice-drop-info">
+                        принял (-а) твое предложение дружбы
+                      </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="header__notice-drop-item">
+                  <a href="#" class="header__notice-drop-link">
+                    <span class="header__notice-drop-img">
+                      <img src="pic/users/users-12.png" alt="people">
+                    </span>
+                    <div class="header__notice-drop-txt">
+                      <span class="header__notice-drop-name">
+                        Светлана Петрова
+                      </span>
+                      <span class="header__notice-drop-date">
+                         03.07.18
+                      </span>
+                      <span class="header__notice-drop-info">
+                        оценил (-а) твою активность 
+                      </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="header__notice-drop-item">
+                  <a href="#" class="header__notice-drop-link">
+                    <span class="header__notice-drop-img">
+                      <img src="pic/users/users-11.png" alt="people">
+                    </span>
+                    <div class="header__notice-drop-txt">
+                      <span class="header__notice-drop-name">
+                        Петр Завацкий
+                      </span>
+                      <span class="header__notice-drop-date">
+                        02.07.18
+                      </span>
+                      <span class="header__notice-drop-info">
+                        прокомментировал (-а) твою активность
+                      </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="header__notice-drop-item">
+                  <a href="#" class="header__notice-drop-link">
+                    <span class="header__notice-drop-img">
+                      <img src="pic/users/users-14.png" alt="people">
+                    </span>
+                    <div class="header__notice-drop-txt">
+                      <span class="header__notice-drop-name">
+                        AliveBe
+                      </span>
+                      <span class="header__notice-drop-date">
+                        01.07.18
+                      </span>
+                      <span class="header__notice-drop-info header__notice-drop-info--mod">
+                        Напоминаем, что до начала турнира “Challenge Global 2018 September» осталось 2 дня!
+                      </span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <div class="header__notice-drop-more">
+                <a href="#">Показать еще</a>
+              </div>
+            </div>
+          </div>
+				</div>
+				<div class="header__ctrl-item">
+          
+          <div class="header__profile">
+            <div class="header__profile-parent js-menu-parent">
+				    <span class="header__profile-img">
+				    	<img src="pic/users/users-21.png" alt="user">
+				    </span>
+            </div>
+            <div class="header__profile-parent js-menu-parent">
+				      <span class="header__profile-icon js-menu-link"></span>
+              <div class="header__profile-drop js-menu-drop">
+                <ul class="header__profile-drop-list">
+                  <li class="header__profile-drop-item">
+                    <a href="#" class="header__profile-drop-link">
+                      <span class="header__profile-drop-icon">
+                        <svg class="icon-pen">
+                          <use xlink:href="#pen"></use>
+                        </svg>
+                      </span>
+                      <span class="header__profile-drop-txt">Изменить профиль</span>
+                    </a>
+                  </li>
+                  <li class="header__profile-drop-item">
+                    <a href="#" class="header__profile-drop-link">
+                      <span class="header__profile-drop-icon">
+                        <svg class="icon-user">
+                          <use xlink:href="#user"></use>
+                        </svg>
+                      </span>
+                      <span class="header__profile-drop-txt">Друзья</span>
+                    </a>
+                  </li>
+                  <li class="header__profile-drop-item">
+                    <a href="#" class="header__profile-drop-link">
+                      <span class="header__profile-drop-icon">
+                        <svg class="icon-gollar">
+                          <use xlink:href="#gollar"></use>
+                        </svg>
+                      </span>
+                      <span class="header__profile-drop-txt">Бонусы</span>
+                    </a>
+                  </li>
+                  <li class="header__profile-drop-item">
+                    <a href="#" class="header__profile-drop-link">
+                      <span class="header__profile-drop-icon">
+                        <svg class="icon-purse">
+                          <use xlink:href="#purse"></use>
+                        </svg>
+                      </span>
+                      <span class="header__profile-drop-txt">Кошелек</span>
+                    </a>
+                  </li>
+                  <li class="header__profile-drop-item">
+                    <a href="#" class="header__profile-drop-link">
+                      <span class="header__profile-drop-icon">
+                        <svg class="icon-pulse-2">
+                          <use xlink:href="#pulse-2"></use>
+                        </svg>
+                      </span>
+                      <span class="header__profile-drop-txt">Пульсовые зоны</span>
+                    </a>
+                  </li>
+                  <li class="header__profile-drop-item">
+                    <a href="#" class="header__profile-drop-link">
+                      <span class="header__profile-drop-icon">
+                        <svg class="icon-tooltip">
+                          <use xlink:href="#tooltip"></use>
+                        </svg>
+                      </span>
+                      <span class="header__profile-drop-txt">Инструкция</span>
+                    </a>
+                  </li>
+                  <li class="header__profile-drop-item">
+                    <a href="#" class="header__profile-drop-link">
+                      <span class="header__profile-drop-icon">
+                        <svg class="icon-message">
+                          <use xlink:href="#message"></use>
+                        </svg>
+                      </span>
+                      <span class="header__profile-drop-txt">Служба поддержки</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+    
+    <div class="wrapper">
+      <div class="container">
+        <ul class="breadcrumbs">
+  
+  
+  <li class="breadcrumbs__item">
+    <a href="#" class="breadcrumbs__link">Главная</a>
+  </li>
+  
+  <li class="breadcrumbs__item">
+    <a href="#" class="breadcrumbs__link">Лента</a>
+  </li>
+  
+  <li class="breadcrumbs__item">
+    <a href="#" class="breadcrumbs__link">Турниры</a>
+  </li>
+  
+  <li class="breadcrumbs__item">
+    <a href="#" class="breadcrumbs__link">Михаил Филлипов</a>
+  </li>
+  
+  <li class="breadcrumbs__item">
+    <a href="#" class="breadcrumbs__link">Друзья</a>
+  </li>
+  
+  
+</ul>
+
+      </div> 
+
+      <div class="friends ">
+  
+    <div class="container">
+      <h2 class="friends__caption">Друзья</h2>
+    </div>
+  
+  <div class="friends__outer">
+    <div class="container">
+      
+      <div class="friends__wrap">
+        
+        <div class="friends__holder">
+        
+          <div class="friends__invite js-accordeon-wrap">
+            <div class="friends__head">
+              <div class="friends__head-title">
+                <span> Пригласи друзей</span>
+                <span class="friends__head-icon js-accordeon-btn"></span>
+              </div>
+              <span class="friends__head-desc">
+                Найди друга, с которым хочешь соревноваться или делиться своими результатами
+              </span>
+              <div class="friends__invite-content js-accordeon-content">
+                <span class="friends__invite-title">
+                  Поделиться приглашением
+                </span>
+                <span class="friends__invite-subtitle">
+                  отправить персональное приглашение 
+                </span>
+                <div class="friends__invite-social">
+                  <div class="friends__invite-item">
+                    <a href="#" class="friends__invite-link">
+                      <span class="friends__invite-icon friends__invite-icon--mail">
+                        <svg class="icon-mail">
+                          <use xlink:href="#mail"></use>
+                        </svg>
+                      </span>
+                      <span class="friends__invite-txt">Почта</span>
+                    </a>
+                  </div>
+                  <div class="friends__invite-item">
+                    <a href="#" class="friends__invite-link">
+                      <span class="friends__invite-icon friends__invite-icon--facebook">
+                        <svg class="icon-fb">
+                          <use xlink:href="#fb"></use>
+                        </svg>
+                      </span>
+                      <span class="friends__invite-txt">Facebook</span>
+                    </a>
+                  </div>
+                  <div class="friends__invite-item">
+                    <a href="#" class="friends__invite-link">
+                      <span class="friends__invite-icon friends__invite-icon--vk">
+                        <svg class="icon-vk">
+                          <use xlink:href="#vk"></use>
+                        </svg>
+                      </span>
+                      <span class="friends__invite-txt">Vkontakte</span>
+                    </a>
+                  </div>
+                  <div class="friends__invite-item">
+                    <a href="#" class="friends__invite-link">
+                      <span class="friends__invite-icon friends__invite-icon--odnoklassniki">
+                        <svg class="icon-odnoclassniki">
+                          <use xlink:href="#odnoclassniki"></use>
+                        </svg>
+                      </span>
+                      <span class="friends__invite-txt">Одноклассники</span>
+                    </a>
+                  </div>
+                </div>
+                <span class="friends__invite-title">
+                  Пригласить всех друзей
+                </span>
+                <span class="friends__invite-subtitle">
+                  отправить приглашение всем моим друзьям
+                </span>
+                <div class="friends__invite-social">
+                  <div class="friends__invite-item">
+                    <a href="#" class="friends__invite-link">
+                      <span class="friends__invite-icon friends__invite-icon--facebook">
+                        <svg class="icon-fb">
+                          <use xlink:href="#fb"></use>
+                        </svg>
+                      </span>
+                      <span class="friends__invite-txt">Facebook</span>
+                    </a>
+                  </div>
+                  <div class="friends__invite-item">
+                    <a href="#" class="friends__invite-link">
+                      <span class="friends__invite-icon friends__invite-icon--vk">
+                        <svg class="icon-vk">
+                          <use xlink:href="#vk"></use>
+                        </svg>
+                      </span>
+                      <span class="friends__invite-txt">Vkontakte</span>
+                    </a>
+                  </div>
+                  <div class="friends__invite-item">
+                    <a href="#" class="friends__invite-link">
+                      <span class="friends__invite-icon friends__invite-icon--odnoklassniki">
+                        <svg class="icon-odnoclassniki">
+                          <use xlink:href="#odnoclassniki"></use>
+                        </svg>
+                      </span>
+                      <span class="friends__invite-txt">Одноклассники</span>
+                    </a>
+                  </div>
+                </div>
+                <span class="friends__invite-title">
+                  Найти друзей через
+                </span>
+                <span class="friends__invite-subtitle">
+                  добавить друзей, которые уже используют AliveBe
+                </span>
+                <div class="friends__invite-social">
+                  <div class="friends__invite-item">
+                    <a href="#" class="friends__invite-link">
+                      <span class="friends__invite-icon friends__invite-icon--facebook">
+                        <svg class="icon-fb">
+                          <use xlink:href="#fb"></use>
+                        </svg>
+                      </span>
+                      <span class="friends__invite-txt">Facebook</span>
+                    </a>
+                  </div>
+                  <div class="friends__invite-item">
+                    <a href="#" class="friends__invite-link">
+                      <span class="friends__invite-icon friends__invite-icon--vk">
+                        <svg class="icon-vk">
+                          <use xlink:href="#vk"></use>
+                        </svg>
+                      </span>
+                      <span class="friends__invite-txt">Vkontakte</span>
+                    </a>
+                  </div>
+                  <div class="friends__invite-item">
+                    <a href="#" class="friends__invite-link">
+                      <span class="friends__invite-icon friends__invite-icon--odnoklassniki">
+                        <svg class="icon-odnoclassniki">
+                          <use xlink:href="#odnoclassniki"></use>
+                        </svg>
+                      </span>
+                      <span class="friends__invite-txt">Одноклассники</span>
+                    </a>
+                  </div>
+                </div>
+                <span class="friends__invite-policy">Мы не делимся вашими контактами!</span>
+              </div>
+            </div>
+          </div>
+        
+        
+          <div class="friends__search">
+            <label class="input-search-label">
+              <span>
+                <svg class="icon-search">
+                  <use xlink:href="#search"></use>
+                </svg>
+              </span>
+              <input type="text" name="input-search" class="input-search input--no-border" placeholder="Поиск">
+            </label>
+          </div>
+        
+        
+        <table class="friends__table">
+          <thead>
+            <tr>
+              <th>Имя</th>
+              <th>Возраст</th>
+              <th>Страна / Город</th>
+              <th>Баллы</th>
+              <th>Награды</th>
+              <th>Лайки</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>
+                <a href="#" class="friends__table-name">
+                  <span class="friends__table-img friends__table-img--blue">
+                    <img src="pic/users/users-01.png" alt="friend">
+                  </span>
+                  <span class="friends__table-icon">
+                    <img src="pic/flags/flag-01.png" alt="country">
+                  </span>
+                  <span class="friends__table-txt">
+                    <span>Иван</span>
+                    <span>Прокопенко</span>
+                  </span>
+                </a>
+              </td>
+              <td class="friends__table-num">31</td>
+              <td>
+                <span class="friends__table-country">Россия</span>
+                <span class="friends__table-city">
+                  г. Санкт-Петербург
+                </span>
+                
+              </td>
+              <td class="friends__table-num">489</td>
+              <td class="friends__table-num">10</td>
+              <td class="friends__table-num">
+                <div class="like js-like-trigger">
+                  <div class="like-icon">
+                    <svg>
+                      <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="filled">
+                      <use xlink:href="#like-2"></use>
+                    </svg>
+                  </div>
+                  <div class="like-txt js-like-num">579</div>
+                </div>
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <a href="#" class="friends__table-name">
+                  <span class="friends__table-img friends__table-img--green">
+                    <img src="pic/users/users-02.png" alt="friend">
+                  </span>
+                  <span class="friends__table-icon">
+                    <img src="pic/flags/flag-01.png" alt="country">
+                  </span>
+                  <span class="friends__table-txt">
+                    <span>Елена</span>
+                    <span>Маркова</span>
+                  </span>
+                </a>
+              </td>
+              <td class="friends__table-num">25</td>
+              <td>
+                <span class="friends__table-country">Россия</span>
+                <span class="friends__table-city">
+                  г. Москва
+                </span>
+                
+              </td>
+              <td class="friends__table-num">467</td>
+              <td class="friends__table-num">14</td>
+              <td class="friends__table-num">
+                <div class="like js-like-trigger">
+                  <div class="like-icon">
+                    <svg>
+                      <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="filled">
+                      <use xlink:href="#like-2"></use>
+                    </svg>
+                  </div>
+                  <div class="like-txt js-like-num">544</div>
+                </div>
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <a href="#" class="friends__table-name">
+                  <span class="friends__table-img friends__table-img--red">
+                    <img src="pic/users/users-03.png" alt="friend">
+                  </span>
+                  <span class="friends__table-icon">
+                    <img src="pic/flags/flag-02.png" alt="country">
+                  </span>
+                  <span class="friends__table-txt">
+                    <span>Иван</span>
+                    <span>Прокопенко</span>
+                  </span>
+                </a>
+              </td>
+              <td class="friends__table-num">21</td>
+              <td>
+                <span class="friends__table-country">Германия</span>
+                <span class="friends__table-city">
+                  г. Берлин
+                </span>
+                
+              </td>
+              <td class="friends__table-num">411</td>
+              <td class="friends__table-num">9</td>
+              <td class="friends__table-num">
+                <div class="like js-like-trigger">
+                  <div class="like-icon">
+                    <svg>
+                      <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="filled">
+                      <use xlink:href="#like-2"></use>
+                    </svg>
+                  </div>
+                  <div class="like-txt js-like-num">532</div>
+                </div>
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <a href="#" class="friends__table-name">
+                  <span class="friends__table-img friends__table-img--blue">
+                    <img src="pic/users/users-04.png" alt="friend">
+                  </span>
+                  <span class="friends__table-icon">
+                    <img src="pic/flags/flag-01.png" alt="country">
+                  </span>
+                  <span class="friends__table-txt">
+                    <span>Иван</span>
+                    <span>Прокопенко</span>
+                  </span>
+                </a>
+              </td>
+              <td class="friends__table-num">23</td>
+              <td>
+                <span class="friends__table-country">Россия</span>
+                <span class="friends__table-city">
+                  г. Санкт-Петербург
+                </span>
+                
+              </td>
+              <td class="friends__table-num">399</td>
+              <td class="friends__table-num">8</td>
+              <td class="friends__table-num">
+                <div class="like js-like-trigger">
+                  <div class="like-icon">
+                    <svg>
+                      <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="filled">
+                      <use xlink:href="#like-2"></use>
+                    </svg>
+                  </div>
+                  <div class="like-txt js-like-num">521</div>
+                </div>
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <a href="#" class="friends__table-name">
+                  <span class="friends__table-img friends__table-img--green">
+                    <img src="pic/users/users-05.png" alt="friend">
+                  </span>
+                  <span class="friends__table-icon">
+                    <img src="pic/flags/flag-03.png" alt="country">
+                  </span>
+                  <span class="friends__table-txt">
+                    <span>Иван</span>
+                    <span>Прокопенко</span>
+                  </span>
+                </a>
+              </td>
+              <td class="friends__table-num">28</td>
+              <td>
+                <span class="friends__table-country">Латвия</span>
+                <span class="friends__table-city">
+                  г. Рига
+                </span>
+                
+              </td>
+              <td class="friends__table-num">370</td>
+              <td class="friends__table-num">7</td>
+              <td class="friends__table-num">
+                <div class="like js-like-trigger">
+                  <div class="like-icon">
+                    <svg>
+                      <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="filled">
+                      <use xlink:href="#like-2"></use>
+                    </svg>
+                  </div>
+                  <div class="like-txt js-like-num">501</div>
+                </div>
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <a href="#" class="friends__table-name">
+                  <span class="friends__table-img friends__table-img--red">
+                    <img src="pic/users/users-04.png" alt="friend">
+                  </span>
+                  <span class="friends__table-icon">
+                    <img src="pic/flags/flag-01.png" alt="country">
+                  </span>
+                  <span class="friends__table-txt">
+                    <span>Иван</span>
+                    <span>Прокопенко</span>
+                  </span>
+                </a>
+              </td>
+              <td class="friends__table-num">46</td>
+              <td>
+                <span class="friends__table-country">Россия</span>
+                <span class="friends__table-city">
+                  г. Санкт-Петербург
+                </span>
+                
+              </td>
+              <td class="friends__table-num">356</td>
+              <td class="friends__table-num">7</td>
+              <td class="friends__table-num">
+                <div class="like js-like-trigger">
+                  <div class="like-icon">
+                    <svg>
+                      <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="filled">
+                      <use xlink:href="#like-2"></use>
+                    </svg>
+                  </div>
+                  <div class="like-txt js-like-num">480</div>
+                </div>
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <a href="#" class="friends__table-name">
+                  <span class="friends__table-img friends__table-img--red">
+                    <img src="pic/users/users-06.png" alt="friend">
+                  </span>
+                  <span class="friends__table-icon">
+                    <img src="pic/flags/flag-04.png" alt="country">
+                  </span>
+                  <span class="friends__table-txt">
+                    <span>Иван</span>
+                    <span>Прокопенко</span>
+                  </span>
+                </a>
+              </td>
+              <td class="friends__table-num">23</td>
+              <td>
+                <span class="friends__table-country">Украина</span>
+                <span class="friends__table-city">
+                  г. Киев
+                </span>
+                
+              </td>
+              <td class="friends__table-num">347</td>
+              <td class="friends__table-num">5</td>
+              <td class="friends__table-num">
+                <div class="like js-like-trigger">
+                  <div class="like-icon">
+                    <svg>
+                      <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="filled">
+                      <use xlink:href="#like-2"></use>
+                    </svg>
+                  </div>
+                  <div class="like-txt js-like-num">478</div>
+                </div>
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <a href="#" class="friends__table-name">
+                  <span class="friends__table-img friends__table-img--blue">
+                    <img src="pic/users/users-07.png" alt="friend">
+                  </span>
+                  <span class="friends__table-icon">
+                    <img src="pic/flags/flag-01.png" alt="country">
+                  </span>
+                  <span class="friends__table-txt">
+                    <span>Иван</span>
+                    <span>Прокопенко</span>
+                  </span>
+                </a>
+              </td>
+              <td class="friends__table-num">22</td>
+              <td>
+                <span class="friends__table-country">Россия</span>
+                <span class="friends__table-city">
+                  г. Санкт-Петербург
+                </span>
+                
+              </td>
+              <td class="friends__table-num">331</td>
+              <td class="friends__table-num">4</td>
+              <td class="friends__table-num">
+                <div class="like js-like-trigger">
+                  <div class="like-icon">
+                    <svg>
+                      <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="filled">
+                      <use xlink:href="#like-2"></use>
+                    </svg>
+                  </div>
+                  <div class="like-txt js-like-num">453</div>
+                </div>
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <a href="#" class="friends__table-name">
+                  <span class="friends__table-img friends__table-img--green">
+                    <img src="pic/users/users-08.png" alt="friend">
+                  </span>
+                  <span class="friends__table-icon">
+                    <img src="pic/flags/flag-01.png" alt="country">
+                  </span>
+                  <span class="friends__table-txt">
+                    <span>Иван</span>
+                    <span>Прокопенко</span>
+                  </span>
+                </a>
+              </td>
+              <td class="friends__table-num">35</td>
+              <td>
+                <span class="friends__table-country">Россия</span>
+                <span class="friends__table-city">
+                  г. Санкт-Петербург
+                </span>
+                
+              </td>
+              <td class="friends__table-num">324</td>
+              <td class="friends__table-num">4</td>
+              <td class="friends__table-num">
+                <div class="like js-like-trigger">
+                  <div class="like-icon">
+                    <svg>
+                      <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="filled">
+                      <use xlink:href="#like-2"></use>
+                    </svg>
+                  </div>
+                  <div class="like-txt js-like-num">254</div>
+                </div>
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                <a href="#" class="friends__table-name">
+                  <span class="friends__table-img friends__table-img--red">
+                    <img src="pic/users/users-09.png" alt="friend">
+                  </span>
+                  <span class="friends__table-icon">
+                    <img src="pic/flags/flag-01.png" alt="country">
+                  </span>
+                  <span class="friends__table-txt">
+                    <span>Иван</span>
+                    <span>Прокопенко</span>
+                  </span>
+                </a>
+              </td>
+              <td class="friends__table-num">21</td>
+              <td>
+                <span class="friends__table-country">Россия</span>
+                <span class="friends__table-city">
+                  г. Санкт-Петербург
+                </span>
+                
+              </td>
+              <td class="friends__table-num">319</td>
+              <td class="friends__table-num">3</td>
+              <td class="friends__table-num">
+                <div class="like js-like-trigger">
+                  <div class="like-icon">
+                    <svg>
+                      <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="filled">
+                      <use xlink:href="#like-2"></use>
+                    </svg>
+                  </div>
+                  <div class="like-txt js-like-num">390</div>
+                </div>
+              </td>
+            </tr>
+          
+          </tbody>
+        </table>
+        
+
+        
+
+        
+          <div class="friends__more">
+            <a href="#" class="btn btn__more friends__more-btn">
+              <span>Показать еще</span>
+              <span class="btn__more-accent">+230</span>
+            </a>
+          </div>
+        
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  <footer class="footer js-footer">
+  <div class="container">
+    <div class="footer__holder">
+      <!-- desktop -->
+      <div class="footer__desktop">
+        <div class="footer__info">
+          <div class="footer__info-col">
+            <div class="footer__logo">
+              <a href="#">
+                <img src="pic/logo/logo.png" alt="logo">
+              </a>
+            </div>
+            <div class="footer__copy">
+              <span>&copy; 2018 AliveBe</span>
+              <span>Все права защищены.</span>
+            </div>
+            <div class="footer__social">
+              <div class="footer__social-icon">
+                <a href="#">
+                  <svg class="icon-vk">
+                    <use xlink:href="#vk"></use>
+                  </svg>          
+                </a>
+              </div>
+              <div class="footer__social-icon">
+                <a href="#">
+                  <svg class="icon-fb">
+                    <use xlink:href="#fb"></use>
+                  </svg>          
+                </a>
+              </div>
+              <div class="footer__social-icon">
+                <a href="#">
+                  <svg class="icon-insta">
+                    <use xlink:href="#insta"></use>
+                  </svg>          
+                </a>
+              </div>
+              <div class="footer__social-icon">
+                <a href="#">
+                  <svg class="icon-youtube">
+                    <use xlink:href="#youtube"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__info-col footer__info-col--mod">
+            <ul class="footer__info-list footer__info-list--first">
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  Лента
+                </a>
+              </li>
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  Турниры
+                </a>
+              </li>
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  Рейтинг
+                </a>
+              </li>
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  О проекте
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__info-col footer__info-col--mod">
+            <ul class="footer__info-list">
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  Часто задаваемые вопросы
+                </a>
+              </li>
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  Инструкция
+                </a>
+              </li>
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  Служба поддержки
+                </a>
+              </li>
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  Privacy Policy
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__subs">
+          <span class="footer__subs-title">
+            Подпишитесь на рассылку!
+          </span>
+          <span class="footer__subs-subtitle">
+            Получайте полезную информацию первыми.
+          </span>
+          <form action="#" class="footer__subs-form">
+            <label class="input-email-label">
+              <div class="input-email-inner">
+                <span>
+                  <svg class="icon-message">
+                    <use xlink:href="#message"></use>
+                  </svg>
+                </span>
+                <input type="email" name="input-email" class="input-email" placeholder="Email">
+              </div>
+              <div class="input-email-inner input-email-inner--btn">
+                <button class="btn">Подписаться</button>
+              </div>
+            </label>
+          </form>
+        </div>
+        <div class="footer__desc">
+          <span>
+            Цель проекта AliveBe – приобщать людей к регулярным занятиям спортом через участие в online - соревнованиях, которые проводятся в циклических видах спорта (бег, лыжи, велосипед, ходьба, плавание) на протяжении длительных периодов.
+          </span>
+        </div>
+      </div>
+      <!-- end desktop -->
+
+      <!-- mobile -->
+      <div class="footer__mobile">
+        <ul class="footer__menu js-footer-menu">
+          <li class="footer__menu-item">
+            <a href="#" class="footer__menu-link">
+              <span class="footer__menu-icon">
+                <svg class="icon-list">
+                  <use xlink:href="#list"></use>
+                </svg>
+              </span>
+              <span class="footer__menu-txt">Лента</span>
+            </a>
+          </li>
+          <li class="footer__menu-item">
+            <a href="#" class="footer__menu-link">
+              <span class="footer__menu-icon">
+                <svg class="icon-prize-2">
+                  <use xlink:href="#prize-2"></use>
+                </svg>
+              </span>
+              <span class="footer__menu-txt">Турниры</span>
+            </a>
+          </li>
+          <li class="footer__menu-item">
+            <a href="#" class="footer__menu-link">
+              <span class="footer__menu-icon">
+                <svg class="icon-star">
+                  <use xlink:href="#star"></use>
+                </svg>
+              </span>
+              <span class="footer__menu-txt">Рейтинг</span>
+            </a>
+          </li>
+          <li class="footer__menu-item js-footer-parent">
+            <a href="#" class="footer__menu-link js-footer-link">
+              <span class="footer__menu-icon">
+                <svg class="icon-more">
+                  <use xlink:href="#more"></use>
+                </svg>
+              </span>
+              <span class="footer__menu-txt ">Еще</span>
+            </a>
+            <span class="footer__menu-drop js-footer-drop">
+              <ul class="footer__menu-drop-list">
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-prize">
+                        <use xlink:href="#prize"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Достижения</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-pen">
+                        <use xlink:href="#pen"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Изменить профиль</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-user">
+                        <use xlink:href="#user"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Друзья</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-gollar">
+                        <use xlink:href="#gollar"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Бонусы</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-purse">
+                        <use xlink:href="#purse"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Кошелек</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-flag">
+                        <use xlink:href="#flag"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Клубы</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-building">
+                        <use xlink:href="#building"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Организации</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-user">
+                        <use xlink:href="#user"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Трекеры</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-pulse-2">
+                        <use xlink:href="#pulse-2"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Пульсовые зоны</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item js-sub-parent">
+                  <a href="#" class="footer__menu-drop-link js-sub-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-tooltip">
+                        <use xlink:href="#tooltip"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Справка</span>
+                  </a>
+                  <div class="footer__menu-sub-drop js-sub-drop">
+                    <ul class="footer__menu-sub-list">
+                      <li class="footer__menu-sub-item">
+                        <a href="#" class="footer__menu-sub-link">
+                          Часто задаваемые вопросы
+                        </a>
+                      </li>
+                      <li class="footer__menu-sub-item">
+                        <a href="#" class="footer__menu-sub-link">
+                          Инструкция
+                        </a>
+                      </li>
+                      <li class="footer__menu-sub-item">
+                        <a href="#" class="footer__menu-sub-link">
+                          Служба поддержки
+                        </a>
+                      </li>
+                      <li class="footer__menu-sub-item">
+                        <a href="#" class="footer__menu-sub-link">
+                          Условия использования
+                        </a>
+                      </li>
+                      <li class="footer__menu-sub-item">
+                        <a href="#" class="footer__menu-sub-link">
+                          Privacy Policy
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                
+              </ul>
+            </span>
+          </li>
+
+        </ul>
+      </div>
+      <!-- end mobile -->
+    </div>
+  </div>
+</footer>
+
+  <div class="popup" id="popup-enter">
+  <div class="popup__holder">
+    <div class="popup__icon">
+      <svg class="icon-login">
+        <use xlink:href="#login"></use>
+      </svg>
+    </div>
+    <div class="popup__text">
+      <p>
+        Для того, чтобы посмотреть все разделы сайта Вам необходимо <a href="#">зарегистрироваться</a> или <a href="#">войти</a> в свой акаунт.
+      </p>
+    </div>
+  </div>
+</div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+
+

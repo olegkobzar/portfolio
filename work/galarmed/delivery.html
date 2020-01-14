@@ -1,0 +1,344 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Доставка и оплата</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css?rel=11933">
+    <!-- @endif -->
+
+    <!--[if lt IE 9]>
+		<link rel="stylesheet" href="/reject/reject.css" media="all" />
+		<script type="text/javascript" src="/reject/reject.min.js"></script>
+	<![endif]-->
+</head>
+<body class=" @@class ">
+
+	
+
+	<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<header class="header">
+	<div class="header__top">
+		<div class="container">
+			<div class="header__top-wrap">
+				<div class="header__left">
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">
+							<img src="pic/logo.png" alt="">
+						</a>
+					</div>
+					<span class="header__descr">Хирургическое и медицинское оборудование. Высокого качества по хорошим ценам</span>
+				</div>
+				<div class="header__location">
+					<span class="header__location-icon">
+						<svg class="icon-location">
+							<use xlink:href="#location"></use>
+						</svg>
+					</span>
+					<div class="header__location-inner">
+						<a href="#" class="header__location-link">г. Москва, ул. Каргопольская, д17</a>
+						<span class="header__location-time">По будням 9:00 - 18:00</span>
+					</div>
+				</div>
+				<div class="header__contact">
+					<span class="header__contact-icon">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<div class="header__contact-inner">
+						<a href="tel:+74957390906" class="header__contact-phone">+7 (495) 739 09 06</a>
+						<a href="#popup" data-fancybox class="header__contact-callback">Заказать звонок</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header__bottom">
+		<div class="container">
+			<nav class="header__nav">
+				<ul class="header__nav-list">
+					<li class="header__nav-item header__nav-item--catalog js-nav-catalog">
+						<a href="#" class="header__nav-link header__nav-link--catalog">
+							<span>Каталог оборудования</span>
+						</a>
+						<ul class="header__subnav js-sub-menu">
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Эндоскопия</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Гинекологий</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Ультразвуковая диагностика</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Реанимация</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Лучевая диагностика</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Неонатология</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Функциональная диагностика</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Оборудование оториноларингологии</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Стерилизация и дезинфекция</a>
+							</li>
+						</ul>
+					</li>
+					<li class="header__nav-item-other js-mobile-menu">
+						<ul class="header__nav-other">
+							<li class="header__nav-item hide-desktop">
+								<a href="#" class="header__nav-link">Каталог</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Наша компания</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Доставка и оплата </a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Статьи</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Контакты</a>
+							</li>
+						</ul>
+						<div class="header__location header__location--nav">
+							<span class="header__location-icon">
+								<svg class="icon-location">
+									<use xlink:href="#location"></use>
+								</svg>
+							</span>
+							<div class="header__location-inner">
+								<a href="#" class="header__location-link">г. Москва, ул. Каргопольская, д17</a>
+								<span class="header__location-time">По будням 9:00 - 18:00</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<span class="header__nav-btn-mobile js-btn-nav">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</nav>
+		</div>
+	</div>
+</header>
+
+
+	<div class="heading-delivery" style="background-image: url(pic/bg/bg-3.jpg);">
+	<div class="container">
+		<span class="heading-delivery__title">Доставка и оплата</span>
+		<div class="breadcrumbs">
+	<ul class="breadcrumbs__list">
+		
+			<li class="breadcrumbs__item">
+				<a href="#" class="breadcrumbs__link">Главная</a>
+			</li>
+		
+		<li class="breadcrumbs__item">
+			Доставка и оплата
+		</li>
+	</ul>
+</div>
+		<div class="heading-delivery__wrap">
+			<span class="heading-delivery__caption">Есть вопросы?</span>
+			<span class="heading-delivery__descr">Наши специалисты проконсультируют вас и ответят на все вопросы</span>
+			<a href="#" class="btn btn--white heading-delivery__btn">Связаться</a>
+		</div>
+	</div>
+</div>
+
+	<div class="delivery">
+	<div class="container">
+		<div class="delivery__wrap">
+			<div class="delivery__item">
+				<div class="delivery__inner">
+					<span class="delivery__title">Для государственных лечебных учреждений</span>
+					<p>Государственным лечебным учреждениям, осуществляющим закупки через электронные аукционы, мы предлагаем полное сопровождение сделки. Поможем выбрать оборудование удовлетворяющее требованиям врачей, в кратчайшие сроки подготовим коммерческое предложение, предоставим технические характеристики.</p>
+					<p>Компания ООО "Галар" активно принимает участие в электронных аукционах.</p>
+					<p>После того как аукцион проведен и заключен контракт на поставку оборудования, осуществляется бесплатная доставка оборудования Заказчику в любой регион РФ. Ввод в эксплуатацию и инструктаж специалистов по работе с оборудованием проводятся сертифицированными инженерами сервисной службы.</p>
+					<p>По результатам выполненных работ, подписывается акт ввода оборудования в эксплуатацию и Заказчик перечисляет оплату согласно условиям договора</p>
+				</div>
+			</div>
+			<div class="delivery__item">
+				<div class="delivery__inner">
+					<span class="delivery__title">Для частных лечебных учреждений</span>
+					<p class="padding">После того как Вы выбрали необходимое оборудование, обсудили со специалистом комплектацию и рассчитали стоимость, отправьте нам по электронной почте или факсу ваши реквизиты</p>
+					<ul>
+						<li>1. <b>Для юридических лиц</b>: полное наименование организации, ИНН, КПП, юридический и фактический адреса, банковские реквизиты.</li>
+						<li>2. <b>Для физических лиц</b>: паспортные данные покупателя</li>
+					</ul>
+					<p>Мы подготовим договор и счет на оплату и вышлем его Вам.</p>
+					<p>Все платежи производятся в российских рублях путем безналичного перечисления средств на расчетный счет компании. Физические лица могут оплатить счет в любом отделении Сбербанка.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="guarantee">
+	<div class="container">
+		<span class="guarantee__caption">Гарантия и сервисное обслуживание</span>
+		<div class="guarantee__wrap">
+			<div class="guarantee__col guarantee__col--left">
+				<p>Вся медицинская техника передается покупателю вместе с гарантийным талоном, в котором указаны срок и условия гарантии.</p>
+				<p>Срок гарантии устанавливается заводом-изготовителем в течение которого все работы по ремонту техники проводятся бесплатно при условии правильной эксплуатации изделия в соответствии с требованиями производителя.</p>
+				<p>Все гарантийное обслуживание медицинской техники производится специализированными авторизованными сервисными центрами</p>
+			</div>
+			<div class="guarantee__col guarantee__col--right">
+				<span class="guarantee__icon">
+					<svg class="icon-doc">
+						<use xlink:href="#doc"></use>
+					</svg>
+				</span>
+				<span class="guarantee__descr">Все оборудование зарегистрировано Министерством здравоохранения, имеет сертификаты и эксплуатационную документацию на русском языке</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<footer class="footer footer--white">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__logo">
+				<a href="#" class="footer__logo-link">
+					<img src="pic/logo.png" alt="">
+				</a>
+			</div>
+			<ul class="footer__list">
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Каталог оборудования</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Статьи</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Наша компания</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Контакты</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Доставка и оплата</a>
+				</li>
+			</ul>
+			<div class="footer__right">
+				<div class="footer__location">
+					<span class="footer__location-icon">
+						<svg class="icon-location">
+							<use xlink:href="#location"></use>
+						</svg>
+					</span>
+					<div class="footer__location-inner">
+						<a href="#" class="footer__location-link">г. Москва, ул. Каргопольская, д17</a>
+						<span class="footer__location-time">По будням 9:00 - 18:00</span>
+					</div>
+				</div>
+				<div class="footer__contact">
+					<span class="footer__contact-icon">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<div class="footer__contact-inner">
+						<a href="tel:+74957390906" class="footer__contact-phone">+7 (495) 739 09 06</a>
+						<a href="#" class="footer__contact-callback">Заказать звонок</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div class="popup" id="popup">
+	<span class="popup__caption">Заказать звонок</span>
+	<form action="">
+		<div class="popup__form">
+			<div class="popup__row">
+				<input type="text" placeholder="Имя">
+			</div>
+			<div class="popup__row">
+				<input type="text" placeholder="Телефон">
+			</div>
+			<div class="popup__btn-wrap">
+				<button class="btn btn--image" style="background-image: url(pic/bg/btn-fon.jpg);">Отправить</button>
+			</div>
+		</div>
+	</form>
+</div>
+<script src="js/vendor.js?rel=11933"></script>
+
+
+<script src="pages-list.js"></script>
+
+
+<script src="js/main.js?rel=11933"></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,917 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Блог/Статьи</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+<div class="wrapper">
+    <header class="header " style="background-image: url(pic/bg/bg-1.jpg);">
+	<div class="header__decor">
+		<div class="container">
+			<div class="header__wrapp">
+				<div class="header__top">
+					<span class="header__address">115230, Россия, Москва, Нагатинская 2/1 </span>
+					<div class="header__mail-wrapp">
+						<a href="mailto:info@domire.ru" class="header__mail-link">info@domire.ru</a>
+					</div>
+					<div class="header__phone-wrapp">
+						<a href="tel:74955404225" class="header__phone-link">
+							7 (495) <span class="header__phone-link-big">540-42-25</span>
+						</a>
+					</div>
+					<div class="header__btn-wrapp">
+						<a data-fancybox data-src="#popup" href="javascript:;" class="btn btn--blue header__btn">
+							<span class="header__btn-icon">
+								<svg class="icon-telephone">
+									<use xlink:href="#telephone"></use>
+								</svg>
+							</span>
+							Заказать звонок
+						</a>
+					</div>
+
+					<div class="header__burger-menu js-btn-burger">
+						<span class="header__line"></span>
+						<span class="header__line"></span>
+						<span class="header__line"></span>
+					</div>
+
+					<div class="header__currency">
+						<span class="header__currency-text">Выберите валюту</span>
+						<ul class="header__currency-list">
+							<li class="header__currency-item">
+								<label class="radio radio--currency">
+									<input type="radio" name="radio-currency">
+									<span>
+										<svg class="icon-dollar">
+											<use xlink:href="#dollar"></use>
+										</svg>
+									</span>
+								</label>
+							</li>
+							<li class="header__currency-item">
+								<label class="radio radio--currency">
+									<input type="radio" name="radio-currency">
+									<span>
+										<svg class="icon-euro">
+											<use xlink:href="#euro"></use>
+										</svg>
+									</span>
+								</label>
+							</li>
+							<li class="header__currency-item">
+								<label class="radio radio--currency">
+									<input type="radio" checked name="radio-currency">
+									<span>
+										<svg class="icon-rubl">
+											<use xlink:href="#rubl"></use>
+										</svg>
+									</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="header__bott">
+					<div class="header__left js-wrapp-nav">
+						<div class="header__logo">
+							<a href="#" class="header__logo-link">
+								<img src="pic/logo-main.png" alt="">
+							</a>
+						</div>
+						<nav class="header__nav js-nav">
+							<ul class="header__list">
+								<li class="header__item">
+									<a href="#" class="header__link active">Каталог недвижимости</a>
+								</li>
+								<li class="header__item">
+									<a href="#" class="header__link">Блог/статьи</a>
+								</li>
+								<li class="header__item">
+									<a href="#" class="header__link">Контакты</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header__right">
+						<div class="header__favorites">
+							<a href="#" class="header__favorites-link">
+								<span class="header__favorites-icon">
+									<svg class="icon-favorites">
+										<use xlink:href="#heart"></use>
+									</svg>
+								</span>
+								<span class="header__favorites-text">В избранных:</span>
+								<span class="header__favorites-number">2</span>
+							</a>
+						</div>
+						<div class="header__entry">
+							<a href="#" class="header__entry-link">
+								<span class="header__entry-icon">
+									<svg class="icon-user">
+										<use xlink:href="#user"></use>
+									</svg>
+								</span>
+								<span class="header__entry-text">Вход / регистрация</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+		</div>
+	</div>
+</header>
+
+
+    <div class="breadcrumbs breadcrumbs--large">
+  <div class="container">
+    <ul class="breadcrumbs__list">
+      <li class="breadcrumbs__item breadcrumbs__item--back">
+        <a href="#" class="breadcrumbs__link"></a>
+      </li>
+      
+      <li class="breadcrumbs__item">
+        <a href="#" class="breadcrumbs__link">Недвижимость за рубежом</a>
+      </li>
+      
+      <li class="breadcrumbs__item">
+        <a href="#" class="breadcrumbs__link">Греция</a>
+      </li>
+      
+      <li class="breadcrumbs__item">
+        <a href="#" class="breadcrumbs__link">Пелопоннес—Западная Греция—Ионические острова</a>
+      </li>
+      
+      <li class="breadcrumbs__item">
+        <a href="#" class="breadcrumbs__link">Корфу (Керкира)</a>
+      </li>
+      
+
+      <li class="breadcrumbs__item active">Квартиры, апартаменты</li>
+
+    </ul>
+  </div>
+</div>
+
+
+    <div class="container">
+
+        <article class="content">
+
+            <div class="sorting">
+    <div class="sorting__right">
+
+        <span class="sorting__title">Сортировать:</span>
+
+        <div class="sorting__holder">
+
+            <div class="sorting__inner">
+                <a href="#" class="sorting__link sorting__link--rating">сначала популярные</a>
+                <a href="#" class="sorting__link sorting__link--rating active">сначала новые</a>
+            </div>
+
+            <div class="sorting__inner">
+
+                <a href="#" class="sorting__link">
+                    <svg class="icon-list">
+                        <use xlink:href="#list"></use>
+                    </svg>
+                </a>
+
+                <a href="#" class="sorting__link active">
+                    <svg class="icon-tile">
+                        <use xlink:href="#tile"></use>
+                    </svg>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+            <div class="article-blog">
+
+                <div class="article-item article-item--big">
+	<div class="article-item__inner js-height">
+		<a href="#" class="article-item__card-link">
+			<div class="article-item__top" style="background-image: url(pic/article/article-1.jpg);">
+				<div class="article-item__top-decor">
+					<div class="article-item__row">
+						<span class="article-item__box article-item__box--date">10 мая 2018</span>
+						<span class="article-item__box article-item__box--category green">Лайфстайл</span>
+					</div>
+					<div class="article-item__caption-wrapp">
+						<span class="article-item__link-caption">
+							<h3 class="article-item__caption">Как русские живут в Германии:</h3>
+							
+								<span class="article-item__subcaption">преимущества и недостатки</span>
+							
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="article-item__bott">
+				<span class="article-item__descr">Перед переездом в какую-либо из стран Евросоюза большинство людей начинают интересоваться тем, как живут русские в Германии, а затем приступают к рассмотрению других вариантов. Но сегодня количество россиян здесь снижается, так как в страну большими потоками хлынули беженцы, что повлекло за собой спад уровня жизни и увеличение уровня преступности.</span>
+				<div class="article-item__link-wrapp">
+					<span  class="article-item__link">Читать полностью</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div>
+
+                <div class="article-item ">
+	<div class="article-item__inner js-height">
+		<a href="#" class="article-item__card-link">
+			<div class="article-item__top" style="background-image: url(pic/article/article-2.jpg);">
+				<div class="article-item__top-decor">
+					<div class="article-item__row">
+						<span class="article-item__box article-item__box--date">10 мая 2018</span>
+						<span class="article-item__box article-item__box--category green">Лайфстайл</span>
+					</div>
+					<div class="article-item__caption-wrapp">
+						<span class="article-item__link-caption">
+							<h3 class="article-item__caption">Жизнь в Италии</h3>
+							
+								<span class="article-item__subcaption">обычных русских людей и пенсионеров на ПМЖ</span>
+							
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="article-item__bott">
+				<span class="article-item__descr">Кто из нас в детстве не зачитывался книгами о загадочной и прекрасной Италии, её неповторимой природе и древнейшей истории. Люди селились в этих краях издавна, что объясняется идеально мягким ...</span>
+				<div class="article-item__link-wrapp">
+					<span  class="article-item__link">Читать полностью</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div><div class="article-item ">
+	<div class="article-item__inner js-height">
+		<a href="#" class="article-item__card-link">
+			<div class="article-item__top" style="background-image: url(pic/article/article-3.jpg);">
+				<div class="article-item__top-decor">
+					<div class="article-item__row">
+						<span class="article-item__box article-item__box--date">17 апреля 2018</span>
+						<span class="article-item__box article-item__box--category violet">Путешествия</span>
+					</div>
+					<div class="article-item__caption-wrapp">
+						<span class="article-item__link-caption">
+							<h3 class="article-item__caption">Путешествие в Барселону</h3>
+							
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="article-item__bott">
+				<span class="article-item__descr">Многие клиенты, перед тем, как купить недвижимость, основывают выбор желаемого региона на основе своих впечатлений от путешествий в те или иные места. Только менее четверти клиентов выбирают ...</span>
+				<div class="article-item__link-wrapp">
+					<span  class="article-item__link">Читать полностью</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div><div class="article-item ">
+	<div class="article-item__inner js-height">
+		<a href="#" class="article-item__card-link">
+			<div class="article-item__top" style="background-image: url(pic/article/article-2.jpg);">
+				<div class="article-item__top-decor">
+					<div class="article-item__row">
+						<span class="article-item__box article-item__box--date">10 мая 2018</span>
+						<span class="article-item__box article-item__box--category green">Лайфстайл</span>
+					</div>
+					<div class="article-item__caption-wrapp">
+						<span class="article-item__link-caption">
+							<h3 class="article-item__caption">Жизнь в Италии</h3>
+							
+								<span class="article-item__subcaption">обычных русских людей и пенсионеров на ПМЖ</span>
+							
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="article-item__bott">
+				<span class="article-item__descr">Кто из нас в детстве не зачитывался книгами о загадочной и прекрасной Италии, её неповторимой природе и древнейшей истории. Люди селились в этих краях издавна, что объясняется идеально мягким ...</span>
+				<div class="article-item__link-wrapp">
+					<span  class="article-item__link">Читать полностью</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div><div class="article-item ">
+	<div class="article-item__inner js-height">
+		<a href="#" class="article-item__card-link">
+			<div class="article-item__top" style="background-image: url(pic/article/article-4.jpg);">
+				<div class="article-item__top-decor">
+					<div class="article-item__row">
+						<span class="article-item__box article-item__box--date">3 апреля 2018</span>
+						<span class="article-item__box article-item__box--category brown">Образование</span>
+					</div>
+					<div class="article-item__caption-wrapp">
+						<span class="article-item__link-caption">
+							<h3 class="article-item__caption">Образование в Чехии</h3>
+							
+								<span class="article-item__subcaption">и возможность его получения для россиян</span>
+							
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="article-item__bott">
+				<span class="article-item__descr">С каждым годом число россиян, которые хотят пройти обучение в Чехии, увеличивается. По данным статистики, если сравнивать с 2012 годом, количество желающих увеличилось в 3-5 раз.</span>
+				<div class="article-item__link-wrapp">
+					<span  class="article-item__link">Читать полностью</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div>
+            </div>
+
+            <div class="pagination ">
+    <div class="pagination__right">
+        <ul class="pagination__list">
+            <li class="pagination__item">
+                <span class="pagination__link active">1</span>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">2</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">3</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">4</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">9</a>
+            </li>
+            <li class="pagination__item">
+                <a href="#" class="pagination__link">Вперед</a>
+            </li>
+        </ul>
+
+        <div class="pagination__show">
+            <span class="pagination__show-title">Показывать по:</span>
+            <div class="pagination__show-inner">
+                <a href="#" class="pagination__show-link">12</a>
+                <span class="pagination__show-link active">48</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </article>
+
+        <aside class="sidebar">
+
+            <div class="article-sidebar__inner js-height article--blog">
+	<h4 class="article-sidebar__title">Самые популярные статьи</h4>
+	<ul class="article-sidebar__list">
+		<li class="article-sidebar__item">
+			<a href="#" class="article-sidebar__link">
+				Как россиянину эмигрировать в Республику Кипр на п...
+			</a>
+		</li>
+		<li class="article-sidebar__item">
+			<a href="#" class="article-sidebar__link">
+				Особенности переезда для ПМЖ в Чехию...
+			</a>
+		</li>
+		<li class="article-sidebar__item">
+			<a href="#" class="article-sidebar__link">
+				Вид на жительство в Италии
+			</a>
+		</li>
+		<li class="article-sidebar__item">
+			<a href="#" class="article-sidebar__link">
+				Образование в Чехии и возможности его получения дл...
+			</a>
+		</li>
+		<li class="article-sidebar__item">
+			<a href="#" class="article-sidebar__link">
+				Особенности получения итальянского гражданства...
+			</a>
+		</li>
+		<li class="article-sidebar__item">
+			<a href="#" class="article-sidebar__link">
+				Порядок получения ВНЖ в Испании
+			</a>
+		</li>
+	</ul>
+	<div class="article-sidebar__all-wrapp">
+		<a href="#" class="article-sidebar__all-link">
+			смотреть все
+		</a>
+	</div>
+</div>
+
+
+            <div class="tags">
+    <ul class="tags__list">
+        <li class="tags__item">
+            <a href="#" class="tags__link tags__link--green" data-quantity="14">Лайфстайл</a>
+        </li>
+        <li class="tags__item">
+            <a href="#" class="tags__link tags__link--purple" data-quantity="99">Путешествия</a>
+        </li>
+        <li class="tags__item">
+            <a href="#" class="tags__link tags__link--red" data-quantity="23">Визы</a>
+        </li>
+        <li class="tags__item">
+            <a href="#" class="tags__link tags__link--brown" data-quantity="59">Образование</a>
+        </li>
+        <li class="tags__item">
+            <a href="#" class="tags__link tags__link--turquoise" data-quantity="32">Вид на жительство</a>
+        </li>
+        <li class="tags__item">
+            <a href="#" class="tags__link tags__link--tomato" data-quantity="42">Гражданство</a>
+        </li>
+        <li class="tags__item">
+            <a href="#" class="tags__link tags__link--blue" data-quantity="82">Интересно</a>
+        </li>
+    </ul>
+</div>
+
+            <div class="popular-countries popular-countries--blog">
+
+    <span class="popular-countries__title">Статьи по странам</span>
+
+    <ul class="popular-countries__list">
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1501">Испания</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="4766">Греция</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1079">Болгария</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1156">Македония</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1501">Испания</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="4766">Греция</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1079">Болгария</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1156">Македония</a>
+        </li>
+        
+    </ul>
+
+    <div class="popular-countries__more">
+        <a href="#" class="popular-countries__more-link">смотреть все страны</a>
+    </div>
+</div>
+
+            <div class="selection-request selection-request--blog">
+    <span class="selection-request__title">Запрос на подбор недвижимости</span>
+
+    <p class="selection-request__desc">Сэкономьте своё время! Отправьте запрос нашим менеджерам, и они подберут хорошее предложение и свяжутся  с вами сами.</p>
+
+    <form action="" class="selection-request__form">
+
+        <div class="selection-request__form-row">
+            <textarea class="selection-request__form-message" placeholder="Например, земельный участок во Франции и Испани"></textarea>
+        </div>
+
+        <div class="selection-request__form-row">
+            <div class="input-box">
+                <span class="input-label">Ваше имя</span>
+                <input name="input" class="selection-request__form-input input-contact" type="text" placeholder="Ваше имя">
+            </div>
+        </div>
+
+        <div class="selection-request__form-row">
+            <div class="input-box">
+                <span class="input-label">Телефон</span>
+                <input name="tel" class="selection-request__form-input input-contact" type="text" placeholder="Телефон">
+            </div>
+        </div>
+
+        <div class="selection-request__form-row">
+            <div class="input-box">
+                <span class="input-label">Ваш e-mail</span>
+                <input name="email" class="selection-request__form-input input-contact" type="text" placeholder="Ваш e-mail">
+            </div>
+        </div>
+
+        <div class="selection-request__form-row">
+            <label class="checkbox checkbox--yellow">
+                <input type="checkbox" name="check" checked>
+                <span>Снимите флаг, если вы не робот</span>
+            </label>
+        </div>
+
+        <div class="selection-request__form-row">
+            <button class="btn selection-request__form-btn" type="submit" disabled>Отправить запрос</button>
+        </div>
+
+    </form>
+
+    <div class="selection-request__info">
+        <span class="selection-request__info-txt">Нажимая кнопку «отправить запрос», я даю согласие на обработку своих <a href="#" class="selection-request__info-link">персональных данных</a></span>
+    </div>
+</div>
+
+        </aside>
+
+    </div>
+
+    <div class="articles-country">
+    <div class="container"><span class="articles-country__title">Все статьи об Италии</span>
+        <div class="articles-country__slider js-country-carusel">
+            <div class="article-item ">
+	<div class="article-item__inner js-height">
+		<a href="#" class="article-item__card-link">
+			<div class="article-item__top" style="background-image: url(pic/article/article-2.jpg);">
+				<div class="article-item__top-decor">
+					<div class="article-item__row">
+						<span class="article-item__box article-item__box--date">10 мая 2018</span>
+						<span class="article-item__box article-item__box--category green">Лайфстайл</span>
+					</div>
+					<div class="article-item__caption-wrapp">
+						<span class="article-item__link-caption">
+							<h3 class="article-item__caption">Жизнь в Италии</h3>
+							
+								<span class="article-item__subcaption">обычных русских людей и пенсионеров на ПМЖ</span>
+							
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="article-item__bott">
+				<span class="article-item__descr">Кто из нас в детстве не зачитывался книгами о загадочной и прекрасной Италии, её неповторимой природе и древнейшей истории. Люди селились в этих краях издавна, что объясняется идеально мягким ...</span>
+				<div class="article-item__link-wrapp">
+					<span  class="article-item__link">Читать полностью</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div><div class="article-item ">
+	<div class="article-item__inner js-height">
+		<a href="#" class="article-item__card-link">
+			<div class="article-item__top" style="background-image: url(pic/article/article-2.jpg);">
+				<div class="article-item__top-decor">
+					<div class="article-item__row">
+						<span class="article-item__box article-item__box--date">10 мая 2018</span>
+						<span class="article-item__box article-item__box--category green">Лайфстайл</span>
+					</div>
+					<div class="article-item__caption-wrapp">
+						<span class="article-item__link-caption">
+							<h3 class="article-item__caption">Жизнь в Италии</h3>
+							
+								<span class="article-item__subcaption">обычных русских людей и пенсионеров на ПМЖ</span>
+							
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="article-item__bott">
+				<span class="article-item__descr">Кто из нас в детстве не зачитывался книгами о загадочной и прекрасной Италии, её неповторимой природе и древнейшей истории. Люди селились в этих краях издавна, что объясняется идеально мягким ...</span>
+				<div class="article-item__link-wrapp">
+					<span  class="article-item__link">Читать полностью</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div><div class="article-item ">
+	<div class="article-item__inner js-height">
+		<a href="#" class="article-item__card-link">
+			<div class="article-item__top" style="background-image: url(pic/article/article-2.jpg);">
+				<div class="article-item__top-decor">
+					<div class="article-item__row">
+						<span class="article-item__box article-item__box--date">10 мая 2018</span>
+						<span class="article-item__box article-item__box--category green">Лайфстайл</span>
+					</div>
+					<div class="article-item__caption-wrapp">
+						<span class="article-item__link-caption">
+							<h3 class="article-item__caption">Жизнь в Италии</h3>
+							
+								<span class="article-item__subcaption">обычных русских людей и пенсионеров на ПМЖ</span>
+							
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="article-item__bott">
+				<span class="article-item__descr">Кто из нас в детстве не зачитывался книгами о загадочной и прекрасной Италии, её неповторимой природе и древнейшей истории. Люди селились в этих краях издавна, что объясняется идеально мягким ...</span>
+				<div class="article-item__link-wrapp">
+					<span  class="article-item__link">Читать полностью</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div><div class="article-item ">
+	<div class="article-item__inner js-height">
+		<a href="#" class="article-item__card-link">
+			<div class="article-item__top" style="background-image: url(pic/article/article-2.jpg);">
+				<div class="article-item__top-decor">
+					<div class="article-item__row">
+						<span class="article-item__box article-item__box--date">10 мая 2018</span>
+						<span class="article-item__box article-item__box--category green">Лайфстайл</span>
+					</div>
+					<div class="article-item__caption-wrapp">
+						<span class="article-item__link-caption">
+							<h3 class="article-item__caption">Жизнь в Италии</h3>
+							
+								<span class="article-item__subcaption">обычных русских людей и пенсионеров на ПМЖ</span>
+							
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="article-item__bott">
+				<span class="article-item__descr">Кто из нас в детстве не зачитывался книгами о загадочной и прекрасной Италии, её неповторимой природе и древнейшей истории. Люди селились в этих краях издавна, что объясняется идеально мягким ...</span>
+				<div class="article-item__link-wrapp">
+					<span  class="article-item__link">Читать полностью</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="popup" id="popup">
+	<span class="popup__title">Заказать звонок</span>
+	<div class="popup__row">
+		<div class="input-box">
+			<span class="input-label">Ваше имя</span>
+			<input name="input" class="input-contact" type="text" placeholder="Ваше имя">
+		</div>
+	</div>
+	<div class="popup__row">
+		<div class="input-box">
+			<span class="input-label">Ваш номер телефона</span>
+			<input name="input" class="input-contact" type="text" placeholder="Ваш номер телефона">
+		</div>
+	</div>
+	<div class="popup__row">
+		<ul class="popup__list">
+			<li class="popup__item">
+				<label class="checkbox">
+					<input type="checkbox" name="check">
+					<span>WhatsApp</span>
+				</label>
+			</li>
+			<li class="popup__item">
+				<label class="checkbox">
+					<input type="checkbox" name="check">
+					<span>Viber</span>
+				</label>
+			</li>
+			<li class="popup__item">
+				<label class="checkbox">
+					<input type="checkbox" name="check">
+					<span>Telegram</span>
+				</label>
+			</li>
+		</ul>
+	</div>
+	<div class="popup__row popup__row--flag">
+		<label class="checkbox checkbox--yellow">
+			<input type="checkbox" name="check" checked>
+			<span>Снимите флаг, если вы не робот</span>
+		</label>
+	</div>
+	<div class="popup__row">
+		<div class="popup__btn-wrapp">
+			<button class="btn btn--yellow" disabled>Заказать звонок</button>
+		</div>
+		<div class="popup__link-wrapp">
+			<a href="#" class="popup__link">Условия сотрудничества</a>
+		</div>
+	</div>
+</div>
+
+<footer class="footer">
+
+	<div class="container">
+		<div class="footer__top">
+			<div class="footer__col">
+
+				<div class="footer__logo">
+					<a href="#" class="footer__logo-link"><img src="pic/logo.png" alt="" class="footer__logo-img"><img src="pic/logo-mobile.png" alt="" class="footer__logo-img footer__logo-img--mobile"></a>
+					<p class="footer__logo-desc">Зарубежная недвижимость - особенная покупка, и даже процесс выбора должен доставлять удовольствие.</p>
+				</div>
+
+				<div class="footer__contacts">
+					<div class="footer__contacts-inner">
+						<span class="footer__contacts-txt">115230, Россия, Москва, Нагатинская 2/1</span>
+					</div>
+					<div class="footer__contacts-inner">
+						<a href="tel: 74955404225" class="footer__contacts-txt footer__contacts-txt--link">7 (495) 540-42-25</a>
+					</div>
+					<div class="footer__contacts-inner">
+						<a href="mailo: info@domire.ru" class="footer__contacts-txt footer__contacts-txt--link">info@domire.ru</a>
+					</div>
+
+					<div class="footer__contacts-map" id="map"></div>
+					<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsfBnSX729htgOdc59O3MfLROi_Lb0gOY&callback=initMap" async defer></script>
+				</div>
+
+			</div>
+			<div class="footer__col">
+				<ul class="footer__nav-list">
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Виды недвижимости</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Виллы</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Вторичное жилье</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Дома</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Земельные участки</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Квартиры и апартаменты</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Коммерческая недвижимость</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Недорогое</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Новостройки</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">От банков</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Таунхаусы и бунгало</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">У моря</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Элитное</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Недвижимость за рубежом</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Полезная информация</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Блог</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Новости</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__col">
+				<div class="footer__subscription">
+					<span class="footer__subscription-title">Подпишитесь на рассылку</span>
+
+					<div class="footer__subscription-inner">
+						<form action="" class="footer__subscription-form">
+							<div class="footer__subscription-row">
+								<input type="email" name="email" class="footer__subscription-input" placeholder="Ваш e-mail">
+							</div>
+							<div class="footer__subscription-row">
+								<button type="submit" class="footer__subscription-btn">Подписаться</button>
+							</div>
+						</form>
+					</div>
+
+					<div class="footer__subscription-compliance">
+						<span class="footer__subscription-txt">Нажимая кнопку «подписаться», я даю согласие на обработку своих <a href="#" class="footer__subscription-link">персональных данных.</a></span>
+					</div>
+
+					<div class="footer__subscription-info footer__info">
+						<span class="footer__info-desc">Получайте еженедельные статьи о покупке жилья за рубежом, и всем, что с этим связано.</span>
+
+						<span class="footer__info-title">Не более одного письма в неделю, без спама</span>
+						<ul class="footer__info-list">
+							<li class="footer__info-item">новые объекты;</li>
+							<li class="footer__info-item">процесс покупки и подводные камни;</li>
+							<li class="footer__info-item">информация о содержании жилья;</li>
+							<li class="footer__info-item">как получить ипотеку.</li>
+						</ul>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+		<div class="footer__bottom">
+			<div class="footer__right">
+				<span class="footer__copyright">2017-2018 (C) Domire.ru</span>
+			</div>
+		</div>
+
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

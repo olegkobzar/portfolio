@@ -1,0 +1,1389 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Автомобили в наличии</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+<div class="wrapper">
+
+  <div class="heading-narrow heading-narrow--img" style="background-image: url(pic/bg/bg-car-page.png);" >
+	<div class="heading-narrow__decor">
+		<header class="header ">
+	<div class="container">	
+		<div class="header__logo">
+			<a href="#" class="header__logo-link">
+				<img src="pic/logo.png" alt="">
+			</a>
+		</div>
+		<nav class="header__nav">
+			<ul class="header__list">
+				<li class="header__item">
+					<a href="#" class="header__link">О нас</a>
+				</li>
+				<li class="header__item">
+					<a href="#" class="header__link">Продажа автомобилей</a>
+				</li>
+				<li class="header__item">
+					<a href="#" class="header__link">Онлайн сервисы</a>
+				</li>
+				<li class="header__item">
+					<a href="#" class="header__link">Контакты</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="header__contact">
+			<div class="header__contact-callback">
+				<a href="" class="header__link-callback">Заказать звонок</a>
+			</div>
+			<div class="header__contact-phone">
+				<a href="tel:88005504213" class="header__link-phone">8 800 550 42 13</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+		<div class="container">
+			<div class="heading-narrow__wrapp">
+				
+					<div class="heading-narrow__breadcrumbs">
+						<div class="breadcrumbs ">
+	<div class="container">
+		<div class="breadcrumbs__wrapp">
+			<a href="#" class="breadcrumbs__link">вернуться назад</a>
+		</div>
+	</div>
+</div>
+					</div>
+				
+				<span class="heading-narrow__text">Каталог</span>
+				<h1 class="heading-narrow__caption">Автомобили в наличии</h1>
+				
+				<div class="heading-narrow__social">
+					<ul class="heading-narrow__list">
+						<li class="heading-narrow__item">
+							<a href="#" class="heading-narrow__link">
+								<svg class="icon-facebook">
+									<use xlink:href="#facebook"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="heading-narrow__item">
+							<a href="#" class="heading-narrow__link">
+								<svg class="icon-instagram">
+									<use xlink:href="#instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="heading-narrow__item">
+							<a href="#" class="heading-narrow__link">
+								<svg class="icon-vk">
+									<use xlink:href="#vk"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="heading-narrow__item">
+							<a href="#" class="heading-narrow__link">
+								<svg class="icon-youtube">
+									<use xlink:href="#youtube"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+  <div class="car-filter">
+  <div class="container">
+    <form action="" class="car-filter__form">
+      <div class="car-filter__wrap">
+        <div class="car-filter__body">
+          <div class="car-filter__row">
+            <span class="car-filter__title">Выберите вид </span>
+            <ul class="car-filter__list car-filter__list--view">
+              <li class="car-filter__item">
+                <label class="car-filter__radio radio">
+                  <input type="radio" name="filter" checked>
+                  <span>все автомобили и техника <span class="car-filter__radio-txt">Все в наличии</span></span>
+                </label>
+              </li>
+              <li class="car-filter__item">
+                <label class="car-filter__radio radio">
+                  <input type="radio" name="filter">
+                  <span>РАСПИЛЫ / КОНСТРУКТОРЫ <span class="car-filter__radio-txt">без ПТС</span></span>
+                </label>
+              </li>
+              <li class="car-filter__item">
+                <label class="car-filter__radio radio">
+                  <input type="radio" name="filter">
+                  <span>АВТО ПОД ПОЛНУЮ ПОШЛИНУ<span class="car-filter__radio-txt">Из Японии с ПТС</span></span>
+                </label>
+              </li>
+              <li class="car-filter__item">
+                <label class="car-filter__radio radio">
+                  <input type="radio" name="filter">
+                  <span>ГРУЗОВИКИ И СПЕЦТЕХНИКА <span class="car-filter__radio-txt">С аукционов Японии</span></span>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="car-filter__row">
+            <span class="car-filter__title">Выберите марку</span>
+            <div class="car-filter__brand">
+              <ul class="car-filter__brand-list js-custom-scroll">
+                <li class="car-filter__brand-item">
+                  <label class="car-filter__checkbox checkbox">
+                    <input type="checkbox" name="brand">
+                    <span>
+                      <span class="car-filter__checkbox-inner">
+                        <svg class="car-filter__icon-toyota icon-toyota">
+                          <use xlink:href="#toyota"></use>
+                        </svg>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+                <li class="car-filter__brand-item">
+                  <label class="car-filter__checkbox checkbox">
+                    <input type="checkbox" name="brand" checked>
+                    <span>
+                      <span class="car-filter__checkbox-inner">
+                        <svg class="car-filter__icon-lexus icon-lexus">
+                          <use xlink:href="#lexus"></use>
+                        </svg>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+                <li class="car-filter__brand-item">
+                  <label class="car-filter__checkbox checkbox">
+                    <input type="checkbox" name="brand">
+                    <span>
+                      <span class="car-filter__checkbox-inner">
+                        <svg class="car-filter__icon-daihatsu icon-daihatsu">
+                          <use xlink:href="#daihatsu"></use>
+                        </svg>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+                <li class="car-filter__brand-item">
+                  <label class="car-filter__checkbox checkbox">
+                    <input type="checkbox" name="brand">
+                    <span>
+                      <span class="car-filter__checkbox-inner">
+                        <svg class="car-filter__icon-mitsubishi icon-mitsubishi">
+                          <use xlink:href="#mitsubishi"></use>
+                        </svg>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+                <li class="car-filter__brand-item">
+                  <label class="car-filter__checkbox checkbox">
+                    <input type="checkbox" name="brand">
+                    <span>
+                      <span class="car-filter__checkbox-inner">
+                        <svg class="car-filter__icon-isuzu icon-isuzu">
+                          <use xlink:href="#isuzu"></use>
+                        </svg>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+                <li class="car-filter__brand-item">
+                  <label class="car-filter__checkbox checkbox">
+                    <input type="checkbox" name="brand">
+                    <span>
+                      <span class="car-filter__checkbox-inner">
+                        <svg class="car-filter__icon-mazda icon-mazda">
+                          <use xlink:href="#mazda"></use>
+                        </svg>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+                <li class="car-filter__brand-item">
+                  <label class="car-filter__checkbox checkbox">
+                    <input type="checkbox" name="brand">
+                    <span>
+                      <span class="car-filter__checkbox-inner">
+                        <svg class="car-filter__icon-suzuki icon-suzuki">
+                          <use xlink:href="#suzuki"></use>
+                        </svg>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+                <li class="car-filter__brand-item">
+                  <label class="car-filter__checkbox checkbox">
+                    <input type="checkbox" name="brand">
+                    <span>
+                      <span class="car-filter__checkbox-inner">
+                        <svg class="car-filter__icon-nissan icon-nissan">
+                          <use xlink:href="#nissan"></use>
+                        </svg>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+                <li class="car-filter__brand-item">
+                  <label class="car-filter__checkbox checkbox">
+                    <input type="checkbox" name="brand">
+                    <span>
+                      <span class="car-filter__checkbox-inner">
+                        <svg class="car-filter__icon-subaru icon-subaru">
+                          <use xlink:href="#subaru"></use>
+                        </svg>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+                <li class="car-filter__brand-item">
+                  <label class="car-filter__checkbox checkbox">
+                    <input type="checkbox" name="brand">
+                    <span>
+                      <span class="car-filter__checkbox-inner">
+                        <svg class="car-filter__icon-nissan icon-nissan">
+                          <use xlink:href="#nissan"></use>
+                        </svg>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+                <li class="car-filter__brand-item">
+                  <label class="car-filter__checkbox checkbox">
+                    <input type="checkbox" name="brand">
+                    <span>
+                      <span class="car-filter__checkbox-inner">
+                        <svg class="car-filter__icon-subaru icon-subaru">
+                          <use xlink:href="#subaru"></use>
+                        </svg>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <span class="car-filter__info">* Цены указаны во Владивостоке со всеми расходами (ГЛОНАСС, склад, пошлина, СБКТС)</span>
+          </div>
+        </div>
+
+        <div class="car-filter__collapse js-filter-collapse">
+
+          <div class="car-filter__collapse-row">
+            <div class="car-filter__collapse-col car-filter__collapse-col--small">
+              <span class="car-filter__collapse-caption">Стоимость</span>
+                <ul class="car-filter__collapse-list">
+                  <li class="car-filter__collapse-item">
+                    <input type="text" class="input input--border car-filter__collapse-input" placeholder="Цена от">
+                    <span class="car-filter__collapse-value">руб.</span>
+                  </li>
+                  <li class="car-filter__collapse-item">
+                    <input type="text" class="input input--border car-filter__collapse-input" placeholder="Цена до">
+                    <span class="car-filter__collapse-value">руб.</span>
+                  </li>
+                </ul>
+            </div>
+            <div class="car-filter__collapse-col car-filter__collapse-col--small">
+              <span class="car-filter__collapse-caption">Год выпуска</span>
+              <ul class="car-filter__collapse-list">
+                <li class="car-filter__collapse-item">
+                  <input type="text" class="input input--border car-filter__collapse-input" placeholder="Год от">
+                </li>
+                <li class="car-filter__collapse-item">
+                  <input type="text" class="input input--border car-filter__collapse-input" placeholder="Год до">
+                </li>
+              </ul>
+            </div>
+            <div class="car-filter__collapse-col car-filter__collapse-col--xsmall">
+              <span class="car-filter__collapse-caption">Тип двигателя</span>
+              <ul class="car-filter__collapse-list car-filter__collapse-list--checkbox">
+                <li class="car-filter__collapse-item">
+                  <label class="checkbox">
+                    <input type="checkbox" name="engine" checked>
+                    <span>Бензин</span>
+                  </label>
+                </li>
+                <li class="car-filter__collapse-item">
+                  <label class="checkbox">
+                    <input type="checkbox" name="engine">
+                    <span>Дизель</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="car-filter__collapse-col car-filter__collapse-col--xsmall">
+              <span class="car-filter__collapse-caption">Привод</span>
+              <ul class="car-filter__collapse-list car-filter__collapse-list--checkbox">
+                <li class="car-filter__collapse-item">
+                  <label class="checkbox">
+                    <input type="checkbox" name="drive" checked>
+                    <span>4WD</span>
+                  </label>
+                </li>
+                <li class="car-filter__collapse-item">
+                  <label class="checkbox">
+                    <input type="checkbox" name="drive">
+                    <span>Передний</span>
+                  </label>
+                </li>
+                <li class="car-filter__collapse-item">
+                  <label class="checkbox">
+                    <input type="checkbox" name="drive">
+                    <span>Задний</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="car-filter__collapse-col car-filter__collapse-col--xsmall">
+              <span class="car-filter__collapse-caption">КПП</span>
+              <ul class="car-filter__collapse-list car-filter__collapse-list--checkbox">
+                <li class="car-filter__collapse-item">
+                  <label class="checkbox">
+                    <input type="checkbox" name="kipp" checked>
+                    <span>Автомат</span>
+                  </label>
+                </li>
+                <li class="car-filter__collapse-item">
+                  <label class="checkbox">
+                    <input type="checkbox" name="kipp">
+                    <span>Механика</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="car-filter__collapse-btn">
+            <button type="submit" class="btn btn--gray">найти автомобиль</button>
+          </div>
+
+        </div>
+
+        <span class="btn btn--gray car-filter__toggler js-filter-toggler">расширенный поиск</span>
+      </div>
+    </form>
+  </div>
+</div>
+
+  <div class="car-card">
+  <div class="container">
+    <div class="car-card__wrap">
+
+      <div class="car-card__body">
+        <ul class="car-card__list">
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-01.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Camry</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">640 000</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-02.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Prius</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">500 000</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-03.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Highlander</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">772 100</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-04.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota RAV4</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">772 100</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-01.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Camry</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">640 000</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-02.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Prius</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">500 000</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-03.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Highlander</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">772 100</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-04.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota RAV4</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">772 100</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-01.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Camry</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">640 000</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-02.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Prius</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">500 000</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-03.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Highlander</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">772 100</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-04.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota RAV4</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">772 100</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-01.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Camry</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">640 000</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-02.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Prius</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">500 000</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-03.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Highlander</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">772 100</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-04.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota RAV4</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">772 100</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-01.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Camry</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">640 000</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-02.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Prius</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">500 000</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-03.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota Highlander</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">772 100</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+          <li class="car-card__item">
+            <a href="#" class="car-card__link">
+              <span class="car-card__link-inner">
+                <span class="car-card__link-top">
+                  <img src="pic/popular-cars/popular-cars-04.jpg" alt="" class="car-card__link-img">
+                </span>
+                <span class="car-card__link-middle">
+                  <span class="car-card__link-title">Toyota RAV4</span>
+                  <span class="car-card__link-txt">Автомат  Передний  2012</span>
+                  <span class="car-card__link-price">от <span class="car-card__link-value">772 100</span> руб</span>
+                </span>
+              </span>
+            </a>
+
+            <a data-fancybox data-src="#popup-desc" href="javascript:;" class="car-card__hover"><span class="car-card__hover-decor"></span></a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="car-card__footer">
+        <span class="btn btn--gray-large car-card__btn">показать еще</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  <div class="contacts">
+
+  <div class="contacts__map" id="map"></div>
+  <script>
+    function initMap() {
+      var uluru = {lat: 43.117479, lng: 131.881996};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        styles: [
+          {
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#f5f5f5"
+              }
+            ]
+          },
+          {
+            "elementType": "labels.icon",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#616161"
+              }
+            ]
+          },
+          {
+            "elementType": "labels.text.stroke",
+            "stylers": [
+              {
+                "color": "#f5f5f5"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.land_parcel",
+            "elementType": "geometry.stroke",
+            "stylers": [
+              {
+                "color": "#f2f2f2"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.land_parcel",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#cecece"
+              }
+            ]
+          },
+          {
+            "featureType": "landscape",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#f9f9f9"
+              }
+            ]
+          },
+          {
+            "featureType": "landscape.natural",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#f0f0f0"
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#eeeeee"
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#757575"
+              }
+            ]
+          },
+          {
+            "featureType": "poi.park",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#e5e5e5"
+              }
+            ]
+          },
+          {
+            "featureType": "poi.park",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#9e9e9e"
+              }
+            ]
+          },
+          {
+            "featureType": "road",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#ffffff"
+              }
+            ]
+          },
+          {
+            "featureType": "road.arterial",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#757575"
+              }
+            ]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#dadada"
+              }
+            ]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#616161"
+              }
+            ]
+          },
+          {
+            "featureType": "road.local",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#9e9e9e"
+              }
+            ]
+          },
+          {
+            "featureType": "transit.line",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#e5e5e5"
+              }
+            ]
+          },
+          {
+            "featureType": "transit.station",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#eeeeee"
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#eaeaea"
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#9e9e9e"
+              }
+            ]
+          }
+        ],
+        center: {lat: 43.115965, lng: 131.877289},
+        zoomControl: false,
+        scaleControl: false,
+        mapTypeControl: false,
+        fullscreenControl: false
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+        icon: 'img/location.png'
+      });
+    }
+  </script>
+  <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsfBnSX729htgOdc59O3MfLROi_Lb0gOY&callback=initMap">
+  </script>
+
+  <div class="contacts__outer">
+    <div class="container">
+
+      <div class="contacts__body">
+        <div class="contacts__holder contacts__holder--left">
+          <h3 class="contacts__title">контактная информация</h3>
+          <div class="contacts__inner">
+
+            <div class="contacts__row">
+              <div class="contacts__col">
+                <span class="contacts__caption">Бесплатно по Росии:</span>
+                <a href="tel: 88005504213" class="contacts__txt">8 (800) 550 42 13</a>
+              </div>
+              <div class="contacts__col">
+                <span class="contacts__caption">Телефон во Владивостоке:</span>
+                <a href="tel: +78005504213" class="contacts__txt">+7 (800) 550-42-13</a>
+              </div>
+            </div>
+
+            <div class="contacts__row">
+              <div class="contacts__col">
+                <span class="contacts__caption">Отдел продаж:</span>
+                <a href="mailto: sales@utomarine25.ru" class="contacts__txt">sales@utomarine25.ru</a>
+              </div>
+              <div class="contacts__col">
+                <span class="contacts__caption">Общая почта:</span>
+                <a href="mailto: info@automarine25.ru" class="contacts__txt">info@automarine25.ru</a>
+              </div>
+            </div>
+
+            <div class="contacts__row">
+              <div class="contacts__col">
+                <span class="contacts__caption">Мы находимся по адресу:</span>
+                <span class="contacts__txt">г. Владивосток ул. Фокина 8а, офис 22</span>
+              </div>
+              <div class="contacts__col">
+                <span class="contacts__caption">График работы:</span>
+                <span class="contacts__txt">Ежедневно с 10:00 до 19:00</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="contacts__footer">
+        <div class="callback callback--contacts">
+	<div class="container">
+		<form action="">
+			<div class="callback__wrapp">
+				<span class="callback__caption">Заказать звонок</span>
+				<div class="callback__wrapp-element">
+					<div class="callback__inner callback__inner--left">
+						<span class="callback__descr">Заполните форму и наш менеджер свяжется с вами ближайшее время</span>
+						<label class="checkbox checkbox--small callback__checkbox">
+							<input type="checkbox" name="check" checked>
+							<span>Отправляя данную заявку я соглашуюсь с принятием <a href="#" class="callback__link">политики конфеденциальности</a></span>
+						</label>
+					</div>
+					<div class="callback__inner callback__inner--right">
+						<div class="callback__form-wrapp">
+							<div class="callback__form-inner">
+								<span class="callback__label">Как к Вам обращаться</span>
+								<input type="text" class="callback__input">
+							</div>
+							<div class="callback__form-inner">
+								<span class="callback__label callback__label--required">Контактный телефон</span>
+								<input type="text" class="callback__input" required>
+							</div>
+							<div class="callback__form-inner callback__form-inner--btn">
+								<button type="submit" class="btn">Отправить</button>
+							</div>
+							<div class="callback__required">
+								<span class="callback__required-text">— Обязательные поля</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<footer class="footer">
+  <div class="footer__outer">
+    <div class="container">
+      <div class="footer__wrap">
+        <div class="footer__holder footer__holder--left">
+          <div class="footer__row footer__row--contacts">
+            <div class="footer__col">
+              <span class="footer__title">Бесплатно по России</span>
+              <a href="tel: +788005504213" class="footer__contacts footer__contacts--free">8 (800) 550 42 13</a>
+            </div>
+          </div>
+          <div class="footer__row">
+            <div class="footer__col">
+              <div class="footer__top">
+                <span class="footer__title">Ежедневно с 10:00 до 19:00</span>
+                <span class="footer__info">т. <a href="tel: +79242324313" class="footer__contacts footer__contacts--phone">+7 (924) 232 43 13</a></span>
+                <span class="footer__info">т. <a href="tel: +78005504213" class="footer__contacts footer__contacts--phone">+7 (800) 550 42 13</a></span>
+              </div>
+              <div class="footer__bottom">
+                <span class="footer__info"><a href="mailto: salesautomarine25@yandex.ru" class="footer__contacts">salesautomarine25@yandex.ru</a></span>
+                <span class="footer__info"><a href="mailto: infoautomarine25@yandex.ru" class="footer__contacts">infoautomarine25@yandex.ru</a></span>
+              </div>
+            </div>
+            <div class="footer__col">
+              <div class="footer__top">
+                <span class="footer__title">Центральный офис:</span>
+                <span class="footer__info">690091, г. Владивосток</span>
+                <span class="footer__info">ул. Адмирала Фокина 8а, офис 22</span>
+              </div>
+              <div class="footer__bottom">
+                <span class="footer__info"><a href="#" class="footer__contacts">Показать офис на карте</a></span>
+                <span class="footer__info"><a href="#" class="footer__contacts">Написать менеджеру</a></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__row footer__row--social">
+            <div class="footer__col footer__social">
+              <ul class="footer__social-list">
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-facebook">
+                      <use xlink:href="#facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-instagram">
+                      <use xlink:href="#instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-vk">
+                      <use xlink:href="#vk"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-youtube">
+                      <use xlink:href="#youtube"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer__row">
+            <div class="footer__col footer__col--txt">
+              <span class="footer__txt">ООО "Автомарин25"</span>
+              <span class="footer__txt">Автомобили с аукционов Японии.</span>
+              <span class="footer__txt">Все права защищены.</span>
+            </div>
+            <div class="footer__col footer__col--txt">
+              <span class="footer__txt">Данный сайт носит исключительно информационный характер и не является публичной офертой</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer__holder footer__holder--right">
+          <div class="footer__row footer__row--nav">
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Авто под полную пошлину</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Распил и крапио</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Конструкторы</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Грузовики с ПТС</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Спецтехника</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Мототехника</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="" class="footer__link">О компании</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Наша команда</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Видеотрансляция офиса</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Преимущества</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Написать директору</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__row">
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Аукционы онлайн</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Статистика продаж</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">One Price стоянки</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Калькулятор распилов</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Расшифровка аук листа</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Полная пошлина</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Схема работы и оплаты</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Доставка в регионы РФ</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Гарантии компании</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Недавно купленные авто</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<div style="display: none;" id="popup-desc">
+  <div class="car-desc car-desc--popup">
+      <div class="car-desc__wrap">
+
+        <div class="car-desc__holder car-desc__holder--small">
+          <div class="car-desc__slider js-popup-slider">
+            <div class="car-desc__item"><div class="car-desc__item-inner"><img src="pic/car-desc/car-desc-01.jpg" alt="" class="car-desc__img"></div></div>
+            <div class="car-desc__item"><div class="car-desc__item-inner"><img src="pic/car-desc/car-desc-02.jpg" alt="" class="car-desc__img"></div></div>
+            <div class="car-desc__item"><div class="car-desc__item-inner"><img src="pic/car-desc/car-desc-03.jpg" alt="" class="car-desc__img"></div></div>
+            <div class="car-desc__item"><div class="car-desc__item-inner"></div></div>
+            <div class="car-desc__item"><div class="car-desc__item-inner"></div></div>
+          </div>
+          <div class="car-desc__slider car-desc__slider--nav js-popup-nav">
+            <div class="car-desc__item"><div class="car-desc__item-inner"><img src="pic/car-desc/car-desc-01.jpg" alt="" class="car-desc__img"></div></div>
+            <div class="car-desc__item"><div class="car-desc__item-inner"><img src="pic/car-desc/car-desc-02.jpg" alt="" class="car-desc__img"></div></div>
+            <div class="car-desc__item"><div class="car-desc__item-inner"><img src="pic/car-desc/car-desc-03.jpg" alt="" class="car-desc__img"></div></div>
+            <div class="car-desc__item"><div class="car-desc__item-inner"></div></div>
+            <div class="car-desc__item"><div class="car-desc__item-inner"></div></div>
+          </div>
+        </div>
+
+        <div class="car-desc__holder car-desc__holder--large">
+
+          <div class="car-desc__header">
+            <div class="car-desc__inner car-desc__inner--info">
+              <h2 class="car-desc__title">название авто</h2>
+              <span class="car-desc__info">2007 год, конструктор, без ПТС</span>
+            </div>
+            <div class="car-desc__inner car-desc__inner--brand">
+              <svg class="icon-toyota">
+                <use xlink:href="#toyota"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="car-desc__body">
+            <div class="car-desc__row">
+              <div class="car-desc__col">
+                <p class="car-desc__txt">Мы осуществляем доставку авто в любой город России. Узнайте конечную стоимость с
+                  доставкой в ваш город, выбрав его в списке</p>
+              </div>
+              <div class="car-desc__col">
+                <div class="car-desc__top">
+                  <span class="car-desc__cost">Стоимость</span>
+                  <select name="cities" class="js-select car-desc__select">
+                    <option value="">во Владивостоке</option>
+                    <option value="">во Владивостоке</option>
+                    <option value="">во Владивостоке</option>
+                    <option value="">во Владивостоке</option>
+                    <option value="">во Владивостоке</option>
+                  </select>
+                </div>
+                <div class="car-desc__bottom">
+                  <span class="car-desc__price">316 500</span>
+                  <span class="car-desc__price car-desc__price--value">руб.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="car-desc__footer">
+            <div class="car-desc__row car-desc__row--info">
+              <div class="car-desc__col car-desc__col--small">
+                <span class="car-desc__caption">Пробег</span>
+                <span class="car-desc__value">14 560 км</span>
+              </div>
+              <div class="car-desc__col car-desc__col--small">
+                <span class="car-desc__caption">Объем двигателя</span>
+                <span class="car-desc__value">1 800</span>
+              </div>
+              <div class="car-desc__col car-desc__col--small">
+                <span class="car-desc__caption">1 800</span>
+                <span class="car-desc__value">Бензин</span>
+              </div>
+              <div class="car-desc__col car-desc__col--small">
+                <span class="car-desc__caption">Тип кузова</span>
+                <span class="car-desc__value">Седан</span>
+              </div>
+            </div>
+            <div class="car-desc__row car-desc__row--info">
+              <div class="car-desc__col car-desc__col--small">
+                <span class="car-desc__caption">Трансмиссия</span>
+                <span class="car-desc__value">Автомат</span>
+              </div>
+              <div class="car-desc__col car-desc__col--small">
+                <span class="car-desc__caption">Привод</span>
+                <span class="car-desc__value">Передний</span>
+              </div>
+              <div class="car-desc__col car-desc__col--small">
+                <span class="car-desc__caption">Руль</span>
+                <span class="car-desc__value">Правый</span>
+              </div>
+              <div class="car-desc__col car-desc__col--small">
+                <span class="car-desc__caption">Тип вооза</span>
+                <span class="car-desc__value">Конструктор</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="car-desc__application">
+            <a href="#" class="btn car-desc__btn">отправить заявку</a>
+          </div>
+
+        </div>
+      </div>
+  </div>
+</div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+
+

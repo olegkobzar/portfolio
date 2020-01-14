@@ -1,0 +1,1671 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<header class="header">
+	<div class="container">
+		<div class="header__holder js-header">
+			<div class="header__inner">
+				<div class="header__top">
+					<div class="header__menu-btn js-menu-btn">
+						<span class="line"></span>
+					</div>
+					<ul class="header__nav">
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">КЕЙСЫ</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">СТУДИЯ</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">СТОИМОСТЬ</a>
+						</li>
+					</ul>
+					<div class="header__contacts">
+						<div class="header__contacts-item">
+							<a href="mailto:hello@sensens.ru" class="header__contacts-link">hello@sensens.ru</a>
+						</div>
+						<div class="header__contacts-item">
+							<a href="tel:+74952680112" class="header__contacts-link">+74952680112</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="header__logo-small">
+					<a href="#" class="header__logo-small-link">
+						<img src="pic/logo/logo-sm.png" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class="header__popup js-header-popup">
+	<div class="container">
+		<div class="header__popup-outer">
+			<div class="header__popup-inner">
+				<div class="header__popup-holder">
+					<span class="header__popup-close js-popup-close"></span>
+					<div class="header__popup-decor">
+						<img src="pic/logo/logo-popup.png" alt="">
+					</div>
+					<ul class="header__popup-list">
+						<li class="header__popup-list-item">
+							<a href="#" class="header__popup-list-link">Главная</a>
+						</li>
+						<li class="header__popup-list-item">
+							<a href="#" class="header__popup-list-link">Проекты</a>
+						</li>
+						<li class="header__popup-list-item">
+							<a href="#" class="header__popup-list-link active">Услуги</a>
+						</li>
+						<li class="header__popup-list-item">
+							<a href="#" class="header__popup-list-link">Контакты</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__popup-foot">
+					<span class="footer__title">Связаться с нами</span>
+					<div class="footer__holder">
+						<div class="footer__contacts">
+							<div class="footer__contacts-item">
+								<a href="tel:+74952680112" class="footer__contacts-link">
+									+7 495 268 01 12
+								</a>
+							</div>
+							<div class="footer__contacts-item">
+								<a href="mailto:hello@TheID.ru" class="footer__contacts-link">
+									hello@TheID.ru
+								</a>
+							</div>
+						</div>
+						<div class="footer__copy">
+							<span>
+								&copy;Sensens. 2015-2018
+							</span>
+						</div>
+
+						<div class="footer__social">
+							<span class="footer__social-txt">Следить</span>
+							<a href="#" class="footer__social-link">Fb<span style="color: #2F78DD;">.</span></a>
+							<a href="#" class="footer__social-link">Ins<span style="color: #E543A7;">.</span></a>
+							<a href="#" class="footer__social-link">Vk<span style="color: #2F5EDD;">.</span></a>
+							<a href="#" class="footer__social-link">YT<span style="color: #FF0808;">.</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="heading">
+	<div class="heading__bg" style="background-image: url('pic/bg/man.png');"></div>
+	<div class="container">
+		<div class="heading__holder">
+			<div class="heading__inner">
+				<div class="heading__logo">
+					<a href="#" class="heading__logo-link">
+						<img src="pic/logo/logo.png" alt="">
+						<span class="heading__logo-txt">
+							НАШИ БРЕНДЫ УЗНАЮТ
+							<span>ДАЖЕ С ЗАКРЫТЫМИ ГЛАЗАМИ</span>
+						</span>
+					</a>
+				</div>
+				<div class="heading__inner-bottom">
+					<div class="heading__content">
+						<div class="heading__content-txt">
+							<p>
+								Закажите <span class="heading__content-mark">Фирменный стиль</span>
+								разработанный по технологии <span class="heading__content-bold">мультисенсорного влияния</span> по цене от 300 000 руб. 
+								<p>Получи результат через 15 дней.</p>
+							</p>
+						</div>
+						<div class="heading__content-descr">
+							<p>
+								Оставьте заявку и уже сегодня, мы начнем работать над Вашим проектом
+							</p>
+						</div>
+					</div>
+
+					<div class="heading__btn-wrap">
+						<a href="#" class="btn heading__btn">
+							<span class="heading__btn-desktop">ОСТАВИТЬ ЗАПРОС НА КОНСУЛЬТАЦИЮ</span>
+							<span class="heading__btn-mob">Оставить заявку</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="project">
+
+	<div class="project__arrow"></div>
+	<div class="project__info js-project-info">
+		<span class="project__info-btn js-info-close"></span>
+		<span class="project__info-title">Вот что случилось</span>
+		<div class="project__info-descr">
+			<p>
+				Разработаем визитки, буклеты, упаковку, сайт или интерьер; все что необходимо бренду для продвижения и масштабирования
+			</p>
+			<p>
+				Подберем аромат для помещения, угащение для посетителей, музыку для звонка
+			</p>
+		</div>
+		<div class="project__info-img">
+			<img src="pic/scheme.jpg" alt="">
+		</div>
+	</div>
+	<div class="project__slider js-project-slider">
+		<div class="project__slider-bg">
+			<div class="project__slider-holder">
+				<div class="project__slider-inner">
+					<div class="project__slider-item">
+						<div class="project__slider-img">
+							<img src="pic/slide/slide-05.png" alt="">
+						</div>
+						<div class="project__slider-info">
+							<div class="project__slider-btn js-slider-btn"></div>
+							<span class="project__slider-category">
+								Категория клиента
+							</span>
+							<span class="project__slider-name">
+								Название проекта 1
+							</span>
+							<ul class="project__slider-list">
+								<li class="project__slider-list-item">
+									АРОМАТ БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									ТАКТИЛЬНОСТЬ БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									ЗВУК И ГОЛОС БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									КОРПОРАТИВНАЯ ЭТИКА
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="project__slider-bg  project__slider-bg--green">
+			<div class="project__slider-holder">
+				<div class="project__slider-inner">
+					<div class="project__slider-item">
+						<div class="project__slider-img">
+							<img src="pic/slide/slide-05.png" alt="">
+						</div>
+						<div class="project__slider-info">
+							<div class="project__slider-btn js-slider-btn"></div>
+							<span class="project__slider-category">
+								Категория клиента
+							</span>
+							<span class="project__slider-name">
+								Название проекта 1
+							</span>
+							<ul class="project__slider-list">
+								<li class="project__slider-list-item">
+									АРОМАТ БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									ТАКТИЛЬНОСТЬ БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									ЗВУК И ГОЛОС БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									КОРПОРАТИВНАЯ ЭТИКА
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="project__slider-bg project__slider-bg--blue">
+			<div class="project__slider-holder">
+				<div class="project__slider-inner">
+					<div class="project__slider-item">
+						<div class="project__slider-img">
+							<img src="pic/slide/slide-05.png" alt="">
+						</div>
+						<div class="project__slider-info">
+							<div class="project__slider-btn js-slider-btn"></div>
+							<span class="project__slider-category">
+								Категория клиента
+							</span>
+							<span class="project__slider-name">
+								Название проекта 1
+							</span>
+							<ul class="project__slider-list">
+								<li class="project__slider-list-item">
+									АРОМАТ БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									ТАКТИЛЬНОСТЬ БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									ЗВУК И ГОЛОС БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									КОРПОРАТИВНАЯ ЭТИКА
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="project__slider-bg project__slider-bg--yellow">
+			<div class="project__slider-holder">
+				<div class="project__slider-inner">
+					<div class="project__slider-item">
+						<div class="project__slider-img">
+							<img src="pic/slide/slide-05.png" alt="">
+						</div>
+						<div class="project__slider-info">
+							<div class="project__slider-btn js-slider-btn"></div>
+							<span class="project__slider-category">
+								Категория клиента
+							</span>
+							<span class="project__slider-name">
+								Название проекта 1
+							</span>
+							<ul class="project__slider-list">
+								<li class="project__slider-list-item">
+									АРОМАТ БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									ТАКТИЛЬНОСТЬ БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									ЗВУК И ГОЛОС БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									КОРПОРАТИВНАЯ ЭТИКА
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="project__slider-bg project__slider-bg--red">
+			<div class="project__slider-holder">
+				<div class="project__slider-inner">
+					<div class="project__slider-item">
+						<div class="project__slider-img">
+							<img src="pic/slide/slide-05.png" alt="">
+						</div>
+						<div class="project__slider-info">
+							<div class="project__slider-btn js-slider-btn"></div>
+							<span class="project__slider-category">
+								Категория клиента
+							</span>
+							<span class="project__slider-name">
+								Название проекта 1
+							</span>
+							<ul class="project__slider-list">
+								<li class="project__slider-list-item">
+									АРОМАТ БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									ТАКТИЛЬНОСТЬ БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									ЗВУК И ГОЛОС БРЕНДА
+								</li>
+								<li class="project__slider-list-item">
+									КОРПОРАТИВНАЯ ЭТИКА
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="project__all">
+		<a href="" class="project__all-link">Все проекты</a>
+	</div>
+</div>
+
+	<div class="type">
+	<div class="container">
+		<div class="type__outer">
+			<div class="type__wrap">
+				<div class="type__inner">
+					<div class="type__item">
+						<a href="#" class="type__link">
+							<span class="type__img-wrap">
+								<img src="pic/services/services-1.png" alt="">
+							</span>
+							<span class="type__text">
+								<span><b>Разработка</b></span>
+								<span>бренда</span>
+							</span>
+						</a>
+					</div>
+					<div class="type__item">
+						<a href="#" class="type__link">
+							<span class="type__img-wrap">
+								<img src="pic/services/services-2.png" alt="">
+							</span>
+							<span class="type__text">
+								<span><b>Коммуникация</b></span>
+								<span>бренда</span>
+							</span>
+						</a>
+					</div>
+					<div class="type__item">
+						<a href="#" class="type__link">
+							<span class="type__img-wrap">
+								<img src="pic/services/services-3.png" alt="">
+							</span>
+							<span class="type__text">
+								<span><b>Развитие</b></span>
+								<span>бизнеса</span>
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="type__btn-wrap">
+				<a href="#" class="btn">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="about">
+	
+	<div class="about__brand js-about-more">
+		
+		<div class="about__brand-tabs js-tabs">
+			<span class="about__brand-btn js-about-close"></span>
+			<a href="#about-content-1" class="about__brand-head js-tabs-link">
+				<span class="about__brand-head-title">
+					Разработка бренда
+				</span>
+				<span class="about__brand-head-icon"></span>
+			</a>
+			<div class="about__brand-content js-tabs-content" id="about-content-1">
+			<div class="about__brand-row">
+				<div class="about__brand-col">
+					<div class="about__brand-item about__brand-item--first">
+						<span class="about__brand-title">АУДИТ БРЕНДА</span>
+						<ul class="about__brand-list">
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									АНАЛИЗ РЕСУРСОВ КОМПАНИИ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									АНАЛИЗ ЦЕЛЕВОЙ АУДИТОРИИИ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									АНАЛИЗ КОНКУРЕНТОВ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									SWOT-АНАЛИЗ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									АНАЛИЗ ИДЕНТИЧНОСТИ И КОММУНИКАЦИИ
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="about__brand-item">
+						<span class="about__brand-title">НЕЙМИНГ И КОПИРАЙТИНГ</span>
+						<ul class="about__brand-list">
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ОХРАНОСПОСОБНОЕ НАЗВАНИЕ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									СЛОГАН
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									СТИЛЬ ТЕКСТОВ (ГОЛОС БРЕНДА)
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="about__brand-item">
+						<span class="about__brand-title">ФИРМЕННЫЙ СТИЛЬ</span>
+						<ul class="about__brand-list">
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ЛОГОТИП И ЗНАК
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+     							ЦВЕТОВАЯ СХЕМА
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ШРИФТОВЫЕ ПАРЫ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ФИРМЕННАЯ ГРАФИКА
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									СТИЛЬ ИКОНОК
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									СТИЛЬ ИНФОГРАФИКИ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ФОТОСТИЛЬ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									СТИЛЬ ВЕРСТКИ
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="about__brand-item">
+						<span class="about__brand-title">
+							<a href="#">АРОМА БРЕНДИНГ</a>
+						</span>
+					</div>
+					<div class="about__brand-item">
+						<span class="about__brand-title">
+							<a href="#">ТАКТИЛЬНЫЙ БРЕНДИНГ</a>
+						</span>
+					</div>
+					<div class="about__brand-item">
+						<span class="about__brand-title">
+							<a href="#">ЗВУКОВОЙ БРЕНДИНГ</a>
+						</span>
+					</div>
+					<div class="about__brand-item">
+						<span class="about__brand-title">
+							<a href="#">ВКУСОВОЙ БРЕНДИНГ</a>
+						</span>
+					</div>
+				</div>
+				<div class="about__brand-col">
+					<div class="about__brand-item about__brand-item--second">
+						<span class="about__brand-title">ПОЗИЦИОНИРОВАНИЕ БРЕНДА</span>
+						<ul class="about__brand-list">
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									СТРАТЕГИЯ ПОЗИЦИОНИРОВАНИЯ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ФОРМИРОВАНИЕ/КОРРЕКЦИЯ УТП
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ПЛАТФОРМА БРЕНДА
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									МЕДИАПЛАН КОММУНИКАЦИЙ БРЕНДА
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="about__brand-item">
+						<span class="about__brand-title">
+							КОММЕРЧЕСКОЕ ПРОСТРАНСТВО
+						</span>
+						<ul class="about__brand-list">
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ПЛАНИРОВОЧНОЕ РЕШЕНИЕ И ЗОНИРОВАНИЕ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									3D ДИЗАЙН ПРОЕКТ ИНТЕРЬЕРА
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ВХОДНАЯ ГРУППА
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									СИСТЕМА НАВИГАЦИИ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									БРЕНДИРОВАНИЕ ОБЪЕКТОВ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ОФОРМЛЕНИЕ ВЫКЛАДКИ И ВИТРИН
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ЧЕРТЕЖИ И ДОКУМЕНТАЦИЯ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ПРЕДМЕТНЫЙ ДИЗАЙН
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ПРОЕКТИРОВАНИЕ АРТ-ОБЪЕКТОВ
+								</a>
+							</li>
+							
+						</ul>
+					</div>
+					<div class="about__brand-item">
+						<span class="about__brand-title">
+							ОБЪЕКТЫ-НОСИТЕЛИ 
+						</span>
+						<ul class="about__brand-list">
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ДЕЛОВАЯ ПРОДУКЦИЯ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									УПАКОВОЧНАЯ ПРОДУКЦИЯ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ИНФОРМАЦИОННЫЕ МАТЕРИАЛЫ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ПРЕЗЕНТАЦИОННЫЙ МАТЕРИАЛЫ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									РЕКЛАМНАЯ ПРОДУКЦИЯ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									СУВЕНИРНАЯ ПРОДУКЦИЯ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ТОВАРЫ ИНДИВИДУАЛЬНОГО ПОЛЬЗОВАНИЯ
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="about__brand-col about__brand-col--mod">
+					<div class="about__brand-item">
+						<span class="about__brand-title">
+							КОММУНИКАЦИОННАЯ СТРАТЕГИЯ
+						</span>
+						<ul class="about__brand-list">
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									КАНАЛЫ КОММУНИКАЦИИ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									МЕДИАПЛАНИРОВАНИЕ
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="about__brand-item">
+						<span class="about__brand-title">
+							<a href="#">КОРПОРАТИВНАЯ ЭТИКА</a>
+						</span>
+					</div>
+					<div class="about__brand-item about__brand-item--third">
+						<span class="about__brand-title">
+							<a href="#">БРЕНДБУК</a>
+						</span>
+					</div>
+					<div class="about__brand-item">
+						<span class="about__brand-title">
+							WEB САЙТ / ПРИЛОЖЕНИЕ
+						</span>
+						<ul class="about__brand-list">
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									FRONT-end и BACK-end РАЗРАБОТКА
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									РАЗРАБОТКА СТРУКТУРЫ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ПРОТОТИПИРОВАНИЕ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ДИЗАЙН И ВЕРСТКА ИНТЕРФЕЙСОВ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ПРОГРАММИРОВАНИЕ
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="about__brand-item">
+						<span class="about__brand-title">
+							УПАКОВКА И ЭТИКЕТКА
+						</span>
+						<ul class="about__brand-list">
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									СТРУКТУРНЫЙ ДИЗАЙН
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ДИЗАЙН УПАКОВКИ И ЭТИКЕТКИ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ИЗГОТОВЛЕНИЕ ПИЛОТНОГО ОБРАЗЦА
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ДИЗАЙН И ВЕРСТКА SKU
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ПРОИЗВОДСТВО
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="about__brand-item">
+						<span class="about__brand-title">
+							POS МАТЕРИАЛЫ
+						</span>
+						<ul class="about__brand-list">
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									СТРУКТУРНЫЙ ДИЗАЙН
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ДИЗАЙН ИЗДЕЛИЯ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ПИЛОТНЫЙ ОБРАЗЕЦ
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			</div>
+			<a href="#about-content-2" class="about__brand-head about__brand-head--second js-tabs-link">
+				<span class="about__brand-head-title">		
+					Масштабиро&shy;вание бренда
+				</span>
+				<span class="about__brand-head-icon"></span>
+			</a> 
+			<div class="about__brand-content js-tabs-content" id="about-content-2">
+			<div class="about__brand-row">
+				<div class="about__brand-col">
+					<div class="about__brand-item">
+						<span class="about__brand-title">РЕКЛАМНЫЕ КОМПАНИИ</span>
+						<ul class="about__brand-list">
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									РЕКЛАМА ЯНДЕКС, GOOGLE
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									РЕКЛАМА В СОЦСЕТЯХ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									РАЗРАБОТКА ЛЕНДИНГОВ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ДИЗАЙН И ПРОЕКТИРОВАНИЕ
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="about__brand-col">
+					<div class="about__brand-item">
+						<span class="about__brand-title">ФРАНШИЗА</span>
+						<ul class="about__brand-list">
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ФРЕНЧБУК
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									НАСТРОЙКА ERP СИСТЕМЫ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ПРОДАЖИ ФРАНШИЗЫ
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="about__brand-col">
+					<div class="about__brand-item">
+						<span class="about__brand-title">СИСТЕМА ЛОЯЛЬНОСТИ</span>
+						<ul class="about__brand-list">
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									РАЗРАБОТКА ПРОГРАММ ЛОЯЛЬНОСТИ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ДИЗАЙН И ПРОЕКТИРОВАНИЕ НОСИТЕЛЕЙ
+								</a>
+							</li>
+							<li class="about__brand-list-item">
+								<a href="#" class="about__brand-list-link">
+									ПРОИЗВОДСТВО НОСИТЕЛЕЙ
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			</div>
+			<a href="#" class="btn about__brand-consultate">
+				ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
+			</a>
+		</div>
+	</div>
+	<!-- <div class="container"> -->
+		<div class="about__outer">
+			<div class="about__wrap">
+			<div class="about__slider js-about-slider">
+			 <div class="about__slide">
+					<div class="container container-slider">
+			 			<div class="about__slide-holder">
+			 				<div class="about__slide-inner">
+			 				<div class="about__slide-video about__slide-video--mod">
+			 					<div class="about__slide-title about__slide-title--mob">
+			 						Первая студия в России <p>внедрившая технологии </p>
+			 						<span class="about__slide-title-txt">
+			 							мультисенсорного <p>фирменного стиля</p>
+			 						</span>
+								</div>
+
+			 					<img src="pic/bg/bg-02.png">
+			 				</div>
+			 				<div class="about__slide-info about__slide-info--mod">
+			 					<div class="about__slide-info-inner">
+			 						<div class="about__slide-title">
+			 							Первая студия в России <p>внедрившая технологии</p>
+			 							<span class="about__slide-title-txt">
+			 								мультисенсорного <span>фирменного стиля</span>
+			 							</span>
+									</div>
+			 						<div class="about__slide-sensor">
+
+			 							<div class="about__slide-sensor-item">
+			 								<img src="pic/icon-01.png" alt="">
+
+			 							</div>
+			 							<div class="about__slide-sensor-item">
+			 								<img src="pic/icon-02.png" alt="">
+			 							</div>
+			 							<div class="about__slide-sensor-item">
+			 								<img src="pic/icon-03.png" alt="">
+
+			 							</div>
+			 							<div class="about__slide-sensor-item">
+			 								<img src="pic/icon-04.png" alt="">
+
+			 							</div>
+			 							<div class="about__slide-sensor-item">
+			 								<img src="pic/icon-05.png" alt="">
+			 							</div>
+
+			 						</div>
+			 						<div class="about__slide-descr">
+			 							<p>
+			 								Максимально расширим восприятиеот бренда и привлечем внимание потребителя, внедрив в ваш фирменный стиль визуальное восприятие, запах, вкус, тактильные ощущения, звук.
+			 							</p>
+			 						</div>
+			 					</div>
+			 				</div>
+			 				</div>
+			 			</div>
+					</div>
+			 </div>
+			 <div class="about__slide">
+					<div class="container container-slider">
+			 		<div class="about__slide-holder">
+			 			<div class="about__slide-inner">
+			 			<div class="about__slide-video">
+			 				<div class="about__slide-title about__slide-title--mob">
+			 					Проведем интервью <p>и определим состав проекта.</p> 
+			 					<span class="about__slide-title-txt">
+			 						Сами заполним бриф
+			 					</span>
+			 					и составим техническое задание
+							</div>
+			 				<video playsinline  loop muted video poster="" class="js-about-video" id="video-2">
+			 					<source src="video/video.mp4" type="video/mp4"></source>
+			 				</video>
+			 			</div>
+			 			<div class="about__slide-info">
+			 				<div class="about__slide-info-inner">
+			 					<div class="about__slide-title">
+			 						Проведем интервью <p>и определим состав проекта.</p> 
+			 						<span class="about__slide-title-txt">
+			 							Сами заполним бриф
+			 						</span>
+			 						и составим техническое задание
+								</div>
+								<ul class="about__slide-list">
+									<li class="about__slide-list-item">
+										Всего 45 минут вашего времени на интервью
+									</li>
+									<li class="about__slide-list-item">
+										За 3 часа подготовим коммерческое предложение и техническое задание учитывающее специфику вашего продукта и бизнеса
+									</li>
+									<li class="about__slide-list-item">
+										Определим удобную схему взаимовыгодного сотрудничества
+									</li>
+								</ul>
+
+			 				</div>
+							<a href="#" class="about__slide-link">
+								ЗАПРОСИТЬ ПРИМЕР БРИФА И ТЗ 
+							</a>
+			 			</div>
+			 			</div>
+			 		</div>
+				</div>
+			 </div>
+			 <div class="about__slide">
+			 	<div class="container container-slider">
+			 		<div class="about__slide-holder">
+			 			<div class="about__slide-inner">
+			 			<div class="about__slide-video">
+			 				<div class="about__slide-title about__slide-title--mob">
+			 					Пройдем с Вами от названия <p>до первых продаж.</p>
+			 					<span class="about__slide-title-txt">
+			 						Гарантируем результат
+			 					</span>
+			 					стремительным развитием <p>Вашего бизнеса и своей кармой</p>
+							</div>
+			 				<video playsinline  loop muted video poster="" class="js-about-video" id="video-3">
+			 					<source src="video/video.mp4" type="video/mp4"></source>
+			 				</video>
+			 			</div>
+			 			<div class="about__slide-info">
+			 				<div class="about__slide-info-inner">
+			 					<div class="about__slide-title">
+			 						Пройдем с Вами от названия <p>до первых продаж.</p>
+			 						<span class="about__slide-title-txt">
+			 							Гарантируем результат
+			 						</span>
+			 						стремительным развитием <p>Вашего бизнеса и своей кармой</p>
+								</div>
+			 					<div class="about__slide-descr">
+			 						<p>
+			 							Разработаем фирменный стиль способствующий увеличению продаж,отражающий  характер бренда и отвечающий запросу желаннойцелевой аудитории
+			 						</p>
+			 					</div>
+
+							</div>
+							<a href="#" class="about__slide-link">
+								ПОСМОТРЕТЬ КЕЙСЫ 
+							</a>
+			 			</div>
+			 			</div>
+			 		</div>
+			 	</div>
+			 </div>
+			 <div class="about__slide">
+			 	<div class="container container-slider">
+			 		<div class="about__slide-holder">
+			 			<div class="about__slide-inner">
+			 			<div class="about__slide-video">
+			 				<div class="about__slide-title about__slide-title--mob">
+			 					Не бросим Вас с .ai .avi .pdf .indd <p>.tiff .psd .css и другими вопросами</p> Возьмем на себя
+			 					<span class="about__slide-title-txt about__slide-title-txt--mod">
+			 						запуск <span>и продвижение</span>
+			 					</span>
+							</div>
+			 				<video playsinline  loop muted video poster="" class="js-about-video" id="video-4">
+			 					<source src="video/video.mp4" type="video/mp4"></source>
+			 				</video>
+			 			</div>
+			 			<div class="about__slide-info">
+			 				<div class="about__slide-info-inner">
+			 					<div class="about__slide-title">
+			 						Не бросим Вас с .ai .avi .pdf .indd <p>.tiff .psd .css и другими вопросами</p> Возьмем на себя
+			 						<span class="about__slide-title-txt about__slide-title-txt--mod">
+			 							запуск <span>и продвижение</span>
+			 						</span>
+								</div>
+								<ul class="about__slide-list">
+									<li class="about__slide-list-item">
+										Разработаем медиаплан.Поможем увеличить количество и качество продаж
+									</li>
+									<li class="about__slide-list-item">
+										Изготовим и доставим корпоративную продукцию в офис
+									</li>
+									<li class="about__slide-list-item">
+										Подготовим к открытию, акциям,переговорам, выставке
+									</li>
+									<li class="about__slide-list-item">
+										Разработаем стратегию и запустим рекламу
+									</li>
+								</ul>
+
+							</div>
+							<span class="about__slide-link js-about-more-btn">
+								97 УСЛУГ ДЛЯ БРЕНДИНГА
+							</span>
+			 			</div>
+			 			</div>
+			 		</div>
+			 	</div>
+			 </div>
+			 <div class="about__slide">
+			 		<div class="container container-slider">
+			 		<div class="about__slide-holder">
+			 			<div class="about__slide-inner">
+			 			<div class="about__slide-video">
+			 				<div class="about__slide-title about__slide-title--mob">
+			 					Откроем доступ в функциональный
+			 					<span class="about__slide-title-txt">
+			 						Личный кабинет
+			 					</span>
+			 					под ваш проект
+							</div>
+			 				<video playsinline  loop muted video poster="" class="js-about-video" id="video-5">
+			 					<source src="video/video.mp4" type="video/mp4"></source>
+			 				</video>
+			 			</div>
+			 			<div class="about__slide-info">
+			 				<div class="about__slide-info-inner">
+			 					<div class="about__slide-title">
+			 						Откроем доступ в функциональный
+			 						<span class="about__slide-title-txt">
+			 							Личный кабинет
+			 						</span>
+			 						под ваш проект
+								</div>
+								<div class="about__slide-personal">
+									<div class="about__slide-personal-item">
+										<div class="about__slide-personal-icon"></div>
+										<span class="about__slide-personal-txt">
+											Контроль сроков и выполнения всех этапов проекта
+										</span>
+									</div>
+									<div class="about__slide-personal-item">
+										<div class="about__slide-personal-icon"></div>
+										<span class="about__slide-personal-txt">
+											Презентация дизайна, хранение и передача файлов
+										</span>
+									</div>
+									<div class="about__slide-personal-item">
+										<div class="about__slide-personal-icon"></div>
+										<span class="about__slide-personal-txt">
+											Оставляйте отзывы и читайте комментарии
+										</span>
+									</div>
+
+								</div>
+							</div>
+							<a href="#" class="about__slide-link">
+								ПОЛУЧИТЬ ДЕМО ДОСТУП
+							</a>
+			 			</div>
+			 			</div>
+			 		</div>
+			 	</div>
+			 </div>
+			</div>
+		</div>
+
+	<!-- </div> -->
+</div>
+</div>
+
+
+	<div class="equipment">
+	<div class="container">
+		<div class="equipment__outer">
+		<div class="equipment__wrap">
+		<span class="equipment__title">
+			Выбери интересующую комплектацию брендинга
+		</span>
+		<form action="#" class="equipment__form">
+			<div class="equipment__holder">
+				<div class="equipment__left">
+					<ul class="equipment__list">
+						<li class="equipment__list-item js-tool-parent">
+							<div class="equipment__more js-tool-content">
+								<span class="equipment__more-btn js-tool-close"></span>
+								<ul class="equipment__more-list">
+									<li>ЛОГОТИП И ЗНАК</li>
+									<li>ШРИФТ, ЦВЕТ,</li>
+									<li>ГРАФИКА,</li>
+									<li>СТИЛЬ ВЕРСТКИ</li>
+									<li>ФОТОСТИЛЬ</li>
+									<li>ИКОНКИ</li>
+								</ul>
+								<div class="equipment__more-info">
+									<span class="equipment__more-title">Зачем?</span>
+									<div class="equipment__more-descr">
+										<p>
+											Раскроем потенциал и рентабельность фирменного стиля
+										</p>
+										<p>
+											Создадим максимально расширенную визуальную картину идентичности Вашего бренда от логотипа
+										</p>
+									</div>
+								</div>
+								<div class="equipment__more-info">
+									<span class="equipment__more-title">Где применить?</span>
+									<div class="equipment__more-descr">
+										<p>
+											Разработаем визитки, буклеты, упаковку, сайт или интерьер; все что необходимо бренду для продвижения и масштабирования
+
+										</p>
+										<p>
+											Подберем аромат для помещения, угoщение для посетителей, музыку для звонка
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="equipment__list-item-inner">
+								<span class="equipment__list-txt">АУДИТ <span>БРЕНДА</span></span>
+								<span class="equipment__list-tool js-tool-btn"></span>
+							</div>
+						</li>
+						<li class="equipment__list-item js-tool-parent">
+							<div class="equipment__more js-tool-content">
+								<span class="equipment__more-btn js-tool-close"></span>
+								<ul class="equipment__more-list">
+									<li>ЛОГОТИП И ЗНАК</li>
+									<li>ШРИФТ, ЦВЕТ,</li>
+									<li>ГРАФИКА,</li>
+									<li>СТИЛЬ ВЕРСТКИ</li>
+									<li>ФОТОСТИЛЬ</li>
+									<li>ИКОНКИ</li>
+								</ul>
+								<div class="equipment__more-info">
+									<span class="equipment__more-title">Зачем?</span>
+									<div class="equipment__more-descr">
+										<p>
+											Раскроем потенциал и рентабельность фирменного стиля
+										</p>
+										<p>
+											Создадим максимально расширенную визуальную картину идентичности Вашего бренда от логотипа
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="equipment__list-item-inner">
+								<span class="equipment__list-txt">ПЛАТФОРМА БРЕНДА</span>
+								<span class="equipment__list-tool js-tool-btn"></span>
+							</div>
+						</li>
+						<li class="equipment__list-item js-tool-parent">
+							<div class="equipment__more js-tool-content">
+								<span class="equipment__more-btn js-tool-close"></span>
+								<ul class="equipment__more-list">
+									<li>ЛОГОТИП И ЗНАК</li>
+									<li>ШРИФТ, ЦВЕТ,</li>
+									<li>ГРАФИКА,</li>
+									<li>СТИЛЬ ВЕРСТКИ</li>
+									<li>ФОТОСТИЛЬ</li>
+									<li>ИКОНКИ</li>
+								</ul>
+							</div>
+							<div class="equipment__list-item-inner">
+								<span class="equipment__list-txt">НЕЙМИНГ</span>
+								<span class="equipment__list-tool js-tool-btn"></span>
+							</div>
+						</li>
+						<li class="equipment__list-item js-tool-parent">
+							<div class="equipment__more js-tool-content">
+								<span class="equipment__more-btn js-tool-close"></span>
+								<ul class="equipment__more-list">
+									<li>ЛОГОТИП И ЗНАК</li>
+									<li>ШРИФТ, ЦВЕТ,</li>
+									<li>ГРАФИКА,</li>
+									<li>СТИЛЬ ВЕРСТКИ</li>
+									<li>ФОТОСТИЛЬ</li>
+									<li>ИКОНКИ</li>
+								</ul>
+								<div class="equipment__more-info">
+									<span class="equipment__more-title">Зачем?</span>
+									<div class="equipment__more-descr">
+										<p>
+											Раскроем потенциал и рентабельность фирменного стиля
+										</p>
+										<p>
+											Создадим максимально расширенную визуальную картину идентичности Вашего бренда от логотипа
+										</p>
+									</div>
+								</div>
+								<div class="equipment__more-info">
+									<span class="equipment__more-title">Где применить?</span>
+									<div class="equipment__more-descr">
+										<p>
+											Разработаем визитки, буклеты, упаковку, сайт или интерьер; все что необходимо бренду для продвижения и масштабирования
+
+										</p>
+										<p>
+											Подберем аромат для помещения, угoщение для посетителей, музыку для звонка
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="equipment__list-item-inner">
+								<span class="equipment__list-txt">ФИРМЕННЫЙ СТИЛЬ</span>
+								<span class="equipment__list-tool js-tool-btn"></span>
+							</div>
+						</li>
+						<li class="equipment__list-item js-tool-parent">
+							<div class="equipment__more js-tool-content">
+								<span class="equipment__more-btn js-tool-close"></span>
+								<ul class="equipment__more-list">
+									<li>ЛОГОТИП И ЗНАК</li>
+									<li>ШРИФТ, ЦВЕТ,</li>
+									<li>ГРАФИКА,</li>
+									<li>СТИЛЬ ВЕРСТКИ</li>
+									<li>ФОТОСТИЛЬ</li>
+									<li>ИКОНКИ</li>
+								</ul>
+								<div class="equipment__more-info">
+									<span class="equipment__more-title">Зачем?</span>
+									<div class="equipment__more-descr">
+										<p>
+											Раскроем потенциал и рентабельность фирменного стиля
+										</p>
+										<p>
+											Создадим максимально расширенную визуальную картину идентичности Вашего бренда от логотипа
+										</p>
+									</div>
+								</div>
+								<div class="equipment__more-info">
+									<span class="equipment__more-title">Где применить?</span>
+									<div class="equipment__more-descr">
+										<p>
+											Разработаем визитки, буклеты, упаковку, сайт или интерьер; все что необходимо бренду для продвижения и масштабирования
+
+										</p>
+										<p>
+											Подберем аромат для помещения, угoщение для посетителей, музыку для звонка
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="equipment__list-item-inner">
+								<span class="equipment__list-txt">ОБЪЕКТЫ-НОСИТЕЛИ</span>
+								<span class="equipment__list-tool js-tool-btn"></span>
+							</div>
+						</li>
+						<li class="equipment__list-item js-tool-parent">
+							<div class="equipment__more js-tool-content">
+								<span class="equipment__more-btn js-tool-close"></span>
+								<ul class="equipment__more-list">
+									<li>ЛОГОТИП И ЗНАК</li>
+									<li>ШРИФТ, ЦВЕТ,</li>
+									<li>ГРАФИКА,</li>
+									<li>СТИЛЬ ВЕРСТКИ</li>
+									<li>ФОТОСТИЛЬ</li>
+									<li>ИКОНКИ</li>
+								</ul>
+								<div class="equipment__more-info">
+									<span class="equipment__more-title">Зачем?</span>
+									<div class="equipment__more-descr">
+										<p>
+											Раскроем потенциал и рентабельность фирменного стиля
+										</p>
+										<p>
+											Создадим максимально расширенную визуальную картину идентичности Вашего бренда от логотипа
+										</p>
+									</div>
+								</div>
+								<div class="equipment__more-info">
+									<span class="equipment__more-title">Где применить?</span>
+									<div class="equipment__more-descr">
+										<p>
+											Разработаем визитки, буклеты, упаковку, сайт или интерьер; все что необходимо бренду для продвижения и масштабирования
+
+										</p>
+										<p>
+											Подберем аромат для помещения, угoщение для посетителей, музыку для звонка
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="equipment__list-item-inner">
+								<span class="equipment__list-txt">МАТРИЦА КОММУНИКАЦИЙ</span>
+								<span class="equipment__list-tool js-tool-btn"></span>
+							</div>
+						</li>
+						<li class="equipment__list-item js-tool-parent">
+							<div class="equipment__more js-tool-content">
+								<span class="equipment__more-btn js-tool-close"></span>
+								<ul class="equipment__more-list">
+									<li>ЛОГОТИП И ЗНАК</li>
+									<li>ШРИФТ, ЦВЕТ,</li>
+									<li>ГРАФИКА,</li>
+									<li>СТИЛЬ ВЕРСТКИ</li>
+									<li>ФОТОСТИЛЬ</li>
+									<li>ИКОНКИ</li>
+								</ul>
+								<div class="equipment__more-info">
+									<span class="equipment__more-title">Зачем?</span>
+									<div class="equipment__more-descr">
+										<p>
+											Раскроем потенциал и рентабельность фирменного стиля
+										</p>
+										<p>
+											Создадим максимально расширенную визуальную картину идентичности Вашего бренда от логотипа
+										</p>
+									</div>
+								</div>
+								<div class="equipment__more-info">
+									<span class="equipment__more-title">Где применить?</span>
+									<div class="equipment__more-descr">
+										<p>
+											Разработаем визитки, буклеты, упаковку, сайт или интерьер; все что необходимо бренду для продвижения и масштабирования
+
+										</p>
+										<p>
+											Подберем аромат для помещения, угoщение для посетителей, музыку для звонка
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="equipment__list-item-inner">
+								<span class="equipment__list-txt">ГАЙДЛАЙН</span>
+								<span class="equipment__list-tool js-tool-btn"></span>
+							</div>
+						</li>
+						<li class="equipment__list-item js-tool-parent">
+							<div class="equipment__more js-tool-content">
+								<span class="equipment__more-btn js-tool-close"></span>
+								<ul class="equipment__more-list">
+									<li>ЛОГОТИП И ЗНАК</li>
+									<li>ШРИФТ, ЦВЕТ,</li>
+									<li>ГРАФИКА,</li>
+									<li>СТИЛЬ ВЕРСТКИ</li>
+									<li>ФОТОСТИЛЬ</li>
+									<li>ИКОНКИ</li>
+								</ul>
+								<div class="equipment__more-info">
+									<span class="equipment__more-title">Зачем?</span>
+									<div class="equipment__more-descr">
+										<p>
+											Раскроем потенциал и рентабельность фирменного стиля
+										</p>
+										<p>
+											Создадим максимально расширенную визуальную картину идентичности Вашего бренда от логотипа
+										</p>
+									</div>
+								</div>
+								<div class="equipment__more-info">
+									<span class="equipment__more-title">Где применить?</span>
+									<div class="equipment__more-descr">
+										<p>
+											Разработаем визитки, буклеты, упаковку, сайт или интерьер; все что необходимо бренду для продвижения и масштабирования
+
+										</p>
+										<p>
+											Подберем аромат для помещения, угoщение для посетителей, музыку для звонка
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="equipment__list-item-inner">
+								<span class="equipment__list-txt">БРЕНДБУК</span>
+								<span class="equipment__list-tool js-tool-btn"></span>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+
+				<div class="equipment__right">
+					<table class="equipment__table">
+					<tbody>
+						<tr>
+							<td><div class="equipment__table-circle equipment__table-circle--mod"></div></td>
+							<td><div class="equipment__table-circle"></div></td>
+							<td><div class="equipment__table-circle"></div></td>
+						</tr>
+						<tr>
+							<td><div class="equipment__table-circle equipment__table-circle--mod"></div></td>
+							<td><div class="equipment__table-circle equipment__table-circle--mod"></div></td>
+							<td><div class="equipment__table-circle"></div></td>
+						</tr>
+						<tr>
+							<td><div class="equipment__table-circle equipment__table-circle--mod"></div></td>
+							<td><div class="equipment__table-circle equipment__table-circle--mod"></div></td>
+							<td><div class="equipment__table-circle"></div></td>
+						</tr>
+						<tr>
+							<td><div class="equipment__table-circle equipment__table-circle--mod"></div></td>
+							<td><div class="equipment__table-circle"></div></td>
+							<td><div class="equipment__table-circle"></div></td>
+						</tr>
+						<tr>
+							<td><div class="equipment__table-circle"></div></td>
+							<td><div class="equipment__table-circle"></div></td>
+							<td><div class="equipment__table-circle"></div></td>
+						</tr>
+						<tr class="equipment__table-num">
+							<td>7 шт</td>
+							<td>10 шт</td>
+							<td>30 шт</td>
+						</tr>
+						<tr>
+							<td><div class="equipment__table-circle equipment__table-circle--mod"></div></td>
+							<td><div class="equipment__table-circle"></div></td>
+							<td><div class="equipment__table-circle equipment__table-circle--mod"></div></td>
+						</tr>
+						<tr>
+							<td><div class="equipment__table-circle equipment__table-circle--mod"></div></td>
+							<td><div class="equipment__table-circle equipment__table-circle--mod"></div></td>
+							<td><div class="equipment__table-circle"></div></td>
+						</tr>
+					</tbody>
+					</table>
+
+					<div class="equipment__price">
+						<div class="equipment__price-holder">
+							<div class="equipment__price-item">
+								<label class="radio" >
+									<input type="radio" name="radio">
+									<span>250 000 Р</span>
+								</label>
+							</div>
+							<div class="equipment__price-item">
+								<label class="radio">
+									<input type="radio" name="radio">
+									<span>410 000 Р</span>
+								</label>
+							</div>
+							<div class="equipment__price-item">
+								<label class="radio">
+									<input type="radio" name="radio">
+									<span>720 000 Р</span>
+								</label>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="equipment__btn-wrap">
+				<button class="btn equipment__btn js-equip-btn" disabled>
+					<span class="equipment__btn-desktop">
+						ОСТАВИТЬ ЗАЯВКУ НА КОНСУЛЬТАЦИЮ
+					</span>
+					<span class="equipment__btn-mob">
+						Выберете пакет
+					</span>
+				</button>
+			</div>
+		</form>
+	</div>
+	</div>
+	</div>
+</div>	
+
+</div>
+
+<footer class="footer footer--all-proj">
+	<div class="container-large">
+		<span class="footer__title">Связаться с нами</span>
+		<div class="footer__holder">
+			<div class="footer__contacts">
+				<div class="footer__contacts-item">
+					<a href="tel:+74952680112" class="footer__contacts-link">
+						+7 495 268 01 12
+					</a>
+				</div>
+				<div class="footer__contacts-item">
+					<a href="mailto:hello@TheID.ru" class="footer__contacts-link">
+						hello@TheID.ru
+					</a>
+				</div>
+			</div>
+
+			
+			
+			<div class="footer__copy">
+				<span>
+					©Sensens. 2015-2018
+				</span>
+			</div>
+			
+
+			<div class="footer__social">
+				<span class="footer__social-txt">Следить</span>
+				<a href="#" class="footer__social-link">Fb<span style="color: #2F78DD;">.</span></a>
+				<a href="#" class="footer__social-link">Ins<span style="color: #E543A7;">.</span></a>
+				<a href="#" class="footer__social-link">Vk<span style="color: #2F5EDD;">.</span></a>
+				<a href="#" class="footer__social-link">YT<span style="color: #FF0808;">.</span></a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+	<div class="header header--projects header--projects-foot">
+		<div class="header__popup js-header-popup">
+			<div class="container">
+				<div class="header__popup-outer">
+					<div class="header__popup-inner">
+						<div class="header__popup-holder">
+							<span class="header__popup-close js-popup-close"></span>
+							<div class="header__popup-decor">
+								<img src="pic/logo/logo-popup.png" alt="">
+							</div>
+							<ul class="header__popup-list">
+								<li class="header__popup-list-item">
+									<a href="#" class="header__popup-list-link">Главная</a>
+								</li>
+								<li class="header__popup-list-item">
+									<a href="#" class="header__popup-list-link">Проекты</a>
+								</li>
+								<li class="header__popup-list-item">
+									<a href="#" class="header__popup-list-link active">Услуги</a>
+								</li>
+								<li class="header__popup-list-item">
+									<a href="#" class="header__popup-list-link">Контакты</a>
+								</li>
+							</ul>
+						</div>
+						<div class="header__popup-foot">
+							<span class="footer__title">Связаться с нами</span>
+							<div class="footer__holder">
+								<div class="footer__contacts">
+									<div class="footer__contacts-item">
+										<a href="tel:+74952680112" class="footer__contacts-link">
+											+7 495 268 01 12
+										</a>
+									</div>
+									<div class="footer__contacts-item">
+										<a href="mailto:hello@TheID.ru" class="footer__contacts-link">
+											hello@TheID.ru
+										</a>
+									</div>
+								</div>
+								<div class="footer__copy">
+									<span>
+										&copy;Sensens. 2015-2018
+									</span>
+								</div>
+	
+								<div class="footer__social">
+									<span class="footer__social-txt">Следить</span>
+									<a href="#" class="footer__social-link">Fb<span style="color: #2F78DD;">.</span></a>
+									<a href="#" class="footer__social-link">Ins<span style="color: #E543A7;">.</span></a>
+									<a href="#" class="footer__social-link">Vk<span style="color: #2F5EDD;">.</span></a>
+									<a href="#" class="footer__social-link">YT<span style="color: #FF0808;">.</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<a href="#" class="header__img-wrap">
+				<img src="pic/logo/logo-2.png" alt="">
+			</a>
+			<div class="header__menu-btn header__menu-btn--foot js-menu-btn">
+				<span class="line"></span>
+			</div>
+		</div>
+	</div>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

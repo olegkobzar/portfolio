@@ -1,0 +1,557 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Новости и публикации</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+<div class="wrapper">
+
+	<div class="heading-narrow "  >
+	<div class="heading-narrow__decor">
+		<header class="header ">
+	<div class="container">	
+		<div class="header__logo">
+			<a href="#" class="header__logo-link">
+				<img src="pic/logo.png" alt="">
+			</a>
+		</div>
+		<nav class="header__nav">
+			<ul class="header__list">
+				<li class="header__item">
+					<a href="#" class="header__link">О нас</a>
+				</li>
+				<li class="header__item">
+					<a href="#" class="header__link">Продажа автомобилей</a>
+				</li>
+				<li class="header__item">
+					<a href="#" class="header__link">Онлайн сервисы</a>
+				</li>
+				<li class="header__item">
+					<a href="#" class="header__link">Контакты</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="header__contact">
+			<div class="header__contact-callback">
+				<a href="" class="header__link-callback">Заказать звонок</a>
+			</div>
+			<div class="header__contact-phone">
+				<a href="tel:88005504213" class="header__link-phone">8 800 550 42 13</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+		<div class="container">
+			<div class="heading-narrow__wrapp">
+				
+				<span class="heading-narrow__text">Новости</span>
+				<h1 class="heading-narrow__caption">Новости и публикации</h1>
+				
+				<div class="heading-narrow__social">
+					<ul class="heading-narrow__list">
+						<li class="heading-narrow__item">
+							<a href="#" class="heading-narrow__link">
+								<svg class="icon-facebook">
+									<use xlink:href="#facebook"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="heading-narrow__item">
+							<a href="#" class="heading-narrow__link">
+								<svg class="icon-instagram">
+									<use xlink:href="#instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="heading-narrow__item">
+							<a href="#" class="heading-narrow__link">
+								<svg class="icon-vk">
+									<use xlink:href="#vk"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="heading-narrow__item">
+							<a href="#" class="heading-narrow__link">
+								<svg class="icon-youtube">
+									<use xlink:href="#youtube"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	<div class="breadcrumbs ">
+	<div class="container">
+		<div class="breadcrumbs__wrapp">
+			<a href="#" class="breadcrumbs__link">Вернуться на главную</a>
+		</div>
+	</div>
+</div>
+
+	<div class="news news--page">
+	<div class="container">
+		<div class="news__wrapp js-tabs-wrap">
+			<div class="news__tabs">
+				<div class="news__tab js-tab active">Новости</div>
+				<div class="news__tab js-tab">Блог компании</div>
+			</div>
+			<div class="news__content">
+				<div class="news__content-item js-tab-content active">
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Целый кузов по цене распила! Конструкторы авто по цене распила уже сегодня.</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Последние новости ввоза БУ авто и ЭРА-ГЛОНАСС</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Авто под полную пошлину 2001-2005 года выпуска</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Запрет правого руля с 1 января 2015 года</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Последние новости ввоза БУ авто и ЭРА-ГЛОНАСС</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Последние новости ввоза БУ авто и ЭРА-ГЛОНАСС</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Авто под полную пошлину 2001-2005 года выпуска</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Запрет правого руля с 1 января 2015 года</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Целый кузов по цене распила! Конструкторы авто по цене распила уже сегодня.</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Последние новости ввоза БУ авто и ЭРА-ГЛОНАСС</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Авто под полную пошлину 2001-2005 года выпуска</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Запрет правого руля с 1 января 2015 года</a>
+						</div>
+					
+					
+						<div class="news__bott">
+							<div class="news__number">
+								<span class="news__number-current">12</span>
+								<span class="news__number-text"> записей из </span>
+								<span class="news__number-all">120</span>
+							</div>
+							<div class="news__more-btn-wrapp">
+								<div class="news__more-btn">
+									<a href="#" class="news__more">Показать еще</a>
+								</div>
+							</div>
+							<ul class="news__pagination">
+								<li class="news__pagination-item">
+									<a href="#" class="news__pagination-link active">01</a>
+								</li>
+								<li class="news__pagination-item">
+									<a href="#" class="news__pagination-link">02</a>
+								</li>
+								<li class="news__pagination-item">
+									<a href="#" class="news__pagination-link">03</a>
+								</li>
+								<li class="news__pagination-item">
+									<a href="#" class="news__pagination-link">04</a>
+								</li>
+								<li class="news__pagination-item">
+									...
+								</li>
+								<li class="news__pagination-item">
+									<a href="#" class="news__pagination-link">10</a>
+								</li>
+							</ul>
+						</div>
+					
+				</div>
+				<div class="news__content-item js-tab-content">
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Целый кузов по цене распила! Конструкторы авто по цене распила уже сегодня.</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Последние новости ввоза БУ авто и ЭРА-ГЛОНАСС</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Авто под полную пошлину 2001-2005 года выпуска</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Целый кузов по цене распила! Конструкторы авто по цене распила уже сегодня.</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Последние новости ввоза БУ авто и ЭРА-ГЛОНАСС</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Авто под полную пошлину 2001-2005 года выпуска</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Целый кузов по цене распила! Конструкторы авто по цене распила уже сегодня.</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Последние новости ввоза БУ авто и ЭРА-ГЛОНАСС</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Авто под полную пошлину 2001-2005 года выпуска</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Целый кузов по цене распила! Конструкторы авто по цене распила уже сегодня.</a>
+						</div>
+					
+					
+						<div class="news__bott">
+							<div class="news__number">
+								<span class="news__number-current">12</span>
+								<span class="news__number-text"> записей из </span>
+								<span class="news__number-all">120</span>
+							</div>
+							<div class="news__more-btn-wrapp">
+								<div class="news__more-btn">
+									<a href="#" class="news__more">Показать еще</a>
+								</div>
+							</div>
+							<ul class="news__pagination">
+								<li class="news__pagination-item">
+									<a href="#" class="news__pagination-link active">01</a>
+								</li>
+								<li class="news__pagination-item">
+									<a href="#" class="news__pagination-link">02</a>
+								</li>
+								<li class="news__pagination-item">
+									<a href="#" class="news__pagination-link">03</a>
+								</li>
+								<li class="news__pagination-item">
+									<a href="#" class="news__pagination-link">04</a>
+								</li>
+								<li class="news__pagination-item">
+									...
+								</li>
+								<li class="news__pagination-item">
+									<a href="#" class="news__pagination-link">10</a>
+								</li>
+							</ul>
+						</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="links ">
+	<div class="container">
+		<div class="links__wrapp">
+			<div class="links__item">
+				<a href="#" class="links__link links__link--red">перейти в каталог</a>
+			</div>
+			<div class="links__item">
+				<a href="#" class="links__link links__link--font">Нужна помощь в выборе?</a>
+			</div>
+			<div class="links__item">
+				<a href="#" class="links__link">заказать звонок менеджера</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+
+<footer class="footer">
+  <div class="footer__outer">
+    <div class="container">
+      <div class="footer__wrap">
+        <div class="footer__holder footer__holder--left">
+          <div class="footer__row footer__row--contacts">
+            <div class="footer__col">
+              <span class="footer__title">Бесплатно по России</span>
+              <a href="tel: +788005504213" class="footer__contacts footer__contacts--free">8 (800) 550 42 13</a>
+            </div>
+          </div>
+          <div class="footer__row">
+            <div class="footer__col">
+              <div class="footer__top">
+                <span class="footer__title">Ежедневно с 10:00 до 19:00</span>
+                <span class="footer__info">т. <a href="tel: +79242324313" class="footer__contacts footer__contacts--phone">+7 (924) 232 43 13</a></span>
+                <span class="footer__info">т. <a href="tel: +78005504213" class="footer__contacts footer__contacts--phone">+7 (800) 550 42 13</a></span>
+              </div>
+              <div class="footer__bottom">
+                <span class="footer__info"><a href="mailto: salesautomarine25@yandex.ru" class="footer__contacts">salesautomarine25@yandex.ru</a></span>
+                <span class="footer__info"><a href="mailto: infoautomarine25@yandex.ru" class="footer__contacts">infoautomarine25@yandex.ru</a></span>
+              </div>
+            </div>
+            <div class="footer__col">
+              <div class="footer__top">
+                <span class="footer__title">Центральный офис:</span>
+                <span class="footer__info">690091, г. Владивосток</span>
+                <span class="footer__info">ул. Адмирала Фокина 8а, офис 22</span>
+              </div>
+              <div class="footer__bottom">
+                <span class="footer__info"><a href="#" class="footer__contacts">Показать офис на карте</a></span>
+                <span class="footer__info"><a href="#" class="footer__contacts">Написать менеджеру</a></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__row footer__row--social">
+            <div class="footer__col footer__social">
+              <ul class="footer__social-list">
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-facebook">
+                      <use xlink:href="#facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-instagram">
+                      <use xlink:href="#instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-vk">
+                      <use xlink:href="#vk"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-youtube">
+                      <use xlink:href="#youtube"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer__row">
+            <div class="footer__col footer__col--txt">
+              <span class="footer__txt">ООО "Автомарин25"</span>
+              <span class="footer__txt">Автомобили с аукционов Японии.</span>
+              <span class="footer__txt">Все права защищены.</span>
+            </div>
+            <div class="footer__col footer__col--txt">
+              <span class="footer__txt">Данный сайт носит исключительно информационный характер и не является публичной офертой</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer__holder footer__holder--right">
+          <div class="footer__row footer__row--nav">
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Авто под полную пошлину</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Распил и крапио</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Конструкторы</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Грузовики с ПТС</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Спецтехника</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Мототехника</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="" class="footer__link">О компании</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Наша команда</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Видеотрансляция офиса</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Преимущества</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Написать директору</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__row">
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Аукционы онлайн</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Статистика продаж</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">One Price стоянки</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Калькулятор распилов</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Расшифровка аук листа</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Полная пошлина</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Схема работы и оплаты</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Доставка в регионы РФ</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Гарантии компании</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Недавно купленные авто</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

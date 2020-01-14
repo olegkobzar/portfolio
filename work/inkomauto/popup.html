@@ -1,0 +1,894 @@
+<!doctype html>
+<html>
+<head>
+  
+    <meta charset="utf-8">
+    <title>Modals</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css?rel=16563">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+
+<div class="wrapper">
+
+  <div class="container">
+    <h2>POPUPS</h2>
+
+    <br>
+
+    <div>
+      <a data-fancybox data-src="#popup-cb" href="javascript:;">Callback</a>
+    </div>
+
+    <div>
+      <a data-fancybox data-src="#popup-test" href="javascript:;">Test drive</a>
+    </div>
+
+    <div>
+      <a data-fancybox data-src="#popup-credit" href="javascript:;">Кредит</a>
+    </div>
+
+    <div>
+      <a data-fancybox data-src="#popup-b" href="javascript:;">Бронь</a>
+    </div>
+
+    <div>
+      <a data-fancybox data-src="#popup-calc" href="javascript:;">Calculator</a>
+    </div>
+
+    <div>
+      <a data-fancybox data-src="#popup-config" href="javascript:;">Config</a>
+    </div>
+
+  </div>
+
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__col footer__col--left">
+				<div class="footer__logo">
+					<img src="pic/logo.png" alt="">
+				</div>
+				<span class="footer__descr">Обращаем ваше внимание на то, что данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями ч. 2 ст. 437 Гражданского кодекса Российской Федерации. Для получения подробной информации о стоимости автомобилей, пожалуйста, обращайтесь к менеджерам автосалона.</span>
+				<span class="footer__copyright">© 2018 Инком-Авто</span>
+			</div>
+			<div class="footer__col footer__col--nav">
+				<ul class="footer__nav">
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Автомобили</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Спецпредложения</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">С пробегом</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">TRADE-IN</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Кредит</a>
+					</li>
+				</ul>
+				<ul class="footer__nav">
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Отзывы</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">О нас</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Контакты</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__col footer__col--right">
+				<div class="footer__row">
+					<div class="footer__row-col">
+						<div class="footer__title-wrap">
+							<span class="footer__icon">
+								<svg class="icon-phone">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="footer__title">Без выходных: с 9-00 до 21-00</span>
+						</div>
+						<div class="footer__phone">
+							<a href="tel:+74959270176" class="footer__phone-link">+7 (495) 927 01 76</a>
+						</div>
+						<div class="footer__link-wrap">
+							<a href="#" class="footer__link">Обратный звонок</a>
+						</div>
+					</div>
+					<div class="footer__row-col">
+						<span class="footer__title">Бесплатно по России</span>
+						<div class="footer__phone">
+							<a href="tel:88005557277" class="footer__phone-link">8 800 555 72 77</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer__row">
+					<div class="footer__row-col">
+						<div class="footer__title-wrap">
+							<span class="footer__icon">
+								<svg class="icon-pin">
+									<use xlink:href="#pin"></use>
+								</svg>
+							</span>
+							<span class="footer__title">Рязанский проспект 7Д</span>
+						</div>
+						<div class="footer__link-wrap">
+							<a href="#" class="footer__link">Схема проезда</a>
+						</div>
+					</div>
+					<div class="footer__row-col">
+						<span class="footer__title footer__title--bold">Часы работы:</span>
+						<span class="footer__time-work">с 9:00 до 21:00, без выходных</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div class="popup popup-cb" id="popup-cb">
+
+  <div class="popup-cb__icon">
+    <svg>
+      <use xlink:href="#phone"></use>
+    </svg>
+  </div>
+
+  <form action="" class="popup__form">
+    <div class="popup__title popup__form-title">Обратный звонок</div>
+
+    <div class="popup__form-row">
+      <div class="popup__form-col">
+        <input name="input" type="text" placeholder="имя">
+      </div>
+      <div class="popup__form-col">
+        <input name="input" type="text" placeholder="телефон">
+      </div>
+    </div>
+
+    <div class="popup__form-submit">
+
+      <button type="submit" class="btn btn--default btn--bg"><span>перезвоните мне</span></button>
+    </div>
+
+  </form>
+</div>
+
+<div class="popup popup-test" id="popup-test">
+
+  <div class="popup-test__header"></div>
+
+  <div class="popup-test__body">
+    <div class="popup__title popup__form-title">Запись на тест-драйв</div>
+
+    <form action="" class="popup__form">
+      <div class="popup__form-row">
+        <div class="popup__form-col">
+          <input name="input" type="text" placeholder="имя">
+        </div>
+        <div class="popup__form-col">
+          <input name="input" type="text" placeholder="телефон">
+        </div>
+      </div>
+
+      <div class="popup__form-submit">
+        <button type="submit" class="btn btn--default btn--bg"><span>Записаться</span></button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="popup popup-credit" id="popup-credit">
+
+  <div class="popup__img">
+    <img src="pic/car/car-8.png" alt="car">
+  </div>
+
+  <div class="popup-test__body">
+    <div class="popup__name">Nissan X-Trail</div>
+    <div class="popup__type">Стандарт Плюс 2.5 (2018)</div>
+    <div class="popup__price">1 183 000 ₽</div>
+
+    <div class="popup__title popup-credit__title">Рассчитать кредит</div>
+    <form action="" class="popup__form">
+      <div class="popup__form-row">
+        <div class="popup__form-col">
+          <input name="input" type="text" placeholder="имя">
+        </div>
+        <div class="popup__form-col">
+          <input name="input" type="text" placeholder="телефон">
+        </div>
+      </div>
+
+      <div class="popup__form-submit">
+        <button type="submit" class="btn btn--default btn--bg"><span>отправить заявку</span></button>
+      </div>
+    </form>
+
+    <div class="popup-credit__time">
+      <div class="popup-credit__time-icon">
+        <svg>
+          <use xlink:href="#clock"></use>
+        </svg>
+      </div>
+      <div class="popup-credit__time-txt">Одобрение за 30 минут</div>
+    </div>
+  </div>
+
+  <div class="popup-credit__footer">
+    <div class="expres-credit__stat">
+      <div class="expres-credit__stat-item">
+        <span class="expres-credit__stat-number">390 458</span>
+        <span class="expres-credit__stat-text">заявок уже одобрено</span>
+      </div>
+      <div class="expres-credit__stat-item">
+        <span class="expres-credit__stat-number">3,9%</span>
+        <span class="expres-credit__stat-text">минимальная ставка кредитования</span>
+      </div>
+      <div class="expres-credit__stat-item">
+        <span class="expres-credit__stat-number">50 000 P</span>
+        <span class="expres-credit__stat-text">скидка при наличии первоначального взноса</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="popup popup-b" id="popup-b">
+
+  <div class="popup__img">
+    <img src="pic/car/car-8.png" alt="car">
+  </div>
+
+  <div class="popup-test__body">
+    <div class="popup__name">Nissan X-Trail</div>
+    <div class="popup__type">Стандарт Плюс 2.5 (2018)</div>
+    <div class="popup__price">1 183 000 ₽</div>
+
+    <div class="popup__title popup-b__title">Забронировать</div>
+    <form action="" class="popup__form">
+      <div class="popup__form-row">
+        <div class="popup__form-col">
+          <input name="input" type="text" placeholder="имя">
+        </div>
+        <div class="popup__form-col">
+          <input name="input" type="text" placeholder="телефон">
+        </div>
+      </div>
+
+      <div class="popup__form-submit">
+        <button type="submit" class="btn btn--default btn--bg"><span>Забронировать</span></button>
+      </div>
+    </form>
+
+    <div class="popup-b__timer">
+      <div class="brand__discount">
+        <div class="brand__discount-item">
+          <div class="brand__benefit">
+            <svg class="brand__benefit-icon">
+              <use xlink:href="#percent"></use>
+            </svg>
+            <div class="brand__benefit-title">
+              <span>Скидки до </span>
+              <span class="red"><strong>430 000 ₽</strong></span>
+            </div>
+            <div class="brand__benefit-title">
+              <strong>до 15 октября</strong>
+            </div>
+          </div>
+        </div>
+        <div class="brand__discount-item">
+          <div class="brand-timer js-brand-timer" data-finish="2019/01/01 12:34:56">
+            <div class="brand-timer__item">
+              <div class="brand-timer__time days">
+                <div class="brand-timer__time-item"><span>1</span></div>
+                <div class="brand-timer__time-item"><span>9</span></div>
+              </div>
+              <div class="brand-timer__title">дней</div>
+            </div>
+
+            <div class="brand-timer__item">
+              <div class="brand-timer__time hours">
+                <div class="brand-timer__time-item"><span>0</span></div>
+                <div class="brand-timer__time-item"><span>1</span></div>
+              </div>
+              <div class="brand-timer__title">часов</div>
+            </div>
+
+            <div class="brand-timer__item">
+              <div class="brand-timer__time minutes">
+                <div class="brand-timer__time-item"><span>4</span></div>
+                <div class="brand-timer__time-item"><span>5</span></div>
+              </div>
+              <div class="brand-timer__title">минут</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-b__footer">
+    <div class="popup-b__footer-holder">
+      <div class="popup-b__footer-title">Комплект зимней резины в подарок</div>
+      <div class="popup-b__footer-sub">При покупке нового автомобиля в нашем автослаоне</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="popup popup-calc" id="popup-calc">
+  <div class="popup-calc__header">
+    <div class="credit-calc__top">
+      <div class="credit-calc__top-title">Кредитный калькулятор</div>
+      <div class="credit-calc__top-cell">
+        <div class="ccwrap">
+          <svg class="icon-calc-bag">
+            <use xlink:href="#calc-bag"></use>
+          </svg>
+          Возможно досрочное погашение кредита без штрафа
+        </div>
+      </div>
+      <div class="credit-calc__top-cell">
+        <div class="ccwrap">
+          <svg class="icon-car-magic">
+            <use xlink:href="#car-magic"></use>
+          </svg>
+          Возможность сдать свой авто в качестве первоначального взноса
+        </div>
+      </div>
+      <div class="credit-calc__top-cell">
+        <div class="ccwrap">
+          <svg class="icon-docs">
+            <use xlink:href="#docs"></use>
+          </svg>
+          Необходимые документы: паспорт, водительские права
+        </div>        
+      </div>
+    </div>
+  </div>
+  <div class="popup-calc__body">
+    <div class="popup-calc__body-left">
+      <div class="popup-calc__car">
+        <div class="popup-calc__car-img">
+          <img src="pic/car/car-7.png" alt="car">
+        </div>
+        <div class="popup-calc__car-select">
+          <div class="popup-calc__car-title">Комплектация</div>
+          <div class="js-select-wrap select-wrap">
+            <select name="year" class="js-select">
+              <option value="">Стандарт 2.0 (2018) | 6 AT, 150 л.с. (1521000 руб.)</option>
+              <option value="">Стандарт 2.0 (2018) | 6 AT, 150 л.с. (1521000 руб.)</option>
+              <option value="">Стандарт 2.0 (2018) | 6 AT, 150 л.с. (1521000 руб.)</option>
+              <option value="">Стандарт 2.0 (2018) | 6 AT, 150 л.с. (1521000 руб.)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="popup-calc__slider">
+        <div class="credit-calc__slider">
+          <div class="credit-calc__slider-title">Первоначальный взнос <b>10%</b></div>
+          <div class="credit-calc__slider-main js-credit-slider" data-min="0" data-max="60"></div>
+          <div class="credit-calc__slider-ruler">
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text credit-calc__slider-ruler-text--left">0%</div>
+              <div class="credit-calc__slider-ruler-text">10%</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">20%</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">30%</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">40%</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">50%</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">60%</div>
+            </div>
+          </div>
+        </div>
+        <div class="credit-calc__slider">
+          <div class="credit-calc__slider-title">Срок кредита <b>5 лет</b></div>
+          <div class="credit-calc__slider-main js-credit-slider" data-min="1" data-max="7"></div>
+          <div class="credit-calc__slider-ruler">
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text credit-calc__slider-ruler-text--left">1</div>
+              <div class="credit-calc__slider-ruler-text">2</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">3</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">4</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">5</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">6</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">7</div>
+            </div>
+          </div>
+        </div>
+        <div class="credit-calc__slider">
+          <div class="credit-calc__slider-title inf">Программа “Старт” <b>25%</b>
+            <div class="discount-item__info"
+                 title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptatem!">?
+            </div>
+          </div>
+          <div class="credit-calc__slider-main js-credit-slider" data-min="1" data-max="7"></div>
+          <div class="credit-calc__slider-ruler">
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text credit-calc__slider-ruler-text--left">1</div>
+              <div class="credit-calc__slider-ruler-text">0</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">10</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">20</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">30</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">50</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">60</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-calc__body-right">
+      <div class="popup-calc__info">
+        <div class="popup-calc__info-title">Ежемесячный платеж</div>
+        <div class="popup-calc__info-val">29 616.86 ₽</div>
+      </div>
+      <div class="popup-calc__info">
+        <div class="popup-calc__info-title">Сумма кредита</div>
+        <div class="popup-calc__info-val">919 200.00 ₽</div>
+      </div>
+      <div class="popup-calc__info">
+        <div class="popup-calc__info-title">Процентная ставка</div>
+        <div class="popup-calc__info-val">9,9%</div>
+      </div>
+      <form action="#" class="popup-calc__form">
+        <div class="popup-calc__form-row">
+          <input class="input--white" name="input" type="text" placeholder="ваше имя">
+        </div>
+        <div class="popup-calc__form-row">
+          <input class="input--white" name="input" type="text" placeholder="номер телефона">
+        </div>
+        <div class="popup-calc__form-submit">
+          <button class="btn btn--default">отправить заявку на кредит</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup-config" id="popup-config">
+  <div class="config js-config">
+  <div class="config__header">Конфигуратор Nissan X-trail</div>
+  <ol class="config__caption">
+    <li class="config__caption-item">КОМПЛЕКТАЦИИ</li>
+    <li class="config__caption-item">ДВИГАТЕЛЬ</li>
+    <li class="config__caption-item">ЦВЕТ</li>
+    <li class="config__caption-item">ДОП. ОПЦИИ</li>
+    <li class="config__caption-item">АКЦИЯ</li>
+    <li class="config__caption-item">ВАШ АВТО</li>
+  </ol>
+
+  <div class="config__content">
+    <div class="config__content-left">
+      <div class="config__title">Выберите комплектацию</div>
+      <ul class="config__radio">
+        <li class="config__radio-item">
+          <label class="radio radio--sm">
+            <input type="radio" checked name="radio_11">
+            <span>Active </span>
+          </label>
+        </li>
+        <li class="config__radio-item">
+          <label class="radio radio--sm">
+            <input type="radio" name="radio_11">
+            <span>Active  Plus</span>
+          </label>
+        </li>
+        <li class="config__radio-item">
+          <label class="radio radio--sm">
+            <input type="radio" name="radio_11">
+            <span>Comfort</span>
+          </label>
+        </li>
+        <li class="config__radio-item">
+          <label class="radio radio--sm">
+            <input type="radio" name="radio_11">
+            <span>Elegance</span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="config__btn js-next">
+        <button class="btn">ДАлее</button>
+      </div>
+    </div>
+    <div class="config__content-right js-custom-scroll">
+      <div class="config__content-scroll">
+        <div class="config-static">
+          <h2>Active</h2>
+          <h3>ИНТЕРЬЕР</h3>
+          <p>Складывающаяся по частям спинка заднего сиденья 60:40 </p>
+          <p>Зеркальца в солнцезащитных козырьках</p>
+          <p>Карман в спинке кресла переднего пассажира </p>
+          <p>Карманы в задних дверях </p>
+          <p>Две розетки 12В на центральной консоли</p>
+          <h3>ЭКСТЕРЬЕР</h3>
+          <p>Складывающаяся по частям спинка заднего сиденья 60:40 </p>
+          <p>Зеркальца в солнцезащитных козырьках</p>
+          <p>Карман в спинке кресла переднего пассажира </p>
+          <p>Складывающаяся по частям спинка заднего сиденья 60:40 </p>
+          <p>Зеркальца в солнцезащитных козырьках</p>
+          <p>Карман в спинке кресла переднего пассажира </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="config__content">
+    <div class="config__content-left">
+      <div class="config__title">Выберите двигатель</div>
+      <ul class="config__radio">
+        <li class="config__radio-item">
+          <label class="radio radio--sm">
+            <input type="radio" checked name="radio_12">
+            <span>100 Л.С. 1.4 MT</span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="config__btn js-next">
+        <button class="btn">ДАлее</button>
+      </div>
+    </div>
+    <div class="config__content-right js-custom-scroll">
+      <div class="config__content-scroll">
+        <div class="config-static">
+          <h2>1.4 МТ</h2>
+          <h3>-</h3>
+          <p>Мощность 100 л.с.</p>
+          <p><strong>ЦЕНА: 514 000 РУБ</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="config__content">
+    <div class="config__content-left">
+      <div class="config__title">Выберите цвет</div>
+      <div class="config__color">
+        <div class="auto-top__color-slider ">
+          <div class="auto-top__color-slider-item">
+            <a href="#" class="auto-top__color-link" style="background-color: #737c69"
+               data-picture="pic/car/car-50.png"></a>
+          </div>
+          <div class="auto-top__color-slider-item">
+            <a href="#" class="auto-top__color-link auto-top__color-link--border" style="background-color: #f5f5f5"
+               data-picture="pic/car/car-51.png"></a>
+          </div>
+          <div class="auto-top__color-slider-item">
+            <a href="#" class="auto-top__color-link" style="background-color: #020202"
+               data-picture="pic/car/car-9.png"></a>
+          </div>
+          <div class="auto-top__color-slider-item active">
+            <a href="#" class="auto-top__color-link" style="background-color: #bababa"
+               data-picture="pic/car/car-8.png"></a>
+          </div>
+          <div class="auto-top__color-slider-item">
+            <a href="#" class="auto-top__color-link" style="background-color: #5b7182"
+               data-picture="pic/car/car-7.png"></a>
+          </div>
+          <div class="auto-top__color-slider-item">
+            <a href="#" class="auto-top__color-link" style="background-color: #6b6b6c"
+               data-picture="pic/car/car-9.png"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="config__btn js-next">
+        <button class="btn">ДАлее</button>
+      </div>
+    </div>
+    <div class="config__content-right js-custom-scroll">
+      <div class="config__content-scroll">
+
+        <div class="config__img">
+          <img src="pic/car/car-9.png" alt="car">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="config__content">
+    <div class="config__content-left">
+      <div class="config__title">Выберите опции</div>
+      <ul class="config__radio">
+        <li class="config__radio-item">
+          <label class="checkbox checkbox--dark">
+            <input type="checkbox" checked="" name="check11">
+            <span>Пакет Мультимедиа</span>
+          </label>
+        </li>
+        <li class="config__radio-item">
+          <label class="checkbox checkbox--dark">
+            <input type="checkbox" name="check11">
+            <span>Пакет Комфорт</span>
+          </label>
+        </li>
+        <li class="config__radio-item">
+          <label class="checkbox checkbox--dark">
+            <input type="checkbox" name="check11">
+            <span>Пакет Освещение</span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="config__btn js-next">
+        <button class="btn">ДАлее</button>
+      </div>
+    </div>
+    <div class="config__content-right js-custom-scroll">
+      <div class="config__content-scroll">
+        <div class="config-static">
+          <h2>Вы выбрали</h2>
+          <h3>
+            <span>Пакет Мультимедиа </span>
+            <span class="c-blue"><span class="nowrap">+ 55 000 руб</span></span>
+          </h3>
+
+          <ul>
+            <li>Мультимедийная система</li>
+            <li>Камера заднего вида</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="config__content">
+    <div class="config__content-left">
+      <div class="config__title">Выберите акции</div>
+
+      <div class="config__content-title">Подарки и предложения</div>
+      <ul class="config__radio">
+        <li class="config__radio-item">
+          <label class="radio radio--sm">
+            <input type="radio" checked name="radio_16">
+            <span>Гироскутер</span>
+          </label>
+        </li>
+        <li class="config__radio-item">
+          <label class="radio radio--sm">
+            <input type="radio" name="radio_16">
+            <span>Комплект зимней резины</span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="config__content-title">выгода при покупке</div>
+      <ul class="config__radio">
+        <li class="config__radio-item">
+          <label class="checkbox checkbox--dark">
+            <input type="checkbox" checked="" name="check16">
+            <span>Выгода за покупку в кредит</span>
+          </label>
+        </li>
+        <li class="config__radio-item">
+          <label class="checkbox checkbox--dark">
+            <input type="checkbox" name="check11">
+            <span>Выгода за покупку в кредит с первоначальным взносом</span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="config__btn js-next">
+        <button class="btn">ДАлее</button>
+      </div>
+    </div>
+    <div class="config__content-right js-custom-scroll">
+      <div class="config__content-scroll">
+        <div class="config-static">
+          <h2>Вы выбрали</h2>
+          <h3>Подарок</h3>
+
+          <ul>
+            <li>Гироскутер</li>
+          </ul>
+
+          <h3>выгода за покупку в кредит</h3>
+          <p>Скидка 50 000 руб</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="config__content">
+    <div class="config__content-left config__last">
+
+      <div class="config__last-img">
+        <img src="pic/car/car-8.png" alt="car">
+      </div>
+
+      <div class="config__title">Зарезервируйте свой автомобиль</div>
+
+      <form action="#" class="config__form">
+
+        <div class="config__form-row">
+          <input name="input" type="text" placeholder="имя">
+        </div>
+        <div class="config__form-row">
+          <input name="input" type="text" placeholder="телефон">
+        </div>
+        <div class="config__form-submit">
+          <div class="config__btn config__btn-last">
+            <button class="btn">зарезервировать</button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+    <div class="config__content-right js-custom-scroll">
+      <div class="config__content-scroll">
+        <div class="config__cost">Итоговая цена: <span class="nowrap">1 466 000&nbsp;₽</span></div>
+        <table class="config__table">
+          <tbody>
+          <tr>
+            <td>комплектация</td>
+            <td>Стандарт</td>
+          </tr>
+          <tr>
+            <td>ДВИГАТЕЛЬ И КПП</td>
+            <td>2.0 150 Л.С. 6AT 2WD</td>
+          </tr>
+          <tr>
+            <td>цвет</td>
+            <td>
+              <span>Серебристый металлик &nbsp;</span>
+              <a href="#" class="auto-top__color-link" style="background-color: #bababa"
+                 data-picture="pic/car/car-8.png"></a>
+            </td>
+          </tr>
+          <tr>
+            <td>дополнительные опции</td>
+            <td>
+              <div>Пакет Мультимедиа <span class="nowrap">+55 000 руб</span></div>
+              <div>Пакет Освещение <span class="nowrap">+30 000 руб</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Акции</td>
+            <td>
+              <div>Подарок Гироскутер</div>
+              <div>Выгода за кредит - <span class="nowrap">50 000 руб</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Акции</td>
+            <td>
+              <div>Подарок Гироскутер</div>
+              <div>Подарок Гироскутер</div>
+              <div>Подарок Гироскутер</div>
+              <div>Выгода за кредит - <span class="nowrap">50 000 руб</span></div>
+              <div>Выгода за кредит - <span class="nowrap">50 000 руб</span></div>
+              <div>Выгода за кредит - <span class="nowrap">50 000 руб</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Акции</td>
+            <td>
+              <div>Подарок Гироскутер</div>
+              <div>Выгода за кредит - 50 000 руб</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Акции</td>
+            <td>
+              <div>Подарок Гироскутер</div>
+              <div>Выгода за кредит - <span class="nowrap">50 000 руб</span></div>
+              <div>Выгода за кредит - <span class="nowrap">50 000 руб</span></div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<script src="js/vendor.js?rel=16563"></script>
+
+
+<script src="pages-list.js"></script>
+
+
+<script src="js/main.js?rel=16563"></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,732 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Об услугах</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+	
+	<div class="wrapper">
+
+		<header class="header ">
+	<div class="container">
+		<div class="header__wrapp">
+			<div class="header__logo">
+				<a href="#" class="header__logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="header__desktop-btn js-btn-menu">
+				<span class="header__line"></span>
+				<span class="header__line"></span>
+				<span class="header__line"></span>
+			</div>
+			<div class="header__wrapp-mobile js-wrapp-mobile js-wrapp-nav">
+				<div class="header__wrapp-mobile-overflow">
+					<div class="header__contact">
+						<div class="header__phone">
+							<a href="tel:+79117008737" class="header__phone-link">+7 (911) 700-87-37</a>
+						</div>
+						<div class="header__callback">
+							<a data-fancybox data-src="#popup-callback" href="javascript:;" class="header__callback-link">Заказать обратный звонок</a>
+						</div>
+					</div>
+					<div class="header__center">
+						<nav class="header__nav js-nav">
+							<div class="header__nav-wrapp">
+								<div class="header__close-menu js-close"></div>
+								<ul class="header__list">
+									<li class="header__item">
+										<a href="#" class="header__link">Главная</a>
+									</li>
+									<li class="header__item sub js-item">
+										<a class="header__link js-open-main">Услуги</a>
+										<div class="header__submenu js-main">
+											<ul class="header__submenu-list">
+												<li class="header__submenu-item sub js-sub-item">
+													<a class="header__submenu-link js-open-sub">КАДАСТРОВЫЕ</a>
+													<div class="header__submenu-second js-sub">
+														<ul class="header__submenu-second-list">
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Межевой план</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Технический план</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Акт обследования</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Охранные зоны</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Кадастровая съемка</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Исправление реестровой ошибки</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Схема земельного участка</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Вынос границ земельного участка на местность</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Кадастровый учет и регистрация прав</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Комплексные кадастровые работы</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Карта план территории</a>
+															</li>
+
+														</ul>
+													</div>
+												</li>
+												<li class="header__submenu-item sub js-sub-item">
+													<a class="header__submenu-link js-open-sub">ГЕОДЕЗИЧЕСКИЕ</a>
+													<div class="header__submenu-second js-sub">
+														<ul class="header__submenu-second-list">
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Топографическая съемка</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Геодезическое сопровождение строительства</a>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="header__submenu-item sub js-sub-item">
+													<a class="header__submenu-link js-open-sub">ПРОЕКТНЫЕ</a>
+													<div class="header__submenu-second js-sub">
+														<ul class="header__submenu-second-list">
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Проект перепланировки</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Соглассование проектов перепланировки</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Проект межевания территории</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Проект перепланировки территории</a>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="header__submenu-item sub js-sub-item">
+													<a class="header__submenu-link js-open-sub">Обмерные работы</a>
+													<div class="header__submenu-second js-sub">
+														<ul class="header__submenu-second-list">
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Обмер внутренних помещений</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">СОбмер строительных конструкций</a>
+															</li>
+															<li class="header__submenu-second-item">
+																<a href="#" class="header__submenu-second-link">Замеры параметров зданий</a>
+																</li>
+															</ul>
+														</div>
+													</li>
+
+													<li class="header__submenu-item sub js-sub-item">
+														<a class="header__submenu-link js-open-sub">ПРОЧИЕ</a>
+														<div class="header__submenu-second js-sub">
+															<ul class="header__submenu-second-list">
+																<li class="header__submenu-second-item">
+																	<a href="#" class="header__submenu-second-link">Присвоение адреса</a>
+																</li>
+																<li class="header__submenu-second-item">
+																	<a href="#" class="header__submenu-second-link">Инженерно-техническая экспертиза водного транспорта</a>
+																</li>
+															</ul>
+														</div>
+													</li>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li class="header__item">
+										<a href="#" class="header__link">Кейсы</a>
+									</li>
+									<li class="header__item">
+										<a href="#" class="header__link">Цены</a>
+									</li>
+									<li class="header__item">
+										<a href="#" class="header__link">О копании</a>
+									</li>
+									<li class="header__item">
+										<a href="#" class="header__link">Новости</a>
+									</li>
+									<li class="header__item">
+										<a href="#" class="header__link">Контакты</a>
+									</li>
+									<li class="header__item">
+										<a href="#" class="header__link">Об услугах</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+						<div class="header__social">
+							<ul class="header__social-list">
+								<li class="header__social-item">
+									<a href="#" class="header__social-link">
+										<svg class="icon-instagram">
+											<use xlink:href="#instagram"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="header__social-item">
+									<a href="#" class="header__social-link">
+										<svg class="icon-vk">
+											<use xlink:href="#vk"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="header__social-item">
+									<a href="#" class="header__social-link">
+										<svg class="icon-facebook">
+											<use xlink:href="#facebook"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
+		<div class="name">
+	<div class="container">
+		<div class="name__wrapp name__wrapp--about-services" data-name="Об услугах">
+			<h3 class="name__caption wow emergence" data-wow-delay="1s">Об услугах</h3>
+			<span class="name__descr wow emergence" data-wow-delay="1.3s">Подробнее об услугах</span>
+		</div>
+	</div>
+</div>
+		<div class="container js-wrapp">
+			<div class="mobile-sidebar js-sidebar-btn"></div>
+			<aside class="sidebar">
+				<div class="sidebar-menu wow bounceInLeft" data-wow-delay="1s">
+	<span class="sidebar-menu__caption active">Кадастровые работы</span>
+	<ul class="sidebar-menu__list">
+		<li class="sidebar-menu__item">
+			<a class="sidebar-menu__link submenu">Межевой план</a>
+			<ul class="sidebar-menu__sublist js-submenu-sidebar">
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Образование земельного участка</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Разделение земельного участка</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Объединение земельного участка</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Перераспределение земельных участков</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Выдел земельного участка</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Уточнение границ и площади земельного участка</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Исправление кадастровой ошибки</a>
+				</li>
+			</ul>
+		</li>
+		<li class="sidebar-menu__item">
+			<a class="sidebar-menu__link submenu">Технический план</a>
+			<ul class="sidebar-menu__sublist js-submenu-sidebar">
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Здания</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Сооружения</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Квартиры</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Нежилого помещения</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Части помещения</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Гаража</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Садового дома</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Индивидуального жилого дома</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Многоквартирного жилого дома</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Машино-места</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Линейного объекта</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Объекта незавершенного строительства</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Исправление кадастровой ошибки</a>
+				</li>
+			</ul>
+		</li>
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Акт обследования</a>
+		</li>
+		<li class="sidebar-menu__item">
+			<a class="sidebar-menu__link submenu">Охранные зоны</a>
+			<ul class="sidebar-menu__sublist js-submenu-sidebar">
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Промышленных объектов</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Линейных объектов</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Объектов культурного наследия</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Водных объектов</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Санитарно-защитная зона</a>
+				</li>
+			</ul>
+		</li>
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Кадастровая съемка</a>
+		</li>
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Исправление реестровой ошибки</a>
+		</li>
+		<li class="sidebar-menu__item">
+			<a class="sidebar-menu__link submenu">Схема земельного участка</a>
+			<ul class="sidebar-menu__sublist js-submenu-sidebar">
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Схема расположения земельного участка на кадастровом плане территории</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Схема планировочной организации земельного участка</a>
+				</li>
+			</ul>
+		</li>
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Вынос границ земельного участка на местность</a>
+		</li>
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Кадастровый учет и регистрация прав</a>
+		</li>
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Комплексные кадастровые работы</a>
+		</li>
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Карта-план территории</a>
+		</li>
+	</ul>
+	<span class="sidebar-menu__caption">Геодезические работы</span>
+	<ul class="sidebar-menu__list">
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Топографическая съемка</a>
+		</li>
+		<li class="sidebar-menu__item">
+			<a class="sidebar-menu__link submenu">Геодезическое сопровождение строительства</a>
+			<ul class="sidebar-menu__sublist js-submenu-sidebar">
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Геодезическая разбивочная основа для строительства</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Разбивочные работы внутриплощадочных объектов</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Создание внутренней разбивочной сети здания, сооружения, оборудования</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Контроль точности геометрических параметров объектов</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Контрольно-исполнительная съемка подземных сетей</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Мониторинг деформаций</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<span class="sidebar-menu__caption">Проектные работы</span>
+	<ul class="sidebar-menu__list">
+		<li class="sidebar-menu__item">
+			<a class="sidebar-menu__link submenu">Проект перепланировки</a>
+			<ul class="sidebar-menu__sublist js-submenu-sidebar">
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Перепланировка квартиры</a>
+				</li>
+				<li class="sidebar-menu__subitem">
+					<a href="#" class="sidebar-menu__sublink">Перепланировка нежилого помещения</a>
+				</li>
+			</ul>
+		</li>
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Согласование проектов перепланировки</a>
+		</li>
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Проект межевания территории</a>
+		</li>
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Проект планировки территории</a>
+		</li>
+	</ul>
+	<span class="sidebar-menu__caption">Обмерные работы</span>
+	<ul class="sidebar-menu__list">
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Обмер внутренних помещений</a>
+		</li>
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Обмер строительных конструкций</a>
+		</li>
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Замеры параметров здания</a>
+		</li>
+	</ul>
+	<span class="sidebar-menu__caption">Прочие</span>
+	<ul class="sidebar-menu__list">
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Присвоение адреса</a>
+		</li>
+		<li class="sidebar-menu__item">
+			<a href="#" class="sidebar-menu__link">Инженерно-техническая экспертиза водного транспорта</a>
+		</li>
+	</ul>
+</div>
+			</aside>
+			<div class="content">
+				<div class="description box">
+	<h5 class="description__caption wow emergence" data-wow-delay="1s">Кадастровые работы Межевание земельного участка</h5>
+	<div class="description__wrapp">
+		<span class="description__title">Технический план</span>
+		<p class="description__text">В 2016 г. в результате проведения геологоразведочных работ открыто 13 месторождений и 127 новых залежей с суммарными запасами 207 млн т нефтяного эквивалента. Замещение запасов углеводородов промышленных категорий ABC1 составило 354 млн т н.э или 126% от объемов добычи на территории РФ. Коэффициент восполнения добычи новыми запасами значительно превышает 100 % на протяжении более, чем десяти  лет.</p>
+		<p class="description__text">Все работы по программе выполнены на высоком уровне. Завершено испытанием 85 поисково-разведочных скважин, пройдено 222 тыс. м горных пород. Успешность поисково-разведочного бурения составила 79 %. Выполнено 2,8 тыс. пог. км сейсморазведочных работ 2D (+27 % к уровню 2015 г.), 7,9 тыс. кв. км сейсморазведочных работ 3D (+29 % к уровню 2015г.) </p>
+	</div>
+	<div class="description__wrapp">
+		<span class="description__title">Западная Сибирь</span>
+		<p class="description__text">С целью определения новых направлений поисков и разведки была начата работа по ряду целевых инновационных проектов. Исследования направлены на разработку методик локализации, оценки подсчетных параметров и обоснование технологий освоения залежей углеводородов в низкопроницаемых и нетрадиционных коллекторах. Объекты исследований – отложения баженовской, березовской и тюменской свит. В результате испытания скважин получены  результаты, позволяющие рассчитывать на новые открытия. </p>
+		<p class="description__text">Прирост запасов в Западной Cибири составил 133 млн т нефти и конденсата и 87 млрд куб. м газа. Завершено испытаниями 37 поисково-разведочных скважин с успешностью 89 %. Открыто 45 новых залежей с суммарными запасами АВ1С1+В2С2–59 млн т н. э.</p>
+	</div>
+	<div class="description__wrapp-img">
+		<div class="description__img">
+			<div class="description__inner wow emergence" data-wow-delay=".5s" style="background-image: url(pic/services/services-2.jpg);"></div>
+		</div>
+		<div class="description__img">
+			<div class="description__inner wow emergence" data-wow-delay=".5s" style="background-image: url(pic/services/services-3.jpg);"></div>
+		</div>
+	</div>
+</div>
+			</div>
+		</div>
+		
+	</div>
+
+<div class="popup-callback" id="popup-callback">
+	<div class="popup-callback__holder">
+		<span class="popup-callback__title">
+			Заказать звонок
+		</span>
+		<span class="popup-callback__desc">
+			Оставьте свой номер телефона и мы свяжемся с Вами в ближайшее время! 
+		</span>
+		<div class="popup-callback__inner">
+			<form action="ajax-form.php" id="first" class="popup-callback__form js-ajax-form" method="post">
+				<div class="popup-callback__form-box">
+					<input type="text" name="firstname" placeholder="Ваше Имя">
+				</div>
+				<div class="popup-callback__form-box">
+					<input class="submit-phone" type="tel" name="phone" placeholder="Номер телефона">
+				</div>
+				
+				<div class="popup-callback__form-box">
+					<button class="btn btn--yellow" type="submit">Заказать обратный звонок</button>
+				</div>
+				<div class="popup-callback__form-box">
+					<label class="checkbox popup-callback__checkbox">
+						<input type="checkbox" name="check" checked>
+						<span>Оставля свои персональные данные на сайте, Вы солашаетесь с <a href="#">Политикой конфиденциальности</a> компании</span>
+					</label>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="popup-callback" id="popup-order">
+	<div class="popup-callback__holder">
+		<span class="popup-callback__title">
+			Заказать
+		</span>
+		<span class="popup-callback__desc">
+			Оставьте свой номер телефона и мы свяжемся с Вами в ближайшее время! 
+		</span>
+		<div class="popup-callback__inner">
+			<form action="ajax-form.php" id="second" class="popup-callback__form js-ajax-form" method="post">
+				<div class="popup-callback__form-box">
+					<input type="text" name="firstname" placeholder="Ваше Имя">
+				</div>
+				<div class="popup-callback__form-box">
+					<input class="submit-phone" type="tel" name="phone" placeholder="Номер телефона">
+				</div>
+				
+					<div class="popup-callback__form-box">
+						<input type="email" name="email" placeholder="Ваш email">
+					</div>
+					<div class="popup-callback__form-box">
+						<textarea class="popup-callback__textarea" name="message" placeholder="Дополнительная информация"></textarea>
+					</div>
+				
+				<div class="popup-callback__form-box">
+					<button class="btn btn--yellow" type="submit">Заказать</button>
+				</div>
+				<div class="popup-callback__form-box">
+					<label class="checkbox popup-callback__checkbox">
+						<input type="checkbox" name="check" checked>
+						<span>Оставля свои персональные данные на сайте, Вы солашаетесь с <a href="#">Политикой конфиденциальности</a> компании</span>
+					</label>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__holder">
+			<div class="footer__nav">
+				<div class="footer__nav-item">
+					<span class="footer__item-title">Кадастровые работы</span>
+					<ul class="footer__list">
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Технический план
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Межевой план
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Акт обследования
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Выписка ЕГРН
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Кадастровый учет и регистрания прав
+							</a>
+						</li>
+					</ul>
+
+				</div>
+				<div class="footer__nav-item">
+					<span class="footer__item-title">Геодезические работы</span>
+					<ul class="footer__list">
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Технический план
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Межевой план
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Акт обследования
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Выписка ЕГРН
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Кадастровый учет и регистрания прав
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__nav-item">
+					<span class="footer__item-title">Проектные работы</span>
+					<ul class="footer__list">
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Технический план
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Межевой план
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Акт обследования
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Выписка ЕГРН
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#" class="footer__list-link">
+								Кадастровый учет и регистрания прав
+							</a>
+						</li>
+					</ul>
+					<span class="footer__item-title">Присвоение адреса</span>
+				</div>
+			</div>
+			<div class="footer__contacts">
+				<div class="footer__contacts-item">
+					<span class="footer__item-title">Связь с нами</span>
+					<ul class="footer__social">
+						<li class="footer__social-item">
+							<a href="#">
+								<svg class="icon-instagram">
+									<use xlink:href="#instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#">
+								<svg class="icon-vk">
+									<use xlink:href="#vk"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#">
+								<svg class="icon-facebook">
+									<use xlink:href="#facebook"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+					<div class="footer__phone">
+						<a href="tel: +79117008737" class="footer__phone-link" >
+							+7 (911) 700-87-37
+						</a>
+						<a data-fancybox data-src="#popup-callback" href="javascript:;" class="footer__phone-callback">Заказать обратный звонок</a>
+					</div>
+				</div>
+				<div class="footer__contacts-item">
+					<span class="footer__item-title">Адрес</span>
+					<span class="footer__address">
+						СПб, ул. Академика Павлова, д. 6, кор. 2
+					</span>
+					<a href="mailto: spbigp@mail.ru" class="footer__mail">
+						spbigp@mail.ru
+					</a>
+					<span class="footer__copy">
+						<a href="#">Политика конфиденциальности</a>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

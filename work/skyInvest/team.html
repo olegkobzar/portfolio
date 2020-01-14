@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Our Team</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+  <header class="header ">
+	<div class="container">
+		<div class="header__wrap">
+			<div class="header__logo">
+				<a href="#" class="header__logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="header__lang js-lang">
+				<span class="header__lang-text">ENG</span>
+				<ul class="header__lang-drop">
+					<li class="header__lang-item">
+						<a href="#" class="header__lang-link">RU</a>
+					</li>
+					<li class="header__lang-item">
+						<a href="#" class="header__lang-link">UA</a>
+					</li>
+					<li class="header__lang-item">
+						<a href="#" class="header__lang-link">FR</a>
+					</li>
+					<li class="header__lang-item">
+						<a href="#" class="header__lang-link">CA</a>
+					</li>
+				</ul>
+			</div>
+			<div class="header__btn-menu js-btn-menu">
+				<span class="header__btn-line"></span>
+				<span class="header__btn-line"></span>
+				<span class="header__btn-line"></span>
+			</div>
+			<div class="header__menu js-menu">
+				<span class="header__close js-close"></span>
+				<nav class="header__nav">
+					<ul class="header__list">
+						<li class="header__item">
+							<a href="#" class="header__link">OUR PARTNERS</a>
+						</li>
+						<li class="header__item">
+							<a href="#" class="header__link">OUR TEAM</a>
+						</li>
+						<li class="header__item">
+							<a href="#" class="header__link">CONTACTS</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header__mail-wrap">
+					<a href="mailto:INFO@SKYINVEST-GROUP.COM" class="header__mail-link">INFO@SKYINVEST-GROUP.COM</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+    
+    <div class="wrapper">
+			<div class="heading heading--bg" style="background-image: url(pic/bg/bg-05.jpg);">
+	<div class="container">
+		
+	</div>
+</div>
+
+
+    	
+    	<div class="team">
+	<div class="container">
+		<span class="team__title">Our Team</span>
+		<span class="team__subtitle">«Equip yourself for life, not solely for your own benefit but for the benefit of the whole community» Sir. John Monash</span>
+		<div class="team__wrap">
+			<div class="team__holder">
+				
+					<div class="team__item">
+						<div class="team__item-img">
+							<img src="pic/team/team-01.jpg" alt="">
+						</div>
+						<div class="team__item-desc">
+							<span class="team__item-name">Golovin Oleg</span>
+							<span class="team__item-pro">CEO</span>
+							<div class="team__item-text">Oleg Golovin is a CEO of SKY INVESTMENT GROUP LLC (SIG). In SIG he is responsible for strategic development of a company, for structuring M&A deals, for process of searching and attraction of investments, for control of allocation of partners investments.Before joining SIG Oleg was a CEO of OJSC «Financial Corporation Uralsib» and a vice – president of bank «Uralsib» with capital 7,2 bln.m.€. He was responsible for successful reorganization of group and banking problem assets, rapidly affectively attached another bank «BFA» which entered and raised a capital of holding structure Uralsib, controlled the Investment Bank (IB) Uralsib. Prior to Uralsib Oleg was an operating director at LLC «Upiter» strategic partner of insurance company «renaissance insurance». He made and controlled the centers of settlement and losses, center for assessment and calculation of losses, controlled group brokerage operations. In 2012 made a Fintech project for government of Russia. He received a bacalor and master degrees of economics in 2009 of Saint Petersburg Government University.</div>
+						</div>
+					</div>
+				
+					<div class="team__item">
+						<div class="team__item-img">
+							<img src="pic/team/team-02.jpg" alt="">
+						</div>
+						<div class="team__item-desc">
+							<span class="team__item-name">Petr Semenov</span>
+							<span class="team__item-pro">Managing Director</span>
+							<div class="team__item-text">Business development and investment banking. Has more than 15 years of working in strategic project management and corporate finance. Managed and settled the deals of long-term and project finance, mergers and acquisitions; held the international negotiations, performed the strategic business analysis and appraisal. Made some M&A project administration in RZHD (Russian Railways) group, worked as the Investment Director of group corporation. Worked in the AT Kearney internationalconsulting company and European Bank for Reconstruction and Development offices in Moscow. Graduated from Saint Petersburg State University-Department of Economics and also the Imperial College Business School’s Executive MBA program in London.</div>
+						</div>
+					</div>
+				
+					<div class="team__item">
+						<div class="team__item-img">
+							<img src="pic/team/team-03.jpg" alt="">
+						</div>
+						<div class="team__item-desc">
+							<span class="team__item-name">Ponamareva Anna</span>
+							<span class="team__item-pro">Managing Director and Head of Fintech</span>
+							<div class="team__item-text"><p>Ponamareva Anna serves as a managing director at SIG, focusing on banking audit and on domestic FinTech investments. She has worked with major financial institutions in Saint Petersburg on engagements that span growth strategy, operational efficiency, and risk management. Anna has knowledge of crediting legislation and statutory regulations, knowledge of company financial and economic activities. Writing of credit granting and insurance arrangements, loan documentation preparing, loan-debtors monitoring. Anna operates major corporate customer financing (credits, insurance arrangements, letters of credit), negotiates holding, loan application appraisal, company and/or group of companies financial and economic activities appraisal, credit applications protecting in the Operations Committee, quarterly loan portfolio monitoring.</p><p>GOU VPO (State Educational Institution of Higher Professional Education) «Saint Petersburg State Engineering and Economical University» “Business Studies and Finance” Department, majoring in Banking, was awarded the qualification of Economist in “Banking and Finance” GOU VPO (State Educational Institution of Higher Professional Education) «Saint Petersburg State Engineering and Economical University» “Business Studies and Finance” Department, majoring in Banking, was awarded the Bachelor’s degree of Economist in “Economics”</p></div>
+						</div>
+					</div>
+				
+					<div class="team__item">
+						<div class="team__item-img">
+							<img src="pic/team/team-04.jpg" alt="">
+						</div>
+						<div class="team__item-desc">
+							<span class="team__item-name">Albina Zayceva</span>
+							<span class="team__item-pro">Managing Director and Head of Financial services</span>
+							<div class="team__item-text"><p>As a Head of Financial Services, Albina supports all aspects of the deal lifecycle including pre-investment analysis and post-investment monitoring. Albina is responsible for the overall operations of the Finance department with particular emphasis on cash management, and investor and statutory financial reporting. As managing director she is a financial services support banking member who operates the orders of credit account opening (accrued charges, contingency reserve, caution money), loan granting and crediting of funds to repay interest payment for credit use ormobligations under the loan agreement. Controlling of loan repayment date/due date for interest by loan-debtors, commissions and other landing terms. Controlling of intend use of credit. Making the credit files for granting the loans. Taking measures to prevent the troubled loan portfolio, company financial and economic activities appraisal, carrying-out of the security agreements valuation. Participating in preventing the troubled loan portfolio (transaction processing and support for debt conversion, assignment of right).</p><p>Providing reporting forms of bank branch to The Central Bank of the Russian Federation for Saint-Petersburg according to The Central Bank of the Russian Federation acts of standards; keeping hard and soft reporting forms archive; reporting forms processing; strengthening of reporting forms processing methods by concept formation for making of reporting forms automation; furnishing of precise information by the due date; using all the changes for reporting forms processing and providing.</p></div>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+    	<div class="callback ">
+	<div class="container">
+		<div class="callback__outer">
+			<span class="callback__caption">Contact us</span>
+			<div class="callback__wrap">
+				<div class="callback__left">
+					<span class="callback__icon">
+						<svg class="icon-contact">
+							<use xlink:href="#contact"></use>
+						</svg>
+					</span>
+					<span class="callback__text">If you are interested in these projects contact us by this form</span>
+				</div>
+				<div class="callback__right">
+					<div class="callback__row">
+						<div class="callback__col">
+							<input type="text" placeholder="First Name">
+						</div>
+						<div class="callback__col">
+							<input type="tel" placeholder="Phone number">
+						</div>
+					</div>
+					<div class="callback__row">
+						<div class="callback__col">
+							<input type="text" placeholder="Last Name">
+						</div>
+						<div class="callback__col">
+							<input type="email" placeholder="E-mail">
+						</div>
+					</div>
+					<div class="callback__row callback__row--textarea">
+						<textarea name="" id="" placeholder="Message text "></textarea>
+					</div>
+					<div class="callback__bott">
+						<button class="btn" type="submit">Send</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+    	
+    </div>
+
+  <footer class="footer">
+	<div class="container">
+		<div class="footer__wrap">
+
+			<div class="footer__inner footer__inner--left">
+				<div class="footer__logo">
+					<a href="#" class="footer__logo-link">
+						<svg class="icon-logo">
+							<use xlink:href="#logo"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+
+			<div class="footer__inner footer__inner--right">
+				<span class="footer__desc">We are happy to talk and will get back to you as soon as possible.</span>
+			</div>
+		</div>
+
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+
+
+

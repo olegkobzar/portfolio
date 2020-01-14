@@ -1,0 +1,704 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Goods - Notebooks</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<svg class="icon-decor icon-decor-1">
+		<use xlink:href="#decor"></use>
+	</svg>
+	<svg class="icon-decor icon-decor-2">
+		<use xlink:href="#decor"></use>
+	</svg>
+	<svg class="icon-decor icon-decor-3">
+		<use xlink:href="#decor"></use>
+	</svg>
+
+	<header class="header">
+	<div class="container">
+		<div class="wrap">
+			<div class="logo">
+				<a href="#">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="country">
+				<div class="country-inner select-country js-country-wrap">
+					<select name="country" class="js-select-country" id="">
+						<option value="USA" selected>USA</option>
+						<option value="CA">CA</option>
+						<option value="UK">UK</option>
+						<option value="AU">AU</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="search search-head">
+	<div class="container">
+		<div class="wrap">
+			
+			<form action="">
+				<input type="text" placeholder="Put product name...">
+				<button class="btn">
+					<svg class="icon-search">
+						<use xlink:href="#search"></use>
+					</svg>
+				</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+	<div class="breadcrumbs">
+	<div class="container">
+		<ul>
+			
+				<li>
+					<a href="#">Catalog</a>
+				</li>
+			
+				<li>
+					<a href="#">Electronics</a>
+				</li>
+			
+			<li>Notebooks</li>
+		</ul>
+	</div>
+</div>
+
+	<div class="goods">
+		<div class="container">
+			<h1>Notebooks best offers</h1>
+			<div class="wrap">
+
+				<aside>
+					<div class="filter">
+	<form action="">
+		<div class="top">
+			<div class="filter-text js-filter-btn">
+				<span class="icon">
+					<svg class="icon-filter">
+						<use xlink:href="#filter"></use>
+					</svg>
+				</span>
+				<span class="text">Filter by</span>
+			</div>
+			<button class="btn" type="reset">Clear all</button>
+		</div>
+
+		<div class="wrap js-filter-wrap">
+
+			<div class="row js-row">
+				<div class="head js-head">
+					<div class="head-text">
+						<span class="icon">
+							<svg class="icon-budget">
+								<use xlink:href="#budget"></use>
+							</svg>
+						</span>
+						<span class="text">Budget</span>
+					</div>
+					<span class="result">$ <span class="js-value-min">25</span>-<span class="js-value-max">50</span></span>
+				</div>
+				<div class="change js-change-wrap change-range">
+					<div class="range js-range" data-min="10" data-max="9999" data-values="[25, 2500]"></div>
+					<div class="range-result">
+						<div>
+							<span>from</span>
+							<input type="text" readonly class="js-result-from">
+						</div>
+						<div>
+							<span>to</span>
+							<input type="text" readonly class="js-result-to">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row js-row">
+				<div class="head js-head">
+					<div class="head-text">
+						<span class="icon">
+							<svg class="icon-shipping">
+								<use xlink:href="#shipping"></use>
+							</svg>
+						</span>
+						<span class="text">Shipping</span>
+					</div>
+					<span class="result">free</span>
+				</div>
+				<div class="change js-change-wrap">
+					<ul>
+						<li>
+							<label class="radio">
+								<input type="radio" checked name="shipping">
+								<span>One business week</span>		    
+							</label>
+						</li>
+						<li>
+							<label class="radio">
+								<input type="radio" name="shipping">
+								<span>1-2 Business day</span>		    
+							</label>
+						</li>
+						<li>
+							<label class="radio">
+								<input type="radio" name="shipping">
+								<span>Next day</span>		    
+							</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row js-row">
+				<div class="head js-head">
+					<div class="head-text">
+						<span class="icon">
+							<svg class="icon-condition">
+								<use xlink:href="#condition"></use>
+							</svg>
+						</span>
+						<span class="text">Condition</span>
+					</div>
+					<span class="result">new</span>
+				</div>
+				<div class="change js-change-wrap">
+					<ul>
+						<li>
+							<label class="radio">
+								<input type="radio" checked name="condition">
+								<span>New</span>		    
+							</label>
+						</li>
+						<li>
+							<label class="radio">
+								<input type="radio" name="condition">
+								<span>Used</span>		    
+							</label>
+						</li>
+						<li>
+							<label class="radio">
+								<input type="radio" name="condition">
+								<span>Factory refubrished</span>		    
+							</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row js-row">
+				<div class="head js-head">
+					<div class="head-text">
+						<span class="icon">
+							<svg class="icon-store">
+								<use xlink:href="#store"></use>
+							</svg>
+						</span>
+						<span class="text">Store</span>
+					</div>
+					<span class="result">ebay</span>
+				</div>
+				<div class="change js-change-wrap js-wrap-change">
+					<ul>
+						<li>
+							<label class="checkbox">
+								<input type="checkbox" checked name="all">
+								<span>all</span>		    
+							</label>
+						</li>
+						<li>
+							<label class="checkbox">
+								<input type="checkbox" name="amazon">
+								<span>Amazon</span>		    
+							</label>
+						</li>
+						<li>
+							<label class="checkbox">
+								<input type="checkbox" name="ebay">
+								<span>Ebay</span>		    
+							</label>
+						</li>
+						<li>
+							<label class="checkbox">
+								<input type="checkbox" name="6pm">
+								<span>6'pm</span>		    
+							</label>
+						</li>
+						<li>
+							<label class="checkbox">
+								<input type="checkbox" name="wallmart">
+								<span>Wallmart</span>		    
+							</label>
+						</li>
+					</ul>
+
+					<ul class="change-hide js-all-change">
+						<li>
+							<label class="checkbox">
+								<input type="checkbox" name="all">
+								<span>all</span>		    
+							</label>
+						</li>
+						<li>
+							<label class="checkbox">
+								<input type="checkbox" name="amazon">
+								<span>Amazon</span>		    
+							</label>
+						</li>
+						<li>
+							<label class="checkbox">
+								<input type="checkbox" name="ebay">
+								<span>Ebay</span>		    
+							</label>
+						</li>
+						<li>
+							<label class="checkbox">
+								<input type="checkbox" name="6pm">
+								<span>6'pm</span>		    
+							</label>
+						</li>
+						<li>
+							<label class="checkbox">
+								<input type="checkbox" name="wallmart">
+								<span>Wallmart</span>		    
+							</label>
+						</li>
+					</ul>
+
+					<a href="#" class="more js-more-store">show more <span>(125)</span></a>
+				</div>
+			</div>
+
+			<div class="row row-btn">
+				<button class="btn">Show products</button>
+			</div>
+
+		</div>
+	</form>
+</div>
+				</aside>
+
+				<div class="content">
+					<div class="sort">
+	<span class="icon">
+		<svg class="icon-sort-filter">
+			<use xlink:href="#sort-filter"></use>
+		</svg>
+	</span>
+	<span class="text">Sort by:</span>
+	<div class="select-sort js-sort-wrap">
+		<select name="sort" id="" class="js-select-sort">
+			<option value="popular" selected>popular</option>
+			<option value="option1">option1</option>
+			<option value="option2">option2</option>
+			<option value="option3">option3</option>
+			<option value="option4">option4</option>
+		</select>
+	</div>
+</div>
+
+<div class="card-wrap">
+
+	<div class="card">
+		<div class="inner">
+			<div class="head">
+				<div class="review">
+					<a href="#">
+						<span class="icon">
+							<svg class="icon-question">
+								<use xlink:href="#question"></use>
+							</svg>
+						</span>
+						<span class="text">25 <span>(reviews)</span></span>
+					</a>
+				</div>
+				<div class="store">
+					<a href="#">
+						<img src="pic/ebay.png" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="image">
+				<a href="#">
+					<img src="pic/goods/goods-1.jpg" alt="">
+				</a>
+			</div>
+			<span class="name">
+				<a href="#">Notebook Lenovo IdeaPad 320 15 Intel</a>
+			</span>
+			<span class="from">from $250</span>
+			<span class="vendors">by 1 300 vendors</span>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="inner">
+			<div class="head">
+				<div class="review">
+					<a href="#">
+						<span class="icon">
+							<svg class="icon-question">
+								<use xlink:href="#question"></use>
+							</svg>
+						</span>
+						<span class="text">25 <span>(reviews)</span></span>
+					</a>
+				</div>
+				<div class="store">
+					<a href="#">
+						<img src="pic/amazon.png" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="image">
+				<a href="#">
+					<img src="pic/goods/goods-1.jpg" alt="">
+				</a>
+			</div>
+			<span class="name">
+				<a href="#">Notebook Lenovo IdeaPad 320 15 Intel</a>
+			</span>
+			<span class="from">from $250</span>
+			<span class="vendors">by 1 300 vendors</span>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="inner">
+			<div class="head">
+				<div class="review">
+					<a href="#">
+						<span class="icon">
+							<svg class="icon-question">
+								<use xlink:href="#question"></use>
+							</svg>
+						</span>
+						<span class="text">25 <span>(reviews)</span></span>
+					</a>
+				</div>
+				<div class="store">
+					<a href="#">
+						<img src="pic/walmart.png" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="image">
+				<a href="#">
+					<img src="pic/goods/goods-1.jpg" alt="">
+				</a>
+			</div>
+			<span class="name">
+				<a href="#">Notebook Lenovo IdeaPad 320 15 Intel</a>
+			</span>
+			<span class="from">from $250</span>
+			<span class="vendors">by 1 300 vendors</span>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="inner">
+			<div class="head">
+				<div class="review">
+					<a href="#">
+						<span class="icon">
+							<svg class="icon-question">
+								<use xlink:href="#question"></use>
+							</svg>
+						</span>
+						<span class="text">25 <span>(reviews)</span></span>
+					</a>
+				</div>
+				<div class="store">
+					<a href="#">
+						<img src="pic/ebay.png" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="image">
+				<a href="#">
+					<img src="pic/goods/goods-1.jpg" alt="">
+				</a>
+			</div>
+			<span class="name">
+				<a href="#">Notebook Lenovo IdeaPad 320 15 Intel</a>
+			</span>
+			<span class="from">from $250</span>
+			<span class="vendors">by 1 300 vendors</span>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="inner">
+			<div class="head">
+				<div class="review">
+					<a href="#">
+						<span class="icon">
+							<svg class="icon-question">
+								<use xlink:href="#question"></use>
+							</svg>
+						</span>
+						<span class="text">25 <span>(reviews)</span></span>
+					</a>
+				</div>
+				<div class="store">
+					<a href="#">
+						<img src="pic/amazon.png" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="image">
+				<a href="#">
+					<img src="pic/goods/goods-1.jpg" alt="">
+				</a>
+			</div>
+			<span class="name">
+				<a href="#">Notebook Lenovo IdeaPad 320 15 Intel</a>
+			</span>
+			<span class="from">from $250</span>
+			<span class="vendors">by 1 300 vendors</span>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="inner">
+			<div class="head">
+				<div class="review">
+					<a href="#">
+						<span class="icon">
+							<svg class="icon-question">
+								<use xlink:href="#question"></use>
+							</svg>
+						</span>
+						<span class="text">25 <span>(reviews)</span></span>
+					</a>
+				</div>
+				<div class="store">
+					<a href="#">
+						<img src="pic/walmart.png" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="image">
+				<a href="#">
+					<img src="pic/goods/goods-1.jpg" alt="">
+				</a>
+			</div>
+			<span class="name">
+				<a href="#">Notebook Lenovo IdeaPad 320 15 Intel</a>
+			</span>
+			<span class="from">from $250</span>
+			<span class="vendors">by 1 300 vendors</span>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="inner">
+			<div class="head">
+				<div class="review">
+					<a href="#">
+						<span class="icon">
+							<svg class="icon-question">
+								<use xlink:href="#question"></use>
+							</svg>
+						</span>
+						<span class="text">25 <span>(reviews)</span></span>
+					</a>
+				</div>
+				<div class="store">
+					<a href="#">
+						<img src="pic/ebay.png" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="image">
+				<a href="#">
+					<img src="pic/goods/goods-1.jpg" alt="">
+				</a>
+			</div>
+			<span class="name">
+				<a href="#">Notebook Lenovo IdeaPad 320 15 Intel</a>
+			</span>
+			<span class="from">from $250</span>
+			<span class="vendors">by 1 300 vendors</span>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="inner">
+			<div class="head">
+				<div class="review">
+					<a href="#">
+						<span class="icon">
+							<svg class="icon-question">
+								<use xlink:href="#question"></use>
+							</svg>
+						</span>
+						<span class="text">25 <span>(reviews)</span></span>
+					</a>
+				</div>
+				<div class="store">
+					<a href="#">
+						<img src="pic/amazon.png" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="image">
+				<a href="#">
+					<img src="pic/goods/goods-1.jpg" alt="">
+				</a>
+			</div>
+			<span class="name">
+				<a href="#">Notebook Lenovo IdeaPad 320 15 Intel</a>
+			</span>
+			<span class="from">from $250</span>
+			<span class="vendors">by 1 300 vendors</span>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="inner">
+			<div class="head">
+				<div class="review">
+					<a href="#">
+						<span class="icon">
+							<svg class="icon-question">
+								<use xlink:href="#question"></use>
+							</svg>
+						</span>
+						<span class="text">25 <span>(reviews)</span></span>
+					</a>
+				</div>
+				<div class="store">
+					<a href="#">
+						<img src="pic/walmart.png" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="image">
+				<a href="#">
+					<img src="pic/goods/goods-1.jpg" alt="">
+				</a>
+			</div>
+			<span class="name">
+				<a href="#">Notebook Lenovo IdeaPad 320 15 Intel</a>
+			</span>
+			<span class="from">from $250</span>
+			<span class="vendors">by 1 300 vendors</span>
+		</div>
+	</div>
+	
+</div>
+					<div class="seo">
+						<h2>Some seo text title</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<footer>
+	<div class="container">
+		<div class="wrap">
+			<div class="navigate">
+				<ul>
+					<li><a href="#">Advertisement</a></li>
+					<li><a href="#">About Us</a></li>
+				</ul>
+				<ul>
+					<li><a href="#">What is Talkgold.com</a></li>
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Privacy policy</a></li>
+				</ul>
+			</div>
+			<div class="info">
+				<span>If you have a questionswrite us <a href="mailto:info@talkgold.com">info@talkgold.com</a></span>
+				<span>© 2018 Talkgold.com</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

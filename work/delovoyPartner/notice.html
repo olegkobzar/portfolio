@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Закупки</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+  <header class="header">
+	<div class="container">
+		<div class="header__top">
+			<div class="header__left">
+				<a href="index.html" class="header__logo">
+					<span class="header__img-wrapp">
+						<img src="pic/logo/logo-1.png" alt="logo">
+					</span>
+					<span class="header__text">
+						<span class="header__text-top">
+							Деловой партнер
+						</span>
+						<span class="header__text-bott">
+							Коллекторское агентство
+						</span>
+					</span>	
+				</a>
+			</div>
+			<div class="header__right">
+				<div class="header__tel header__tel--top">
+					<a href="tel:88003332920">8-800-333-29-20</a>
+				</div>
+				<div class="header__tel header__tel--bott">
+					<a href="tel:89184189393">8-918-418-93-93</a>
+				</div>
+				<div class="header__call-back">
+					<a data-fancybox data-src="#popup" href="javascript:;">Заказать звонок</a>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div class="header__bott">
+		<div class="container">
+			<nav class="header__nav">
+				<ul class="header__list">
+					<li class="header__item"><a href="index.html" class="" >Главная</a></li>
+					<li class="header__item"><a href="about.html" class="" >О компании</a></li>
+					<li class="header__item"><a href="contacts.html" class="" >Контакты</a></li>
+					<li class="header__item"><a href="notice.html" class="active" >Закупки</a></li>
+					<li class="header__item"><a href="documents.html" class="" >Документы</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+    
+    <div class="wrapper">
+    	
+    	<div class="notice">
+	<div class="container">
+		<div class="notice__wrapper static-content">
+			<h4>Извещание о проведении запроса предложений</h4>
+			<p>Общество с ограниченной ответственностью коллекторское агентство «ДЕЛОВОЙ ПАРТНЕР» (далее по тексту - ООО «ДЕЛОВОЙ ПАРТНЕР», Организатор) настоящим объявляет о проведении процедуры запроса предложений в электронной форме и приглашает юридических лиц и индивидуальных предпринимателей подать свои предложения для заключения договора на оказание юридических услуг по взысканию просроченной задолженности физических и юридических лиц.</p>
+			<ul class="list-second">
+				<li>Услуги будут оказываться для нужд ООО «ДЕЛОВОЙ ПАРТНЕР». Подробное описание оказываемых услуг и условий Договора содержится в Документации по запросу предложений. </li>
+				<li>Документация размещена на официальном сайте ООО «ДЕЛОВОЙ ПАРТНЕР»: <a href="https://kadp.ru." target="blank">https://kadp.ru.</a> </li>
+				<li>Документация доступна для ознакомления без взимания платы.</li>
+				<li>Документация предоставляется юридическим лицам в течение двух рабочих дней со дня получения электронного запроса. </li>
+				<li>Участник может подать запрос о предоставлении Документации только в электронном виде, посредством его пересылки на электронный почтовый ящик ООО «ДЕЛОВОЙ ПАРТНЕР»: control@roszaym.com. Запрос, переданный отличным от указанного способа, Организатором рассматриваться не будет. </li>
+				<li>Предоставление Документации не допускается до опубликования и размещения на официальном сайте Организатора извещения о проведении запроса предложений.</li>
+				<li>Настоящее уведомление не является извещением о проведении конкурса и не имеет соответствующих правовых последствий. </li>
+			</ul>
+			<p>Полностью сформированные заявки должны быть направлены в срок по 28 декабря 2018 года до 17:00 часов (включительно) на электронный адрес Организатора. Все сроки исчисляются по московскому времени.</p>
+			<p>28 декабря 2018 года в 17 часов 30 минут Комиссия открывает доступ к поданным в форме электронных документов заявкам на участие в запросе предложений с окончательными предложениями.</p>
+			<p>Обеспечение заявки не требуется. Обеспечение исполнения договора не требуется.</p>
+			<p>Требования к участникам открытого конкурса, перечень документов, которые должны быть представлены в заявке участника запроса предложений в соответствии с требованиями документации. Преимущества не предусмотрены.</p>
+			<p>Организатор запроса предложений имеет право в любое время отказаться от его проведения, либо завершить процедуру запроса предложений без заключения договора по его результатам, не понеся никакой ответственности перед участниками запроса предложений или третьими лицами, которым такое действие может принести убытки (в том числе, не возмещая участнику расходы, понесенные в связи с участием в запросе). </p>
+			<p>Информация об отказе/прекращении процедуры запроса предложений размещается организатором на официальном сайте не позднее следующего рабочего дня после утверждения такого решения. </p>
+			<p>После размещения уведомления об отказе от проведения запроса предложений поданная любым участником заявка может быть возвращена участнику организатором в течение 3 (трех) рабочих дней после отказа от проведения запроса.</p>
+		</div>
+			<ul class="notice__list">
+				<li class="notice__item">
+					<a href="#">
+						<span class="notice__wrapp-img">
+							<img src="pic/document/doc.png" alt="img">
+						</span>
+						<span class="notice__text">Извещение</span>
+					</a>
+				</li>
+				<li class="notice__item">
+					<a href="#">
+						<span class="notice__wrapp-img">
+							<img src="pic/document/doc.png" alt="img">
+						</span>
+						<span class="notice__text">Документация</span>
+					</a>
+				</li>
+				<li class="notice__item">
+					<a href="#">
+						<span class="notice__wrapp-img">
+							<img src="pic/document/doc.png" alt="img">
+						</span>
+						<span class="notice__text">Приложение</span>
+					</a>
+				</li>
+				<li class="notice__item">
+					<a href="#">
+						<span class="notice__wrapp-img">
+							<img src="pic/document/doc.png" alt="img">
+						</span>
+						<span class="notice__text">Договор</span>
+					</a>
+				</li>
+			</ul>
+			<div class="btn__wrapper btn__wrapper--notice">
+				<a data-fancybox data-src="#popup" href="javascript:;" class="btn">Обратиться в агентство</a>
+			</div>
+	</div>
+</div>
+
+    	<div class="popup" id="popup">
+	<form action="ajax-form.php" class="popup__form js-ajax-form" id="popup__form" method="post">
+		<div class="popup__inner">
+			<div class="popup__input-wrapp">
+				<input type="text" name="firstname" id="firstname" placeholder="Фамилия, имя, отчество" autocomplete="off">
+			</div>
+			<div class="popup__input-wrapp">
+				<input type="tel" name="phone" id="phone" placeholder="Контактный номер телефона" autocomplete="off">
+			</div>
+			<div class="popup__input-wrapp">
+				<textarea name="message" id="message" placeholder="Текст сообщения"></textarea>
+			</div>
+			<div class="popup__btn-wrapp">
+				<button class="btn btn--grey" type="submit">Отправить</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="popup__success" id="popup__success">
+	<div class="popup__text">
+		Сообщение успешно отправлено!
+	</div>
+</div>
+    </div>
+
+  <footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__info">
+			<span class="footer__copy">
+				© ООО Коллекторское агентство «ДЕЛОВОЙ ПАРТНЕР», 2018
+			</span>
+			<div class="footer__phone">
+				<span class="footer__phone-item">
+					<a href="tel:88003332920">8-800-333-29-20</a>
+				</span>
+				<span class="footer__phone-item">
+					<a href="tel:89184189393">8-918-418-93-93</a>
+				</span>	
+			</div>
+			<a href="mailto:control@roszaym.com" class="footer__mail">
+				control@roszaym.com
+			</a>
+		</div>
+		<div class="footer__logo">
+			<a href="#">
+				<span class="footer__logo-img">
+					<svg class="icon-logo-2">
+						<use xlink:href="#logo-2"></use>
+					</svg>
+				</span>
+				<span class="footer__logo-txt">
+					Мы в реестре <span>РОСКОМНАДЗОРА</span>
+				</span>
+			</a>
+		</div>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>О компании</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css?rel=11933">
+    <!-- @endif -->
+
+    <!--[if lt IE 9]>
+		<link rel="stylesheet" href="/reject/reject.css" media="all" />
+		<script type="text/javascript" src="/reject/reject.min.js"></script>
+	<![endif]-->
+</head>
+<body class=" @@class ">
+
+	
+
+	<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<header class="header">
+	<div class="header__top">
+		<div class="container">
+			<div class="header__top-wrap">
+				<div class="header__left">
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">
+							<img src="pic/logo.png" alt="">
+						</a>
+					</div>
+					<span class="header__descr">Хирургическое и медицинское оборудование. Высокого качества по хорошим ценам</span>
+				</div>
+				<div class="header__location">
+					<span class="header__location-icon">
+						<svg class="icon-location">
+							<use xlink:href="#location"></use>
+						</svg>
+					</span>
+					<div class="header__location-inner">
+						<a href="#" class="header__location-link">г. Москва, ул. Каргопольская, д17</a>
+						<span class="header__location-time">По будням 9:00 - 18:00</span>
+					</div>
+				</div>
+				<div class="header__contact">
+					<span class="header__contact-icon">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<div class="header__contact-inner">
+						<a href="tel:+74957390906" class="header__contact-phone">+7 (495) 739 09 06</a>
+						<a href="#popup" data-fancybox class="header__contact-callback">Заказать звонок</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header__bottom">
+		<div class="container">
+			<nav class="header__nav">
+				<ul class="header__nav-list">
+					<li class="header__nav-item header__nav-item--catalog js-nav-catalog">
+						<a href="#" class="header__nav-link header__nav-link--catalog">
+							<span>Каталог оборудования</span>
+						</a>
+						<ul class="header__subnav js-sub-menu">
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Эндоскопия</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Гинекологий</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Ультразвуковая диагностика</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Реанимация</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Лучевая диагностика</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Неонатология</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Функциональная диагностика</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Оборудование оториноларингологии</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Стерилизация и дезинфекция</a>
+							</li>
+						</ul>
+					</li>
+					<li class="header__nav-item-other js-mobile-menu">
+						<ul class="header__nav-other">
+							<li class="header__nav-item hide-desktop">
+								<a href="#" class="header__nav-link">Каталог</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Наша компания</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Доставка и оплата </a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Статьи</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Контакты</a>
+							</li>
+						</ul>
+						<div class="header__location header__location--nav">
+							<span class="header__location-icon">
+								<svg class="icon-location">
+									<use xlink:href="#location"></use>
+								</svg>
+							</span>
+							<div class="header__location-inner">
+								<a href="#" class="header__location-link">г. Москва, ул. Каргопольская, д17</a>
+								<span class="header__location-time">По будням 9:00 - 18:00</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<span class="header__nav-btn-mobile js-btn-nav">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</nav>
+		</div>
+	</div>
+</header>
+
+
+	<div class="about-galar">
+	<div class="container">
+		<div class="about-galar__outer">
+			<span class="about-galar__title">Galarmed</span>
+			<span class="about-galar__caption">Инженеры, запустившие спутник CubeSail, просят помощи радиолюбителей</span>
+			<div class="about-galar__wrap">
+				<div class="about-galar__col about-galar__col--left">
+					<p>По Вашему запросу сотрудники ООО "Галар" подберут необходимое медицинское оборудование, в соответствии с вашими задачами и финансовыми возможностями, и организуют доставку этого оборудования в кратчайшие сроки. По желанию заказчика мы можем также произвести монтаж и обучение персонала работе на сложном медицинском оборудовании. Гарантийное обслуживание оборудования мы осуществляем в течение 12-ти и более месяцев. </p>
+					<p>Компания ООО «Галар» гарантирует качество и доставку оборудования в любой регион РФ. Наши товары отвечают международным требованиям безопасности и качества.</p>
+					<p>Любопытно, что на сайте NASA в девятнадцатой миссии указаны 10 спутников, а в полет отправились 13, но для наноспутниковой мелочи это нормально. Главное, чтобы не просочились нелегальные аппараты (весной уже был прецедент). Известна общая масса полезной нагрузки — 78 кг. А самыми интересными являются CubeSail (два кубсата развернут между собой солнечный парус длиной 250 м) и RSat-P (прототип спутника-ремонтника с двумя распечатанными на 3D-принтере манипуляторами). Как и в предыдущих миссиях, спутники выведены на круговую полярную орбиту высотой 500 км.</p>
+				</div>
+				<div class="about-galar__col about-galar__col--right">
+					<span class="about-galar__icon">
+						<svg class="icon-pdf">
+							<use xlink:href="#pdf-white"></use>
+						</svg>
+					</span>
+					<span class="about-galar__catalog-title">Каталог продукции</span>
+					<a href="pic/logo.png" download class="about-galar__catalog-save">Скачать</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="advantages">
+	<div class="container">
+		<div class="advantages__top">
+			<span class="advantages__title">Мы в цифрах</span>
+			<div class="advantages__top-wrap">
+				<div class="advantages__top-col">
+					<span class="advantages__number">750</span>
+					<span class="advantages__descr">Сотрудников</span>
+				</div>
+				<div class="advantages__top-col">
+					<span class="advantages__number">4360</span>
+					<span class="advantages__descr">Проданного оборудования</span>
+				</div>
+				<div class="advantages__top-col">
+					<span class="advantages__number">17</span>
+					<span class="advantages__descr">Специалистов-консультантов</span>
+				</div>
+				<div class="advantages__top-col">
+					<span class="advantages__number">4360</span>
+					<span class="advantages__descr">Проданного оборудования</span>
+				</div>
+			</div>
+		</div>
+		<div class="advantages__bottom">
+			<span class="advantages__title">Наши перимущества</span>
+			<div class="advantages__bottom-wrap">
+				<div class="advantages__bottom-col">
+					<span class="advantages__icon">
+						<svg class="icon-about-1">
+							<use xlink:href="#about-1"></use>
+						</svg>
+					</span>
+					<span class="advantages__text">Компания зарекомендовала себя на рынке как надежный партнер с 2010 года</span>
+				</div>
+				<div class="advantages__bottom-col">
+					<span class="advantages__icon">
+						<svg class="icon-about-4">
+							<use xlink:href="#about-4"></use>
+						</svg>
+					</span>
+					<span class="advantages__text">Большой опыт работы с крупными клиентами</span>
+				</div>
+				<div class="advantages__bottom-col">
+					<span class="advantages__icon">
+						<svg class="icon-about-5">
+							<use xlink:href="#about-5"></use>
+						</svg>
+					</span>
+					<span class="advantages__text">Информационная поддержка пользователей</span>
+				</div>
+				<div class="advantages__bottom-col">
+					<span class="advantages__icon">
+						<svg class="icon-about-6">
+							<use xlink:href="#about-6"></use>
+						</svg>
+					</span>
+					<span class="advantages__text">Окажем помощь вашим специалистам в подготовке документации</span>
+				</div>
+				<div class="advantages__bottom-col">
+					<span class="advantages__icon">
+						<svg class="icon-about-2">
+							<use xlink:href="#about-2"></use>
+						</svg>
+					</span>
+					<span class="advantages__text">Партнер ведущих ЛПУ России</span>
+				</div>
+				<div class="advantages__bottom-col">
+					<span class="advantages__icon">
+						<svg class="icon-about-3">
+							<use xlink:href="#about-3"></use>
+						</svg>
+					</span>
+					<span class="advantages__text">Консультации специалистов по продуктам</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="contact ">
+	<div class="contact__map" id="map"></div>
+	<div class="container">
+		<div class="contact__wrap">
+			<div class="contact__inner" style="background-image: url(pic/bg/bg-2.jpg);">
+				<span class="contact__caption">Остались вопросы?</span>
+				<span class="contact__descr">Наши специалисты проконсультируют вас и ответят на все вопросы</span>
+				<form action="">
+					<div class="contact__form">
+						<div class="contact__row">
+							<input type="text" placeholder="Имя" id="name" autocomplete="off">
+						</div>
+						<div class="contact__row">
+							<input type="tel" placeholder="+7 (437) 438 93 83" id="phone" autocomplete="off">
+							<label for="phone">Телефон</label>
+						</div>
+						<div class="contact__row">
+							<input type="email" placeholder="Эл. почта" id="mail" autocomplete="off">
+							<label for="mail">Если хотите получить сейчас каталог</label>
+						</div>
+						<div class="contact__bottom">
+							<button class="btn btn--white contact__btn" type="submit">Отправить</button>
+							<span class="contact__text">Мы вам перезвоним в течении 15 минут</span>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+</div>
+
+<footer class="footer ">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__logo">
+				<a href="#" class="footer__logo-link">
+					<img src="pic/logo.png" alt="">
+				</a>
+			</div>
+			<ul class="footer__list">
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Каталог оборудования</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Статьи</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Наша компания</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Контакты</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Доставка и оплата</a>
+				</li>
+			</ul>
+			<div class="footer__right">
+				<div class="footer__location">
+					<span class="footer__location-icon">
+						<svg class="icon-location">
+							<use xlink:href="#location"></use>
+						</svg>
+					</span>
+					<div class="footer__location-inner">
+						<a href="#" class="footer__location-link">г. Москва, ул. Каргопольская, д17</a>
+						<span class="footer__location-time">По будням 9:00 - 18:00</span>
+					</div>
+				</div>
+				<div class="footer__contact">
+					<span class="footer__contact-icon">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<div class="footer__contact-inner">
+						<a href="tel:+74957390906" class="footer__contact-phone">+7 (495) 739 09 06</a>
+						<a href="#" class="footer__contact-callback">Заказать звонок</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div class="popup" id="popup">
+	<span class="popup__caption">Заказать звонок</span>
+	<form action="">
+		<div class="popup__form">
+			<div class="popup__row">
+				<input type="text" placeholder="Имя">
+			</div>
+			<div class="popup__row">
+				<input type="text" placeholder="Телефон">
+			</div>
+			<div class="popup__btn-wrap">
+				<button class="btn btn--image" style="background-image: url(pic/bg/btn-fon.jpg);">Отправить</button>
+			</div>
+		</div>
+	</form>
+</div>
+<script src="js/vendor.js?rel=11933"></script>
+
+
+<script src="pages-list.js"></script>
+
+
+<script src="js/main.js?rel=11933"></script>
+
+
+</body>
+</html>
+

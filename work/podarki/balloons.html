@@ -1,0 +1,1454 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Шарики</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+	<div class="wrapper">
+
+		<header class="header">
+  <div class="container">
+    <div class="header__wrap">
+      <div class="header__top">
+        <div class="header__menu">
+          <ul class="header__menu-list">
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Контакты</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Доставка</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Оплата</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Блог</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Отзывы</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="header__middle">
+        <div class="header__logo">
+          <a href="" class="header__logo-link">
+          <span class="header__logo-icon">
+            <svg class="icon-logo">
+              <use xlink:href="#logo"></use>
+            </svg>
+          </span>
+            <span class="header__logo-inner">
+            <span class="header__logo-name">ХАПИ ПОДАРКИ</span>
+            <span class="header__logo-city">Санкт-Петербург</span>
+          </span>
+          </a>
+        </div>
+
+        <div class="header__holder">
+          <div class="header__nav js-nav-collpase">
+            <div class="header__nav-bg js-nav-bg"></div>
+            <span class="header__nav-closed js-nav-closed"></span>
+            <div class="header__nav-inner header__nav-inner--contacts">
+              <ul class="header__nav-list">
+                <li class="header__nav-item header__nav-item--top">
+                  <div class="header__basket"><a href="#" class="header__basket-link">
+                    <svg class="icon-basket">
+                      <use xlink:href="#basket"></use>
+                    </svg>
+                    <span class="header__basket-value">0</span></a>
+                  </div>
+                  <div class="header__feedback"><a href="#" class="btn btn--small header__feedback-btn">ОБРАТНЫЙ
+                    ЗВОНОК</a></div>
+                </li>
+                <li class="header__nav-item">
+                  <a href="tel: +74912993730" class="header__nav-link"><span class="header__nav-icon"><svg
+                      class="icon-phone"><use xlink:href="#phone"></use></svg></span>+7 (4912) 99 37 30</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="tel: +79038393730" class="header__nav-link"><span class="header__nav-icon"><svg
+                      class="icon-phone-mobile"><use xlink:href="#phone-mobile"></use></svg></span>+7 (903) 839 37
+                    30</a>
+                  <div class="header__social">
+                    <ul class="header__social-list">
+                      <li class="header__social-item">
+                        <a href="#" class="header__social-link">
+                          <svg class="icon-whatsapp">
+                            <use xlink:href="#whatsapp"></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="header__social-item">
+                        <a href="#" class="header__social-link">
+                          <svg class="icon-viber">
+                            <use xlink:href="#viber"></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="header__social-item">
+                        <a href="#" class="header__social-link">
+                          <svg class="icon-telegram">
+                            <use xlink:href="#telegram"></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="header__nav-inner header__nav-inner--top">
+              <div class="header__address">
+                <ul class="header__address-list">
+                  <li class="header__address-item">
+                    <span class="header__address-link"><span class="header__address-icon"><svg class="icon-location"><use
+                        xlink:href="#location"></use></svg></span>Рязань, ул.Стройкова 20</span>
+                  </li>
+                  <li class="header__address-item">
+                    <a href="mailto: magazine@mail.ru" class="header__address-link"><span class="header__address-icon"><svg
+                        class="icon-email"><use xlink:href="#email"></use></svg></span>magazine@mail.ru</a>
+                  </li>
+                  <li class="header__address-item">
+                    <span class="header__address-link"><span class="header__address-icon"><svg class="icon-clock"><use
+                        xlink:href="#clock"></use></svg></span>Доставка 24 часа без выходных</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="header__nav-inner header__nav-inner--networks">
+              <span class="header__nav-title">Мы в соц сетях</span>
+              <div class="header__networks">
+                <ul class="header__networks-list">
+                  <li class="header__networks-item">
+                    <a href="" class="header__networks-link">
+                      <svg class="icon-youtube">
+                        <use xlink:href="#youtube"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="header__networks-item">
+                    <a href="" class="header__networks-link">
+                      <svg class="icon-facebook">
+                        <use xlink:href="#facebook"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="header__networks-item">
+                    <a href="" class="header__networks-link">
+                      <svg class="icon-instagram">
+                        <use xlink:href="#instagram"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="header__networks-item">
+                    <a href="" class="header__networks-link">
+                      <svg class="icon-odnoklassniki">
+                        <use xlink:href="#odnoklassniki"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="header__networks-item">
+                    <a href="" class="header__networks-link">
+                      <svg class="icon-vk">
+                        <use xlink:href="#vk"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="header__info">
+            <span class="header__info-inner">
+              <a href="tel: +74912993730" class="header__info-link">
+                <svg class="icon-phone-main">
+                  <use xlink:href="#phone-main"></use>
+                </svg>
+              </a>
+            </span>
+            <ul class="header__info-list">
+              <li class="header__info-item header__info-item--phone"></li>
+              <li class="header__info-item"><a href="#" class="header__info-link">
+                <svg class="icon-whatsapp">
+                  <use xlink:href="#whatsapp"></use>
+                </svg>
+              </a></li>
+              <li class="header__info-item"><a href="#" class="header__info-link">
+                <svg class="icon-viber">
+                  <use xlink:href="#viber"></use>
+                </svg>
+              </a></li>
+              <li class="header__info-item"><a href="#" class="header__info-link">
+                <svg class="icon-telegram">
+                  <use xlink:href="#telegram"></use>
+                </svg>
+              </a></li>
+            </ul>
+          </div>
+
+          <div class="header__open js-nav-open">
+            <span class="header__open-btn"><span class="header__open-decor"></span></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="header__bottom">
+        <div class="header__categories">
+          <ul class="header__categories-list">
+            <li class="header__categories-item">
+              <a href="#" class="header__categories-link">ЦВЕТЫ</a>
+            </li>
+            <li class="header__categories-item">
+              <a href="#" class="header__categories-link">ШАРИКИ</a>
+            </li>
+            <li class="header__categories-item">
+              <a href="#" class="header__categories-link">УПАКОВКА ПОДАРКОВ</a>
+            </li>
+            <li class="header__categories-item">
+              <a href="#" class="header__categories-link">ПОДУШКИ</a>
+            </li>
+            <li class="header__categories-item">
+              <a href="#" class="header__categories-link">БОЛЬШИЕ МЕДВЕДИ</a>
+            </li>
+            <li class="header__categories-item">
+              <a href="#" class="header__categories-link">КОТ БАСИК</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+        <div class="shares" style="background-image: url(pic/bg/bg-products.jpg);">
+  <div class="container">
+    <div class="shares__box-right">
+      <span class="shares__title">Закажите подарок сейчас и получите <span class="shares__title-large">скидку 30%</span></span>
+      <div class="stock-counter  ">
+  <span class="stock-counter__title">До конца акции осталось</span>
+  <div class="stock-counter__inner">
+    <div class="stock-counter__middle js-stock-counter ">
+    </div>
+    <div class="stock-counter__bottom">
+      <ul class="stock-counter__list">
+        <li class="stock-counter__item">дней</li>
+        <li class="stock-counter__item">часов</li>
+        <li class="stock-counter__item">минут</li>
+        <li class="stock-counter__item">секунд</li>
+      </ul>
+    </div>
+  </div>
+
+  <form action="" class="stock-counter__form">
+    <div class="stock-counter__row">
+      <input type="tel" class="input stock-counter__input js-input-mask" placeholder="Номер телефона *" data-valid="\S+" required>
+    </div>
+    <div class="stock-counter__row">
+      <button class="btn btn--large stock-counter__btn">ЗАКАЗАТЬ ПОДАРОК</button>
+    </div>
+    <div class="stock-counter__row">
+      <label class="checkbox checkbox--small">
+        <input type="checkbox" name="check" required checked>
+        <span>Я Соглашаюсь на обработку персональных данных</span>
+      </label>
+    </div>
+  </form>
+</div>
+    </div>
+  </div>
+</div>
+
+		<div class="card-head">
+	<div class="container">
+		<span class="card-head__caption">Выполним любой заказ! Посмотрите варианты для примера!</span>
+		<div class="card-head__line"></div>
+		<div class="card-head__subtitle-wrapp">
+			<span class="card-head__subtitle">Не нашли нужный? Позвоните по телефону</span>
+			<a href="tel:89038393730" class="card-head__phone">8 (903) 839 37 30</a>
+		</div>
+		
+	</div>
+</div>
+
+		<div class="container js-sticky-container">
+			<aside class="sidebar">
+				<div class="filter">
+	<span class="filter__caption js-btn-show">Все игрушки</span>
+	<div class="filter__show-mobile js-filter-show">
+		<span class="filter__title">По моделям</span>
+		<ul class="filter__list">
+			<li class="filter__item">
+				<label class="checkbox">
+					<input type="checkbox" name="check1">
+					<span>На ДР <span class="filter__number">(7)</span></span>
+				</label>
+			</li>
+			<li class="filter__item">
+				<label class="checkbox">
+					<input type="checkbox" name="check2">
+					<span>На юбилей <span class="filter__number">(14)</span></span>
+				</label>
+			</li>
+			<li class="filter__item">
+				<label class="checkbox">
+					<input type="checkbox" name="check3">
+					<span>На свадьбу</span>
+				</label>
+			</li>
+		</ul>
+	</div>
+	
+</div>
+				<div class="order js-sticky-block">
+	<div class="order__head">
+		<div class="order__phone">
+			<span class="order__phone-icon">
+				<svg class="icon-phone-order">
+					<use xlink:href="#phone-mobile"></use>
+				</svg>
+			</span>
+			<span class="order__phone-text">Наш телефон</span>
+		</div>
+		<a href="tel:+79038393730" class="order__phone-link">+7 (903) 839 37 30</a>
+		<ul class="order__social-list">
+			<li class="order__social-item">
+				<a href="#" class="order__social-link">
+					<svg class="icon-order-whatsapp">
+						<use xlink:href="#whatsapp"></use>
+					</svg>
+				</a>
+			</li>
+			<li class="order__social-item">
+				<a href="#" class="order__social-link">
+					<svg class="icon-order-viber">
+						<use xlink:href="#viber"></use>
+					</svg>
+				</a>
+			</li>
+			<li class="order__social-item">
+				<a href="#" class="order__social-link">
+					<svg class="icon-order-telegram">
+						<use xlink:href="#telegram"></use>
+					</svg>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<span class="order__caption">Ваш заказ</span>
+	<div class="order__goods js-scroll-wrap">
+		<div class="order__goods-item">
+			<div class="order__img-wrapp">
+				<img src="pic/order/order-product.png" alt="">
+			</div>
+			<div class="order__delete-goods"></div>
+		</div>
+		<div class="order__goods-item">
+			<div class="order__img-wrapp">
+				<img src="pic/order/order-product.png" alt="">
+			</div>
+			<div class="order__delete-goods"></div>
+		</div>
+		<div class="order__goods-item">
+			<div class="order__img-wrapp">
+				<img src="pic/order/order-product.png" alt="">
+			</div>
+			<div class="order__delete-goods"></div>
+		</div>
+		<div class="order__goods-item">
+			<div class="order__img-wrapp">
+				<img src="pic/order/order-product.png" alt="">
+			</div>
+			<div class="order__delete-goods"></div>
+		</div>
+		<div class="order__goods-item">
+			<div class="order__img-wrapp">
+				<img src="pic/order/order-product.png" alt="">
+			</div>
+			<div class="order__delete-goods"></div>
+		</div>
+	</div>
+	<span class="order__sale">Оформите заказ сейчас и получите <span class="order__sale-bold">скидку 15%</span></span>
+	<div class="order__value">
+		<div class="order__value-top">
+			<span class="order__value-text">Сумма заказа:</span>
+			<span class="order__value-old">7 000р</span>
+		</div>
+		<span class="order__value-new">4 500 р.</span>
+	</div>
+	<div class="stock-counter  stock-counter--small">
+  <span class="stock-counter__title">До конца акции осталось</span>
+  <div class="stock-counter__inner">
+    <div class="stock-counter__middle js-stock-counter counter--small">
+    </div>
+    <div class="stock-counter__bottom">
+      <ul class="stock-counter__list">
+        <li class="stock-counter__item">дней</li>
+        <li class="stock-counter__item">часов</li>
+        <li class="stock-counter__item">минут</li>
+        <li class="stock-counter__item">секунд</li>
+      </ul>
+    </div>
+  </div>
+
+  <form action="" class="stock-counter__form">
+    <div class="stock-counter__row">
+      <input type="tel" class="input stock-counter__input js-input-mask" placeholder="Номер телефона *" data-valid="\S+" required>
+    </div>
+    <div class="stock-counter__row">
+      <button class="btn btn--large stock-counter__btn">СДЕЛАТЬ ЗАКАЗ</button>
+    </div>
+    <div class="stock-counter__row">
+      <label class="checkbox checkbox--small">
+        <input type="checkbox" name="check" required checked>
+        <span>Я Соглашаюсь на обработку персональных данных</span>
+      </label>
+    </div>
+  </form>
+</div>
+</div>
+			</aside>
+			<div class="content">
+				<div class="other-goods__wrapp other-goods__wrapp--card">
+					<div class="other-goods__item other-goods__item--card js-goods-item">
+	<div class="other-goods__inner js-goods-inner">
+		<div class="other-goods__head js-height">
+			<span class="other-goods__title">Арка, гирлянда <span>(Любой цвет)</span></span>
+		</div>
+		<div data-fancybox data-src="#popup-overview" class="other-goods__body js-goods-visited">
+			<span class="other-goods__bottom-descr">1м = 350р</span>
+			<div class="other-goods__img-wrapp" style="background-image: url(pic/product/product-09.jpg);">
+
+			</div>
+			<div class="other-goods__overflow">
+				<div class="other-goods__overflow-content">
+					<span class="btn other-goods__btn">Быстрый просмотр</span>
+					
+						<span class="other-goods__overflow-loupe">
+							<svg class="icon-loupe">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+					
+				</div>
+			</div>
+		</div>
+		
+			<div class="other-goods__price">
+				<span class="other-goods__price-new">1400 р.</span> /
+				<span class="other-goods__price-old">1 610р</span>
+			</div>
+			<div class="other-goods__select">
+				<select name="" id="" class="js-select">
+					<option value="">4м (1400р)</option>
+					<option value="">5м (1400р)</option>
+					<option value="">6м (1400р)</option>
+					<option value="">10м (1400р)</option>
+					<option value="">12м (1400р)</option>
+					<option value="">1м (1400р)</option>
+				</select>
+			</div>
+			<div class="other-goods__wrapp-basket">
+				<div class="other-goods__sale">
+					<span class="other-goods__sale-icon">
+						<svg class="icon-sales">
+							<use xlink:href="#sales"></use>
+						</svg>
+					</span>
+					<div class="other-goods__sale-descr">
+						<span class="other-goods__sale-text">Скидка</span>
+						<span class="other-goods__sale-value">15 %</span>
+					</div>
+				</div>
+				<div class="other-goods__basket">
+					<a href="#" class="btn btn--border">В корзину</a>
+				</div>
+			</div>
+			<div class="other-goods__buy">
+				<a href="#" class="btn">Купить в один клик</a>
+			</div>
+		
+	</div>
+</div>
+<div class="other-goods__item other-goods__item--card js-goods-item">
+	<div class="other-goods__inner js-goods-inner">
+		<div class="other-goods__head js-height">
+			<span class="other-goods__title">Разноцветные <span>(Любой цвет)</span></span>
+		</div>
+		<div data-fancybox data-src="#popup-overview" class="other-goods__body js-goods-visited">
+			<span class="other-goods__bottom-descr">1шт = 20р</span>
+			<div class="other-goods__img-wrapp" style="background-image: url(pic/product/product-08.jpg);">
+
+			</div>
+			<div class="other-goods__overflow">
+				<div class="other-goods__overflow-content">
+					<span class="btn other-goods__btn">Быстрый просмотр</span>
+					
+						<span class="other-goods__overflow-loupe">
+							<svg class="icon-loupe">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+					
+				</div>
+			</div>
+		</div>
+		
+			<div class="other-goods__price">
+				<span class="other-goods__price-new">980 р.</span> /
+				<span class="other-goods__price-old">1 127р</span>
+			</div>
+			<div class="other-goods__select">
+				<select name="" id="" class="js-select">
+					<option value="">4м (1400р)</option>
+					<option value="">5м (1400р)</option>
+					<option value="">6м (1400р)</option>
+					<option value="">10м (1400р)</option>
+					<option value="">12м (1400р)</option>
+					<option value="">1м (1400р)</option>
+				</select>
+			</div>
+			<div class="other-goods__wrapp-basket">
+				<div class="other-goods__sale">
+					<span class="other-goods__sale-icon">
+						<svg class="icon-sales">
+							<use xlink:href="#sales"></use>
+						</svg>
+					</span>
+					<div class="other-goods__sale-descr">
+						<span class="other-goods__sale-text">Скидка</span>
+						<span class="other-goods__sale-value">15 %</span>
+					</div>
+				</div>
+				<div class="other-goods__basket">
+					<a href="#" class="btn btn--border">В корзину</a>
+				</div>
+			</div>
+			<div class="other-goods__buy">
+				<a href="#" class="btn">Купить в один клик</a>
+			</div>
+		
+	</div>
+</div>
+<div class="other-goods__item other-goods__item--card js-goods-item">
+	<div class="other-goods__inner js-goods-inner">
+		<div class="other-goods__head js-height">
+			<span class="other-goods__title">Золотистые шарики</span>
+		</div>
+		<div data-fancybox data-src="#popup-overview" class="other-goods__body js-goods-visited">
+			<span class="other-goods__bottom-descr">1шт = 20р</span>
+			<div class="other-goods__img-wrapp" style="background-image: url(pic/product/product-07.jpg);">
+
+			</div>
+			<div class="other-goods__overflow">
+				<div class="other-goods__overflow-content">
+					<span class="btn other-goods__btn">Быстрый просмотр</span>
+					
+						<span class="other-goods__overflow-loupe">
+							<svg class="icon-loupe">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+					
+				</div>
+			</div>
+		</div>
+		
+			<div class="other-goods__price">
+				<span class="other-goods__price-new">1400 р.</span> /
+				<span class="other-goods__price-old">1 610р</span>
+			</div>
+			<div class="other-goods__select">
+				<select name="" id="" class="js-select">
+					<option value="">4м (1400р)</option>
+					<option value="">5м (1400р)</option>
+					<option value="">6м (1400р)</option>
+					<option value="">10м (1400р)</option>
+					<option value="">12м (1400р)</option>
+					<option value="">1м (1400р)</option>
+				</select>
+			</div>
+			<div class="other-goods__wrapp-basket">
+				<div class="other-goods__sale">
+					<span class="other-goods__sale-icon">
+						<svg class="icon-sales">
+							<use xlink:href="#sales"></use>
+						</svg>
+					</span>
+					<div class="other-goods__sale-descr">
+						<span class="other-goods__sale-text">Скидка</span>
+						<span class="other-goods__sale-value">15 %</span>
+					</div>
+				</div>
+				<div class="other-goods__basket">
+					<a href="#" class="btn btn--border">В корзину</a>
+				</div>
+			</div>
+			<div class="other-goods__buy">
+				<a href="#" class="btn">Купить в один клик</a>
+			</div>
+		
+	</div>
+</div>
+<div class="other-goods__item other-goods__item--card js-goods-item">
+	<div class="other-goods__inner js-goods-inner">
+		<div class="other-goods__head js-height">
+			<span class="other-goods__title">Разноцветные <span>(Любой цвет)</span></span>
+		</div>
+		<div data-fancybox data-src="#popup-overview" class="other-goods__body js-goods-visited">
+			<span class="other-goods__bottom-descr">1шт = 20р</span>
+			<div class="other-goods__img-wrapp" style="background-image: url(pic/product/product-08.jpg);">
+
+			</div>
+			<div class="other-goods__overflow">
+				<div class="other-goods__overflow-content">
+					<span class="btn other-goods__btn">Быстрый просмотр</span>
+					
+						<span class="other-goods__overflow-loupe">
+							<svg class="icon-loupe">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+					
+				</div>
+			</div>
+		</div>
+		
+			<div class="other-goods__price">
+				<span class="other-goods__price-new">1400 р.</span> /
+				<span class="other-goods__price-old">1 610р</span>
+			</div>
+			<div class="other-goods__select">
+				<select name="" id="" class="js-select">
+					<option value="">4м (1400р)</option>
+					<option value="">5м (1400р)</option>
+					<option value="">6м (1400р)</option>
+					<option value="">10м (1400р)</option>
+					<option value="">12м (1400р)</option>
+					<option value="">1м (1400р)</option>
+				</select>
+			</div>
+			<div class="other-goods__wrapp-basket">
+				<div class="other-goods__sale">
+					<span class="other-goods__sale-icon">
+						<svg class="icon-sales">
+							<use xlink:href="#sales"></use>
+						</svg>
+					</span>
+					<div class="other-goods__sale-descr">
+						<span class="other-goods__sale-text">Скидка</span>
+						<span class="other-goods__sale-value">15 %</span>
+					</div>
+				</div>
+				<div class="other-goods__basket">
+					<a href="#" class="btn btn--border">В корзину</a>
+				</div>
+			</div>
+			<div class="other-goods__buy">
+				<a href="#" class="btn">Купить в один клик</a>
+			</div>
+		
+	</div>
+</div>
+<div class="other-goods__item other-goods__item--card js-goods-item">
+	<div class="other-goods__inner js-goods-inner">
+		<div class="other-goods__head js-height">
+			<span class="other-goods__title">Золотистые шарики</span>
+		</div>
+		<div data-fancybox data-src="#popup-overview" class="other-goods__body js-goods-visited">
+			<span class="other-goods__bottom-descr">1шт = 20р</span>
+			<div class="other-goods__img-wrapp" style="background-image: url(pic/product/product-07.jpg);">
+
+			</div>
+			<div class="other-goods__overflow">
+				<div class="other-goods__overflow-content">
+					<span class="btn other-goods__btn">Быстрый просмотр</span>
+					
+						<span class="other-goods__overflow-loupe">
+							<svg class="icon-loupe">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+					
+				</div>
+			</div>
+		</div>
+		
+			<div class="other-goods__price">
+				<span class="other-goods__price-new">1400 р.</span> /
+				<span class="other-goods__price-old">1 610р</span>
+			</div>
+			<div class="other-goods__select">
+				<select name="" id="" class="js-select">
+					<option value="">4м (1400р)</option>
+					<option value="">5м (1400р)</option>
+					<option value="">6м (1400р)</option>
+					<option value="">10м (1400р)</option>
+					<option value="">12м (1400р)</option>
+					<option value="">1м (1400р)</option>
+				</select>
+			</div>
+			<div class="other-goods__wrapp-basket">
+				<div class="other-goods__sale">
+					<span class="other-goods__sale-icon">
+						<svg class="icon-sales">
+							<use xlink:href="#sales"></use>
+						</svg>
+					</span>
+					<div class="other-goods__sale-descr">
+						<span class="other-goods__sale-text">Скидка</span>
+						<span class="other-goods__sale-value">15 %</span>
+					</div>
+				</div>
+				<div class="other-goods__basket">
+					<a href="#" class="btn btn--border">В корзину</a>
+				</div>
+			</div>
+			<div class="other-goods__buy">
+				<a href="#" class="btn">Купить в один клик</a>
+			</div>
+		
+	</div>
+</div>
+<div class="other-goods__item other-goods__item--card js-goods-item">
+	<div class="other-goods__inner js-goods-inner">
+		<div class="other-goods__head js-height">
+			<span class="other-goods__title">Разноцветные <span>(Любой цвет)</span></span>
+		</div>
+		<div data-fancybox data-src="#popup-overview" class="other-goods__body js-goods-visited">
+			<span class="other-goods__bottom-descr">1шт = 20р</span>
+			<div class="other-goods__img-wrapp" style="background-image: url(pic/product/product-08.jpg);">
+
+			</div>
+			<div class="other-goods__overflow">
+				<div class="other-goods__overflow-content">
+					<span class="btn other-goods__btn">Быстрый просмотр</span>
+					
+						<span class="other-goods__overflow-loupe">
+							<svg class="icon-loupe">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+					
+				</div>
+			</div>
+		</div>
+		
+			<div class="other-goods__price">
+				<span class="other-goods__price-new">1400 р.</span> /
+				<span class="other-goods__price-old">1 610р</span>
+			</div>
+			<div class="other-goods__select">
+				<select name="" id="" class="js-select">
+					<option value="">4м (1400р)</option>
+					<option value="">5м (1400р)</option>
+					<option value="">6м (1400р)</option>
+					<option value="">10м (1400р)</option>
+					<option value="">12м (1400р)</option>
+					<option value="">1м (1400р)</option>
+				</select>
+			</div>
+			<div class="other-goods__wrapp-basket">
+				<div class="other-goods__sale">
+					<span class="other-goods__sale-icon">
+						<svg class="icon-sales">
+							<use xlink:href="#sales"></use>
+						</svg>
+					</span>
+					<div class="other-goods__sale-descr">
+						<span class="other-goods__sale-text">Скидка</span>
+						<span class="other-goods__sale-value">15 %</span>
+					</div>
+				</div>
+				<div class="other-goods__basket">
+					<a href="#" class="btn btn--border">В корзину</a>
+				</div>
+			</div>
+			<div class="other-goods__buy">
+				<a href="#" class="btn">Купить в один клик</a>
+			</div>
+		
+	</div>
+</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="reviews">
+	<div class="container">
+		<span class="reviews__title">Отзывы</span>
+		<div class="reviews__holder">
+			<div class="reviews__left">
+				<div class="reviews__item">
+					<span class="reviews__item-icon">
+						<svg class="icon-quote">
+							<use xlink:href="#quote"></use>
+						</svg>
+					</span>
+					<div class="reviews__item-txt">
+						<p>
+							Не следует, однако забывать, что реализация намеченных плановых заданий позволяет оценить значение дальнейших направлений развития. Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции требуют определения и уточнения дальнейших направлений.
+						</p>
+					</div>
+					<div class="reviews__item-client">
+						<div class="reviews__item-img">
+							<img src="pic/userpic.png" alt="user">
+						</div>
+						<div class="reviews__item-box">
+							<span class="reviews__item-name">
+								Алексей Иванов <span>- довольный клиент</span>
+							</span>
+							<a href="#" class="reviews__item-social-icon">
+								<svg class="icon-vk">
+									<use xlink:href="#vk"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="reviews__right">
+				<div class="reviews__row">
+					<ul class="reviews__box">
+						<li class="reviews__elem ">
+	<div class="reviews__elem-head">
+		<div class="reviews__elem-img">
+			<img src="pic/userpic.png" alt="user">
+		</div>
+		<div class="reviews__elem-box">
+			<span class="reviews__elem-name">Андрей Соболев</span>
+			<a href="#" class="reviews__elem-icon">
+				<svg class="icon-vk">
+					<use xlink:href="#vk"></use>
+				</svg>
+			</a>
+		</div>
+	</div>
+	<div class="reviews__elem-txt">
+		<p>
+			Супер! Заказывал неделю назад подарок для девушки на день рождения и остался очень доволен тем, что ...
+		</p>
+	</div>
+</li><li class="reviews__elem reviews__elem--center">
+	<div class="reviews__elem-head">
+		<div class="reviews__elem-img">
+			<img src="pic/userpic.png" alt="user">
+		</div>
+		<div class="reviews__elem-box">
+			<span class="reviews__elem-name">Андрей Соболев</span>
+			<a href="#" class="reviews__elem-icon">
+				<svg class="icon-vk">
+					<use xlink:href="#vk"></use>
+				</svg>
+			</a>
+		</div>
+	</div>
+	<div class="reviews__elem-txt">
+		<p>
+			Супер! Заказывал неделю назад подарок для девушки на день рождения и остался очень доволен тем, что ...
+		</p>
+	</div>
+</li><li class="reviews__elem ">
+	<div class="reviews__elem-head">
+		<div class="reviews__elem-img">
+			<img src="pic/userpic.png" alt="user">
+		</div>
+		<div class="reviews__elem-box">
+			<span class="reviews__elem-name">Андрей Соболев</span>
+			<a href="#" class="reviews__elem-icon">
+				<svg class="icon-vk">
+					<use xlink:href="#vk"></use>
+				</svg>
+			</a>
+		</div>
+	</div>
+	<div class="reviews__elem-txt">
+		<p>
+			Супер! Заказывал неделю назад подарок для девушки на день рождения и остался очень доволен тем, что ...
+		</p>
+	</div>
+</li>
+					</ul>
+				</div>
+				<div class="reviews__row">
+					<ul class="reviews__box">
+						<li class="reviews__elem ">
+	<div class="reviews__elem-head">
+		<div class="reviews__elem-img">
+			<img src="pic/userpic.png" alt="user">
+		</div>
+		<div class="reviews__elem-box">
+			<span class="reviews__elem-name">Андрей Соболев</span>
+			<a href="#" class="reviews__elem-icon">
+				<svg class="icon-vk">
+					<use xlink:href="#vk"></use>
+				</svg>
+			</a>
+		</div>
+	</div>
+	<div class="reviews__elem-txt">
+		<p>
+			Супер! Заказывал неделю назад подарок для девушки на день рождения и остался очень доволен тем, что ...
+		</p>
+	</div>
+</li><li class="reviews__elem reviews__elem--center">
+	<div class="reviews__elem-head">
+		<div class="reviews__elem-img">
+			<img src="pic/userpic.png" alt="user">
+		</div>
+		<div class="reviews__elem-box">
+			<span class="reviews__elem-name">Андрей Соболев</span>
+			<a href="#" class="reviews__elem-icon">
+				<svg class="icon-vk">
+					<use xlink:href="#vk"></use>
+				</svg>
+			</a>
+		</div>
+	</div>
+	<div class="reviews__elem-txt">
+		<p>
+			Супер! Заказывал неделю назад подарок для девушки на день рождения и остался очень доволен тем, что ...
+		</p>
+	</div>
+</li><li class="reviews__elem ">
+	<div class="reviews__elem-head">
+		<div class="reviews__elem-img">
+			<img src="pic/userpic.png" alt="user">
+		</div>
+		<div class="reviews__elem-box">
+			<span class="reviews__elem-name">Андрей Соболев</span>
+			<a href="#" class="reviews__elem-icon">
+				<svg class="icon-vk">
+					<use xlink:href="#vk"></use>
+				</svg>
+			</a>
+		</div>
+	</div>
+	<div class="reviews__elem-txt">
+		<p>
+			Супер! Заказывал неделю назад подарок для девушки на день рождения и остался очень доволен тем, что ...
+		</p>
+	</div>
+</li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="help">
+  <div class="container">
+    <div class="help__wrap">
+
+      <div class="help__holder help__holder--large">
+        <div class="help__inner">
+          <div class="help__header">
+            <div class="help__heading">
+              <h1 class="help__title">Не можете определиться?</h1>
+              <span class="help__desc">Мы поможем подобрать лучший подарок!</span>
+            </div>
+            <img src="pic/help/help-01.jpg" alt="" class="help__decor">
+          </div>
+
+          <div class="help__body">
+            <form action="#" class="help__form js-form-validation">
+              <div class="help__form-row">
+                <div class="help__form-col">
+                  <select name="" class="js-select">
+                    <option selected disabled>Кому</option>
+                    <option value="">Себе</option>
+                    <option value="">Себе</option>
+                    <option value="">Это тоже себе</option>
+                    <option value="">И это себе</option>
+                    <option value="">Тоже себе</option>
+                  </select>
+                </div>
+                <div class="help__form-col">
+                  <select name="" class="js-select">
+                    <option selected disabled>Повод</option>
+                    <option value="">Без повода</option>
+                    <option value="">Без повода</option>
+                    <option value="">Без повода</option>
+                    <option value="">Без повода</option>
+                    <option value="">Без повода</option>
+                  </select>
+                </div>
+              </div>
+              <div class="help__form-row">
+                <div class="help__form-col">
+                  <select name="" class="js-select">
+                    <option selected disabled>Бюджет</option>
+                    <option value="">1000</option>
+                    <option value="">2000</option>
+                    <option value="">3000</option>
+                    <option value="">4000</option>
+                    <option value="">5000</option>
+                  </select>
+                </div>
+                <div class="help__form-col">
+                  <select name="" class="js-select">
+                    <option selected disabled>Рост</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="help__form-row">
+                <div class="help__form-col">
+                  <input type="text" class="help__form-input js-input-mask" placeholder="Номер телефона *" required data-valid="\S+">
+                </div>
+                <div class="help__form-col">
+                  <button class="btn btn--small help__form-btn" type="submit">Узнать идеальный подарок</button>
+                </div>
+              </div>
+              <div class="help__form-row help__form-row--compliance">
+                <label class="checkbox checkbox--small">
+                  <input type="checkbox" name="check" required checked>
+                  <span>Я Соглашаюсь на обработку персональных данных</span>
+                </label>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="help__holder help__holder--small">
+        <img src="pic/help/help-02.png" alt="" class="help__img">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+		<div class="advantages">
+  <div class="container">
+    <h1 class="advantages__title">Преимущества покупки в нашем магазине</h1>
+    <ul class="advantages__list">
+    
+      <li class="advantages__item">
+        <div class="advantages__holder advantages__holder--small">
+          <svg class="icon-delivery">
+            <use xlink:href="#delivery"></use>
+          </svg>
+        </div>
+        <div class="advantages__holder advantages__holder--large">
+          <span class="advantages__caption">Бесплатная</span>
+          <span class="advantages__desc">доставка за 1 час (24 часа)</span>
+        </div>
+      </li>
+    
+      <li class="advantages__item">
+        <div class="advantages__holder advantages__holder--small">
+          <svg class="icon-checklist">
+            <use xlink:href="#checklist"></use>
+          </svg>
+        </div>
+        <div class="advantages__holder advantages__holder--large">
+          <span class="advantages__caption">Товар</span>
+          <span class="advantages__desc">всегда в наличии</span>
+        </div>
+      </li>
+    
+      <li class="advantages__item">
+        <div class="advantages__holder advantages__holder--small">
+          <svg class="icon-transfer">
+            <use xlink:href="#transfer"></use>
+          </svg>
+        </div>
+        <div class="advantages__holder advantages__holder--large">
+          <span class="advantages__caption">Возврат / Обмен</span>
+          <span class="advantages__desc">в день вашего обращения</span>
+        </div>
+      </li>
+    
+      <li class="advantages__item">
+        <div class="advantages__holder advantages__holder--small">
+          <svg class="icon-employee">
+            <use xlink:href="#employee"></use>
+          </svg>
+        </div>
+        <div class="advantages__holder advantages__holder--large">
+          <span class="advantages__caption">Принимаем платежи</span>
+          <span class="advantages__desc">от юридических лиц</span>
+        </div>
+      </li>
+    
+      <li class="advantages__item">
+        <div class="advantages__holder advantages__holder--small">
+          <svg class="icon-credit-card">
+            <use xlink:href="#credit-card"></use>
+          </svg>
+        </div>
+        <div class="advantages__holder advantages__holder--large">
+          <span class="advantages__caption">Возможна</span>
+          <span class="advantages__desc">оплата по карте</span>
+        </div>
+      </li>
+    
+      <li class="advantages__item">
+        <div class="advantages__holder advantages__holder--small">
+          <svg class="icon-map-location">
+            <use xlink:href="#map-location"></use>
+          </svg>
+        </div>
+        <div class="advantages__holder advantages__holder--large">
+          <span class="advantages__caption">Шоу-рум</span>
+          <span class="advantages__desc">в центре Санкт-Петербурга</span>
+        </div>
+      </li>
+    
+    </ul>
+  </div>
+</div>
+	</div>
+
+	<div class="popup-overview" id="popup-overview">
+	<span class="popup-overview__caption">Коричнево-бежевый мишка</span>
+	<div class="popup-overview__wrapp">
+		<div class="popup-overview__tabs js-tabs-wrap">
+			<div class="popup-overview__content">
+				<div class="popup-overview__content-item active js-tab-content">
+					<div class="popup-overview__content-decor">
+						<img src="pic/order/goods-big-1.png" alt="">
+					</div>
+				</div>
+				<div class="popup-overview__content-item js-tab-content">
+					<div class="popup-overview__content-decor">
+						<img src="pic/order/goods-big-1.png" alt="">
+					</div>
+				</div>
+				<div class="popup-overview__content-item js-tab-content">
+					<div class="popup-overview__content-decor">
+						<img src="pic/order/goods-big-1.png" alt="">
+					</div>
+				</div>
+				<div class="popup-overview__content-item js-tab-content">
+					<div class="popup-overview__content-decor">
+						<img src="pic/order/goods-big-1.png" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="popup-overview__tab">
+				<div class="popup-overview__tab-item active js-tab">
+					<div class="popup-overview__tab-inner">
+						<img src="pic/order/order-product.png" alt="">
+					</div>
+				</div>
+				<div class="popup-overview__tab-item js-tab">
+					<div class="popup-overview__tab-inner">
+						<img src="pic/order/order-product.png" alt="">
+					</div>
+				</div>
+				<div class="popup-overview__tab-item js-tab">
+					<div class="popup-overview__tab-inner">
+						<img src="pic/order/order-product.png" alt="">
+					</div>
+				</div>
+				<div class="popup-overview__tab-item js-tab">
+					<div class="popup-overview__tab-inner">
+						<img src="pic/order/order-product.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup-overview__descr">
+			<ul class="popup-overview__characteristics">
+				<li class="popup-overview__characteristics-item">
+					Рост: <span class="popup-overview__characteristics-value">75 см</span>
+				</li>
+				<li class="popup-overview__characteristics-item">
+					Цвет: <span class="popup-overview__characteristics-value">Коричневый</span>
+				</li>
+				<li class="popup-overview__characteristics-item">
+					Материал: <span class="popup-overview__characteristics-value">Исскуственный мех</span>
+				</li>
+			</ul>
+			<div class="popup-overview__price">
+				<span class="popup-overview__price-new">2 500 р.</span> /
+				<span class="popup-overview__price-old">4 000 р</span>
+			</div>
+			<div class="popup-overview__wrapp-basket">
+				<div class="popup-overview__sale">
+					<span class="popup-overview__sale-icon">
+						<svg class="icon-sales">
+							<use xlink:href="#sales"></use>
+						</svg>
+					</span>
+					<div class="popup-overview__sale-descr">
+						<span class="popup-overview__sale-text">Выгода</span>
+						<span class="popup-overview__sale-value">1 500 р</span>
+					</div>
+				</div>
+				<div class="popup-overview__basket">
+					<a href="#" class="btn btn--border">В корзину</a>
+				</div>
+			</div>
+			<div class="popup-overview__buy">
+				<a href="#" class="btn">Купить в один клик</a>
+			</div>
+		</div>
+		<div class="popup-overview__descr-text">
+			Consectetuer adipiscing elit, sed diam nonummy euismod tinc dunt laoreet dolore magna aliquam sed diam nonummy euismod tinc dunt dollore Consectetuer adipiscing elit, sed diam nonummy euismod tinc dunt laoreet dolore magna aliquam sed diam nonummy euismod tinc dunt dollore Consectetuer adipiscing elit, sed diam nonummy euismod tinc dunt laoreet dolore magna aliquam sed diam nonummy euismod tinc dunt dollore Consectetuer adipiscing elit, sed diam nonummy euismod tinc dunt laoreet dolore magna aliquam sed diam nonummy euismod tinc dunt dollore magna aliquam sed diam nonummy euismod
+		</div>
+	</div>
+</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__top">
+			<div class="footer__logo">
+				<a href="#" class="footer__logo-link">
+					<span class="footer__logo-icon">
+						<svg class="icon-logo">
+   	           <use xlink:href="#logo"></use>
+   	         </svg>
+					</span>
+   	     	<span class="footer__logo-text">
+   	       <span class="footer__logo-name">ХАПИ ПОДАРКИ</span>
+   	       <span class="footer__logo-city">Санкт-Петербург</span>
+   	     </span>
+				</a>
+			</div>
+			<div class="footer__contacts">
+				<ul class="footer__contacts-list">
+					<li class="footer__contacts-item">
+						<a href="tel: +74912993730" class="footer__contacts-link">
+							<span class="footer__contacts-icon">
+								<svg class="icon-phone">
+									<use xlink:href="#phone"></use>
+								</svg>				
+							</span>
+							+7 (4912) 99 37 30
+						</a>
+					</li>
+					<li class="footer__contacts-item">
+						<a href="tel: +79038393730" class="footer__contacts-link">
+							<span class="footer__contacts-icon">
+								<svg class="icon-phone-mobile">
+									<use xlink:href="#phone-mobile"></use>
+								</svg>				
+							</span>
+							+7 (903) 839 37 30
+						</a>
+						<div class="footer__contacts-social">
+							<a href="#" class="footer__contacts-social-link">
+								<svg class="icon-whatsapp">
+    	            <use xlink:href="#whatsapp"></use>
+    	          </svg>
+							</a>
+							<a href="#" class="footer__contacts-social-link">
+								<svg class="icon-viber">
+    	            <use xlink:href="#viber"></use>
+    	          </svg>
+							</a>
+							<a href="#" class="footer__contacts-social-link">
+								<svg class="icon-telegram">
+    	            <use xlink:href="#telegram"></use>
+    	          </svg>
+							</a>
+						</div>
+					</li>
+					<li class="footer__contacts-item footer__contacts-item--feedback">
+						<a data-fancybox data-src="#popup-feedback" href="javascript:;" class="btn btn--small footer__btn">
+      			Обратный звонок
+      		</a> 
+					</li>
+				</ul>
+				<div class="footer__basket">
+					<a href="#" class="footer__basket-link">
+        		<svg class="icon-basket">
+        		  <use xlink:href="#basket"></use>
+        		</svg>
+        		<span class="footer__basket-value">0</span>
+      		</a>
+      	</div>
+			</div>
+		</div>
+		<div class="footer__middle">
+			<div class="footer__menu">
+				<ul class="footer__menu-inner">
+					<li class="footer__menu-item">
+						<a href="#" class="footer__menu-link">Контакты</a>
+					</li>
+					<li class="footer__menu-item">
+						<a href="#" class="footer__menu-link">Доставка</a>
+					</li>
+					<li class="footer__menu-item">
+						<a href="#" class="footer__menu-link">Оплата</a>
+					</li>
+					<li class="footer__menu-item">
+						<a href="#" class="footer__menu-link">Блог</a>
+					</li>
+					<li class="footer__menu-item">
+						<a href="#" class="footer__menu-link">Отзывы</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__address">
+				<ul class="footer__address-inner">
+					<li class="footer__address-item">
+						<a href="#" class="footer__address-link">
+							<span class="footer__address-icon">
+								<svg class="icon-location">
+									<use xlink:href="#location"></use>
+								</svg>
+							</span>
+							<span class="footer__address-txt">Рязань, ул.Стройкова 20</span>
+						</a>
+					</li>
+					<li class="footer__address-item">
+						<a href="mailto: magazine@mail.ru" class="footer__address-link">
+							<span class="footer__address-icon">
+								<svg class="icon-email">
+									<use xlink:href="#email"></use>
+								</svg>
+							</span>
+							<span class="footer__address-txt">magazine@mail.ru</span>
+						</a>
+					</li>
+					<li class="footer__address-item">
+						<a href="#" class="footer__address-link">
+							<span class="footer__address-icon">
+								<svg class="icon-clock">
+									<use xlink:href="#clock"></use>
+								</svg>
+							</span>
+							<span class="footer__address-txt">Доставка 24 часа без выходных</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer__bottom">
+			<div class="footer__social">
+				<span class="footer__social-txt">Мы в соцсетях</span>
+				<ul class="footer__social-list">
+					<li class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-youtube">
+								<use xlink:href="#youtube"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-facebook">
+								<use xlink:href="#facebook"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-instagram">
+								<use xlink:href="#instagram"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-odnoklassniki">
+								<use xlink:href="#odnoklassniki"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-vk">
+								<use xlink:href="#vk"></use>
+							</svg>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__copy">
+				<span class="footer__copy-txt">
+					ООО "Подарки Санкт-Петербург" &copy; Все права защищены, 2018.<span> Сайт не является публичной офертой.</span>
+				</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

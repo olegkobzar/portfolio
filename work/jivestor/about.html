@@ -1,0 +1,459 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>О компании</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+	<div class="wrapper">
+
+		<div class="watch js-watch">
+	<div class="container">
+		<div class="watch__wrap">
+			<span class="watch__text">
+				Find out how you can create a powerful chanel to attract customers
+			</span>
+			<a href="#" class="watch__text-link">Watch Demo</a>
+		</div>
+	</div>
+</div>
+		
+		<header class="header js-header">
+	<div class="container">
+		<div class="header__wrap js-wrap">
+			<div class="header__left js-left">
+				<div class="header__logo">
+					<a href="#" class="header__logo-link">
+						<svg class="icon-logo">
+							<use xlink:href="#logo"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="header__lang-wrap js-lang-wrap">
+					<div class="header__lang js-lang-btn">
+						<span class="header__lang-text" style="background-image: url(pic/flag/flag-en.png);">English</span>
+					</div>
+					<div class="header__lang-drop js-lang-drop">
+						<ul class="header__lang-list">
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-en.png);">English</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-oae.png);">العربية</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-china.png);">中文</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-ru.png);">Русский</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-fr.png);">Français</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-spain.png);">España</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-port.png);">Português</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-thailand.png);">ไทย</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<nav class="header__nav js-nav">
+				<ul class="header__list">
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span>Branded solution</span>
+						</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span>Business Models</span>
+						</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span>Platform Capabilities</span>
+						</a>
+					</li>
+					<li class="header__item header__item--sub js-blog-btn">
+						<a href="#" class="header__link header__link--sub ">
+							<span>Blog</span>
+						</a>
+						<ul class="header__list-sub js-blog-drop">
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">Who is Forex trader</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">What is Forex market</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">Who is Forex trader</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">What is Forex market</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">Who is Forex trader</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">What is Forex market</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">Who is Forex trader</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">What is Forex market</a>
+							</li>
+						</ul>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span>About Company</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="header__right js-right">
+				<a href="#" class="btn header__btn">Send request</a>
+			</div>
+
+			<div class="header__btn-menu js-btn-menu">
+				<span class="header__line"></span>
+				<span class="header__line"></span>
+				<span class="header__line"></span>
+			</div>
+
+		</div>
+	</div>
+</header>
+
+
+		<div class="supp">
+	<div class="container">
+		<span class="supp__caption">Supported markets</span>
+		<div class="supp__wrap">
+			<div class="supp__item">
+				<span class="supp__icon icon-currencies">
+					<img src="pic/svg/currencies.svg" alt="">
+				</span>
+				<span class="supp__text">Currencies</span>
+			</div>
+			<div class="supp__item">
+				<span class="supp__icon icon-metals">
+					<img src="pic/svg/metals.svg" alt="">
+				</span>
+				<span class="supp__text">Metals</span>
+			</div>
+			<div class="supp__item">
+				<span class="supp__icon icon-stock_indices">
+					<img src="pic/svg/stock_indices.svg" alt="">
+				</span>
+				<span class="supp__text supp__text--soon" data-text="Coming Soon"><span>Stock Indices</span></span>
+			</div>
+			<div class="supp__item">
+				<span class="supp__icon icon-crypto_currencies">
+					<img src="pic/svg/crypto_currencies.svg" alt="">
+				</span>
+				<span class="supp__text supp__text--soon" data-text="Coming Soon"><span>Crypto Currencies</span></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="descr">
+	<div class="container">
+		<span class="descr__caption">Integration and connectivity</span>
+		<ul class="descr__wrap">
+			<li class="descr__item">We invested in the creation of the product more than <b>15 000 hours</b> of time experienced developers. </li>
+			<li class="descr__item">Today you have the opportunity to get the finished product and start your business within <b>10-14 days.</b> </li>
+			<li class="descr__item">We can offer integration of our product with <b>various platforms.</b></li>
+			<li class="descr__item">You can be either a representative <b>broker</b> or a <b>direct broker.</b></li>
+		</ul>
+	</div>
+</div>
+
+		<div class="lang">
+	<div class="container">
+		<div class="mod-head">
+	<span class="mod-head__caption " data-text="Coming Soon">Interface language</span>
+	<span class="mod-head__descr"><span>We are constantly adding new interface languages and we can add yours. </span> <span>At the moment the following localizations are available:</span></span>
+</div>
+
+		<div class="lang__wrap">
+			<div class="lang__item">
+				<span class="lang__text" style="background-image: url(pic/flag/flag-en.png);">English</span>
+			</div>
+			<div class="lang__item">
+				<span class="lang__text" style="background-image: url(pic/flag/flag-oae.png);">العربية</span>
+			</div>
+			<div class="lang__item">
+				<span class="lang__text" style="background-image: url(pic/flag/flag-china.png);">中文</span>
+			</div>
+			<div class="lang__item">
+				<span class="lang__text" style="background-image: url(pic/flag/flag-ru.png);">Русский</span>
+			</div>
+			<div class="lang__item">
+				<span class="lang__text" style="background-image: url(pic/flag/flag-fr.png);">Français</span>
+			</div>
+			<div class="lang__item">
+				<span class="lang__text" style="background-image: url(pic/flag/flag-spain.png);">España</span>
+			</div>
+			<div class="lang__item">
+				<span class="lang__text" style="background-image: url(pic/flag/flag-port.png);">Português</span>
+			</div>
+			<div class="lang__item">
+				<span class="lang__text" style="background-image: url(pic/flag/flag-thailand.png);">ไทย</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="interface">
+	<div class="container">
+		<div class="mod-head">
+	<span class="mod-head__caption " data-text="Coming Soon">Interface theme</span>
+	<span class="mod-head__descr"><span>We offer two interface themes, which you can combine and set by default at your discretion. </span> <span>Users also have the option to select the interface theme based on their preferences.</span></span>
+</div>
+
+		<div class="interface__wrap">
+			<div class="interface__col">
+				<div class="interface__img">
+					<img src="pic/interface.jpg" alt="">
+				</div>
+				<span class="interface__text">Light</span>
+			</div>
+			<div class="interface__col">
+				<div class="interface__img">
+					<img src="pic/interface.jpg" alt="">
+				</div>
+				<span class="interface__text">Dark</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="slider">
+	<div class="container">
+		<div class="mod-head">
+	<span class="mod-head__caption " data-text="Coming Soon">Followers of strategies</span>
+	<span class="mod-head__descr"><span>We offer integration of our platform with the trading terminal of your broker. </span> <span>In order to copy the user's works there is no need to keep the computer on.</span></span>
+</div>
+
+		<div class="slider__wrap">
+			<div class="slider__icon">
+				<svg class="icon-Strategy_Followers">
+					<use xlink:href="#Strategy_Followers"></use>
+				</svg>
+			</div>
+			<div class="slider__init js-slider">
+				<div class="slider__item">
+					<span class="slider__title">Web terminal</span>
+					<span class="slider__descr">The ability to track charts and transactions in real time. The trading terminal allows you to trade in financial markets directly through the website.</span>
+				</div>
+				<div class="slider__item">
+					<span class="slider__title">Hosting Strategies</span>
+					<span class="slider__descr">To connect strategies, you must specify the account number and password of the investor. Our software will automatically connect to the account, download the transaction history and calculate the static indicators of the trading strategy.</span>
+				</div>
+				<div class="slider__item">
+					<span class="slider__title">RevShare</span>
+					<span class="slider__descr">This payment model allows you to pay your partners a percentage of the company's income or a fixed amount for the lot.</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="slider">
+	<div class="container">
+		<div class="mod-head">
+	<span class="mod-head__caption " data-text="Coming Soon">Strategy providers</span>
+	<span class="mod-head__descr"><span>Traders can share their transactions by connecting accounts of their various broker companies. In this way, deceleration is achieved and you can always agree with the supplier of the strategy on cooperation, since he does not have to change his broker. If you want to allow only the providers from your company to connect accounts, then all the others can be hidden</span></span>
+</div>
+
+		<div class="slider__wrap slider__wrap--reverse">
+			<div class="slider__init js-slider">
+				<div class="slider__item">
+					<span class="slider__title">Hosting Strategies</span>
+					<span class="slider__descr">To connect strategies, you must specify the account number and password of the investor. Our software will automatically connect to the account, download the transaction history and calculate the static indicators of the trading strategy.</span>
+				</div>
+				<div class="slider__item">
+					<span class="slider__title">RevShare</span>
+					<span class="slider__descr">This payment model allows you to pay your partners a percentage of the company's income or a fixed amount for the lot.</span>
+				</div>
+				<div class="slider__item">
+					<span class="slider__title">Web terminal</span>
+					<span class="slider__descr">The ability to track charts and transactions in real time. The trading terminal allows you to trade in financial markets directly through the website.</span>
+				</div>
+			</div>
+			<div class="slider__icon">
+				<svg class="icon-Strategy_Provider">
+					<use xlink:href="#Strategy_Provider"></use>
+				</svg>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="slider">
+	<div class="container">
+		<div class="mod-head">
+	<span class="mod-head__caption mod-head__caption--soon" data-text="Coming Soon">Affiliates</span>
+	<span class="mod-head__descr"><span>The affiliate program allows you to build your own phillus network or to attract traffic through various ad networks and sites that run CPL, CPA, RevShare.</span></span>
+</div>
+
+		<div class="slider__wrap">
+			<div class="slider__icon">
+				<svg class="icon-Affiliate">
+					<use xlink:href="#Affiliate"></use>
+				</svg>
+			</div>
+			<div class="slider__init js-slider">
+				<div class="slider__item">
+					<span class="slider__title">RevShare</span>
+					<span class="slider__descr">This payment model allows you to pay your partners a percentage of the company's income or a fixed amount for the lot.</span>
+				</div>
+				<div class="slider__item">
+					<span class="slider__title">Web terminal</span>
+					<span class="slider__descr">The ability to track charts and transactions in real time. The trading terminal allows you to trade in financial markets directly through the website.</span>
+				</div>
+				<div class="slider__item">
+					<span class="slider__title">Hosting Strategies</span>
+					<span class="slider__descr">To connect strategies, you must specify the account number and password of the investor. Our software will automatically connect to the account, download the transaction history and calculate the static indicators of the trading strategy.</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="mobile">
+	<div class="container">
+		<div class="mod-head">
+	<span class="mod-head__caption mod-head__caption--soon" data-text="Coming Soon">Mobile app</span>
+	<span class="mod-head__descr"><span>We offer mobile applications that your customers can install on their phone. </span> <span>In addition, our site is fully adapted to the tablet.</span></span>
+</div>
+
+		<div class="mobile__wrap">
+			<div class="mobile__left">
+				<div class="mobile__box">
+					<img src="pic/google-pay.png" alt="">
+					<span class="mobile__text">Android</span>
+				</div>
+			</div>
+			<div class="mobile__right">
+				<div class="mobile__box">
+					<img src="pic/app-store.png" alt="">
+					<span class="mobile__text">iOS</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="admin">
+	<div class="container">
+		<span class="admin__caption">Admin Office</span>
+		<span class="admin__descr">We offer access to the control panel, which contains all the tools for efficient administration of the platform and providing support to your users. In addition, we offer CRM (customer relationship management), which allows you to conduct a user in the funnel: from re-registration to opening a live account.</span>
+	</div>
+</div>
+
+	</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__left">
+				2015 Larmond capital. Allrights reserved
+			</div>
+			<ul class="footer__right">
+				<li class="footer__item">
+					<a href="#" class="footer__link">Disclaimer</a>
+				</li>
+				<li class="footer__item">
+					<a href="#" class="footer__link">Legal Notice</a>
+				</li>
+				<li class="footer__item">
+					<a href="#" class="footer__link">Terms & Conditions</a>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

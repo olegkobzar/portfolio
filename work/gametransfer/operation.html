@@ -1,0 +1,1274 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Мои операции</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+<header class="header header--profile">
+	<div class="container">
+		<div class="header__holder">
+			<div class="header__item header__item--toggler">
+				<span class="header__toggler js-toggler-open">
+					<span class="header__toggler-decor"></span>
+				</span>
+			</div>
+			<div class="header__item header__item--logo">
+				<a href="#" class="header__logo">GT</a>
+			</div>
+			<div class="header__item header__item--nav js-toggler-menu">
+				<div class="header__nav-overlay js-nav-overlay"></div>
+				<nav class="header__nav">
+					<span class="header__nav-close js-toggler-close"></span>
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Блог
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Рейтинг продавцов
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Розыгрыши
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Поддержка
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Вопросы и ответы
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Правила
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			
+				<div class="header__btn-search js-btn-search"></div>
+				<div class="header__search js-search-input">
+					<input type="text">
+				</div>
+			
+
+			
+				<div class="header__add-wrap">
+					<a href="#" class="header__add-link">
+						<span class="header__add-link-icon">
+							
+						</span>
+						<span class="header__add-link-text">Добавить сделку</span>
+					</a>
+				</div>
+			
+			
+			<div class="header__item header__item--user js-user-wrap">
+				<a href="#" class="header__user js-user-link">
+					<img src="pic/users/users-5.png" alt="user">
+				</a>
+				<div class="header__user-info js-user-drop">
+					<div class="header__user-head">
+						<div class="header__user-img">
+							<img src="pic/users/users-5.png" alt="user">
+						</div>
+						<div class="header__user-txt">
+							<span class="header__user-name">
+								Chack Norris
+							</span>
+							<a href="#" class="header__user-mail">
+								Norris@gmail.com
+							</a>
+						</div>
+					</div>
+					<ul class="header__user-list">
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои покупки</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои продажи</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои операции</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Заработать</a>
+						</li>
+					</ul>
+					<div class="header__user-logout">
+						<a href="#" class="header__user-logout-link">
+							<span class="header__user-icon">
+
+							</span>
+							<span class="header__user-logout-txt">Выйти</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="wrapper">
+
+		<div class="operation">
+	<div class="container">
+		<div class="operation__sidebar">
+			<div class="operation__info">
+				<div class="operation__info-avatar">
+					<img src="pic/users/users-3.png" alt="">
+				</div>
+				<span class="operation__info-name">Chuck Norris</span>
+				<span class="operation__info-mail">Norris@gmail.com</span>
+
+				<div class="operation__info-balance-wrap">
+					<span class="operation__info-balance-text">Баланс: </span>
+					<span class="operation__info-balance-value">3320 руб.</span>
+				</div>
+
+				<ul class="operation__info-list">
+					<li class="operation__info-item">
+						<a href="#" class="operation__info-link">Мои настройки</a>	
+					</li>
+					<li class="operation__info-item">
+						<a href="#" class="operation__info-link">Мои товары</a>	
+					</li>
+					<li class="operation__info-item">
+						<a href="#" class="operation__info-link">Мои покупки</a>	
+					</li>
+					<li class="operation__info-item">
+						<a href="#" class="operation__info-link">Мои продажи</a>	
+					</li>
+					<li class="operation__info-item">
+						<a href="#" class="operation__info-link">Заработать</a>	
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="operation__content">
+			<span class="operation__caption">Мои операции</span>
+
+			<div class="operation__card-wrap">
+				<div class="operation__card">
+					<div class="operation__card-inner">
+						<span class="operation__card-title">Доступно:</span>
+						<span class="operation__card-price operation__card-price--green">1090 руб. </span>
+						<span class="operation__card-title">Заморожено:</span>
+						<span class="operation__card-frozen">2230 руб. </span>
+					</div>
+				</div>
+				<div class="operation__card">
+					<div class="operation__card-inner operation__card-inner--benefit">
+						<span class="operation__card-title">Ожидаемый доход:</span>
+						<span class="operation__card-price">12410 руб. </span>
+						<div class="operation__chart">
+							<img src="pic/chart/chart-1.png" alt="">
+							<div class="operation__tooltip">
+								<span class="operation__percent">+13%</span>
+								<span class="operation__date">02.08</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="operation__card">
+					<div class="operation__card-inner operation__card-inner--value">
+						<span class="operation__card-title">Выведено средств:</span>
+						<span class="operation__card-price">56920 руб. </span>
+						<div class="operation__chart">
+							<img src="pic/chart/chart-2.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="operation__tabs-wrap js-tabs-wrap">
+				<div class="operation__tabs-head">
+					<span class="operation__tabs-head-item js-tab active">Все операции</span>
+					<span class="operation__tabs-head-item js-tab">Мои покупки</span>
+					<span class="operation__tabs-head-item js-tab">Мои продажи</span>
+					<span class="operation__tabs-head-item js-tab">Заработать</span>
+				</div>
+				<div class="operation__tabs-content">
+					<div class="operation__tabs-content-item js-tab-content active">
+
+						<div class="operation__row operation__row--head">
+							<div class="operation__col">Название товара</div>
+							<div class="operation__col">Стоимость</div>
+							<div class="operation__col">Дата</div>
+							<div class="operation__col">Оценка</div>
+						</div>
+
+						<div class="operation__row js-wrap-all">
+
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+							</div>
+
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 80%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="operation__row js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Бронежелет, набор оружия и ключ активации</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 40%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="operation__row js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 60%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="operation__row js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 80%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="operation__row js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Бронежелет, набор оружия и ключ активации</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 80%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="operation__row operation__row--last js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 20%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<a href="#" class="operation__more-btn">
+							<span class="operation__more-text">Показать еще</span>
+						</a>
+					</div>
+
+					<div class="operation__tabs-content-item js-tab-content">
+
+						<div class="operation__row operation__row--head">
+							<div class="operation__col">Название товара</div>
+							<div class="operation__col">Стоимость</div>
+							<div class="operation__col">Дата</div>
+							<div class="operation__col">Оценка</div>
+						</div>
+
+						<div class="operation__row js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Бронежелет, набор оружия и ключ активации</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 40%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="operation__row js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 60%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="operation__row js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 80%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="operation__row js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Бронежелет, набор оружия и ключ активации</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 80%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="operation__row operation__row--last js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 20%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<a href="#" class="operation__more-btn">
+							<span class="operation__more-text">Показать еще</span>
+						</a>
+					</div>
+
+					<div class="operation__tabs-content-item js-tab-content">
+
+						<div class="operation__row operation__row--head">
+							<div class="operation__col">Название товара</div>
+							<div class="operation__col">Стоимость</div>
+							<div class="operation__col">Дата</div>
+							<div class="operation__col">Оценка</div>
+						</div>
+
+						<div class="operation__row js-wrap-all">
+
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+							</div>
+
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 80%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="operation__row js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Бронежелет, набор оружия и ключ активации</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 40%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="operation__row js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 60%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="operation__row js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 80%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="operation__row js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Бронежелет, набор оружия и ключ активации</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 80%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="operation__row operation__row--last js-wrap-all">
+							<div class="operation__col js-show-all">
+								<a href="#" class="operation__col-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+							</div>
+							<div class="operation__col"><span class="operation__name-mob">Стоимость:</span> 1700 <span class="rub">o</span></div>
+							<div class="operation__col"><span class="operation__name-mob">Дата:</span> 02.04.2018</div>
+							<div class="operation__col">
+								<span class="operation__name-mob">Оценка:</span>
+								<span class="operation__close-mob js-close-item"></span>
+								<div class="operation__col-rating">
+									<div class="operation__rating-back">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+									<div class="operation__rating-top" style="width: 20%;">
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+										<svg class="icon-star">
+											<use xlink:href="#star"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<a href="#" class="operation__more-btn">
+							<span class="operation__more-text">Показать еще</span>
+						</a>
+					</div>
+
+					<div class="operation__tabs-content-item js-tab-content">
+						<span class="operation__descr">Привлекайте людей на сайт через реферальную ссылку и получайте 1 руб. за каждого зарегистрированного пользователя.</span>
+						<div class="operation__referal">
+							<span class="operation__referal-title">Реферальная ссылка</span>
+							<div class="operation__referal-link-wrap">
+								<span class="operation__referal-link">http://example.com/profile/id122342</span>
+								<span class="operation__referal-icon">
+									<svg class="icon-copy">
+										<use xlink:href="#copy"></use>
+									</svg>
+								</span>
+							</div>
+							<a href="#" class="btn operation__btn">Скопировать ссылку</a>
+						</div>
+						<span class="operation__referal-caption">Список рефералов</span>
+
+						<div class="operation__table">
+
+							<div class="operation__table-row operation__table-row--head">
+								<div class="operation__table-col">Название товара</div>
+								<div class="operation__table-col">Заработано</div>
+							</div>
+
+							<div class="operation__table-row">
+								<div class="operation__table-col">
+									<div class="operation__table-img">
+										<img src="pic/users/users-1.png" alt="">
+										<span class="operation__table-status online"></span>
+									</div>
+									<span class="operation__user-name">Ray Thompson</span>
+								</div>
+								<div class="operation__table-col"></div>
+							</div>
+
+							<div class="operation__table-row">
+								<div class="operation__table-col">
+									<div class="operation__table-img">
+										<img src="pic/users/users-2.png" alt="">
+										<span class="operation__table-status offline"></span>
+									</div>
+									<span class="operation__user-name">Arnold Schwarzenegger</span>
+								</div>
+								<div class="operation__table-col"></div>
+							</div>
+
+						</div>
+						<a href="#" class="operation__more-btn">
+							<span class="operation__more-text">Показать еще</span>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="social">
+	<div class="container">
+		<span class="social__title">Следите за нами в социальных сетях:</span>
+		<div class="social__wrapp">
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-vk">
+						<use xlink:href="#vk"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-g-plus">
+						<use xlink:href="#g-plus"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-telegram">
+						<use xlink:href="#telegram"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-facebook">
+						<use xlink:href="#facebook"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__wrapp">
+			<div class="footer__inner footer__inner--nav">
+				<ul class="footer__list">
+					<li class="footer__item">
+						<a href="#" class="footer__link">Поддержка</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Вопросы и ответы</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Правила</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Рейтинг продавцов</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Розыгрыши</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Информация</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Пользовательское соглашение</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Отказ от ответственности</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Разрешение споров</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__inner footer__inner--info">
+				<span class="footer__descr">© 2018 Game Transfer - торговая площадка игровых ценностей</span>
+				<span class="footer__icon">
+					<img src="pic/webmoney.png" alt="">
+				</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

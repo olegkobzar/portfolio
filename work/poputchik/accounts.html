@@ -1,0 +1,1603 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Учетные записи</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+<header class="header">
+	<a href="#" class="header__logo">
+		<svg class="icon-logo">
+			<use xlink:href="#logo"></use>
+		</svg>
+	</a>
+	<div class="header__ctrl">
+		<div class="header__ctrl-item header__user">
+			<div class="header__user-text">
+				
+					<span class="header__user-name">Константин</span>
+					<span class="header__user-surname">Константинопольский</span>
+				
+				
+			</div>
+			<div class="header__user-image">
+				<img src="pic/user.jpg" alt="user">
+			</div>
+		</div>
+		<div class="header__ctrl-item header__menu">
+			<ul class="header__menu-list">
+				<li class="header__menu-item">
+					<a href="#" class="header__menu-link header__message">
+						
+							<span class="header__message-num" data-num="3"></span>
+						
+						<svg class="icon-mail">
+							<use xlink:href="#mail"></use>
+						</svg>
+					</a>
+				</li>
+				<li class="header__menu-item">
+					<div class="header__menu-link header__search js-search-btn">
+						<svg class="icon-search">
+							<use xlink:href="#search"></use>
+						</svg>
+					</div>
+					<div class="header__search-more js-header-search">
+						<input type="text" class="header__search-input" placeholder="Искать">
+						<span class="header__search-close js-search-close"></span>
+					</div>
+
+				</li>
+			</ul>
+		</div>
+		<div class="header__ctrl-item header__logout">
+			<div class="header__menu-link">
+				<span class="header__logout-txt">Выход</span>
+				<div class="header__logout-icon">
+					<svg class="icon-turn-off">
+						<use xlink:href="#turn-off"></use>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="wrapper">
+
+			<aside class="custom-scroll">
+				<ul class="sidebar">
+	<li class="sidebar__item active">
+		<a href="#" class="sidebar__link">
+			<span class="sidebar__icon">
+				<svg class="icon-administrirov">
+					<use xlink:href="#administrirov"></use>
+				</svg>
+			</span>
+			<span class="sidebar__text">
+				Администри- рование
+			</span>
+		</a>
+	</li>
+	
+	
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__icon">
+					<svg class="icon-users">
+						<use xlink:href="#users"></use>
+					</svg>
+				</span>
+				<span class="sidebar__text">
+					Учетные записи
+				</span>
+			</a>
+		</li>
+	
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__icon">
+					<svg class="icon-nastroika">
+						<use xlink:href="#nastroika"></use>
+					</svg>
+				</span>
+				<span class="sidebar__text">
+					Настройки
+				</span>
+			</a>
+		</li>
+	
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__icon">
+					<svg class="icon-list">
+						<use xlink:href="#list"></use>
+					</svg>
+				</span>
+				<span class="sidebar__text">
+					Реест поставщиков
+				</span>
+			</a>
+		</li>
+	
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__icon">
+					<svg class="icon-hamburger-2">
+						<use xlink:href="#hamburger-2"></use>
+					</svg>
+				</span>
+				<span class="sidebar__text">
+					Категории товаров
+				</span>
+			</a>
+		</li>
+	
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__icon">
+					<svg class="icon-sale-statistics">
+						<use xlink:href="#sale-statistics"></use>
+					</svg>
+				</span>
+				<span class="sidebar__text">
+					Статистика
+				</span>
+			</a>
+		</li>
+	
+	
+</ul>
+			</aside>
+
+			<div class="content">
+
+        <div class="head-search ">
+	<div class="head-search__holder">
+		<span class="head-search__title">Учетные записи </span>		
+		<div class="head-search__box">
+			<label class="input-icon-label">
+				<span>
+					<svg class="icon-search">
+						<use xlink:href="#search"></use>
+					</svg>
+				</span>
+				<input type="text" name="input-icon" class="input-icon head-search__input" placeholder="Найти пользователя">
+			</label>
+		</div>
+	</div>
+	
+</div>
+
+
+        <div class="moderators js-moderators-tab">
+  <div class="moderators__nav">
+    <ul class="moderators__nav-list">
+      <li class="moderators__nav-item js-moderators-nav active">
+        <a href="#" class="moderators__nav-link">Администраторы</a>
+      </li>
+      <li class="moderators__nav-item js-moderators-nav">
+        <a href="#" class="moderators__nav-link">Модераторы</a>
+      </li>
+      <li class="moderators__nav-item js-moderators-nav">
+        <a href="#" class="moderators__nav-link">Поставщики</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="moderators__body">
+
+    <div class="moderators__content js-moderators-content show">
+      <ul class="moderators__list">
+
+  <li class="moderators__item moderators__item--add box-item js-moderators-item">
+    <div class="moderators__top">
+      <div class="moderators__add js-moderators-btn">
+        <div class="moderators__icon"></div>
+        <span class="moderators__txt">Добавить нового пользователя</span>
+      </div>
+    </div>
+    <div class="moderators__bottom js-moderators-collapse">
+      <div class="moderators__row">
+
+        <div class="moderators__col moderators__col--small">
+          <label class="moderators__label">Роль</label>
+          <div class="select-wrapp select-checkbox">
+            <select name="Select" id="" class="custom-select-checkbox">
+            <option value="">Модератор</option>
+            <option value="">Поставщик</option>
+            <option value="">Администратор</option>
+          </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small">
+          <label class="moderators__label">Логин</label>
+          <input type="text" class="input-bottom">
+        </div>
+        <div class="moderators__col moderators__col--small">
+          <label class="moderators__label">Пароль</label>
+          <input type="text" class="input-bottom">
+        </div>
+        <div class="moderators__col moderators__col--large">
+          <label class="moderators__label">Эл. почта для приглашения</label>
+          <input type="text" class="input-bottom">
+        </div>
+      </div>
+
+      <div class="moderators__row">
+        <div class="moderators__col">
+          <span class="btn">Создать</span>
+        </div>
+        <div class="moderators__col">
+          <span class="btn btn--orange js-moderators-cancel">Отменить</span>
+        </div>
+      </div>
+
+    </div>
+  </li>
+
+  <li class="moderators__item box-item">
+    <div class="moderators__top">
+      <div class="moderators__row moderators__row--admin">
+
+        <div class="moderators__col moderators__col--large">
+          <span class="moderators__label">Администратор</span>
+          <span class="moderators__name">Ким Ли Со</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small">
+          <span class="moderators__label">Дата регистрации</span>
+          <span class="moderators__name">10 февраля 2018 года, 10:00</span>
+        </div>
+
+      </div>
+    </div>
+
+  </li>
+
+  <li class="moderators__item box-item">
+    <div class="moderators__top">
+      <div class="moderators__row moderators__row--admin">
+
+        <div class="moderators__col moderators__col--large">
+          <span class="moderators__label">Администратор</span>
+          <span class="moderators__name">Денис Иванов</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small">
+          <span class="moderators__label">Дата регистрации</span>
+          <span class="moderators__name">5 марта 2018 года, 15:32</span>
+        </div>
+
+      </div>
+    </div>
+
+  </li>
+
+  <li class="moderators__item box-item">
+    <div class="moderators__top">
+      <div class="moderators__row moderators__row--admin">
+
+        <div class="moderators__col moderators__col--large">
+          <span class="moderators__label">Администратор</span>
+          <span class="moderators__name">Марина Лебяжкина</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small">
+          <span class="moderators__label">Дата регистрации</span>
+          <span class="moderators__name">3 июня 2018 года, 11:50</span>
+        </div>
+
+      </div>
+    </div>
+
+  </li>
+
+</ul>
+
+    </div>
+
+    <div class="moderators__content js-moderators-content">
+
+      <ul class="moderators__list">
+
+  <li class="moderators__item moderators__item--add box-item js-moderators-item">
+    <div class="moderators__top">
+      <div class="moderators__add js-moderators-btn">
+        <div class="moderators__icon"></div>
+        <span class="moderators__txt">Добавить нового пользователя</span>
+      </div>
+    </div>
+    <div class="moderators__bottom js-moderators-collapse">
+      <div class="moderators__row">
+
+        <div class="moderators__col moderators__col--small">
+          <label class="moderators__label">Роль</label>
+          <div class="select-wrapp select-checkbox">
+            <select name="Select" id="" class="custom-select-checkbox">
+              <option value="">Модератор</option>
+              <option value="">Поставщик</option>
+              <option value="">Администратор</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small">
+          <label class="moderators__label">Логин</label>
+          <input type="text" class="input-bottom">
+        </div>
+        <div class="moderators__col moderators__col--small">
+          <label class="moderators__label">Пароль</label>
+          <input type="text" class="input-bottom">
+        </div>
+        <div class="moderators__col moderators__col--large">
+          <label class="moderators__label">Эл. почта для приглашения</label>
+          <input type="text" class="input-bottom">
+        </div>
+      </div>
+
+      <div class="moderators__row">
+        <div class="moderators__col">
+          <span class="btn">Создать</span>
+        </div>
+        <div class="moderators__col">
+          <span class="btn btn--orange js-moderators-cancel">Отменить</span>
+        </div>
+      </div>
+
+    </div>
+  </li>
+
+  <li class="moderators__item box-item js-moderators-item">
+    <div class="moderators__top">
+      <div class="moderators__row">
+
+        <div class="moderators__col moderators__col--x-large moderators__col--delete js-moderators-col-del">
+          <span class="moderators__info">Вы точно хотите удалить модератора Михаила Радонежского?</span>
+          <span class="moderators__info">Действие необратимо!</span>
+        </div>
+
+        <div class="moderators__col moderators__col--media js-moderators-col">
+          <span class="moderators__label">Модератор</span>
+          <span class="moderators__name">Михаил Радонежский</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small js-moderators-col">
+          <span class="moderators__label">Назначенные поставщики</span>
+          <div class="select-wrapp multiselect-wrap">
+            <select name="Select" id="" class="js-multiselect" multiple="multiple">
+              <option value="" selected>Тестовый поставщик 6</option>
+              <option value="">Тестовый поставщик 5</option>
+              <option value="">Тестовый поставщик 4</option>
+              <option value="">Тестовый поставщик 3</option>
+              <option value="">Тестовый поставщик 2</option>
+              <option value="">Тестовый поставщик 1</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small js-moderators-col">
+          <span class="moderators__label">Запрещенные поставщики</span>
+          <div class="select-wrapp multiselect-wrap">
+            <select name="Select" id="" class="js-multiselect" multiple="multiple">
+              <option value="" selected>Тестовый поставщик 6</option>
+              <option value="">Тестовый поставщик 5</option>
+              <option value="">Тестовый поставщик 4</option>
+              <option value="">Тестовый поставщик 3</option>
+              <option value="">Тестовый поставщик 2</option>
+              <option value="">Тестовый поставщик 1</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--checkbox js-moderators-col">
+          <span class="moderators__label">Работа с поставщиками</span>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__inner moderators__inner--btn js-moderators-btn">
+            <svg class="icon-edit">
+              <use xlink:href="#edit"></use>
+            </svg>
+          </div>
+          <div class="moderators__inner moderators__inner--del">
+            <span class="moderators__delete js-moderators-delete"></span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn js-moderators-del">Удалить</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn btn--orange js-moderators-delete-calcel">отменить</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="moderators__bottom js-moderators-collapse">
+      <form action="" class="moderators__form">
+        <div class="moderators__row">
+          <div class="moderators__col moderators__col--small">
+            <label class="moderators__label">Логин</label>
+            <input type="text" class="input-bottom" placeholder="Логин">
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <label class="moderators__label">Пароль</label>
+            <input type="text" class="input-bottom" placeholder="Пароль">
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <button class="btn" type="submit">Изменить</button>
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <span class="btn btn--orange js-moderators-cancel">отменить</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </li>
+
+  <li class="moderators__item box-item js-moderators-item">
+    <div class="moderators__top">
+      <div class="moderators__row">
+
+        <div class="moderators__col moderators__col--x-large moderators__col--delete js-moderators-col-del">
+          <span class="moderators__info">Вы точно хотите удалить модератора Елизавета Боярская?</span>
+          <span class="moderators__info">Действие необратимо!</span>
+        </div>
+
+        <div class="moderators__col moderators__col--media js-moderators-col">
+          <span class="moderators__label">Модератор</span>
+          <span class="moderators__name">Елизавета Боярская</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small js-moderators-col">
+          <span class="moderators__label">Назначенные поставщики</span>
+          <div class="select-wrapp multiselect-wrap">
+            <select name="Select" id="" class="js-multiselect" multiple="multiple">
+              <option value="" selected>Тестовый поставщик 6</option>
+              <option value="">Тестовый поставщик 5</option>
+              <option value="">Тестовый поставщик 4</option>
+              <option value="">Тестовый поставщик 3</option>
+              <option value="">Тестовый поставщик 2</option>
+              <option value="">Тестовый поставщик 1</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small js-moderators-col">
+          <span class="moderators__label">Запрещенные поставщики</span>
+          <div class="select-wrapp multiselect-wrap">
+            <select name="Select" id="" class="js-multiselect" multiple="multiple">
+              <option value="" selected>Тестовый поставщик 6</option>
+              <option value="">Тестовый поставщик 5</option>
+              <option value="">Тестовый поставщик 4</option>
+              <option value="">Тестовый поставщик 3</option>
+              <option value="">Тестовый поставщик 2</option>
+              <option value="">Тестовый поставщик 1</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--checkbox js-moderators-col">
+          <span class="moderators__label">Работа с поставщиками</span>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__inner moderators__inner--btn js-moderators-btn">
+            <svg class="icon-edit">
+              <use xlink:href="#edit"></use>
+            </svg>
+          </div>
+          <div class="moderators__inner moderators__inner--del">
+            <span class="moderators__delete js-moderators-delete"></span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn js-moderators-del">Удалить</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn btn--orange js-moderators-delete-calcel">отменить</span>
+        </div>
+
+      </div>
+    </div>
+    <div class="moderators__bottom js-moderators-collapse">
+      <form action="" class="moderators__form">
+        <div class="moderators__row">
+          <div class="moderators__col moderators__col--small">
+            <label class="moderators__label">Логин</label>
+            <input type="text" class="input-bottom" placeholder="Логин">
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <label class="moderators__label">Пароль</label>
+            <input type="text" class="input-bottom" placeholder="Пароль">
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <button class="btn" type="submit">Изменить</button>
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <span class="btn btn--orange js-moderators-cancel">отменить</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </li>
+
+  <li class="moderators__item box-item js-moderators-item">
+    <div class="moderators__top">
+      <div class="moderators__row">
+
+        <div class="moderators__col moderators__col--x-large moderators__col--delete js-moderators-col-del">
+          <span class="moderators__info">Вы точно хотите удалить модератора Камила Родригес?</span>
+          <span class="moderators__info">Действие необратимо!</span>
+        </div>
+
+        <div class="moderators__col moderators__col--media js-moderators-col">
+          <span class="moderators__label">Модератор</span>
+          <span class="moderators__name">Камила Родригес</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small js-moderators-col">
+          <span class="moderators__label">Назначенные поставщики</span>
+          <div class="select-wrapp multiselect-wrap">
+            <select name="Select" id="" class="js-multiselect" multiple="multiple">
+              <option value="" selected>Тестовый поставщик 6</option>
+              <option value="">Тестовый поставщик 5</option>
+              <option value="">Тестовый поставщик 4</option>
+              <option value="">Тестовый поставщик 3</option>
+              <option value="">Тестовый поставщик 2</option>
+              <option value="">Тестовый поставщик 1</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small js-moderators-col">
+          <span class="moderators__label">Запрещенные поставщики</span>
+          <div class="select-wrapp multiselect-wrap">
+            <select name="Select" id="" class="js-multiselect" multiple="multiple">
+              <option value="" selected>Тестовый поставщик 6</option>
+              <option value="">Тестовый поставщик 5</option>
+              <option value="">Тестовый поставщик 4</option>
+              <option value="">Тестовый поставщик 3</option>
+              <option value="">Тестовый поставщик 2</option>
+              <option value="">Тестовый поставщик 1</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--checkbox js-moderators-col">
+          <span class="moderators__label">Работа с поставщиками</span>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__inner moderators__inner--btn js-moderators-btn">
+            <svg class="icon-edit">
+              <use xlink:href="#edit"></use>
+            </svg>
+          </div>
+          <div class="moderators__inner moderators__inner--del">
+            <span class="moderators__delete js-moderators-delete"></span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn js-moderators-del">Удалить</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn btn--orange js-moderators-delete-calcel">отменить</span>
+        </div>
+
+      </div>
+    </div>
+    <div class="moderators__bottom js-moderators-collapse">
+      <form action="" class="moderators__form">
+        <div class="moderators__row">
+          <div class="moderators__col moderators__col--small">
+            <label class="moderators__label">Логин</label>
+            <input type="text" class="input-bottom" placeholder="Логин">
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <label class="moderators__label">Пароль</label>
+            <input type="text" class="input-bottom" placeholder="Пароль">
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <button class="btn" type="submit">Изменить</button>
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <span class="btn btn--orange js-moderators-cancel">отменить</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </li>
+
+  <li class="moderators__item box-item js-moderators-item">
+    <div class="moderators__top">
+      <div class="moderators__row">
+
+        <div class="moderators__col moderators__col--x-large moderators__col--delete js-moderators-col-del">
+          <span class="moderators__info">Вы точно хотите удалить модератора Михаила Радонежского?</span>
+          <span class="moderators__info">Действие необратимо!</span>
+        </div>
+
+        <div class="moderators__col moderators__col--media js-moderators-col">
+          <span class="moderators__label">Модератор</span>
+          <span class="moderators__name">Михаила Радонежского</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small js-moderators-col">
+          <span class="moderators__label">Назначенные поставщики</span>
+          <div class="select-wrapp multiselect-wrap">
+            <select name="Select" id="" class="js-multiselect" multiple="multiple">
+              <option value="" selected>Тестовый поставщик 6</option>
+              <option value="">Тестовый поставщик 5</option>
+              <option value="">Тестовый поставщик 4</option>
+              <option value="">Тестовый поставщик 3</option>
+              <option value="">Тестовый поставщик 2</option>
+              <option value="">Тестовый поставщик 1</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small js-moderators-col">
+          <span class="moderators__label">Запрещенные поставщики</span>
+          <div class="select-wrapp multiselect-wrap">
+            <select name="Select" id="" class="js-multiselect" multiple="multiple">
+              <option value="" selected>Тестовый поставщик 6</option>
+              <option value="">Тестовый поставщик 5</option>
+              <option value="">Тестовый поставщик 4</option>
+              <option value="">Тестовый поставщик 3</option>
+              <option value="">Тестовый поставщик 2</option>
+              <option value="">Тестовый поставщик 1</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--checkbox js-moderators-col">
+          <span class="moderators__label">Работа с поставщиками</span>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__inner moderators__inner--btn js-moderators-btn">
+            <svg class="icon-edit">
+              <use xlink:href="#edit"></use>
+            </svg>
+          </div>
+          <div class="moderators__inner moderators__inner--del">
+            <span class="moderators__delete js-moderators-delete"></span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn js-moderators-del">Удалить</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn btn--orange js-moderators-delete-calcel">отменить</span>
+        </div>
+
+      </div>
+    </div>
+    <div class="moderators__bottom js-moderators-collapse">
+      <form action="" class="moderators__form">
+        <div class="moderators__row">
+          <div class="moderators__col moderators__col--small">
+            <label class="moderators__label">Логин</label>
+            <input type="text" class="input-bottom" placeholder="Логин">
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <label class="moderators__label">Пароль</label>
+            <input type="text" class="input-bottom" placeholder="Пароль">
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <button class="btn" type="submit">Изменить</button>
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <span class="btn btn--orange js-moderators-cancel">отменить</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </li>
+
+
+  <li class="moderators__item box-item js-moderators-item">
+    <div class="moderators__top">
+      <div class="moderators__row">
+
+        <div class="moderators__col moderators__col--x-large moderators__col--delete js-moderators-col-del">
+          <span class="moderators__info">Вы точно хотите удалить модератора Денис Шапочкин?</span>
+          <span class="moderators__info">Действие необратимо!</span>
+        </div>
+
+        <div class="moderators__col moderators__col--media js-moderators-col">
+          <span class="moderators__label">Модератор</span>
+          <span class="moderators__name">Денис Шапочкин</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small js-moderators-col">
+          <span class="moderators__label">Назначенные поставщики</span>
+          <div class="select-wrapp multiselect-wrap">
+            <select name="Select" id="" class="js-multiselect" multiple="multiple">
+              <option value="" selected>Тестовый поставщик 6</option>
+              <option value="">Тестовый поставщик 5</option>
+              <option value="">Тестовый поставщик 4</option>
+              <option value="">Тестовый поставщик 3</option>
+              <option value="">Тестовый поставщик 2</option>
+              <option value="">Тестовый поставщик 1</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small js-moderators-col">
+          <span class="moderators__label">Запрещенные поставщики</span>
+          <div class="select-wrapp multiselect-wrap">
+            <select name="Select" id="" class="js-multiselect" multiple="multiple">
+              <option value="" selected>Тестовый поставщик 6</option>
+              <option value="">Тестовый поставщик 5</option>
+              <option value="">Тестовый поставщик 4</option>
+              <option value="">Тестовый поставщик 3</option>
+              <option value="">Тестовый поставщик 2</option>
+              <option value="">Тестовый поставщик 1</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--checkbox js-moderators-col">
+          <span class="moderators__label">Работа с поставщиками</span>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__inner moderators__inner--btn js-moderators-btn">
+            <svg class="icon-edit">
+              <use xlink:href="#edit"></use>
+            </svg>
+          </div>
+          <div class="moderators__inner moderators__inner--del">
+            <span class="moderators__delete js-moderators-delete"></span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn js-moderators-del">Удалить</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn btn--orange js-moderators-delete-calcel">отменить</span>
+        </div>
+
+      </div>
+    </div>
+    <div class="moderators__bottom js-moderators-collapse">
+      <form action="" class="moderators__form">
+        <div class="moderators__row">
+          <div class="moderators__col moderators__col--small">
+            <label class="moderators__label">Логин</label>
+            <input type="text" class="input-bottom" placeholder="Логин">
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <label class="moderators__label">Пароль</label>
+            <input type="text" class="input-bottom" placeholder="Пароль">
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <button class="btn" type="submit">Изменить</button>
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <span class="btn btn--orange js-moderators-cancel">отменить</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </li>
+
+  <li class="moderators__item box-item js-moderators-item">
+    <div class="moderators__top">
+      <div class="moderators__row">
+
+        <div class="moderators__col moderators__col--x-large moderators__col--delete js-moderators-col-del">
+          <span class="moderators__info">Вы точно хотите удалить модератора Елизавета Боярская?</span>
+          <span class="moderators__info">Действие необратимо!</span>
+        </div>
+
+        <div class="moderators__col moderators__col--media js-moderators-col">
+          <span class="moderators__label">Модератор</span>
+          <span class="moderators__name">Елизавета Боярская</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small js-moderators-col">
+          <span class="moderators__label">Назначенные поставщики</span>
+          <div class="select-wrapp multiselect-wrap">
+            <select name="Select" id="" class="js-multiselect" multiple="multiple">
+              <option value="" selected>Тестовый поставщик 6</option>
+              <option value="">Тестовый поставщик 5</option>
+              <option value="">Тестовый поставщик 4</option>
+              <option value="">Тестовый поставщик 3</option>
+              <option value="">Тестовый поставщик 2</option>
+              <option value="">Тестовый поставщик 1</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small js-moderators-col">
+          <span class="moderators__label">Запрещенные поставщики</span>
+          <div class="select-wrapp multiselect-wrap">
+            <select name="Select" id="" class="js-multiselect" multiple="multiple">
+              <option value="" selected>Тестовый поставщик 6</option>
+              <option value="">Тестовый поставщик 5</option>
+              <option value="">Тестовый поставщик 4</option>
+              <option value="">Тестовый поставщик 3</option>
+              <option value="">Тестовый поставщик 2</option>
+              <option value="">Тестовый поставщик 1</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--checkbox js-moderators-col">
+          <span class="moderators__label">Работа с поставщиками</span>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__inner moderators__inner--btn js-moderators-btn">
+            <svg class="icon-edit">
+              <use xlink:href="#edit"></use>
+            </svg>
+          </div>
+          <div class="moderators__inner moderators__inner--del">
+            <span class="moderators__delete js-moderators-delete"></span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn js-moderators-del">Удалить</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn btn--orange js-moderators-delete-calcel">отменить</span>
+        </div>
+
+      </div>
+    </div>
+    <div class="moderators__bottom js-moderators-collapse">
+      <form action="" class="moderators__form">
+        <div class="moderators__row">
+          <div class="moderators__col moderators__col--small">
+            <label class="moderators__label">Логин</label>
+            <input type="text" class="input-bottom" placeholder="Логин">
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <label class="moderators__label">Пароль</label>
+            <input type="text" class="input-bottom" placeholder="Пароль">
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <button class="btn" type="submit">Изменить</button>
+          </div>
+          <div class="moderators__col moderators__col--small">
+            <span class="btn btn--orange js-moderators-cancel">отменить</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </li>
+
+</ul>
+
+
+    </div>
+
+    <div class="moderators__content js-moderators-content">
+      <ul class="moderators__list moderators__list--suppliers">
+
+  <li class="moderators__item moderators__item--add box-item js-moderators-item">
+    <div class="moderators__top">
+      <div class="moderators__add js-moderators-btn">
+        <div class="moderators__icon"></div>
+        <span class="moderators__txt">Добавить нового пользователя</span>
+      </div>
+    </div>
+    <div class="moderators__bottom js-moderators-collapse">
+      <div class="moderators__row">
+
+        <div class="moderators__col moderators__col--small">
+          <label class="moderators__label">Роль</label>
+          <div class="select-wrapp select-checkbox">
+            <select name="Select" id="" class="custom-select-checkbox">
+            <option value="">Модератор</option>
+            <option value="">Поставщик</option>
+            <option value="">Администратор</option>
+          </select>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small">
+          <label class="moderators__label">Логин</label>
+          <input type="text" class="input-bottom">
+        </div>
+        <div class="moderators__col moderators__col--small">
+          <label class="moderators__label">Пароль</label>
+          <input type="text" class="input-bottom">
+        </div>
+        <div class="moderators__col moderators__col--large">
+          <label class="moderators__label">Эл. почта для приглашения</label>
+          <input type="text" class="input-bottom">
+        </div>
+      </div>
+
+      <div class="moderators__row">
+        <div class="moderators__col">
+          <span class="btn">Создать</span>
+        </div>
+        <div class="moderators__col">
+          <span class="btn btn--orange js-moderators-cancel">Отменить</span>
+        </div>
+      </div>
+
+    </div>
+  </li>
+
+  <li class="moderators__item js-moderators-item">
+    <div class="moderators__top box-item">
+      <div class="moderators__row moderators__row--suppliers">
+
+        <div class="moderators__col moderators__col--x-large moderators__col--delete js-moderators-col-del">
+          <span class="moderators__info">Вы точно хотите удалить поставщика Тануки?</span>
+          <span class="moderators__info">Действие необратимо!</span>
+        </div>
+
+        <div class="moderators__col moderators__col--large js-moderators-col">
+          <span class="moderators__label">Поставщик</span>
+          <span class="moderators__name">Макдональдс</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--checkbox js-moderators-col">
+          <span class="moderators__label">Работа с ресурсом</span>
+          <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__inner moderators__inner--btn js-moderators-btn">
+            <svg class="icon-eye">
+              <use xlink:href="#eye"></use>
+            </svg>
+          </div>
+          <div class="moderators__inner moderators__inner--del">
+            <span class="moderators__delete js-moderators-delete"></span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn js-moderators-del">Удалить</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn btn--orange js-moderators-delete-calcel">отменить</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="moderators__bottom box-item js-moderators-collapse">
+      <div class="moderators__row moderators__row--collapse">
+
+        <div class="moderators__col moderators__col--media">
+          <div class="moderators__holder">
+            <span class="moderators__label">Наименование</span>
+            <input type="text" class="input-bottom moderators__input" value="Mackdonalds" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">ИНН</span>
+            <input type="text" class="input-bottom moderators__input" value="104938672301" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Дата регистрации</span>
+            <span class="moderators__txt">14 апреля 2018 года, 14:09</span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--large">
+          <div class="moderators__holder">
+            <span class="moderators__label">Контактные данные</span>
+            <span class="moderators__contacts">
+              <span class="moderators__contacts-txt">8 (800) 707–44–99</span>
+              <a href="mailto: info@ru.mcd.com" class="moderators__contacts-txt moderators__contacts-txt--link">info@ru.mcd.com</a>
+              <span class="moderators__contacts-txt">115054, Москва, ул. Валовая, 26, бизнес центр «Лайт Хаус».</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small">
+          <div class="moderators__holder">
+            <span class="moderators__label">Логин</span>
+            <input type="text" class="input-bottom moderators__input" value="Mackdonald-3452" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Пароль</span>
+            <span class="moderators__inner moderators__inner--small">
+              <svg class="icon-eye">
+                <use xlink:href="#eye"></use>
+              </svg>
+            </span>
+            <span class="moderators__inner moderators__inner--large">
+              <input type="password" class="input-bottom moderators__input" value="ERfSJ09&J" disabled>
+            </span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__holder moderators__holder--status">
+            <span class="moderators__label">Статус поставщика</span>
+            <span class="moderators__inner moderators__inner--small">
+              <span class="moderators__status active"></span>
+            </span>
+            <span class="moderators__inner moderators__inner--large">Активен</span>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Дата последней смены статуса</span>
+            <span class="moderators__txt">21 апреля 2018 года, 15:32</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </li>
+
+  <li class="moderators__item js-moderators-item">
+    <div class="moderators__top box-item">
+      <div class="moderators__row moderators__row--suppliers">
+
+        <div class="moderators__col moderators__col--x-large moderators__col--delete js-moderators-col-del">
+          <span class="moderators__info">Вы точно хотите удалить поставщика Додо пицца?</span>
+          <span class="moderators__info">Действие необратимо!</span>
+        </div>
+
+        <div class="moderators__col moderators__col--large js-moderators-col">
+          <span class="moderators__label">Поставщик</span>
+          <span class="moderators__name">Додо пицца</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--checkbox js-moderators-col">
+          <span class="moderators__label">Работа с ресурсом</span>
+          <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider round"></span>
+        </label>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__inner moderators__inner--btn js-moderators-btn">
+            <svg class="icon-eye">
+              <use xlink:href="#eye"></use>
+            </svg>
+          </div>
+          <div class="moderators__inner moderators__inner--del">
+            <span class="moderators__delete js-moderators-delete"></span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn js-moderators-del">Удалить</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn btn--orange js-moderators-delete-calcel">отменить</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="moderators__bottom box-item js-moderators-collapse">
+      <div class="moderators__row moderators__row--collapse">
+
+        <div class="moderators__col moderators__col--media">
+          <div class="moderators__holder">
+            <span class="moderators__label">Наименование</span>
+            <input type="text" class="input-bottom moderators__input" value="Додо пицца" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">ИНН</span>
+            <input type="text" class="input-bottom moderators__input" value="672098235782" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Дата регистрации</span>
+            <span class="moderators__txt">1 января 2018 года, 14:00</span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--large">
+          <div class="moderators__holder">
+            <span class="moderators__label">Контактные данные</span>
+            <span class="moderators__contacts">
+              <span class="moderators__contacts-txt">8 (800) 707–44–99</span>
+              <a href="mailto: info@ru.mcd.com" class="moderators__contacts-txt moderators__contacts-txt--link">info@dodo.ru</a>
+              <span class="moderators__contacts-txt">115054, Москва, ул. Валовая, 26, бизнес центр «Лайт Хаус».</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small">
+          <div class="moderators__holder">
+            <span class="moderators__label">Логин</span>
+            <input type="text" class="input-bottom moderators__input" value="Dodo-45892" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Пароль</span>
+            <span class="moderators__inner moderators__inner--small">
+              <svg class="icon-eye">
+                <use xlink:href="#eye"></use>
+              </svg>
+            </span>
+            <span class="moderators__inner moderators__inner--large">
+              <input type="password" class="input-bottom moderators__input" value="ERfSJ09&J" disabled>
+            </span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__holder moderators__holder--status">
+            <span class="moderators__label">Статус поставщика</span>
+            <span class="moderators__inner moderators__inner--small">
+              <span class="moderators__status blocked"></span>
+            </span>
+            <span class="moderators__inner moderators__inner--large">Заблокирован</span>
+            <div class="moderators__tools">
+              <span class="moderators__tools-link">причина блокировки?</span>
+              <span class="moderators__tools-info">текст текст текст текст текст текст текст текст текст текст текст текст текст</span>
+            </div>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Дата последней смены статуса</span>
+            <span class="moderators__txt">21 апреля 2018 года, 15:32</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </li>
+
+  <li class="moderators__item js-moderators-item">
+    <div class="moderators__top box-item">
+      <div class="moderators__row moderators__row--suppliers">
+
+        <div class="moderators__col moderators__col--x-large moderators__col--delete js-moderators-col-del">
+          <span class="moderators__info">Вы точно хотите удалить поставщика Воккер?</span>
+          <span class="moderators__info">Действие необратимо!</span>
+        </div>
+
+        <div class="moderators__col moderators__col--large js-moderators-col">
+          <span class="moderators__label">Поставщик</span>
+          <span class="moderators__name">Воккер</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--checkbox js-moderators-col">
+          <span class="moderators__label">Работа с ресурсом</span>
+          <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider round"></span>
+        </label>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__inner moderators__inner--btn js-moderators-btn">
+            <svg class="icon-eye">
+              <use xlink:href="#eye"></use>
+            </svg>
+          </div>
+          <div class="moderators__inner moderators__inner--del">
+            <span class="moderators__delete js-moderators-delete"></span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn js-moderators-del">Удалить</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn btn--orange js-moderators-delete-calcel">отменить</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="moderators__bottom box-item js-moderators-collapse">
+      <div class="moderators__row moderators__row--collapse">
+
+        <div class="moderators__col moderators__col--media">
+          <div class="moderators__holder">
+            <span class="moderators__label">Наименование</span>
+            <input type="text" class="input-bottom moderators__input" value="Воккер" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">ИНН</span>
+            <input type="text" class="input-bottom moderators__input" value="104938672301" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Дата регистрации</span>
+            <span class="moderators__txt">14 апреля 2018 года, 14:09</span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--large">
+          <div class="moderators__holder">
+            <span class="moderators__label">Контактные данные</span>
+            <span class="moderators__contacts">
+              <span class="moderators__contacts-txt">8 (800) 707–44–99</span>
+              <a href="mailto: info@ru.mcd.com" class="moderators__contacts-txt moderators__contacts-txt--link">info@ru.mcd.com</a>
+              <span class="moderators__contacts-txt">115054, Москва, ул. Валовая, 26, бизнес центр «Лайт Хаус».</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small">
+          <div class="moderators__holder">
+            <span class="moderators__label">Логин</span>
+            <input type="text" class="input-bottom moderators__input" value="Mackdonald-3452" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Пароль</span>
+            <span class="moderators__inner moderators__inner--small">
+              <svg class="icon-eye">
+                <use xlink:href="#eye"></use>
+              </svg>
+            </span>
+            <span class="moderators__inner moderators__inner--large">
+              <input type="password" class="input-bottom moderators__input" value="ERfSJ09&J" disabled>
+            </span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__holder moderators__holder--status">
+            <span class="moderators__label">Статус поставщика</span>
+            <span class="moderators__inner moderators__inner--small">
+              <span class="moderators__status active"></span>
+            </span>
+            <span class="moderators__inner moderators__inner--large">Активен</span>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Дата последней смены статуса</span>
+            <span class="moderators__txt">21 апреля 2018 года, 15:32</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </li>
+
+  <li class="moderators__item js-moderators-item">
+    <div class="moderators__top box-item">
+      <div class="moderators__row moderators__row--suppliers">
+
+        <div class="moderators__col moderators__col--x-large moderators__col--delete js-moderators-col-del">
+          <span class="moderators__info">Вы точно хотите удалить поставщика Му-му?</span>
+          <span class="moderators__info">Действие необратимо!</span>
+        </div>
+
+        <div class="moderators__col moderators__col--large js-moderators-col">
+          <span class="moderators__label">Поставщик</span>
+          <span class="moderators__name">Му-му</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--checkbox js-moderators-col">
+          <span class="moderators__label">Работа с ресурсом</span>
+          <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider round"></span>
+        </label>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__inner moderators__inner--btn js-moderators-btn">
+            <svg class="icon-eye">
+              <use xlink:href="#eye"></use>
+            </svg>
+          </div>
+          <div class="moderators__inner moderators__inner--del">
+            <span class="moderators__delete js-moderators-delete"></span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn js-moderators-del">Удалить</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn btn--orange js-moderators-delete-calcel">отменить</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="moderators__bottom box-item js-moderators-collapse">
+      <div class="moderators__row moderators__row--collapse">
+
+        <div class="moderators__col moderators__col--media">
+          <div class="moderators__holder">
+            <span class="moderators__label">Наименование</span>
+            <input type="text" class="input-bottom moderators__input" value="Му-му" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">ИНН</span>
+            <input type="text" class="input-bottom moderators__input" value="104938672301" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Дата регистрации</span>
+            <span class="moderators__txt">14 апреля 2018 года, 14:09</span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--large">
+          <div class="moderators__holder">
+            <span class="moderators__label">Контактные данные</span>
+            <span class="moderators__contacts">
+              <span class="moderators__contacts-txt">8 (800) 707–44–99</span>
+              <a href="mailto: info@ru.mcd.com" class="moderators__contacts-txt moderators__contacts-txt--link">info@ru.mcd.com</a>
+              <span class="moderators__contacts-txt">115054, Москва, ул. Валовая, 26, бизнес центр «Лайт Хаус».</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small">
+          <div class="moderators__holder">
+            <span class="moderators__label">Логин</span>
+            <input type="text" class="input-bottom moderators__input" value="Mackdonald-3452" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Пароль</span>
+            <span class="moderators__inner moderators__inner--small">
+              <svg class="icon-eye">
+                <use xlink:href="#eye"></use>
+              </svg>
+            </span>
+            <span class="moderators__inner moderators__inner--large">
+              <input type="password" class="input-bottom moderators__input" value="ERfSJ09&J" disabled>
+            </span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__holder moderators__holder--status">
+            <span class="moderators__label">Статус поставщика</span>
+            <span class="moderators__inner moderators__inner--small">
+              <span class="moderators__status not-active"></span>
+            </span>
+            <span class="moderators__inner moderators__inner--large">Не активен</span>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Дата последней смены статуса</span>
+            <span class="moderators__txt">21 апреля 2018 года, 15:32</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </li>
+
+  <li class="moderators__item js-moderators-item">
+    <div class="moderators__top box-item">
+      <div class="moderators__row moderators__row--suppliers">
+
+        <div class="moderators__col moderators__col--x-large moderators__col--delete js-moderators-col-del">
+          <span class="moderators__info">Вы точно хотите удалить поставщика Тануки?</span>
+          <span class="moderators__info">Действие необратимо!</span>
+        </div>
+
+        <div class="moderators__col moderators__col--large js-moderators-col">
+          <span class="moderators__label">Поставщик</span>
+          <span class="moderators__name">Тануки</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--checkbox js-moderators-col">
+          <span class="moderators__label">Работа с ресурсом</span>
+          <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__inner moderators__inner--btn js-moderators-btn">
+            <svg class="icon-eye">
+              <use xlink:href="#eye"></use>
+            </svg>
+          </div>
+          <div class="moderators__inner moderators__inner--del">
+            <span class="moderators__delete js-moderators-delete"></span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn js-moderators-del">Удалить</span>
+        </div>
+
+        <div class="moderators__col moderators__col--small moderators__col--delete js-moderators-col-del">
+          <span class="btn btn--orange js-moderators-delete-calcel">отменить</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="moderators__bottom box-item js-moderators-collapse">
+      <div class="moderators__row moderators__row--collapse">
+
+        <div class="moderators__col moderators__col--media">
+          <div class="moderators__holder">
+            <span class="moderators__label">Наименование</span>
+            <input type="text" class="input-bottom moderators__input" value="Тануки" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">ИНН</span>
+            <input type="text" class="input-bottom moderators__input" value="104938672301" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Дата регистрации</span>
+            <span class="moderators__txt">14 апреля 2018 года, 14:09</span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--large">
+          <div class="moderators__holder">
+            <span class="moderators__label">Контактные данные</span>
+            <span class="moderators__contacts">
+              <span class="moderators__contacts-txt">8 (800) 707–44–99</span>
+              <a href="mailto: info@ru.mcd.com" class="moderators__contacts-txt moderators__contacts-txt--link">info@ru.mcd.com</a>
+              <span class="moderators__contacts-txt">115054, Москва, ул. Валовая, 26, бизнес центр «Лайт Хаус».</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--small">
+          <div class="moderators__holder">
+            <span class="moderators__label">Логин</span>
+            <input type="text" class="input-bottom moderators__input" value="Mackdonald-3452" disabled>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Пароль</span>
+            <span class="moderators__inner moderators__inner--small">
+              <svg class="icon-eye">
+                <use xlink:href="#eye"></use>
+              </svg>
+            </span>
+            <span class="moderators__inner moderators__inner--large">
+              <input type="password" class="input-bottom moderators__input" value="ERfSJ09&J" disabled>
+            </span>
+          </div>
+        </div>
+
+        <div class="moderators__col moderators__col--x-small">
+          <div class="moderators__holder moderators__holder--status">
+            <span class="moderators__label">Статус поставщика</span>
+            <span class="moderators__inner moderators__inner--small">
+              <span class="moderators__status active"></span>
+            </span>
+            <span class="moderators__inner moderators__inner--large">Активен</span>
+          </div>
+          <div class="moderators__holder">
+            <span class="moderators__label">Дата последней смены статуса</span>
+            <span class="moderators__txt">21 апреля 2018 года, 15:32</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </li>
+
+</ul>
+
+    </div>
+
+  </div>
+</div>
+
+
+			</div>
+
+	</div>
+
+
+<footer class="footer">
+	
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

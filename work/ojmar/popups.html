@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Попапы</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+<header class="header ">
+	<div class="container">
+  
+	  <div class="header__holder header__holder--info">
+	    <div class="header__left">
+	      <span class="header__address">115088, г. Москва, проезд Южнопортовый 2-й, д. 20 А, стр. 2</span>
+	      <a href="mailto:info@came.ru" class="header__mail">info@came.ru</a>
+	    </div>
+	    <div class="header__right">
+	      <a href="tel:+74957390069 " class="header__phone">+7 (495) 739-00-69</a>
+	      <a href="#" class="btn btn--border header__btn">Заказать звонок</a>
+	    </div>
+	  </div>
+	  <div class="header__holder header__holder--nav">
+	    <div class="header__logo">
+	      <a href="#" class="header__logo-link">
+	        <svg class="icon-logo">
+            <use xlink:href="#logo"></use>
+          </svg>
+	      </a>
+	    </div>
+	    <nav class="header__nav">
+	      <ul class="header__nav-list">
+	        <li class="header__nav-item">
+	          <a href="#software" class="header__nav-link">Программное обеспечение</a>
+	        </li>
+	        <li class="header__nav-item">
+	          <a href="#goods" class="header__nav-link">Замки</a>
+	        </li>
+	        <li class="header__nav-item">
+	          <a href="#solution" class="header__nav-link">Решения</a>
+	        </li>
+	      </ul>
+	    </nav>
+	  </div>
+	  
+	  
+	</div>
+</header>
+
+  <div class="container">
+    <div style="margin-bottom: 25px;">
+      <a data-fancybox data-src="#popup-form" href="javascript:;">popup form</a>
+    </div>
+    <div style="margin-bottom: 25px;">
+      <a data-fancybox data-src="#popup-thank" href="javascript:;">popup thank</a>      
+    </div>
+    <div style="margin-bottom: 25px;">
+      <a data-fancybox data-src="#popup-request" href="javascript:;">popup request</a>      
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+	<div class="container">
+	  <div class="footer__left">
+	    <span class="footer__copyright">Copyright &copy; 2018 ООО "УМС Рус" - официальное представительство CAME GROUP в России. Все права защищены.</span>
+	    <ul class="footer__list">
+	      <li class="footer__item">
+	        <a href="#" class="footer__link">О персональных данных</a>
+	      </li>
+	      <li class="footer__item">
+	        <a href="#" class="footer__link">Правила использования ресурса</a>
+	      </li>
+	      <li class="footer__item">
+	        <a href="#" class="footer__link">Условия использования материалов</a>
+	      </li>
+	    </ul>
+	  </div>
+	  <div class="footer__social">
+	    <div class="footer__social-item">
+	      <a href="#" class="footer__social-link">
+	        <svg class="icon-facebook">
+            <use xlink:href="#facebook"></use>
+          </svg>
+	      </a>
+	    </div>
+	    <div class="footer__social-item">
+	      <a href="#" class="footer__social-link">
+	        <svg class="icon-youtube">
+            <use xlink:href="#youtube"></use>
+          </svg>
+	      </a>
+	    </div>
+	    <div class="footer__social-item">
+	      <a href="#" class="footer__social-link">
+	        <svg class="icon-instagram">
+            <use xlink:href="#instagram"></use>
+          </svg>
+	      </a>
+	    </div>
+	  </div>
+	</div>
+</footer>
+<div style="display: none;" id="popup-form">
+	<div class="popup__wrap">
+	  <span class="popup__title">Заполните форму и наши специалисты свяжутся с вами в ближайшее или указанное время</span>
+	  <form action="" class="popup__form">
+	    <div class="popup__form-row">
+	      <div class="popup__form-col">
+	        <input type="text" class="popup__form-input js-name" placeholder="Имя">
+	      </div>
+	      <div class="popup__form-col">
+	        <input type="text" class="popup__form-input js-phone" placeholder="Телефон">
+	      </div>
+	    </div>
+	    <div class="popup__form-row popup__form-row--date">
+	      <div class="popup__form-col">
+          <label class="popup__form-label">
+            <span class="popup__form-icon">
+              <svg class="icon-calendar">
+                <use xlink:href="#calendar"></use>
+              </svg>
+            </span>
+	          <input type="text" class="popup__form-input" placeholder="Дата звонка">
+          </label>
+	      </div>
+	      <div class="popup__form-col">
+          <label class="popup__form-label">
+            <span class="popup__form-icon">
+              <svg class="icon-time">
+                <use xlink:href="#time"></use>
+              </svg>
+            </span>
+            <input type="text" class="popup__form-input" placeholder="Время звонка">
+          </label>
+	      </div>
+	    </div>
+	    <div class="popup__form-row popup__form-row--center">
+	      <div class="popup__form-col">
+	        <button type="submit" class="btn popup__form-btn">Перезвоните мне</button>
+        </div>
+	    </div>
+	  </form>
+	</div>
+</div>
+<div class="popup popup--thank" style="display: none;" id="popup-thank">
+	<div class="popup__wrap">
+    <span class="popup__txt">Спасибо!</span>
+	  <span class="popup__title">Ваша заявка принята и наши сотрудники свяжутся с вами</span>	  
+	</div>
+</div>
+<div class="popup popup--request" style="display: none;" id="popup-request">
+  <div class="popup__wrap">
+    <span class="popup__title">Оставьте заявку на электронный wi-fi замок <b>nexo nlx1</b></span>
+    <form action="" class="popup__form">
+      <div class="popup__form-row">
+        <input type="text" class="popup__form-input js-name" placeholder="Имя">
+      </div>
+      <div class="popup__form-row">
+        <input type="tel" class="popup__form-input js-phone" placeholder="Телефон">
+      </div>
+      <div class="popup__form-row popup__form-row--mail">
+        <input type="email" class="popup__form-input" placeholder="E-mail">
+      </div>
+      <div class="popup__form-row popup__form-row--check">
+        <label class="checkbox">
+          <input type="checkbox" name="check" checked>
+          <span>Я согласен с условиями обработки <a href="#" class="popup__form-link">и хранения информации</a></span>
+        </label>
+      </div>
+      <div class="popup__form-row">
+        <button type="submit" class="btn popup__form-btn">Оставить заявку</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

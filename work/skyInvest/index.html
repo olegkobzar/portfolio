@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Main</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+  
+  <div class="wrapper">
+  
+  <div class="main-screen" style="background-image: url(pic/bg/bg-main.jpg);">
+ 
+  <div class="main-screen__bg js-youtube-load" data-src="https://www.youtube.com/embed/UASJVfzxJCM">
+      <!-- <iframe src="https://www.youtube.com/embed/UASJVfzxJCM?rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen enablejsapi=1></iframe> -->
+      <video loop muted autoplay video poster="pic/bg/bg-main.jpg">
+        <source src="video.mp4" type="video/mp4"></source>
+        <source src="video.webm" type="video/webm"></source>
+      </video>
+    </div>
+ 
+  <header class="header header--main">
+	<div class="container">
+		<div class="header__wrap">
+			<div class="header__logo">
+				<a href="#" class="header__logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="header__lang js-lang">
+				<span class="header__lang-text">ENG</span>
+				<ul class="header__lang-drop">
+					<li class="header__lang-item">
+						<a href="#" class="header__lang-link">RU</a>
+					</li>
+					<li class="header__lang-item">
+						<a href="#" class="header__lang-link">UA</a>
+					</li>
+					<li class="header__lang-item">
+						<a href="#" class="header__lang-link">FR</a>
+					</li>
+					<li class="header__lang-item">
+						<a href="#" class="header__lang-link">CA</a>
+					</li>
+				</ul>
+			</div>
+			<div class="header__btn-menu js-btn-menu">
+				<span class="header__btn-line"></span>
+				<span class="header__btn-line"></span>
+				<span class="header__btn-line"></span>
+			</div>
+			<div class="header__menu js-menu">
+				<span class="header__close js-close"></span>
+				<nav class="header__nav">
+					<ul class="header__list">
+						<li class="header__item">
+							<a href="#" class="header__link">OUR PARTNERS</a>
+						</li>
+						<li class="header__item">
+							<a href="#" class="header__link">OUR TEAM</a>
+						</li>
+						<li class="header__item">
+							<a href="#" class="header__link">CONTACTS</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header__mail-wrap">
+					<a href="mailto:INFO@SKYINVEST-GROUP.COM" class="header__mail-link">INFO@SKYINVEST-GROUP.COM</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+  <div class="main-screen__outer">
+    <div class="main-screen__wrap">
+      <div class="container">
+        <div class="main-screen__top">
+          <div class="main-screen__slider js-main-slider">
+            <div class="main-screen__slide">
+              <span class="main-screen__slide-txt">Sky investment group is a private investment firm dedicated to investing globally in the <span class="main-screen__slide-border">financial services industry</span></span>
+            </div>
+            <div class="main-screen__slide">
+              <span class="main-screen__slide-txt">Sky investment group is a private investment firm dedicated to investing globally in the <span class="main-screen__slide-border">financial services industry</span></span>
+            </div>
+            <div class="main-screen__slide">
+              <span class="main-screen__slide-txt">Sky investment group is a private investment firm dedicated to investing globally in the <span class="main-screen__slide-border">financial services industry</span></span>
+            </div>
+            <div class="main-screen__slide">
+              <span class="main-screen__slide-txt">Sky investment group is a private investment firm dedicated to investing globally in the <span class="main-screen__slide-border">financial services industry</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="main-screen__middle">
+          <div class="main-screen__holder">
+            <ul class="main-screen__list">
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">ATTRACTING  INVESTMENT</a>
+              </li>
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">WE INVEST</a>
+              </li>
+            </ul>
+          </div>
+          <div class="main-screen__holder">
+            <ul class="main-screen__list">
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">INVESTMENT BROKERAGE</a>
+              </li>
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">BANKING  BROKERAGE</a>
+              </li>
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">INSURANCE BROKERAGE</a>
+              </li>
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">LEASING BROKERAGE</a>
+              </li>
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">FACTORING BROKERAGE</a>
+              </li>
+            </ul>
+          </div>
+          <div class="main-screen__holder">
+            <ul class="main-screen__list">
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">BANKING CO. CONSULTING</a>
+              </li>
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">LEASING CO. CONSULTING</a>
+              </li>
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">FACTORING CO. CONSULTING</a>
+              </li>
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">INSURANCE CO. CONSULTING</a>
+              </li>
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">BANKING LAW CONSULTING</a>
+              </li>
+            </ul>
+          </div>
+          <div class="main-screen__holder">
+            <ul class="main-screen__list">
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">FINTECH</a>
+              </li>
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">INSURTECH</a>
+              </li>
+              <li class="main-screen__item">
+                <a href="#" class="main-screen__link">IT FINACE</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="main-screen__bottom">
+          <span class="main-screen__location">Russia, Saint-Petersburg</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  </div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

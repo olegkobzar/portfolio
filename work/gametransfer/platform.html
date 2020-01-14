@@ -1,0 +1,906 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Платформа</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+	<div class="wrapper">
+
+		<header class="header header--other">
+	<div class="container">
+		<div class="header__holder">
+			<div class="header__item header__item--toggler">
+				<span class="header__toggler js-toggler-open">
+					<span class="header__toggler-decor"></span>
+				</span>
+			</div>
+			<div class="header__item header__item--logo">
+				<a href="#" class="header__logo">GT</a>
+			</div>
+			<div class="header__item header__item--nav js-toggler-menu">
+				<div class="header__nav-overlay js-nav-overlay"></div>
+				<nav class="header__nav">
+					<span class="header__nav-close js-toggler-close"></span>
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Блог
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Рейтинг продавцов
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Розыгрыши
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Поддержка
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Вопросы и ответы
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Правила
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			
+				<div class="header__btn-search js-btn-search"></div>
+				<div class="header__search js-search-input">
+					<input type="text">
+				</div>
+			
+
+			
+			
+			<div class="header__item header__item--user js-user-wrap">
+				<a href="#" class="header__user js-user-link">
+					<img src="pic/users/users-5.png" alt="user">
+				</a>
+				<div class="header__user-info js-user-drop">
+					<div class="header__user-head">
+						<div class="header__user-img">
+							<img src="pic/users/users-5.png" alt="user">
+						</div>
+						<div class="header__user-txt">
+							<span class="header__user-name">
+								Chack Norris
+							</span>
+							<a href="#" class="header__user-mail">
+								Norris@gmail.com
+							</a>
+						</div>
+					</div>
+					<ul class="header__user-list">
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои покупки</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои продажи</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои операции</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Заработать</a>
+						</li>
+					</ul>
+					<div class="header__user-logout">
+						<a href="#" class="header__user-logout-link">
+							<span class="header__user-icon">
+
+							</span>
+							<span class="header__user-logout-txt">Выйти</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+		<div class="platform-head" style="background-image: url(pic/bg/bg-4.jpg);">
+	<div class="container">
+		<div class="platform-head__caption-wrapp">
+			<span class="platform-head__icon">
+				<svg class="icon-steam">
+					<use xlink:href="#steam"></use>
+				</svg>
+			</span>
+			<h2 class="platform-head__caption">Steam</h2>
+		</div>
+		<ul class="platform-head__list">
+			<li class="platform-head__item">
+				<a href="#" class="platform-head__link">Золото</a>
+			</li>
+			<li class="platform-head__item">
+				<a href="#" class="platform-head__link">Аккаунты</a>
+			</li>
+			<li class="platform-head__item">
+				<a href="#" class="platform-head__link">Предметы</a>
+			</li>
+			<li class="platform-head__item">
+				<a href="#" class="platform-head__link">Бриллианты</a>
+			</li>
+			<li class="platform-head__item">
+				<a href="#" class="platform-head__link">Услуги</a>
+			</li>
+		</ul>
+	</div>
+</div>
+		
+		<div class="platform-game">
+			<div class="container">
+				<div class="platform-game__wrapp">
+					<div class="content">
+						<div class="game">
+	<div class="game__head">
+		<div class="game__head-left">
+			<span class="game__head-title"><span class="game__head-desktop">Сортировка</span> по:</span>
+			<div class="game__sort">
+				<div class="game__sort-inner">
+					<select name="Select" id="" class="js-select">
+						<option value="">Популярным</option>
+						<option value="">Дешевым</option>
+						<option value="">Дорогим</option>
+						<option value="">Новым</option>
+					</select>
+				</div>
+				<div class="game__sort-inner">
+					<select name="Select" id="" class="js-select">
+						<option value="">Алфавиту</option>
+						<option value="">Сначала дешевые</option>
+						<option value="">Сначала дорогие</option>
+						<option value="">Рейтингу</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="game__head-right">
+			<div class="game__btn-filter js-btn-filter">
+				<div class="game__icon">
+					<span class="game__line"></span>
+					<span class="game__line"></span>
+					<span class="game__line"></span>
+					<span class="game__line"></span>
+				</div>
+				<span class="game__text">Жанр</span>
+			</div>
+			
+		</div>
+	</div>
+	<div class="game__wrapp">
+
+		<div class="game__content">
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-1.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">GTA SAMP, CRMP</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Предметы</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-2.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">Star Wars: TOR</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Предметы</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Бриллианты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Услуги</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-3.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">Stalker Online</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Предметы</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Бриллианты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Услуги</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-5.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">Life is Feudal: MMO</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Серебро</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Бриллианты</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-8.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">Time Zero</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Предметы</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Бриллианты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Услуги</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-9.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">GanjaWars</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Предметы</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-8.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">GTA SAMP, CRMP</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Предметы</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-2.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">Star Wars: TOR</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Предметы</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Бриллианты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Услуги</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-3.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">Stalker Online</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Предметы</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Бриллианты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Услуги</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-5.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">Life is Feudal: MMO</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Серебро</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Бриллианты</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-6.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">Time Zero</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Предметы</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Бриллианты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Услуги</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-9.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">GanjaWars</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Предметы</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-7.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">War Thunder</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Предметы</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Бриллианты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Услуги</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-4.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">World of Tanks</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Предметы</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Бриллианты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Услуги</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="game__card">
+				<div class="game__card-inner js-height">
+					<div class="game__img-wrapp">
+						<a href="#" class="game__img-link">
+							<img src="pic/recommendation/recommendation-7.png" alt="">
+						</a>
+					</div>
+					<div class="game__card-bott">
+						<a href="#" class="game__title">War Thunder</a>
+						<ul class="game__list">
+							<li class="game__item">
+								<a href="#" class="game__link">Золото</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Аккаунты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Предметы</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Бриллианты</a>
+							</li>
+							<li class="game__item">
+								<a href="#" class="game__link">Услуги</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="pagination">
+	<ul class="pagination__list">
+		<li class="pagination__item">
+			<a href="#" class="pagination__link pagination__link--prev"></a>
+		</li>
+		<li class="pagination__item">
+			<a href="#" class="pagination__link active">1</a>
+		</li>
+		<li class="pagination__item">
+			<a href="#" class="pagination__link">2</a>
+		</li>
+		<li class="pagination__item">
+			<a href="#" class="pagination__link">3</a>
+		</li>
+		<li class="pagination__item">
+			<a class="pagination__link disactive">...</a>
+		</li>
+		<li class="pagination__item">
+			<a href="#" class="pagination__link">12</a>
+		</li>
+		<li class="pagination__item">
+			<a href="#" class="pagination__link pagination__link--next"></a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+					</div>
+					<aside class="js-filter">
+						<div class="sidebar">
+	<div class="sidebar__close js-close-filter"></div>
+	<h4 class="sidebar__caption">Жанр</h4>
+	<ul class="sidebar__list">
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__category">Авиасимуляторы</span>
+				<span class="sidebar__number">12</span>
+			</a>
+		</li>
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__category">Аркады</span>
+				<span class="sidebar__number">3</span>
+			</a>
+		</li>
+		<li class="sidebar__item active">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__category">Боевики</span>
+				<span class="sidebar__number">6</span>
+			</a>
+		</li>
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__category">Головоломки</span>
+				<span class="sidebar__number">32</span>
+			</a>
+		</li>
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__category">Гонки</span>
+				<span class="sidebar__number">14</span>
+			</a>
+		</li>
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__category">Платформер</span>
+				<span class="sidebar__number">6</span>
+			</a>
+		</li>
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__category">Приключения</span>
+				<span class="sidebar__number">9</span>
+			</a>
+		</li>
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__category">Ролевые игры</span>
+				<span class="sidebar__number">21</span>
+			</a>
+		</li>
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__category">Симуляторы</span>
+				<span class="sidebar__number">3</span>
+			</a>
+		</li>
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__category">Спорт</span>
+				<span class="sidebar__number">6</span>
+			</a>
+		</li>
+		<li class="sidebar__item">
+			<a href="#" class="sidebar__link">
+				<span class="sidebar__category">Стратегии</span>
+				<span class="sidebar__number">32</span>
+			</a>
+		</li>
+	</ul>
+</div>
+					</aside>
+				</div>
+			</div>
+		</div>
+
+		<div class="static-content">
+			<div class="container">
+				<div class="content-info content-info--platform js-content-info">
+					<h6>Покупка и продажа аккаунтов с играми Steam</h6>
+					<p>
+						Steam – онлайн-платформа для распространения лицензионного игрового контента. Аккаунты Steam на 2018 год представлены в количестве свыше 125 000 0000 рублей. Будучи разработанной компанией Valve в 2003 году, на 2018 год эта платформа пользуется особой популярностью более чем в 40 странах мира. Если вы хотите получить товар с популярных играми и программным обеспечением, обращайтесь в проверенный интернет-магазин!
+					</p>
+					<span class="content-info__title-platform">Что именно предлагаем?</span>
+
+					<span class="content-info__descr">Предлагаем купить аккаунт Steam с играми каждому человеку, который желает получить не просто «голый» профиль, но и некоторое количество игр вместе с ним. После покупки останется авторизоваться в программе и перейти к установке игрового контента. Откроется возможность авторизации на лицензионных серверах онлайн игр, получения актуальных обновлений и новостей по играм, а также масса других полезных опций платформы.</span>
+					<span class="content-info__descr content-info__descr-big">В каталоге представлены разные продукты, отличающиеся друг от друга рядом следующих характеристик:</span>
+					<ul>
+						<li>Количество и виды игрового контента. Платформа Steam реализует тысячи товаров, относящихся к жанрам экшна, стратегий, симуляторов и других стилей. Доступными могут быть как дорогие товары, пользующиеся среди пользователей популярностью, так и менее ценный, но тоже хороший контент.</li>
+						<li>Дата регистрации и уровень аккаунта. От этого показателя зависит набор возможностей по оформлению главной страницы, количество человек, которых позволено добавить в список друзей, тип витрин и многие другие функции. Дата регистрации особого значения не имеет, но некоторые ее тоже учитывают.</li>
+						<li>Количество значков и достижений. Эти атрибуты пользуются востребованностью среди игроков, которые не только играют, но и занимаются коллекционированием упомянутых элементов. На стоимость число достижений не влияет, поэтому реально купить Стим аккаунт с играми недорого от коллекционеров.</li>
+					</ul>
+					<p>
+						Серьезное влияние на стоимость продажи профиля Стим оказывает количество и тип игр, и уровень профиля. За товары с дорогим и популярным контентом придется выложить больше, чем за невостребованный контент.  
+					</p>
+					<span class="content-info__title-platform">Плюсы покупки аккаунта</span>
+					<span class="content-info__descr">
+						Чем покупка и продажа аккаунтов Стим выгодна для игрока? В первую очередь это выгоднее, чем приобретение игровых лотов по отдельности. Например, если отдельно популярная GTA5 стоит 1500 рублей, покупка профиля с этим товаром обойдется чуть ли не в половину стоимости. При этом с большой вероятностью вместе с этим контентом будет другой, более дешевый. Отметим иные веские причины купить дешевые аккаунты в Стим:
+					</span>
+					<ul>
+						<li>Наличие игрового прогресса. Во многих играх не придется начинать с нуля, так как вместе с профилем приобретаются и сохранения к игровому контенту. Особенно ценно это обстоятельство для онлайн игр. </li>
+						<li>Приобретение снаряжения. Ряд популярных MMO-игр основывается на системе инвентаря персонажей. Нередко в продаже можно найти аккаунты, в инвентаре которых находятся дорогостоящие предметы.</li>
+						<li>Возможность дальнейшей перепродажи. Если игровой контент на приобретенном профиле надоел, или больше нет времени им заниматься, можно перепродать аккаунт таким же образом, как он был куплен.</li>
+					</ul>
+					<p>
+						Эти и другие преимущества побуждают людей задаваться вопросом о том, где дешево купить игры и ключи для Steam. Ответ на актуальный вопрос прост – в интернет-магазине, предлагающем разнообразие продукции.
+					</p>
+					<span class="content-info__title-platform">
+						Причины заказывать здесь
+					</span>
+					<span class="content-info__descr">
+						Наш магазин аккаунтов Steam – это тысячи профилей, реализуемых на легальной основе с согласия их прежних владельцев. Ассортимент предложений регулярно пополняется новыми наименованиями, поэтому будет из чего сделать выбор. Достаточно выбрать подходящий под личные критерии продукт, добавить в корзину, оплатить и получить сведения для авторизации в сервисе. После этого можно приступить к использованию контента Стим.
+					</span>
+					<span class="content-info__descr-big">
+						Погрузитесь в удивительный виртуальный игровой мир вместе с площадкой Steam. Выбирайте и заказывайте те профили, которые устраивают по ключевым параметрам. Оцените легкое оформление и приемлемую стоимость.
+					</span>
+					<span class="content-info__more js-more-info">Подробнее</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="social">
+	<div class="container">
+		<span class="social__title">Следите за нами в социальных сетях:</span>
+		<div class="social__wrapp">
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-vk">
+						<use xlink:href="#vk"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-g-plus">
+						<use xlink:href="#g-plus"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-telegram">
+						<use xlink:href="#telegram"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-facebook">
+						<use xlink:href="#facebook"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__wrapp">
+			<div class="footer__inner footer__inner--nav">
+				<ul class="footer__list">
+					<li class="footer__item">
+						<a href="#" class="footer__link">Поддержка</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Вопросы и ответы</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Правила</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Рейтинг продавцов</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Розыгрыши</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Информация</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Пользовательское соглашение</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Отказ от ответственности</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Разрешение споров</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__inner footer__inner--info">
+				<span class="footer__descr">© 2018 Game Transfer - торговая площадка игровых ценностей</span>
+				<span class="footer__icon">
+					<img src="pic/webmoney.png" alt="">
+				</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

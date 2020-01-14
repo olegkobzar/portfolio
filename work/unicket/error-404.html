@@ -1,0 +1,939 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Error-404</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+  <header class="header">
+	<div class="container">
+		<div class="header__wrapp">
+			<div class="header__left">
+				<a href="#" class="header__logo">
+					<span class="header__logo-img">
+						<img src="pic/logo/logo.png" alt="logo">
+					</span>
+					<span class="header__logo-text">Unicket</span>
+				</a>
+				<div class="header__service">
+					<span class="header__service-text">
+						Авиабилеты
+					</span>
+					<span class="header__service-icon"></span>
+				</div>
+			</div>
+			<div class="header__right">
+
+				<div class="header__inner header__inner--subscribe">
+					<a data-fancybox data-src="#popup" href="javascript:;" class="header__inner--subscribe-link">
+						<span class="header__inner--subscribe-icon"></span>
+						<span class="header__inner--subscribe-text">
+							Подписаться
+						</span>
+					</a>
+					<div class="popup" id="popup">
+	<span class="popup__caption">
+		Оформление подписки
+	</span>
+	<div class="popup__bott">
+		<div class="popup__left">
+			<img src="pic/article/art-2.png" alt="mail">
+		</div>
+		<div class="popup__right">
+			<p class="popup__descr">
+				Оформите подписку, чтобы регулярно получать новости об изменениях цен на билеты, которые вы ищете.
+			</p>
+			<p class="popup__descr">
+				Для активации и редактирования данных подписки укажите адрес своей электронной почты.
+			</p>
+			<form action="">
+				<div class="popup__form">
+					<div class="popup__wrapp-inp">
+						<input type="email" class="popup__inp" placeholder="Ваш E-mail">
+					</div>
+					<div class="popup__wrapp-btn">
+						<button type="submit" class="btn btn--popup">Подписаться</button>
+					</div>
+				</div>
+			</form>
+			<span class="popup__descr--link">
+				Нажимая «Подписаться», вы соглашаетесь с правилами <a href="#" class="popup__link">использования сервиса</a> и <a href="#" class="popup__link">обработки персональных данных.</a>
+			</span>
+		</div>
+	</div>
+</div>
+				</div>
+
+				<div class="header__inner header__inner--lang js-bg-lang">
+					<div class="header__inner-element js-lang-btn">
+						<div class="header__inner--lang-img">
+							<img src="pic/flag/flag-rus.png" alt="">
+						</div>
+						<div class="header__inner--lang-text">
+							<span class="header__inner--lang-name">RU</span>
+							<span>/</span>
+							<span class="header__inner--lang-currency">RUB</span>
+						</div>
+					</div>
+					<div class="header__lang-open js-header-lang">
+						<span class="header__lang-caption">Выберите региональные настройки</span>
+						<form action="">
+							<div class="header__lang-form">
+								<div class="header__lang-wrapp">
+									<span class="header__lang-title">Доставка в</span>
+									<div class="header__lang-select js-delivery-box">
+									    <select name="delivery" id="header-delivery" class="js-delivery">
+									    	<option value="United States" data-class="flag" data-style="background-image: url(pic/flag/usa.png);">United States</option>
+											<option value="Russian Federation" selected data-class="flag" data-style="background-image: url(pic/flag/russia.png);">Russian Federation</option>
+											<option value="Spain" data-class="flag" data-style="background-image: url(pic/flag/spain.png);">Spain</option>
+											<option value="France" data-class="flag" data-style="background-image: url(pic/flag/france.png);">France</option>
+											<option value="United Kingdom" data-class="flag" data-style="background-image: url(pic/flag/uk.png);">United Kingdom</option>
+											<option value="Brazil" data-class="flag" data-style="background-image: url(pic/flag/brazil.png);">Brazil</option>
+											<option value="Israel" data-class="flag" data-style="background-image: url(pic/flag/israel.png);">Israel</option>
+											<option value="Netherlands" data-class="flag" data-style="background-image: url(pic/flag/netherland.png);">Netherlands</option>
+											<option value="Canada" data-class="flag" data-style="background-image: url(pic/flag/canada.png);">Canada</option>
+											<option value="United States" data-class="flag" data-style="background-image: url(pic/flag/usa.png);">United States</option>
+											<option value="Russian Federation" data-class="flag" data-style="background-image: url(pic/flag/russia.png);">Russian Federation</option>
+											<option value="Spain" data-class="flag" data-style="background-image: url(pic/flag/spain.png);">Spain</option>
+											<option value="France" data-class="flag" data-style="background-image: url(pic/flag/france.png);">France</option>
+											<option value="United Kingdom" data-class="flag" data-style="background-image: url(pic/flag/uk.png);">United Kingdom</option>
+											<option value="Brazil" data-class="flag" data-style="background-image: url(pic/flag/brazil.png);">Brazil</option>
+											<option value="Israel" data-class="flag" data-style="background-image: url(pic/flag/israel.png);">Israel</option>
+											<option value="Netherlands" data-class="flag" data-style="background-image: url(pic/flag/netherland.png);">Netherlands</option>
+											<option value="Canada" data-class="flag" data-style="background-image: url(pic/flag/canada.png);">Canada</option>
+									    </select>
+									</div>
+								</div>
+								<div class="header__lang-wrapp">
+									<span class="header__lang-title">Доставка в</span>
+									<div class="header__lang-select">
+										<select name="currency" id="header-currency" class="js-currency">
+											<option value="">USD</option>
+											<option value="">RUB</option>
+											<option value="">GBP</option>
+											<option value="">AUD</option>
+											<option value="">EUR</option>
+											<option value="">USD</option>
+											<option value="">RUB</option>
+											<option value="">GBP</option>
+											<option value="">AUD</option>
+											<option value="">EUR</option>
+										</select>
+									</div>
+								</div>
+								<div class="header__lang-wrapp-btn">
+									<button type="submit" class="btn btn--lang">Сравнить</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="header__inner header__inner--login js-bg-login">
+					<div class="header__inner-element js-login-btn">
+						<span class="header__inner--login-icon"></span>
+						<span class="header__inner--login-text">
+							Войти
+						</span>
+					</div>
+					<div class="header__login-open js-header-login">
+						<span class="header__login-caption">
+							Выполните вход или зарегистрируйтесь
+						</span>
+						<div class="header__login-content">
+							<div class="header__login-left">
+								<span class="header__login-title">Вход через социальные сети</span>
+								<span class="header__login-descr">Это быстро, просто, и мы не будем ничего публиковать, не спросив вас</span>
+								<ul class="header__login-social-list">
+									<li class="header__login-social-item">
+										<a href="#" class="header__login-wrapp">
+											<span class="header__login-icon header__login-icon--facebook"></span>
+											<span class="header__login-text">Вход через Facebook</span>
+										</a>
+									</li>
+									<li class="header__login-social-item">
+										<a href="#" class="header__login-wrapp">
+											<span class="header__login-icon header__login-icon--google"></span>
+											<span class="header__login-text">Вход через Google+</span>
+										</a>
+									</li>
+									<li class="header__login-social-item">
+										<a href="#" class="header__login-wrapp">
+											<span class="header__login-icon header__login-icon--vk"></span>
+											<span class="header__login-text">Войти через ВКонтакте</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="header__login-right">
+								
+								
+								<form action="">
+									<div class="header__login-form">
+										<div class="header__login-wrapp-inp">
+											<input type="email" class="header__login-input" id="login-inp-mail" placeholder="E-mail">
+											<label class="header__login-inp-label header__login-inp-label--mail" for="login-inp-mail"></label>
+										</div>
+										<div class="header__login-wrapp-inp">
+											<input type="password" class="header__login-input" id="login-inp-pass" placeholder="Пароль">
+											<label class="header__login-inp-label header__login-inp-label--pass" for="login-inp-pass"></label>
+										</div>
+										<div class="header__login-group">
+											<div class="header__login-wrapp-checkbox">
+												<input type="checkbox" id="login-pass" class="header__login-inp">
+												<label for="login-pass">Показать пароль</label>
+											</div>
+											<div class="header__login-wrapp-checkbox">
+												<input type="checkbox" id="login-remember" class="header__login-inp" checked>
+												<label for="login-remember">Запомнить меня</label>
+											</div>
+										</div>
+										
+										
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="header__login-bottom">
+							<span class="header__login-bottom-text">
+								Регистрируясь, вы тем самым принимаете <a href="#" class="header__login-link">условия обслуживания</a> и <a href="#" class="header__login-link">политику конфиденциальности</a> Unicket
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="header__inner header__inner--btn js-bg-nav">
+					<div class="header__inner--btn-group js-nav-btn">
+						<span class="header__btn-line"></span>
+						<span class="header__btn-line"></span>
+						<span class="header__btn-line"></span>
+					</div>
+					<nav class="header__nav js-header-nav">
+						<ul class="header__nav-list-top">
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Календарь низких цен
+								</a>
+							</li>
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Карта низких цен
+								</a>
+							</li>
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Спецпредложения
+								</a>
+							</li>
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Топ 100 билетов
+								</a>
+							</li>
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Горящие авиабилеты
+								</a>
+							</li>
+						</ul>
+						<ul class="header__nav-list-bott">
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Блог
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Помощь
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									О компании
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Вакансии
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Авиакомпании
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Страны
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Города
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Аэропорты
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+    
+    <div class="wrapper">
+      <div class="error-head">
+		<div class="error-head__wrap">
+			<div class="error-head__inner">
+				<div class="error-head__text-box">
+				<span class="error-head__title">404</span>
+					<span class="error-head__subtitle">Такой страницы у нас нет</span>
+					<span class="error-head__text">
+						Похоже вы допустили опечатку, набирая адрес, или воспользовались неисправной ссылкой.Чтобы найти нужные авиабилеты, воспользуйтесь формой поиска на главной странице.
+					</span>
+				</div>
+			</div>
+		</div>
+</div>
+      <div class="error-content">
+	<div class="container">
+		<div class="error-content__holder">
+			<div class="error-service">
+				<span class="error-service__title">
+					Тем временем, возможно, вам будут интересны наши сервисы
+				</span>
+				<div class="error-service__holder">
+					
+	<div class="error-service__item">
+		<span class="error-service__item-icon">
+			<span class="error-service__item-icon-inner">
+				<img src="pic/error/calc.png" alt="icon">
+			</span>
+		</span>
+		<span class="error-service__item-title">
+			Календарь низких цен
+		</span>
+		<span class="error-service__item-txt js-height">
+			Узнайте, когда дешевле летать по выбранному направлению
+		</span>
+		<a href="#" class="btn error-service__item-btn">
+			Подробнее
+		</a>
+	</div>
+
+	<div class="error-service__item">
+		<span class="error-service__item-icon">
+			<span class="error-service__item-icon-inner">
+				<img src="pic/error/marker.png" alt="icon">
+			</span>
+		</span>
+		<span class="error-service__item-title">
+			Карта низких цен
+		</span>
+		<span class="error-service__item-txt js-height">
+			Куда полететь? Сравнивайте цены по направлениям на карте
+		</span>
+		<a href="#" class="btn error-service__item-btn">
+			Подробнее
+		</a>
+	</div>
+
+	<div class="error-service__item">
+		<span class="error-service__item-icon">
+			<span class="error-service__item-icon-inner">
+				<img src="pic/error/fire.png" alt="icon">
+			</span>
+		</span>
+		<span class="error-service__item-title">
+			Горящие билеты
+		</span>
+		<span class="error-service__item-txt js-height">
+			Подборка билетов по сниженным ценам
+		</span>
+		<a href="#" class="btn error-service__item-btn">
+			Подробнее
+		</a>
+	</div>
+
+	<div class="error-service__item">
+		<span class="error-service__item-icon">
+			<span class="error-service__item-icon-inner">
+				<img src="pic/error/percent.png" alt="icon">
+			</span>
+		</span>
+		<span class="error-service__item-title">
+			Акции авиакомпаний
+		</span>
+		<span class="error-service__item-txt js-height">
+			Все акутальные распродажи и спецпредложения
+		</span>
+		<a href="#" class="btn error-service__item-btn">
+			Подробнее
+		</a>
+	</div>
+
+				</div>
+			</div>
+			<div class="error-direction">
+				<span class="error-direction__title">
+					Популярные направления апреля по лучшим ценам
+				</span>
+				<div class="error-direction__holder">
+					<div class="error-direction__item">
+	<div class="error-direction__item-inner">
+		<div class="error-direction__item-head" style="background-image: url(pic/error/error-place-01.jpg);">
+			<div class="error-direction__item-head-inner">
+				<span class="error-direction__item-head-title">
+					Симферополь
+				</span>
+				<span class="error-direction__item-head-country">
+					Крым
+				</span>			
+			</div>
+		</div>
+		<div class="error-direction__item-body">
+			<ul class="error-direction__item-list">
+				
+					<li class="error-direction__item-list-elem">
+						<a href="#" class="error-direction__item-list-link">
+							<span class="error-direction__item-list-city">
+								Из Москвы
+							</span>
+							<span class="error-direction__item-list-price">
+								От 7 489 р.
+							</span>
+						</a>
+					</li>
+				
+					<li class="error-direction__item-list-elem">
+						<a href="#" class="error-direction__item-list-link">
+							<span class="error-direction__item-list-city">
+								Из Санкт-Петербурга
+							</span>
+							<span class="error-direction__item-list-price">
+								От 9 231 р.
+							</span>
+						</a>
+					</li>
+				
+					<li class="error-direction__item-list-elem">
+						<a href="#" class="error-direction__item-list-link">
+							<span class="error-direction__item-list-city">
+								Из Екатеринбурга
+							</span>
+							<span class="error-direction__item-list-price">
+								От 15 251 р.
+							</span>
+						</a>
+					</li>
+				
+					<li class="error-direction__item-list-elem">
+						<a href="#" class="error-direction__item-list-link">
+							<span class="error-direction__item-list-city">
+								Из Новосибирска
+							</span>
+							<span class="error-direction__item-list-price">
+								От 8 536 р.
+							</span>
+						</a>
+					</li>
+				
+			</ul>
+		</div>
+	</div>
+</div><div class="error-direction__item">
+	<div class="error-direction__item-inner">
+		<div class="error-direction__item-head" style="background-image: url(pic/error/error-place-02.jpg);">
+			<div class="error-direction__item-head-inner">
+				<span class="error-direction__item-head-title">
+					Симферополь
+				</span>
+				<span class="error-direction__item-head-country">
+					Крым
+				</span>			
+			</div>
+		</div>
+		<div class="error-direction__item-body">
+			<ul class="error-direction__item-list">
+				
+					<li class="error-direction__item-list-elem">
+						<a href="#" class="error-direction__item-list-link">
+							<span class="error-direction__item-list-city">
+								Из Москвы
+							</span>
+							<span class="error-direction__item-list-price">
+								От 7 489 р.
+							</span>
+						</a>
+					</li>
+				
+					<li class="error-direction__item-list-elem">
+						<a href="#" class="error-direction__item-list-link">
+							<span class="error-direction__item-list-city">
+								Из Санкт-Петербурга
+							</span>
+							<span class="error-direction__item-list-price">
+								От 9 231 р.
+							</span>
+						</a>
+					</li>
+				
+					<li class="error-direction__item-list-elem">
+						<a href="#" class="error-direction__item-list-link">
+							<span class="error-direction__item-list-city">
+								Из Екатеринбурга
+							</span>
+							<span class="error-direction__item-list-price">
+								От 15 251 р.
+							</span>
+						</a>
+					</li>
+				
+					<li class="error-direction__item-list-elem">
+						<a href="#" class="error-direction__item-list-link">
+							<span class="error-direction__item-list-city">
+								Из Новосибирска
+							</span>
+							<span class="error-direction__item-list-price">
+								От 8 536 р.
+							</span>
+						</a>
+					</li>
+				
+			</ul>
+		</div>
+	</div>
+</div><div class="error-direction__item">
+	<div class="error-direction__item-inner">
+		<div class="error-direction__item-head" style="background-image: url(pic/error/error-place-03.jpg);">
+			<div class="error-direction__item-head-inner">
+				<span class="error-direction__item-head-title">
+					Симферополь
+				</span>
+				<span class="error-direction__item-head-country">
+					Крым
+				</span>			
+			</div>
+		</div>
+		<div class="error-direction__item-body">
+			<ul class="error-direction__item-list">
+				
+					<li class="error-direction__item-list-elem">
+						<a href="#" class="error-direction__item-list-link">
+							<span class="error-direction__item-list-city">
+								Из Москвы
+							</span>
+							<span class="error-direction__item-list-price">
+								От 7 489 р.
+							</span>
+						</a>
+					</li>
+				
+					<li class="error-direction__item-list-elem">
+						<a href="#" class="error-direction__item-list-link">
+							<span class="error-direction__item-list-city">
+								Из Санкт-Петербурга
+							</span>
+							<span class="error-direction__item-list-price">
+								От 9 231 р.
+							</span>
+						</a>
+					</li>
+				
+					<li class="error-direction__item-list-elem">
+						<a href="#" class="error-direction__item-list-link">
+							<span class="error-direction__item-list-city">
+								Из Екатеринбурга
+							</span>
+							<span class="error-direction__item-list-price">
+								От 15 251 р.
+							</span>
+						</a>
+					</li>
+				
+					<li class="error-direction__item-list-elem">
+						<a href="#" class="error-direction__item-list-link">
+							<span class="error-direction__item-list-city">
+								Из Новосибирска
+							</span>
+							<span class="error-direction__item-list-price">
+								От 8 536 р.
+							</span>
+						</a>
+					</li>
+				
+			</ul>
+		</div>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    </div>
+
+  <footer class="footer  js-footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">Страны</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Россия
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Таиланд
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Черногория
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Кипр
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Болгария
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Грузия
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="footer__item-link">Все страны</a>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">Города</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Москва
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Санкт-Петербург
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Симферополь
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Адлер
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Екатеринбург
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Лондон
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="footer__item-link">Все страны</a>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">авиакомпании</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Air Berlin
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Air France
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Alitalia
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Air Baltic
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Emirates
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							KLM
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="footer__item-link">Все авиакомпании</a>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">аэропорты</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Шереметьево
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Курумоч
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Домодедово
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Толмачево
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Владивосток
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Гамбург
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="footer__item-link">Все аэропорты</a>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">Направления</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – SIP
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – AER
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – TIV
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – MRV
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							LED – MOW
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – BKK
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">Сервисы</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Горящие авиабилеты
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Календарь низких цен
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Карта низких цен
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Спецпредложения
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Таблица цен
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Блог
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Помощь
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer__nav-wrap">
+			<div class="footer__nav">
+			<ul class="footer__nav-list">
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						О компании    
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Партнёрская программа 
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Реклама 
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Вакансии 
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Помощь
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Правила
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						White Label авиабилеты
+					</a>
+				</li>
+
+			</ul>
+			</div>
+			<div class="footer__copi-box">
+			<div class="footer__social">
+				<span class="footer__social-txt">
+					Следуйте на за нами:
+				</span>
+				<div class="footer__social-items">
+					<a href="#" class="footer__social-link footer__social-link--vk"></a>
+					<a href="#" class="footer__social-link footer__social-link--fb"></a>
+					<a href="#" class="footer__social-link footer__social-link--twitter"></a>
+					<a href="#" class="footer__social-link footer__social-link--insta"></a>
+				</div>
+			</div>
+			<div class="footer__copiright">
+				<span>
+					© 2007–2018, Superaviatickets — дешевые авиабилеты
+				</span>
+			</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+
+

@@ -1,0 +1,1094 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Профиль</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+<header class="header header--profile">
+	<div class="container">
+		<div class="header__holder">
+			<div class="header__item header__item--toggler">
+				<span class="header__toggler js-toggler-open">
+					<span class="header__toggler-decor"></span>
+				</span>
+			</div>
+			<div class="header__item header__item--logo">
+				<a href="#" class="header__logo">GT</a>
+			</div>
+			<div class="header__item header__item--nav js-toggler-menu">
+				<div class="header__nav-overlay js-nav-overlay"></div>
+				<nav class="header__nav">
+					<span class="header__nav-close js-toggler-close"></span>
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Блог
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Рейтинг продавцов
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Розыгрыши
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Поддержка
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Вопросы и ответы
+							</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">
+								Правила
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			
+				<div class="header__btn-search js-btn-search"></div>
+				<div class="header__search js-search-input">
+					<input type="text">
+				</div>
+			
+
+			
+				<div class="header__add-wrap">
+					<a href="#" class="header__add-link">
+						<span class="header__add-link-icon">
+							
+						</span>
+						<span class="header__add-link-text">Добавить сделку</span>
+					</a>
+				</div>
+			
+			
+			<div class="header__item header__item--user js-user-wrap">
+				<a href="#" class="header__user js-user-link">
+					<img src="pic/users/users-5.png" alt="user">
+				</a>
+				<div class="header__user-info js-user-drop">
+					<div class="header__user-head">
+						<div class="header__user-img">
+							<img src="pic/users/users-5.png" alt="user">
+						</div>
+						<div class="header__user-txt">
+							<span class="header__user-name">
+								Chack Norris
+							</span>
+							<a href="#" class="header__user-mail">
+								Norris@gmail.com
+							</a>
+						</div>
+					</div>
+					<ul class="header__user-list">
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои покупки</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои продажи</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Мои операции</a>
+						</li>
+						<li class="header__user-item">
+							<a href="#" class="header__user-link">Заработать</a>
+						</li>
+					</ul>
+					<div class="header__user-logout">
+						<a href="#" class="header__user-logout-link">
+							<span class="header__user-icon">
+
+							</span>
+							<span class="header__user-logout-txt">Выйти</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="wrapper">
+
+		<div class="profile">
+	<div class="container">
+		<div class="profile__sidebar">
+
+			<div class="about">
+	<div class="about__top">
+		<div class="about__img-wrap">
+			<img src="pic/users/users-1.png" alt="">
+			<span class="about__status-icon">
+				<svg class="icon-smile-7">
+					<use xlink:href="#smile-7"></use>
+				</svg>
+			</span>
+		</div>
+		<span class="about__name">Chuck Norris</span>
+		<span class="about__status">Online</span>
+		<span class="about__time">На сайте с апреля 2018</span>
+		<span class="about__quote">Если работаешь, чтобы жить — зачем убиваться на работе?</span>
+		<div class="about__btn-wrap">
+			<a href="#" class="btn about__btn">Отправить сообщение</a>
+		</div>
+	</div>
+
+	<div class="about__bott js-hiden-bott">
+		<div class="about__rating">
+			<span class="about__caption">Рейтинг</span>
+			<div class="about__rating-wrap">
+				<div class="about__rating-col">
+					<span class="about__rating-title">Продавца</span>
+					<div class="about__rating-inner">
+						<div class="about__rating-inner-star">
+							<div class="about__rating-back">
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+							</div>
+							<div class="about__rating-top" style="width: 75%;">
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+							</div>
+						</div>
+						<span class="about__rating-inner-number">3.8</span>
+					</div>
+				</div>
+
+				<div class="about__rating-col">
+					<span class="about__rating-title">Покупателя</span>
+					<div class="about__rating-inner">
+						<div class="about__rating-inner-star">
+							<div class="about__rating-back">
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+							</div>
+							<div class="about__rating-top" style="width: 90%;">
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+								<svg class="icon-star">
+									<use xlink:href="#star"></use>
+								</svg>
+							</div>
+						</div>
+						<span class="about__rating-inner-number">4.7</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="about__descr">
+			<span class="about__caption">О себе</span>
+			<span class="about__descr-text">
+				В типологическом плане вся территория Нечерноземья надвиг продольно ослабляет разлом. Дрейф континентов опускает авгит. Русло унаследованно варьирует осташковский разлом, включая и гряды Чернова, Чернышева и др.
+			</span>
+			<span class="about__descr-text">
+				Закарстованность покрывает недонасыщенный приток, что в конце концов приведет к полному разрушению хребта под действием собственного веса.
+			</span>
+		</div>
+	</div>
+
+	<div class="about__btn-toggle js-btn-about">
+		<span class="about__btn-toggle-text">Подробнее</span>
+	</div>
+</div>
+
+			<div class="deal">
+	<span class="deal__caption">Последние сделки</span>
+	<div class="deal__wrap">
+
+		<div class="deal__item js-deal-item">
+			<span class="deal__item-arrow js-arrow"></span>
+			<div class="deal__item-head js-deal-head">
+				<span class="deal__item-text"><a href="#" class="deal__item-link">Leraks </a>купил бриллианты и доступу к ПУ Ключ к Cleo стиллеру</span>
+			</div>
+			<ul class="deal__item-list js-deal-hiden">
+				<li class="deal__item-row deal__item-row--time">
+					<span class="deal__item-title">Время:</span>
+					<span class="deal__item-descr">12 ноября, 10:31</span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Цена:</span>
+					<span class="deal__item-descr">200 <span class="rub">o</span></span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Steam:</span>
+					<span class="deal__item-descr">ARK: Survival Evolved</span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Продавец:</span>
+					<span class="deal__item-descr deal__item-descr--green">Chak Norris</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="deal__item js-deal-item">
+			<span class="deal__item-arrow js-arrow"></span>
+			<div class="deal__item-head js-deal-head">
+				<span class="deal__item-text"><a href="#" class="deal__item-link">Mad Max </a>купил бронежелет и доступу к ПУ Ключ к Cleo стиллеру</span>
+			</div>
+			<ul class="deal__item-list js-deal-hiden">
+				<li class="deal__item-row deal__item-row--time">
+					<span class="deal__item-title">Время:</span>
+					<span class="deal__item-descr">12 ноября, 10:31</span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Цена:</span>
+					<span class="deal__item-descr">200 <span class="rub">o</span></span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Steam:</span>
+					<span class="deal__item-descr">ARK: Survival Evolved</span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Продавец:</span>
+					<span class="deal__item-descr deal__item-descr--green">Chak Norris</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="deal__item js-deal-item">
+			<span class="deal__item-arrow js-arrow"></span>
+			<div class="deal__item-head js-deal-head">
+				<span class="deal__item-text"><a href="#" class="deal__item-link">Gamer </a>купил бриллианты и доступу к ПУ Ключ к Cleo стиллеру</span>
+			</div>
+			<ul class="deal__item-list js-deal-hiden">
+				<li class="deal__item-row deal__item-row--time">
+					<span class="deal__item-title">Время:</span>
+					<span class="deal__item-descr">12 ноября, 10:31</span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Цена:</span>
+					<span class="deal__item-descr">200 <span class="rub">o</span></span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Steam:</span>
+					<span class="deal__item-descr">ARK: Survival Evolved</span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Продавец:</span>
+					<span class="deal__item-descr deal__item-descr--green">Chak Norris</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="deal__item js-deal-item">
+			<span class="deal__item-arrow js-arrow"></span>
+			<div class="deal__item-head js-deal-head">
+				<span class="deal__item-text"><a href="#" class="deal__item-link">Leraks </a>купил бриллианты и доступу к ПУ Ключ к Cleo стиллеру</span>
+			</div>
+			<ul class="deal__item-list js-deal-hiden">
+				<li class="deal__item-row deal__item-row--time">
+					<span class="deal__item-title">Время:</span>
+					<span class="deal__item-descr">12 ноября, 10:31</span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Цена:</span>
+					<span class="deal__item-descr">200 <span class="rub">o</span></span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Steam:</span>
+					<span class="deal__item-descr">ARK: Survival Evolved</span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Продавец:</span>
+					<span class="deal__item-descr deal__item-descr--green">Chak Norris</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="deal__item js-deal-item">
+			<span class="deal__item-arrow js-arrow"></span>
+			<div class="deal__item-head js-deal-head">
+				<span class="deal__item-text"><a href="#" class="deal__item-link">Gamer </a>купил бриллианты и доступу к ПУ Ключ к Cleo стиллеру</span>
+			</div>
+			<ul class="deal__item-list js-deal-hiden">
+				<li class="deal__item-row deal__item-row--time">
+					<span class="deal__item-title">Время:</span>
+					<span class="deal__item-descr">12 ноября, 10:31</span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Цена:</span>
+					<span class="deal__item-descr">200 <span class="rub">o</span></span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Steam:</span>
+					<span class="deal__item-descr">ARK: Survival Evolved</span>
+				</li>
+				<li class="deal__item-row">
+					<span class="deal__item-title">Продавец:</span>
+					<span class="deal__item-descr deal__item-descr--green">Chak Norris</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+		</div>
+		<div class="profile__content">
+
+			<div class="profile-goods">
+	<span class="profile-goods__caption">Товары пользователя</span>
+	<div class="profile-goods__wrap">
+		
+			<div class="profile-goods__item">
+				<div class="profile-goods__col profile-goods__col--left">
+					<div class="profile-goods__name">
+						<a href="#" class="profile-goods__name-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+					</div>
+					<div class="profile-goods__price">
+						1700<span class="rub">o</span>
+					</div>
+				</div>
+				<div class="profile-goods__col profile-goods__col--right">
+					<div class="profile-goods__platform">
+						<span class="profile-goods__platform-title">Steam:</span>
+						<a href="#" class="profile-goods__platform-link">ARK: Survival Evolved</a>
+					</div>
+					<div class="profile-goods__img" >
+						<img src="pic/recommendation/recommendation-1.png" alt="">
+					</div>
+				</div>
+			</div>
+		
+			<div class="profile-goods__item">
+				<div class="profile-goods__col profile-goods__col--left">
+					<div class="profile-goods__name">
+						<a href="#" class="profile-goods__name-link">Бронежелет, набор оружия и ключ активации</a>
+					</div>
+					<div class="profile-goods__price">
+						1700<span class="rub">o</span>
+					</div>
+				</div>
+				<div class="profile-goods__col profile-goods__col--right">
+					<div class="profile-goods__platform">
+						<span class="profile-goods__platform-title">Steam:</span>
+						<a href="#" class="profile-goods__platform-link">Star Wars: TOR</a>
+					</div>
+					<div class="profile-goods__img" >
+						<img src="pic/recommendation/recommendation-5.png" alt="">
+					</div>
+				</div>
+			</div>
+		
+			<div class="profile-goods__item">
+				<div class="profile-goods__col profile-goods__col--left">
+					<div class="profile-goods__name">
+						<a href="#" class="profile-goods__name-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+					</div>
+					<div class="profile-goods__price">
+						1700<span class="rub">o</span>
+					</div>
+				</div>
+				<div class="profile-goods__col profile-goods__col--right">
+					<div class="profile-goods__platform">
+						<span class="profile-goods__platform-title">Origin:</span>
+						<a href="#" class="profile-goods__platform-link">Stalker Online</a>
+					</div>
+					<div class="profile-goods__img" >
+						<img src="pic/recommendation/recommendation-2.png" alt="">
+					</div>
+				</div>
+			</div>
+		
+			<div class="profile-goods__item">
+				<div class="profile-goods__col profile-goods__col--left">
+					<div class="profile-goods__name">
+						<a href="#" class="profile-goods__name-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+					</div>
+					<div class="profile-goods__price">
+						1700<span class="rub">o</span>
+					</div>
+				</div>
+				<div class="profile-goods__col profile-goods__col--right">
+					<div class="profile-goods__platform">
+						<span class="profile-goods__platform-title">Uplay:</span>
+						<a href="#" class="profile-goods__platform-link">World of Tanks</a>
+					</div>
+					<div class="profile-goods__img" >
+						<img src="pic/recommendation/recommendation-3.png" alt="">
+					</div>
+				</div>
+			</div>
+		
+			<div class="profile-goods__item">
+				<div class="profile-goods__col profile-goods__col--left">
+					<div class="profile-goods__name">
+						<a href="#" class="profile-goods__name-link">Ключ к Cleo стиллеру и доступу к ПУ Ключ к Cleo стиллеру и доступу к ПУ и доступу к ПУ</a>
+					</div>
+					<div class="profile-goods__price">
+						1700<span class="rub">o</span>
+					</div>
+				</div>
+				<div class="profile-goods__col profile-goods__col--right">
+					<div class="profile-goods__platform">
+						<span class="profile-goods__platform-title">Steam:</span>
+						<a href="#" class="profile-goods__platform-link">ARK: Survival Evolved</a>
+					</div>
+					<div class="profile-goods__img" >
+						<img src="pic/recommendation/recommendation-4.png" alt="">
+					</div>
+				</div>
+			</div>
+		
+	</div>
+	<div class="profile-goods__more-btn">
+		<span class="profile-goods__more-text">Показать еще</span>
+	</div>
+</div>
+
+			<div class="review">
+	<div class="review__head">
+		<span class="review__caption">Отзывы</span>
+		<div class="review__number-wrap">
+			<span class="review__number review__number--positive">+2</span>
+			<span class="review__number review__number--negative">-1</span>
+		</div>
+	</div>
+	<div class="review__wrap">
+		<div class="review__item">
+			<div class="review__img">
+				<a href="#" class="review__img-link">
+					<img src="pic/users/users-2.png" alt="">
+				</a>
+			</div>
+			<div class="review__content">
+				<div class="review__content-top">
+					<div class="review__col review__col--name">
+						<a href="#" class="review__name-link">Ray Thompson</a>
+					</div>
+					<div class="review__col review__col--date">
+						24 апреля 2018
+					</div>
+					<div class="review__col review__col--rating">
+						<div class="review__rating-back">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+						<div class="review__rating-top" style="width: 60%;">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="review__content-bott">
+					Можно предположить, что начало координат усиливает косвенный тройной интеграл, откуда следует доказываемое равенство. 
+				</div>
+			</div>
+		</div>
+
+
+		<div class="review__item">
+			<div class="review__img">
+				<a href="#" class="review__img-link">
+					<img src="pic/users/users-1.png" alt="">
+				</a>
+			</div>
+			<div class="review__content">
+				<div class="review__content-top">
+					<div class="review__col review__col--name">
+						<a href="#" class="review__name-link">Андрей Малахов</a>
+					</div>
+					<div class="review__col review__col--date">
+						23 апреля 2018
+					</div>
+					<div class="review__col review__col--rating">
+						<div class="review__rating-back">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+						<div class="review__rating-top review__rating-top--negative" style="width: 40%;">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="review__content-bott">
+					Умножение вектора на число традиционно нейтрализует косвенный постулат. Тем не менее, дисперсия изящно искажает абстрактный график функции многих переменных, таким образом сбылась мечта идиота - утверждение полностью доказано. 
+				</div>
+			</div>
+
+			<div class="review__recoment">
+				<div class="review__recoment-icon">
+					<svg class="icon-recoment-arrow">
+						<use xlink:href="#recoment-arrow"></use>
+					</svg>
+				</div>
+				<div class="review__content review__content--recoment">
+					<div class="review__content-top">
+						<div class="review__col review__col--name">
+							<span class="review__recoment-img-wrap">
+								<img src="pic/users/users-3.png" alt="">
+							</span>
+							<a href="#" class="review__name-link">Chuck Norris</a>
+						</div>
+						<div class="review__col review__col--date">
+							23 апреля 2018
+						</div>
+					</div>
+					<div class="review__content-bott">
+						Можно предположить, что начало координат усиливает косвенный тройной интеграл, откуда следует доказываемое равенство. 
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="review__item">
+			<div class="review__img">
+				<a href="#" class="review__img-link">
+					<img src="pic/users/users-3.png" alt="">
+				</a>
+			</div>
+			<div class="review__content">
+				<div class="review__content-top">
+					<div class="review__col review__col--name">
+						<a href="#" class="review__name-link">Richard Nichols</a>
+					</div>
+					<div class="review__col review__col--date">
+						24 апреля 2018
+					</div>
+					<div class="review__col review__col--rating">
+						<div class="review__rating-back">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+						<div class="review__rating-top" style="width: 60%;">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="review__content-bott">
+					Лимб перечеркивает центральный спектральный класс. Юпитер притягивает случайный спектральный класс. Противостояние дает эффективный диаметp. Рефракция, по определению, традиционно иллюстрирует реликтовый ледник. Широта традиционно гасит близкий афелий .
+				</div>
+			</div>
+		</div>
+
+		<div class="review__item">
+			<div class="review__img">
+				<a href="#" class="review__img-link">
+					<img src="pic/users/users-4.png" alt="">
+				</a>
+			</div>
+			<div class="review__content">
+				<div class="review__content-top">
+					<div class="review__col review__col--name">
+						<a href="#" class="review__name-link">Jerome Barnes</a>
+					</div>
+					<div class="review__col review__col--date">
+						24 апреля 2018
+					</div>
+					<div class="review__col review__col--rating">
+						<div class="review__rating-back">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+						<div class="review__rating-top" style="width: 60%;">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="review__content-bott">
+					Когда речь идет о галактиках, декретное время многопланово дает афелий . В отличие от давно известных астрономам планет земной группы, аргумент перигелия оценивает метеорит 
+				</div>
+			</div>
+		</div>
+
+		<div class="review__item">
+			<div class="review__img">
+				<a href="#" class="review__img-link">
+					<img src="pic/users/users-5.png" alt="">
+				</a>
+			</div>
+			<div class="review__content">
+				<div class="review__content-top">
+					<div class="review__col review__col--name">
+						<a href="#" class="review__name-link">Tony Simpson</a>
+					</div>
+					<div class="review__col review__col--date">
+						24 апреля 2018
+					</div>
+					<div class="review__col review__col--rating">
+						<div class="review__rating-back">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+						<div class="review__rating-top" style="width: 60%;">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="review__content-bott">
+					Легко проверить, что иррациональное число определяет метод последовательных приближений. В общем, постоянная величина стремительно концентрирует степенной ряд.
+				</div>
+			</div>
+		</div>
+
+		<div class="review__item">
+			<div class="review__img">
+				<a href="#" class="review__img-link">
+					<img src="pic/users/users-2.png" alt="">
+				</a>
+			</div>
+			<div class="review__content">
+				<div class="review__content-top">
+					<div class="review__col review__col--name">
+						<a href="#" class="review__name-link">Ray Thompson</a>
+					</div>
+					<div class="review__col review__col--date">
+						24 апреля 2018
+					</div>
+					<div class="review__col review__col--rating">
+						<div class="review__rating-back">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+						<div class="review__rating-top" style="width: 60%;">
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="review__content-bott">
+					Очевидно, что зенит отражает перигелий. Атомное время непрерывно. Приливное трение перечеркивает межпланетный дип-скай объект. Как мы уже знаем, аномальная джетовая активность прочно представляет собой спектральный класс. Экватор ничтожно вращает реликтовый ледник. По космогонической гипотезе Джеймса Джинса, Тукан традиционно отражает непреложный популяционный индекс.
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="review__more-btn">
+		<span class="review__more-text">Показать еще</span>
+	</div>
+	
+	<form action="">
+		<div class="review__write">
+			<div class="review__write-col review__write-col--img">
+				<img src="pic/users/users-5.png" alt="">
+			</div>
+			<div class="review__write-col review__write-col--form">
+				<div class="review__textarea-wrap">
+					<textarea name="" id="" placeholder="Написать отзыв"></textarea>
+				</div>
+				<div class="review__write-bott">
+					<div class="review__write-left">
+						<span class="review__write-title">Оцените продавца</span>
+						<!-- <div class="review__write-star-list">
+							<svg class="icon-star-big">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star-big">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star-big">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star-big">
+								<use xlink:href="#star"></use>
+							</svg>
+							<svg class="icon-star-big">
+								<use xlink:href="#star"></use>
+							</svg>
+						</div> -->
+						<span class="star-group">
+
+							<input type="radio" id="rating-5" name="rating" value="5">
+							<label for="rating-5"></label>
+
+							<input type="radio" id="rating-4" name="rating" value="4" checked="checked"/>
+							<label for="rating-4"></label>
+
+							<input type="radio" id="rating-3" name="rating" value="3">
+							<label for="rating-3"></label>
+
+							<input type="radio" id="rating-2" name="rating" value="2">
+							<label for="rating-2"></label>
+
+							<input type="radio" id="rating-1" name="rating" value="1">
+							<label for="rating-1"></label>
+
+						</span>
+					</div>
+					<div class="review__write-right">
+						<button class="btn review__write-btn">Отправить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	
+	
+</div>
+
+		</div>
+	</div>
+</div>
+
+		<div class="social">
+	<div class="container">
+		<span class="social__title">Следите за нами в социальных сетях:</span>
+		<div class="social__wrapp">
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-vk">
+						<use xlink:href="#vk"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-g-plus">
+						<use xlink:href="#g-plus"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-telegram">
+						<use xlink:href="#telegram"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="social__item">
+				<a href="#" class="social__link">
+					<svg class="icon-facebook">
+						<use xlink:href="#facebook"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__wrapp">
+			<div class="footer__inner footer__inner--nav">
+				<ul class="footer__list">
+					<li class="footer__item">
+						<a href="#" class="footer__link">Поддержка</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Вопросы и ответы</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Правила</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Рейтинг продавцов</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Розыгрыши</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Информация</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Пользовательское соглашение</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Отказ от ответственности</a>
+					</li>
+					<li class="footer__item">
+						<a href="#" class="footer__link">Разрешение споров</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__inner footer__inner--info">
+				<span class="footer__descr">© 2018 Game Transfer - торговая площадка игровых ценностей</span>
+				<span class="footer__icon">
+					<img src="pic/webmoney.png" alt="">
+				</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

@@ -1,0 +1,1355 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+<div class="wrapper">
+
+	<div class="fixed-menu">
+	<div class="fixed-menu__item fixed-menu__item--close js-close">
+		
+	</div>
+	<div class="fixed-menu__item js-open-menu fixed-menu__item--red">
+		<div class="fixed-menu__inner">
+			<div class="fixed-menu__wrapp">
+				<span class="fixed-menu__line"></span>
+				<span class="fixed-menu__line"></span>
+				<span class="fixed-menu__line"></span>
+				<span class="fixed-menu__line"></span>
+			</div>
+		</div>
+	</div>
+	<div class="fixed-menu__item js-open-search">
+		<span class="fixed-menu__icon">
+			<svg class="icon-search">
+				<use xlink:href="#search"></use>
+			</svg>
+		</span>
+	</div>
+</div>
+
+<div class="fixed-menu__open js-active-menu">
+	<div class="fixed-menu__outher">
+		<div class="fixed-menu__nav-wrapp">
+			<div class="fixed-menu__nav-inner">
+				<ul class="fixed-menu__nav-list">
+					<li class="fixed-menu__nav-item">
+						<div class="fixed-menu__nav-item-inner">
+							<a href="#" class="fixed-menu__nav-link">О нас</a>
+						</div>
+					</li>
+					<li class="fixed-menu__nav-item fixed-menu__nav-item--arrow">
+						<div class="fixed-menu__nav-item-inner">
+							<a class="fixed-menu__nav-link js-accordeon">Продажа автомобилей</a>
+							<ul class="fixed-menu__submenu">
+								<li class="fixed-menu__submenu-item">
+									<a href="#" class="fixed-menu__submenu-link">Заголовок подраздела</a>
+								</li>
+								<li class="fixed-menu__submenu-item">
+									<a href="#" class="fixed-menu__submenu-link">Заголовок подраздела</a>
+								</li>
+								<li class="fixed-menu__submenu-item">
+									<a href="#" class="fixed-menu__submenu-link">Заголовок подраздела</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="fixed-menu__nav-item fixed-menu__nav-item--arrow">
+						<div class="fixed-menu__nav-item-inner">
+							<a class="fixed-menu__nav-link js-accordeon">Онлайн сервисы</a>
+							<ul class="fixed-menu__submenu">
+								<li class="fixed-menu__submenu-item">
+									<a href="#" class="fixed-menu__submenu-link">Заголовок подраздела</a>
+								</li>
+								<li class="fixed-menu__submenu-item">
+									<a href="#" class="fixed-menu__submenu-link">Заголовок подраздела</a>
+								</li>
+								<li class="fixed-menu__submenu-item">
+									<a href="#" class="fixed-menu__submenu-link">Заголовок подраздела</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="fixed-menu__nav-item">
+						<div class="fixed-menu__nav-item-inner">
+							<a href="#" class="fixed-menu__nav-link">Контакты</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="fixed-menu__open js-active-search">
+	<div class="fixed-menu__outher">
+		<div class="fixed-menu__nav-wrapp">
+			<div class="fixed-menu__nav-inner">
+				<form action="">
+					<div class="fixed-menu__form">
+						<span class="fixed-menu__title">что вы ищите</span>
+						<div class="fixed-menu__form-wrapp">
+							<div class="fixed-menu__input">
+								<input type="text">
+							</div>
+							<div class="fixed-menu__btn-wrapp">
+								<button class="btn fixed-menu__btn">
+									<svg class="icon-search-btn">
+										<use xlink:href="#search"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="heading">
+	<header class="header header--main">
+	<div class="container">	
+		<div class="header__logo">
+			<a href="#" class="header__logo-link">
+				<img src="pic/logo.png" alt="">
+			</a>
+		</div>
+		<nav class="header__nav">
+			<ul class="header__list">
+				<li class="header__item">
+					<a href="#" class="header__link">О нас</a>
+				</li>
+				<li class="header__item">
+					<a href="#" class="header__link">Продажа автомобилей</a>
+				</li>
+				<li class="header__item">
+					<a href="#" class="header__link">Онлайн сервисы</a>
+				</li>
+				<li class="header__item">
+					<a href="#" class="header__link">Контакты</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="header__contact">
+			<div class="header__contact-callback">
+				<a href="" class="header__link-callback">Заказать звонок</a>
+			</div>
+			<div class="header__contact-phone">
+				<a href="tel:88005504213" class="header__link-phone">8 800 550 42 13</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+	
+	<div class="heading__slider js-main-slider">
+		<div class="heading__slider-item" style="background-image: url(pic/bg/bg-main.jpg);">
+			<div class="heading__slider-decor">
+				<div class="container">
+					<div class="heading__content-change">
+						<h1 class="heading__caption">Мечтаете о хорошем автомобиле, в рамках своего бюджета?</h1>
+						<div class="heading__descr-wrapp">
+							<span class="heading__descr">Мы привезем любой автомобиль и спецтехнику с аукционов японии.</span>
+							<span class="heading__descr">Все просто: подбераем, выкупаем, доставляем и растаможеваем.</span>
+							<span class="heading__descr">Максимально прозарачно. Никаких скрытых переплат.</span>
+						</div>
+						<div class="heading__descr-auto">
+							<span class="heading__descr-text">На фотографии</span>
+							<div class="heading__link-wrapp">
+								<a href="#" class="heading__descr-value">Toyota RAV4 hybrid, аукцион, ~ 1 850 000</a>
+							</div>
+						</div>
+						<div class="heading__bott">
+							<div class="heading__counter">
+								<div class="heading__counter-btn-wrapp">
+									<button class="heading__counter-btn heading__counter-btn--prev js-slide-prev" type="button"></button>
+								</div>
+
+								<span class="heading__counter-wrapp js-slide-counter"></span>
+
+								<div class="heading__counter-btn-wrapp">
+									<button class="heading__counter-btn heading__counter-btn--next js-slide-next" type="button"></button>
+								</div>
+							</div>
+						</div>
+						<div class="heading__foot">
+							<div class="heading__social">
+								<ul class="heading__list">
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-facebook">
+												<use xlink:href="#facebook"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-instagram">
+												<use xlink:href="#instagram"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-vk">
+												<use xlink:href="#vk"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-youtube">
+												<use xlink:href="#youtube"></use>
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="heading__info">
+								<div class="heading__info-item">
+									<span class="heading__info-item-text bold">ООО "Автомарин25" © Все права защищены.</span>
+									<span class="heading__info-item-text">Автомобили с аукционов Японии.</span>
+								</div>
+								<div class="heading__info-item">
+									<span class="heading__info-item-text bold">Владивосток, ул. Фокина 8 а, офис 22а</span>
+									<span class="heading__info-item-text">Юридическая информация</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="heading__slider-item" style="background-image: url(pic/bg/bg-sawed.jpg);">
+			<div class="heading__slider-decor">
+				<div class="container">
+					<div class="heading__content-change">
+						<h1 class="heading__caption">Мечтаете о хорошем автомобиле, в рамках своего бюджета?</h1>
+						<div class="heading__descr-wrapp">
+							<span class="heading__descr">Мы привезем любой автомобиль и спецтехнику с аукционов японии.</span>
+							<span class="heading__descr">Все просто: подбераем, выкупаем, доставляем и растаможеваем.</span>
+							<span class="heading__descr">Максимально прозарачно. Никаких скрытых переплат.</span>
+						</div>
+						<div class="heading__descr-auto">
+							<span class="heading__descr-text">На фотографии</span>
+							<div class="heading__link-wrapp">
+								<a href="#" class="heading__descr-value">Toyota RAV4 hybrid, аукцион, ~ 1 850 000</a>
+							</div>
+						</div>
+						<div class="heading__bott">
+							<div class="heading__counter">
+								<div class="heading__counter-btn-wrapp">
+									<button class="heading__counter-btn heading__counter-btn--prev js-slide-prev" type="button"></button>
+								</div>
+
+								<span class="heading__counter-wrapp js-slide-counter"></span>
+
+								<div class="heading__counter-btn-wrapp">
+									<button class="heading__counter-btn heading__counter-btn--next js-slide-next" type="button"></button>
+								</div>
+							</div>
+						</div>
+						<div class="heading__foot">
+							<div class="heading__social">
+								<ul class="heading__list">
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-facebook">
+												<use xlink:href="#facebook"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-instagram">
+												<use xlink:href="#instagram"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-vk">
+												<use xlink:href="#vk"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-youtube">
+												<use xlink:href="#youtube"></use>
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="heading__info">
+								<div class="heading__info-item">
+									<span class="heading__info-item-text bold">ООО "Автомарин25" © Все права защищены.</span>
+									<span class="heading__info-item-text">Автомобили с аукционов Японии.</span>
+								</div>
+								<div class="heading__info-item">
+									<span class="heading__info-item-text bold">Владивосток, ул. Фокина 8 а, офис 22а</span>
+									<span class="heading__info-item-text">Юридическая информация</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="heading__slider-item" style="background-image: url(pic/bg/bg-sawed.jpg);">
+			<div class="heading__slider-decor">
+				<div class="container">
+					<div class="heading__content-change">
+						<h1 class="heading__caption">Мечтаете о хорошем автомобиле, в рамках своего бюджета?</h1>
+						<div class="heading__descr-wrapp">
+							<span class="heading__descr">Мы привезем любой автомобиль и спецтехнику с аукционов японии.</span>
+							<span class="heading__descr">Все просто: подбераем, выкупаем, доставляем и растаможеваем.</span>
+							<span class="heading__descr">Максимально прозарачно. Никаких скрытых переплат.</span>
+						</div>
+						<div class="heading__descr-auto">
+							<span class="heading__descr-text">На фотографии</span>
+							<div class="heading__link-wrapp">
+								<a href="#" class="heading__descr-value">Toyota RAV4 hybrid, аукцион, ~ 1 850 000</a>
+							</div>
+						</div>
+						<div class="heading__bott">
+							<div class="heading__counter">
+								<div class="heading__counter-btn-wrapp">
+									<button class="heading__counter-btn heading__counter-btn--prev js-slide-prev" type="button"></button>
+								</div>
+
+								<span class="heading__counter-wrapp js-slide-counter"></span>
+
+								<div class="heading__counter-btn-wrapp">
+									<button class="heading__counter-btn heading__counter-btn--next js-slide-next" type="button"></button>
+								</div>
+							</div>
+						</div>
+						<div class="heading__foot">
+							<div class="heading__social">
+								<ul class="heading__list">
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-facebook">
+												<use xlink:href="#facebook"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-instagram">
+												<use xlink:href="#instagram"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-vk">
+												<use xlink:href="#vk"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-youtube">
+												<use xlink:href="#youtube"></use>
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="heading__info">
+								<div class="heading__info-item">
+									<span class="heading__info-item-text bold">ООО "Автомарин25" © Все права защищены.</span>
+									<span class="heading__info-item-text">Автомобили с аукционов Японии.</span>
+								</div>
+								<div class="heading__info-item">
+									<span class="heading__info-item-text bold">Владивосток, ул. Фокина 8 а, офис 22а</span>
+									<span class="heading__info-item-text">Юридическая информация</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="heading__slider-item" style="background-image: url(pic/bg/bg-mission.jpg);">
+			<div class="heading__slider-decor">
+				<div class="container">
+					<div class="heading__content-change">
+						<h1 class="heading__caption">Мечтаете о хорошем автомобиле, в рамках своего бюджета?</h1>
+						<div class="heading__descr-wrapp">
+							<span class="heading__descr">Мы привезем любой автомобиль и спецтехнику с аукционов японии.</span>
+							<span class="heading__descr">Все просто: подбераем, выкупаем, доставляем и растаможеваем.</span>
+							<span class="heading__descr">Максимально прозарачно. Никаких скрытых переплат.</span>
+						</div>
+						<div class="heading__descr-auto">
+							<span class="heading__descr-text">На фотографии</span>
+							<div class="heading__link-wrapp">
+								<a href="#" class="heading__descr-value">Toyota RAV4 hybrid, аукцион, ~ 1 850 000</a>
+							</div>
+						</div>
+						<div class="heading__bott">
+							<div class="heading__counter">
+								<div class="heading__counter-btn-wrapp">
+									<button class="heading__counter-btn heading__counter-btn--prev js-slide-prev" type="button"></button>
+								</div>
+
+								<span class="heading__counter-wrapp js-slide-counter"></span>
+
+								<div class="heading__counter-btn-wrapp">
+									<button class="heading__counter-btn heading__counter-btn--next js-slide-next" type="button"></button>
+								</div>
+							</div>
+						</div>
+						<div class="heading__foot">
+							<div class="heading__social">
+								<ul class="heading__list">
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-facebook">
+												<use xlink:href="#facebook"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-instagram">
+												<use xlink:href="#instagram"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-vk">
+												<use xlink:href="#vk"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="heading__item">
+										<a href="#" class="heading__link">
+											<svg class="icon-youtube">
+												<use xlink:href="#youtube"></use>
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="heading__info">
+								<div class="heading__info-item">
+									<span class="heading__info-item-text bold">ООО "Автомарин25" © Все права защищены.</span>
+									<span class="heading__info-item-text">Автомобили с аукционов Японии.</span>
+								</div>
+								<div class="heading__info-item">
+									<span class="heading__info-item-text bold">Владивосток, ул. Фокина 8 а, офис 22а</span>
+									<span class="heading__info-item-text">Юридическая информация</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="heading__progress">
+		<div class="heading__progress-line js-progresbar"></div>
+	</div>
+</div>
+
+
+	<div class="categories">
+
+  <div class="categories__row categories__row--info">
+
+    <div class="categories__col categories__col--left">
+      <div class="categories__holder">
+        <div class="categories__inner">
+          <h2 class="categories__title">наша миссия — Стать вашим другом и надежным партнером</h2>
+          <p class="categories__desc">Цель нашей компании - это не только заработок денег. В первую очередь, это
+            профессиональная помощь людям, которые хотят приобрести качественный идеально исправный автомобиль.</p>
+          <div class="categories__body">
+            <div class="categories__info">
+              <ul class="categories__info-list">
+                <li class="categories__info-item">Без скрытых комиссий</li>
+                <li class="categories__info-item">Поиск в статистике 0 руб</li>
+                <li class="categories__info-item">Экспертный подбор</li>
+              </ul>
+              <a href="#" class="categories__info-link">Подробнее о компании</a>
+            </div>
+            <div class="categories__info">
+              <ul class="categories__info-list">
+                <li class="categories__info-item">Свободный доступ</li>
+                <li class="categories__info-item">Бесплатные переводы</li>
+                <li class="categories__info-item">Возможна инспекция</li>
+              </ul>
+              <a href="#" class="categories__info-link">Схема работы и оплаты</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="categories__col categories__col--right">
+      <div class="categories__holder" style="background-image: url(pic/bg/bg-mission.jpg);"></div>
+    </div>
+
+  </div>
+
+  <div class="categories__row">
+
+    <div class="categories__col categories__col--left">
+      <div class="categories__holder" style="background-image: url(pic/bg/bg-duty.jpg);">
+        <a href="#" class="categories__inner">
+          <span class="categories__caption">Авто под полную пошлину</span>
+          <span class="categories__hover">
+              <span class="categories__desc">Аккуратно пилим авто, все трубки целые, пластик аккуратно снимаем и упаковываем. Стекла все целые, делаем стяжки, двойной контроль качества</span>
+              <span class="categories__footer">
+                <span class="categories__txt">от <span class="categories__price">220 000</span> руб</span>
+                <span class="categories__txt categories__txt--more">Подробнее</span>
+              </span>
+            </span>
+        </a>
+      </div>
+    </div>
+
+    <div class="categories__col categories__col--multi categories__col--right">
+      <div class="categories__holder" style="background-image: url(pic/bg/bg-sawed.jpg);">
+        <a href="#" class="categories__inner categories__inner--middle">
+          <span class="categories__caption">Распил и крапил</span>
+          <span class="categories__hover">
+              <span class="categories__desc">Аккуратно пилим авто, все трубки целые, пластик аккуратно снимаем и упаковываем. Стекла все целые, делаем стяжки, двойной контроль качества</span>
+              <span class="categories__footer">
+                <span class="categories__txt">от <span class="categories__price">220 000</span> руб</span>
+                <span class="categories__txt categories__txt--more">Подробнее</span>
+              </span>
+            </span>
+        </a>
+      </div>
+      <div class="categories__holder" style="background-image: url(pic/bg/bg-constructors.jpg);">
+        <a href="#" class="categories__inner categories__inner--bottom">
+          <span class="categories__caption">Конструкторы</span>
+          <span class="categories__hover">
+              <span class="categories__desc">Аккуратно пилим авто, все трубки целые, пластик аккуратно снимаем и упаковываем. Стекла все целые, делаем стяжки, двойной контроль качества</span>
+              <span class="categories__footer">
+                <span class="categories__txt">от <span class="categories__price">220 000</span> руб</span>
+                <span class="categories__txt categories__txt--more">Подробнее</span>
+              </span>
+            </span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="categories__row">
+
+    <div class="categories__col categories__col--multi categories__col--left">
+      <div class="categories__holder" style="background-image: url(pic/bg/bg-trucks.jpg);">
+        <a href="#" class="categories__inner categories__inner--bottom">
+          <span class="categories__caption">Грузовики с ПТС</span>
+          <span class="categories__hover">
+              <span class="categories__desc">Аккуратно пилим авто, все трубки целые, пластик аккуратно снимаем и упаковываем. Стекла все целые, делаем стяжки, двойной контроль качества</span>
+              <span class="categories__footer">
+                <span class="categories__txt">от <span class="categories__price">220 000</span> руб</span>
+                <span class="categories__txt categories__txt--more">Подробнее</span>
+              </span>
+            </span>
+        </a>
+      </div>
+      <div class="categories__holder" style="background-image: url(pic/bg/bg-mototechnics.jpg);">
+        <a href="#" class="categories__inner">
+          <span class="categories__caption">Мототехника</span>
+          <span class="categories__hover">
+              <span class="categories__desc">Аккуратно пилим авто, все трубки целые, пластик аккуратно снимаем и упаковываем. Стекла все целые, делаем стяжки, двойной контроль качества</span>
+              <span class="categories__footer">
+                <span class="categories__txt">от <span class="categories__price">220 000</span> руб</span>
+                <span class="categories__txt categories__txt--more">Подробнее</span>
+              </span>
+            </span>
+        </a>
+      </div>
+    </div>
+
+    <div class="categories__col categories__col--right">
+      <div class="categories__holder" style="background-image: url(pic/bg/bg-special-equipment.jpg);">
+        <a href="#" class="categories__inner categories__inner--middle">
+          <span class="categories__caption">Спецтехника</span>
+          <span class="categories__hover">
+              <span class="categories__desc">Аккуратно пилим авто, все трубки целые, пластик аккуратно снимаем и упаковываем. Стекла все целые, делаем стяжки, двойной контроль качества</span>
+              <span class="categories__footer">
+                <span class="categories__txt">от <span class="categories__price">220 000</span> руб</span>
+                <span class="categories__txt categories__txt--more">Подробнее</span>
+              </span>
+            </span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+	<div class="calc">
+	<div class="container">
+		<div class="calc__wrapp">
+			<h3 class="calc__caption">Калькулятор рассчёта стоимости авто</h3>
+			<div class="calc__descr-wrapp">
+				<span class="calc__descr">Цель нашей компании - это не только заработок денег.
+				<span class="calc__descr">В первую очередь, это профессиональная помощь людям</span>
+			</div>
+			<form action="">
+				<div class="calc__form-wrapp">
+					<div class="calc__inputs-wrapp">
+						<div class="calc__inner">
+							<span class="calc__label calc__label--required">Стоимость авто в ¥</span>
+							<label class="calc__input-wrapp">
+								<input type="text" class="calc__input" required>
+							</label>
+						</div>
+						<div class="calc__inner">
+							<span class="calc__label calc__label--required">Город привоза</span>
+							<label class="calc__input-wrapp valid">
+								<input type="text" class="calc__input" required>
+							</label>
+						</div>
+					</div>
+					<div class="calc__radio-wrapp">
+						<div class="calc__inner">
+							<span class="calc__label">Тип привоза</span>
+							<div class="calc__radio">
+								<label class="radio">
+									<input type="radio" name="type">
+									<span>Распил</span>
+								</label>
+								<label class="radio">
+									<input type="radio" name="type">
+									<span>Конструктор</span>
+								</label>
+							</div>
+						</div>
+						<div class="calc__inner">
+							<span class="calc__label">Тип автомобиля</span>
+							<div class="calc__radio">
+								<label class="radio">
+									<input type="radio" name="type-auto">
+									<span>Легковой</span>
+								</label>
+								<label class="radio">
+									<input type="radio" name="type-auto">
+									<span>Джип</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="calc__value">
+						<button class="btn btn--inline calc__value-btn">Рассчитать стоимость</button>
+					</div>
+				</div>
+			</form>
+			<div class="calc__required">
+				<span class="calc__required-text">— Обязательные поля</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="popular-car ">
+  <div class="container">
+    <h3 class="popular-car__title">популярные авто</h3>
+    <div class="popular-car__body">
+      <div class="popular-car__list js-slider-mobile-popular">
+        
+        <div class="popular-car__item">
+          <a href="#" class="popular-car__link">
+            <span class="popular-car__inner">
+              <img src="pic/popular-cars/popular-cars-01.jpg" alt="" class="popular-car__img">
+              <span class="popular-car__info">
+                <span class="popular-car__brand">Toyota Camry</span>
+                <span class="popular-car__desc">Автомат  Передний  2012</span>
+                <span class="popular-car__price"><span class="popular-car__price-txt">от</span> 640 000 <span class="popular-car__price-txt">руб</span></span>
+              </span>
+            </span>
+          </a>
+        </div>
+        
+        <div class="popular-car__item">
+          <a href="#" class="popular-car__link">
+            <span class="popular-car__inner">
+              <img src="pic/popular-cars/popular-cars-02.jpg" alt="" class="popular-car__img">
+              <span class="popular-car__info">
+                <span class="popular-car__brand">Toyota Prius</span>
+                <span class="popular-car__desc">Автомат  Передний  2012</span>
+                <span class="popular-car__price"><span class="popular-car__price-txt">от</span> 500 000 <span class="popular-car__price-txt">руб</span></span>
+              </span>
+            </span>
+          </a>
+        </div>
+        
+        <div class="popular-car__item">
+          <a href="#" class="popular-car__link">
+            <span class="popular-car__inner">
+              <img src="pic/popular-cars/popular-cars-03.jpg" alt="" class="popular-car__img">
+              <span class="popular-car__info">
+                <span class="popular-car__brand">Toyota Highlander</span>
+                <span class="popular-car__desc">Автомат  Передний  2012</span>
+                <span class="popular-car__price"><span class="popular-car__price-txt">от</span> 772 100 <span class="popular-car__price-txt">руб</span></span>
+              </span>
+            </span>
+          </a>
+        </div>
+        
+        <div class="popular-car__item">
+          <a href="#" class="popular-car__link">
+            <span class="popular-car__inner">
+              <img src="pic/popular-cars/popular-cars-04.jpg" alt="" class="popular-car__img">
+              <span class="popular-car__info">
+                <span class="popular-car__brand">Toyota RAV4</span>
+                <span class="popular-car__desc">Автомат  Передний  2012</span>
+                <span class="popular-car__price"><span class="popular-car__price-txt">от</span> 772 100 <span class="popular-car__price-txt">руб</span></span>
+              </span>
+            </span>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+	<div class="popular-brands">
+	<div class="container">
+		<h3 class="popular-brands__caption">Популярные марки</h3>
+		<div class="popular-brands__wrapp js-brands-slider">
+			<div class="popular-brands__item">
+				<a href="#" class="popular-brands__link">
+					<svg class="icon-toyota">
+						<use xlink:href="#toyota"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="popular-brands__item">
+				<a href="#" class="popular-brands__link">
+					<svg class="icon-lexus">
+						<use xlink:href="#lexus"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="popular-brands__item">
+				<a href="#" class="popular-brands__link">
+					<svg class="icon-daihatsu">
+						<use xlink:href="#daihatsu"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="popular-brands__item">
+				<a href="#" class="popular-brands__link">
+					<svg class="icon-mitsubishi">
+						<use xlink:href="#mitsubishi"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="popular-brands__item">
+				<a href="#" class="popular-brands__link">
+					<svg class="icon-isuzu">
+						<use xlink:href="#isuzu"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="popular-brands__item">
+				<a href="#" class="popular-brands__link">
+					<svg class="icon-mazda">
+						<use xlink:href="#mazda"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="popular-brands__item">
+				<a href="#" class="popular-brands__link">
+					<svg class="icon-suzuki">
+						<use xlink:href="#suzuki"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="popular-brands__item">
+				<a href="#" class="popular-brands__link">
+					<svg class="icon-nissan">
+						<use xlink:href="#nissan"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="popular-brands__item">
+				<a href="#" class="popular-brands__link">
+					<svg class="icon-subaru">
+						<use xlink:href="#subaru"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="traded">
+	<div class="container">
+		<div class="traded__wrapp">
+			<div class="traded__item">
+				<div class="traded__top">
+					<span class="traded__caption">Торгуется сейчас</span>
+					<div class="traded__img-visible-mobile">
+						<img src="pic/popular-brands/popular-brands-01.jpg" alt="">
+					</div>
+					<div class="traded__descr-top">
+						<span class="traded__descr-text traded__descr-text-name">Honda Fit / 2012</span>
+						<span class="traded__descr-text traded__descr-text-sity">Uss Tokyo</span>
+					</div>
+					<div class="traded__descr-bott">
+						<ul class="traded__list">
+							<li class="traded__list-item">Пробег</li>
+							<li class="traded__list-item">Объем двигателя</li>
+							<li class="traded__list-item">Тип ввоза</li>
+							<li class="traded__list-item">Трансмиссия</li>
+							<li class="traded__list-item">Привод</li>
+						</ul>
+						<ul class="traded__list traded__list--right">
+							<li class="traded__list-item">48000</li>
+							<li class="traded__list-item">2400</li>
+							<li class="traded__list-item">Пошлина</li>
+							<li class="traded__list-item">Автомат</li>
+							<li class="traded__list-item">Передний</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="traded__item traded__item--hidden-mobile">
+				<div class="traded__top">
+					<img src="pic/popular-brands/popular-brands-01.jpg" alt="">
+				</div>
+			</div>
+			<div class="traded__item traded__item--last">
+				<div class="traded__top">
+					<img src="pic/popular-brands/popular-brands-02.jpg" alt="">
+					<span class="traded__buy">Купленные авто</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="links links--white">
+	<div class="container">
+		<div class="links__wrapp">
+			<div class="links__item">
+				<a href="#" class="links__link links__link--red">перейти в каталог</a>
+			</div>
+			<div class="links__item">
+				<a href="#" class="links__link links__link--font">Нужна помощь в выборе?</a>
+			</div>
+			<div class="links__item">
+				<a href="#" class="links__link">заказать звонок менеджера</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="news ">
+	<div class="container">
+		<div class="news__wrapp js-tabs-wrap">
+			<div class="news__tabs">
+				<div class="news__tab js-tab active">Новости</div>
+				<div class="news__tab js-tab">Блог компании</div>
+			</div>
+			<div class="news__content">
+				<div class="news__content-item js-tab-content active">
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Целый кузов по цене распила! Конструкторы авто по цене распила уже сегодня.</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Последние новости ввоза БУ авто и ЭРА-ГЛОНАСС</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Авто под полную пошлину 2001-2005 года выпуска</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Запрет правого руля с 1 января 2015 года</a>
+						</div>
+					
+					
+				</div>
+				<div class="news__content-item js-tab-content">
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Целый кузов по цене распила! Конструкторы авто по цене распила уже сегодня.</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Последние новости ввоза БУ авто и ЭРА-ГЛОНАСС</a>
+						</div>
+					
+						<div class="news__item">
+							<span class="news__date">20 апреля 2018</span>
+							<a href="#" class="news__link">Авто под полную пошлину 2001-2005 года выпуска</a>
+						</div>
+					
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="questions">
+	<div class="questions__outer">
+		<div class="container">
+			<div class="questions__holder">
+				<div class="questions__inner questions__inner--reviews">
+					<span class="questions__title">Отзывы</span>
+					<div class="questions__slider-wrap js-questions-slider-wrap">
+						<div class="questions__slider js-questions-slider">
+							
+							<div class="questions__item js-get-slides-number">
+								<div class="questions__item-head">
+									<span class="questions__item-name">Александр, Москва</span>
+									<span class="questions__item-car">Toyota Prius A</span>
+								</div>
+								<p class="questions__item-txt">
+									Вообщем расскажу вкратце, но постараюсь по существу. Адекватные люди, хорошие специалисты, помогут во всех вопросах, связанных и с автомобилями, и с отправкой автомобиля. Для меня это актуально, т.к. являюсь клиентом дистанционным.
+								</p>
+								<a href="#" class="questions__link">
+									<span class="questions__icon">
+										<svg class="icon-photo">
+											<use xlink:href="#photo"></use>
+										</svg>
+									</span>
+									<span class="questions__link-txt">Фотография авто</span>
+								</a>
+								<a href="#" class="questions__link questions__link--more">
+									<span class="questions__link-txt">Подробнее</span>
+								</a>
+								
+							</div>
+							
+							<div class="questions__item js-get-slides-number">
+								<div class="questions__item-head">
+									<span class="questions__item-name">Олег, Харьков</span>
+									<span class="questions__item-car">Kia</span>
+								</div>
+								<p class="questions__item-txt">
+									Вообщем расскажу вкратце, но постараюсь по существу. Адекватные люди, хорошие специалисты, помогут во всех вопросах, связанных и с автомобилями, и с отправкой автомобиля. Для меня это актуально, т.к. являюсь клиентом дистанционным.
+								</p>
+								<a href="#" class="questions__link">
+									<span class="questions__icon">
+										<svg class="icon-photo">
+											<use xlink:href="#photo"></use>
+										</svg>
+									</span>
+									<span class="questions__link-txt">Фотография авто</span>
+								</a>
+								<a href="#" class="questions__link questions__link--more">
+									<span class="questions__link-txt">Подробнее</span>
+								</a>
+								
+							</div>
+							
+							<div class="questions__item js-get-slides-number">
+								<div class="questions__item-head">
+									<span class="questions__item-name">Александр, Москва</span>
+									<span class="questions__item-car">Toyota Camry</span>
+								</div>
+								<p class="questions__item-txt">
+									Вообщем расскажу вкратце, но постараюсь по существу. Адекватные люди, хорошие специалисты, помогут во всех вопросах, связанных и с автомобилями, и с отправкой автомобиля. Для меня это актуально, т.к. являюсь клиентом дистанционным.
+								</p>
+								<a href="#" class="questions__link">
+									<span class="questions__icon">
+										<svg class="icon-photo">
+											<use xlink:href="#photo"></use>
+										</svg>
+									</span>
+									<span class="questions__link-txt">Фотография авто</span>
+								</a>
+								<a href="#" class="questions__link questions__link--more">
+									<span class="questions__link-txt">Подробнее</span>
+								</a>
+								
+							</div>
+							
+							<div class="questions__item js-get-slides-number">
+								<div class="questions__item-head">
+									<span class="questions__item-name">Виталий, Москва</span>
+									<span class="questions__item-car">Toyota Prius B</span>
+								</div>
+								<p class="questions__item-txt">
+									Вообщем расскажу вкратце, но постараюсь по существу. Адекватные люди, хорошие специалисты, помогут во всех вопросах, связанных и с автомобилями, и с отправкой автомобиля. Для меня это актуально, т.к. являюсь клиентом дистанционным.
+								</p>
+								<a href="#" class="questions__link">
+									<span class="questions__icon">
+										<svg class="icon-photo">
+											<use xlink:href="#photo"></use>
+										</svg>
+									</span>
+									<span class="questions__link-txt">Фотография авто</span>
+								</a>
+								<a href="#" class="questions__link questions__link--more">
+									<span class="questions__link-txt">Подробнее</span>
+								</a>
+								
+							</div>
+							
+						</div>
+						<div class="questions__item-slider-dots">
+							<span class="questions__slider-txt js-questions-dots-is">1</span>
+							<span> / </span>
+							<span class="questions__slider-txt js-questions-dots-all">0</span>
+						</div>
+					</div>
+				</div>
+				<div class="questions__inner">
+					<span class="questions__title">Частые вопросы</span>
+					<div class="questions__slider-wrap js-questions-slider-wrap">
+						<div class="questions__slider js-questions-slider">
+							
+								<div class="questions__item js-get-slides-number">
+									<span class="questions__item-title">
+										Если Вы не найдете авто, подходящий по моим параметрам, депозит возвращается?
+									</span>
+									<p class="questions__item-txt">
+										Если мы не смогли ни чего купить, или вы передумали покупать автомобиль из Японии, ибо по любым другим причинам Вы желаете вернуть депозит, то мы Вам его вернем в течении суток на Ваши банковские реквизиты!
+									</p>
+								</div>
+							
+								<div class="questions__item js-get-slides-number">
+									<span class="questions__item-title">
+										Если Вы не найдете авто?
+									</span>
+									<p class="questions__item-txt">
+										Если мы не смогли ни чего купить, или вы передумали покупать автомобиль из Японии, ибо по любым другим причинам Вы желаете вернуть депозит, то мы Вам его вернем в течении суток на Ваши банковские реквизиты!
+									</p>
+								</div>
+							
+								<div class="questions__item js-get-slides-number">
+									<span class="questions__item-title">
+										Если Вы не найдете авто, подходящий по моим параметрам?
+									</span>
+									<p class="questions__item-txt">
+										Если мы не смогли ни чего купить, или вы передумали покупать автомобиль из Японии
+									</p>
+								</div>
+							
+						</div>
+						<div class="questions__item-slider-dots">
+							<span class="questions__slider-txt js-questions-dots-is">1</span>
+							<span> / </span>
+							<span class="questions__slider-txt js-questions-dots-all">0</span>
+						</div>
+					<a href="#" class="questions__link">
+						<span class="questions__icon">
+							<svg class="icon-chat">
+								<use xlink:href="#chat"></use>
+							</svg>
+							<span class="questions__link-txt">Задать свой вопрос</span>
+						</span>
+					</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="callback ">
+	<div class="container">
+		<form action="">
+			<div class="callback__wrapp">
+				<span class="callback__caption">Связаться с нами</span>
+				<div class="callback__wrapp-element">
+					<div class="callback__inner callback__inner--left">
+						<span class="callback__descr">Заполните форму и наш менеджер свяжется с вами ближайшее время</span>
+						<label class="checkbox checkbox--small callback__checkbox">
+							<input type="checkbox" name="check" checked>
+							<span>Отправляя данную заявку я соглашуюсь с принятием <a href="#" class="callback__link">политики конфеденциальности</a></span>
+						</label>
+					</div>
+					<div class="callback__inner callback__inner--right">
+						<div class="callback__form-wrapp">
+							<div class="callback__form-inner">
+								<span class="callback__label">Как к Вам обращаться</span>
+								<input type="text" class="callback__input">
+							</div>
+							<div class="callback__form-inner">
+								<span class="callback__label callback__label--required">Контактный телефон</span>
+								<input type="text" class="callback__input" required>
+							</div>
+							<div class="callback__form-inner callback__form-inner--btn">
+								<button type="submit" class="btn">Отправить</button>
+							</div>
+							<div class="callback__required">
+								<span class="callback__required-text">— Обязательные поля</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+</div>
+
+
+<footer class="footer">
+  <div class="footer__outer">
+    <div class="container">
+      <div class="footer__wrap">
+        <div class="footer__holder footer__holder--left">
+          <div class="footer__row footer__row--contacts">
+            <div class="footer__col">
+              <span class="footer__title">Бесплатно по России</span>
+              <a href="tel: +788005504213" class="footer__contacts footer__contacts--free">8 (800) 550 42 13</a>
+            </div>
+          </div>
+          <div class="footer__row">
+            <div class="footer__col">
+              <div class="footer__top">
+                <span class="footer__title">Ежедневно с 10:00 до 19:00</span>
+                <span class="footer__info">т. <a href="tel: +79242324313" class="footer__contacts footer__contacts--phone">+7 (924) 232 43 13</a></span>
+                <span class="footer__info">т. <a href="tel: +78005504213" class="footer__contacts footer__contacts--phone">+7 (800) 550 42 13</a></span>
+              </div>
+              <div class="footer__bottom">
+                <span class="footer__info"><a href="mailto: salesautomarine25@yandex.ru" class="footer__contacts">salesautomarine25@yandex.ru</a></span>
+                <span class="footer__info"><a href="mailto: infoautomarine25@yandex.ru" class="footer__contacts">infoautomarine25@yandex.ru</a></span>
+              </div>
+            </div>
+            <div class="footer__col">
+              <div class="footer__top">
+                <span class="footer__title">Центральный офис:</span>
+                <span class="footer__info">690091, г. Владивосток</span>
+                <span class="footer__info">ул. Адмирала Фокина 8а, офис 22</span>
+              </div>
+              <div class="footer__bottom">
+                <span class="footer__info"><a href="#" class="footer__contacts">Показать офис на карте</a></span>
+                <span class="footer__info"><a href="#" class="footer__contacts">Написать менеджеру</a></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__row footer__row--social">
+            <div class="footer__col footer__social">
+              <ul class="footer__social-list">
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-facebook">
+                      <use xlink:href="#facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-instagram">
+                      <use xlink:href="#instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-vk">
+                      <use xlink:href="#vk"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-youtube">
+                      <use xlink:href="#youtube"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer__row">
+            <div class="footer__col footer__col--txt">
+              <span class="footer__txt">ООО "Автомарин25"</span>
+              <span class="footer__txt">Автомобили с аукционов Японии.</span>
+              <span class="footer__txt">Все права защищены.</span>
+            </div>
+            <div class="footer__col footer__col--txt">
+              <span class="footer__txt">Данный сайт носит исключительно информационный характер и не является публичной офертой</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer__holder footer__holder--right">
+          <div class="footer__row footer__row--nav">
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Авто под полную пошлину</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Распил и крапио</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Конструкторы</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Грузовики с ПТС</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Спецтехника</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Мототехника</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="" class="footer__link">О компании</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Наша команда</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Видеотрансляция офиса</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Преимущества</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Написать директору</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__row">
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Аукционы онлайн</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Статистика продаж</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">One Price стоянки</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Калькулятор распилов</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Расшифровка аук листа</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Полная пошлина</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Схема работы и оплаты</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Доставка в регионы РФ</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Гарантии компании</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Недавно купленные авто</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

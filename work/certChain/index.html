@@ -1,0 +1,806 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Main</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ </div>
+<header class="header">
+	<img src="pic/figure/figure-01.png" class="header__figure header__figure--one" alt="">
+	<img src="pic/figure/figure-04.png" class="header__figure header__figure--two" alt="">
+	<img src="pic/figure/figure-04.png" class="header__figure header__figure--three" alt="">
+	<img src="pic/figure/figure-01.png" class="header__figure header__figure--four" alt="">
+	<img src="pic/figure/figure-02.png" class="header__figure header__figure--five" alt="">
+	<div class="container">
+		<div class="header__top">
+			<div class="header__logo">
+				<a href="#" class="header__logo-link">
+					<img src="pic/logo.png" alt="logo">
+				</a>
+			</div>
+			<div class="header__right">
+				<nav class="header__nav js-open-menu">
+					<ul class="header__list">
+						<li class="header__list-item"><a href="#" class="header__link header__link--first">About</a></li>
+						<li class="header__list-item"><a href="#" class="header__link header__link--two">Product</a></li>
+						<li class="header__list-item"><a href="#" class="header__link header__link--three">News</a></li>
+						<li class="header__list-item"><a href="#" class="header__link header__link--four">Investor</a></li>
+						<li class="header__list-item"><a href="#" class="header__link header__link--five">Test CertChain</a></li>
+					</ul>
+				</nav>
+				<div class="header__mobile-menu js-menu">
+					<p class="header__long-line header__long-line--first js-line"></p>
+					<p class="header__short-line js-line"></p>
+					<p class="header__long-line header__long-line--two js-line"></p>
+				</div>
+				<a href="#"class="header__btn-top">Try free</a>
+			</div>
+		</div>
+		<div class="header__bott">
+	<div class="header__text-cap">Blockchain certification service</div>
+	<div class="header__elements js-tabs">
+		<ul class="header__list-elements js-caption">
+			<li class="header__element header__element--first active js-tab">Overview</li>
+			<li class="header__element header__element--two js-tab">For business</li>
+			<li class="header__element header__element--three js-tab">For certification body</li>
+			<li class="header__element header__element--four js-tab">For auditor</li>
+		</ul>
+		<div class="header__description active js-content">
+			CertChian is the world's first quality certificaiton service based on blockchain technology. We defend business, governmant and cosumers from fake suppliers by providing trustful and secure certification system.
+		</div>
+		<div class="header__description js-content">
+			CertChian is the world's first quality certificaiton service based on blockchain technology. We defend business, governmant and cosumers from fake suppliers by providing trustful and secure certification system.
+		</div>
+		<div class="header__description js-content">
+			CertChian is the world's first quality certificaiton service based on blockchain technology. We defend business, governmant and cosumers from fake suppliers by providing trustful and secure certification system.
+		</div>
+		<div class="header__description js-content">
+			CertChian is the world's first quality certificaiton service based on blockchain technology. We defend business, governmant and cosumers from fake suppliers by providing trustful and secure certification system.
+		</div>
+
+	</div>
+	<div class="header__buttons">
+		<a href="#" class="header__btn-bott">
+			<span class="header__btn-text">Get free account</span>
+			<span class="icon-arr-w"></span>
+		</a>
+		<a data-fancybox href="https://www.youtube.com/watch?v=tzCKj9iTX0M" class="header__watch">
+			<button class="header__btn-watch">
+				<span class="icon-play"></span>
+			</button>
+			<span class="header__text-watch">watch <span class="header__lovercase">video</span></span>
+		</a>
+	</div>
+	
+	<img src="pic/fon-1.png" alt="fon" class="header__img-right">
+		
+</div>
+
+
+
+		
+		
+	</div>
+</header>
+
+
+    <div class="wrapper">
+
+		<div class="advantages">
+	<div class="container">
+		<div class="advantages__item advantages__item--first">
+			<div class="advantages__item-top">
+				<span class="advantages__icon">
+					<span class="icon-first-one">
+						<use xlink:href="#first-1"></use>
+					</span>
+				</span>
+				<span class="advantages__name">Informative</span>
+			</div>
+			<div class="advantages__item-bott">
+				<p class="advantages__paragraph">Never before certification has been so much informative.</p> 
+				<p class="advantages__paragraph">Now each certification issued by certification body on CertChain has a trsutful data background.</p>
+				<p class="advantages__paragraph--sm">Never before certification has been so much informative. Now each certification issued by certification body on CertChain has a trsutful data background.</p> 
+			</div>
+		</div>
+		<div class="advantages__wrapp-two">
+			<div class="advantages__item advantages__item--two">
+				<div class="advantages__item-top">
+					<span class="advantages__icon">
+						<span class="icon-first-two">
+							<use xlink:href="#first-2"></use>
+						</span>
+					</span>
+					<span class="advantages__name">User-friendly</span>
+				</div>
+				<div class="advantages__item-bott">
+					<span>It the first time when you can not be affraid of certification process. CertChain gives you innovative, clear and understandable working space.</span>
+					<ul class="advantages__list">
+						<li class="advantages__list-item">Apply for certificaiton without third bodies;</li>
+						<li class="advantages__list-item">Use dash-board & checklists for quality assessment;</li>
+						<li class="advantages__list-item">Control step-by-step auditing process;</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="advantages__wrapp-three">
+			<div class="advantages__item advantages__item--three">
+				<div class="advantages__item-top">
+					<span class="advantages__icon">
+						<span class="icon-first-three">
+							<use xlink:href="#first-3"></use>
+						</span>
+					</span>
+					<span class="advantages__name">Secure</span>
+				</div>
+				<div class="advantages__item-bott">
+					<span>All the gathered data from the moment of application till issuing certification is kept securely. No need for maintaining your own data base. No need for any clodes. Everything is securely kept in one place. </span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    	<div class="features">
+	<div class="container">
+		<div class="features__caption">Features</div>
+	</div>
+		<ul class="features__list">
+			<li class="features__list-item">
+				<a href="#" class="features__link">
+					<div class="features__icon">
+						<svg class="icon-click-application icon">
+							<use xlink:href="#click-application"></use>
+						</svg>
+					</div>
+					<div class="features__text">3 Click Application</div>
+				</a>
+			</li>
+			<li class="features__list-item">
+				<a href="" class="features__link">
+					<div class="features__icon">
+						<svg class="icon-real-time icon">
+							<use xlink:href="#real-time"></use>
+						</svg>
+					</div>
+					<div class="features__text">Real-Time Traking</div>
+				</a>
+			</li>
+			<li class="features__list-item">
+				<a href="" class="features__link">
+					<div class="features__icon">
+						<svg class="icon-crypto-signature icon">
+							<use xlink:href="#crypto-signature"></use>
+						</svg>
+					</div>
+					<div class="features__text">CryptoSignature</div>
+				</a>
+			</li>
+			<li class="features__list-item">
+				<a href="" class="features__link">
+					<div class="features__icon">
+						<svg class="icon-public-data icon">
+							<use xlink:href="#public-data"></use>
+						</svg>
+					</div>
+					<div class="features__text">Public Data</div>
+				</a>
+			</li>
+		</ul>
+
+</div>
+
+    	<div class="info  info--gray">
+	<img src="pic/figure/figure-04.png" class="info--gray__figure info--gray__figure--one" alt="">
+	<img src="pic/figure/figure-04.png" class="info--gray__figure info--gray__figure--two" alt="">
+	<img src="pic/figure/figure-04.png" class="info--gray__figure info--gray__figure--three" alt="">
+	<img src="pic/figure/figure-04.png" class="info--gray__figure info--gray__figure--four" alt="">
+	<img src="pic/figure/figure-04.png" class="info--gray__figure info--gray__figure--five" alt="">
+	<img src="pic/figure/figure-03.png" class="info--gray__figure info--gray__figure--six" alt="">
+	<div class="container">
+		<div class="info__inner">
+			<div class="info__item info__item--text ">
+				<span class="info__item-caption ">
+					3 CLICK APPLICATION
+				</span>
+				<span class="info__item-title ">
+					FOR BUSINESS
+				</span>
+				<div class="info__item-description">
+					<p>
+						Speed up and apply for certification just in 3 clicks! CertChain makes it real. All you need is just complete the key steps: fill in the fields of an application form, choose auditing dates and certification body. 
+					</p>
+					<span class="info__item-txt">
+						That is it: press confirm!
+					</span>
+				</div>
+				<a href="#" class="info__item-link ">
+					<span class="info__item-link-txt">
+						Learn more
+					</span>
+					<span class="icon-arrow-lern"></span>
+				</a>
+			</div>
+			<div class="info__item info__item--img">
+				<img src="pic/fon/fon-1.png" alt="img">
+			</div>
+		</div>
+	</div>
+</div>
+    	<div class="info info--blue ">
+	<img src="pic/figure/figure-01.png" class="info--blue__figure info--blue__figure--one" alt="">
+	<img src="pic/figure/figure-01.png" class="info--blue__figure info--blue__figure--two" alt="">
+	<img src="pic/figure/figure-01.png" class="info--blue__figure info--blue__figure--three" alt="">
+	<img src="pic/figure/figure-01.png" class="info--blue__figure info--blue__figure--four" alt="">
+	<img src="pic/figure/figure-03.png" class="info--blue__figure info--blue__figure--five" alt="">
+	<img src="pic/figure/figure-01.png" class="info--blue__figure info--blue__figure--six" alt="">
+	<img src="pic/figure/figure-01.png" class="info--blue__figure info--blue__figure--seven" alt="">
+	<img src="pic/figure/figure-01.png" class="info--blue__figure info--blue__figure--eight" alt="">
+	<div class="container">
+		<div class="info__inner">
+			<div class="info__item info__item--text info__item--gray">
+				<span class="info__item-caption info__item-caption--white">
+					REAL-TIME TRACKING
+				</span>
+				<span class="info__item-title info__item-title--white">
+					FOR AUDITORS
+				</span>
+				<div class="info__item-description">
+					<p>
+						Certification process with deadlines and project details is spread before the eyes. CertChain controls all timeframes for you and makes smart-notifications about further auditing tasks and steps.
+					</p>
+					<span class="info__item-txt">
+						Take your time!<br>Everything is planned for you!
+					</span>
+				</div>
+				<a href="#" class="info__item-link info__item-link--white">
+					<span class="info__item-link-txt">
+						Learn more
+					</span>
+					<span class="icon-arr-w"></span>
+				</a>
+			</div>
+			<div class="info__item info__item--img">
+				<img src="pic/fon/fon-2.png" alt="img">
+			</div>
+		</div>
+	</div>
+</div>
+    	<div class="info info--light-gray info--gray">
+	<img src="pic/figure/figure-04.png" class="info--gray__figure info--gray__figure--one" alt="">
+	<img src="pic/figure/figure-04.png" class="info--gray__figure info--gray__figure--two" alt="">
+	<img src="pic/figure/figure-04.png" class="info--gray__figure info--gray__figure--three" alt="">
+	<img src="pic/figure/figure-04.png" class="info--gray__figure info--gray__figure--four" alt="">
+	<img src="pic/figure/figure-04.png" class="info--gray__figure info--gray__figure--five" alt="">
+	<img src="pic/figure/figure-03.png" class="info--gray__figure info--gray__figure--six" alt="">
+	<div class="container">
+		<div class="info__inner">
+			<div class="info__item info__item--text ">
+				<span class="info__item-caption ">
+					CRYPTOSIGNATURE
+				</span>
+				<span class="info__item-title ">
+					FOR CERTIFICATION BODIES
+				</span>
+				<div class="info__item-description">
+					<p>
+						Use your own unique cryptosignature to make confirmations, issue certificates and keep all the auditing resultes safely in a decentralized blockchain database.   CertChain will care about quality security for you.
+					</p>
+					<span class="info__item-txt">
+						Make cryptosign and feel safe.
+					</span>
+				</div>
+				<a href="#" class="info__item-link ">
+					<span class="info__item-link-txt">
+						Learn more
+					</span>
+					<span class="icon-arrow-lern"></span>
+				</a>
+			</div>
+			<div class="info__item info__item--img">
+				<img src="pic/fon/fon-3.png" alt="img">
+			</div>
+		</div>
+	</div>
+</div>
+    	<div class="info info--blue info--last">
+	<img src="pic/figure/figure-01.png" class="info--blue__figure info--blue__figure--one" alt="">
+	<img src="pic/figure/figure-01.png" class="info--blue__figure info--blue__figure--two" alt="">
+	<img src="pic/figure/figure-01.png" class="info--blue__figure info--blue__figure--three" alt="">
+	<img src="pic/figure/figure-01.png" class="info--blue__figure info--blue__figure--four" alt="">
+	<img src="pic/figure/figure-03.png" class="info--blue__figure info--blue__figure--five" alt="">
+	<img src="pic/figure/figure-01.png" class="info--blue__figure info--blue__figure--six" alt="">
+	<img src="pic/figure/figure-01.png" class="info--blue__figure info--blue__figure--seven" alt="">
+	<img src="pic/figure/figure-01.png" class="info--blue__figure info--blue__figure--eight" alt="">
+	<div class="container">
+		<div class="info__inner">
+			<div class="info__item info__item--text info__item--gray">
+				<span class="info__item-caption info__item-caption--white">
+					PUBLIC DATA
+				</span>
+				<span class="info__item-title info__item-title--white">
+					FOR EVERYONE
+				</span>
+				<div class="info__item-description">
+					<p>
+						Whether you are a company or a certification body, an auditor or just a person doing shopping, CertChain brings a new level of quality access and undestanding.<br> See company describtion, ratings, auditors' expertise & background, standards, certification's quality ratings and many more.
+					</p>
+					<span class="info__item-txt">
+						
+					</span>
+				</div>
+				<a href="#" class="info__item-link info__item-link--white">
+					<span class="info__item-link-txt">
+						Learn more
+					</span>
+					<span class="icon-arr-w"></span>
+				</a>
+			</div>
+			<div class="info__item info__item--img">
+				<img src="pic/fon/fon-4.png" alt="img">
+			</div>
+		</div>
+	</div>
+</div>
+    	<div class="reasons">
+  <div class="reasons__wrap">
+    <div class="container">
+      <div class="reasons__slider">
+        <div class="reasons__right">
+          <div class="reasons__dots">
+            <div class="reasons__dots-item reasons__dots-item--1 js-reasons-item" data-index="0">
+              <div class="reasons__dots-item-pict">
+                <img src="pic/reasons/dot-icon-1.png" alt="">
+              </div>
+            </div>
+            <div class="reasons__dots-item reasons__dots-item--2 js-reasons-item" data-index="1">
+              <div class="reasons__dots-item-pict">
+                <img src="pic/reasons/dot-icon-2.png" alt="">
+              </div>
+            </div>
+            <div class="reasons__dots-item reasons__dots-item--3 js-reasons-item" data-index="2">
+              <div class="reasons__dots-item-pict">
+                <img src="pic/reasons/dot-icon-3.png" alt="">
+              </div>
+            </div>
+            <div class="reasons__dots-item reasons__dots-item--4 js-reasons-item" data-index="3">
+              <div class="reasons__dots-item-pict">
+                <img src="pic/reasons/dot-icon-4.png" alt="">
+              </div>
+            </div>
+            <div class="reasons__dots-item reasons__dots-item--5 js-reasons-item" data-index="4">
+              <div class="reasons__dots-item-pict">
+                <img src="pic/reasons/dot-icon-5.png" alt="">
+              </div>
+            </div>
+            <div class="reasons__dots-item reasons__dots-item--6 js-reasons-item" data-index="5">
+              <div class="reasons__dots-item-pict">
+                <img src="pic/reasons/dot-icon-6.png" alt="">
+              </div>
+            </div>
+            <div class="reasons__dots-item reasons__dots-item--7 js-reasons-item" data-index="6">
+              <div class="reasons__dots-item-pict">
+                <img src="pic/reasons/dot-icon-7.png" alt="">
+              </div>
+            </div>
+            <div class="reasons__bg-wave reasons__bg-wave--1"></div>
+            <div class="reasons__bg-wave reasons__bg-wave--2"></div>
+            <a href="#" class="reasons__dot-log">
+              <img src="pic/logo.png" alt="logo">
+            </a>
+          </div>
+        </div> <!-- right -->
+        <div class="reasons__left">
+            <ul class="reasons__list js-reasons-list-hidden js-reasons-list">
+              <li class="reasons__item">
+                  <p class="reasons__title">1 REASONS TO USE  CERTCHAIN</p>
+                  <div class="reasons__desc">Certification In One Place</div>
+                  <p class="reasons__text">
+                      CertChain is a certifcaiton ecosystem created on the basis of
+                      5 year international experience, expertise & knowladge. Apply,
+                      keep, search, track monitor, share, learn and ect. One working space for
+                      certificaiton wherever you are.</p>
+              </li>
+              <li class="reasons__item">
+                  <p class="reasons__title">2 REASONS TO USE  CERTCHAIN</p>
+                  <div class="reasons__desc">Certification In One Place</div>
+                  <p class="reasons__text">
+                      CertChain is a certifcaiton ecosystem created on the basis of
+                      5 year international experience, expertise & knowladge. Apply,
+                      keep, search, track monitor, share, learn and ect. One working space for
+                      certificaiton wherever you are.</p>
+              </li>
+              <li class="reasons__item">
+                  <p class="reasons__title">3 REASONS TO USE  CERTCHAIN</p>
+                  <div class="reasons__desc">Certification In One Place</div>
+                  <p class="reasons__text">
+                      CertChain is a certifcaiton ecosystem created on the basis of
+                      5 year international experience, expertise & knowladge. Apply,
+                      keep, search, track monitor, share, learn and ect. One working space for
+                      certificaiton wherever you are.</p>
+              </li>
+              <li class="reasons__item">
+                  <p class="reasons__title">4 REASONS TO USE  CERTCHAIN</p>
+                  <div class="reasons__desc">Certification In One Place</div>
+                  <p class="reasons__text">
+                      CertChain is a certifcaiton ecosystem created on the basis of
+                      5 year international experience, expertise & knowladge. Apply,
+                      keep, search, track monitor, share, learn and ect. One working space for
+                      certificaiton wherever you are.</p>
+              </li>
+              <li class="reasons__item">
+                  <p class="reasons__title">5 REASONS TO USE  CERTCHAIN</p>
+                  <div class="reasons__desc">Certification In One Place</div>
+                  <p class="reasons__text">
+                      CertChain is a certifcaiton ecosystem created on the basis of
+                      5 year international experience, expertise & knowladge. Apply,
+                      keep, search, track monitor, share, learn and ect. One working space for
+                      certificaiton wherever you are.</p>
+              </li>
+              <li class="reasons__item">
+                  <p class="reasons__title">6 REASONS TO USE  CERTCHAIN</p>
+                  <div class="reasons__desc">Certification In One Place</div>
+                  <p class="reasons__text">
+                      CertChain is a certifcaiton ecosystem created on the basis of
+                      5 year international experience, expertise & knowladge. Apply,
+                      keep, search, track monitor, share, learn and ect. One working space for
+                      certificaiton wherever you are.</p>
+              </li>
+              <li class="reasons__item">
+                  <p class="reasons__title">7 REASONS TO USE  CERTCHAIN</p>
+                  <div class="reasons__desc">Certification In One Place</div>
+                  <p class="reasons__text">
+                      CertChain is a certifcaiton ecosystem created on the basis of
+                      5 year international experience, expertise & knowladge. Apply,
+                      keep, search, track monitor, share, learn and ect. One working space for
+                      certificaiton wherever you are.</p>
+              </li>
+            </ul>
+            <div class="reasons__arrows">
+        			<a class="reasons__arrow reasons__arrow--prev">Prev
+        				<div class="reasons__arrow-icon">arrow-icon</div>
+        			</a>
+        			<a class="reasons__arrow reasons__arrow--next">Next
+        				<div class="reasons__arrow-icon">arrow-icon</div>
+        			</a>
+        		</div>
+            <a href="#" class="reasons__btn">
+              <span class="reasons__btn-text">Get started</span>
+              <span class="icon-arr-w"></span>
+            </a>
+        </div> <!-- left -->
+      </div> <!-- slider -->
+    </div> <!-- container -->
+  </div> <!-- wrap -->
+</div> <!-- reasons -->
+
+		<div class="reviews">
+	<div class="reviews__slider">
+		<ul class="reviews__list js-reviews-list-hidden js-reviews-list">
+			<li class="reviews__item-wrap" >
+				<div class="reviews__item">
+					<div class="reviews__left">
+						<div class="reviews__pict">
+							<img src="pic/reviews/review-1.jpg" width="130" height="130" alt="">
+						</div>
+					</div>
+					<div class="reviews__right">
+						<p class="reviews__text">
+							I have read the two documents about your project of
+							Certification Blockchain and I find your idea very interesting, sincerely. Please let me know which kind of cooperation we could   
+						</p>
+						<p class="reviews__author">
+							Emanuele Radice, <br>
+							Quality Assurance & Product Assurance Engineer
+						</p>
+					</div>
+				</div>
+			</li>
+			<li class="reviews__item-wrap">
+				<div class="reviews__item" >
+					<div class="reviews__left">
+						<div class="reviews__pict">
+							<img src="pic/reviews/review-2.jpg" width="130" height="130" alt="">
+						</div>
+					</div>
+					<div class="reviews__right">
+						<p class="reviews__text">
+							The idea is very good, indeed we very often meet with all the problems described in the presentation.
+							All this kills the market, every year becoming more like a profanation. A single platform for
+							certification bodies, auditors and companies would very much help to get rid of most of the
+							existing problems, as well as increase the trust and prestige of certification.   
+						</p>
+						<p class="reviews__author">
+							Valeriy Sysoev, <br>
+							Senior Manager at Active Audit Agency
+						</p>
+					</div>
+				</div>
+			</li>
+			<li class="reviews__item-wrap">
+				<div class="reviews__item" >
+					<div class="reviews__left">
+						<div class="reviews__pict">
+							<img src="pic/reviews/review-3.jpg" width="130" height="130" alt="">
+						</div>
+					</div>
+					<div class="reviews__right">
+						<p class="reviews__text">
+							The idea is very good, indeed we very often meet with all the problems described in the presentation.
+							All this kills the market, every year becoming more like a profanation. A single platform for
+							certification bodies, auditors and companies would very much help to get rid of most of the
+							existing problems, as well as increase the trust and prestige of certification.   
+						</p>
+						<p class="reviews__author">
+							Sergii Grygoriev, <br>
+							Leading Specialist at Bureau Veritas
+						</p>
+					</div>
+				</div>
+			</li>
+			<li class="reviews__item-wrap">
+				<div class="reviews__item" >
+					<div class="reviews__left">
+						<div class="reviews__pict">
+							<img src="pic/reviews/review-1.jpg" width="130" height="130" alt="">
+						</div>
+					</div>
+					<div class="reviews__right">
+						<p class="reviews__text">
+							The idea is very good, indeed we very often meet with all the problems described in the presentation.
+							All this kills the market, every year becoming more like a profanation. A single platform for
+							certification bodies, auditors and companies would very much help to get rid of most of the
+							existing problems, as well as increase the trust and prestige of certification.   
+						</p>
+						<p class="reviews__author">
+							Sergii Grygoriev, <br>
+							Leading Specialist at Bureau Veritas
+						</p>
+					</div>
+				</div>
+			</li>
+			<li class="reviews__item-wrap">
+				<div class="reviews__item" >
+					<div class="reviews__left">
+						<div class="reviews__pict">
+							<img src="pic/reviews/review-2.jpg" width="130" height="130" alt="">
+						</div>
+					</div>
+					<div class="reviews__right">
+						<p class="reviews__text">
+							The idea is very good, indeed we very often meet with all the problems described in the presentation.
+							All this kills the market, every year becoming more like a profanation. A single platform for
+							certification bodies, auditors and companies would very much help to get rid of most of the
+							existing problems, as well as increase the trust and prestige of certification.   
+						</p>
+						<p class="reviews__author">
+							Sergii Grygoriev, <br>
+							Leading Specialist at Bureau Veritas
+						</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="reviews__arrows">
+			<a class="reviews__arrow reviews__arrow--prev">Prev
+				<div class="reviews__arrow-icon">arrow-icon</div>
+			</a>
+			<a class="reviews__arrow reviews__arrow--next">Next
+				<div class="reviews__arrow-icon">arrow-icon</div>
+			</a>
+		</div>
+	</div>
+
+</div>
+
+		<div class="partners">
+	<ul class="partners__list js-partners-slider">
+		<li class="partners__item">
+			<a href="#" class="partners__item-link">
+				<img src="pic/partners/partners-1.png" class="bull-img" alt="partner-img">
+			</a>
+		</li>
+		<li class="partners__item">
+			<a href="#" class="partners__item-link">
+				<img src="pic/partners/partners-2.png" alt="partner-img">
+			</a>
+		</li>
+		<li class="partners__item">
+			<a href="#" class="partners__item-link">
+				<img src="pic/partners/partners-3.png" alt="partner-img">
+			</a>
+		</li>
+		<li class="partners__item">
+			<a href="#" class="partners__item-link">
+				<img src="pic/partners/partners-4.png" alt="partner-img">
+			</a>
+		</li>
+		<li class="partners__item">
+			<a href="#" class="partners__item-link">
+				<img src="pic/partners/partners-5.png" alt="partner-img">
+			</a>
+		</li>
+		<li class="partners__item">
+			<a href="#" class="partners__item-link">
+				<img src="pic/partners/partners-5.png" alt="partner-img">
+			</a>
+		</li>
+	</ul>
+</div>
+    	<div class="form">
+	<img src="pic/figure/figure-01.png" class="form__figure form__figure--one" alt="">
+	<img src="pic/figure/figure-01.png" class="form__figure form__figure--two" alt="">
+	<img src="pic/figure/figure-03.png" class="form__figure form__figure--three" alt="">
+	<img src="pic/figure/figure-01.png" class="form__figure form__figure--four" alt="">
+	<img src="pic/figure/figure-01.png" class="form__figure form__figure--five" alt="">
+	<img src="pic/figure/figure-01.png" class="form__figure form__figure--six" alt="">
+	<img src="pic/figure/figure-01.png" class="form__figure form__figure--seven" alt="">
+	<img src="pic/figure/figure-01.png" class="form__figure form__figure--eight" alt="">
+	<img src="pic/figure/figure-03.png" class="form__figure form__figure--nine" alt="">
+	<div class="container">
+		<div class="form__inner">
+			<div class="form__caption">Be first!</div>
+			<div class="form__caption">Get started for free!</div>
+			<form action="#" class="form__wrapper">
+				<input type="text" class="form__input" required placeholder="Your name">
+				<input type="email" class="form__input" required placeholder="Your email">
+				<!-- <input type="text" class="form__input" required placeholder="Your role"> -->
+				<select name="role" id="role">
+					<option value="hide">Your role</option>
+					<option value="Business" autocomplete="off">Business</option>
+					<option value="Auditor" autocomplete="off">Auditor</option>
+					<option value="Certification Body" autocomplete="off">Certification Body</option>
+					<option value="Customer" autocomplete="off">Customer</option>
+				</select>
+				<button type="submit" class="form__btn">Start CertChain</button>
+			</form>
+		</div>
+	</div>
+</div>
+		<div class="event">
+		<p class="event__title">Event</p>
+		<div class="event__slider">
+			<ul class="event__list js-events-list-hidden js-event-list">
+				<li class="event__item-wrap " >
+					<div class="event__item" >
+						<div class="event__pict">
+							<img src="pic/event-cards/event-1.png" height="100" alt="">
+						</div>
+						<p class="event__item-title">Wolves summit</p>
+						<p class="event__item-text">Believe this is a nice approach for iso 9001 quality
+							management systems. It could also work for iso 14001 and similar certifications.
+							I highly doubt that it is applicable for the new mdr certification within the european union.</p>
+						<div class="event__item-bottom">Saint-Petersburg, Russia </div>
+					</div>
+				</li>
+				<li class="event__item-wrap " >
+					<div class="event__item" >
+						<div class="event__pict">
+							<img src="pic/event-cards/event-2.png" height="100" alt="">
+						</div>
+						<p class="event__item-title">Startup Germany</p>
+						<p class="event__item-text">Believe this is a nice approach for iso 9001 quality
+							management systems. It could also work for iso 14001 and similar certifications.
+							I highly doubt that ean union.</p>
+						<div class="event__item-bottom">Saint-Petersburg, Russia </div>
+					</div>
+				</li>
+				<li class="event__item-wrap " >
+					<div class="event__item" >
+						<div class="event__pict">
+							<img src="pic/event-cards/event-3.png" height="100" alt="">
+						</div>
+						<p class="event__item-title">Imaguru BLockchain School</p>
+						<p class="event__item-text">Believe this is a nice approach for iso 9001 quality management systems.
+							It could also work for iso 14001 and similar certifications.
+							I highly doubt that it is applicable for the new mdr certification within the european union.
+							Nevertheless it is a great idea and cood be very </p>
+						<div class="event__item-bottom">Saint-Petersburg, Russia </div>
+					</div>
+				</li>
+				<li class="event__item-wrap " >
+					<div class="event__item" >
+						<div class="event__pict">
+							<img src="pic/event-cards/event-4.png" height="100" alt="">
+						</div>
+						<p class="event__item-title">CRYPTOCURRENCY  CONFERENCE</p>
+						<p class="event__item-text">Believe this is a nice approach for iso 9001 quality management systems.
+							It could also work for iso 14001 and similar certifications.
+							I highly doubt that it is applicable for the new mdr certification within the european union.
+							Nevertheless it is a great idea and cood be very </p>
+						<div class="event__item-bottom">Saint-Petersburg, Russia </div>
+					</div>
+				</li>
+				<li class="event__item-wrap" >
+					<div class="event__item" >
+						<div class="event__pict">
+							<img src="pic/event-cards/event-2.png" height="100" alt="">
+						</div>
+						<p class="event__item-title">CRYPTOCURRENCY  CONFERENCE</p>
+						<p class="event__item-text">Believe this is a nice approach for iso 9001 quality management systems.
+							It could also work for iso 14001 and similar certifications.
+							I highly doubt that it is applicable for the new mdr certification within the european union.
+							Nevertheless it is a great idea and cood be very </p>
+						<div class="event__item-bottom">Saint-Petersburg, Russia </div>
+					</div>
+				</li>
+				<li class="event__item-wrap" >
+					<div class="event__item" >
+						<div class="event__pict">
+							<img src="pic/event-cards/event-3.png" height="100" alt="">
+						</div>
+						<p class="event__item-title">CRYPTOCURRENCY  CONFERENCE</p>
+						<p class="event__item-text">Believe this is a nice approach for iso 9001 quality management systems.
+							It could also work for iso 14001 and similar certifications.
+							I highly doubt that it is applicable for the new mdr certification within the european union.
+							Nevertheless it is a great idea and cood be very </p>
+						<div class="event__item-bottom">Saint-Petersburg, Russia </div>
+					</div>
+				</li>
+			</ul>
+			<div class="event__arrows">
+				<a class="event__arrow event__arrow--prev">Prev
+					<div class="event__arrow-icon">arrow-icon</div>
+				</a>
+				<a class="event__arrow event__arrow--next">Next
+					<div class="event__arrow-icon">arrow-icon</div>
+				</a>
+			</div>
+		</div>
+</div>
+
+
+    </div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__top">
+			<div class="footer__text-cap">
+				Build high quality together with certchain!
+			</div>
+			<div class="footer__text">
+				Contact Us!
+			</div>
+			<div class="footer__mail">
+				<a href="mailto:admin@luksweb.ru" class="footer__link-mail">hello@certchain.io</a>
+			</div>
+			<div class="footer__social-icon">
+				<ul class="footer__list">
+					<li class="footer__list-item"><a href="#" class="footer__link footer__link--facebook"></a></li>
+					<li class="footer__list-item"><a href="#" class="footer__link footer__link--instagram"></a></li>
+					<li class="footer__list-item"><a href="#" class="footer__link footer__link--linkedin"></a></li>
+					<li class="footer__list-item"><a href="#" class="footer__link footer__link--twitter"></a></li>
+					<li class="footer__list-item"><a href="#" class="footer__link footer__link--google"></a></li>
+					<li class="footer__list-item"><a href="#" class="footer__link footer__link--youtube"></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer__bott">
+			copyright © 2018. CertChain
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

@@ -1,0 +1,409 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Main</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+	<div class="wrapper">
+
+		<div class="watch js-watch">
+	<div class="container">
+		<div class="watch__wrap">
+			<span class="watch__text">
+				Find out how you can create a powerful chanel to attract customers
+			</span>
+			<a href="#" class="watch__text-link">Watch Demo</a>
+		</div>
+	</div>
+</div>
+		
+		<header class="header js-header">
+	<div class="container">
+		<div class="header__wrap js-wrap">
+			<div class="header__left js-left">
+				<div class="header__logo">
+					<a href="#" class="header__logo-link">
+						<svg class="icon-logo">
+							<use xlink:href="#logo"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="header__lang-wrap js-lang-wrap">
+					<div class="header__lang js-lang-btn">
+						<span class="header__lang-text" style="background-image: url(pic/flag/flag-en.png);">English</span>
+					</div>
+					<div class="header__lang-drop js-lang-drop">
+						<ul class="header__lang-list">
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-en.png);">English</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-oae.png);">العربية</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-china.png);">中文</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-ru.png);">Русский</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-fr.png);">Français</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-spain.png);">España</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-port.png);">Português</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-thailand.png);">ไทย</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<nav class="header__nav js-nav">
+				<ul class="header__list">
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span>Branded solution</span>
+						</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span>Business Models</span>
+						</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span>Platform Capabilities</span>
+						</a>
+					</li>
+					<li class="header__item header__item--sub js-blog-btn">
+						<a href="#" class="header__link header__link--sub ">
+							<span>Blog</span>
+						</a>
+						<ul class="header__list-sub js-blog-drop">
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">Who is Forex trader</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">What is Forex market</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">Who is Forex trader</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">What is Forex market</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">Who is Forex trader</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">What is Forex market</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">Who is Forex trader</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">What is Forex market</a>
+							</li>
+						</ul>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span>About Company</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="header__right js-right">
+				<a href="#" class="btn header__btn">Send request</a>
+			</div>
+
+			<div class="header__btn-menu js-btn-menu">
+				<span class="header__line"></span>
+				<span class="header__line"></span>
+				<span class="header__line"></span>
+			</div>
+
+		</div>
+	</div>
+</header>
+
+
+		<div class="heading">
+	<div class="container">
+		<div class="heading__wrap">
+			<div class="heading__left">
+				<div class="heading__caption-wrap">
+					<span class="heading__caption">Launch</span>
+					<span class="heading__caption">Your Own Platform for transaction copying</span>
+				</div>
+				<div class="heading__descr-wrap">
+					<span class="heading__descr">Use our technology,</span>
+					<span class="heading__descr">to develop your investment business with the help of automatic trading on financial markets</span>
+				</div>
+				<div class="heading__bott">
+					<div class="heading__btn-wrap">
+						<a href="#" class="btn heading__btn">Sent request</a>
+					</div>
+					<div class="heading__btn-wrap">
+						<a href="#" class="btn btn--red heading__btn-watch">Watch Demo</a>
+					</div>
+				</div>
+			</div>
+			<div class="heading__right">
+				<span class="icon-offices">
+					<img src="pic/svg/offices.svg" alt="">
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="user">
+	<div class="container">
+		<div class="user__caption-wrap">
+			<span class="user__caption">Who </span>
+			<span class="user__caption">can use </span>
+			<span class="user__caption">our product</span>
+		</div>
+		<div class="user__wrap">
+			<div class="user__item">
+				
+			</div>
+			<div class="user__item">
+				<span class="user__icon">
+					<svg class="icon-Brokers">
+						<use xlink:href="#Brokers"></use>
+					</svg>
+				</span>
+				<span class="user__text">Brokers</span>
+			</div>
+			<div class="user__item">
+				<span class="user__icon">
+					<svg class="icon-Introducing_Brokers">
+						<use xlink:href="#Introducing_Brokers"></use>
+					</svg>
+				</span>
+				<span class="user__text">Introducing Brockers</span>
+			</div>
+			<div class="user__item">
+				<span class="user__icon">
+					<svg class="icon-Educational_Centers">
+						<use xlink:href="#Educational_Centers"></use>
+					</svg>
+				</span>
+				<span class="user__text">Educational Centers</span>
+			</div>
+			<div class="user__item">
+				<span class="user__icon">
+					<svg class="icon-Investment_Companies">
+						<use xlink:href="#Investment_Companies"></use>
+					</svg>
+				</span>
+				<span class="user__text">Investment Companies</span>
+			</div>
+			<div class="user__item">
+				<span class="user__icon">
+					<svg class="icon-Financial_Websites">
+						<use xlink:href="#Financial_Websites"></use>
+					</svg>
+				</span>
+				<span class="user__text">Financial Websites</span>
+			</div>
+			<div class="user__item">
+				<span class="user__icon">
+					<svg class="icon-Affiliate_Marketers">
+						<use xlink:href="#Affiliate_Marketers"></use>
+					</svg>
+				</span>
+				<span class="user__text">Affiliate Marketers</span>
+			</div>
+			<div class="user__item">
+				<span class="user__icon">
+					<svg class="icon-Enterpreneurs">
+						<use xlink:href="#Enterpreneurs"></use>
+					</svg>
+				</span>
+				<span class="user__text">Enterpreneurs</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<div class="chanel">
+	<div class="container">
+		<span class="chanel__caption">Create a poverfull chanel to attract customers</span>
+		<div class="chanel__outer">
+			<div class="chanel__line"></div>
+			<div class="chanel__wrap">
+				<div class="chanel__item" data-number="1">
+					<div class="chanel__inner">
+						Use our technology, to develop your investment business with the help of automatic trading on financial markets
+					</div>
+
+				</div>
+				<div class="chanel__item" data-number="2">
+					<div class="chanel__inner">
+						Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+					</div>
+
+				</div>
+				<div class="chanel__item" data-number="3">
+					<div class="chanel__inner">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					</div>
+
+				</div>
+				<div class="chanel__item" data-number="4">
+					<div class="chanel__inner">
+						Use our technology, to develop your investment business with the help of automatic trading on financial markets
+					</div>
+
+				</div>
+				<div class="chanel__item" data-number="5">
+					<div class="chanel__inner">
+						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+					</div>
+
+				</div>
+				<div class="chanel__item" data-number="6">
+					<div class="chanel__inner">
+						Use our technology, to develop your investment business with the help of automatic trading on financial markets
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="chanel__btn-wrap">
+			<a href="#" class="btn btn--red chanel__btn">Watch Demo</a>
+		</div>
+	</div>
+</div>
+
+		<div class="platform">
+	<div class="platform__top">
+		<div class="container">
+			<div class="platform__img">
+				<img src="pic/computer.png" alt="">
+			</div>
+			<div class="platform__left">
+				<span class="platform__title">Duis aute irure dolor</span>
+				<span class="platform__descr">in reprehenderit in voluptate velit esse cillum dolore </span>
+			</div>
+			<div class="platform__right">
+				<span class="platform__title">Duis aute irure dolor</span>
+				<span class="platform__descr">in reprehenderit in voluptate velit esse cillum dolore </span>
+			</div>
+		</div>
+	</div>
+
+	<div class="platform__bott">
+		<div class="container">
+			<span class="platform__caption">Esse cillum dolore eu fugiat nulla pariatur</span>
+			<div class="platform__btn-wrap">
+				<a href="#" class="btn platform__btn">Start Now</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__left">
+				2015 Larmond capital. Allrights reserved
+			</div>
+			<ul class="footer__right">
+				<li class="footer__item">
+					<a href="#" class="footer__link">Disclaimer</a>
+				</li>
+				<li class="footer__item">
+					<a href="#" class="footer__link">Legal Notice</a>
+				</li>
+				<li class="footer__item">
+					<a href="#" class="footer__link">Terms & Conditions</a>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

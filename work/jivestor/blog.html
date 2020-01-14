@@ -1,0 +1,450 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Блог</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+	<div class="wrapper">
+
+		<div class="watch js-watch">
+	<div class="container">
+		<div class="watch__wrap">
+			<span class="watch__text">
+				Find out how you can create a powerful chanel to attract customers
+			</span>
+			<a href="#" class="watch__text-link">Watch Demo</a>
+		</div>
+	</div>
+</div>
+
+		<header class="header js-header">
+	<div class="container">
+		<div class="header__wrap js-wrap">
+			<div class="header__left js-left">
+				<div class="header__logo">
+					<a href="#" class="header__logo-link">
+						<svg class="icon-logo">
+							<use xlink:href="#logo"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="header__lang-wrap js-lang-wrap">
+					<div class="header__lang js-lang-btn">
+						<span class="header__lang-text" style="background-image: url(pic/flag/flag-en.png);">English</span>
+					</div>
+					<div class="header__lang-drop js-lang-drop">
+						<ul class="header__lang-list">
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-en.png);">English</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-oae.png);">العربية</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-china.png);">中文</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-ru.png);">Русский</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-fr.png);">Français</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-spain.png);">España</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-port.png);">Português</a>
+							</li>
+							<li class="header__lang-item">
+								<a href="#" class="header__lang-link" style="background-image: url(pic/flag/flag-thailand.png);">ไทย</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<nav class="header__nav js-nav">
+				<ul class="header__list">
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span>Branded solution</span>
+						</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span>Business Models</span>
+						</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span>Platform Capabilities</span>
+						</a>
+					</li>
+					<li class="header__item header__item--sub js-blog-btn">
+						<a href="#" class="header__link header__link--sub ">
+							<span>Blog</span>
+						</a>
+						<ul class="header__list-sub js-blog-drop">
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">Who is Forex trader</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">What is Forex market</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">Who is Forex trader</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">What is Forex market</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">Who is Forex trader</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">What is Forex market</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">Who is Forex trader</a>
+							</li>
+							<li class="header__item-sub">
+								<a href="#" class="header__link-sub">What is Forex market</a>
+							</li>
+						</ul>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">
+							<span>About Company</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="header__right js-right">
+				<a href="#" class="btn header__btn">Send request</a>
+			</div>
+
+			<div class="header__btn-menu js-btn-menu">
+				<span class="header__line"></span>
+				<span class="header__line"></span>
+				<span class="header__line"></span>
+			</div>
+
+		</div>
+	</div>
+</header>
+
+
+		<div class="blog">
+	<div class="container">
+		<div class="blog__wrap js-grid">
+			<div class="blog__sizer js-grid-sizer"></div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-1.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to trade Forex and make money</a>
+							<time class="blog__date">Agust 21.2018</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-2.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to find initial capital to start investing or build passive income stream</a>
+							<time class="blog__date">December 29.2015</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-3.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to invest money in hedge funds</a>
+							<time class="blog__date">Agust 21.2018</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-1.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to trade Forex and make money</a>
+							<time class="blog__date">Agust 21.2018</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-2.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to find initial capital to start investing or build passive income stream</a>
+							<time class="blog__date">December 29.2015</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-3.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to invest money in hedge funds</a>
+							<time class="blog__date">Agust 21.2018</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-1.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to trade Forex and make money</a>
+							<time class="blog__date">Agust 21.2018</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-2.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to find initial capital to start investing or build passive income stream</a>
+							<time class="blog__date">December 29.2015</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-3.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to invest money in hedge funds</a>
+							<time class="blog__date">Agust 21.2018</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-1.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to trade Forex and make money</a>
+							<time class="blog__date">Agust 21.2018</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-2.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to find initial capital to start investing or build passive income stream</a>
+							<time class="blog__date">December 29.2015</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-3.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to invest money in hedge funds</a>
+							<time class="blog__date">Agust 21.2018</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-1.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to trade Forex and make money</a>
+							<time class="blog__date">Agust 21.2018</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-2.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to find initial capital to start investing or build passive income stream</a>
+							<time class="blog__date">December 29.2015</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-3.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to invest money in hedge funds</a>
+							<time class="blog__date">Agust 21.2018</time>
+						</div>
+					</div>
+				</div>
+			
+				<div class="blog__item js-grid-item">
+					<div class="blog__inner">
+						<a href="#" class="blog__img-wrap">
+							<img src="pic/blog/blog-1.jpg" alt="">
+						</a>
+						<div class="blog__bott">
+							<a href="#" class="blog__link">How to trade Forex and make money</a>
+							<time class="blog__date">Agust 21.2018</time>
+						</div>
+					</div>
+				</div>
+			
+		</div>
+
+		<ul class="pagination">
+	<li class="pagination__item">
+		<a href="#" class="pagination__link pagination__link--prev"></a>
+	</li>
+	<li class="pagination__item">
+		<a href="#" class="pagination__link active">1</a>
+	</li>
+	<li class="pagination__item">
+		<a href="#" class="pagination__link">2</a>
+	</li>
+	<li class="pagination__item">
+		<a href="#" class="pagination__link">3</a>
+	</li>
+	<li class="pagination__item">
+		<a href="#" class="pagination__link pagination__link--next"></a>
+	</li>
+</ul>
+	</div>		
+</div>
+
+	</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__left">
+				2015 Larmond capital. Allrights reserved
+			</div>
+			<ul class="footer__right">
+				<li class="footer__item">
+					<a href="#" class="footer__link">Disclaimer</a>
+				</li>
+				<li class="footer__item">
+					<a href="#" class="footer__link">Legal Notice</a>
+				</li>
+				<li class="footer__item">
+					<a href="#" class="footer__link">Terms & Conditions</a>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

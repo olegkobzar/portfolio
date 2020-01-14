@@ -1,0 +1,682 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class  overflow">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+<header class="header">
+	
+</header>
+
+
+<div class="wrapper">
+
+	<div class="check js-cap" style="background-image: url(pic/bg/bg-1.jpg);">
+	<span class="check__tagline">Российская империя в графине</span>
+	<div class="check__img-wrap">
+		<img src="pic/logo-main.png" alt="">
+	</div>
+	<div class="check__wrap">
+		<span class="check__question">Вам уже исполнилось 18 лет?</span>
+		<div class="check__choice">
+			<div class="check__choice-btn-wrap">
+				<a href="#" class="btn btn--main check__btn js-hide-cap">Да</a>
+			</div>
+			<div class="check__choice-btn-wrap">
+				<a href="https://www.google.co.uk" class="btn btn--main check__btn">Нет</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="menu">
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a href="#second-section" class="menu__link js-scroll-id">
+				<svg class="icon-history">
+					<use xlink:href="#history"></use>
+				</svg>
+			</a>
+		</li>
+		<li class="menu__item">
+			<a href="#third-section" class="menu__link js-scroll-id">
+				<svg class="icon-product">
+					<use xlink:href="#product"></use>
+				</svg>
+			</a>
+			<div class="menu__sub">
+				<div class="menu__sub-row">
+					<div class="menu__sub-col menu__sub-col--category">
+						<a href="#" class="menu__sub-category-link">Продукция</a>
+					</div>
+					<div class="menu__sub-col">
+						<ul class="menu__sub-list">
+							<li class="menu__sub-item">
+								<a href="#" class="menu__sub-link">Водка</a>
+							</li>
+							<li class="menu__sub-item">
+								<a href="#" class="menu__sub-link">Вино</a>
+							</li>
+							<li class="menu__sub-item">
+								<a href="#" class="menu__sub-link">Шампанское</a>
+							</li>
+							<li class="menu__sub-item">
+								<a href="#" class="menu__sub-link">
+									<span class="menu__sub-icon">
+										<svg class="icon-discount">
+											<use xlink:href="#discount"></use>
+										</svg>
+									</span>
+									<span>Акции</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li class="menu__item">
+			<a href="#four-section" class="menu__link js-scroll-id">
+				<svg class="icon-dealer">
+					<use xlink:href="#dealer"></use>
+				</svg>
+			</a>
+		</li>
+		<li class="menu__item">
+			<a href="#six-section" class="menu__link js-scroll-id">
+				<svg class="icon-doc">
+					<use xlink:href="#doc"></use>
+				</svg>
+			</a>
+		</li>
+		<li class="menu__item">
+			<a data-fancybox data-src="#popup3" href="javascript:;" class="menu__link turnOff">
+				<svg class="icon-tm">
+					<use xlink:href="#tm"></use>
+				</svg>
+			</a>
+		</li>
+		<li class="menu__item">
+			<a data-fancybox data-src="#popup2" href="javascript:;" class="menu__link turnOff">
+				<svg class="icon-contacts">
+					<use xlink:href="#contacts"></use>
+				</svg>
+			</a>
+		</li>
+		<li class="menu__item">
+			<a href="#five-section" class="menu__link js-scroll-id">
+				<svg class="icon-event">
+					<use xlink:href="#event"></use>
+				</svg>
+			</a>
+		</li>
+	</ul>
+</div>
+	<div class="social">
+	<ul class="social__list">
+		<li class="social__item">
+			<a href="#" class="social__link">
+				<svg class="icon-facebook">
+					<use xlink:href="#facebook"></use>
+				</svg>
+			</a>
+		</li>
+		<li class="social__item">
+			<a href="#" class="social__link">
+				<svg class="icon-instagram">
+					<use xlink:href="#instagram"></use>
+				</svg>
+			</a>
+		</li>
+	</ul>
+</div>
+
+	<div class="btn-mobile js-btn-mobile">
+	<span class="btn-mobile__line"></span>
+	<span class="btn-mobile__line"></span>
+	<span class="btn-mobile__line"></span>
+</div>
+
+<div class="menu-mobile js-menu-mobile">
+	<div class="menu-mobile__close js-close-mobile"></div>
+	<ul class="menu-mobile__list">
+		<li class="menu-mobile__item">
+			<a href="#" class="menu-mobile__link">История</a>
+		</li>
+		<li class="menu-mobile__item">
+			<a href="#" class="menu-mobile__link">Продукция</a>
+		</li>
+		<li class="menu-mobile__item">
+			<a href="#" class="menu-mobile__link">Где купить</a>
+		</li>
+		<li class="menu-mobile__item">
+			<a href="#" class="menu-mobile__link">Статьи</a>
+		</li>
+	</ul>
+</div>
+
+<div class="logo">
+	<img src="pic/logo.png" alt="">
+</div>
+
+	<div class="js-fullpage">
+
+		<div class="section" id="main-section" data-anchor="first-section">
+			<div class="main-section" style="background-image: url(pic/bg/bg-2.jpg);">
+	<div class="main-section__img-wrap">
+		<img src="pic/logo-main.png" alt="">
+	</div>
+	<span class="main-section__tagline">Российская империя в графине</span>
+</div>
+		</div>
+
+		<div class="section" id="about" data-anchor="second-section">
+			<div class="about" style="background-image: url(pic/bg/bg-3.jpg);">
+	<div class="about__wrap">
+		<span class="about__caption">Секреты производства продукции</span>
+		<span class="about__descr">Винный дом «Millstream» входит в число старейших винодельческих предприятий России.</span>
+		<span class="about__descr">Располагается он на Таманском полуострове в Краснодарском крае</span>
+		<a href="#" class="btn about__btn">ИСТОРИЯ БРЕНДА</a>
+
+		<ul class="about__list">
+			<li class="about__item">
+				<span class="about__number">400 000</span>
+				<span class="about__text">Бутылок выпускается ежегодно</span>
+			</li>
+			<li class="about__item">
+				<span class="about__number">173</span>
+				<span class="about__text">Cотрудника работают над выпуском продукции</span>
+			</li>
+			<li class="about__item">
+				<span class="about__number">6</span>
+				<span class="about__text">Лет истории бренда</span>
+			</li>
+			<li class="about__item">
+				<span class="about__number">475</span>
+				<span class="about__text">Уровень счастья наших клиентов</span>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+
+		<div class="section" data-anchor="third-section">
+			<div class="product">
+
+	<div class="prev-slide">
+		<span class="slide-text slide-text-prev">Каберне Совиньон Саперави</span>
+	</div>
+
+	<div class="next-slide">
+		<span class="slide-text slide-text-next">Мерло</span>
+	</div>
+
+	<div class="product__wrap js-slider-product">
+
+		<div class="product__item">
+			<div class="product__descr">
+				<span class="product__brand">Национальная коллекция</span>
+				<span class="product__name">Пино Гриджио</span>
+				<span class="product__descr-text">Великолепное вино, соломенно-желтого оттенка. Аромат привлекает цветочно-фруктовым нотками, оттенками цитрусовых, зеленого яблока и цветами акации. Вкус приятно освежает, кислотность прекрасно гармонирует со вкусом зеленого яблока и нотками цитруса. Приятное и нежное послевкусие</span>
+			</div>
+			<div class="product__img-wrap">
+				<img src="pic/goods/goods-1.png" alt="">
+			</div>
+			<div class="product__info">
+				<div class="product__info-row">
+					<span class="product__info-title">Сортовой состав</span>
+					<span class="product__info-text">Пино Гриджио</span>
+				</div>
+				<div class="product__info-row">
+					<span class="product__info-title">Температура подачи</span>
+					<span class="product__info-text">5-8 °C</span>
+				</div>
+				<div class="product__info-row">
+					<span class="product__info-title">Гастрономические сочетания</span>
+					<span class="product__info-text">Рыбные блюда, морепродукты, овощные салаты, сыры</span>
+				</div>
+				<div class="product__info-row">
+					<span class="product__info-title">Фасовка</span>
+					<span class="product__info-text">
+						<span>0.75</span>
+						<span>Белое и сухое</span>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="product__item">
+			<div class="product__descr">
+				<span class="product__brand">Национальная коллекция</span>
+				<span class="product__name">Мерло</span>
+				<span class="product__descr-text">Великолепное вино, соломенно-желтого оттенка. Аромат привлекает цветочно-фруктовым нотками, оттенками цитрусовых, зеленого яблока и цветами акации. Вкус приятно освежает, кислотность прекрасно гармонирует со вкусом зеленого яблока и нотками цитруса. Приятное и нежное послевкусие</span>
+			</div>
+			<div class="product__img-wrap">
+				<img src="pic/goods/goods-1.png" alt="">
+			</div>
+			<div class="product__info">
+				<div class="product__info-row">
+					<span class="product__info-title">Сортовой состав</span>
+					<span class="product__info-text">Пино Гриджио</span>
+				</div>
+				<div class="product__info-row">
+					<span class="product__info-title">Температура подачи</span>
+					<span class="product__info-text">5-8 °C</span>
+				</div>
+				<div class="product__info-row">
+					<span class="product__info-title">Гастрономические сочетания</span>
+					<span class="product__info-text">Рыбные блюда, морепродукты, овощные салаты, сыры</span>
+				</div>
+				<div class="product__info-row">
+					<span class="product__info-title">Фасовка</span>
+					<span class="product__info-text">
+						<span>0.75</span>
+						<span>Белое и сухое</span>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="product__item">
+			<div class="product__descr">
+				<span class="product__brand">Национальная коллекция</span>
+				<span class="product__name">Каберне Совиньон Саперави</span>
+				<span class="product__descr-text">Великолепное вино, соломенно-желтого оттенка. Аромат привлекает цветочно-фруктовым нотками, оттенками цитрусовых, зеленого яблока и цветами акации. Вкус приятно освежает, кислотность прекрасно гармонирует со вкусом зеленого яблока и нотками цитруса. Приятное и нежное послевкусие</span>
+			</div>
+			<div class="product__img-wrap">
+				<img src="pic/goods/goods-1.png" alt="">
+			</div>
+			<div class="product__info">
+				<div class="product__info-row">
+					<span class="product__info-title">Сортовой состав</span>
+					<span class="product__info-text">Пино Гриджио</span>
+				</div>
+				<div class="product__info-row">
+					<span class="product__info-title">Температура подачи</span>
+					<span class="product__info-text">5-8 °C</span>
+				</div>
+				<div class="product__info-row">
+					<span class="product__info-title">Гастрономические сочетания</span>
+					<span class="product__info-text">Рыбные блюда, морепродукты, овощные салаты, сыры</span>
+				</div>
+				<div class="product__info-row">
+					<span class="product__info-title">Фасовка</span>
+					<span class="product__info-text">
+						<span>0.75</span>
+						<span>Белое и сухое</span>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="product__item">
+			<div class="product__img-wrap">
+				<img src="pic/goods/goods-1.png" alt="">
+			</div>
+			<h3 class="product__name">Cabernet-Sauvignon</h3>
+			<p class="product__descr">
+				Линейка тихих и игристых вин, которая является гордостью компании ООО "Мильстрим". В производстве используются международные и автохтонные сорта винограда, каждый этап производства строго контролируется специалистами
+			</p>
+			<div class="product__list">
+				<div class="product__col product__col--hide">
+					<span class="product__title">Классификация</span>
+					<span class="product__size">AOC</span>
+				</div>
+				<div class="product__col">
+					<span class="product__title">Сортовый состав</span>
+					<span class="product__size">Каберне Фран, Каберне Совиньйон, Мерло</span>
+				</div>
+				<div class="product__col">
+					<span class="product__title">Крепость</span>
+					<span class="product__size">15,5%</span>
+				</div>
+				<div class="product__col product__col--hide">
+					<span class="product__title">Сахар, г/л</span>
+					<span class="product__size">1,6 г/л</span>
+				</div>
+			</div>
+			<div class="product__links-wrap">
+				<div class="product__link-wrap">
+					<a data-fancybox href="https://www.youtube.com/watch?v=tlmxenrGeLg" class="product__link">
+						<span class="product__link-icon">
+							<svg class="icon-video">
+								<use xlink:href="#video"></use>
+							</svg>
+						</span>
+						<span class="product__link-text">Видео с производства Cabernet-Sauvignon</span>
+					</a>
+				</div>
+				<div class="product__link-wrap">
+					<a href="#four-section" class="product__link">
+						<span class="product__link-icon">
+							<svg class="icon-saleplace">
+								<use xlink:href="#saleplace"></use>
+							</svg>
+						</span>
+						<span class="product__link-text">Найти места продажи на карте</span>
+					</a>
+				</div>
+			</div>
+		</div> -->
+
+	</div>
+</div>
+		</div>
+
+		<div class="section" data-anchor="four-section">
+			<div class="address">
+	<div class="address__map js-map" id="map"></div>
+
+	<span class="address__text">Где купить</span>
+
+	<ul class="address__bottom">
+		<li class="address__bottom-item">
+			<span class="address__bottom-name">Федеральные сети</span>
+			<span class="address__bottom-img" style="background-image: url(pic/ashan.png);"></span>
+		</li>
+		<li class="address__bottom-item">
+			<span class="address__bottom-name">Страны экспорта</span>
+			<span class="address__bottom-descr">Абхазия, Грузия, Армения, Казахстан, Китай, Германия</span>
+		</li>
+	</ul>
+
+	<div class="address__tooltip">
+		<span class="address__city">Ульяновск</span>
+		<div class="address__wrap">
+			<ul class="address__list">
+				<li class="address__item">
+					<div class="address__col address__col--img">
+						<img src="pic/store/store-1.png" alt="">
+					</div>
+					<div class="address__col address__col--content">
+						<span class="address__name">Пятерочка</span>
+						<span class="address__street">ул. Петропавловская, 32</span>
+					</div>
+				</li>
+				<li class="address__item">
+					<div class="address__col address__col--img">
+						<img src="pic/store/store-2.png" alt="">
+					</div>
+					<div class="address__col address__col--content">
+						<span class="address__name">Азбука Вкуса</span>
+						<span class="address__street">ул. Листовая, 14</span>
+					</div>
+				</li>
+				<li class="address__item">
+					<div class="address__col address__col--img">
+						<img src="pic/store/store-1.png" alt="">
+					</div>
+					<div class="address__col address__col--content">
+						<span class="address__name">Пятерочка</span>
+						<span class="address__street">ул. Шевелевича, 108</span>
+					</div>
+				</li>
+				<li class="address__item">
+					<div class="address__col address__col--img">
+						<img src="pic/store/store-3.png" alt="">
+					</div>
+					<div class="address__col address__col--content">
+						<span class="address__name">Перекресток</span>
+						<span class="address__street">Проспект Гальковского</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+</div>
+		</div>
+
+		<div class="section" data-anchor="five-section">
+			<div class="event">
+	<h4 class="event__caption">События</h4>
+
+	<div class="event__wrap js-slider-event">
+		<div class="event__item event__item--big">
+			<a data-fancybox data-src="#popup1" href="javascript:;" class="event__link turnOff">
+				<span class="event__date-number">27</span>
+				<span class="event__date-mounth">Июня</span>
+
+				<span class="event__title">
+					<span class="light">Презентация водки</span> <br> Национальная Коллекция Премиум
+				</span>
+			</a>
+		</div>
+		<div class="event__item event__item--small">
+			<a data-fancybox data-src="#popup1" href="javascript:;" class="event__link turnOff">
+				<span class="event__date-number">18</span>
+				<span class="event__date-mounth">Августа</span>
+
+				<span class="event__title">
+					Национальная Коллекция Премиум
+				</span>
+			</a>
+		</div>
+		<div class="event__item event__item--big">
+			<a data-fancybox data-src="#popup1" href="javascript:;" class="event__link turnOff">
+				<span class="event__name">Как способствовал алкоголь развитию мировой арены спорта</span>
+				<span class="event__rubric">Спортивные события</span>
+
+				<span class="event__number">
+					<span class="event__number-count">32</span>
+					<span class="event__number-text">Места для участников</span>
+				</span>
+			</a>
+		</div>
+	</div>
+	
+	<div class="event__control">
+		<div class="arrow arrow-left arrow-left-event"></div>
+		<div class="arrow arrow-right arrow-right-event"></div>
+	</div>
+</div>
+		</div>
+
+		<div class="section" data-anchor="six-section">
+			<div class="article">
+	<h4 class="article__caption">Статьи</h4>
+	
+	<div class="article__wrap js-slider-article">
+		<div class="article__item">
+			<a data-fancybox data-src="#popup1" href="javascript:;" class="article__inner">
+				<div class="article__img-wrap">
+					<img src="pic/bg/bg-4.jpg" alt="">
+				</div>
+				<div class="article__content">
+					<h2 class="article__title">
+						Филиппинский ром продаётся лучше, чем латиноамериканский
+					</h2>
+					<p class="article__descr">
+						На прилавках, где представлена алкогольная продукция, достаточно часто можно встретить так называемые винные напитки. Внешне они бывают почти неотличимы от вина, но зато стоят значительно дешевле.
+					</p>
+				</div>
+			</a>
+		</div>
+		<div class="article__item">
+			<a data-fancybox data-src="#popup1" href="javascript:;" class="article__inner">
+				<div class="article__img-wrap">
+					<img src="pic/bg/bg-5.jpg" alt="">
+				</div>
+				<div class="article__content">
+					<h2 class="article__title">
+						Филиппинский ром продаётся лучше, чем латиноамериканский
+					</h2>
+					<p class="article__descr">
+						На прилавках, где представлена алкогольная продукция, достаточно часто можно встретить так называемые винные напитки. Внешне они бывают почти неотличимы от вина, но зато стоят значительно дешевле.
+					</p>
+				</div>
+			</a>
+		</div>
+		<div class="article__item">
+			<a data-fancybox data-src="#popup1" href="javascript:;" class="article__inner">
+				<div class="article__img-wrap">
+					<img src="pic/bg/bg-4.jpg" alt="">
+				</div>
+				<div class="article__content">
+					<h2 class="article__title">
+						Филиппинский ром продаётся лучше, чем латиноамериканский
+					</h2>
+					<p class="article__descr">
+						На прилавках, где представлена алкогольная продукция, достаточно часто можно встретить так называемые винные напитки. Внешне они бывают почти неотличимы от вина, но зато стоят значительно дешевле.
+					</p>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="article__control">
+		<div class="arrow arrow-left arrow-left-article"></div>
+		<div class="arrow arrow-right arrow-right-article"></div>
+	</div>
+</div>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="popup" id="popup3">
+	<div class="popup__top">
+		<img src="pic/logo.png" alt="">
+	</div>
+	<div class="popup__bott">
+		<div class="static-content">
+			<h1>О собственности ТМ</h1>
+			<p>
+				В чем рисовать векторные картинки? Для меня, как и для многих других, ответ довольно очевиден: скорее всего, в иллюстраторе. Ну или в инкскейпе. Так же я думал, когда мне заказали отрисовать штук восемьсот картинок для учебника физики.
+			</p>
+			<p>
+				Довольно часто у меня возникает задача разработки портативных устройств с питанием от одной ячейки Li-ion аккумулятора. И, если заказчика обычно это не беспокоит, то у меня, как у опытного инженера, при виде такого ТЗ по спине пробегает дрожь.
+			</p>
+			<div class="contact">
+				<div class="contact__col">
+					<a href="tel:+74326346524" class="contact__link">+7 (432) 634 65 24</a>
+					<span class="contact__title">Отдел развития дистрибьюции</span>
+				</div>
+				<div class="contact__col">
+					<a href="tel:+74326346524" class="contact__link">+7 (432) 634 65 24</a>
+					<span class="contact__title">Отдел качества</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup" id="popup2">
+	<div class="popup__top">
+		<img src="pic/logo.png" alt="">
+	</div>
+	<div class="popup__bott">
+		<div class="static-content">
+			<h1>Контакты для дистрибьюторов</h1>
+			<p>
+				Замысел достаточно прост: открыть доступ в места, ранее для посещений закрытые. Начал президент с себя, вернее, со своего винного подвала. Вернее, не своего, а с подвала президентского дворца.
+			</p>
+			<div class="contact">
+				<div class="contact__col">
+					<a href="tel:+74326346524" class="contact__link">+7 (432) 634 65 24</a>
+					<span class="contact__title">Отдел развития дистрибьюции</span>
+				</div>
+				<div class="contact__col">
+					<a href="tel:+74326346524" class="contact__link">+7 (432) 634 65 24</a>
+					<span class="contact__title">Отдел качества</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup" id="popup1">
+	<div class="popup__top" style="background-image: url(pic/bg/bg-6.jpg);">
+		
+	</div>
+	<div class="popup__bott">
+		<div class="static-content">
+			<time>14 июля, 2018</time>
+			<h2>Ветер, саранча и дедлайн: как мы строили электроподстанцию</h2>
+			<p>
+				Замысел достаточно прост: открыть доступ в места, ранее для посещений закрытые. Начал президент с себя, вернее, со своего винного подвала. Вернее, не своего, а с подвала президентского дворца.
+			</p>
+			<p>
+				Подвал был сформирован в 1947-м году, в нём на настоящее время находится четырнадцать тысяч бутылок французского вина.
+			</p>
+			<p>
+				Практически каждый винодельческий регион поставляет в подвал образцы своей продукции, однако большую часть запасов составляет бургундское вино (оно, кстати, составляет и большую часть в списке самых дорогих вин). Для людей “с улицы” посещение подвала было невозможно, однако у президента недавно появилась идея открыть закрытые ранее заведения. Акция называется Дни Французского наследия, и участвовать в ней можно, просто записавшись по интернету. 
+			</p>
+		</div>
+	</div>
+</div>
+
+
+<footer class="footer">
+	
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,1081 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Техническое состояние</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+    <div class="wrapper">
+
+        <header class="header">
+	<div class="container">
+		<div class="header__wrap">
+			<div class="header__body">
+
+				<div class="header__left">
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">
+							<svg class="icon-logo">
+								<use xlink:href="#logo"></use>
+							</svg>
+						</a>
+					</div>
+
+					<div class="header__contacts">
+						<ul class="header__contacts-list">
+							<li class="header__contacts-item header__contacts-item--mobile-hide">
+								<a href="tel: +79647658001" class="header__contacts-link">
+									<span>
+										<svg class="icon-time">
+											<use xlink:href="#time"></use>
+										</svg>
+										<svg class="icon-time">
+											<use xlink:href="#time"></use>
+										</svg>
+									</span>									
+									<span class="header__contacts-desc"><span class="header__contacts-number">+7 964</span> 765 80 01</span>
+								</a>
+								<span class="header__contacts-mode">Пн.-Вс. 10:00-23:00</span>
+							</li>
+							<li class="header__contacts-item">
+								<a href="tel: +79647658001" class="header__contacts-link">
+									<span>
+										<svg class="icon-phone">
+											<use xlink:href="#phone"></use>
+										</svg>
+										<svg class="icon-phone">
+											<use xlink:href="#phone"></use>
+										</svg>
+									</span>									
+									<span class="header__contacts-desc"><span class="header__contacts-number">+7 964</span> 765 80 01</span>
+								</a>
+								<a href="#" class="header__contacts-callback">Обратный звонок</a>
+							</li>
+							<li class="header__contacts-item">
+								<a href="#" class="header__contacts-link">
+									<span>
+										<svg class="icon-adress">
+											<use xlink:href="#adress"></use>
+										</svg>
+										<svg class="icon-adress">
+											<use xlink:href="#adress"></use>
+										</svg>
+									</span>									
+									<span class="header__contacts-desc header__contacts-desc--light">Москва, Киевская, д. 8</span>
+								</a>
+							</li>
+							<li class="header__contacts-item header__contacts-item--toggler">
+								<a data-href="nav" class="header__toggler js-toggler"><span class="header__toggler-decor"></span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+
+				<div class="header__right">
+					<a href="#" class="btn header__btn">Калькулятор подбора</a>
+				</div>
+
+
+			</div>
+
+			<nav class="header__navbar js-collapse" data-nav="nav">
+				<div class="header__navbar-inner">
+					<div class="header__navbar-main">
+						<ul class="header__navbar-list">
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Подбор авто</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Проверка авто</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Продать авто</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Доп услуги</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Проверенные авто</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="header__navbar-top">
+						<ul class="header__navbar-list header__navbar-list--add">
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">О компании</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link active">Цены</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Гарантии</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Отзывы</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Блог</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Контакты</a>
+							</li>
+						</ul>
+
+						<div class="header__navbar-info">
+							<div class="header__social">
+								<ul class="header__social-list">
+									<li class="header__social-item">
+										<a href="#" class="header__social-link">
+											<svg class="icon-vk">
+												<use xlink:href="#vk"></use>
+											</svg>
+											<svg class="icon-vk">
+												<use xlink:href="#vk"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="header__social-item">
+										<a href="#" class="header__social-link">
+											<svg class="icon-fb">
+												<use xlink:href="#fb"></use>
+											</svg>
+											<svg class="icon-fb">
+												<use xlink:href="#fb"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="header__social-item">
+										<a href="#" class="header__social-link">
+											<svg class="icon-insta">
+												<use xlink:href="#insta"></use>
+											</svg>
+											<svg class="icon-insta">
+												<use xlink:href="#insta"></use>
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</div>
+
+							<div class="header__services">
+								<ul class="header__services-list">
+									<li class="header__services-item">
+										<a href="#" class="header__services-link">
+											<span>
+												<svg class="icon-wrecker">
+													<use xlink:href="#wrecker"></use>
+												</svg>
+												<svg class="icon-wrecker">
+													<use xlink:href="#wrecker"></use>
+												</svg>
+											</span>
+											<span class="header__services-txt">Эвакуатор</span>
+										</a>
+									</li>
+									<li class="header__services-item">
+										<a href="#" class="header__services-link">
+											<span>
+												<svg class="icon-tirefitting">
+													<use xlink:href="#tirefitting"></use>
+												</svg>
+												<svg class="icon-tirefitting">
+													<use xlink:href="#tirefitting"></use>
+												</svg>
+											</span>											
+											<span class="header__services-txt">Мобильный шиномонтаж</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+				<div class="header__doc">
+					<a href="#" class="header__doc-link">
+						<span>
+							<svg class="icon-document">
+								<use xlink:href="#document"></use>
+							</svg>
+						<svg class="icon-document">
+							<use xlink:href="#document"></use>
+						</svg>
+						</span>
+						<span class="header__doc-txt">Договор купли продажи</span>
+					</a>
+				</div>
+			</nav>
+
+		</div>
+	</div>
+</header>
+
+
+        <div class="breadcrumbs">
+	<div class="container">
+		<ul class="breadcrumbs__list">
+			
+			<li class="breadcrumbs__item">
+				<a href="#" class="breadcrumbs__link">Главная</a>
+			</li>
+			
+			<li class="breadcrumbs__item">
+				<a href="#" class="breadcrumbs__link">Подбор автомобиля</a>
+			</li>
+			
+			<li class="breadcrumbs__item">Подбор нового автомобиля</li>
+		</ul>
+	</div>
+</div>
+
+        <div class="heading" style="background-image: url(pic/slider-bg.png);">
+    <div class="container">
+        <div class="heading__wrap">
+            <div class="heading__holder">
+                <h2 class="heading__title">Проверка технического состояния авто</h2>
+            </div>
+            <div class="heading__holder heading__holder--img">
+                <div class="heading__decor">
+                    <div class="heading__img" style="background-image: url(pic/car-condition.png);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container">
+            <div class="article-wrap">
+                <article class="content">
+                    	<div class="tech-condition tech-condition--technical">
+		<span class="tech-condition__title ">
+			Проверка авто
+		</span>
+		<div class="tech-condition__inner">
+			<ul class="tech-condition__list">
+				<li class="tech-condition__item">
+					<a href="#" class="tech-condition__item-link">
+						<span class="tech-condition__item-icon">
+							<svg class="icon-auto">
+								<use xlink:href="#auto"></use>
+							</svg>
+						</span>
+						<span class="tech-condition__item-txt">
+							Проверка геометрии кузова
+						</span>
+					</a>
+				</li>
+				<li class="tech-condition__item">
+					<a href="#" class="tech-condition__item-link">
+						<span class="tech-condition__item-icon">
+							<svg class="icon-klp">
+								<use xlink:href="#klp"></use>
+							</svg>
+						</span>
+						<span class="tech-condition__item-txt">
+							Проверка ЛКП
+						</span>
+					</a>
+				</li>
+				<li class="tech-condition__item">
+					<a href="#" class="tech-condition__item-link">
+						<span class="tech-condition__item-icon">
+							<svg class="icon-engine">
+								<use xlink:href="#engine"></use>
+							</svg>
+						</span>
+						<span class="tech-condition__item-txt">
+							Проверка двигателя
+						</span>
+					</a>
+				</li>
+				<li class="tech-condition__item">
+					<a href="#" class="tech-condition__item-link">
+						<span class="tech-condition__item-icon">
+							<svg class="icon-optics">
+								<use xlink:href="#optics"></use>
+							</svg>
+						</span>
+						<span class="tech-condition__item-txt">
+							Проверка оптики
+						</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tech-condition__list">
+				<li class="tech-condition__item">
+					<a href="#" class="tech-condition__item-link">
+						<span class="tech-condition__item-icon">
+							<svg class="icon-brakes">
+								<use xlink:href="#brakes"></use>
+							</svg>
+						</span>
+						<span class="tech-condition__item-txt">
+							Проверка тормозной системы
+						</span>
+					</a>
+				</li>
+				<li class="tech-condition__item">
+					<a href="#" class="tech-condition__item-link">
+						<span class="tech-condition__item-icon">
+							<svg class="icon-mileage">
+								<use xlink:href="#mileage"></use>
+							</svg>
+						</span>
+						<span class="tech-condition__item-txt">
+							Проверка оригинального пробега
+						</span>
+					</a>
+				</li>
+				<li class="tech-condition__item">
+					<a href="#" class="tech-condition__item-link">
+						<span class="tech-condition__item-icon">
+							<svg class="icon-brakescondition">
+								<use xlink:href="#brakescondition"></use>
+							</svg>
+						</span>
+						<span class="tech-condition__item-txt">
+							Проверка состояния салона
+						</span>
+					</a>
+				</li>
+				<li class="tech-condition__item">
+					<a href="#" class="tech-condition__item-link">
+						<span class="tech-condition__item-icon">
+							<svg class="icon-exhaustpipe">
+								<use xlink:href="#exhaustpipe"></use>
+							</svg>
+						</span>
+						<span class="tech-condition__item-txt">
+							Проверка выхлопной системы
+						</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tech-condition__list">
+				<li class="tech-condition__item">
+					<a href="#" class="tech-condition__item-link">
+						<span class="tech-condition__item-icon">
+							<svg class="icon-rubbercondition">
+								<use xlink:href="#rubbercondition"></use>
+							</svg>
+						</span>
+						<span class="tech-condition__item-txt">
+							Проверка состояния резины
+						</span>
+					</a>
+				</li>
+				<li class="tech-condition__item">
+					<a href="#" class="tech-condition__item-link">
+						<span class="tech-condition__item-icon">
+							<svg class="icon-electronics">
+								<use xlink:href="#electronics"></use>
+							</svg>
+						</span>
+						<span class="tech-condition__item-txt">
+							Проверка электронных систем
+						</span>
+					</a>
+				</li>
+				<li class="tech-condition__item">
+					<a href="#" class="tech-condition__item-link">
+						<span class="tech-condition__item-icon">
+							<svg class="icon-suspension">
+								<use xlink:href="#suspension"></use>
+							</svg>
+						</span>
+						<span class="tech-condition__item-txt">
+							Проверка подвески
+						</span>
+					</a>
+				</li>
+				<li class="tech-condition__item">
+					<a href="#" class="tech-condition__item-link">
+						<span class="tech-condition__item-icon">
+							<svg class="icon-kpp">
+								<use xlink:href="#kpp"></use>
+							</svg>
+						</span>
+						<span class="tech-condition__item-txt">
+							Проверка КПП
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="tech-condition__more-wrap js-condition-parent">
+			<div class="tech-condition__more js-condition-link">
+				<span class="tech-condition__more-txt">
+					Полный список
+				</span>
+				<a href="#" class="tech-condition__more-show">
+				<span class="tech-condition__more-show-txt js-condition-text">Показать</span>
+				<span class="tech-condition__more-icon">
+					<svg class="icon-arrow-down">
+						<use xlink:href="#arrow-down"></use>
+					</svg>
+				</span>
+				</a>
+			</div>
+			<div class="tech-condition__drop js-condition-content">
+				<div class="tech-condition__drop-holder">
+					<div class="tech-condition__drop-inner">
+						<ul class="tech-condition__drop-list">
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Электрооборудование (световые сигналы, стеклоочистители, эл. зеркала и т.д.)
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Проверка лакокрасочного покрытия кузова и элементов декора
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Ход педали тормоза, ход педали сцепления
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Шумность и устойчивость работы ДВС
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Люфт рулевого колеса
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Работа активной подвески (на соответствующих моделях)
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Рычаг стояночного тормоза (кол-во щелчков)
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Работа системы кондиционирования
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Компьютерная диагностика электронных систем
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Ремни безопасности (состояние)
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Состояние смазки петель дверей
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Пробка наливной горловины топливного бака
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Фильтр кондиционера (состояние)
+			</a>
+		</li>
+	
+</ul>
+						<ul class="tech-condition__drop-list">
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Уровень и состояния моторного масла
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Уровень и состояние охлаждающей жидкости
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Уровень и состояние жидкости ГУР
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Состояние и натяжение приводных ремней
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Состояния ремня ГРМ (при наличии)
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Работа активной подвески (на соответствующих моделях)
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Рычаг стояночного тормоза (кол-во щелчков)
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Работа системы кондиционирования
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Компьютерная диагностика электронных систем
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Ремни безопасности (состояние)
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Состояние смазки петель дверей
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Пробка наливной горловины топливного бака
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Фильтр кондиционера (состояние)
+			</a>
+		</li>
+	
+</ul>
+						<ul class="tech-condition__drop-list">
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Уровень и состояния моторного масла
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Уровень и состояние охлаждающей жидкости
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Уровень и состояние жидкости ГУР
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Состояние и натяжение приводных ремней
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Состояния ремня ГРМ (при наличии)
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Работа активной подвески (на соответствующих моделях)
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Рычаг стояночного тормоза (кол-во щелчков)
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Работа системы кондиционирования
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Компьютерная диагностика электронных систем
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Ремни безопасности (состояние)
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Состояние смазки петель дверей
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Пробка наливной горловины топливного бака
+			</a>
+		</li>
+	
+		<li class="tech-condition__drop-list-item">
+			<a href="#">
+				Фильтр кондиционера (состояние)
+			</a>
+		</li>
+	
+</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+                </article>
+                <div class="aside sidebar">
+                    <div class="offices" style="background-image: url(pic/map-mini.png);">
+	<h4 class="offices__caption">Работаем со всей Россией</h4>
+	<span class="offices__sng-text">и странами СНГ</span>
+	<a href="#" class="offices__link btn btn--icon">
+		<span class="offices__link-text">Подробнее</span>
+		<span class="offices__icon">
+			<svg class="icon-map">
+				<use xlink:href="#map-icon"></use>
+			</svg>
+		</span>
+	</a>
+</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="price-services">
+	<div class="price-services__outer">
+		<div class="container">
+			<div class="price-services__inner">
+				<h4 class="price-services__caption">Наши цены</h4>
+				<ul class="price-services__list">
+					
+					<li class="price-services__item">
+						<div class="price-services__item-inner">
+							<a href="#" class="price-services__img-wrapp">
+								<img src="pic/prices/price-1.png" class="price-services__img" alt="Картинка">
+							</a>
+							<div class="price-services__item-wrapp">
+								<a href="#" class="price-services__title js-height">Проверка юридической чистоты</a>
+								<div class="price-services__price">
+									<span class="price-services__price-text">Цена:</span>
+									<span class="price-services__price-value">5 000<sup>руб.</sup></span>
+								</div>
+								<a href="#" class="price-services__link btn">Заказать</a>
+							</div>
+						</div>
+					</li>
+					
+					<li class="price-services__item">
+						<div class="price-services__item-inner">
+							<a href="#" class="price-services__img-wrapp">
+								<img src="pic/prices/price-2.png" class="price-services__img" alt="Картинка">
+							</a>
+							<div class="price-services__item-wrapp">
+								<a href="#" class="price-services__title js-height">Выездная диагностика</a>
+								<div class="price-services__price">
+									<span class="price-services__price-text">Цена:</span>
+									<span class="price-services__price-value">2 500<sup>руб.</sup></span>
+								</div>
+								<a href="#" class="price-services__link btn">Заказать</a>
+							</div>
+						</div>
+					</li>
+					
+					<li class="price-services__item">
+						<div class="price-services__item-inner">
+							<a href="#" class="price-services__img-wrapp">
+								<img src="pic/prices/price-3.png" class="price-services__img" alt="Картинка">
+							</a>
+							<div class="price-services__item-wrapp">
+								<a href="#" class="price-services__title js-height">Диагностика на станции СТО</a>
+								<div class="price-services__price">
+									<span class="price-services__price-text">Цена:</span>
+									<span class="price-services__price-value">2 000<sup>руб.</sup></span>
+								</div>
+								<a href="#" class="price-services__link btn">Заказать</a>
+							</div>
+						</div>
+					</li>
+					
+					<li class="price-services__item">
+						<div class="price-services__item-inner">
+							<a href="#" class="price-services__img-wrapp">
+								<img src="pic/prices/price-4.png" class="price-services__img" alt="Картинка">
+							</a>
+							<div class="price-services__item-wrapp">
+								<a href="#" class="price-services__title js-height">Подбор авто под ключ</a>
+								<div class="price-services__price">
+									<span class="price-services__price-text">Цена:</span>
+									<span class="price-services__price-value">от 20 000<sup>руб.</sup></span>
+								</div>
+								<a href="#" class="price-services__link btn">Заказать</a>
+							</div>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+        <div class="submit-app" style="background-image: url(pic/bg/bg-submit-app.png);">
+	
+	<div class="submit-app__black-bg wow slideInLeft" data-wow-delay=".2s" data-wow-duration="1s">
+		<div class="submit-app__black-bg-inner"></div>
+	</div>
+
+	<div class="submit-app__outer">
+		<div class="container">
+			<div class="submit-app__wrap">
+				<form action="">
+					<div class="submit-app__col submit-app__col--small">
+						<span class="submit-app__txt wow fadeIn" data-wow-delay="1.5s" data-wow-duration="1s">Оставьте заявку</span>
+					</div>
+					<div class="submit-app__col">
+						<input id="submit-app__model" class="submit-app__input js-submit-app-input" type="text" placeholder="Mercedes Benz E200 amg">
+						<label for="submit-app__model">Марка, модель</label>
+					</div>
+					<div class="submit-app__col submit-app__col--large">
+						<input id="submit-app__name" class="submit-app__input js-submit-app-input" type="text" placeholder="Павел">
+						<label for="submit-app__name">имя</label>
+					</div>
+					<div class="submit-app__col submit-app__col--large">
+						<input id="submit-app__phone" class="submit-app__input js-submit-app-input js-phonenumber" type="text" placeholder="+7 (___) - ___ - __ - __">
+						<label for="submit-app__phone">телефон</label>
+					</div>
+					<div class="submit-app__col submit-app__col--btn">
+						<button class="btn btn--icon submit-app__btn">
+							<span class="submit-app__btn--txt">отправить</span>
+							<svg class="icon-hand-key">
+								<use xlink:href="#hand-key"></use>
+							</svg>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+        <div class="container">
+            <div class="article-wrap">
+                <article class="content">
+                    <div class="about ">
+	<span class="about__title ">О компании</span>
+	<div class="static-content">
+		<p>
+			<b>
+				Интернет-магазин одежды EMKA – это отличная возможность купить женскую одежду российского бренда EMKA. Вот уже более 15 лет производитель предлагает женскую одежду отличного качества на каждый день и на праздник для российских покупательниц.
+			</b>
+		</p>
+		<div class="about__img" style="background-image: url('pic/about-01.jpg');">
+	<div class="about__img-inner">
+		<div class="about__img-info">
+			<div class="about__img-info-wrap">
+				<span class="about__img-txt" data-percent="85%">
+					наших клиентов приходят по рекомендации
+				</span>	
+			</div>
+		</div>
+	</div>
+</div>
+		<p>
+			Интернет-магазин одежды EMKA – это отличная возможность купить женскую одежду российского бренда EMKA. Вот уже более 15 лет производитель предлагает женскую одежду отличного качества на каждый день и на праздник для российских покупательниц.
+		</p>
+		<p>
+			Компания EMKA обеспечивает своих покупательниц не только разнообразным ассортиментом одежды, но и отличным сервисом, предлагая только актуальные и модные вещи, соответствующие современным течениям в сфере дизайна и покроя. Только свежие коллекции от талантливых
+			дизайнеров EMKA, регулярное обновление и расширение ассортимента – все это дает вам возможность выглядеть прекрасно в любое время года. Выбирайте актуальные новинки сезона в нашем интернет-каталоге – мы предлагаем лучшие цены, которые вы больше не
+			найдете нигде.
+		</p>
+
+	</div>
+</div>
+
+                </article>
+                <div class="aside sidebar">
+                </div>
+            </div>
+        </div>
+
+        <div class="reviews-slider">
+	<div class="reviews-slider__holder">
+
+			<div class="reviews-slider__body js-reviews-slider">
+
+				<div class="reviews-slider__inner">
+	<div class="reviews-slider__img-wrap">
+		<div class="reviews-slider__img" style="background-image: url(pic/review-img.png);">
+		</div>
+	</div>
+	<div class="reviews-slider__content">
+		<span class="reviews-slider__txt">
+			За 12 лет работы я подобрал более 300 авто для своих друзей и клиентов. Теперь я лично слежу за качеством подбора каждого автомобиля. Мы гордимся тем, что 85% клиентов приходят по рекомендациям
+		</span>
+	</div>
+	<div class="reviews-slider__desc">
+		<div class="reviews-slider__desc-inner">
+			<span class="reviews-slider__desc-name">
+				Александр Станкевич
+			</span>
+			<span class="reviews-slider__desc-price">
+				Газель, 1 200 000 руб.
+			</span>
+		</div>
+	</div>
+</div><div class="reviews-slider__inner">
+	<div class="reviews-slider__img-wrap">
+		<div class="reviews-slider__img" style="background-image: url(pic/review-img.png);">
+		</div>
+	</div>
+	<div class="reviews-slider__content">
+		<span class="reviews-slider__txt">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quibusdam fuga ea, neque nobis aspernatur, aut laboriosam qui odit tenetur ab autem alias, culpa repudiandae sint dolorem, nemo pariatur velit!
+		</span>
+	</div>
+	<div class="reviews-slider__desc">
+		<div class="reviews-slider__desc-inner">
+			<span class="reviews-slider__desc-name">
+				Александр Станкевич
+			</span>
+			<span class="reviews-slider__desc-price">
+				Газель, 900 000 руб.
+			</span>
+		</div>
+	</div>
+</div><div class="reviews-slider__inner">
+	<div class="reviews-slider__img-wrap">
+		<div class="reviews-slider__img" style="background-image: url(pic/review-img.png);">
+		</div>
+	</div>
+	<div class="reviews-slider__content">
+		<span class="reviews-slider__txt">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis est consectetur modi autem quasi ex.
+		</span>
+	</div>
+	<div class="reviews-slider__desc">
+		<div class="reviews-slider__desc-inner">
+			<span class="reviews-slider__desc-name">
+				Александр Станкевич
+			</span>
+			<span class="reviews-slider__desc-price">
+				Газель, 1 800 000 руб.
+			</span>
+		</div>
+	</div>
+</div>
+
+			</div>
+		</div>
+
+
+	<div class="container">
+		<div class="reviews-slider__counter">
+			<div class="slick__counter slick__counter--reviews">
+				<button class="slick__counter-btn slick__counter-btn--prev js-slide-prev" type="button"></button>
+				<span class="slick__counter-inner js-slide-counter"></span>
+				<button class="slick__counter-btn slick__counter-btn--next js-slide-next" type="button"></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+    </div>
+
+  <footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__top">
+			<div class="footer__item-box">
+				<div class="footer__item">
+					<span class="footer__item-icon">
+						<svg class="icon-time">
+							<use xlink:href="#time"></use>
+						</svg>
+						<svg class="icon-time">
+							<use xlink:href="#time"></use>
+						</svg>
+					</span>
+					<div class="footer__item-info">
+						<a href="tel:88003332920" class="footer__item-phone">
+							+7 964 <span> 765 80 01</span>
+						</a>
+						<span class="footer__item-time">
+							Пн.-Вс. 10:00-23:00
+						</span>
+					</div>
+				</div>
+				<div class="footer__item">
+					<span class="footer__item-icon">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<div class="footer__item-info">
+						<a href="tel:88003332920" class="footer__item-phone">
+							+7 964 <span> 765 80 01</span>
+						</a>
+						<a href="#" class="footer__item-link">
+							Обратный звонок
+						</a>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="btn footer__btn">Калькулятор подбора</a>
+		</div>
+		<div class="footer__contract">
+			<div class="footer__contract-inner">
+				<a href="#" class="footer__contract-item">
+					<span class="footer__contract-icon">
+						<svg class="icon-document">
+							<use xlink:href="#document"></use>
+						</svg>
+						<svg class="icon-document">
+							<use xlink:href="#document"></use>
+						</svg>
+					</span>
+					<span class="footer__contract-txt">
+						Договор купли продажи
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="footer__holder">
+		<div class="container">
+			<div class="footer__inner">
+				<div class="footer__nav">
+					<ul class="footer__nav-list">
+						<li class="footer__nav-item">
+							<a href="#">О компании</a> 
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Цены</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Гарантии</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Отзывы</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Контакты</a>
+						</li>
+					</ul>
+					<ul class="footer__nav-list">
+						<li class="footer__nav-item">
+							<a href="#">Страхование авто</a> 
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Мобильный шиномонтаж</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Эвакуатор</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<div class="footer__map">
+			<div class="footer__map-address">
+				<span class="footer__map-icon">
+					<svg class="icon-star">
+						<use xlink:href="#star"></use>
+					</svg>
+				</span>
+				<span class="footer__map-txt">
+					Москва, Киевская, д. 8
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="footer__copy">
+		<span class="footer__copy-txt">
+			Качественный интернет маркетинг
+		</span>
+		<a href="#" class="footer__copy-link">web-golden.ru</a>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

@@ -1,0 +1,544 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Кураторская программа</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body>
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+
+ 	</div>
+
+
+	<div class="wrapper">
+
+		<header class="header">
+	<div class="header__visible-mobile">
+		<div class="header__logo">
+			<a href="#" class="header__logo-link">
+				<!-- <span class="header__logo-icon">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</span>
+				<span class="header__logo-text">Зодчество</span>
+				<span class="header__logo-fest">международный фестиваль</span> -->
+				<svg class="icon-logo-header">
+					<use xlink:href="#logo-header"></use>
+				</svg>
+			</a>
+		</div>
+		<div class="header__menu-mobile js-menu-mobile">
+			<span class="header__menu-mobile-item"></span>
+			<span class="header__menu-mobile-item"></span>
+			<span class="header__menu-mobile-item"></span>
+		</div>
+	</div>
+	<div class="header__wrapp js-nav-mobile">
+		<div class="header__top">
+			<div class="container">
+				<div class="header__top-wrapp">
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">
+							<!-- <span class="header__logo-icon">
+								<svg class="icon-logo">
+									<use xlink:href="#logo"></use>
+								</svg>
+							</span>
+							<span class="header__logo-text">Зодчество</span>
+							<span class="header__logo-fest">международный фестиваль</span> -->
+
+							<svg class="icon-logo-header">
+								<use xlink:href="#logo-header"></use>
+							</svg>
+						</a>
+					</div>
+					<nav class="header__nav js-nav js-wrapp-nav">
+						<div class="header__close-mobile js-close-mobile">
+							<span class="header__close-mobile-item"></span>
+							<span class="header__close-mobile-item"></span>
+						</div>
+						<ul class="header__list">
+							<li class="header__item active" data-text="01_">
+								<a href="#" class="header__link">О фестивале</a>
+								<div class="header__submenu">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Фестиваль 2018</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Каталог</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Награды</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="02_">
+								<a href="#" class="header__link">Конкурсы</a>
+							</li>
+							<li class="header__item" data-text="03_">
+								<a href="#" class="header__link">Выставки</a>
+							</li>
+							<li class="header__item" data-text="04_">
+								<a href="#" class="header__link">Участники</a>
+								<div class="header__submenu header__submenu--mod">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Все участники</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Работы участников</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="05_">
+								<a href="#" class="header__link">Итоги</a>
+							</li>
+							<li class="header__item" data-text="06_">
+								<a href="#" class="header__link">Медиа</a>
+								<div class="header__submenu">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Новости</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">СМИ о нас</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Аккредитация</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Фотогалерея</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="07_">
+								<a href="#" class="header__link">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="header__login">
+						<a href="#" class="header__login-link">
+							<span class="header__login-icon-circle"></span>
+							<span class="header__login-text">Вход в личный кабинет</span>
+						</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="header__menu-mobile js-menu-mobile">
+				<span class="header__menu-mobile-item"></span>
+				<span class="header__menu-mobile-item"></span>
+				<span class="header__menu-mobile-item"></span>
+			</div>
+			<div class="header__bott">
+				<div class="container">
+					<div class="header__bott-wrapp">
+						<div class="header__left">
+							<ul class="header__left-list">
+								<li class="header__left-item">
+									<a href="#" class="header__left-link">Вопросы и ответы</a>
+								</li>
+								<li class="header__left-item">
+									<a href="#" class="header__left-link">Eng</a>
+								</li>
+							</ul>
+						</div>
+						<div class="header__right">
+							<ul class="header__right-list">
+								<li class="header__right-item">
+									<a href="#" class="btn btn--border header__right-link header__right-link--ticket">Получить билет на выставку</a>
+								</li>
+								<li class="header__right-item">
+									<a href="#" class="btn header__right-link header__right-link--registration">Регистрация на конкурс</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+		<div class="heading heading--breadcrumbs" style="background-image: url(pic/bg/bg-heading-04.jpg);">
+  <div class="container">
+    <div class="heading__wrap">
+      <div class="heading__holder">
+        
+        
+        <a href="#" class="heading__link">О фестивале</a>
+        <h2 class="heading__title">Кураторская программа</h2>
+        
+      </div>
+    </div>
+  </div>
+  <div class="heading__decor">
+    <div class="heading__decor-col heading__decor-col--large"></div>
+    <div class="heading__decor-col heading__decor-col--small"></div>
+  </div>
+</div>
+
+
+    <div class="menu">
+      <div class="container">
+        <ul class="menu__list">
+          <li class="menu__item ">
+	<a href="#" class="menu__link">Программа фестиваля</a>
+</li><li class="menu__item active">
+	<a href="#" class="menu__link">Кураторская программа</a>
+</li><li class="menu__item ">
+	<a href="#" class="menu__link">История</a>
+</li><li class="menu__item ">
+	<a href="#" class="menu__link">Лауреаты прошлых лет</a>
+</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="static-content">
+      <div class="container">
+        <div class="content-contests content-contests--head">
+          <b class="bold-large">Открытый всероссийский конкурс на лучшую идею, тему и концепцию выставочного пространства международного фестиваля «Зодчество 2018»</b>
+        </div>
+      </div>
+    </div>
+
+		<div class="static-content">
+			<div class="container">
+
+        <h2>«Куратор 2018»</h2>
+
+				<div class="content-contests">
+					<b>Союз архитекторов России при организационной и информационной поддержке Дирекции фестиваля «Зодчество» и партнеров приглашают принять участие во всероссийском конкурсе на лучшую идею, тему и концепцию выставочного пространства «Куратор 2018».</b>
+
+          <h3>О конкурсе</h3>
+
+          <p>Кураторство - важнейший механизм формирования идеологии, тематической направленности и основной проблематики Фестиваля. Куратор предопределяет развитие архитектурной деятельности, способствует  открытию новых имен, акцентирует внимание на самых актуальных вопросах современности, находит новые методы репрезентации, привлекающих аудиторию Фестиваля.</p>
+          <p>Появление куратора в организации фестиваля «Зодчество» сыграло важную роль в повышении качества содержательной, визуальной частей экспозиции и привлечения внимания большого числа специалистов. Начиная с 2009года, Фе стиваль курировали Юрий Аввакумов, Ирина Коробьина, Андрей и Никита Асадовы.</p>
+          <p>Куратор определяет тему Фестиваля, готовит проект выставочного пространства, формирует программу Кураторских проектов, раскрывающих тематику, привлекает со-кураторов и осуществляет авторский надзор за реализацией проекта.</p>
+          <p>Конкурс на кураторство является частью программы международного фестиваля «Зодчество 2018».</p>
+
+          <h3>Цель конкурса</h3>
+
+          <p>Целью Конкурса является определение темы и манифеста предстоящего Фестиваля, создание концепции экспозиционной части, формирование программы Кураторских проектов с помощью куратора (архитектора или творческого коллектива), способного проанализировать опыт организации Фестиваля прошлых лет, оценить проблематику профессионального сообщества и тенденции развития архитектурной мысли.</p>
+
+          <h3>Участие в конкурсе</h3>
+
+          <b>Участие в Конкурсе бесплатное. К участию приглашаются российские архитекторы, творческие коллективы и объединения. Участники Конкурса должны соответствовать следующим критериям:</b>
+
+          <ul>
+            <li>Иметь профильное (архитектурное) образование,</li>
+            <li>Обладать креативным и аналитическим мышлением, видением  реализации идеи;</li>
+            <li>Иметь опыт участия в организации крупных мероприятий.</li>
+          </ul>
+
+          <h5>Участникам Конкурса необходимо подготовить презентацию следующего содержания:</h5>
+
+          <ul>
+            <li>Тема Фестиваля и ее и графическое/иллюстративное изображение;</li>
+            <li>Манифест;</li>
+            <li>Концепция выставочного пространства Фестиваля;</li>
+            <li>Концепция Кураторских проектов и их темы;</li>
+            <li>Способы финансирования реализации Кураторских проектов.</li>
+          </ul>
+
+          <a href="#" class="btn submit-application">Подать заявку</a>
+
+				</div>
+			</div>
+		</div>
+
+    <div class="schedule-competition ">
+  <div class="container">
+    <div class="schedule-competition__wrap">
+      <h3 class="schedule-competition__title">График конкурса</h3>
+      <ul class="schedule-competition__list">
+      
+        <li class="schedule-competition__item">
+          <span class="schedule-competition__inner schedule-competition__inner--value">Начало приема Заявок</span>
+          <span class="schedule-competition__inner schedule-competition__inner--data">07 ноября 2017</span>
+        </li>
+      
+        <li class="schedule-competition__item">
+          <span class="schedule-competition__inner schedule-competition__inner--value">Завершение приема Заявок</span>
+          <span class="schedule-competition__inner schedule-competition__inner--data">30 ноября 2017</span>
+        </li>
+      
+        <li class="schedule-competition__item">
+          <span class="schedule-competition__inner schedule-competition__inner--value">Работа над Конкурсным предложением</span>
+          <span class="schedule-competition__inner schedule-competition__inner--data">07 ноября 2017 - 07 декабря 2017</span>
+        </li>
+      
+        <li class="schedule-competition__item">
+          <span class="schedule-competition__inner schedule-competition__inner--value">Начало приема Конкурсных предложений</span>
+          <span class="schedule-competition__inner schedule-competition__inner--data">31 ноября 2017</span>
+        </li>
+      
+        <li class="schedule-competition__item">
+          <span class="schedule-competition__inner schedule-competition__inner--value">Завершение приема Конкурсных предложений</span>
+          <span class="schedule-competition__inner schedule-competition__inner--data">07 декабря 2017</span>
+        </li>
+      
+        <li class="schedule-competition__item">
+          <span class="schedule-competition__inner schedule-competition__inner--value">Публичная защита Конкурсных предложений</span>
+          <span class="schedule-competition__inner schedule-competition__inner--data">12 декабря 2017</span>
+        </li>
+      
+        <li class="schedule-competition__item">
+          <span class="schedule-competition__inner schedule-competition__inner--value">Заседание жюри</span>
+          <span class="schedule-competition__inner schedule-competition__inner--data">12 - 13 декабря 2017</span>
+        </li>
+      
+        <li class="schedule-competition__item">
+          <span class="schedule-competition__inner schedule-competition__inner--value">Оглашение победителя Конкурса</span>
+          <span class="schedule-competition__inner schedule-competition__inner--data">14 декабря 2017</span>
+        </li>
+      
+        <li class="schedule-competition__item">
+          <span class="schedule-competition__inner schedule-competition__inner--value">Публикация итогов Конкурса</span>
+          <span class="schedule-competition__inner schedule-competition__inner--data">15 декабря 2017</span>
+        </li>
+      
+      </ul>
+
+      
+    </div>
+  </div>
+</div>
+
+
+		<div class="info info--program">
+  <div class="container">
+    <div class="info__body">
+      <div class="info__holder info__holder--left">
+        <h3 class="info__caption">Жюри</h3>
+        <p class="info__desc">В жюри конкурса входят члены Президиума Союза архитекторов России, сотрудники Дирекции фестиваля «Зодчество», кураторы прошлых Фестивалей.</p>
+        <h3 class="info__caption">Вознаграждение</h3>
+        <p class="info__desc">Победитель Конкурса  получает денежное вознаграждение в размере 300 000 рублей и право быть Куратором XXVI международного фестиваля «Зодчество 2018».</p>
+        <h3 class="info__caption">Контакты</h3>
+        <span class="info__desc info__desc--contacts">Дирекция фестиваля «Зодчество»</span>
+        <span class="info__desc info__desc--contacts">Москва, Гранатный пер., д. 12., оф. 12</span>
+        <span class="info__desc info__desc--contacts"><a href="tel: +74956906865" class="info__desc-link">+7 (495) 690-68-65</a> Кандейкина Надежда</span>
+        <span class="info__desc info__desc--contacts"><a href="mailto: konkurs@zodchestvo.com" class="info__desc-link">konkurs@zodchestvo.com</a></span>
+      </div>
+      <div class="info__holder info__holder--doc">
+        <ul class="info__list">
+
+          <li class="info__item">
+            <div class="info__inner">
+              <svg class="icon-pdf">
+                <use xlink:href="#pdf"></use>
+              </svg>
+            </div>
+            <div class="info__inner info__inner--link">
+              <a href="#" class="info__link">Положение о конкурсе «Куратор 2018»</a>
+            </div>
+          </li>
+
+          <li class="info__item">
+            <div class="info__inner">
+              <svg class="icon-pdf">
+                <use xlink:href="#pdf"></use>
+              </svg>
+            </div>
+            <div class="info__inner info__inner--link">
+              <a href="#" class="info__link">Техническое задание на конкурсное предложение</a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+		<div class="support ">
+	<div class="container">
+		<div class="support__holder">
+			<span class="support__title">При поддержке</span>
+			<div class="support__inner slick slick--support js-support-slider">
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-01.png" alt="img">
+					</div>
+					<span class="support__item-txt">Минстрой России</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-02.png" alt="img">
+					</div>
+					<span class="support__item-txt">Сайт президента России</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-03.png" alt="img">
+					</div>
+					<span class="support__item-txt">Совет Федераций</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-04.png" alt="img">
+					</div>
+					<span class="support__item-txt">Официальный сайт Мэра Москвы</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img support__item-img--mod">
+						<img src="pic/support/support-05.png" alt="img">
+					</div>
+					<span class="support__item-txt">Правительство Московской области</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="heading__decor support__decor">
+  	<div class="heading__decor-col heading__decor-col--large"></div>
+  	<div class="heading__decor-col heading__decor-col--small"></div>
+  </div>
+</div>
+
+	</div>
+
+<footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__inner">
+			<div class="footer__logo">
+				<a href="#" class="footer__logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="footer__info-box">
+				<div class="footer__info">
+					<div class="footer__info-item">
+						<span class="footer__info-title footer__info-title--mod">
+							Зодчество
+						</span>
+						<span class="footer__info-txt">XXVI архитектурный фестиваль</span>
+					</div>
+					<div class="footer__info-item">
+						<span class="footer__info-title">Москва</span>
+						<span class="footer__info-txt">ЦВЗ «Манеж»</span>
+					</div>
+					<div class="footer__info-item">
+						<span class="footer__info-title">
+							<span class="footer__info-date">19</span>
+							<span class="footer__info-date">21</span>
+						</span>
+						<span class="footer__info-txt">ноября 2018</span>
+					</div>
+				</div>
+				<div class="footer__copy">
+					<div class="footer__copy-box">
+						<span class="footer__copy-txt">
+							Дирекция международного фестиваля «Зодчество»
+						</span>
+						<span class="footer__copy-txt">
+							123001, Москва, Гранатный пер. 12
+						</span>
+					</div>
+					<div class="footer__copy-phone-wrap">
+						<span class="footer__copy-phone">
+							<a href="tel:+7(495)6906865" class="footer__copy-link">
+								+7 (495) 690-68-65
+							</a>
+						</span>
+						<span class="footer__copy-phone">
+							<a href="tel:+7(495)6915321" class="footer__copy-link">
+								+7 (495) 691-53-21
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="footer__contacts">
+				<a href="#"class="footer__contacts-head">
+					<span class="footer__contacts-title">Контакты</span>
+					<span class="icon-arrow icon-arrow--next"></span>
+				</a>
+				<div class="footer__contacts-social">
+					<a href="#" class="footer__contacts-link">Facebook,</a>
+					<a href="#" class="footer__contacts-link">Vkontakte,</a>
+					<a href="#" class="footer__contacts-link">Instagram</a>
+				</div>
+				<a href="mailto:info@zodchestvo.com" class="footer__contacts-mail">info@zodchestvo.com</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

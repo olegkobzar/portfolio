@@ -1,0 +1,2055 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Аликанте</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+	<div class="wrapper">
+		<header class="header " style="background-image: url(pic/bg/bg-1.jpg);">
+	<div class="header__decor">
+		<div class="container">
+			<div class="header__wrapp">
+				<div class="header__top">
+					<span class="header__address">115230, Россия, Москва, Нагатинская 2/1 </span>
+					<div class="header__mail-wrapp">
+						<a href="mailto:info@domire.ru" class="header__mail-link">info@domire.ru</a>
+					</div>
+					<div class="header__phone-wrapp">
+						<a href="tel:74955404225" class="header__phone-link">
+							7 (495) <span class="header__phone-link-big">540-42-25</span>
+						</a>
+					</div>
+					<div class="header__btn-wrapp">
+						<a data-fancybox data-src="#popup" href="javascript:;" class="btn btn--blue header__btn">
+							<span class="header__btn-icon">
+								<svg class="icon-telephone">
+									<use xlink:href="#telephone"></use>
+								</svg>
+							</span>
+							Заказать звонок
+						</a>
+					</div>
+
+					<div class="header__burger-menu js-btn-burger">
+						<span class="header__line"></span>
+						<span class="header__line"></span>
+						<span class="header__line"></span>
+					</div>
+
+					<div class="header__currency">
+						<span class="header__currency-text">Выберите валюту</span>
+						<ul class="header__currency-list">
+							<li class="header__currency-item">
+								<label class="radio radio--currency">
+									<input type="radio" name="radio-currency">
+									<span>
+										<svg class="icon-dollar">
+											<use xlink:href="#dollar"></use>
+										</svg>
+									</span>
+								</label>
+							</li>
+							<li class="header__currency-item">
+								<label class="radio radio--currency">
+									<input type="radio" name="radio-currency">
+									<span>
+										<svg class="icon-euro">
+											<use xlink:href="#euro"></use>
+										</svg>
+									</span>
+								</label>
+							</li>
+							<li class="header__currency-item">
+								<label class="radio radio--currency">
+									<input type="radio" checked name="radio-currency">
+									<span>
+										<svg class="icon-rubl">
+											<use xlink:href="#rubl"></use>
+										</svg>
+									</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="header__bott">
+					<div class="header__left js-wrapp-nav">
+						<div class="header__logo">
+							<a href="#" class="header__logo-link">
+								<img src="pic/logo-main.png" alt="">
+							</a>
+						</div>
+						<nav class="header__nav js-nav">
+							<ul class="header__list">
+								<li class="header__item">
+									<a href="#" class="header__link active">Каталог недвижимости</a>
+								</li>
+								<li class="header__item">
+									<a href="#" class="header__link">Блог/статьи</a>
+								</li>
+								<li class="header__item">
+									<a href="#" class="header__link">Контакты</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header__right">
+						<div class="header__favorites">
+							<a href="#" class="header__favorites-link">
+								<span class="header__favorites-icon">
+									<svg class="icon-favorites">
+										<use xlink:href="#heart"></use>
+									</svg>
+								</span>
+								<span class="header__favorites-text">В избранных:</span>
+								<span class="header__favorites-number">2</span>
+							</a>
+						</div>
+						<div class="header__entry">
+							<a href="#" class="header__entry-link">
+								<span class="header__entry-icon">
+									<svg class="icon-user">
+										<use xlink:href="#user"></use>
+									</svg>
+								</span>
+								<span class="header__entry-text">Вход / регистрация</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+		</div>
+	</div>
+</header>
+
+
+		<div class="breadcrumbs ">
+  <div class="container">
+    <ul class="breadcrumbs__list">
+      <li class="breadcrumbs__item breadcrumbs__item--back">
+        <a href="#" class="breadcrumbs__link"></a>
+      </li>
+      
+      <li class="breadcrumbs__item">
+        <a href="#" class="breadcrumbs__link">Недвижимость за рубежом</a>
+      </li>
+      
+      <li class="breadcrumbs__item">
+        <a href="#" class="breadcrumbs__link">Греция</a>
+      </li>
+      
+      <li class="breadcrumbs__item">
+        <a href="#" class="breadcrumbs__link">Пелопоннес—Западная Греция—Ионические острова</a>
+      </li>
+      
+
+      <li class="breadcrumbs__item active">Аликанте</li>
+
+    </ul>
+  </div>
+</div>
+
+
+		<div class="container">
+
+			<article class="content">
+				<div class="product-info">
+
+  <div class="product-info__top">
+    <div class="product-info__top-holder product-info__top-holder--left">
+      <span class="product-info__top-id">ID1435</span>
+
+      <div class="product-info__top-inner">
+        <time datetime="2018-06-11T18:07" class="product-info__top-txt product-info__top-txt--data">11 июня, 18:07</time>
+        <span class="product-info__top-txt">1 913 просмотров, 8 за сегодня</span>
+      </div>
+    </div>
+
+    <div class="product-info__top-holder product-info__top-holder--right">
+      <span class="product-info__top-label product-info__top-label--special">Спецпредложение</span>
+      <span class="product-info__top-label product-info__top-label--new">Новинка</span>
+    </div>
+
+  </div>
+
+  <div class="product-info__middle">
+    <div class="product-desc">
+      <ul class="product-desc__location-list">
+        <li class="product-desc__location-item"><svg class="icon-location"><use xlink:href="#location"></use></svg> Греция</li>
+        <li class="product-desc__location-item">Фамагуста</li>
+        <li class="product-desc__location-item">Искеле</li>
+      </ul>
+
+      <span class="product-desc__title">Пятикомнатная вилла 206 м² класса люкс с изумительным панорамным видом на море и горы</span>
+
+      <div class="product-desc__flex">
+        <div class="product-desc__inner">
+          <div class="product-desc__price">
+
+            <div class="product-desc__price-left">
+
+              <div class="product-desc__price-holder">
+                <span class="product-desc__price-inner">155 958 716 €</span>
+                <span class="product-desc__price-value"></span>
+              </div>
+
+              <div class="product-desc__price-holder product-desc__price-holder--currency">
+                <label class="product-desc__price-radio radio radio--currency">
+                  <input type="radio" name="radio-currency">
+                  <span>
+                    <svg class="icon-dollar">
+                      <use xlink:href="#dollar"></use>
+                    </svg>
+                  </span>
+                </label>
+                <label class="product-desc__price-radio radio radio--currency">
+                  <input type="radio" name="radio-currency">
+                  <span>
+                    <svg class="icon-euro">
+                      <use xlink:href="#euro"></use>
+                    </svg>
+                  </span>
+                </label>
+                <label class="product-desc__price-radio radio radio--currency">
+                  <input type="radio" checked name="radio-currency">
+                  <span>
+                    <svg class="icon-rubl">
+                      <use xlink:href="#rubl"></use>
+                    </svg>
+                  </span>
+                </label>
+              </div>
+
+              <div class="product-desc__price-holder">
+                <span class="product-desc__price-inner product-desc__price-inner--small">5 057</span>
+                <span class="product-desc__price-meter">€/м<sup>2</sup></span>
+              </div>
+
+            </div>
+
+            <div class="product-desc__price-right">
+              <a href="#" class="product-desc__price-link">Рассчитать ипотеку</a>
+            </div>
+
+          </div>
+
+          <ul class="product-desc__info-list">
+            <li class="product-desc__info-item">Общая площадь 206 м<sup>2</sup></li>
+            <li class="product-desc__info-item">3 спальни</li>
+            <li class="product-desc__info-item">2 ванные комнаты</li>
+          </ul>
+
+          <div class="product-desc__buy">
+            <p class="product-desc__buy-txt">Просторные апартаменты с различной планировкой, одним или двумя уровнями, просторными террасами, панорамным видом на море</p>
+            <a href="" class="btn btn--small product-desc__buy-btn">Купить</a>
+          </div>
+        </div>
+
+        <div class="product-desc__slider">
+          <div class="product-desc__slider-list js-product-slider">
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-4.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-5.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-1.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-2.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-3.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-4.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-5.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-4.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-5.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-1.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-2.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-3.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-4.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-5.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-4.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-5.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-1.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-2.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-3.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+            <div class="product-desc__slider-item">
+              <img src="pic/house/house-4.jpg" alt="" class="product-desc__slider-img">
+            </div>
+            
+          </div>
+          <div class="product-desc__slider-counter">
+            <svg class="icon-photo">
+              <use xlink:href="#photo"></use>
+            </svg>
+            <span class="product-desc__slider-numb js-product-counter"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <ul class="product-desc__conditions-list">
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Этаж</span>
+          <span class="product-desc__conditions-value">3 из 8</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Расстояние до моря</span>
+          <span class="product-desc__conditions-value">150 метров</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Кондиционер</span>
+          <span class="product-desc__conditions-value">Есть</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">С видом на</span>
+          <span class="product-desc__conditions-value">Море</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Джакузи</span>
+          <span class="product-desc__conditions-value">Есть</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Парковка / Гараж</span>
+          <span class="product-desc__conditions-value">Есть</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Балкон / терраса</span>
+          <span class="product-desc__conditions-value">Есть</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Кондиционер</span>
+          <span class="product-desc__conditions-value">Есть</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Кондиционер</span>
+          <span class="product-desc__conditions-value">Есть</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Кондиционер</span>
+          <span class="product-desc__conditions-value">Есть</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Зона отдыха</span>
+          <span class="product-desc__conditions-value">Есть</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Детская площадка</span>
+          <span class="product-desc__conditions-value">Есть</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Сад</span>
+          <span class="product-desc__conditions-value">Есть</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Полы с подогревом</span>
+          <span class="product-desc__conditions-value">Есть</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Интернет</span>
+          <span class="product-desc__conditions-value">Есть</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Этаж</span>
+          <span class="product-desc__conditions-value">3 из 8</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Расстояние до моря</span>
+          <span class="product-desc__conditions-value">150 метров</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Кондиционер</span>
+          <span class="product-desc__conditions-value">Есть</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">С видом на</span>
+          <span class="product-desc__conditions-value">Море</span>
+        </li>
+        
+        <li class="product-desc__conditions-item">
+          <span class="product-desc__conditions-name">Джакузи</span>
+          <span class="product-desc__conditions-value">Есть</span>
+        </li>
+        
+      </ul>
+
+      <div class="product-desc__more">
+        <div class="product-desc__more-item js-more-item">
+          <span class="product-desc__more-title js-more-btn">Полное описание объекта</span>
+          <div class="product-desc__more-inner static-content js-more-collapse">
+            <p>Просторные апартаменты с различной планировкой, одним или двумя уровнями, просторными террасами, панорамным видом на море и современной отделкой в комфортабельном недавно построенном жилом комплексе с <b>бассейном, джакузи, зоной отдыха, тренажерным залом, детской площадкой,</b> подземным <b>гаражом</b> и ухоженным <b>садом</b>.</p>
+            <p>В стоимость входит место в подземном гараже.</p>
+            <p>Существует возможность выкупа помещения для хранения.</p>
+          </div>
+        </div>
+        <div class="product-desc__more-item js-more-item">
+          <span class="product-desc__more-title js-more-btn">Внутреннее пространство</span>
+          <div class="product-desc__more-inner static-content js-more-collapse">
+            <p>Три спальни со встроенными шкафами</p>
+            <p>Две полностью оборудованные ванные комнаты</p>
+            <p>Просторная гостиная</p>
+            <p>Встроенная кухня</p>
+            <p>Двойные стеклопакеты</p>
+            <p>Солнечные батареи и электрический водонагреватель</p>
+          </div>
+        </div>
+        <div class="product-desc__more-item js-more-item">
+          <span class="product-desc__more-title js-more-btn">Оснащение</span>
+          <div class="product-desc__more-inner static-content js-more-collapse">
+            <p>Джакузи</p>
+            <p>Кондиционирование воздуха</p>
+            <p>Полы с подогревом</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-desc__video">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/GbP2nswfLKk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+
+      <div class="product-desc__objects">
+        <span class="product-desc__objects-title">Расположение и объекты поблизости</span>
+        <p class="product-desc__objects-txt">Недвижимость расположена в престижном районе с развитой инфраструктурой, в 5 минутах ходьбы от банка, автобусной остановки, парка, прекрасного песчаного пляжа и в 15 км от центра Аликанте, и окружена магазинами, барами и ресторанами.</p>
+        <div class="product-desc__objects-map" id="product-map"></div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="product-info__application">
+
+    <div class="product-info__application-top">
+      <span class="product-info__application-title">Заявка на эту виллу</span>
+    </div>
+
+    <form action="" class="product-info__application-form">
+      <div class="product-info__application-row">
+
+        <div class="product-info__application-col">
+
+          <div class="product-info__application-inner">
+            <div class="input-box">
+              <span class="input-label">Ваше имя</span>
+              <input name="name" class="input-contact" type="text" placeholder="Ваше имя">
+            </div>
+          </div>
+
+          <div class="product-info__application-inner">
+            <div class="input-box">
+              <span class="input-label">Ваш номер телефона</span>
+              <input name="phone" class="input-contact" type="tel" placeholder="Ваш номер телефона">
+            </div>
+          </div>
+
+          <div class="product-info__application-inner product-info__application-inner--multi">
+            <label class="product-info__application-checkbox checkbox">
+              <input type="checkbox" name="social">
+              <span>WhatsApp</span>
+            </label>
+
+            <label class="product-info__application-checkbox checkbox">
+              <input type="checkbox" name="social">
+              <span>Viber</span>
+            </label>
+
+            <label class="product-info__application-checkbox checkbox">
+              <input type="checkbox" name="social">
+              <span>Telegram</span>
+            </label>
+
+          </div>
+
+          <div class="product-info__application-inner">
+            <div class="input-box">
+              <span class="input-label">Ваш e-mail</span>
+              <input name="phone" class="input-contact" type="email" placeholder="Ваш e-mail">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="product-info__application-col">
+
+          <div class="product-info__application-inner">
+            <textarea class="product-info__application-message" name="message" placeholder="Пожелания к выбранной недвижимости "></textarea>
+          </div>
+
+          <div class="product-info__application-inner">
+            <label class="product-info__application-checkbox checkbox checkbox--yellow">
+              <input type="checkbox" name="check" checked>
+              <span>Снимите флаг, если вы не робот</span>
+            </label>
+          </div>
+
+          <div class="product-info__application-inner">
+            <button class="btn product-info__application-btn" type="submit" disabled>Оставить заявку</button>
+          </div>
+
+        </div>
+      </div>
+    </form>
+
+    <div class="product-info__agreement">
+      <span class="product-info__agreement-txt">Нажимая кнопку «отправить заявку»,  я даю согласие на обработку своих <a
+              href="#" class="product-info__agreement-link">персональных данных</a></span>
+    </div>
+
+  </div>
+
+</div>
+
+			</article>
+
+			<aside class="sidebar">
+				<div class="info-country">
+    <span class="info-country__title">краткая справка о стране</span>
+    <ul class="info-country__list">
+        <li class="info-country__item">Цены <a href="#" class="info-country__link">от 1 600 до 13 000 евро/м<sup>2</sup></a></li>
+        <li class="info-country__item">Оформление на юридическое лицо за <a href="#" class="info-country__link">1,5 месяца</a></li>
+        <li class="info-country__item">Кредиты <a href="#" class="info-country__link">от 2 % годовых</a> на срок до 25 лет</li>
+        <li class="info-country__item">Налог на передачу прав собственности <a href="#" class="info-country__link">3,5 %</a></li>
+        <li class="info-country__item">Удобная и понятная <a href="#" class="info-country__link">система коммунальных платежей</a></li>
+        <li class="info-country__item"><a href="#" class="info-country__link">ВНЖ на год</a> с возможностью продления</li>
+        <li class="info-country__item"><a href="#" class="info-country__link">Доходность 3−4 % годовых</a></li>
+        <li class="info-country__item"><span class="info-country__txt">Все публикации:</span> <a href="#" class="info-country__link">65 статей</a></li>
+    </ul>
+</div>
+
+				<div class="selection-request ">
+    <span class="selection-request__title">Запрос на подбор недвижимости</span>
+
+    <p class="selection-request__desc">Сэкономьте своё время! Отправьте запрос нашим менеджерам, и они подберут хорошее предложение и свяжутся  с вами сами.</p>
+
+    <form action="" class="selection-request__form">
+
+        <div class="selection-request__form-row">
+            <textarea class="selection-request__form-message" placeholder="Например, земельный участок во Франции и Испани"></textarea>
+        </div>
+
+        <div class="selection-request__form-row">
+            <div class="input-box">
+                <span class="input-label">Ваше имя</span>
+                <input name="input" class="selection-request__form-input input-contact" type="text" placeholder="Ваше имя">
+            </div>
+        </div>
+
+        <div class="selection-request__form-row">
+            <div class="input-box">
+                <span class="input-label">Телефон</span>
+                <input name="tel" class="selection-request__form-input input-contact" type="text" placeholder="Телефон">
+            </div>
+        </div>
+
+        <div class="selection-request__form-row">
+            <div class="input-box">
+                <span class="input-label">Ваш e-mail</span>
+                <input name="email" class="selection-request__form-input input-contact" type="text" placeholder="Ваш e-mail">
+            </div>
+        </div>
+
+        <div class="selection-request__form-row">
+            <label class="checkbox checkbox--yellow">
+                <input type="checkbox" name="check" checked>
+                <span>Снимите флаг, если вы не робот</span>
+            </label>
+        </div>
+
+        <div class="selection-request__form-row">
+            <button class="btn selection-request__form-btn" type="submit" disabled>Отправить запрос</button>
+        </div>
+
+    </form>
+
+    <div class="selection-request__info">
+        <span class="selection-request__info-txt">Нажимая кнопку «отправить запрос», я даю согласие на обработку своих <a href="#" class="selection-request__info-link">персональных данных</a></span>
+    </div>
+</div>
+
+				<div class="viewed">
+
+    <div class="viewed__item viewed__item--title">
+        <span class="viewed__title">Вы смотрели</span>
+    </div>
+
+    <div class="viewed__inner js-viewed-slider">
+
+        <div class="viewed__item js-viewed-item" data-id="ID1435">
+
+            <div class="viewed__top">
+                <span class="viewed__desc">Пятикомнатная вилла 206 м<sup>2</sup> класса люкс с изумительным панорамным видом на море и горы</span>
+                <span class="viewed__icon js-viewed-btn">
+                    <svg class="icon-like">
+                        <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="icon-heart">
+                        <use xlink:href="#heart"></use>
+                    </svg>
+                </span>
+            </div>
+
+            <div class="viewed__location">
+                <ul class="viewed__location-list">
+                    <li class="viewed__location-item"><svg class="icon-location"><use xlink:href="#location"></use></svg> Греция</li>
+                    <li class="viewed__location-item">Фамагуста</li>
+                    <li class="viewed__location-item">Искеле</li>
+                </ul>
+            </div>
+
+            <div class="viewed__price">
+                <span class="viewed__price-value">5 958 716 <span class="rubl">c</span></span>
+            </div>
+
+            <div class="viewed__info">
+
+                <div class="viewed__info-left">
+                    <ul class="viewed__info-list">
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-bathroom"><use xlink:href="#bathroom"></use></svg></span>2</li>
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-bed"><use xlink:href="#bed"></use></svg></span>3</li>
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-area"><use xlink:href="#area"></use></svg></span>206 м<sup>2</sup></li>
+                    </ul>
+                </div>
+
+                <div class="viewed__info-right">
+                    <a href="#" class="viewed__info-more">Узнать подробнее</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="viewed__item js-viewed-item" data-id="ID1435">
+
+            <div class="viewed__top">
+                <span class="viewed__desc">Пятикомнатная вилла 206 м<sup>2</sup> класса люкс с изумительным панорамным видом на море и горы</span>
+                <span class="viewed__icon js-viewed-btn">
+                    <svg class="icon-like">
+                        <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="icon-heart">
+                        <use xlink:href="#heart"></use>
+                    </svg>
+                </span>
+            </div>
+
+            <div class="viewed__location">
+                <ul class="viewed__location-list">
+                    <li class="viewed__location-item"><svg class="icon-location"><use xlink:href="#location"></use></svg> Греция</li>
+                    <li class="viewed__location-item">Фамагуста</li>
+                    <li class="viewed__location-item">Искеле</li>
+                </ul>
+            </div>
+
+            <div class="viewed__price">
+                <span class="viewed__price-value">5 958 716 <span class="rubl">c</span></span>
+            </div>
+
+            <div class="viewed__info">
+
+                <div class="viewed__info-left">
+                    <ul class="viewed__info-list">
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-bathroom"><use xlink:href="#bathroom"></use></svg></span>2</li>
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-bed"><use xlink:href="#bed"></use></svg></span>3</li>
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-area"><use xlink:href="#area"></use></svg></span>206 м<sup>2</sup></li>
+                    </ul>
+                </div>
+
+                <div class="viewed__info-right">
+                    <a href="#" class="viewed__info-more">Узнать подробнее</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="viewed__item js-viewed-item" data-id="ID1435">
+
+            <div class="viewed__top">
+                <span class="viewed__desc">Пятикомнатная вилла 206 м<sup>2</sup> класса люкс с изумительным панорамным видом на море и горы</span>
+                <span class="viewed__icon js-viewed-btn">
+                    <svg class="icon-like">
+                        <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="icon-heart">
+                        <use xlink:href="#heart"></use>
+                    </svg>
+                </span>
+            </div>
+
+            <div class="viewed__location">
+                <ul class="viewed__location-list">
+                    <li class="viewed__location-item"><svg class="icon-location"><use xlink:href="#location"></use></svg> Греция</li>
+                    <li class="viewed__location-item">Фамагуста</li>
+                    <li class="viewed__location-item">Искеле</li>
+                </ul>
+            </div>
+
+            <div class="viewed__price">
+                <span class="viewed__price-value">5 958 716 <span class="rubl">c</span></span>
+            </div>
+
+            <div class="viewed__info">
+
+                <div class="viewed__info-left">
+                    <ul class="viewed__info-list">
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-bathroom"><use xlink:href="#bathroom"></use></svg></span>2</li>
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-bed"><use xlink:href="#bed"></use></svg></span>3</li>
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-area"><use xlink:href="#area"></use></svg></span>206 м<sup>2</sup></li>
+                    </ul>
+                </div>
+
+                <div class="viewed__info-right">
+                    <a href="#" class="viewed__info-more">Узнать подробнее</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="viewed__item js-viewed-item" data-id="ID1435">
+
+            <div class="viewed__top">
+                <span class="viewed__desc">Пятикомнатная вилла 206 м<sup>2</sup> класса люкс с изумительным панорамным видом на море и горы</span>
+                <span class="viewed__icon js-viewed-btn">
+                    <svg class="icon-like">
+                        <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="icon-heart">
+                        <use xlink:href="#heart"></use>
+                    </svg>
+                </span>
+            </div>
+
+            <div class="viewed__location">
+                <ul class="viewed__location-list">
+                    <li class="viewed__location-item"><svg class="icon-location"><use xlink:href="#location"></use></svg> Греция</li>
+                    <li class="viewed__location-item">Фамагуста</li>
+                    <li class="viewed__location-item">Искеле</li>
+                </ul>
+            </div>
+
+            <div class="viewed__price">
+                <span class="viewed__price-value">5 958 716 <span class="rubl">c</span></span>
+            </div>
+
+            <div class="viewed__info">
+
+                <div class="viewed__info-left">
+                    <ul class="viewed__info-list">
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-bathroom"><use xlink:href="#bathroom"></use></svg></span>2</li>
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-bed"><use xlink:href="#bed"></use></svg></span>3</li>
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-area"><use xlink:href="#area"></use></svg></span>206 м<sup>2</sup></li>
+                    </ul>
+                </div>
+
+                <div class="viewed__info-right">
+                    <a href="#" class="viewed__info-more">Узнать подробнее</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="viewed__item js-viewed-item" data-id="ID1435">
+
+            <div class="viewed__top">
+                <span class="viewed__desc">Пятикомнатная вилла 206 м<sup>2</sup> класса люкс с изумительным панорамным видом на море и горы</span>
+                <span class="viewed__icon js-viewed-btn">
+                    <svg class="icon-like">
+                        <use xlink:href="#like"></use>
+                    </svg>
+                    <svg class="icon-heart">
+                        <use xlink:href="#heart"></use>
+                    </svg>
+                </span>
+            </div>
+
+            <div class="viewed__location">
+                <ul class="viewed__location-list">
+                    <li class="viewed__location-item"><svg class="icon-location"><use xlink:href="#location"></use></svg> Греция</li>
+                    <li class="viewed__location-item">Фамагуста</li>
+                    <li class="viewed__location-item">Искеле</li>
+                </ul>
+            </div>
+
+            <div class="viewed__price">
+                <span class="viewed__price-value">5 958 716 <span class="rubl">c</span></span>
+            </div>
+
+            <div class="viewed__info">
+
+                <div class="viewed__info-left">
+                    <ul class="viewed__info-list">
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-bathroom"><use xlink:href="#bathroom"></use></svg></span>2</li>
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-bed"><use xlink:href="#bed"></use></svg></span>3</li>
+                        <li class="viewed__info-item"><span class="viewed__info-icon"><svg class="icon-area"><use xlink:href="#area"></use></svg></span>206 м<sup>2</sup></li>
+                    </ul>
+                </div>
+
+                <div class="viewed__info-right">
+                    <a href="#" class="viewed__info-more">Узнать подробнее</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+				<div class="popular-countries ">
+
+    <span class="popular-countries__title">популярные страны</span>
+
+    <ul class="popular-countries__list">
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1501">Испания</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="4766">Греция</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1079">Болгария</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1156">Македония</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1501">Испания</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1079">Болгария</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1156">Македония</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1501">Испания</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1501">Испания</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="4766">Греция</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1079">Болгария</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1156">Македония</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1501">Испания</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1079">Болгария</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1156">Македония</a>
+        </li>
+        
+        <li class="popular-countries__item">
+            <a href="" class="popular-countries__link" data-numb="1501">Испания</a>
+        </li>
+        
+    </ul>
+
+    <div class="popular-countries__more">
+        <a href="#" class="popular-countries__more-link">смотреть все страны</a>
+    </div>
+</div>
+			</aside>
+
+		</div>
+
+		<div class="similar-objects">
+  <div class="container">
+    <span class="similar-objects__title">Предложения похожих объектов</span>
+    <div class="similar-objects__body js-similar-slider">
+      <div class="object-item ">
+	<div class="object-item__inner js-height">
+		<a href="#" class="object-item__link-card">
+			<span class="object-item__heart js-object-btn">
+				<svg class="icon-like">
+					<use xlink:href="#like"></use>
+				</svg>
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+
+			<div class="object-item__top">
+				<span class="object-item__id">ID1435</span>
+
+				<div class="object-item__photo">
+					<span class="object-item__photo-icon">
+						<svg class="icon-photo">
+							<use xlink:href="#photo"></use>
+						</svg>
+					</span>
+					<span class="object-item__photo-text">17</span>
+				</div>
+
+				<div class="object-item__slider js-object-slick">
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-1.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-2.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-3.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="object-item__bott">
+				<span class="object-item__descr js-descr-height">
+					Великолепная 3-спальная вилла, в безупречном состоянии и с фантастическим панорамным видом на побережье, в престижном и 
+				</span>
+				<div class="object-item__wrapp-special">
+					<div class="object-item__wrapp-special-left">
+						<div class="object-item__location">
+							<span class="object-item__location-icon">
+								<svg class="icon-location">
+									<use xlink:href="#location"></use>
+								</svg>
+							</span>
+							<span class="object-item__location-text">Греция / Фамагуста / Искеле</span>
+						</div>
+						<span class="object-item__price">5 958 716 <span class="rubl">o</span></span>
+					</div>
+					
+				</div>
+				<div class="object-item__house-descr">
+					<ul class="object-item__house-list">
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bathroom">
+									<use xlink:href="#bathroom"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">2</span>
+						</li>
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bed">
+									<use xlink:href="#bed"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">3</span>
+						</li>
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bed">
+									<use xlink:href="#bed"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">206 <span class="object-item__unit">м<sup>2</sup></span></span>
+						</li>
+					</ul>
+					<div class="object-item__more">
+						<a href="#" class="object-item__more-link">Узнать подробнее</a>
+					</div>
+				</div>
+			</a>
+
+		</div>
+	</div>
+</div><div class="object-item ">
+	<div class="object-item__inner js-height">
+		<a href="#" class="object-item__link-card">
+			<span class="object-item__heart js-object-btn">
+				<svg class="icon-like">
+					<use xlink:href="#like"></use>
+				</svg>
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+
+			<div class="object-item__top">
+				<span class="object-item__id">ID1435</span>
+
+				<div class="object-item__photo">
+					<span class="object-item__photo-icon">
+						<svg class="icon-photo">
+							<use xlink:href="#photo"></use>
+						</svg>
+					</span>
+					<span class="object-item__photo-text">20</span>
+				</div>
+
+				<div class="object-item__slider js-object-slick">
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-1.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-2.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-3.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="object-item__bott">
+				<span class="object-item__descr js-descr-height">
+					Великолепная 3-спальная вилла, в безупречном состоянии и с фантастическим панорамным видом на побережье, в престижном и 
+				</span>
+				<div class="object-item__wrapp-special">
+					<div class="object-item__wrapp-special-left">
+						<div class="object-item__location">
+							<span class="object-item__location-icon">
+								<svg class="icon-location">
+									<use xlink:href="#location"></use>
+								</svg>
+							</span>
+							<span class="object-item__location-text">Греция / Фамагуста / Искеле</span>
+						</div>
+						<span class="object-item__price">155 958 716 <span class="rubl">o</span></span>
+					</div>
+					
+				</div>
+				<div class="object-item__house-descr">
+					<ul class="object-item__house-list">
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bathroom">
+									<use xlink:href="#bathroom"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">2</span>
+						</li>
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bed">
+									<use xlink:href="#bed"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">3</span>
+						</li>
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bed">
+									<use xlink:href="#bed"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">206 <span class="object-item__unit">м<sup>2</sup></span></span>
+						</li>
+					</ul>
+					<div class="object-item__more">
+						<a href="#" class="object-item__more-link">Узнать подробнее</a>
+					</div>
+				</div>
+			</a>
+
+		</div>
+	</div>
+</div><div class="object-item ">
+	<div class="object-item__inner js-height">
+		<a href="#" class="object-item__link-card">
+			<span class="object-item__heart js-object-btn">
+				<svg class="icon-like">
+					<use xlink:href="#like"></use>
+				</svg>
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+
+			<div class="object-item__top">
+				<span class="object-item__id">ID1435</span>
+
+				<div class="object-item__photo">
+					<span class="object-item__photo-icon">
+						<svg class="icon-photo">
+							<use xlink:href="#photo"></use>
+						</svg>
+					</span>
+					<span class="object-item__photo-text">17</span>
+				</div>
+
+				<div class="object-item__slider js-object-slick">
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-1.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-2.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-3.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="object-item__bott">
+				<span class="object-item__descr js-descr-height">
+					Великолепная 3-спальная вилла, в безупречном состоянии и с фантастическим панорамным видом на побережье, в престижном и 
+				</span>
+				<div class="object-item__wrapp-special">
+					<div class="object-item__wrapp-special-left">
+						<div class="object-item__location">
+							<span class="object-item__location-icon">
+								<svg class="icon-location">
+									<use xlink:href="#location"></use>
+								</svg>
+							</span>
+							<span class="object-item__location-text">Греция / Фамагуста / Искеле</span>
+						</div>
+						<span class="object-item__price">5 958 716 <span class="rubl">o</span></span>
+					</div>
+					
+				</div>
+				<div class="object-item__house-descr">
+					<ul class="object-item__house-list">
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bathroom">
+									<use xlink:href="#bathroom"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">2</span>
+						</li>
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bed">
+									<use xlink:href="#bed"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">3</span>
+						</li>
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bed">
+									<use xlink:href="#bed"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">206 <span class="object-item__unit">м<sup>2</sup></span></span>
+						</li>
+					</ul>
+					<div class="object-item__more">
+						<a href="#" class="object-item__more-link">Узнать подробнее</a>
+					</div>
+				</div>
+			</a>
+
+		</div>
+	</div>
+</div><div class="object-item ">
+	<div class="object-item__inner js-height">
+		<a href="#" class="object-item__link-card">
+			<span class="object-item__heart js-object-btn">
+				<svg class="icon-like">
+					<use xlink:href="#like"></use>
+				</svg>
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+
+			<div class="object-item__top">
+				<span class="object-item__id">ID1435</span>
+
+				<div class="object-item__photo">
+					<span class="object-item__photo-icon">
+						<svg class="icon-photo">
+							<use xlink:href="#photo"></use>
+						</svg>
+					</span>
+					<span class="object-item__photo-text">17</span>
+				</div>
+
+				<div class="object-item__slider js-object-slick">
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-1.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-2.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-3.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="object-item__bott">
+				<span class="object-item__descr js-descr-height">
+					Великолепная 3-спальная вилла, в безупречном состоянии и с фантастическим панорамным видом на побережье, в престижном и 
+				</span>
+				<div class="object-item__wrapp-special">
+					<div class="object-item__wrapp-special-left">
+						<div class="object-item__location">
+							<span class="object-item__location-icon">
+								<svg class="icon-location">
+									<use xlink:href="#location"></use>
+								</svg>
+							</span>
+							<span class="object-item__location-text">Греция / Фамагуста / Искеле</span>
+						</div>
+						<span class="object-item__price">5 958 716 <span class="rubl">o</span></span>
+					</div>
+					
+				</div>
+				<div class="object-item__house-descr">
+					<ul class="object-item__house-list">
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bathroom">
+									<use xlink:href="#bathroom"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">2</span>
+						</li>
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bed">
+									<use xlink:href="#bed"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">3</span>
+						</li>
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bed">
+									<use xlink:href="#bed"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">206 <span class="object-item__unit">м<sup>2</sup></span></span>
+						</li>
+					</ul>
+					<div class="object-item__more">
+						<a href="#" class="object-item__more-link">Узнать подробнее</a>
+					</div>
+				</div>
+			</a>
+
+		</div>
+	</div>
+</div><div class="object-item ">
+	<div class="object-item__inner js-height">
+		<a href="#" class="object-item__link-card">
+			<span class="object-item__heart js-object-btn">
+				<svg class="icon-like">
+					<use xlink:href="#like"></use>
+				</svg>
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+
+			<div class="object-item__top">
+				<span class="object-item__id">ID1435</span>
+
+				<div class="object-item__photo">
+					<span class="object-item__photo-icon">
+						<svg class="icon-photo">
+							<use xlink:href="#photo"></use>
+						</svg>
+					</span>
+					<span class="object-item__photo-text">20</span>
+				</div>
+
+				<div class="object-item__slider js-object-slick">
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-1.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-2.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-3.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="object-item__bott">
+				<span class="object-item__descr js-descr-height">
+					Великолепная 3-спальная вилла, в безупречном состоянии и с фантастическим панорамным видом на побережье, в престижном и 
+				</span>
+				<div class="object-item__wrapp-special">
+					<div class="object-item__wrapp-special-left">
+						<div class="object-item__location">
+							<span class="object-item__location-icon">
+								<svg class="icon-location">
+									<use xlink:href="#location"></use>
+								</svg>
+							</span>
+							<span class="object-item__location-text">Греция / Фамагуста / Искеле</span>
+						</div>
+						<span class="object-item__price">155 958 716 <span class="rubl">o</span></span>
+					</div>
+					
+				</div>
+				<div class="object-item__house-descr">
+					<ul class="object-item__house-list">
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bathroom">
+									<use xlink:href="#bathroom"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">2</span>
+						</li>
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bed">
+									<use xlink:href="#bed"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">3</span>
+						</li>
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bed">
+									<use xlink:href="#bed"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">206 <span class="object-item__unit">м<sup>2</sup></span></span>
+						</li>
+					</ul>
+					<div class="object-item__more">
+						<a href="#" class="object-item__more-link">Узнать подробнее</a>
+					</div>
+				</div>
+			</a>
+
+		</div>
+	</div>
+</div><div class="object-item ">
+	<div class="object-item__inner js-height">
+		<a href="#" class="object-item__link-card">
+			<span class="object-item__heart js-object-btn">
+				<svg class="icon-like">
+					<use xlink:href="#like"></use>
+				</svg>
+				<svg class="icon-heart">
+					<use xlink:href="#heart"></use>
+				</svg>
+			</span>
+
+			<div class="object-item__top">
+				<span class="object-item__id">ID1435</span>
+
+				<div class="object-item__photo">
+					<span class="object-item__photo-icon">
+						<svg class="icon-photo">
+							<use xlink:href="#photo"></use>
+						</svg>
+					</span>
+					<span class="object-item__photo-text">17</span>
+				</div>
+
+				<div class="object-item__slider js-object-slick">
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-1.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-2.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+
+					<div class="object-item__slider-item" style="background-image: url(pic/house/house-3.jpg);">
+						<div class="object-item__slider-inner"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="object-item__bott">
+				<span class="object-item__descr js-descr-height">
+					Великолепная 3-спальная вилла, в безупречном состоянии и с фантастическим панорамным видом на побережье, в престижном и 
+				</span>
+				<div class="object-item__wrapp-special">
+					<div class="object-item__wrapp-special-left">
+						<div class="object-item__location">
+							<span class="object-item__location-icon">
+								<svg class="icon-location">
+									<use xlink:href="#location"></use>
+								</svg>
+							</span>
+							<span class="object-item__location-text">Греция / Фамагуста / Искеле</span>
+						</div>
+						<span class="object-item__price">5 958 716 <span class="rubl">o</span></span>
+					</div>
+					
+				</div>
+				<div class="object-item__house-descr">
+					<ul class="object-item__house-list">
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bathroom">
+									<use xlink:href="#bathroom"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">2</span>
+						</li>
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bed">
+									<use xlink:href="#bed"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">3</span>
+						</li>
+						<li class="object-item__house-item">
+							<span class="object-item__house-icon">
+								<svg class="icon-bed">
+									<use xlink:href="#bed"></use>
+								</svg>
+							</span>
+							<span class="object-item__house-text">206 <span class="object-item__unit">м<sup>2</sup></span></span>
+						</li>
+					</ul>
+					<div class="object-item__more">
+						<a href="#" class="object-item__more-link">Узнать подробнее</a>
+					</div>
+				</div>
+			</a>
+
+		</div>
+	</div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+		<div class="subscribe " style="background-image: url(pic/bg/bg-3.jpg);">
+	<div class="subscribe__decor">
+		<div class="container">
+			<div class="subscribe__row">
+				<div class="subscribe__col subscribe__col--text">
+					<span class="subscribe__text">
+						Подписаться на наши статьи блога
+					</span>
+				</div>
+				<div class="subscribe__col subscribe__col--input">
+					<input type="text" placeholder="Ваш e-mail">
+				</div>
+				<div class="subscribe__col subscribe__col--link">
+					<a href="#" class="btn">Подписаться</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+		<div class="realty-type realty-type--cart">
+			<div class="container">
+				<div class="realty-type__wrapp">
+					<div class="realty-type__col js-item-wrapp">
+						<span class="realty-type__title js-title">Все квартиры в городе</span>
+						<ul class="realty-type__list js-list">
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="2958">
+									Квартиры и апартаменты
+								</a>
+							</li>
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="795">
+									Таунхаусы и бунгало
+								</a>
+							</li>
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="1791">
+									Виллы
+								</a>
+							</li>
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="785">
+									Дома
+								</a>
+							</li>
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="312">
+									Особняки
+								</a>
+							</li>
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="187">
+									Коттеджи
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="realty-type__col js-item-wrapp">
+						<span class="realty-type__title js-title">Все квартиры в регионе</span>
+						<ul class="realty-type__list js-list">
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="1501">
+									Новостройки
+								</a>
+							</li>
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="4766">
+									Вторичное жилье
+								</a>
+							</li>
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="1079">
+									Элитная недвижимость
+								</a>
+							</li>
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="1156">
+									Недорогая
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="realty-type__col js-item-wrapp">
+						<span class="realty-type__title js-title">Все квартиры в стране</span>
+						<ul class="realty-type__list js-list">
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="328">
+									В горах
+								</a>
+							</li>
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="2933">
+									У моря
+								</a>
+							</li>
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="213">
+									В пригороде
+								</a>
+							</li>
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="1028">
+									Для пенсионеров
+								</a>
+							</li>
+							<li class="realty-type__item">
+								<a href="#" class="realty-type__link" data-number="38">
+									Рядом с университетами
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="article article--cart">
+			<div class="container">
+				<h2 class="article__caption">Статьи о стране</h2>
+
+				<div class="article__flex">
+					<div class="article__wrapp">
+						<div class="article__wrapp-big">
+							<div class="article-item article-item--big">
+	<div class="article-item__inner js-height">
+		<a href="#" class="article-item__card-link">
+			<div class="article-item__top" style="background-image: url(pic/article/article-1.jpg);">
+				<div class="article-item__top-decor">
+					<div class="article-item__row">
+						<span class="article-item__box article-item__box--date">10 мая 2018</span>
+						<span class="article-item__box article-item__box--category green">Лайфстайл</span>
+					</div>
+					<div class="article-item__caption-wrapp">
+						<span class="article-item__link-caption">
+							<h3 class="article-item__caption">Как русские живут в Германии:</h3>
+							
+								<span class="article-item__subcaption">преимущества и недостатки</span>
+							
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="article-item__bott">
+				<span class="article-item__descr">Перед переездом в какую-либо из стран Евросоюза большинство людей начинают интересоваться тем, как живут русские в Германии, а затем приступают к рассмотрению других вариантов. Но сегодня количество россиян здесь снижается, так как в страну большими потоками хлынули беженцы, что повлекло за собой спад уровня жизни и увеличение уровня преступности.</span>
+				<div class="article-item__link-wrapp">
+					<span  class="article-item__link">Читать полностью</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div>
+
+						</div>
+						<aside class="article-sidebar">
+							<div class="article-sidebar__inner js-height ">
+	<h4 class="article-sidebar__title">Самые популярные статьи</h4>
+	<ul class="article-sidebar__list">
+		<li class="article-sidebar__item">
+			<a href="#" class="article-sidebar__link">
+				Как россиянину эмигрировать в Республику Кипр на п...
+			</a>
+		</li>
+		<li class="article-sidebar__item">
+			<a href="#" class="article-sidebar__link">
+				Особенности переезда для ПМЖ в Чехию...
+			</a>
+		</li>
+		<li class="article-sidebar__item">
+			<a href="#" class="article-sidebar__link">
+				Вид на жительство в Италии
+			</a>
+		</li>
+		<li class="article-sidebar__item">
+			<a href="#" class="article-sidebar__link">
+				Образование в Чехии и возможности его получения дл...
+			</a>
+		</li>
+		<li class="article-sidebar__item">
+			<a href="#" class="article-sidebar__link">
+				Особенности получения итальянского гражданства...
+			</a>
+		</li>
+		<li class="article-sidebar__item">
+			<a href="#" class="article-sidebar__link">
+				Порядок получения ВНЖ в Испании
+			</a>
+		</li>
+	</ul>
+	<div class="article-sidebar__all-wrapp">
+		<a href="#" class="article-sidebar__all-link">
+			смотреть все
+		</a>
+	</div>
+</div>
+
+						</aside>
+					</div>
+
+					<div class="article-item__wrapp js-article-slider">
+						<div class="article-item ">
+	<div class="article-item__inner js-height">
+		<a href="#" class="article-item__card-link">
+			<div class="article-item__top" style="background-image: url(pic/article/article-2.jpg);">
+				<div class="article-item__top-decor">
+					<div class="article-item__row">
+						<span class="article-item__box article-item__box--date">10 мая 2018</span>
+						<span class="article-item__box article-item__box--category green">Лайфстайл</span>
+					</div>
+					<div class="article-item__caption-wrapp">
+						<span class="article-item__link-caption">
+							<h3 class="article-item__caption">Жизнь в Италии</h3>
+							
+								<span class="article-item__subcaption">обычных русских людей и пенсионеров на ПМЖ</span>
+							
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="article-item__bott">
+				<span class="article-item__descr">Кто из нас в детстве не зачитывался книгами о загадочной и прекрасной Италии, её неповторимой природе и древнейшей истории. Люди селились в этих краях издавна, что объясняется идеально мягким ...</span>
+				<div class="article-item__link-wrapp">
+					<span  class="article-item__link">Читать полностью</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div><div class="article-item ">
+	<div class="article-item__inner js-height">
+		<a href="#" class="article-item__card-link">
+			<div class="article-item__top" style="background-image: url(pic/article/article-3.jpg);">
+				<div class="article-item__top-decor">
+					<div class="article-item__row">
+						<span class="article-item__box article-item__box--date">17 апреля 2018</span>
+						<span class="article-item__box article-item__box--category violet">Путешествия</span>
+					</div>
+					<div class="article-item__caption-wrapp">
+						<span class="article-item__link-caption">
+							<h3 class="article-item__caption">Путешествие в Барселону</h3>
+							
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="article-item__bott">
+				<span class="article-item__descr">Многие клиенты, перед тем, как купить недвижимость, основывают выбор желаемого региона на основе своих впечатлений от путешествий в те или иные места. Только менее четверти клиентов выбирают ...</span>
+				<div class="article-item__link-wrapp">
+					<span  class="article-item__link">Читать полностью</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div><div class="article-item ">
+	<div class="article-item__inner js-height">
+		<a href="#" class="article-item__card-link">
+			<div class="article-item__top" style="background-image: url(pic/article/article-4.jpg);">
+				<div class="article-item__top-decor">
+					<div class="article-item__row">
+						<span class="article-item__box article-item__box--date">3 апреля 2018</span>
+						<span class="article-item__box article-item__box--category brown">Образование</span>
+					</div>
+					<div class="article-item__caption-wrapp">
+						<span class="article-item__link-caption">
+							<h3 class="article-item__caption">Образование в Чехии</h3>
+							
+								<span class="article-item__subcaption">и возможность его получения для россиян</span>
+							
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="article-item__bott">
+				<span class="article-item__descr">С каждым годом число россиян, которые хотят пройти обучение в Чехии, увеличивается. По данным статистики, если сравнивать с 2012 годом, количество желающих увеличилось в 3-5 раз.</span>
+				<div class="article-item__link-wrapp">
+					<span  class="article-item__link">Читать полностью</span>
+				</div>
+			</div>
+		</a>
+
+	</div>
+</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+<div class="popup" id="popup">
+	<span class="popup__title">Заказать звонок</span>
+	<div class="popup__row">
+		<div class="input-box">
+			<span class="input-label">Ваше имя</span>
+			<input name="input" class="input-contact" type="text" placeholder="Ваше имя">
+		</div>
+	</div>
+	<div class="popup__row">
+		<div class="input-box">
+			<span class="input-label">Ваш номер телефона</span>
+			<input name="input" class="input-contact" type="text" placeholder="Ваш номер телефона">
+		</div>
+	</div>
+	<div class="popup__row">
+		<ul class="popup__list">
+			<li class="popup__item">
+				<label class="checkbox">
+					<input type="checkbox" name="check">
+					<span>WhatsApp</span>
+				</label>
+			</li>
+			<li class="popup__item">
+				<label class="checkbox">
+					<input type="checkbox" name="check">
+					<span>Viber</span>
+				</label>
+			</li>
+			<li class="popup__item">
+				<label class="checkbox">
+					<input type="checkbox" name="check">
+					<span>Telegram</span>
+				</label>
+			</li>
+		</ul>
+	</div>
+	<div class="popup__row popup__row--flag">
+		<label class="checkbox checkbox--yellow">
+			<input type="checkbox" name="check" checked>
+			<span>Снимите флаг, если вы не робот</span>
+		</label>
+	</div>
+	<div class="popup__row">
+		<div class="popup__btn-wrapp">
+			<button class="btn btn--yellow" disabled>Заказать звонок</button>
+		</div>
+		<div class="popup__link-wrapp">
+			<a href="#" class="popup__link">Условия сотрудничества</a>
+		</div>
+	</div>
+</div>
+
+<footer class="footer">
+
+	<div class="container">
+		<div class="footer__top">
+			<div class="footer__col">
+
+				<div class="footer__logo">
+					<a href="#" class="footer__logo-link"><img src="pic/logo.png" alt="" class="footer__logo-img"><img src="pic/logo-mobile.png" alt="" class="footer__logo-img footer__logo-img--mobile"></a>
+					<p class="footer__logo-desc">Зарубежная недвижимость - особенная покупка, и даже процесс выбора должен доставлять удовольствие.</p>
+				</div>
+
+				<div class="footer__contacts">
+					<div class="footer__contacts-inner">
+						<span class="footer__contacts-txt">115230, Россия, Москва, Нагатинская 2/1</span>
+					</div>
+					<div class="footer__contacts-inner">
+						<a href="tel: 74955404225" class="footer__contacts-txt footer__contacts-txt--link">7 (495) 540-42-25</a>
+					</div>
+					<div class="footer__contacts-inner">
+						<a href="mailo: info@domire.ru" class="footer__contacts-txt footer__contacts-txt--link">info@domire.ru</a>
+					</div>
+
+					<div class="footer__contacts-map" id="map"></div>
+					<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsfBnSX729htgOdc59O3MfLROi_Lb0gOY&callback=initMap" async defer></script>
+				</div>
+
+			</div>
+			<div class="footer__col">
+				<ul class="footer__nav-list">
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Виды недвижимости</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Виллы</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Вторичное жилье</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Дома</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Земельные участки</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Квартиры и апартаменты</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Коммерческая недвижимость</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Недорогое</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Новостройки</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">От банков</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Таунхаусы и бунгало</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">У моря</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Элитное</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Недвижимость за рубежом</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Полезная информация</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Блог</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Новости</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__col">
+				<div class="footer__subscription">
+					<span class="footer__subscription-title">Подпишитесь на рассылку</span>
+
+					<div class="footer__subscription-inner">
+						<form action="" class="footer__subscription-form">
+							<div class="footer__subscription-row">
+								<input type="email" name="email" class="footer__subscription-input" placeholder="Ваш e-mail">
+							</div>
+							<div class="footer__subscription-row">
+								<button type="submit" class="footer__subscription-btn">Подписаться</button>
+							</div>
+						</form>
+					</div>
+
+					<div class="footer__subscription-compliance">
+						<span class="footer__subscription-txt">Нажимая кнопку «подписаться», я даю согласие на обработку своих <a href="#" class="footer__subscription-link">персональных данных.</a></span>
+					</div>
+
+					<div class="footer__subscription-info footer__info">
+						<span class="footer__info-desc">Получайте еженедельные статьи о покупке жилья за рубежом, и всем, что с этим связано.</span>
+
+						<span class="footer__info-title">Не более одного письма в неделю, без спама</span>
+						<ul class="footer__info-list">
+							<li class="footer__info-item">новые объекты;</li>
+							<li class="footer__info-item">процесс покупки и подводные камни;</li>
+							<li class="footer__info-item">информация о содержании жилья;</li>
+							<li class="footer__info-item">как получить ипотеку.</li>
+						</ul>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+		<div class="footer__bottom">
+			<div class="footer__right">
+				<span class="footer__copyright">2017-2018 (C) Domire.ru</span>
+			</div>
+		</div>
+
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

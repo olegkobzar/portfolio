@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Main</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<svg class="icon-decor icon-decor-1">
+		<use xlink:href="#decor"></use>
+	</svg>
+	<svg class="icon-decor icon-decor-2">
+		<use xlink:href="#decor"></use>
+	</svg>
+	<svg class="icon-decor icon-decor-3">
+		<use xlink:href="#decor"></use>
+	</svg>
+
+	<header class="header">
+	<div class="container">
+		<div class="wrap">
+			<div class="logo">
+				<a href="#">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="country">
+				<div class="country-inner select-country js-country-wrap">
+					<select name="country" class="js-select-country" id="">
+						<option value="USA" selected>USA</option>
+						<option value="CA">CA</option>
+						<option value="UK">UK</option>
+						<option value="AU">AU</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="search ">
+	<div class="container">
+		<div class="wrap">
+			
+				<span class="title">More than 15 000 products</span>
+			
+			<form action="">
+				<input type="text" placeholder="Put product name...">
+				<button class="btn">
+					<svg class="icon-search">
+						<use xlink:href="#search"></use>
+					</svg>
+				</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+	<div class="container">
+	<nav>
+		<div>
+			<a href="#">
+				<span>
+					<span class="icon">
+						<svg class="icon-motors">
+							<use xlink:href="#motors"></use>
+						</svg>
+					</span>
+					<span class="text">Motors</span>
+				</span>
+			</a>
+		</div>
+		<div>
+			<a href="#">
+				<span>
+					<span class="icon">
+						<svg class="icon-fashion">
+							<use xlink:href="#fashion"></use>
+						</svg>
+					</span>
+					<span class="text">Fashion</span>
+				</span>
+			</a>
+		</div>
+		<div>
+			<a href="#">
+				<span>
+					<span class="icon">
+						<svg class="icon-electronics">
+							<use xlink:href="#electronics"></use>
+						</svg>
+					</span>
+					<span class="text">Electronics</span>
+				</span>
+			</a>
+		</div>
+		<div>
+			<a href="#">
+				<span>
+					<span class="icon">
+						<svg class="icon-art">
+							<use xlink:href="#art"></use>
+						</svg>
+					</span>
+					<span class="text">Collectibles & Art</span>
+				</span>
+			</a>
+		</div>
+		<div>
+			<a href="#">
+				<span>
+					<span class="icon">
+						<svg class="icon-garden">
+							<use xlink:href="#garden"></use>
+						</svg>
+					</span>
+					<span class="text">Home & Garden</span>
+				</span>
+			</a>
+		</div>
+		<div>
+			<a href="#">
+				<span>
+					<span class="icon">
+						<svg class="icon-sporting-goods">
+							<use xlink:href="#sporting-goods"></use>
+						</svg>
+					</span>
+					<span class="text">Sporting Goods</span>
+				</span>
+			</a>
+		</div>
+		<div>
+			<a href="#">
+				<span>
+					<span class="icon">
+						<svg class="icon-hobbies">
+							<use xlink:href="#hobbies"></use>
+						</svg>
+					</span>
+					<span class="text">Toys & Hobbies</span>
+				</span>
+			</a>
+		</div>
+		<div>
+			<a href="#">
+				<span>
+					<span class="icon">
+						<svg class="icon-business">
+							<use xlink:href="#business"></use>
+						</svg>
+					</span>
+					<span class="text">Business & Industrial</span>
+				</span>
+			</a>
+		</div>
+		<div>
+			<a href="#">
+				<span>
+					<span class="icon">
+						<svg class="icon-music">
+							<use xlink:href="#music"></use>
+						</svg>
+					</span>
+					<span class="text">Music</span>
+				</span>
+			</a>
+		</div>
+	</nav>
+</div>
+
+</div>
+
+<footer>
+	<div class="container">
+		<div class="wrap">
+			<div class="navigate">
+				<ul>
+					<li><a href="#">Advertisement</a></li>
+					<li><a href="#">About Us</a></li>
+				</ul>
+				<ul>
+					<li><a href="#">What is Talkgold.com</a></li>
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Privacy policy</a></li>
+				</ul>
+			</div>
+			<div class="info">
+				<span>If you have a questionswrite us <a href="mailto:info@talkgold.com">info@talkgold.com</a></span>
+				<span>© 2018 Talkgold.com</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

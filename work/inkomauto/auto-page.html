@@ -1,0 +1,3166 @@
+<!doctype html>
+<html>
+<head>
+  
+    <meta charset="utf-8">
+    <title>стр авто 3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css?rel=16563">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+
+<div class="wrapper">
+
+  <header class="header ">
+  <div class="header__top">
+    <div class="container">
+      <a href="#" class="header__credit-btn">
+        <svg class="icon-percent3">
+          <use xlink:href="#percent"></use> 
+        </svg>
+        заявка на кредит от 3,9%
+      </a>
+      <div class="header__location">
+        <span class="header__location-label">Ваш город:</span>
+        <span class="header__location-drop-link">Москва</span>
+      </div>
+      <div class="header__contacts">
+        <div class="header__contacts-address">
+          <span class="header__contacts-text">
+            <svg class="icon-pin">
+              <use xlink:href="#pin"></use>
+            </svg>
+            <span>Рязанский проспект 7Д</span>
+          </span>
+          <a href="#" class="header__contacts-link">Схема проезда</a>
+        </div>        
+        <div class="header__contacts-phones">
+          <div class="header__contacts-phones-item">
+            <span class="header__contacts-text header__contacts-text--gray">
+              <svg class="icon-phone">
+                <use xlink:href="#phone"></use> 
+              </svg>
+              <span>Без выходных: с 9-00 до 21-00</span>
+            </span>
+            <a href="#" class="header__contacts-phone">+7 (495) 927 01 76</a>
+          </div>
+          <div class="header__contacts-phones-item">
+            <span class="header__contacts-text header__contacts-text--divider header__contacts-text--gray">Бесплатно по России</span>
+            <a href="#" class="header__contacts-phone">8 800 555 72 77</a>
+          </div>            
+        </div>        
+        <a href="#" class="header__contacts-link">Обратный звонок</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="header__center">
+      <a href="#" class="header__logo">
+        <img src="pic/logo.png" alt="">
+        <span class="header__logo-descr">
+          <span class="header__logo-descr-num">27</span>
+          <span class="header__logo-descr-text">лет успеха на рынке</span>
+        </span>
+      </a>
+      <nav class="header__nav js-nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-list-item"><a href="#" class="header__nav-link">АВТОМОБИЛИ</a></li>
+          <li class="header__nav-list-item"><a href="#" class="header__nav-link">СПЕЦПРЕДЛОЖЕНИЯ</a></li>
+          <li class="header__nav-list-item"><a href="#" class="header__nav-link">УТИЛИЗАЦИЯ</a></li>
+          <li class="header__nav-list-item"><a href="#" class="header__nav-link">С ПРОБЕГОМ</a></li>
+          <li class="header__nav-list-item"><a href="#" class="header__nav-link">TRADE-IN</a></li>
+          <li class="header__nav-list-item"><a href="#" class="header__nav-link">КРЕДИТ</a></li>
+          <li class="header__nav-list-item"><a href="#" class="header__nav-link">ОТЗЫВЫ</a></li>
+          <li class="header__nav-list-item"><a href="#" class="header__nav-link">О НАС</a></li>
+          <li class="header__nav-list-item"><a href="#" class="header__nav-link">КОНТАКТЫ</a></li>
+        </ul>
+      </nav>
+      <div class="header__nav-burger js-nav-burger"></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="h-catalog js-head-catalog">
+      <div class="h-catalog__btn js-head-catalog-btn">
+        <span class="h-catalog__btn-burger"></span>
+        Все автомобили
+        <div class="h-catalog__close"></div>
+      </div>      
+      <div class="h-catalog__drop">
+        <ul class="h-catalog__list"> 
+          <li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">Kia</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/nissan.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">Nissan</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/hyundai.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">Hyundai</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/reno.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">mazda</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/skoda.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">uaz</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/ford.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">peugeot</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/lada.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">suzuki</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">toyota</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">ssangyong</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">reno</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">ravon</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/ford.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">peugeot</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/lada.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">suzuki</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">toyota</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">ssangyong</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">reno</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">ravon</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">Kia</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">Kia</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">Kia</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">Kia</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">Kia</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">Kia</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">Kia</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">Kia</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">Kia</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">datsun</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">dongfeng</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">datsun</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">citroen</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/kia.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">changan</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/brilliance.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">Kia</span>
+  </a>
+</li>
+<li class="h-catalog__list-item">
+  <a href="#" class="h-catalog__link">
+    <img src="pic/model/audi.png" alt="" class="h-catalog__link-img">
+    <span class="h-catalog__link-text">Kia</span>
+  </a>
+</li>
+
+        </ul>
+        
+      </div>
+    </div> 
+  </div>
+</header>
+
+
+  <div class="container">
+    <div class="auto-top">
+  <div class="auto-top__row">
+    <div class="auto-top__imagebox">
+      <div class="auto-top__title"><span>Nissan X-Trail</span></div>
+      <div class="auto-top__subtitle">
+        <span class="auto-top__subtitle-text">от 1 183 000 <span class="rubl">p</span></span>
+        <div class="auto-top__subtitle-discount">
+          <svg class="icon-discount">
+            <use xlink:href="#discount"></use>
+          </svg>
+          <span>Нашли дешевле?</span>
+          <span>Снизим цену!</span>
+        </div>          
+      </div>
+      <div class="auto-top__image">
+        <img src="pic/car/car-50.png" alt="" class="js-auto-picture">
+      </div>
+      <div class="auto-top__color-slider js-auto-col-slider">
+        <div class="auto-top__color-slider-item">
+          <a href="#" class="auto-top__color-link" style="background-color: #737c69" data-picture="pic/car/car-50.png"></a>
+        </div> 
+        <div class="auto-top__color-slider-item">
+          <a href="#" class="auto-top__color-link auto-top__color-link--border" style="background-color: #f5f5f5" data-picture="pic/car/car-51.png"></a>
+        </div>
+        <div class="auto-top__color-slider-item">
+          <a href="#" class="auto-top__color-link" style="background-color: #020202" data-picture="pic/car/car-9.png"></a>
+        </div> 
+        <div class="auto-top__color-slider-item">
+          <a href="#" class="auto-top__color-link" style="background-color: #bababa" data-picture="pic/car/car-8.png"></a>
+        </div>
+        <div class="auto-top__color-slider-item">
+          <a href="#" class="auto-top__color-link" style="background-color: #5b7182" data-picture="pic/car/car-7.png"></a>
+        </div>
+        <div class="auto-top__color-slider-item">
+          <a href="#" class="auto-top__color-link" style="background-color: #6b6b6c" data-picture="pic/car/car-9.png"></a>
+        </div>
+        <div class="auto-top__color-slider-item">
+          <a href="#" class="auto-top__color-link" style="background-color: #bababa" data-picture="pic/car/car-8.png"></a>
+        </div>
+        <div class="auto-top__color-slider-item">
+          <a href="#" class="auto-top__color-link" style="background-color: #5b7182" data-picture="pic/car/car-50.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="auto-top__center">
+      <ul class="discount-item bestsellers-item discount-item--transparent">
+  <li class="discount-item__row">
+    <div class="discount-item__row-icon">
+      <svg class="icon-tire">
+        <use xlink:href="#tire"></use>
+      </svg>
+    </div>
+    <div class="discount-item__row-title">Зимняя резина</div>
+    <div class="discount-item__row-data">
+      <span>в подарок</span>
+      <div class="discount-item__info"
+           title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptatem!">?
+      </div>
+    </div>
+  </li>
+
+  <li class="discount-item__row">
+    <div class="discount-item__row-icon">
+      <svg class="icon-road">
+        <use xlink:href="#road"></use>
+      </svg>
+    </div>
+    <div class="discount-item__row-title">Дорога в автосалон</div>
+    <div class="discount-item__row-data">
+      <span>за наш счет</span>
+      <div class="discount-item__info"
+           title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptatem!">?
+      </div>
+    </div>
+  </li>
+
+  <li class="discount-item__row">
+    <div class="discount-item__row-icon">
+      
+      <svg class="icon-bag">
+        <use xlink:href="#bag2"></use>
+      </svg>
+       
+            
+    </div>
+    <div class="discount-item__row-title">Trade-In бонус</div>
+    <div class="discount-item__row-data">
+      <span>90 000 ₽</span>
+      <div class="discount-item__info"
+           title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptatem!">?
+      </div>
+    </div>
+  </li>
+</ul>
+
+      <div class="auto-top__actions">
+        <a href="#" class="auto-top__actions-link">
+          <svg class="icon-calc">
+            <use xlink:href="#calc"></use>
+          </svg>
+          Кредитный калькулятор
+        </a>
+        <a href="#" class="auto-top__actions-link">
+          <svg class="icon-config">
+            <use xlink:href="#config"></use>
+          </svg>
+          Конфигуратор модели
+        </a>
+        <a href="#" class="btn auto-top__actions-btn">Записаться на тест-драйв</a>
+      </div>
+    </div>
+    <div class="auto-top__right">
+      <div class="auto-top__dis-form">
+        <div class="auto-top__dis-form-top">
+          <div class="brand__discount">
+            <div class="brand__discount-item">
+              <div class="brand__benefit">
+                <svg class="brand__benefit-icon">
+                  <use xlink:href="#percent"></use>
+                </svg>
+                <div class="brand__benefit-title">
+                  <span>Скидки до </span>
+                  <span class="red"><strong>430 000 ₽</strong></span>
+                </div>
+                <div class="brand__benefit-title">
+                  <strong>до 15 октября</strong>
+                </div>
+              </div>
+            </div>
+            <div class="brand__discount-item">
+              <div class="brand-timer js-brand-timer" data-finish="2019/01/01 12:34:56">
+  <div class="brand-timer__item">
+    <div class="brand-timer__time days">
+      <div class="brand-timer__time-item"><span>0</span></div>
+      <div class="brand-timer__time-item"><span>0</span></div>
+    </div>
+    <div class="brand-timer__title">дней</div>
+  </div>
+
+  <div class="brand-timer__item">
+    <div class="brand-timer__time hours">
+      <div class="brand-timer__time-item"><span>0</span></div>
+      <div class="brand-timer__time-item"><span>0</span></div>
+    </div>
+    <div class="brand-timer__title">часов</div>
+  </div>
+
+  <div class="brand-timer__item">
+    <div class="brand-timer__time minutes">
+      <div class="brand-timer__time-item"><span>0</span></div>
+      <div class="brand-timer__time-item"><span>0</span></div>
+    </div>
+    <div class="brand-timer__title">минут</div>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+        <div class="auto-top__dis-form-main">
+          <div class="auto-top__dis-form-title">Индивидуальное предложение на Nissan X-Trail</div>
+          <div class="auto-top__dis-form-row">
+            <div class="auto-top__dis-form-input">
+              <input type="text" class="input" placeholder="имя">
+            </div>
+            <div class="auto-top__dis-form-input">
+              <input type="text" class="input" placeholder="телефон">
+            </div>            
+          </div>
+          <div class="auto-top__dis-form-btnbox">
+            <a href="#" class="btn">получить предложение</a>
+          </div> 
+          <div class="auto-top__dis-form-bottom">
+            <div class="auto-top__dis-form-bottom-col">
+              <div class="auto-top__dis-form-bottom-title">Кредит от 3,9%</div>
+              <div class="auto-top__dis-form-bottom-descr">Одобрили 392 191 заявок</div>
+            </div>
+            <div class="auto-top__dis-form-bottom-col">
+              <div class="auto-top__dis-form-bottom-title">Рассрочка от 0%</div>
+              <div class="auto-top__dis-form-bottom-descr">Ответ за 30 мин</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="auto-top__nav">
+    <ul class="auto-top__nav-list">
+      <li class="auto-top__nav-list-item"><a href="#">ОПИСАНИЕ МОДЕЛИ</a></li>
+      <li class="auto-top__nav-list-item"><a href="#">КОМПЛЕКТАЦИИ И ЦЕНЫ</a></li>
+      <li class="auto-top__nav-list-item"><a href="#">ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ</a></li>
+      <li class="auto-top__nav-list-item"><a href="#">СРАВНЕНИЕ КОМПЛЕКТАЦИЙ</a></li>
+      <li class="auto-top__nav-list-item"><a href="#">СПЕЦПРЕДЛОЖЕНИЕ</a></li>
+      <li class="auto-top__nav-list-item"><a href="#">ФОТО</a></li>
+    </ul>
+  </div>
+</div>
+
+
+    <div class="fit">
+  <div class="fit__header">Комплектации и цены</div>
+
+  <div class="fit__body">
+
+    <div class="fit__bonus">
+      <div class="fit__bonus-title">Выберите акции НА NISSAN X-TRAIL</div>
+      <div class="fit__bonus-holder">
+        <div class="fit__bonus-item">
+          <div class="bonus-item js-bonus-item checked">
+
+  
+
+  <div class="bonus-item__holder">
+    <div class="bonus-item__check">
+      <input type="checkbox" name="name">
+      <div class="bonus-item__icon"></div>
+
+      <div class="bonus-item__title">130 000 ₽</div>
+      <div class="bonus-item__txt">Спецпредложение от дилера</div>
+    </div>
+  </div>
+</div>
+
+        </div>
+        <div class="fit__bonus-item">
+          <div class="bonus-item js-bonus-item ">
+
+  
+
+  <div class="bonus-item__holder">
+    <div class="bonus-item__check">
+      <input type="checkbox" name="name">
+      <div class="bonus-item__icon"></div>
+
+      <div class="bonus-item__title">40 000 ₽</div>
+      <div class="bonus-item__txt">Скидка за наличные от автосалона</div>
+    </div>
+  </div>
+</div>
+
+        </div>
+        <div class="fit__bonus-item">
+          <div class="bonus-item js-bonus-item ">
+
+  
+  <div class="bonus-item__bonus">
+    <svg class="icon-gift">
+      <use xlink:href="#gift"></use>
+    </svg>
+    <svg class="icon-label">
+      <use xlink:href="#label"></use>
+    </svg>
+  </div>
+  
+
+  <div class="bonus-item__holder">
+    <div class="bonus-item__check">
+      <input type="checkbox" name="name">
+      <div class="bonus-item__icon"></div>
+
+      <div class="bonus-item__title">70 000 ₽</div>
+      <div class="bonus-item__txt">Скидка при оформлении авто в кредит от 3,9%</div>
+    </div>
+  </div>
+</div>
+
+        </div>
+        <div class="fit__bonus-item">
+          <div class="bonus-item js-bonus-item ">
+
+  
+
+  <div class="bonus-item__holder">
+    <div class="bonus-item__check">
+      <input type="checkbox" name="name">
+      <div class="bonus-item__icon"></div>
+
+      <div class="bonus-item__title">10% от цены</div>
+      <div class="bonus-item__txt">Госпрограмма -10% Первый автомобиль</div>
+    </div>
+  </div>
+</div>
+
+        </div>
+
+        <div class="fit__bonus-item">
+          <div class="bonus-item js-bonus-item ">
+
+  
+
+  <div class="bonus-item__holder">
+    <div class="bonus-item__check">
+      <input type="checkbox" name="name">
+      <div class="bonus-item__icon"></div>
+
+      <div class="bonus-item__title">100 000 ₽</div>
+      <div class="bonus-item__txt">Первоночальный взнос от 10% и выше</div>
+    </div>
+  </div>
+</div>
+
+        </div>
+        <div class="fit__bonus-item">
+          <div class="bonus-item js-bonus-item ">
+
+  
+
+  <div class="bonus-item__holder">
+    <div class="bonus-item__check">
+      <input type="checkbox" name="name">
+      <div class="bonus-item__icon"></div>
+
+      <div class="bonus-item__title">50 000 ₽</div>
+      <div class="bonus-item__txt">Выгода за утилизацию вашего авто</div>
+    </div>
+  </div>
+</div>
+
+        </div>
+        <div class="fit__bonus-item">
+          <div class="bonus-item js-bonus-item ">
+
+  
+
+  <div class="bonus-item__holder">
+    <div class="bonus-item__check">
+      <input type="checkbox" name="name">
+      <div class="bonus-item__icon"></div>
+
+      <div class="bonus-item__title">130 000 ₽</div>
+      <div class="bonus-item__txt">Выгода за Trade-in от автосалона</div>
+    </div>
+  </div>
+</div>
+
+        </div>
+        <div class="fit__bonus-item">
+          <div class="bonus-item js-bonus-item ">
+
+  
+
+  <div class="bonus-item__holder">
+    <div class="bonus-item__check">
+      <input type="checkbox" name="name">
+      <div class="bonus-item__icon"></div>
+
+      <div class="bonus-item__title">30 000 ₽</div>
+      <div class="bonus-item__txt">Скидка при прохождении ТО в нашем сервис-центре</div>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="fit__table">
+      <table class="fit-table js-fit-table">
+  <thead>
+  <tr>
+    <th colspan="3">Модификация</th>
+    <th>Цена</th>
+    <th>Цена с учетом акций</th>
+    <th>
+      <div class="button-print">
+  <svg class="button-print__icon">
+    <use xlink:href="#print"></use>
+  </svg>
+  <span class="button-print__txt">Распечатать</span>
+</div>
+
+    </th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <tr class="first">
+    <td><strong>2.0 MT</strong></td>
+    <td>Передний привод, 144 л.с.</td>
+    <td class="nowrap">
+      <label class="fit-table__check">
+        
+        <span class="fit-table__check-btn">
+          <a href="#" class="btn btn--border-blue">Сравнить</a>
+        </span>
+        
+        <input type="checkbox" name="name1" class="js-compare-trigger">
+        <span class="fit-table__check-icon"></span>
+      </label>
+      <div class="fit-table__select js-select-trigger">
+        <span>XE</span>
+      </div>
+    </td>
+    <td class="nowrap">1 583 000 руб</td>
+    <td class="blue"><strong>183 000 руб</strong></td>
+    <td>
+      <div class="fit-table__btns">
+        <div class="fit-table__btns-item">
+          <a href="#" class="btn btn--border-blue">Забронировать</a>
+        </div>
+        <div class="fit-table__btns-item">
+          <a href="#" class="btn btn--border-green">
+            <span>Рассчитать кредит</span>
+            <span class="default-color">от 23 500 руб/мес</span>
+          </a>
+        </div>
+      </div>
+    </td>
+  </tr>  
+  <tr class="drop">
+    <td colspan="6">
+      <div class="fit-table__drop">
+        <h1>НЕТ МАКЕТА С КОНТЕНТОМ ДРОПА</h1>
+      </div>      
+    </td>
+  </tr>
+
+  <tr class="last">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="nowrap">
+      <label class="fit-table__check">
+        <span class="fit-table__check-btn">
+          <a href="#" class="btn btn--border-blue">Сравнить</a>
+        </span>
+        
+        <input type="checkbox" name="name1" class="js-compare-trigger">
+        <span class="fit-table__check-icon"></span>
+      </label>
+      <div class="fit-table__select js-select-trigger">
+        <span>SE</span>
+      </div>
+    </td>
+    <td class="nowrap">1 790 000 руб</td>
+    <td class="blue"><strong>1 340 000 руб</strong></td>
+    <td>
+      <div class="fit-table__btns">
+        <div class="fit-table__btns-item">
+          <a href="#" class="btn btn--border-blue">Забронировать</a>
+        </div>
+        <div class="fit-table__btns-item">
+          <a href="#" class="btn btn--border-green">
+            <span>Рассчитать кредит</span>
+            <span class="default-color">от 23 500 руб/мес</span>
+          </a>
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr class="drop">
+    <td colspan="6">
+      <div class="fit-table__drop">
+        <h1>НЕТ МАКЕТА С КОНТЕНТОМ ДРОПА</h1>
+      </div>
+    </td>
+  </tr>
+  
+  <!--row block-->
+  <tr class="first">
+    <td><strong>2.0 CVT</strong></td>
+    <td>Передний привод, 144 л.с.</td>
+    <td class="nowrap">
+      <label class="fit-table__check">
+        
+        <span class="fit-table__check-btn">
+          <a href="#" class="btn btn--border-blue">Сравнить</a>
+        </span>
+
+        <input type="checkbox" name="name1" class="js-compare-trigger">
+        <span class="fit-table__check-icon"></span>
+      </label>
+      <div class="fit-table__select js-select-trigger">
+        <span>XE</span>
+      </div>
+    </td>
+    <td class="nowrap">1 583 000 руб</td>
+    <td class="blue"><strong>183 000 руб</strong></td>
+    <td>
+      <div class="fit-table__btns">
+        <div class="fit-table__btns-item">
+          <a href="#" class="btn btn--border-blue">Забронировать</a>
+        </div>
+        <div class="fit-table__btns-item">
+          <a href="#" class="btn btn--border-green">
+            <span>Рассчитать кредит</span>
+            <span class="default-color">от 23 500 руб/мес</span>
+          </a>
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr class="drop">
+    <td colspan="6">
+      <div class="fit-table__drop">
+        <h1>НЕТ МАКЕТА С КОНТЕНТОМ ДРОПА</h1>
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="nowrap">
+      <label class="fit-table__check">
+        <span class="fit-table__check-btn">
+          <a href="#" class="btn btn--border-blue">Сравнить</a>
+        </span>
+
+        <input type="checkbox" name="name1" class="js-compare-trigger">
+        <span class="fit-table__check-icon"></span>
+      </label>
+      <div class="fit-table__select js-select-trigger">
+        <span>SE</span>
+      </div>
+    </td>
+    <td class="nowrap">1 790 000 руб</td>
+    <td class="blue"><strong>1 340 000 руб</strong></td>
+    <td>
+      <div class="fit-table__btns">
+        <div class="fit-table__btns-item">
+          <a href="#" class="btn btn--border-blue">Забронировать</a>
+        </div>
+        <div class="fit-table__btns-item">
+          <a href="#" class="btn btn--border-green">
+            <span>Рассчитать кредит</span>
+            <span class="default-color">от 23 500 руб/мес</span>
+          </a>
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr class="drop">
+    <td colspan="6">
+      <div class="fit-table__drop">
+        <h1>НЕТ МАКЕТА С КОНТЕНТОМ ДРОПА</h1>
+      </div>
+    </td>
+  </tr>
+
+  <tr class="last">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class="nowrap">
+      <label class="fit-table__check">
+        <span class="fit-table__check-btn">
+          <a href="#" class="btn btn--border-blue">Сравнить</a>
+        </span>
+
+        <input type="checkbox" name="name1" class="js-compare-trigger">
+        <span class="fit-table__check-icon"></span>
+      </label>
+      <div class="fit-table__select js-select-trigger">
+        <span>SE</span>
+      </div>
+    </td>
+    <td class="nowrap">1 790 000 руб</td>
+    <td class="blue"><strong>1 340 000 руб</strong></td>
+    <td>
+      <div class="fit-table__btns">
+        <div class="fit-table__btns-item">
+          <a href="#" class="btn btn--border-blue">Забронировать</a>
+        </div>
+        <div class="fit-table__btns-item">
+          <a href="#" class="btn btn--border-green">
+            <span>Рассчитать кредит</span>
+            <span class="default-color">от 23 500 руб/мес</span>
+          </a>
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr class="drop">
+    <td colspan="6">
+      <div class="fit-table__drop">
+        <h1>НЕТ МАКЕТА С КОНТЕНТОМ ДРОПА</h1>
+      </div>
+    </td>
+  </tr>
+
+  </tbody>
+
+</table>
+
+    </div>
+
+  </div>
+</div>  
+
+
+    <div class="special-offer special-offer--mod">
+      <div class="special-offer__title">Распродажа по ценам 2017 года</div>
+
+      <div class="special-offer__slider js-special-offer-slider">
+        <div class="special-offer__slider-slide">
+          <div class="special-item special-item--auto">
+  <div class="special-item__rest ">1 авто осталось</div>
+
+  <div class="special-item__img" data-type="XE">
+    <img src="pic/car/car-7.png" alt="car">
+  </div>
+
+  
+  
+  
+  <div class="special-item__body">
+    <div class="special-item__body-left">
+      <div class="special-item__title">XE</div>
+
+      <div class="special-item__descr">Выгода до:</div>
+      <div class="special-item__price">505 000 ₽</div>
+     
+      <div class="special-item__btn">
+        <a href="#" class="btn btn--border-blue">Получить цену</a>
+      </div>
+    </div>
+    
+    <div class="special-item__body-right">
+      <ul class="special-item__list">
+        <li class="special-item__list-item">Кредит 9.9%</li>
+        <li class="special-item__list-item">Трейд-ин</li>
+        <li class="special-item__list-item">Рассрочка 0%</li>
+        <li class="special-item__list-item">Гарантия</li>
+      </ul>
+    </div>
+  </div>
+  
+  
+</div>
+
+        </div>
+        <div class="special-offer__slider-slide">
+          <div class="special-item special-item--auto">
+  <div class="special-item__rest ">1 авто осталось</div>
+
+  <div class="special-item__img" data-type="SE">
+    <img src="pic/car/car-8.png" alt="car">
+  </div>
+
+  
+  
+  
+  <div class="special-item__body">
+    <div class="special-item__body-left">
+      <div class="special-item__title">SE</div>
+
+      <div class="special-item__descr">Выгода до:</div>
+      <div class="special-item__price">505 000 ₽</div>
+     
+      <div class="special-item__btn">
+        <a href="#" class="btn btn--border-blue">Получить цену</a>
+      </div>
+    </div>
+    
+    <div class="special-item__body-right">
+      <ul class="special-item__list">
+        <li class="special-item__list-item">Кредит 9.9%</li>
+        <li class="special-item__list-item">Трейд-ин</li>
+        <li class="special-item__list-item">Рассрочка 0%</li>
+        <li class="special-item__list-item">Гарантия</li>
+      </ul>
+    </div>
+  </div>
+  
+  
+</div>
+
+        </div>
+        <div class="special-offer__slider-slide">
+          <div class="special-item special-item--auto">
+  <div class="special-item__rest orange">1 авто осталось</div>
+
+  <div class="special-item__img" data-type="XE+">
+    <img src="pic/car/car-9.png" alt="car">
+  </div>
+
+  
+  
+  
+  <div class="special-item__body">
+    <div class="special-item__body-left">
+      <div class="special-item__title">XE+</div>
+
+      <div class="special-item__descr">Выгода до:</div>
+      <div class="special-item__price">505 000 ₽</div>
+     
+      <div class="special-item__btn">
+        <a href="#" class="btn btn--border-blue">Получить цену</a>
+      </div>
+    </div>
+    
+    <div class="special-item__body-right">
+      <ul class="special-item__list">
+        <li class="special-item__list-item">Кредит 9.9%</li>
+        <li class="special-item__list-item">Трейд-ин</li>
+        <li class="special-item__list-item">Рассрочка 0%</li>
+        <li class="special-item__list-item">Гарантия</li>
+      </ul>
+    </div>
+  </div>
+  
+  
+</div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="descr-auto">
+	<div class="container">
+		<div class="descr-auto__wrap">
+			<span class="descr-auto__caption">Nissan X-Trail: выносливый внедорожник с полным приводом</span>
+			<p class="descr-auto__text">Надежный и практичный внедорожник, представленный в огромном разнообразии комплектаций. Модель можно приобрести с тремя вариантами двигателей: 1.6 литра <span class="descr-auto__all js-btn-descr"></span> <span class="descr-auto__text-all js-descr-all"> мощностью 130 л.с., 2 литра мощностью 144 л.с. и 2.5 литра мощностью 171 л.с. Коробка переключения передач – механическая или CVT-вариатор. Передняя подвеска – независимая, пружинная на стойках McPherson, задняя – независимая, многорычажная. На всех четырех колесах установлены дисковые тормоза с усилителем торможения Nissan Break Assist.</span></p>
+			<div class="descr-auto__bottom">
+				<a href="#" class="descr-auto__link">
+					<span class="descr-auto__link-icon">
+						<svg class="icon-brochure">
+							<use xlink:href="#brochure"></use>
+						</svg>
+					</span>
+					<span class="descr-auto__link-text">Скачать брошюру</span>
+				</a>
+				<a href="#" class="descr-auto__link">
+					<span class="descr-auto__link-icon">
+						<svg class="icon-catalog">
+							<use xlink:href="#catalog"></use>
+						</svg>
+					</span>
+					<span class="descr-auto__link-text">Скачать каталог аксессуаров</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+  <div class="gov-program gov-program--mod">
+	<div class="container">
+		<div class="gov-program__wrap" style="background-image: url(pic/bg/bg-7.jpg);">
+			<div class="gov-program__col gov-program__col--name">
+				<span class="gov-program__baner">Госпрограмма</span>
+				<span class="gov-program__caption">Семейный и первый автомобиль</span>
+			</div>
+			<div class="gov-program__col">
+				<ul class="gov-program__list">
+					<li class="gov-program__item">Скидка на автомобиль 10%</li>
+					<li class="gov-program__item">Без первого взноса</li>
+					<li class="gov-program__item">3,9% годовых</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+  <div class="compare compare--mod">
+	<div class="container">
+		<div class="compare__outer js-compare-wrap">
+			<div class="compare__top">
+				<span class="compare__caption">Сравнение комплектаций</span>
+				<div class="compare__print">
+					<a href="#" class="compare__print-link">
+						<span class="compare__print-icon">
+							<svg class="icon-print">
+								<use xlink:href="#print"></use>
+							</svg>
+						</span>
+						<span class="compare__print-text">Распечатать</span>
+					</a>
+				</div>
+			</div>
+			<div class="compare__wrap js-horisontal-scroll">
+				<div class="compare__wrap-scroll">
+					<div class="compare__head">
+						<div class="compare__head-left">
+							<span class="compare__title">Опции</span>
+							<span class="compare__open-all js-open-all">Раскрыть все</span>
+							<span class="compare__hide-all js-hide-all">Свернуть все</span>
+						</div>
+						<div class="compare__head-right">
+							<div class="compare__head-col">SE</div>
+							<div class="compare__head-col">XE</div>
+							<div class="compare__head-col">SE Яндекс.Авто</div>
+							<div class="compare__head-col">SE+</div>
+							<div class="compare__head-col">SE Top</div>
+							<div class="compare__head-col">SE+</div>
+							<div class="compare__head-col">SE Top</div>
+						</div>
+					</div>
+					<div class="compare__content">
+						<div class="compare__content-wrap js-wrap">
+							<div class="compare__content-head js-head-btn">
+								<span>Системы безопасности</span>
+							</div>
+							<div class="compare__content-inner js-inner-table">
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Система «ЭРА-ГЛОНАСС»	</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Антиблокировочная система ABS</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Система распределения тормозных усилий EBD</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Система помощи при экстренном торможении Nissan Brake Assist</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="compare__content-wrap js-wrap">
+							<div class="compare__content-head js-head-btn">
+								<span>Оборудование салона / Интерьер</span>
+							</div>
+							<div class="compare__content-inner js-inner-table">
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">5" Многофункциональный дисплей на приборной панели</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Сиденья Zero Gravity для переднего ряда</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Регулировка рулевой колонки по вылету и высоте</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Зеркала в солнцезащитных козырьках, для водителя и переднего пассажира с подсветкой</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="compare__content-wrap js-wrap">
+							<div class="compare__content-head js-head-btn">
+								<span>Прочее</span>
+							</div>
+							<div class="compare__content-inner js-inner-table">
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">5" Многофункциональный дисплей на приборной панели</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Сиденья Zero Gravity для переднего ряда</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Регулировка рулевой колонки по вылету и высоте</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Зеркала в солнцезащитных козырьках, для водителя и переднего пассажира с подсветкой</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="compare__content-wrap js-wrap">
+							<div class="compare__content-head js-head-btn">
+								<span>Дополнительные опции</span>
+							</div>
+							<div class="compare__content-inner js-inner-table">
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">5" Многофункциональный дисплей на приборной панели</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Сиденья Zero Gravity для переднего ряда</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Регулировка рулевой колонки по вылету и высоте</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Зеркала в солнцезащитных козырьках, для водителя и переднего пассажира с подсветкой</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height minus"><span>-</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+										<div class="compare__content-col js-height plus"><span>+</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+  <div class="photo">
+	<div class="container">
+		<div class="photo__head">
+			<span class="photo__caption">Фото автомобиля</span>
+			<div class="box-arrow photo__control">
+				<button class="slick-arrow slick-prev js-prev-photo"></button>
+				<button class="slick-arrow slick-next js-next-photo"></button>
+			</div>
+		</div>
+	</div>
+	<div class="photo__wrap js-slider-photo">
+		<div class="photo__item" style="background-image: url(pic/car-photo/car-photo-1.jpg);"></div>
+		<div class="photo__item" style="background-image: url(pic/car-photo/car-photo-2.jpg);"></div>
+		<div class="photo__item" style="background-image: url(pic/car-photo/car-photo-3.jpg);"></div>
+		<div class="photo__item" style="background-image: url(pic/car-photo/car-photo-4.jpg);"></div>
+	</div>
+</div>
+
+  <div class="compare compare--tech">
+	<div class="container">
+		<div class="compare__outer js-compare-wrap">
+			<div class="compare__top">
+				<span class="compare__caption">Технические характеристики</span>
+				<div class="compare__print">
+					<a href="#" class="compare__print-link">
+						<span class="compare__print-icon">
+							<svg class="icon-print">
+								<use xlink:href="#print"></use>
+							</svg>
+						</span>
+						<span class="compare__print-text">Распечатать</span>
+					</a>
+				</div>
+			</div>
+			<div class="compare__wrap js-horisontal-scroll">
+				<div class="compare__wrap-scroll">
+					<div class="compare__head">
+						<div class="compare__head-left">
+							<span class="compare__title">Характеристика</span>
+							<span class="compare__open-all js-open-all">Раскрыть все</span>
+							<span class="compare__hide-all js-hide-all">Свернуть все</span>
+						</div>
+						<div class="compare__head-right">
+							<div class="compare__head-col">SE</div>
+							<div class="compare__head-col">XE</div>
+							<div class="compare__head-col">SE Яндекс.Авто</div>
+							<div class="compare__head-col">SE+</div>
+							<div class="compare__head-col">SE Top</div>
+							<div class="compare__head-col">SE+</div>
+							<div class="compare__head-col">SE Top</div>
+						</div>
+					</div>
+					<div class="compare__content">
+						<div class="compare__content-wrap js-wrap">
+							<div class="compare__content-head js-head-btn">
+								<span>Двигатель и трансмиссия</span>
+							</div>
+							<div class="compare__content-inner js-inner-table">
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Тип двигателя	</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>Дизельный</span></div>
+										<div class="compare__content-col js-height"><span>Бензиновый</span></div>
+										<div class="compare__content-col js-height"><span>Дизельный</span></div>
+										<div class="compare__content-col js-height"><span>Бензиновый</span></div>
+										<div class="compare__content-col js-height"><span>Дизельный</span></div>
+										<div class="compare__content-col js-height"><span>Бензиновый</span></div>
+										<div class="compare__content-col js-height"><span>Бензиновый</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Рабочий объем</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>1598 см<sup>3</sup></span></div>
+										<div class="compare__content-col js-height"><span>1598 см<sup>3</sup></span></div>
+										<div class="compare__content-col js-height"><span>1598 см<sup>3</sup></span></div>
+										<div class="compare__content-col js-height"><span>1598 см<sup>3</sup></span></div>
+										<div class="compare__content-col js-height"><span>1598 см<sup>3</sup></span></div>
+										<div class="compare__content-col js-height"><span>1598 см<sup>3</sup></span></div>
+										<div class="compare__content-col js-height"><span>1598 см<sup>3</sup></span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Рекомендуемое топливо</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>ДТ</span></div>
+										<div class="compare__content-col js-height"><span>АИ-95</span></div>
+										<div class="compare__content-col js-height"><span>ДТ</span></div>
+										<div class="compare__content-col js-height"><span>АИ-95</span></div>
+										<div class="compare__content-col js-height"><span>АИ-95</span></div>
+										<div class="compare__content-col js-height"><span>ДТ</span></div>
+										<div class="compare__content-col js-height"><span>АИ-95</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Система помощи при экстренном торможении Nissan Brake Assist</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>6-ти ступенчатая механическая</span></div>
+										<div class="compare__content-col js-height"><span>6-ти ступенчатая механическая</span></div>
+										<div class="compare__content-col js-height"><span>6-ти ступенчатая механическая</span></div>
+										<div class="compare__content-col js-height"><span>6-ти ступенчатая механическая</span></div>
+										<div class="compare__content-col js-height"><span>6-ти ступенчатая механическая</span></div>
+										<div class="compare__content-col js-height"><span>6-ти ступенчатая механическая</span></div>
+										<div class="compare__content-col js-height"><span>6-ти ступенчатая механическая</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="compare__content-wrap js-wrap">
+							<div class="compare__content-head js-head-btn">
+								<span>Оборудование салона / Интерьер</span>
+							</div>
+							<div class="compare__content-inner js-inner-table">
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Тип двигателя	</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>Дизельный</span></div>
+										<div class="compare__content-col js-height"><span>Бензиновый</span></div>
+										<div class="compare__content-col js-height"><span>Дизельный</span></div>
+										<div class="compare__content-col js-height"><span>Бензиновый</span></div>
+										<div class="compare__content-col js-height"><span>Дизельный</span></div>
+										<div class="compare__content-col js-height"><span>Бензиновый</span></div>
+										<div class="compare__content-col js-height"><span>Бензиновый</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Рабочий объем</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>1598 см<sup>3</sup></span></div>
+										<div class="compare__content-col js-height"><span>1598 см<sup>3</sup></span></div>
+										<div class="compare__content-col js-height"><span>1598 см<sup>3</sup></span></div>
+										<div class="compare__content-col js-height"><span>1598 см<sup>3</sup></span></div>
+										<div class="compare__content-col js-height"><span>1598 см<sup>3</sup></span></div>
+										<div class="compare__content-col js-height"><span>1598 см<sup>3</sup></span></div>
+										<div class="compare__content-col js-height"><span>1598 см<sup>3</sup></span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Рекомендуемое топливо</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>ДТ</span></div>
+										<div class="compare__content-col js-height"><span>АИ-95</span></div>
+										<div class="compare__content-col js-height"><span>ДТ</span></div>
+										<div class="compare__content-col js-height"><span>АИ-95</span></div>
+										<div class="compare__content-col js-height"><span>АИ-95</span></div>
+										<div class="compare__content-col js-height"><span>ДТ</span></div>
+										<div class="compare__content-col js-height"><span>АИ-95</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Система помощи при экстренном торможении Nissan Brake Assist</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>6-ти ступенчатая механическая</span></div>
+										<div class="compare__content-col js-height"><span>6-ти ступенчатая механическая</span></div>
+										<div class="compare__content-col js-height"><span>6-ти ступенчатая механическая</span></div>
+										<div class="compare__content-col js-height"><span>6-ти ступенчатая механическая</span></div>
+										<div class="compare__content-col js-height"><span>6-ти ступенчатая механическая</span></div>
+										<div class="compare__content-col js-height"><span>6-ти ступенчатая механическая</span></div>
+										<div class="compare__content-col js-height"><span>6-ти ступенчатая механическая</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="compare__content-wrap js-wrap">
+							<div class="compare__content-head js-head-btn">
+								<span>Прочее</span>
+							</div>
+							<div class="compare__content-inner js-inner-table">
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">5" Многофункциональный дисплей на приборной панели</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>-</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Сиденья Zero Gravity для переднего ряда</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>-</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Регулировка рулевой колонки по вылету и высоте</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>-</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>-</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Зеркала в солнцезащитных козырьках, для водителя и переднего пассажира с подсветкой</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>-</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>-</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>-</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="compare__content-wrap js-wrap">
+							<div class="compare__content-head js-head-btn">
+								<span>Дополнительные опции</span>
+							</div>
+							<div class="compare__content-inner js-inner-table">
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">5" Многофункциональный дисплей на приборной панели</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>-</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Сиденья Zero Gravity для переднего ряда</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>-</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Регулировка рулевой колонки по вылету и высоте</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>-</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>-</span></div>
+									</div>
+								</div>
+								<div class="compare__content-row">
+									<span class="compare__content-left js-height">Зеркала в солнцезащитных козырьках, для водителя и переднего пассажира с подсветкой</span>
+									<div class="compare__content-right">
+										<div class="compare__content-col js-height"><span>-</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>-</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>-</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+										<div class="compare__content-col js-height"><span>+</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+  <div class="trade">
+	<div class="container">
+		<div class="trade__wrap">
+			<div class="trade__col trade__col--left js-height" style="background-image: url(pic/bg/bg-10.jpg);">
+				<span class="trade__caption">Выгодный обмен</span>
+				<div class="trade__time">
+					<span class="trade__time-icon">
+						<svg class="icon-clock">
+							<use xlink:href="#clock"></use>
+						</svg>
+					</span>
+					<span class="trade__time-text">Оцените свою машину за 1 минуту</span>
+				</div>
+			</div>
+			<div class="trade__col trade__col--right js-height">
+				<form action="">
+					<div class="trade__form">
+						<div class="trade__form-row">
+							<div class="trade__form-col">
+								<input type="text" name="" placeholder="марка и модель авто">
+							</div>
+							<div class="trade__form-col">
+								<input type="text" name="" placeholder="пробег, км">
+							</div>
+						</div>
+						<div class="trade__form-row">
+							<div class="js-select-wrap select-wrap trade__form-col">
+								<select name="year" class="js-select">
+									<option value="" disabled selected>год выпуска</option>
+									<option value="">2018</option>
+									<option value="">2017</option>
+									<option value="">2016</option>
+									<option value="">2015</option>
+									<option value="">2014</option>
+									<option value="">2013</option>
+									<option value="">2012</option>
+									<option value="">2011</option>
+									<option value="">2010</option>
+									<option value="">2009</option>
+								</select>
+							</div>
+							<div class="js-select-wrap select-wrap trade__form-col">
+								<select name="type" class="js-select">
+									<option value="" disabled selected>тип кузова</option>
+									<option value="">Седан</option>
+									<option value="">Универсал</option>
+									<option value="">Минивен</option>
+								</select>
+							</div>
+						</div>
+						<div class="trade__form-row">
+							<div class="trade__form-col">
+								<input type="text" name="" placeholder="двигатель КПП">
+							</div>
+							<div class="trade__form-col">
+								<input type="text" name="" placeholder="ваша цена">
+							</div>
+						</div>
+						<div class="trade__form-row">
+							<div class="trade__form-col">
+								<input type="text" name="" placeholder="имя">
+							</div>
+							<div class="trade__form-col">
+								<input type="text" name="" placeholder="телефон">
+							</div>
+						</div>
+						<div class="trade__btn-wrap">
+							<button class="btn" type="submit">узнать выгоду</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+  <div class="container">
+  <div class="bestsellers bestsellers--mod">
+    <div class="bestsellers__title">Автомобили за те же деньги</div>
+    <ul class="bestsellers__list js-bestsellers-slider">
+      <li class="bestsellers__list-item">
+        <a href="#" class="bestsellers-item">
+  <div class="bestsellers-item__labels">
+    
+    
+    <div class="bestsellers-item__labels-item blue">
+      <svg class="icon-label">
+        <use xlink:href="#label"></use>
+      </svg>
+      Хит
+    </div>
+    <div class="bestsellers-item__labels-item red">
+      <svg class="icon-label">
+        <use xlink:href="#label"></use>
+      </svg>
+      New
+    </div>
+    
+    
+    
+  </div>
+  <div class="bestsellers-item__imgbox">
+    <img src="pic/car/car-1.jpg" alt="">
+  </div>
+  <div class="bestsellers-item__model">HYUNDAI</div>
+  <div class="bestsellers-item__title">CRETA</div>
+  <div class="bestsellers-item__prices">
+    
+    <div class="bestsellers-item__prices-normal">от <b>699 900</b> руб</div>
+    
+    
+  </div>
+  
+</a>
+
+      </li>
+      <li class="bestsellers__list-item">
+        <a href="#" class="bestsellers-item">
+  <div class="bestsellers-item__labels">
+    
+    <div class="bestsellers-item__labels-item blue">
+      <svg class="icon-label">
+        <use xlink:href="#label"></use>
+      </svg>
+      Хит
+    </div>
+    
+    
+    
+    
+  </div>
+  <div class="bestsellers-item__imgbox">
+    <img src="pic/car/car-2.jpg" alt="">
+  </div>
+  <div class="bestsellers-item__model">RENAULT</div>
+  <div class="bestsellers-item__title">DUSTER</div>
+  <div class="bestsellers-item__prices">
+    
+    <div class="bestsellers-item__prices-normal">от <b>699 900</b> руб</div>
+    
+    
+  </div>
+  
+</a>
+
+      </li>
+      <li class="bestsellers__list-item">
+        <a href="#" class="bestsellers-item">
+  <div class="bestsellers-item__labels">
+    
+    
+    <div class="bestsellers-item__labels-item blue">
+      <svg class="icon-label">
+        <use xlink:href="#label"></use>
+      </svg>
+      Хит
+    </div>
+    <div class="bestsellers-item__labels-item red">
+      <svg class="icon-label">
+        <use xlink:href="#label"></use>
+      </svg>
+      New
+    </div>
+    
+    
+    
+  </div>
+  <div class="bestsellers-item__imgbox">
+    <img src="pic/car/car-3.jpg" alt="">
+  </div>
+  <div class="bestsellers-item__model">HYUNDAI</div>
+  <div class="bestsellers-item__title">SOLARIS NEW</div>
+  <div class="bestsellers-item__prices">
+    
+    
+    <div class="bestsellers-item__prices-old">599 900 руб</div>
+    <div class="bestsellers-item__prices-new">от <b class="green">499 900</b> руб</div>
+    
+  </div>
+  
+</a>
+
+      </li>
+      <li class="bestsellers__list-item">
+        <a href="#" class="bestsellers-item">
+  <div class="bestsellers-item__labels">
+    
+    
+    <div class="bestsellers-item__labels-item blue">
+      <svg class="icon-label">
+        <use xlink:href="#label"></use>
+      </svg>
+      Хит
+    </div>
+    <div class="bestsellers-item__labels-item red">
+      <svg class="icon-label">
+        <use xlink:href="#label"></use>
+      </svg>
+      New
+    </div>
+    
+    
+    
+  </div>
+  <div class="bestsellers-item__imgbox">
+    <img src="pic/car/car-4.jpg" alt="">
+  </div>
+  <div class="bestsellers-item__model">RENAULT</div>
+  <div class="bestsellers-item__title">LOGAN</div>
+  <div class="bestsellers-item__prices">
+    
+    <div class="bestsellers-item__prices-normal">от <b>699 900</b> руб</div>
+    
+    
+  </div>
+  
+</a>
+
+      </li>
+      <li class="bestsellers__list-item">
+        <a href="#" class="bestsellers-item">
+  <div class="bestsellers-item__labels">
+    
+    
+    
+    <div class="bestsellers-item__labels-item red">
+      <svg class="icon-label">
+        <use xlink:href="#label"></use>
+      </svg>
+      New
+    </div>
+    <div class="bestsellers-item__labels-item blue">
+      <svg class="icon-label">
+        <use xlink:href="#label"></use>
+      </svg>
+      New
+    </div>
+    <div class="bestsellers-item__labels-item green">
+      <svg class="icon-label">
+        <use xlink:href="#label"></use>
+      </svg>
+      %
+    </div>
+    
+    
+  </div>
+  <div class="bestsellers-item__imgbox">
+    <img src="pic/car/car-1.jpg" alt="">
+  </div>
+  <div class="bestsellers-item__model">HYUNDAI</div>
+  <div class="bestsellers-item__title">CRETA</div>
+  <div class="bestsellers-item__prices">
+    
+    <div class="bestsellers-item__prices-normal">от <b>699 900</b> руб</div>
+    
+    
+  </div>
+  
+</a>
+
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+  <div class="special">
+	<div class="container">
+		<div class="special__wrap" style="background-image: url(pic/bg/bg-6.jpg);">
+			<div class="special__box">
+				<img src="pic/car/car-8.png" class="special__car" alt="">
+				<img src="pic/book.png" class="special__book" alt="">
+			</div>
+			<div class="special__inner">
+				<span class="special__caption">Индивидуальное спецпредложение на новый Nissan X-Trail</span>
+				<span class="special__descr">Оставьте Ваш номер телефона прямо сейчас. Персональный менеджер перезвонит Вам в течение 5 минут и предоставит особые условия</span>
+				<form action="">
+					<div class="special__form">
+						<div class="special__form-col">
+							<input type="text" name="name" placeholder="имя">
+						</div>
+						<div class="special__form-col">
+							<input type="text" name="phone" placeholder="телефон">
+						</div>
+						<div class="special__form-col special__form-col--btn">
+							<button type="submit">получить</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+  <div class="cars">
+	<div class="container">
+		<div class="cars__outer">
+			<div class="cars__wrap js-custom-scroll">
+
+				<div class="cars__col">
+					<div class="cars__item">
+						<span class="cars__title">KIA</span>
+						<ul class="cars__list">
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd JD</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd SW</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato Classic</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato New</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Optima 2017</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Quoris</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Soul</a>
+							</li>
+						</ul>
+					</div>
+					<div class="cars__item">
+						<span class="cars__title">Hyundai</span>
+						<ul class="cars__list">
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd JD</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd SW</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato Classic</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato New</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Optima 2017</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Quoris</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Soul</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="cars__col">
+					<div class="cars__item">
+						<span class="cars__title">Skoda</span>
+						<ul class="cars__list">
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd JD</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd SW</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato Classic</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato New</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Optima 2017</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Quoris</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Soul</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd JD</a>
+							</li>
+						</ul>
+					</div>
+					<div class="cars__item">
+						<span class="cars__title">Renault</span>
+						<ul class="cars__list">
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd JD</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd SW</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato Classic</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato New</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="cars__col">
+					<div class="cars__item">
+						<span class="cars__title">Opel</span>
+						<ul class="cars__list">
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd JD</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd SW</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato Classic</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato New</a>
+							</li>
+						</ul>
+					</div>
+					<div class="cars__item">
+						<span class="cars__title">Nissan</span>
+						<ul class="cars__list">
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd JD</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd SW</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato Classic</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato New</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="cars__col">
+					<div class="cars__item">
+						<span class="cars__title">Chevrolet</span>
+						<ul class="cars__list">
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd JD</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd SW</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato Classic</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato New</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+						</ul>
+					</div>
+					<div class="cars__item">
+						<span class="cars__title">Ford</span>
+						<ul class="cars__list">
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd JD</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd SW</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato Classic</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato New</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="cars__col">
+					<div class="cars__item">
+						<span class="cars__title">Lada</span>
+						<ul class="cars__list">
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd JD</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd SW</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato Classic</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato New</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd JD</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd SW</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato Classic</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato New</a>
+							</li>
+						</ul>
+					</div>
+					<div class="cars__item">
+						<span class="cars__title">Ford</span>
+						<ul class="cars__list">
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd JD</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd SW</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato Classic</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato New</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="cars__col">
+					<div class="cars__item">
+						<span class="cars__title">Volkswagen</span>
+						<ul class="cars__list">
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd JD</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd SW</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato Classic</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato New</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+						</ul>
+					</div>
+					<div class="cars__item">
+						<span class="cars__title">Suzuki</span>
+						<ul class="cars__list">
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Rio X-Line</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Picanto</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Ceed</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd JD</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">cee'd SW</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato Classic</a>
+							</li>
+							<li class="cars__list-item">
+								<a href="#" class="cars__list-link">Cerato New</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__col footer__col--left">
+				<div class="footer__logo">
+					<img src="pic/logo.png" alt="">
+				</div>
+				<span class="footer__descr">Обращаем ваше внимание на то, что данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями ч. 2 ст. 437 Гражданского кодекса Российской Федерации. Для получения подробной информации о стоимости автомобилей, пожалуйста, обращайтесь к менеджерам автосалона.</span>
+				<span class="footer__copyright">© 2018 Инком-Авто</span>
+			</div>
+			<div class="footer__col footer__col--nav">
+				<ul class="footer__nav">
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Автомобили</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Спецпредложения</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">С пробегом</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">TRADE-IN</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Кредит</a>
+					</li>
+				</ul>
+				<ul class="footer__nav">
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Отзывы</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">О нас</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Контакты</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__col footer__col--right">
+				<div class="footer__row">
+					<div class="footer__row-col">
+						<div class="footer__title-wrap">
+							<span class="footer__icon">
+								<svg class="icon-phone">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="footer__title">Без выходных: с 9-00 до 21-00</span>
+						</div>
+						<div class="footer__phone">
+							<a href="tel:+74959270176" class="footer__phone-link">+7 (495) 927 01 76</a>
+						</div>
+						<div class="footer__link-wrap">
+							<a href="#" class="footer__link">Обратный звонок</a>
+						</div>
+					</div>
+					<div class="footer__row-col">
+						<span class="footer__title">Бесплатно по России</span>
+						<div class="footer__phone">
+							<a href="tel:88005557277" class="footer__phone-link">8 800 555 72 77</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer__row">
+					<div class="footer__row-col">
+						<div class="footer__title-wrap">
+							<span class="footer__icon">
+								<svg class="icon-pin">
+									<use xlink:href="#pin"></use>
+								</svg>
+							</span>
+							<span class="footer__title">Рязанский проспект 7Д</span>
+						</div>
+						<div class="footer__link-wrap">
+							<a href="#" class="footer__link">Схема проезда</a>
+						</div>
+					</div>
+					<div class="footer__row-col">
+						<span class="footer__title footer__title--bold">Часы работы:</span>
+						<span class="footer__time-work">с 9:00 до 21:00, без выходных</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div class="popup popup-cb" id="popup-cb">
+
+  <div class="popup-cb__icon">
+    <svg>
+      <use xlink:href="#phone"></use>
+    </svg>
+  </div>
+
+  <form action="" class="popup__form">
+    <div class="popup__title popup__form-title">Обратный звонок</div>
+
+    <div class="popup__form-row">
+      <div class="popup__form-col">
+        <input name="input" type="text" placeholder="имя">
+      </div>
+      <div class="popup__form-col">
+        <input name="input" type="text" placeholder="телефон">
+      </div>
+    </div>
+
+    <div class="popup__form-submit">
+
+      <button type="submit" class="btn btn--default btn--bg"><span>перезвоните мне</span></button>
+    </div>
+
+  </form>
+</div>
+
+<div class="popup popup-test" id="popup-test">
+
+  <div class="popup-test__header"></div>
+
+  <div class="popup-test__body">
+    <div class="popup__title popup__form-title">Запись на тест-драйв</div>
+
+    <form action="" class="popup__form">
+      <div class="popup__form-row">
+        <div class="popup__form-col">
+          <input name="input" type="text" placeholder="имя">
+        </div>
+        <div class="popup__form-col">
+          <input name="input" type="text" placeholder="телефон">
+        </div>
+      </div>
+
+      <div class="popup__form-submit">
+        <button type="submit" class="btn btn--default btn--bg"><span>Записаться</span></button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="popup popup-credit" id="popup-credit">
+
+  <div class="popup__img">
+    <img src="pic/car/car-8.png" alt="car">
+  </div>
+
+  <div class="popup-test__body">
+    <div class="popup__name">Nissan X-Trail</div>
+    <div class="popup__type">Стандарт Плюс 2.5 (2018)</div>
+    <div class="popup__price">1 183 000 ₽</div>
+
+    <div class="popup__title popup-credit__title">Рассчитать кредит</div>
+    <form action="" class="popup__form">
+      <div class="popup__form-row">
+        <div class="popup__form-col">
+          <input name="input" type="text" placeholder="имя">
+        </div>
+        <div class="popup__form-col">
+          <input name="input" type="text" placeholder="телефон">
+        </div>
+      </div>
+
+      <div class="popup__form-submit">
+        <button type="submit" class="btn btn--default btn--bg"><span>отправить заявку</span></button>
+      </div>
+    </form>
+
+    <div class="popup-credit__time">
+      <div class="popup-credit__time-icon">
+        <svg>
+          <use xlink:href="#clock"></use>
+        </svg>
+      </div>
+      <div class="popup-credit__time-txt">Одобрение за 30 минут</div>
+    </div>
+  </div>
+
+  <div class="popup-credit__footer">
+    <div class="expres-credit__stat">
+      <div class="expres-credit__stat-item">
+        <span class="expres-credit__stat-number">390 458</span>
+        <span class="expres-credit__stat-text">заявок уже одобрено</span>
+      </div>
+      <div class="expres-credit__stat-item">
+        <span class="expres-credit__stat-number">3,9%</span>
+        <span class="expres-credit__stat-text">минимальная ставка кредитования</span>
+      </div>
+      <div class="expres-credit__stat-item">
+        <span class="expres-credit__stat-number">50 000 P</span>
+        <span class="expres-credit__stat-text">скидка при наличии первоначального взноса</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="popup popup-b" id="popup-b">
+
+  <div class="popup__img">
+    <img src="pic/car/car-8.png" alt="car">
+  </div>
+
+  <div class="popup-test__body">
+    <div class="popup__name">Nissan X-Trail</div>
+    <div class="popup__type">Стандарт Плюс 2.5 (2018)</div>
+    <div class="popup__price">1 183 000 ₽</div>
+
+    <div class="popup__title popup-b__title">Забронировать</div>
+    <form action="" class="popup__form">
+      <div class="popup__form-row">
+        <div class="popup__form-col">
+          <input name="input" type="text" placeholder="имя">
+        </div>
+        <div class="popup__form-col">
+          <input name="input" type="text" placeholder="телефон">
+        </div>
+      </div>
+
+      <div class="popup__form-submit">
+        <button type="submit" class="btn btn--default btn--bg"><span>Забронировать</span></button>
+      </div>
+    </form>
+
+    <div class="popup-b__timer">
+      <div class="brand__discount">
+        <div class="brand__discount-item">
+          <div class="brand__benefit">
+            <svg class="brand__benefit-icon">
+              <use xlink:href="#percent"></use>
+            </svg>
+            <div class="brand__benefit-title">
+              <span>Скидки до </span>
+              <span class="red"><strong>430 000 ₽</strong></span>
+            </div>
+            <div class="brand__benefit-title">
+              <strong>до 15 октября</strong>
+            </div>
+          </div>
+        </div>
+        <div class="brand__discount-item">
+          <div class="brand-timer js-brand-timer" data-finish="2019/01/01 12:34:56">
+            <div class="brand-timer__item">
+              <div class="brand-timer__time days">
+                <div class="brand-timer__time-item"><span>1</span></div>
+                <div class="brand-timer__time-item"><span>9</span></div>
+              </div>
+              <div class="brand-timer__title">дней</div>
+            </div>
+
+            <div class="brand-timer__item">
+              <div class="brand-timer__time hours">
+                <div class="brand-timer__time-item"><span>0</span></div>
+                <div class="brand-timer__time-item"><span>1</span></div>
+              </div>
+              <div class="brand-timer__title">часов</div>
+            </div>
+
+            <div class="brand-timer__item">
+              <div class="brand-timer__time minutes">
+                <div class="brand-timer__time-item"><span>4</span></div>
+                <div class="brand-timer__time-item"><span>5</span></div>
+              </div>
+              <div class="brand-timer__title">минут</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-b__footer">
+    <div class="popup-b__footer-holder">
+      <div class="popup-b__footer-title">Комплект зимней резины в подарок</div>
+      <div class="popup-b__footer-sub">При покупке нового автомобиля в нашем автослаоне</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="popup popup-calc" id="popup-calc">
+  <div class="popup-calc__header">
+    <div class="credit-calc__top">
+      <div class="credit-calc__top-title">Кредитный калькулятор</div>
+      <div class="credit-calc__top-cell">
+        <div class="ccwrap">
+          <svg class="icon-calc-bag">
+            <use xlink:href="#calc-bag"></use>
+          </svg>
+          Возможно досрочное погашение кредита без штрафа
+        </div>
+      </div>
+      <div class="credit-calc__top-cell">
+        <div class="ccwrap">
+          <svg class="icon-car-magic">
+            <use xlink:href="#car-magic"></use>
+          </svg>
+          Возможность сдать свой авто в качестве первоначального взноса
+        </div>
+      </div>
+      <div class="credit-calc__top-cell">
+        <div class="ccwrap">
+          <svg class="icon-docs">
+            <use xlink:href="#docs"></use>
+          </svg>
+          Необходимые документы: паспорт, водительские права
+        </div>        
+      </div>
+    </div>
+  </div>
+  <div class="popup-calc__body">
+    <div class="popup-calc__body-left">
+      <div class="popup-calc__car">
+        <div class="popup-calc__car-img">
+          <img src="pic/car/car-7.png" alt="car">
+        </div>
+        <div class="popup-calc__car-select">
+          <div class="popup-calc__car-title">Комплектация</div>
+          <div class="js-select-wrap select-wrap">
+            <select name="year" class="js-select">
+              <option value="">Стандарт 2.0 (2018) | 6 AT, 150 л.с. (1521000 руб.)</option>
+              <option value="">Стандарт 2.0 (2018) | 6 AT, 150 л.с. (1521000 руб.)</option>
+              <option value="">Стандарт 2.0 (2018) | 6 AT, 150 л.с. (1521000 руб.)</option>
+              <option value="">Стандарт 2.0 (2018) | 6 AT, 150 л.с. (1521000 руб.)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="popup-calc__slider">
+        <div class="credit-calc__slider">
+          <div class="credit-calc__slider-title">Первоначальный взнос <b>10%</b></div>
+          <div class="credit-calc__slider-main js-credit-slider" data-min="0" data-max="60"></div>
+          <div class="credit-calc__slider-ruler">
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text credit-calc__slider-ruler-text--left">0%</div>
+              <div class="credit-calc__slider-ruler-text">10%</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">20%</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">30%</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">40%</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">50%</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">60%</div>
+            </div>
+          </div>
+        </div>
+        <div class="credit-calc__slider">
+          <div class="credit-calc__slider-title">Срок кредита <b>5 лет</b></div>
+          <div class="credit-calc__slider-main js-credit-slider" data-min="1" data-max="7"></div>
+          <div class="credit-calc__slider-ruler">
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text credit-calc__slider-ruler-text--left">1</div>
+              <div class="credit-calc__slider-ruler-text">2</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">3</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">4</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">5</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">6</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">7</div>
+            </div>
+          </div>
+        </div>
+        <div class="credit-calc__slider">
+          <div class="credit-calc__slider-title inf">Программа “Старт” <b>25%</b>
+            <div class="discount-item__info"
+                 title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptatem!">?
+            </div>
+          </div>
+          <div class="credit-calc__slider-main js-credit-slider" data-min="1" data-max="7"></div>
+          <div class="credit-calc__slider-ruler">
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text credit-calc__slider-ruler-text--left">1</div>
+              <div class="credit-calc__slider-ruler-text">0</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">10</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">20</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">30</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">50</div>
+            </div>
+            <div class="credit-calc__slider-ruler-cell">
+              <div class="credit-calc__slider-ruler-text">60</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-calc__body-right">
+      <div class="popup-calc__info">
+        <div class="popup-calc__info-title">Ежемесячный платеж</div>
+        <div class="popup-calc__info-val">29 616.86 ₽</div>
+      </div>
+      <div class="popup-calc__info">
+        <div class="popup-calc__info-title">Сумма кредита</div>
+        <div class="popup-calc__info-val">919 200.00 ₽</div>
+      </div>
+      <div class="popup-calc__info">
+        <div class="popup-calc__info-title">Процентная ставка</div>
+        <div class="popup-calc__info-val">9,9%</div>
+      </div>
+      <form action="#" class="popup-calc__form">
+        <div class="popup-calc__form-row">
+          <input class="input--white" name="input" type="text" placeholder="ваше имя">
+        </div>
+        <div class="popup-calc__form-row">
+          <input class="input--white" name="input" type="text" placeholder="номер телефона">
+        </div>
+        <div class="popup-calc__form-submit">
+          <button class="btn btn--default">отправить заявку на кредит</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup-config" id="popup-config">
+  <div class="config js-config">
+  <div class="config__header">Конфигуратор Nissan X-trail</div>
+  <ol class="config__caption">
+    <li class="config__caption-item">КОМПЛЕКТАЦИИ</li>
+    <li class="config__caption-item">ДВИГАТЕЛЬ</li>
+    <li class="config__caption-item">ЦВЕТ</li>
+    <li class="config__caption-item">ДОП. ОПЦИИ</li>
+    <li class="config__caption-item">АКЦИЯ</li>
+    <li class="config__caption-item">ВАШ АВТО</li>
+  </ol>
+
+  <div class="config__content">
+    <div class="config__content-left">
+      <div class="config__title">Выберите комплектацию</div>
+      <ul class="config__radio">
+        <li class="config__radio-item">
+          <label class="radio radio--sm">
+            <input type="radio" checked name="radio_11">
+            <span>Active </span>
+          </label>
+        </li>
+        <li class="config__radio-item">
+          <label class="radio radio--sm">
+            <input type="radio" name="radio_11">
+            <span>Active  Plus</span>
+          </label>
+        </li>
+        <li class="config__radio-item">
+          <label class="radio radio--sm">
+            <input type="radio" name="radio_11">
+            <span>Comfort</span>
+          </label>
+        </li>
+        <li class="config__radio-item">
+          <label class="radio radio--sm">
+            <input type="radio" name="radio_11">
+            <span>Elegance</span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="config__btn js-next">
+        <button class="btn">ДАлее</button>
+      </div>
+    </div>
+    <div class="config__content-right js-custom-scroll">
+      <div class="config__content-scroll">
+        <div class="config-static">
+          <h2>Active</h2>
+          <h3>ИНТЕРЬЕР</h3>
+          <p>Складывающаяся по частям спинка заднего сиденья 60:40 </p>
+          <p>Зеркальца в солнцезащитных козырьках</p>
+          <p>Карман в спинке кресла переднего пассажира </p>
+          <p>Карманы в задних дверях </p>
+          <p>Две розетки 12В на центральной консоли</p>
+          <h3>ЭКСТЕРЬЕР</h3>
+          <p>Складывающаяся по частям спинка заднего сиденья 60:40 </p>
+          <p>Зеркальца в солнцезащитных козырьках</p>
+          <p>Карман в спинке кресла переднего пассажира </p>
+          <p>Складывающаяся по частям спинка заднего сиденья 60:40 </p>
+          <p>Зеркальца в солнцезащитных козырьках</p>
+          <p>Карман в спинке кресла переднего пассажира </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="config__content">
+    <div class="config__content-left">
+      <div class="config__title">Выберите двигатель</div>
+      <ul class="config__radio">
+        <li class="config__radio-item">
+          <label class="radio radio--sm">
+            <input type="radio" checked name="radio_12">
+            <span>100 Л.С. 1.4 MT</span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="config__btn js-next">
+        <button class="btn">ДАлее</button>
+      </div>
+    </div>
+    <div class="config__content-right js-custom-scroll">
+      <div class="config__content-scroll">
+        <div class="config-static">
+          <h2>1.4 МТ</h2>
+          <h3>-</h3>
+          <p>Мощность 100 л.с.</p>
+          <p><strong>ЦЕНА: 514 000 РУБ</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="config__content">
+    <div class="config__content-left">
+      <div class="config__title">Выберите цвет</div>
+      <div class="config__color">
+        <div class="auto-top__color-slider ">
+          <div class="auto-top__color-slider-item">
+            <a href="#" class="auto-top__color-link" style="background-color: #737c69"
+               data-picture="pic/car/car-50.png"></a>
+          </div>
+          <div class="auto-top__color-slider-item">
+            <a href="#" class="auto-top__color-link auto-top__color-link--border" style="background-color: #f5f5f5"
+               data-picture="pic/car/car-51.png"></a>
+          </div>
+          <div class="auto-top__color-slider-item">
+            <a href="#" class="auto-top__color-link" style="background-color: #020202"
+               data-picture="pic/car/car-9.png"></a>
+          </div>
+          <div class="auto-top__color-slider-item active">
+            <a href="#" class="auto-top__color-link" style="background-color: #bababa"
+               data-picture="pic/car/car-8.png"></a>
+          </div>
+          <div class="auto-top__color-slider-item">
+            <a href="#" class="auto-top__color-link" style="background-color: #5b7182"
+               data-picture="pic/car/car-7.png"></a>
+          </div>
+          <div class="auto-top__color-slider-item">
+            <a href="#" class="auto-top__color-link" style="background-color: #6b6b6c"
+               data-picture="pic/car/car-9.png"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="config__btn js-next">
+        <button class="btn">ДАлее</button>
+      </div>
+    </div>
+    <div class="config__content-right js-custom-scroll">
+      <div class="config__content-scroll">
+
+        <div class="config__img">
+          <img src="pic/car/car-9.png" alt="car">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="config__content">
+    <div class="config__content-left">
+      <div class="config__title">Выберите опции</div>
+      <ul class="config__radio">
+        <li class="config__radio-item">
+          <label class="checkbox checkbox--dark">
+            <input type="checkbox" checked="" name="check11">
+            <span>Пакет Мультимедиа</span>
+          </label>
+        </li>
+        <li class="config__radio-item">
+          <label class="checkbox checkbox--dark">
+            <input type="checkbox" name="check11">
+            <span>Пакет Комфорт</span>
+          </label>
+        </li>
+        <li class="config__radio-item">
+          <label class="checkbox checkbox--dark">
+            <input type="checkbox" name="check11">
+            <span>Пакет Освещение</span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="config__btn js-next">
+        <button class="btn">ДАлее</button>
+      </div>
+    </div>
+    <div class="config__content-right js-custom-scroll">
+      <div class="config__content-scroll">
+        <div class="config-static">
+          <h2>Вы выбрали</h2>
+          <h3>
+            <span>Пакет Мультимедиа </span>
+            <span class="c-blue"><span class="nowrap">+ 55 000 руб</span></span>
+          </h3>
+
+          <ul>
+            <li>Мультимедийная система</li>
+            <li>Камера заднего вида</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="config__content">
+    <div class="config__content-left">
+      <div class="config__title">Выберите акции</div>
+
+      <div class="config__content-title">Подарки и предложения</div>
+      <ul class="config__radio">
+        <li class="config__radio-item">
+          <label class="radio radio--sm">
+            <input type="radio" checked name="radio_16">
+            <span>Гироскутер</span>
+          </label>
+        </li>
+        <li class="config__radio-item">
+          <label class="radio radio--sm">
+            <input type="radio" name="radio_16">
+            <span>Комплект зимней резины</span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="config__content-title">выгода при покупке</div>
+      <ul class="config__radio">
+        <li class="config__radio-item">
+          <label class="checkbox checkbox--dark">
+            <input type="checkbox" checked="" name="check16">
+            <span>Выгода за покупку в кредит</span>
+          </label>
+        </li>
+        <li class="config__radio-item">
+          <label class="checkbox checkbox--dark">
+            <input type="checkbox" name="check11">
+            <span>Выгода за покупку в кредит с первоначальным взносом</span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="config__btn js-next">
+        <button class="btn">ДАлее</button>
+      </div>
+    </div>
+    <div class="config__content-right js-custom-scroll">
+      <div class="config__content-scroll">
+        <div class="config-static">
+          <h2>Вы выбрали</h2>
+          <h3>Подарок</h3>
+
+          <ul>
+            <li>Гироскутер</li>
+          </ul>
+
+          <h3>выгода за покупку в кредит</h3>
+          <p>Скидка 50 000 руб</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="config__content">
+    <div class="config__content-left config__last">
+
+      <div class="config__last-img">
+        <img src="pic/car/car-8.png" alt="car">
+      </div>
+
+      <div class="config__title">Зарезервируйте свой автомобиль</div>
+
+      <form action="#" class="config__form">
+
+        <div class="config__form-row">
+          <input name="input" type="text" placeholder="имя">
+        </div>
+        <div class="config__form-row">
+          <input name="input" type="text" placeholder="телефон">
+        </div>
+        <div class="config__form-submit">
+          <div class="config__btn config__btn-last">
+            <button class="btn">зарезервировать</button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+    <div class="config__content-right js-custom-scroll">
+      <div class="config__content-scroll">
+        <div class="config__cost">Итоговая цена: <span class="nowrap">1 466 000&nbsp;₽</span></div>
+        <table class="config__table">
+          <tbody>
+          <tr>
+            <td>комплектация</td>
+            <td>Стандарт</td>
+          </tr>
+          <tr>
+            <td>ДВИГАТЕЛЬ И КПП</td>
+            <td>2.0 150 Л.С. 6AT 2WD</td>
+          </tr>
+          <tr>
+            <td>цвет</td>
+            <td>
+              <span>Серебристый металлик &nbsp;</span>
+              <a href="#" class="auto-top__color-link" style="background-color: #bababa"
+                 data-picture="pic/car/car-8.png"></a>
+            </td>
+          </tr>
+          <tr>
+            <td>дополнительные опции</td>
+            <td>
+              <div>Пакет Мультимедиа <span class="nowrap">+55 000 руб</span></div>
+              <div>Пакет Освещение <span class="nowrap">+30 000 руб</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Акции</td>
+            <td>
+              <div>Подарок Гироскутер</div>
+              <div>Выгода за кредит - <span class="nowrap">50 000 руб</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Акции</td>
+            <td>
+              <div>Подарок Гироскутер</div>
+              <div>Подарок Гироскутер</div>
+              <div>Подарок Гироскутер</div>
+              <div>Выгода за кредит - <span class="nowrap">50 000 руб</span></div>
+              <div>Выгода за кредит - <span class="nowrap">50 000 руб</span></div>
+              <div>Выгода за кредит - <span class="nowrap">50 000 руб</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td>Акции</td>
+            <td>
+              <div>Подарок Гироскутер</div>
+              <div>Выгода за кредит - 50 000 руб</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Акции</td>
+            <td>
+              <div>Подарок Гироскутер</div>
+              <div>Выгода за кредит - <span class="nowrap">50 000 руб</span></div>
+              <div>Выгода за кредит - <span class="nowrap">50 000 руб</span></div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<script src="js/vendor.js?rel=16563"></script>
+
+
+<script src="pages-list.js"></script>
+
+
+<script src="js/main.js?rel=16563"></script>
+
+
+</body>
+</html>
+

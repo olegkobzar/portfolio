@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ошибка 404</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<header class="header header--not-found">
+	
+	<div class="container">
+		<div class="header-wrap">
+
+			<div class="circle circle-1"></div>
+			<div class="circle circle-6"></div>
+			<div class="circle circle-2"></div>
+			<div class="circle circle-4"></div>
+			
+			<div class="logo">
+				<a href="#" class="logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<form action="" class="search-form">
+				<div class="search-input-wrap">
+					<input type="text" placeholder="Введите название товара">
+				</div>
+				<button class="btn search-btn">
+					<svg class="icon-search">
+						<use xlink:href="#search"></use>
+					</svg>
+				</button>
+			</form>
+		</div>
+	</div>
+</header>
+
+
+	<div class="not-found">
+	<div class="container">
+		<div class="not-found-wrap">
+			<span class="not-found-icon">
+				<img src="pic/404.svg" alt="">
+			</span>
+			<span class="not-found-text">Ничего не нашли((</span>
+			<a href="#" class="btn btn-turquoise">На главную</a>
+		</div>
+	</div>
+
+	<canvas id="c7"></canvas>
+</div>
+
+</div>
+
+<footer class="footer" style="background-image: url(pic/bg/bg-2.png);">
+	<div class="container">
+		<div class="footer-top">
+			<span class="footer-logo">
+				<a href="#">
+					<svg class="icon-logo-footer">
+						<use xlink:href="#logo-2"></use>
+					</svg>
+				</a>
+			</span>
+			<div>
+				<span>Покупателям</span>
+				<ul>
+					<li>
+						<a href="#">Как сделать заказ</a>
+					</li>
+					<li>
+						<a href="#">Доставка и возврат</a>
+					</li>
+					<li>
+						<a href="#">Добавить магазин</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<span>О компании</span>
+				<ul>
+					<li>
+						<a href="#">Что такое ЯВитрина</a>
+					</li>
+					<li>
+						<a href="#">Реклама на сайте</a>
+					</li>
+					<li>
+						<a href="#">Сотрудничество</a>
+					</li>
+				</ul>
+			</div>
+			<div class="hide">
+				<span>Партнёрам</span>
+				<ul>
+					<li>
+						<a href="#">Реклама на сайте</a>
+					</li>
+					<li>
+						<a href="#">Сотрудничество</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="footer-info">
+				<span class="footer-email">
+					По вопросам сайта пишите на 
+					<a href="mailto:info@yavitrina.ru">info@yavitrina.ru</a>
+				</span>
+				<span>© 2018 Yavitrina.ru</span>
+			</div>
+			<div class="footer-social">
+				<div>
+					<a href="#">
+						<svg class="icon-yandex-market">
+							<use xlink:href="#yandex-market"></use>
+						</svg>
+					</a>
+				</div>
+				<div>
+					<a href="#">
+						<svg class="icon-youtube">
+							<use xlink:href="#youtube"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

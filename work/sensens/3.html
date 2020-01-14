@@ -1,0 +1,382 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Project</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<header class="header header--project">
+	<div class="container">
+		<div class="header__holder js-header">
+			<div class="header__inner">
+
+				<div class="header__back header__back--prev">
+					<a href="#" class="header__back-link"></a>
+				</div>
+
+				<div class="header__all">
+					<a href="#" class="header__all-link">
+						<span class="header__all-link-dots"></span>
+						<span class="header__all-link-dots"></span>
+					</a>
+				</div>
+
+				<div class="header__back header__back--next">
+					<a href="#" class="header__back-link"></a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="project-head">
+	<div class="container">
+		<div class="project-head__wrap">
+			<div class="project-head__right">
+				<ul class="project-head__list">
+					<li class="project-head__list-item">-Ритейл брендинг</li>
+					<li class="project-head__list-item">-Аромат бренда</li>
+					<li class="project-head__list-item">-Аромат бренда</li>
+					<li class="project-head__list-item">-Визуальная идентичность</li>
+					<li class="project-head__list-item">-3D моделирование</li>
+					<li class="project-head__list-item">-Визуальная идентичность</li>
+					<li class="project-head__list-item">-3D моделирование</li>
+					<li class="project-head__list-item">-Аромат бренда</li>
+					<li class="project-head__list-item">-Визуальная идентичность</li>
+					<li class="project-head__list-item">-3D моделирование</li>
+				</ul>
+			</div>
+			<div class="project-head__left">
+				<span class="project-head__type-client">Тип клиента</span>
+				<div class="project-head__caption-wrap">
+					<span class="project-head__caption">Название проекта</span>
+					<span class="project-head__caption">Название проекта</span>
+				</div>
+				<div class="project-head__bottom">
+					<ul class="project-head__social">
+						<li class="project-head__social-item">
+							<a href="#" class="project-head__social-link">Fb</a>
+						</li>
+						<li class="project-head__social-item">
+							<a href="#" class="project-head__social-link">Ins</a>
+						</li>
+						<li class="project-head__social-item">
+							<a href="#" class="project-head__social-link">Vk</a>
+						</li>
+						<li class="project-head__social-item">
+							<a href="#" class="project-head__social-link">YT</a>
+						</li>
+					</ul>
+					<div class="project-head__web">
+						<a href="#" class="project-head__web-link">Посетить сайт</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="project-content">
+
+	<div class="project-content__box-one js-slider-box">
+		<div class="project-content__box-one-item js-coef" data-сoef="1.77" style="background-image: url(pic/project/project-1.jpg);"></div>
+		<div class="project-content__box-one-item js-coef" data-сoef="1.77" style="background-image: url(pic/project/project-4.jpg);"></div>
+		<div class="project-content__box-one-item js-coef" data-сoef="1.77" style="background-image: url(pic/project/project-7.jpg);"></div>
+	</div>
+
+	<div class="container-large">
+		<div class="project-content__box-two">
+			<div class="project-content__box-two-item">
+				<div class="project-content__box-two-img js-coef" data-сoef="1.77" style="background-image: url(pic/project/project-2.jpg);"></div>
+			</div>
+			<div class="project-content__box-two-item">
+				<div class="project-content__box-two-img js-coef" data-сoef="1.77" style="background-image: url(pic/project/project-3.jpg);"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="project-content__box-four js-coef" data-сoef="1.77" style="background-image: url(pic/project/project-4.jpg);"></div>
+	
+	<div class="container-large">
+		<div class="project-content__box-three">
+			<div class="project-content__box-three-img js-coef" data-сoef="1.77" style="background-image: url(pic/project/project-5.jpg);"></div>
+			<div class="project-content__box-three-wrap">
+				<div class="project-content__box-three-col project-content__box-three-col--3 js-height" data-mh="group-box">
+					<div class="project-content__box-three-item" data-сoef="1.738" >
+						<div class="project-content__box-three-item-img" style="background-image: url(pic/project/project-2.jpg);"></div>
+					</div>
+					<div class="project-content__box-three-item" data-сoef="1.738" >
+						<div class="project-content__box-three-item-img" style="background-image: url(pic/project/project-5.jpg);"></div>
+					</div>
+					<div class="project-content__box-three-item" data-сoef="1.738" >
+						<div class="project-content__box-three-item-img" style="background-image: url(pic/project/project-3.jpg);"></div>
+					</div>
+				</div>
+				<div class="project-content__box-three-col js-height" data-mh="group-box">
+					<div class="project-content__box-three-full js-coef" data-сoef="0.56" style="background-image: url(pic/project/project-6.jpg);"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="project-content__box-four js-coef" data-сoef="1.77" style="background-image: url(pic/project/project-7.jpg);"></div>
+
+	<div class="project-content__box-five">
+		<div class="container-large">
+			<div class="project-content__box-five-img js-coef" data-сoef="3" style="background-image: url(pic/project/project-16.jpg);"></div>
+			<div class="project-content__box-five-wrap">
+				<div class="project-content__box-five-col">
+					<p class="text-one">Bunji is a personalized 24/7 media channel platform  entertainers, organizations and companies of any size-l video</p>
+					<p class="text-two">TEXT Bunji is a personalized 24/7 media channel platform that provides individuals, entertainers, organizat ions and companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media broadcasting presence for creating a customized and immersive marketing and promotionchannel.companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media </p>
+				</div>
+				<div class="project-content__box-five-col">
+					<p class="text-two">TEXT Bunji is a personalized 24/7 media channel platform that provides individuals, entertainers, organizat ions and companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media broadcasting presence for creating a customized and immersive marketing and promotionchannel.</p>
+					<p class="text-two">TEXT Bunji is a personalized 24/7 media channel platform that provides individuals, entertainers, organizat ions and companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media broadcasting presence for creating a customized and immersive marketing and promotionchannel.</p>
+				</div>
+			</div>
+			<div class="project-content__box-five-wrap">
+				<div class="project-content__box-five-col">
+					<p class="text-three">TEXT Bunji is a personalized 24/7 media channel platform that provides individuals, entertainers, organizat ions and companies of any size the opportunity to have a turnkey all-en compassing Self-Branded </p>
+					<p class="text-three">Оnline digital video and music media broadcasting presence for creating a customized and immersive marketing and promotionchannel. companies of any size the opportunity to have a turnkey all-en compassing Self-Branded online digital video and music media </p>
+				</div>
+				<div class="project-content__box-five-col">
+					<p class="text-three">TEXT Bunji is a personalized 24/7 media channel platform that provides individuals, entertainers, organizat ions and companies of any size the opportunity to have a turnkey all-en</p>
+					<p class="text-two">TEXT Bunji is a personalized 24/7 media channel platform that provides individuals, entertainers, organizat ions and companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media broadcasting presence for creating a customized and immersive marketing and promotionchannel.</p>
+				</div>
+			</div>
+			<div class="project-content__box-five-wrap project-content__box-five-wrap--last">
+				<div class="project-content__box-five-col">
+					<p class="text-four">Bunji is a personalized 24/7 media channel platform  entertainers, organizations and companies of any size-l video</p>
+					<p class="text-two">TEXT Bunji is a personalized 24/7 media channel platform that provides individuals, entertainers, organizat ions and companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media broadcasting presence for creating a customized and immersive marketing and promotionchannel.companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media</p>
+				</div>
+				<div class="project-content__box-five-col">
+					<p class="text-four">Bunji is a personalized 24/7 media channel platform  entertainers, organizations and companies of any size-l video Bunji is a personalized 24/7 media channel platform  entertainers, organizations and companies of any size-l video</p>
+				</div>
+			</div>
+			<div class="project-content__like">
+				<div class="project-content__like-box">
+					<img src="pic/like.png" alt="">
+					<span class="project-content__like-number">118</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-large">
+		<div class="project-content__box-six">
+			<span class="project-content__box-six-caption">Новости из жизни бренда</span>
+			<div class="project-content__box-six-wrap">
+				<div class="project-content__box-six-img js-coef" data-сoef="2" style="background-image: url(pic/project/project-8.jpg);"></div>
+				<div class="project-content__box-six-text">
+					<p class="text-four">Bunji is a personalized 24/7 media channel platform  entertainers, organizations and companies of any size-l video</p>
+					<p class="text-two">TEXT Bunji is a personalized 24/7 media channel platform that provides individuals, entertainers, organizat ions and companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media broadcasting presence for creating a customized and immersive marketing and promotionchannel.companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media </p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="project-content__box-seven">
+		<div class="container-large">
+			<div class="project-content__box-seven-img js-coef" data-сoef="0.83" style="background-image: url(pic/project/project-5.jpg);"></div>
+			<div class="project-content__box-seven-text">
+				<p class="text-three">TEXT Bunji is a personalized 24/7 media channel platform that provides individuals, entertainers, organizat ions and companies of any size the opportunity to have a turnkey all-en compassing Self-Branded </p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-large">
+		<div class="project-content__box-two project-content__box-two--mod">
+			<div class="project-content__box-two-item">
+				<div class="project-content__box-two-img js-coef" data-сoef="1.77" style="background-image: url(pic/project/project-2.jpg);"></div>
+				<div class="project-content__box-two-text">
+					<p class="text-one">Bunji is a personalized 24/7 media channel platform  entertainers, organizations and companies of any size-l video</p>
+					<p class="text-two">TEXT Bunji is a personalized 24/7 media channel platform that provides individuals, entertainers, organizat ions and companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media broadcasting presence for creating a customized and immersive marketing and promotionchannel.companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media </p>
+				</div>
+			</div>
+			<div class="project-content__box-two-item">
+				<div class="project-content__box-two-img js-coef" data-сoef="1.77" style="background-image: url(pic/project/project-3.jpg);"></div>
+				<div class="project-content__box-two-text">
+					<p class="text-one">Bunji is a personalized 24/7 media channel platform  entertainers, organizations and companies of any size-l video</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="project-content__box-eight">
+		<div class="project-content__box-eight-image js-coef" data-сoef="1.81" style="background-image: url(pic/project/project-1.jpg);"></div>
+		<div class="container-large">
+			<div class="project-content__box-eight-wrap">
+				<div class="project-content__box-eight-inner">
+					<p class="text-four">Bunji is a personalized 24/7 media channel platform  entertainers, organizations and companies of any size-l video</p>
+					<p class="text-two">TEXT Bunji is a personalized 24/7 media channel platform that provides individuals, entertainers, organizat ions and companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media broadcasting presence for creating a customized and immersive marketing and promotionchannel.companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media </p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-large">
+		<div class="project-content__box-night">
+			<span class="project-content__box-night-caption">Карточка клиента</span>
+			<div class="project-content__box-night-wrap">
+				<div class="project-content__box-night-img js-image-margin js-coef" data-сoef="1.47" style="background-image: url(pic/project/project-9.jpg);"></div>
+				<div class="project-content__box-night-text">
+					<p class="text-two">TEXT Bunji is a personalized 24/7 media channel platform that provides individuals, entertainers, organizat ions and companies of any size the opportunity to have a turnkey all-en compassing Self-Branded online digital video and music media broadcasting presence for creating a customized and immersive marketing and promotionchannel.companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media </p>
+					<p class="text-four blue">Bunji is a personalized 24/7 media channel platform  entertainers, organizations and companies of any size-l video</p>
+					<p class="text-two">TEXT Bunji is a personalized 24/7 media channel platform that provides individuals, entertainers, organizat ions and companies of any size the opportunity to have a turnkey all-en compassing Self-Branded online digital video and music media broadcasting presence for creating a customized and immersive marketing and promotionchannel.companies of any size the opportunity to have a turnkey all-encompassing Self-Branded online digital video and music media</p>
+					<div class="project-content__box-night-bottom">
+						<span class="project-content__box-night-position">ДОЛЖНОСТЬ</span>
+						<span class="project-content__box-night-name">Фамилия Имя</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-large">
+		<div class="project-content__box-ten">
+			<div class="project-item">
+	<a href="#" class="project-item__inner">
+		<span class="project-item__img-wrap">
+			<div class="project-item__img js-lazy js-img-box" data-src="pic/project/project-10.jpg" style="background-image: url(pic/project/project-10.jpg);"></div>
+		</span>
+		<span class="project-item__type">Тип клиента</span>
+		<span class="project-item__name">Название проекта Название проекта</span>
+	</a>
+</div><div class="project-item">
+	<a href="#" class="project-item__inner">
+		<span class="project-item__img-wrap">
+			<div class="project-item__img js-lazy js-img-box" data-src="pic/project/project-11.jpg" style="background-image: url(pic/project/project-11.jpg);"></div>
+		</span>
+		<span class="project-item__type">Тип клиента</span>
+		<span class="project-item__name">Название проекта</span>
+	</a>
+</div><div class="project-item">
+	<a href="#" class="project-item__inner">
+		<span class="project-item__img-wrap">
+			<div class="project-item__img js-lazy js-img-box" data-src="pic/project/project-12.jpg" style="background-image: url(pic/project/project-12.jpg);"></div>
+		</span>
+		<span class="project-item__type">Тип клиента Тип клиента Тип клиента</span>
+		<span class="project-item__name">Название проекта</span>
+	</a>
+</div>
+		</div>
+	</div>
+
+</div>
+
+</div>
+
+<footer class="footer footer--project">
+	<div class="container-large">
+		<span class="footer__title">Связаться с нами</span>
+		<div class="footer__holder">
+			<div class="footer__contacts">
+				<div class="footer__contacts-item">
+					<a href="tel:+74952680112" class="footer__contacts-link">
+						+7 495 268 01 12
+					</a>
+				</div>
+				<div class="footer__contacts-item">
+					<a href="mailto:hello@TheID.ru" class="footer__contacts-link">
+						hello@TheID.ru
+					</a>
+				</div>
+			</div>
+
+			
+			
+			<div class="footer__copy">
+				<span>
+					©Sensens. 2015-2018
+				</span>
+			</div>
+			
+
+			<div class="footer__social">
+				<span class="footer__social-txt">Следить</span>
+				<a href="#" class="footer__social-link">Fb<span style="color: #2F78DD;">.</span></a>
+				<a href="#" class="footer__social-link">Ins<span style="color: #E543A7;">.</span></a>
+				<a href="#" class="footer__social-link">Vk<span style="color: #2F5EDD;">.</span></a>
+				<a href="#" class="footer__social-link">YT<span style="color: #FF0808;">.</span></a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

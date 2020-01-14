@@ -1,0 +1,441 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<img src="pic/decor-left.png" alt="" class="decor-left">
+	<img src="pic/decor-right.png" alt="" class="decor-right">
+
+	<div class="cookie js-cookie">
+	<div class="container">
+		<div class="wrap">
+			<span class="text">ЯВитрина использует cookie (файлы с данными о прошлых посещениях сайта) для персонализации сервисов и удобства пользователей. ЯВитрина серьезно относится к защите персональных данных - ознакомьтесь с <a href="#">условиями и принципами их обработки</a>.</span>
+			<span class="ban">Вы можете запретить сохранение cookie в настройках своего браузера.</span>
+
+			<span class="close js-close-cookie">X</span>
+		</div>
+	</div>
+</div>
+
+	<header class="header header--main">
+
+	<div class="container">
+		<div class="header-wrap">
+			
+			<div class="circle circle-1"></div>
+
+			<div class="logo">
+				<a href="#" class="logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="city">
+				<div class="city-btn js-city-btn">
+					<span class="city-icon">
+						<svg class="icon-marker">
+							<use xlink:href="#marker"></use>
+						</svg>
+					</span>
+					<span class="city-text js-city-name">Москва</span>
+				</div>
+
+				<div class="city-drop js-select-wrap-city">
+					<div class="city-head">
+						<span class="city-title">Выбор города</span>
+						<a href="#" class="city-back js-close-select"></a>
+					</div>
+					<div class="city-select">
+						<select name="city" id="" class="js-select-city">
+							<optgroup label="Адыгея Республика">
+								<option value="Майкоп">Майкоп</option>
+							</optgroup>
+							<optgroup label="Алтайский край">
+								<option value="Барнаул">Барнаул</option>
+								<option value="Бийск">Бийск</option>
+								<option value="Рубцовск">Рубцовск</option>
+							</optgroup>
+							<optgroup label="Амурская область">
+								<option value="Благовещенск">Благовещенск</option>
+							</optgroup>
+							<optgroup label="Архангельская область">
+								<option value="Архангельск">Архангельск</option>
+								<option value="Северодвинск">Северодвинск</option>
+							</optgroup>
+							<optgroup label="Адыгея Республика">
+								<option value="Майкоп">Майкоп</option>
+							</optgroup>
+							<optgroup label="Алтайский край">
+								<option value="Барнаул">Барнаул</option>
+								<option value="Бийск">Бийск</option>
+								<option value="Рубцовск">Рубцовск</option>
+							</optgroup>
+							<optgroup label="Амурская область">
+								<option value="Благовещенск">Благовещенск</option>
+							</optgroup>
+							<optgroup label="Архангельская область">
+								<option value="Архангельск">Архангельск</option>
+								<option value="Северодвинск">Северодвинск</option>
+							</optgroup>
+							<optgroup label="Адыгея Республика">
+								<option value="Майкоп">Майкоп</option>
+							</optgroup>
+							<optgroup label="Алтайский край">
+								<option value="Барнаул">Барнаул</option>
+								<option value="Бийск">Бийск</option>
+								<option value="Рубцовск">Рубцовск</option>
+							</optgroup>
+							<optgroup label="Амурская область">
+								<option value="Благовещенск">Благовещенск</option>
+							</optgroup>
+							<optgroup label="Архангельская область">
+								<option value="Архангельск">Архангельск</option>
+								<option value="Северодвинск">Северодвинск</option>
+							</optgroup>
+							<optgroup label="Московская область">
+								<option value="Москва" selected>Москва</option>
+							</optgroup>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="search">
+	<div class="container">
+		<div class="search-wrap">
+			<div class="circle circle-8"></div>
+			<div class="circle circle-9"></div>
+			<div class="circle circle-10"></div>
+			<div class="circle circle-11"></div>
+			<div class="circle circle-12"></div>
+			<div class="circle circle-13"></div>
+			<div class="circle circle-14"></div>
+
+			<form action="" class="search-form">
+				<div class="search-input-wrap">
+					<input type="text" placeholder="Введите название товара">
+				</div>
+				<button class="btn search-btn">
+					<svg class="icon-search">
+						<use xlink:href="#search"></use>
+					</svg>
+				</button>
+			</form>
+			<div class="search-caption">
+				<span class="search-text">Поиск </span>
+				<span class="search-goods">товаров </span>
+				<span class="search-price"><span>и</span> цен</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="nav">
+	<div class="container">
+		<nav>
+			<div>
+				<a href="#">
+					<span class="nav-icon">
+						<svg class="icon-clothes">
+							<use xlink:href="#clothes"></use>
+						</svg>
+					</span>
+					<span class="nav-text">Одежда и обувь</span>
+				</a>
+			</div>
+			<div>
+				<a href="#">
+					<span class="nav-icon">
+						<svg class="icon-beauty">
+							<use xlink:href="#beauty"></use>
+						</svg>
+					</span>
+					<span class="nav-text">Красота и здоровье</span>
+				</a>
+			</div>
+			<div>
+				<a href="#">
+					<span class="nav-icon">
+						<svg class="icon-photo">
+							<use xlink:href="#photo"></use>
+						</svg>
+					</span>
+					<span class="nav-text">Электроника</span>
+				</a>
+			</div>
+			<div>
+				<a href="#">
+					<span class="nav-icon">
+						<svg class="icon-clock">
+							<use xlink:href="#clock"></use>
+						</svg>
+					</span>
+					<span class="nav-text">Спорт и хобби</span>
+				</a>
+			</div>
+			<div>
+				<a href="#">
+					<span class="nav-icon">
+						<svg class="icon-equipment-2">
+							<use xlink:href="#equipment-2"></use>
+						</svg>
+					</span>
+					<span class="nav-text">Техника для дома</span>
+				</a>
+			</div>
+			<div>
+				<a href="#">
+					<span class="nav-icon">
+						<svg class="icon-furniture">
+							<use xlink:href="#furniture"></use>
+						</svg>
+					</span>
+					<span class="nav-text">Мебель</span>
+				</a>
+			</div>
+			<div>
+				<a href="#">
+					<span class="nav-icon">
+						<svg class="icon-smile">
+							<use xlink:href="#smile"></use>
+						</svg>
+					</span>
+					<span class="nav-text">Детские товары</span>
+				</a>
+			</div>
+			<div>
+				<a href="#">
+					<span class="nav-icon">
+						<svg class="icon-key">
+							<use xlink:href="#key"></use>
+						</svg>
+					</span>
+					<span class="nav-text">Строй материалы</span>
+				</a>
+			</div>
+			<div>
+				<a href="#">
+					<span class="nav-icon">
+						<svg class="icon-wrist-watch">
+							<use xlink:href="#wrist-watch"></use>
+						</svg>
+					</span>
+					<span class="nav-text">Часы</span>
+				</a>
+			</div>
+			<div>
+				<a href="#">
+					<span class="nav-icon">
+						<svg class="icon-car-2">
+							<use xlink:href="#car-2"></use>
+						</svg>
+					</span>
+					<span class="nav-text">Всё для автомобиля</span>
+				</a>
+			</div>
+			<div>
+				<a href="#">
+					<span class="nav-icon">
+						<svg class="icon-house">
+							<use xlink:href="#house"></use>
+						</svg>
+					</span>
+					<span class="nav-text">Дом и сад</span>
+				</a>
+			</div>
+			<div>
+				<a href="#">
+					<span class="nav-icon">
+						<svg class="icon-diamond">
+							<use xlink:href="#diamond"></use>
+						</svg>
+					</span>
+					<span class="nav-text">Ювелирные изделия</span>
+				</a>
+			</div>
+		</nav>
+	</div>
+	<canvas id="c"></canvas>
+	<canvas id="c2"></canvas>
+	<canvas id="c3"></canvas>
+</div>
+
+	<div class="book">
+	<div class="container">
+		<div class="book-wrap">
+			<span class="book-icon">
+				<svg class="icon-book">
+					<use xlink:href="#book"></use>
+				</svg>
+			</span>
+			<div class="book-descr">
+				<span class="book-title">
+					<a href="#">Книги</a>
+				</span>
+				<span class="book-value">Более 500 тыc. книг</span>
+				<span class="book-text">ЯВитрина предлагает большой выбор телевизоров по низким ценам - мы отобрали для вас самые лучшие предложения, акции и скидки интернет-магазинов в одном месте. 25047 товаров по цене от 4639 до 4790000 рублей. На сайте представлено описание и характеристики, можно почитать отзывы о товаре, ознакомиться с условиями доставки и покупки в кредит. </span>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<footer class="footer" style="background-image: url(pic/bg/bg-2.png);">
+	<div class="container">
+		<div class="footer-top">
+			<span class="footer-logo">
+				<a href="#">
+					<svg class="icon-logo-footer">
+						<use xlink:href="#logo-2"></use>
+					</svg>
+				</a>
+			</span>
+			<div>
+				<span>Покупателям</span>
+				<ul>
+					<li>
+						<a href="#">Как сделать заказ</a>
+					</li>
+					<li>
+						<a href="#">Доставка и возврат</a>
+					</li>
+					<li>
+						<a href="#">Добавить магазин</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<span>О компании</span>
+				<ul>
+					<li>
+						<a href="#">Что такое ЯВитрина</a>
+					</li>
+					<li>
+						<a href="#">Реклама на сайте</a>
+					</li>
+					<li>
+						<a href="#">Сотрудничество</a>
+					</li>
+				</ul>
+			</div>
+			<div class="hide">
+				<span>Партнёрам</span>
+				<ul>
+					<li>
+						<a href="#">Реклама на сайте</a>
+					</li>
+					<li>
+						<a href="#">Сотрудничество</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="footer-info">
+				<span class="footer-email">
+					По вопросам сайта пишите на 
+					<a href="mailto:info@yavitrina.ru">info@yavitrina.ru</a>
+				</span>
+				<span>© 2018 Yavitrina.ru</span>
+			</div>
+			<div class="footer-social">
+				<div>
+					<a href="#">
+						<svg class="icon-yandex-market">
+							<use xlink:href="#yandex-market"></use>
+						</svg>
+					</a>
+				</div>
+				<div>
+					<a href="#">
+						<svg class="icon-youtube">
+							<use xlink:href="#youtube"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

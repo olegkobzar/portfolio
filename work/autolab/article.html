@@ -1,0 +1,424 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Статья</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+  <div class="wrapper">
+    <header class="header">
+	<div class="container">
+		<div class="header__wrap">
+			<div class="header__body">
+
+				<div class="header__left">
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">
+							<svg class="icon-logo">
+								<use xlink:href="#logo"></use>
+							</svg>
+						</a>
+					</div>
+
+					<div class="header__contacts">
+						<ul class="header__contacts-list">
+							<li class="header__contacts-item header__contacts-item--mobile-hide">
+								<a href="tel: +79647658001" class="header__contacts-link">
+									<span>
+										<svg class="icon-time">
+											<use xlink:href="#time"></use>
+										</svg>
+										<svg class="icon-time">
+											<use xlink:href="#time"></use>
+										</svg>
+									</span>									
+									<span class="header__contacts-desc"><span class="header__contacts-number">+7 964</span> 765 80 01</span>
+								</a>
+								<span class="header__contacts-mode">Пн.-Вс. 10:00-23:00</span>
+							</li>
+							<li class="header__contacts-item">
+								<a href="tel: +79647658001" class="header__contacts-link">
+									<span>
+										<svg class="icon-phone">
+											<use xlink:href="#phone"></use>
+										</svg>
+										<svg class="icon-phone">
+											<use xlink:href="#phone"></use>
+										</svg>
+									</span>									
+									<span class="header__contacts-desc"><span class="header__contacts-number">+7 964</span> 765 80 01</span>
+								</a>
+								<a href="#" class="header__contacts-callback">Обратный звонок</a>
+							</li>
+							<li class="header__contacts-item">
+								<a href="#" class="header__contacts-link">
+									<span>
+										<svg class="icon-adress">
+											<use xlink:href="#adress"></use>
+										</svg>
+										<svg class="icon-adress">
+											<use xlink:href="#adress"></use>
+										</svg>
+									</span>									
+									<span class="header__contacts-desc header__contacts-desc--light">Москва, Киевская, д. 8</span>
+								</a>
+							</li>
+							<li class="header__contacts-item header__contacts-item--toggler">
+								<a data-href="nav" class="header__toggler js-toggler"><span class="header__toggler-decor"></span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+
+				<div class="header__right">
+					<a href="#" class="btn header__btn">Калькулятор подбора</a>
+				</div>
+
+
+			</div>
+
+			<nav class="header__navbar js-collapse" data-nav="nav">
+				<div class="header__navbar-inner">
+					<div class="header__navbar-main">
+						<ul class="header__navbar-list">
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Подбор авто</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Проверка авто</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Продать авто</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Доп услуги</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Проверенные авто</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="header__navbar-top">
+						<ul class="header__navbar-list header__navbar-list--add">
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">О компании</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link active">Цены</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Гарантии</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Отзывы</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Блог</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Контакты</a>
+							</li>
+						</ul>
+
+						<div class="header__navbar-info">
+							<div class="header__social">
+								<ul class="header__social-list">
+									<li class="header__social-item">
+										<a href="#" class="header__social-link">
+											<svg class="icon-vk">
+												<use xlink:href="#vk"></use>
+											</svg>
+											<svg class="icon-vk">
+												<use xlink:href="#vk"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="header__social-item">
+										<a href="#" class="header__social-link">
+											<svg class="icon-fb">
+												<use xlink:href="#fb"></use>
+											</svg>
+											<svg class="icon-fb">
+												<use xlink:href="#fb"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="header__social-item">
+										<a href="#" class="header__social-link">
+											<svg class="icon-insta">
+												<use xlink:href="#insta"></use>
+											</svg>
+											<svg class="icon-insta">
+												<use xlink:href="#insta"></use>
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</div>
+
+							<div class="header__services">
+								<ul class="header__services-list">
+									<li class="header__services-item">
+										<a href="#" class="header__services-link">
+											<span>
+												<svg class="icon-wrecker">
+													<use xlink:href="#wrecker"></use>
+												</svg>
+												<svg class="icon-wrecker">
+													<use xlink:href="#wrecker"></use>
+												</svg>
+											</span>
+											<span class="header__services-txt">Эвакуатор</span>
+										</a>
+									</li>
+									<li class="header__services-item">
+										<a href="#" class="header__services-link">
+											<span>
+												<svg class="icon-tirefitting">
+													<use xlink:href="#tirefitting"></use>
+												</svg>
+												<svg class="icon-tirefitting">
+													<use xlink:href="#tirefitting"></use>
+												</svg>
+											</span>											
+											<span class="header__services-txt">Мобильный шиномонтаж</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+				<div class="header__doc">
+					<a href="#" class="header__doc-link">
+						<span>
+							<svg class="icon-document">
+								<use xlink:href="#document"></use>
+							</svg>
+						<svg class="icon-document">
+							<use xlink:href="#document"></use>
+						</svg>
+						</span>
+						<span class="header__doc-txt">Договор купли продажи</span>
+					</a>
+				</div>
+			</nav>
+
+		</div>
+	</div>
+</header>
+
+    <div class="breadcrumbs">
+	<div class="container">
+		<ul class="breadcrumbs__list">
+			
+			<li class="breadcrumbs__item">
+				<a href="#" class="breadcrumbs__link">Главная</a>
+			</li>
+			
+			<li class="breadcrumbs__item">
+				<a href="#" class="breadcrumbs__link">Подбор автомобиля</a>
+			</li>
+			
+			<li class="breadcrumbs__item">Подбор нового автомобиля</li>
+		</ul>
+	</div>
+</div>
+    <div class="container">
+      <div class="article-wrap">
+        <article class="content">
+          <div class="article-content">
+	<div class="static-content">
+		<h2 class="article-content__title">Duplicate of Duplicate of Новинка 2016 года Honda Pilot</h2>
+		<div class="article-content__info">
+			<span class="article-content__category">Тест Драйв</span>
+			<time class="article-content__date">
+				<svg class="icon-circular-clock">
+					<use xlink:href="#circular-clock"></use>
+				</svg>
+				10.03.2018
+			</time>
+		</div>
+		<p>
+			<b>Интернет-магазин одежды EMKA – это отличная возможность купить женскую одежду российского бренда EMKA. Вот уже более 15 лет производитель предлагает женскую одежду отличного качества на каждый день и на праздник для российских покупательниц.</b>
+		</p>
+		<img src="pic/articles.jpg" alt="">
+		<p>
+			Интернет-магазин одежды EMKA – это отличная возможность купить женскую одежду российского бренда EMKA. Вот уже более 15 лет производитель предлагает женскую одежду отличного качества на каждый день и на праздник для российских покупательниц.
+		</p>
+		<p>
+			Компания EMKA обеспечивает своих покупательниц не только разнообразным ассортиментом одежды, но и отличным сервисом, предлагая только актуальные и модные вещи, соответствующие современным течениям в сфере дизайна и покроя. Только свежие коллекции от талантливых дизайнеров EMKA, регулярное обновление и расширение ассортимента – все это дает вам возможность выглядеть прекрасно в любое время года. Выбирайте актуальные новинки сезона в нашем интернет-каталоге – мы предлагаем лучшие цены, которые вы больше не найдете нигде. 
+		</p>
+	</div>
+</div>
+        </article>
+        <aside class="sidebar">
+          <div class="offices-wrap">
+            <div class="offices" style="background-image: url(pic/map-mini.png);">
+	<h4 class="offices__caption">Работаем со всей Россией</h4>
+	<span class="offices__sng-text">и странами СНГ</span>
+	<a href="#" class="offices__link btn btn--icon">
+		<span class="offices__link-text">Подробнее</span>
+		<span class="offices__icon">
+			<svg class="icon-map">
+				<use xlink:href="#map-icon"></use>
+			</svg>
+		</span>
+	</a>
+</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__top">
+			<div class="footer__item-box">
+				<div class="footer__item">
+					<span class="footer__item-icon">
+						<svg class="icon-time">
+							<use xlink:href="#time"></use>
+						</svg>
+						<svg class="icon-time">
+							<use xlink:href="#time"></use>
+						</svg>
+					</span>
+					<div class="footer__item-info">
+						<a href="tel:88003332920" class="footer__item-phone">
+							+7 964 <span> 765 80 01</span>
+						</a>
+						<span class="footer__item-time">
+							Пн.-Вс. 10:00-23:00
+						</span>
+					</div>
+				</div>
+				<div class="footer__item">
+					<span class="footer__item-icon">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<div class="footer__item-info">
+						<a href="tel:88003332920" class="footer__item-phone">
+							+7 964 <span> 765 80 01</span>
+						</a>
+						<a href="#" class="footer__item-link">
+							Обратный звонок
+						</a>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="btn footer__btn">Калькулятор подбора</a>
+		</div>
+		<div class="footer__contract">
+			<div class="footer__contract-inner">
+				<a href="#" class="footer__contract-item">
+					<span class="footer__contract-icon">
+						<svg class="icon-document">
+							<use xlink:href="#document"></use>
+						</svg>
+						<svg class="icon-document">
+							<use xlink:href="#document"></use>
+						</svg>
+					</span>
+					<span class="footer__contract-txt">
+						Договор купли продажи
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="footer__holder">
+		<div class="container">
+			<div class="footer__inner">
+				<div class="footer__nav">
+					<ul class="footer__nav-list">
+						<li class="footer__nav-item">
+							<a href="#">О компании</a> 
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Цены</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Гарантии</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Отзывы</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Контакты</a>
+						</li>
+					</ul>
+					<ul class="footer__nav-list">
+						<li class="footer__nav-item">
+							<a href="#">Страхование авто</a> 
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Мобильный шиномонтаж</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Эвакуатор</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<div class="footer__map">
+			<div class="footer__map-address">
+				<span class="footer__map-icon">
+					<svg class="icon-star">
+						<use xlink:href="#star"></use>
+					</svg>
+				</span>
+				<span class="footer__map-txt">
+					Москва, Киевская, д. 8
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="footer__copy">
+		<span class="footer__copy-txt">
+			Качественный интернет маркетинг
+		</span>
+		<a href="#" class="footer__copy-link">web-golden.ru</a>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

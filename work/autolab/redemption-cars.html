@@ -1,0 +1,825 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Выкуп автомобилей</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+    <div class="wrapper">
+
+        <header class="header">
+	<div class="container">
+		<div class="header__wrap">
+			<div class="header__body">
+
+				<div class="header__left">
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">
+							<svg class="icon-logo">
+								<use xlink:href="#logo"></use>
+							</svg>
+						</a>
+					</div>
+
+					<div class="header__contacts">
+						<ul class="header__contacts-list">
+							<li class="header__contacts-item header__contacts-item--mobile-hide">
+								<a href="tel: +79647658001" class="header__contacts-link">
+									<span>
+										<svg class="icon-time">
+											<use xlink:href="#time"></use>
+										</svg>
+										<svg class="icon-time">
+											<use xlink:href="#time"></use>
+										</svg>
+									</span>									
+									<span class="header__contacts-desc"><span class="header__contacts-number">+7 964</span> 765 80 01</span>
+								</a>
+								<span class="header__contacts-mode">Пн.-Вс. 10:00-23:00</span>
+							</li>
+							<li class="header__contacts-item">
+								<a href="tel: +79647658001" class="header__contacts-link">
+									<span>
+										<svg class="icon-phone">
+											<use xlink:href="#phone"></use>
+										</svg>
+										<svg class="icon-phone">
+											<use xlink:href="#phone"></use>
+										</svg>
+									</span>									
+									<span class="header__contacts-desc"><span class="header__contacts-number">+7 964</span> 765 80 01</span>
+								</a>
+								<a href="#" class="header__contacts-callback">Обратный звонок</a>
+							</li>
+							<li class="header__contacts-item">
+								<a href="#" class="header__contacts-link">
+									<span>
+										<svg class="icon-adress">
+											<use xlink:href="#adress"></use>
+										</svg>
+										<svg class="icon-adress">
+											<use xlink:href="#adress"></use>
+										</svg>
+									</span>									
+									<span class="header__contacts-desc header__contacts-desc--light">Москва, Киевская, д. 8</span>
+								</a>
+							</li>
+							<li class="header__contacts-item header__contacts-item--toggler">
+								<a data-href="nav" class="header__toggler js-toggler"><span class="header__toggler-decor"></span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+
+				<div class="header__right">
+					<a href="#" class="btn header__btn">Калькулятор подбора</a>
+				</div>
+
+
+			</div>
+
+			<nav class="header__navbar js-collapse" data-nav="nav">
+				<div class="header__navbar-inner">
+					<div class="header__navbar-main">
+						<ul class="header__navbar-list">
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Подбор авто</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Проверка авто</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Продать авто</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Доп услуги</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Проверенные авто</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="header__navbar-top">
+						<ul class="header__navbar-list header__navbar-list--add">
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">О компании</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link active">Цены</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Гарантии</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Отзывы</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Блог</a>
+							</li>
+							<li class="header__navbar-item">
+								<a href="#" class="header__navbar-link">Контакты</a>
+							</li>
+						</ul>
+
+						<div class="header__navbar-info">
+							<div class="header__social">
+								<ul class="header__social-list">
+									<li class="header__social-item">
+										<a href="#" class="header__social-link">
+											<svg class="icon-vk">
+												<use xlink:href="#vk"></use>
+											</svg>
+											<svg class="icon-vk">
+												<use xlink:href="#vk"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="header__social-item">
+										<a href="#" class="header__social-link">
+											<svg class="icon-fb">
+												<use xlink:href="#fb"></use>
+											</svg>
+											<svg class="icon-fb">
+												<use xlink:href="#fb"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="header__social-item">
+										<a href="#" class="header__social-link">
+											<svg class="icon-insta">
+												<use xlink:href="#insta"></use>
+											</svg>
+											<svg class="icon-insta">
+												<use xlink:href="#insta"></use>
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</div>
+
+							<div class="header__services">
+								<ul class="header__services-list">
+									<li class="header__services-item">
+										<a href="#" class="header__services-link">
+											<span>
+												<svg class="icon-wrecker">
+													<use xlink:href="#wrecker"></use>
+												</svg>
+												<svg class="icon-wrecker">
+													<use xlink:href="#wrecker"></use>
+												</svg>
+											</span>
+											<span class="header__services-txt">Эвакуатор</span>
+										</a>
+									</li>
+									<li class="header__services-item">
+										<a href="#" class="header__services-link">
+											<span>
+												<svg class="icon-tirefitting">
+													<use xlink:href="#tirefitting"></use>
+												</svg>
+												<svg class="icon-tirefitting">
+													<use xlink:href="#tirefitting"></use>
+												</svg>
+											</span>											
+											<span class="header__services-txt">Мобильный шиномонтаж</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+				<div class="header__doc">
+					<a href="#" class="header__doc-link">
+						<span>
+							<svg class="icon-document">
+								<use xlink:href="#document"></use>
+							</svg>
+						<svg class="icon-document">
+							<use xlink:href="#document"></use>
+						</svg>
+						</span>
+						<span class="header__doc-txt">Договор купли продажи</span>
+					</a>
+				</div>
+			</nav>
+
+		</div>
+	</div>
+</header>
+
+
+        <div class="breadcrumbs">
+	<div class="container">
+		<ul class="breadcrumbs__list">
+			
+			<li class="breadcrumbs__item">
+				<a href="#" class="breadcrumbs__link">Главная</a>
+			</li>
+			
+			<li class="breadcrumbs__item">
+				<a href="#" class="breadcrumbs__link">Подбор автомобиля</a>
+			</li>
+			
+			<li class="breadcrumbs__item">Подбор нового автомобиля</li>
+		</ul>
+	</div>
+</div>
+
+        <div class="heading" style="background-image: url(pic/slider-bg.png);">
+    <div class="container">
+        <div class="heading__wrap">
+            <div class="heading__holder">
+                <h2 class="heading__title">Выкуп автомобилей</h2>
+            </div>
+            <div class="heading__holder heading__holder--img">
+                <div class="heading__decor">
+                    <div class="heading__img" style="background-image: url(pic/new-auto.jpg);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container">
+            <div class="article-wrap">
+                <div class="content">
+
+                    <div class="appraisal">
+	<form action="">
+		<div class="appraisal__form">
+			<h4 class="appraisal__caption">Онлайн оценка автомобиля</h4>
+			<div class="appraisal__wrapp">
+				<div class="appraisal__group">
+					<div class="appraisal__title-wrapp">
+						<span class="appraisal__title">Марка и модель</span>
+						<span class="appraisal__icon">
+							<svg class="icon-star-small">
+								<use xlink:href="#star"></use>
+							</svg>
+						</span>
+					</div>
+					<div class="appraisal__input-wrapp appraisal__input-wrapp--long">
+						<input type="text" placeholder="Ford Focus">
+					</div>
+				</div>
+				<div class="appraisal__group">
+					<div class="appraisal__title-wrapp">
+						<span class="appraisal__title">Год выпуска</span>
+						<span class="appraisal__icon">
+							<svg class="icon-star-small">
+								<use xlink:href="#star"></use>
+							</svg>
+						</span>
+					</div>
+					<div class="appraisal__input-wrapp">
+						<select class="custom-select">
+							<option value="hide">2013</option>
+							<option value="2018">2018</option>
+							<option value="2017">2017</option>
+							<option value="2016">2016</option>
+							<option value="2015">2015</option>
+							<option value="2014">2014</option>
+							<option value="2013" selected>2013</option>
+							<option value="2012">2012</option>
+							<option value="2011">2011</option>
+							<option value="2010">2010</option>
+							<option value="2009">2009</option>
+							<option value="2008">2008</option>
+							<option value="2007">2007</option>
+							<option value="2006">2006</option>
+							<option value="2005">2005</option>
+							<option value="2004">2004</option>
+							<option value="2003">2003</option>
+							<option value="2002">2002</option>
+							<option value="2001">2001</option>
+							<option value="2000">2000</option>
+							<option value="1999">1999</option>
+							<option value="1998">1998</option>
+							<option value="1997">1997</option>
+							<option value="1996">1996</option>
+							<option value="1995">1995</option>
+							<option value="1994">1994</option>
+							<option value="1993">1993</option>
+							<option value="1992">1992</option>
+							<option value="1991">1991</option>
+							<option value="1990">1990</option>
+							<option value="1989">1989</option>
+							<option value="1988">1988</option>
+							<option value="1987">1987</option>
+							<option value="1986">1986</option>
+							<option value="1985">1985</option>
+							<option value="1984">1984</option>
+							<option value="1983">1983</option>
+							<option value="1982">1982</option>
+							<option value="1981">1981</option>
+							<option value="1980">1980</option>
+							<option value="Ранее">Ранее</option>
+						</select>
+					</div>
+				</div>
+				<div class="appraisal__group">
+					<div class="appraisal__title-wrapp">
+						<span class="appraisal__title">Мощность и объем двигателя</span>
+					</div>
+					
+					<div class="appraisal__input-wrapp" data-text="л.с.">
+						<input type="text" placeholder="Мощность">
+					</div>
+					<div class="appraisal__input-wrapp" data-text="см">
+						<input type="text" placeholder="Объем">
+					</div>
+				</div>
+				<div class="appraisal__group">
+					<div class="appraisal__title-wrapp">
+						<span class="appraisal__title">Пробег</span>
+					</div>
+					
+					<div class="appraisal__input-wrapp" data-text="км">
+						<input type="text">
+					</div>
+				</div>
+				<div class="appraisal__group">
+					<div class="appraisal__title-wrapp">
+						<span class="appraisal__title">Тип привода</span>
+					</div>
+					<div class="appraisal__input-wrapp appraisal__input-wrapp--select">
+						<select class="custom-select appraisal__select">
+							<option value="hide">Тип привода</option>
+							<option value="Передний">Передний</option>
+							<option value="Задний">Задний</option>
+							<option value="Полный">Полный</option>
+							<option value="Любой">Любой</option>
+						</select>
+					</div>
+				</div>
+				<div class="appraisal__group">
+					<div class="appraisal__title-wrapp">
+						<span class="appraisal__title">Коробка передач</span>
+					</div>
+					<div class="appraisal__input-wrapp appraisal__input-wrapp--select">
+						<select class="custom-select appraisal__select">
+							<option value="hide">КПП</option>
+							<option value="Передний">Механическая</option>
+							<option value="Задний">Автомат</option>
+							<option value="Любая">Любая</option>
+						</select>
+					</div>
+				</div>
+				<div class="appraisal__group">
+					<div class="appraisal__title-wrapp">
+						<span class="appraisal__title">Контактные данные</span>
+						<span class="appraisal__icon">
+							<svg class="icon-star-small">
+								<use xlink:href="#star"></use>
+							</svg>
+						</span>
+					</div>
+					<div class="appraisal__input-wrapp appraisal__input-wrapp--average">
+						<input type="text" placeholder="Имя">
+					</div>
+					<div class="appraisal__input-wrapp">
+						<input type="tel" class="js-phonemask" id="submit-app__phone" placeholder="+7 (___) - ___ - __ - __">
+					</div>
+				</div>
+				<div class="appraisal__group">
+					<div class="appraisal__title-wrapp">
+						<span class="appraisal__title">Комментарий</span>
+					</div>
+					<div class="appraisal__input-wrapp appraisal__input-wrapp--long">
+						<textarea></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="appraisal__foot">
+				<div class="file-upload appraisal__upload">
+					<label>
+						<svg class="icon-file">
+							<use xlink:href="#file"></use>
+						</svg>
+						<input type="file" name="file">
+						<span>Прикрепить фото</span>
+					</label>
+				</div>
+				<div class="appraisal__btn">
+					<button class="btn" type="submit">Отправить</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+                    <div class="about ">
+	<span class="about__title about__title--redemption">Выкуп автомобилей</span>
+	<div class="static-content">
+		<p>
+			<b>
+				Интернет-магазин одежды EMKA – это отличная возможность купить женскую одежду российского бренда EMKA. Вот уже более 15 лет производитель предлагает женскую одежду отличного качества на каждый день и на праздник для российских покупательниц.
+			</b>
+		</p>
+		<div class="about__img" style="background-image: url('pic/about-01.jpg');">
+	<div class="about__img-inner">
+		<div class="about__img-info">
+			<div class="about__img-info-wrap">
+				<span class="about__img-txt" data-percent="85%">
+					наших клиентов приходят по рекомендации
+				</span>	
+			</div>
+		</div>
+	</div>
+</div>
+		<p>
+			Интернет-магазин одежды EMKA – это отличная возможность купить женскую одежду российского бренда EMKA. Вот уже более 15 лет производитель предлагает женскую одежду отличного качества на каждый день и на праздник для российских покупательниц.
+		</p>
+		<p>
+			Компания EMKA обеспечивает своих покупательниц не только разнообразным ассортиментом одежды, но и отличным сервисом, предлагая только актуальные и модные вещи, соответствующие современным течениям в сфере дизайна и покроя. Только свежие коллекции от талантливых
+			дизайнеров EMKA, регулярное обновление и расширение ассортимента – все это дает вам возможность выглядеть прекрасно в любое время года. Выбирайте актуальные новинки сезона в нашем интернет-каталоге – мы предлагаем лучшие цены, которые вы больше не
+			найдете нигде.
+		</p>
+
+	</div>
+</div>
+
+
+                </div>
+                <div class="aside sidebar">
+
+                    <div class="offices" style="background-image: url(pic/map-mini.png);">
+	<h4 class="offices__caption">Работаем со всей Россией</h4>
+	<span class="offices__sng-text">и странами СНГ</span>
+	<a href="#" class="offices__link btn btn--icon">
+		<span class="offices__link-text">Подробнее</span>
+		<span class="offices__icon">
+			<svg class="icon-map">
+				<use xlink:href="#map-icon"></use>
+			</svg>
+		</span>
+	</a>
+</div>
+
+                    <div class="statistics statistics--block">
+	<ul class="statistics__list">
+		<li class="statistics__item">
+			<div class="statistics__item-wrapp">
+				<div class="statistics__item-inner">
+					<span class="statistics__number">> <span class="js-viewed">0</span></span>
+					<span class="statistics__fact">Просмотренных авто</span>
+				</div>
+				<div class="statistics__arrow js-arrow">
+					<img src="pic/arrow-speed.png" alt="">
+				</div>
+			</div>
+		</li>
+		<li class="statistics__item">
+			<div class="statistics__item-wrapp">
+				<div class="statistics__item-inner">
+					<span class="statistics__number">> <span class="js-matched">0</span></span>
+					<span class="statistics__fact">Подобранных авто</span>
+				</div>
+				<div class="statistics__arrow js-arrow">
+					<img src="pic/arrow-speed.png" alt="">
+				</div>
+			</div>
+		</li>
+		<li class="statistics__item">
+			<div class="statistics__item-wrapp">
+				<div class="statistics__item-inner">
+					<span class="statistics__number"> <span class="js-amount">0</span></span>
+					<span class="statistics__fact">Средняя сумма торга</span>
+				</div>
+				<div class="statistics__arrow js-arrow">
+					<img src="pic/arrow-speed.png" alt="">
+				</div>
+			</div>
+		</li>
+		<li class="statistics__item">
+			<div class="statistics__item-wrapp">
+				<div class="statistics__item-inner">
+					<span class="statistics__number"> <span class="js-time">0</span> дней</span>
+					<span class="statistics__fact">Среднее время подбора</span>
+				</div>
+				<div class="statistics__arrow js-arrow">
+					<img src="pic/arrow-speed.png" alt="">
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="price-services price-services--ransom price-services--redemption">
+	<div class="price-services__outer">
+		<div class="container">
+			<div class="price-services__inner">
+				<h4 class="price-services__caption">Выкупленные автомобили</h4>
+				<ul class="price-services__list">
+					
+					<li class="price-services__item">
+						<div class="price-services__item-inner">
+							<a href="#" class="price-services__img-wrapp">
+								<img src="pic/prices/price-4.png" class="price-services__img" alt="Картинка">
+							</a>
+							<div class="price-services__item-wrapp">
+								<a href="#" class="price-services__title js-height">Jaguar F-Pace 2.0D AT AWD (180 л.с.) Prestige</a>
+								<ul class="price-search__list">
+									<li class="price-search__item">
+										<span class="price-search__text">Год авто</span>
+										<span class="price-search__value">2002</span>
+									</li>
+									<li class="price-search__item">
+										<span class="price-search__text">Пробег</span>
+										<span class="price-search__value">120 000</span>
+									</li>
+									<li class="price-search__item">
+										<span class="price-search__text">Двигатель</span>
+										<span class="price-search__value">бензин 1.6</span>
+									</li>
+									<li class="price-search__item">
+										<span class="price-search__text">КПП</span>
+										<span class="price-search__value">МКПП</span>
+									</li>
+								</ul>
+								<div class="price-services__price">
+									<span class="price-services__price-text">Цена:</span>
+									<span class="price-services__price-value">от 1 200 000<sup>руб.</sup></span>
+								</div>
+								<a href="#" class="price-services__link btn">Заказать</a>
+							</div>
+						</div>
+					</li>
+					
+					<li class="price-services__item">
+						<div class="price-services__item-inner">
+							<a href="#" class="price-services__img-wrapp">
+								<img src="pic/prices/price-5.png" class="price-services__img" alt="Картинка">
+							</a>
+							<div class="price-services__item-wrapp">
+								<a href="#" class="price-services__title js-height">Mercedes-Benz C-Class C63S AMG 2017</a>
+								<ul class="price-search__list">
+									<li class="price-search__item">
+										<span class="price-search__text">Год авто</span>
+										<span class="price-search__value">2002</span>
+									</li>
+									<li class="price-search__item">
+										<span class="price-search__text">Пробег</span>
+										<span class="price-search__value">120 000</span>
+									</li>
+									<li class="price-search__item">
+										<span class="price-search__text">Двигатель</span>
+										<span class="price-search__value">бензин 1.6</span>
+									</li>
+									<li class="price-search__item">
+										<span class="price-search__text">КПП</span>
+										<span class="price-search__value">МКПП</span>
+									</li>
+								</ul>
+								<div class="price-services__price">
+									<span class="price-services__price-text">Цена:</span>
+									<span class="price-services__price-value">от 1 200 000<sup>руб.</sup></span>
+								</div>
+								<a href="#" class="price-services__link btn">Заказать</a>
+							</div>
+						</div>
+					</li>
+					
+					<li class="price-services__item">
+						<div class="price-services__item-inner">
+							<a href="#" class="price-services__img-wrapp">
+								<img src="pic/prices/price-6.png" class="price-services__img" alt="Картинка">
+							</a>
+							<div class="price-services__item-wrapp">
+								<a href="#" class="price-services__title js-height">Mercedes-Benz G-Class AMG G 65 AT</a>
+								<ul class="price-search__list">
+									<li class="price-search__item">
+										<span class="price-search__text">Год авто</span>
+										<span class="price-search__value">2002</span>
+									</li>
+									<li class="price-search__item">
+										<span class="price-search__text">Пробег</span>
+										<span class="price-search__value">120 000</span>
+									</li>
+									<li class="price-search__item">
+										<span class="price-search__text">Двигатель</span>
+										<span class="price-search__value">бензин 1.6</span>
+									</li>
+									<li class="price-search__item">
+										<span class="price-search__text">КПП</span>
+										<span class="price-search__value">МКПП</span>
+									</li>
+								</ul>
+								<div class="price-services__price">
+									<span class="price-services__price-text">Цена:</span>
+									<span class="price-services__price-value">от 1 200 000<sup>руб.</sup></span>
+								</div>
+								<a href="#" class="price-services__link btn">Заказать</a>
+							</div>
+						</div>
+					</li>
+					
+					<li class="price-services__item">
+						<div class="price-services__item-inner">
+							<a href="#" class="price-services__img-wrapp">
+								<img src="pic/prices/price-4.png" class="price-services__img" alt="Картинка">
+							</a>
+							<div class="price-services__item-wrapp">
+								<a href="#" class="price-services__title js-height">Jaguar F-Pace 2.0D AT AWD (180 л.с.) Prestige</a>
+								<ul class="price-search__list">
+									<li class="price-search__item">
+										<span class="price-search__text">Год авто</span>
+										<span class="price-search__value">2002</span>
+									</li>
+									<li class="price-search__item">
+										<span class="price-search__text">Пробег</span>
+										<span class="price-search__value">120 000</span>
+									</li>
+									<li class="price-search__item">
+										<span class="price-search__text">Двигатель</span>
+										<span class="price-search__value">бензин 1.6</span>
+									</li>
+									<li class="price-search__item">
+										<span class="price-search__text">КПП</span>
+										<span class="price-search__value">МКПП</span>
+									</li>
+								</ul>
+								<div class="price-services__price">
+									<span class="price-services__price-text">Цена:</span>
+									<span class="price-services__price-value">от 1 200 000<sup>руб.</sup></span>
+								</div>
+								<a href="#" class="price-services__link btn">Заказать</a>
+							</div>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+        <div class="redemption">
+            <div class="container">
+                <div class="redemption__btn">
+                    <a href="#" class="btn btn--print">Подобрать автомобиль</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+  <footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__top">
+			<div class="footer__item-box">
+				<div class="footer__item">
+					<span class="footer__item-icon">
+						<svg class="icon-time">
+							<use xlink:href="#time"></use>
+						</svg>
+						<svg class="icon-time">
+							<use xlink:href="#time"></use>
+						</svg>
+					</span>
+					<div class="footer__item-info">
+						<a href="tel:88003332920" class="footer__item-phone">
+							+7 964 <span> 765 80 01</span>
+						</a>
+						<span class="footer__item-time">
+							Пн.-Вс. 10:00-23:00
+						</span>
+					</div>
+				</div>
+				<div class="footer__item">
+					<span class="footer__item-icon">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<div class="footer__item-info">
+						<a href="tel:88003332920" class="footer__item-phone">
+							+7 964 <span> 765 80 01</span>
+						</a>
+						<a href="#" class="footer__item-link">
+							Обратный звонок
+						</a>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="btn footer__btn">Калькулятор подбора</a>
+		</div>
+		<div class="footer__contract">
+			<div class="footer__contract-inner">
+				<a href="#" class="footer__contract-item">
+					<span class="footer__contract-icon">
+						<svg class="icon-document">
+							<use xlink:href="#document"></use>
+						</svg>
+						<svg class="icon-document">
+							<use xlink:href="#document"></use>
+						</svg>
+					</span>
+					<span class="footer__contract-txt">
+						Договор купли продажи
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="footer__holder">
+		<div class="container">
+			<div class="footer__inner">
+				<div class="footer__nav">
+					<ul class="footer__nav-list">
+						<li class="footer__nav-item">
+							<a href="#">О компании</a> 
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Цены</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Гарантии</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Отзывы</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Контакты</a>
+						</li>
+					</ul>
+					<ul class="footer__nav-list">
+						<li class="footer__nav-item">
+							<a href="#">Страхование авто</a> 
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Мобильный шиномонтаж</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#">Эвакуатор</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<div class="footer__map">
+			<div class="footer__map-address">
+				<span class="footer__map-icon">
+					<svg class="icon-star">
+						<use xlink:href="#star"></use>
+					</svg>
+				</span>
+				<span class="footer__map-txt">
+					Москва, Киевская, д. 8
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="footer__copy">
+		<span class="footer__copy-txt">
+			Качественный интернет маркетинг
+		</span>
+		<a href="#" class="footer__copy-link">web-golden.ru</a>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

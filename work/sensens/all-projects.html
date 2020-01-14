@@ -1,0 +1,371 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>All Project</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<header class="header header--projects">
+	<div class="header__popup js-header-popup">
+		<div class="container">
+			<div class="header__popup-outer">
+				<div class="header__popup-inner">
+					<div class="header__popup-holder">
+						<span class="header__popup-close js-popup-close"></span>
+						<div class="header__popup-decor">
+							<img src="pic/logo/logo-popup.png" alt="">
+						</div>
+						<ul class="header__popup-list">
+							<li class="header__popup-list-item">
+								<a href="#" class="header__popup-list-link">Главная</a>
+							</li>
+							<li class="header__popup-list-item">
+								<a href="#" class="header__popup-list-link">Проекты</a>
+							</li>
+							<li class="header__popup-list-item">
+								<a href="#" class="header__popup-list-link active">Услуги</a>
+							</li>
+							<li class="header__popup-list-item">
+								<a href="#" class="header__popup-list-link">Контакты</a>
+							</li>
+						</ul>
+					</div>
+					<div class="header__popup-foot">
+						<span class="footer__title">Связаться с нами</span>
+						<div class="footer__holder">
+							<div class="footer__contacts">
+								<div class="footer__contacts-item">
+									<a href="tel:+74952680112" class="footer__contacts-link">
+										+7 495 268 01 12
+									</a>
+								</div>
+								<div class="footer__contacts-item">
+									<a href="mailto:hello@TheID.ru" class="footer__contacts-link">
+										hello@TheID.ru
+									</a>
+								</div>
+							</div>
+							<div class="footer__copy">
+								<span>
+									&copy;Sensens. 2015-2018
+								</span>
+							</div>
+
+							<div class="footer__social">
+								<span class="footer__social-txt">Следить</span>
+								<a href="#" class="footer__social-link">Fb<span style="color: #2F78DD;">.</span></a>
+								<a href="#" class="footer__social-link">Ins<span style="color: #E543A7;">.</span></a>
+								<a href="#" class="footer__social-link">Vk<span style="color: #2F5EDD;">.</span></a>
+								<a href="#" class="footer__social-link">YT<span style="color: #FF0808;">.</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-large">
+		<div class="header__holder js-header">
+			<div class="header__inner">
+				<div class="header__back">
+					<a href="#" class="header__back-link"></a>
+				</div>
+				<div class="header__menu-btn js-menu-btn">
+					<span class="line"></span>
+				</div>
+				
+				<a href="#" class="header__img-wrap">
+					<img src="pic/logo/logo-2.png" alt="">
+				</a>
+
+				<div class="header__contacts">
+					<div class="header__contacts-item">
+						<a href="mailto:hello@sensens.ru" class="header__contacts-link">hello@sensens.ru</a>
+					</div>
+					<div class="header__contacts-item">
+						<a href="tel:+74952680112" class="header__contacts-link">+74952680112</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</header>
+
+
+	<div class="all-projects">
+	<div class="container-large">
+		
+		<div class="all-projects__head">
+			<div class="all-projects__head-inner">
+				<span class="all-projects__title">Проекты</span>
+			</div>
+			<div class="all-projects__head-inner">
+				<ul class="all-projects__list">
+					<li class="all-projects__list-item">
+						<a href="#" class="all-projects__list-link">
+							Все
+						</a>
+					</li>
+					<li class="all-projects__list-item">
+						<a href="#" class="all-projects__list-link">
+							Коммерческое пространство
+						</a>
+					</li>
+					<li class="all-projects__list-item">
+						<a href="#" class="all-projects__list-link">
+							Упаковка и этикетка
+						</a>
+					</li>
+					<li class="all-projects__list-item">
+						<a href="#" class="all-projects__list-link">
+							Фирменный стиль
+						</a>
+					</li>
+					<li class="all-projects__list-item">
+						<a href="#" class="all-projects__list-link">
+							Сайты
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="all-projects__holder">
+			<div class="project-item">
+	<a href="#" class="project-item__inner">
+		<span class="project-item__img-wrap">
+			<div class="project-item__img js-lazy js-img-box" data-src="pic/project/project-13.jpg" style="background-image: url(pic/project/project-13.jpg);"></div>
+		</span>
+		<span class="project-item__type">Тип клиента</span>
+		<span class="project-item__name">Название проекта</span>
+	</a>
+</div><div class="project-item">
+	<a href="#" class="project-item__inner">
+		<span class="project-item__img-wrap">
+			<div class="project-item__img js-lazy js-img-box" data-src="pic/project/project-14.jpg" style="background-image: url(pic/project/project-14.jpg);"></div>
+		</span>
+		<span class="project-item__type">Тип клиента</span>
+		<span class="project-item__name">Название проекта</span>
+	</a>
+</div><div class="project-item">
+	<a href="#" class="project-item__inner">
+		<span class="project-item__img-wrap">
+			<div class="project-item__img js-lazy js-img-box" data-src="pic/project/project-15.jpg" style="background-image: url(pic/project/project-15.jpg);"></div>
+		</span>
+		<span class="project-item__type">Тип клиента</span>
+		<span class="project-item__name">Название проекта</span>
+	</a>
+</div><div class="project-item">
+	<a href="#" class="project-item__inner">
+		<span class="project-item__img-wrap">
+			<div class="project-item__img js-lazy js-img-box" data-src="pic/project/project-10.jpg" style="background-image: url(pic/project/project-10.jpg);"></div>
+		</span>
+		<span class="project-item__type">Тип клиента</span>
+		<span class="project-item__name">Название проекта Название проекта</span>
+	</a>
+</div><div class="project-item">
+	<a href="#" class="project-item__inner">
+		<span class="project-item__img-wrap">
+			<div class="project-item__img js-lazy js-img-box" data-src="pic/project/project-11.jpg" style="background-image: url(pic/project/project-11.jpg);"></div>
+		</span>
+		<span class="project-item__type">Тип клиента</span>
+		<span class="project-item__name">Название проекта Название проекта</span>
+	</a>
+</div><div class="project-item">
+	<a href="#" class="project-item__inner">
+		<span class="project-item__img-wrap">
+			<div class="project-item__img js-lazy js-img-box" data-src="pic/project/project-12.jpg" style="background-image: url(pic/project/project-12.jpg);"></div>
+		</span>
+		<span class="project-item__type">Тип клиента Тип клиента Тип клиента</span>
+		<span class="project-item__name">Название проекта</span>
+	</a>
+</div>
+		</div>
+	</div>
+</div>
+
+
+</div>
+
+<footer class="footer footer--all-proj">
+	<div class="container-large">
+		<span class="footer__title">Связаться с нами</span>
+		<div class="footer__holder">
+			<div class="footer__contacts">
+				<div class="footer__contacts-item">
+					<a href="tel:+74952680112" class="footer__contacts-link">
+						+7 495 268 01 12
+					</a>
+				</div>
+				<div class="footer__contacts-item">
+					<a href="mailto:hello@TheID.ru" class="footer__contacts-link">
+						hello@TheID.ru
+					</a>
+				</div>
+			</div>
+
+			
+			
+			<div class="footer__copy">
+				<span>
+					©Sensens. 2015-2018
+				</span>
+			</div>
+			
+
+			<div class="footer__social">
+				<span class="footer__social-txt">Следить</span>
+				<a href="#" class="footer__social-link">Fb<span style="color: #2F78DD;">.</span></a>
+				<a href="#" class="footer__social-link">Ins<span style="color: #E543A7;">.</span></a>
+				<a href="#" class="footer__social-link">Vk<span style="color: #2F5EDD;">.</span></a>
+				<a href="#" class="footer__social-link">YT<span style="color: #FF0808;">.</span></a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+	<div class="header header--projects header--projects-foot">
+		<div class="header__popup js-header-popup">
+			<div class="container">
+				<div class="header__popup-outer">
+					<div class="header__popup-inner">
+						<div class="header__popup-holder">
+							<span class="header__popup-close js-popup-close"></span>
+							<div class="header__popup-decor">
+								<img src="pic/logo/logo-popup.png" alt="">
+							</div>
+							<ul class="header__popup-list">
+								<li class="header__popup-list-item">
+									<a href="#" class="header__popup-list-link">Главная</a>
+								</li>
+								<li class="header__popup-list-item">
+									<a href="#" class="header__popup-list-link">Проекты</a>
+								</li>
+								<li class="header__popup-list-item">
+									<a href="#" class="header__popup-list-link active">Услуги</a>
+								</li>
+								<li class="header__popup-list-item">
+									<a href="#" class="header__popup-list-link">Контакты</a>
+								</li>
+							</ul>
+						</div>
+						<div class="header__popup-foot">
+							<span class="footer__title">Связаться с нами</span>
+							<div class="footer__holder">
+								<div class="footer__contacts">
+									<div class="footer__contacts-item">
+										<a href="tel:+74952680112" class="footer__contacts-link">
+											+7 495 268 01 12
+										</a>
+									</div>
+									<div class="footer__contacts-item">
+										<a href="mailto:hello@TheID.ru" class="footer__contacts-link">
+											hello@TheID.ru
+										</a>
+									</div>
+								</div>
+								<div class="footer__copy">
+									<span>
+										&copy;Sensens. 2015-2018
+									</span>
+								</div>
+	
+								<div class="footer__social">
+									<span class="footer__social-txt">Следить</span>
+									<a href="#" class="footer__social-link">Fb<span style="color: #2F78DD;">.</span></a>
+									<a href="#" class="footer__social-link">Ins<span style="color: #E543A7;">.</span></a>
+									<a href="#" class="footer__social-link">Vk<span style="color: #2F5EDD;">.</span></a>
+									<a href="#" class="footer__social-link">YT<span style="color: #FF0808;">.</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<a href="#" class="header__img-wrap">
+				<img src="pic/logo/logo-2.png" alt="">
+			</a>
+			<div class="header__menu-btn header__menu-btn--foot js-menu-btn">
+				<span class="line"></span>
+			</div>
+		</div>
+	</div>
+
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

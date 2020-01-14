@@ -1,0 +1,719 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Статья</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+<div class="wrapper">
+
+	<header class="header">
+	<div class="container">
+		<div class="header__top">
+
+			<div class="header__logo">
+				<a href="#" class="header__logo-link">
+					<img src="pic/logo.png" alt="">
+				</a>
+			</div>
+
+			<div class="header__contact js-header-contact">
+				<div class="header__phone">
+					<div class="header__phone-top">
+						<span class="header__phone-icon">
+							<svg class="icon-phone">
+								<use xlink:href="#phone"></use>
+							</svg>
+						</span>
+						<a href="tel:+74998774708" class="header__phone-link">+7 499 877-47-08</a>
+					</div>
+					<span class="header__phone-bott">
+						Пн-Вс: 09:00—23:00
+					</span>
+				</div>
+				<div class="header__callback">
+					<a data-fancybox data-src="#popup-callback" href="javascript:;" class="btn header__btn">
+						<span class="header__btn-icon">
+							<svg class="icon-phone-btn">
+								<use xlink:href="#phone"></use>
+							</svg>
+						</span>
+						<span class="header__btn-text">Перезвоните мне</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="header__menu">
+				<ul class="header__menu-list">
+					<li class="header__menu-item">
+						<a href="#" class="header__menu-link">
+							<span class="header__menu-icon">
+								<svg class="icon-calc">
+									<use xlink:href="#calc"></use>
+								</svg>
+							</span>
+							<span class="header__menu-text">Калькулятор окон</span>
+						</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="#" class="header__menu-link">
+							<span class="header__menu-icon">
+								<svg class="icon-about">
+									<use xlink:href="#about"></use>
+								</svg>
+							</span>
+							<span class="header__menu-text">О компании</span>
+						</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="#" class="header__menu-link">
+							<span class="header__menu-icon">
+								<svg class="icon-type-house">
+									<use xlink:href="#type-house"></use>
+								</svg>
+							</span>
+							<span class="header__menu-text">Подобрать по типу дома</span>
+						</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="#" class="header__menu-link">
+							<span class="header__menu-icon">
+								<svg class="icon-price">
+									<use xlink:href="#price"></use>
+								</svg>
+							</span>
+							<span class="header__menu-text">Цены</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="header__partner">
+				<div class="header__partner-wrap">
+					<span class="header__partner-text">Официальный партнер с 2003 года</span>
+					<img src="pic/rehau.png" alt="">
+				</div>
+			</div>
+			
+			<div class="header__mobile-wrap">
+				<div class="header__phone-mobile-visible js-toggle-contact">
+					<svg class="icon-phone-mobile">
+						<use xlink:href="#phone"></use>
+					</svg>
+				</div>
+
+				<div class="header__btn-mobile-visible js-toggle-nav">
+					<span class="header__btn-line"></span>
+					<span class="header__btn-line"></span>
+					<span class="header__btn-line"></span>
+				</div>
+			</div>
+		</div>
+
+		<nav class="header__nav js-nav">
+			<ul class="header__nav-list">
+				<li class="header__nav-item js-item-wrap">
+					<a href="#" class="header__nav-link js-open-subnav ">Окна</a>
+					<div class="header__subnav js-subnav">
+						<div class="header__subnav-col header__subnav-col--category">
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Профили</a>
+							</div>
+							<ul class="header__subnav-list">
+								<li class="header__subnav-item">
+									<a href="#" class="header__subnav-link">Rehau Blitz New</a>
+								</li>
+								<li class="header__subnav-item">
+									<a href="#" class="header__subnav-link">Rehau Delight-Design</a>
+								</li>
+								<li class="header__subnav-item">
+									<a href="#" class="header__subnav-link">Rehau Grazio</a>
+								</li>
+								<li class="header__subnav-item">
+									<a href="#" class="header__subnav-link">Rehau Intelio</a>
+								</li>
+							</ul>
+						</div>
+						<div class="header__subnav-col">
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Цветные окна</a>
+							</div>
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Пластиковые окна</a>
+							</div>
+						</div>
+						<div class="header__subnav-col">
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Готовые окна</a>
+							</div>
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Нестандартные окна</a>
+							</div>
+						</div>
+						<div class="header__subnav-col">
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Арочные окна</a>
+							</div>
+							<div class="header__subnav-category">
+								<a href="#" class="header__subnav-category-link">Витражные окна</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link ">Двери</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link ">Балконы</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link ">Коттеджи</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link ">Контакты</a>
+				</li>
+				<li class="header__nav-item">
+					<a href="#" class="header__nav-link ">Услуги</a>
+				</li>
+			</ul>
+
+			<div class="header__nav-bott">
+				<div class="header__menu">
+					<ul class="header__menu-list">
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">
+								<span class="header__menu-icon">
+									<svg class="icon-calc">
+										<use xlink:href="#calc"></use>
+									</svg>
+								</span>
+								<span class="header__menu-text">Калькулятор окон</span>
+							</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">
+								<span class="header__menu-icon">
+									<svg class="icon-about">
+										<use xlink:href="#about"></use>
+									</svg>
+								</span>
+								<span class="header__menu-text">О компании</span>
+							</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">
+								<span class="header__menu-icon">
+									<svg class="icon-type-house">
+										<use xlink:href="#type-house"></use>
+									</svg>
+								</span>
+								<span class="header__menu-text">Подобрать по типу дома</span>
+							</a>
+						</li>
+						<li class="header__menu-item">
+							<a href="#" class="header__menu-link">
+								<span class="header__menu-icon">
+									<svg class="icon-price">
+										<use xlink:href="#price"></use>
+									</svg>
+								</span>
+								<span class="header__menu-text">Цены</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="header__partner">
+					<div class="header__partner-wrap">
+						<span class="header__partner-text">Официальный партнер с 2003 года</span>
+						<img src="pic/rehau.png" alt="">
+					</div>
+				</div>
+			</div>
+		</nav>
+
+	</div>
+</header>
+
+
+	<div class="heading-article" style="background-image: url(pic/bg/bg-28.jpg);">
+	<div class="breadcrumbs">
+	<div class="container">
+			<ul class="breadcrumbs__list">
+				
+					<li class="breadcrumbs__item">
+						<a href="#" class="breadcrumbs__link">Главная</a>
+					</li>
+				
+					<li class="breadcrumbs__item">
+						<a href="#" class="breadcrumbs__link">Статьи</a>
+					</li>
+				
+				<li class="breadcrumbs__item">Какие пластиковые окна лучше поставить?</li>
+			</ul>
+	</div>
+</div>
+	<div class="container">
+		<div class="heading-article__wrap">
+			<div class="static-content">
+				<h1>h1 Какие пластиковые окна лучше поставить?</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="article-wrap">
+		<div class="container">
+			<div class="static-content">
+				<p class="article-head">
+					На первый взгляд, конструкция пластиковых окон очень проста – стекло, рама, ручки. Однако окна разных производителей отличаются друг от друга как по качеству, так и по цене. Выбирая окна известной марки, покупатель платит не за громкое имя, а за надежность и долговечность. Рассмотрим подробнее все элементы, из которых состоят окна, и выясним, какие пластиковые окна лучше.
+				</p>
+
+				<h2>h2 Выбираем лучшие пластиковые окна: рекомендации экспертов </h2>
+
+				<div class="article-box">
+					<div class="article-img">
+						<img src="pic/bg/bg-29.jpg" alt="">
+						<span>Пластиковые окна</span>
+					</div>
+					<div class="article-text">
+						<p>
+							Какие пластиковые окна лучше ставить в квартиру или дом? Хорошие пластиковые окна не просто закрывают оконный проем – они выполняют множество функций. Главная из них в наших широтах, конечно, теплосбережение. 
+						</p>
+						<p>
+							Владельцы некачественных окон хорошо знают, какой проблемой они могут стать зимой. Холод и сквозняки – неизбежность для тех, кто решил сэкономить и поставить самую дешевую модель кустарного производства. Но лучшие пластиковые окна обеспечивают идеальную теплоизоляцию – например, когда на улице -5 o С, температура около внутреннего стекла никогда не опускается ниже +20 o С. Летом окна могут защищать квартиру от жары и слишком яркого солнца – для комнат, выходящих на юг, можно выбрать окна с тонированными стеклопакетами и защитой от инфракрасного излучения.
+						</p>
+						<p>
+							Важная функция пластиковых окон – звукоизоляция, особенно это актуально для тех, кто живет неподалеку от оживленной дороги. Шумоизоляция зависит от толщины стекол и расстояния между ними.
+						</p>
+					</div>
+				</div>
+
+				<h3>h3 Материал и однородность профиля</h3>
+
+				<p>
+					Обычно профиль для пластиковых окон изготавливают из ПВХ, армированного металлом. ПВХ устойчив к деформациям, безвреден для человека и окружающей среды, не боится перепадов температуры, влаги, масел, кислот и растворителей. Из ПВХ можно делать не только стандартные квадратные и прямоугольные окна, но и конструкции любой формы – круглые и полукруглые, треугольные и т.д. Качественный ПВХ однородного цвета, его поверхность гладкая, без зернистости, неровностей и разводов, он абсолютно лишен запаха.
+				</p>
+
+				<div class="baner baner--article">
+	<div class="container">
+		<div class="baner__wrap" style="background-image: url(pic/bg/bg-3.jpg);">
+			<span class="baner__text">Рассчитаем стоимость ваших окон за <span>15 минут</span></span>
+			<div class="baner__btn-wrap">
+				<a href="#" class="btn baner__btn">Оставить заявку</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+				<blockquote>
+					<span>Кстати, срок службы высококачественных пластиковых окон из профиля ПВХ достигает 50-60 лет.</span>
+					<span>
+						<svg class="icon-left-quote">
+							<use xlink:href="#left-quote"></use>
+						</svg>
+					</span>
+				</blockquote>
+
+				<h4>h4 Толщина профиля</h4>
+
+				<p>
+					Профиль – это конструкция с внутренними перегородками. Толщина внешних и внутренних стенок профиля нормирована. В зависимости от нее профиль относят к одному из трех классов – А, В или С. 
+				</p>
+
+				<ol>
+					<li>
+						<b>Класс А</b> – наружные стенки толщиной от 2,8 мм, внутренние – от 2,5 мм. Окна из такого профиля обеспечивают хорошую тепло- и шумоизоляцию, именно их устанавливают в жилых помещениях. 
+					</li>
+					<li>
+						<b>Класс B</b> – наружные стенки толщиной от 2,5 мм, внутренние – от 2,0 мм. Окна профиля класса В рекомендованы к установке в нежилых помещениях. Они менее долговечны, хуже держат тепло и не обеспечивают достаточной защиты от шума. 
+					</li>
+					<li>
+						<b>Класс С</b> – все остальные профили, не подходящие под стандарты А и В. К профилю класса С не предъявляется строгих требований. Очевидно, что чем толще профиль, тем он прочнее и лучше. Большинство современных оконных профилей имеют толщину внешних стенок от 3 мм.
+					</li>
+				</ol>
+				
+				<div class="article-img-full">
+					<img src="pic/bg/bg-30.jpg" alt="">
+					<span>Монтаж окна</span>
+				</div>
+
+				<p>
+					Конечно, Вы можете обратиться к профессионалам, они посоветуют, как выбрать стеклопакет, профиль и фурнитуру, но важно и самому понимать, за что Вы платите деньги и что в итоге получаете.
+				</p>
+
+				<div class="article-box-list">
+					<div class="article-img-big">
+						<img src="pic/bg/bg-31.jpg" alt="">
+						<span>Монтаж окна</span>
+					</div>
+					<ul>
+						<li>
+							<b>Как выбрать профиль.</b> Вы можете поставить на выбор окна из профиля VEKA, шириной от 58 до 90 мм. Количество камер определяется монтажной шириной и рассчитано исходя из оптимальных показателей теплозащиты. В норме, для обычной городской квартиры достаточно профиля 70 мм; более широкий профиль используется в загородных домах или в регионах с суровыми зимами.
+						</li>
+						<li>
+							<b>Характеристики стеклопакета.</b> Для офисных и неотапливаемых помещений лучше выбирать одинарный стеклопакет. Для квартир и домов стеклопакет должен быть как минимум двойной. Как выбрать стеклопакет для остекления торгового помещения, мансарды в жилом доме и стоит ли купить двухкамерный пакет для окна в городской квартире, Вам расскажут менеджеры в офисах наших партнеров.
+						</li>
+						<li>
+							<b>Фурнитура.</b> Если говорить о фурнитуре – это тот случай, когда экономить нельзя. Ведь именно она находится в постоянной нагрузке. Некачественная фурнитура может привести к неплотному прилеганию створок, заклиниванию и, в конечном итоге, к замене. Выбирайте только качественную фурнитуру проверенных производителей, чтобы не пришлось платить дважды.
+						</li>
+						<li>
+							<b>Цены.</b> Стоимость и качество окна тесно связаны. Как правило, дешевле стоят окна из профиля класса В, а также конструкции, изготовленные с использованием дешевой фурнитуры. Прежде, чем ставить дешевое окно, попросите сертификаты и узнайте из чего оно сделано.
+						</li>
+					</ul>
+				</div>
+
+				<div class="article-varning">
+					<span>
+						Помните, что совокупная экономия на стоимости окна может составить всего лишь 20%, а потерянное качество и необходимость скорой замены обойдутся в разы дороже. Если Вы не знаете, какие окна выбрать, обратитесь к нашим партнерам и закажите изготовление и монтаж под ключ окон из профиля VEKA. Мы уверены, среди множества вариантов Вы найдете то, что устроит вас по цене и качеству.
+					</span>
+					<span>
+						<svg class="icon-varning">
+							<use xlink:href="#varning"></use>
+						</svg>
+					</span>
+				</div>
+
+				<div class="article-box-reverse">
+					<div class="article-img-small">
+						<img src="pic/bg/bg-32.jpg" alt="">
+						<span>Ширина профиля</span>
+					</div>
+					<div class="article-text">
+						<h4>h4 Ширина профиля</h4>
+						<p>
+							Ширина профиля должна быть не менее 50 мм. Большинство лучших пластиковых окон имеют ширину 58-70 мм и больше. Толщина в основном зависит от количества стекол – чем их больше, тем окно «теплее» и шире. В большинстве случаев ширина 58-70 мм достаточно для обеспечения тепла и тишины в доме, более широкие профили востребованы в суровом северном климате или же в очень шумных районах.
+						</p>
+						<p>
+							Пластиковое окно – довольно тяжелая конструкция, к тому же она постоянно подвергается нагрузкам – окна ежедневно открывают и закрывают. Поэтому фурнитура для таких окон должна быть особенно надежной. Чаще всего владельцы дешевых некачественных окон жалуются именно на фурнитуру – ручки разбалтываются и выходят из строя, а то и вовсе отваливаются, оконные петли заедают и перекашиваются.
+						</p>
+						<p>
+							Чтобы избежать таких неприятностей, покупайте окна солидных производителей, которые не только строго контролируют качество фурнитуры, но и постоянно разрабатывают новые, более удобные и долговечные системы. регулируемая фурнитура лучше нерегулируемой – она позволяет приоткрывать окно ровно на столько, насколько требуется, а специальные стопоры не позволят сквозняку захлопнуть окно. Противовзломные системы не дадут злоумышленникам проникнуть в дом (это особенно актуально для квартир на первом этаже, дач и частных домов). К достойным производителям оконной фурнитуры можно отнести Roto, Siegenia.
+						</p>
+					</div>
+				</div>
+
+					
+
+			</div>
+		</div>
+	</div>
+
+	<div class="social">
+	<div class="container">
+		<div class="social__wrap">
+			<span class="social__text">Поделиться в соцсетях:</span>
+			<ul class="social__list">
+				<li class="social__item">
+					<a href="#" class="social__link">
+						<svg class="icon-social-vk">
+							<use xlink:href="#vk"></use>
+						</svg>
+					</a>
+				</li>
+				<li class="social__item">
+					<a href="#" class="social__link">
+						<svg class="icon-social-twitter">
+							<use xlink:href="#twitter"></use>
+						</svg>
+					</a>
+				</li>
+				<li class="social__item">
+					<a href="#" class="social__link">
+						<svg class="icon-social-facebook">
+							<use xlink:href="#facebook"></use>
+						</svg>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+	<div class="manager manager--article" style="background-image: url(pic/bg/bg-14.jpg);">
+	<div class="container">
+		<div class="manager__wrap">
+			<div class="manager__col manager__col--content">
+				<span class="manager__icon manager__icon--one">
+					<svg class="icon-arrow">
+						<use xlink:href="#arrow"></use>
+					</svg>
+				</span>
+				<span class="manager__icon manager__icon--two">
+					<svg class="icon-arrow">
+						<use xlink:href="#arrow"></use>
+					</svg>
+				</span>
+				<div class="manager__head">
+					<h3 class="manager__name">Алексей Ермолаев</h3>
+					<span class="manager__position">персональный менеджер</span>
+				</div>
+				<p class="manager__descr">Я приеду на замер в тот же или на следующий день после заявки.</p>
+				<p class="manager__descr">На всех этапах работы, буду контролировать работу производства, службу доставки и монтажную бригаду. Вы в надежных руках.</p>
+				<p class="manager__descr">Проконсультирую по климату в квартире, дам рекомендации которые позволят жить безопаснее и комфортнее.</p>
+				<div class="manager__autograph">
+					<img src="pic/autograph.png" alt="">
+				</div>
+				<div class="manager__btn-wrap">
+					<a href="#" class="btn">Заявка на замер</a>
+				</div>
+			</div>
+
+			<div class="manager__col manager__col--bg" style="background-image: url(pic/bg/bg-13.png);"></div>
+		</div>
+	</div>
+</div>
+
+	<div class="article">
+	<div class="container">
+		<div class="article__wrap">
+			
+				<div class="article__item">
+					<a href="#" class="article__inner">
+						<div class="article__content" style="background-image: url(pic/bg/bg-1.jpg);">
+							<div class="article__caption-wrap js-height-caption">
+								<h4 class="article__caption">Какие пластиковые окна лучше: какой профиль и фирма лучше</h4>
+							</div>
+							<span class="article__descr js-height-descr">Собираясь заменить старые рамы в доме, многие сталкиваются с вопросом - какие пластиковые окна лучше?</span>
+							<span class="article__link"></span>
+						</div>
+					</a>
+				</div>
+			
+				<div class="article__item">
+					<a href="#" class="article__inner">
+						<div class="article__content" style="background-image: url(pic/bg/bg-5.1.jpg);">
+							<div class="article__caption-wrap js-height-caption">
+								<h4 class="article__caption">Как отрегулировать пластиковые окна своими руками</h4>
+							</div>
+							<span class="article__descr js-height-descr">Многие обладатели окон из ПВХ удивятся, узнав, что регулировка пластиковых окон должна быть процедурой обязательной. </span>
+							<span class="article__link"></span>
+						</div>
+					</a>
+				</div>
+			
+				<div class="article__item">
+					<a href="#" class="article__inner">
+						<div class="article__content" style="background-image: url(pic/bg/bg-11.jpg);">
+							<div class="article__caption-wrap js-height-caption">
+								<h4 class="article__caption">Как выбрать пластиковые окна</h4>
+							</div>
+							<span class="article__descr js-height-descr">Иногда для остекления балкона требуется сначала установить прочное и надежное основание — парапет. </span>
+							<span class="article__link"></span>
+						</div>
+					</a>
+				</div>
+			
+		</div>
+	</div>
+</div>
+
+</div>
+
+<div class="popup" id="popup-callback">
+	<span class="popup__caption">Перезвоните мне</span>
+	<span class="popup__text">Мы готовы ответить на любые ваши вопросы</span>
+	<form action="" class="form-popup">
+		<div class="popup__wrap">
+			<div class="popup__row">
+				<label for="name" class="label">
+					<span class="label-icon">
+						<svg class="icon-man-user">
+							<use xlink:href="#man-user"></use>
+						</svg>
+					</span>
+					<span class="label-error-message">Вы не заполнили поле!</span>
+					<input autocomplete="off" name="name_user" type="text" placeholder="Имя">
+				</label>
+			</div>
+			<div class="popup__row">
+				<label for="name" class="label">
+					<span class="label-icon">
+						<svg class="icon-phone-input">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<span class="label-error-message">Вы не заполнили поле!</span>
+					<input autocomplete="off" name="phone_number" class="js-phone" type="tel" placeholder="Телефон">
+				</label>
+			</div>
+			<div class="popup__row">
+				<button class="btn popup__btn" type="submit">Отправить сообщение</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__top">
+				<div class="footer__col js-item-wrap">
+					<div class="footer__col-head js-open-subnav">
+						<span class="footer__title">Покупателям</span>
+					</div>
+					<ul class="footer__col-list js-subnav">
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Качество</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Собственное производство</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Вопросы и ответы</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Гарантия</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__col js-item-wrap">
+					<div class="footer__col-head js-open-subnav">
+						<span class="footer__title">Услуги</span>
+					</div>
+					<ul class="footer__col-list js-subnav">
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Бесплатный вызов на замер</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Демонтаж старых окон</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Установка пластиковых окон</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Сервисное обслуживание</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Доставка</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__col js-item-wrap">
+					<div class="footer__col-head js-open-subnav">
+						<span class="footer__title">О компании</span>
+					</div>
+					<ul class="footer__col-list js-subnav">
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">История компании</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Сертификаты</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Благодарности</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Партнёры</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Отзывы партнеров</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Вакансии</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__col js-item-wrap">
+					<div class="footer__col-head js-open-subnav">
+						<span class="footer__title">Оптовое направление</span>
+					</div>
+					<ul class="footer__col-list js-subnav">
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Дилерам</a>
+						</li>
+						<li class="footer__col-item">
+							<a href="#" class="footer__col-link">Застройщикам</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer__bott">
+
+				<div class="footer__logo">
+					<a href="#" class="footer__logo-link">
+						<img src="pic/logo.png" alt="">
+					</a>
+				</div>
+
+				<div class="footer__contact">
+					<div class="footer__phone">
+						<div class="footer__phone-top">
+							<span class="footer__phone-icon">
+								<svg class="icon-phone">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<a href="tel:84957301441" class="footer__phone-link">8 (495) 730-14-41</a>
+						</div>
+						<span class="footer__phone-bott">
+							Пн-Вс: 09:00—23:00
+						</span>
+					</div>
+					<div class="footer__callback">
+						<a data-fancybox data-src="#popup-callback" href="javascript:;" class="btn footer__btn">
+							<span class="footer__btn-icon">
+								<svg class="icon-phone-btn">
+									<use xlink:href="#phone"></use>
+								</svg>
+							</span>
+							<span class="footer__btn-text">Перезвоните мне</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="footer__bott-wrap">
+					<div class="footer__info">
+						<span class="footer__info-text">© 2003 — 2018 </span>
+						<span class="footer__info-text">ООО «Окна Мастер»</span>
+					</div>
+
+					<div class="footer__social">
+						<div class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<svg class="icon-facebook">
+									<use xlink:href="#facebook"></use>
+								</svg>
+							</a>
+						</div>
+						<div class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<svg class="icon-vk">
+									<use xlink:href="#vk"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

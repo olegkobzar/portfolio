@@ -1,0 +1,644 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+    <div class="wrapper">
+    	<header class="header">
+	<div class="container">
+		<div class="header__left">
+			<div class="header__logo">
+				<a href="#" class="header__logo-link">
+					<img src="pic/logo.png" alt="logo" class="header__img">
+					<span class="header__logo-wrapp">
+						<span class="header__logo-name">Натуральные напитки</span>
+						<span class="header__logo-text"><span class="header__logo-text--green">Всегда свежее,</span> всегда в срок!</span>
+					</span>
+					
+				</a>
+			</div>
+		</div>
+		<div class="header__right">
+			<div class="header__description">
+				<span class="header__text-sun">Опт</span>
+				<span class="header__text-sun">розница</span>			
+			</div>
+			<div class="header__contact">
+				<div class="header__contact-tel">
+					<a href="tel:+79283306759" class="header__link-tel">+7 928 330-67-59</a>
+				</div>
+				<div class="header__contact-mail">
+					<a href="mailto:info@natur-napitki.ru" class="header__link-mail">info@natur-napitki.ru</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+    	<div class="advant">
+	<div class="container">
+		<div class="advant__top">
+			<h1 class="advant__caption">Оптово-розничная торговля овощами и фруктами</h1>
+		</div>
+		<nav class="advant__nav">
+			<ul class="advant__list-nav js-nav">
+				<li class="advant__item"><a href="#advant" class="advant__link advant__link--company">Компания</a></li>
+				<li class="advant__item"><a href="#price" class="advant__link advant__link--price">Прайс</a></li>
+				<li class="advant__item"><a href="#products" class="advant__link advant__link--goods">Продукция</a></li>
+				<li class="advant__item"><a href="#contacts" class="advant__link advant__link--contact">Контакты</a></li>
+			</ul>
+		</nav>
+		<div class="advant__bott" id="advant">
+			<p class="advant__description">
+				ООО «Натуральные напитки» предлагает поставку в Ваш адрес ассортимента фруктов и овощей высокого качества.
+			</p>
+			<ul class="advant__list-bott">
+				<li class="advant__item-bott">Вся продукция сертифицирована, соответствует ГОСТам</li>
+				<li class="advant__item-bott">Всегда в наличии широкий ассортимент товаров</li>
+				<li class="advant__item-bott">Выгодная цена</li>
+				<li class="advant__item-bott">Мы всегда стараемся подобрать оптимальные условия сотрудничества с Вами</li>
+				<li class="advant__item-bott">Удобные виды расчетов</li>
+				<li class="advant__item-bott">Различные варианты доставки</li>
+			</ul>
+		</div>
+	</div>
+</div>
+    	<div class="container">
+    		<div class="price-section" id="price">
+	<span class="content-title">
+		<span class="price__title-orange">АКТУАЛЬНЫЙ ПРАЙС</span>
+	</span>
+	<div class="price-table__wrapper">
+		<div class="price-table__fix-col">
+			<table class="price-table">
+				<tr>
+					<th>Наименование товара</th>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+				<tr>
+					<td>Авокадо</td>
+				</tr>
+				
+			</table>
+		</div>
+		<div class="price-table__main-col">
+			<table class="price-table">
+				<tr>
+					<th>Единица измерения</th>
+					<th>Кол-во кг во вложении</th>
+					<th>Калибр</th>
+					<th>Цена без НДС, руб.</th>
+					<th>Страна происхождения</th>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+				<tr>
+					<td>Коробка</td>
+					<td>4</td>
+					<td>18</td>
+					<td>1050</td>
+					<td>Израиль</td>
+				</tr>
+				
+			</table>
+		</div>
+	</div>
+	<div class="price-section__bottom">
+		<a href="#">Скачать прайс</a>
+	</div>
+</div>
+    		<div class="products" id="products">
+	<span class="content-title">
+		<span>ПРОДУКЦИЯ</span>
+	</span>
+	<ul class="products-list">
+		
+		<li class="products-list__item">
+			<a href="pic/products/products-1.jpg" class="products-list__link" data-fancybox="group1">
+				<img src="pic/products/products-1.jpg" alt="">
+			</a>
+		</li>
+		
+		<li class="products-list__item">
+			<a href="pic/products/products-2.jpg" class="products-list__link" data-fancybox="group1">
+				<img src="pic/products/products-2.jpg" alt="">
+			</a>
+		</li>
+		
+		<li class="products-list__item">
+			<a href="pic/products/products-3.jpg" class="products-list__link" data-fancybox="group1">
+				<img src="pic/products/products-3.jpg" alt="">
+			</a>
+		</li>
+		
+		<li class="products-list__item">
+			<a href="pic/products/products-4.jpg" class="products-list__link" data-fancybox="group1">
+				<img src="pic/products/products-4.jpg" alt="">
+			</a>
+		</li>
+		
+		<li class="products-list__item">
+			<a href="pic/products/products-5.jpg" class="products-list__link" data-fancybox="group1">
+				<img src="pic/products/products-5.jpg" alt="">
+			</a>
+		</li>
+		
+		<li class="products-list__item">
+			<a href="pic/products/products-6.jpg" class="products-list__link" data-fancybox="group1">
+				<img src="pic/products/products-6.jpg" alt="">
+			</a>
+		</li>
+		
+		<li class="products-list__item">
+			<a href="pic/products/products-7.jpg" class="products-list__link" data-fancybox="group1">
+				<img src="pic/products/products-7.jpg" alt="">
+			</a>
+		</li>
+		
+		<li class="products-list__item">
+			<a href="pic/products/products-8.jpg" class="products-list__link" data-fancybox="group1">
+				<img src="pic/products/products-8.jpg" alt="">
+			</a>
+		</li>
+				
+	</ul>
+</div>
+    		<div class="contacts" id="contacts">
+	<span class="content-title content-title--contact">
+		<span>КОНТАКТЫ</span>
+	</span>
+	<div class="contacts__cols">
+		<div class="contacts__right">
+			<span class="contacts__info">телефон: <a href="#">+7 928 330-67-59</a></span>
+			<span class="contacts__info">e-mail: <a href="#">info@natur-napitki.ru</a></span>
+		</div>
+		<div class="contacts__left">
+			<span class="contacts__info">350000, Россия, Краснодарский край,</span>
+			<span class="contacts__info">г. Краснодар, ул. Уральская, 260/2</span>
+		</div>
+	</div>
+	<div class="map-wrapper">
+		<div class="map" id="js-map" data-lat="45.0421349" data-lng="39.1274079"></div>
+	</div>
+</div>
+    	</div>
+    	
+    	<div class="feedback-form">
+	<div class="container container--sm">
+		<form action="mail.php" id="form" method="post">
+			<span class="feedback-form__title">СДЕЛАТЬ ЗАКАЗ</span>
+			<div class="feedback-form__inner">
+				<div class="feedback-form__left">
+					<div class="feedback-form__inputbox">
+						<input type="text" placeholder="Имя" required name="name">
+					</div>
+					<div class="feedback-form__inputbox">
+						<input type="text" placeholder="Номер телефона" required name="phone">
+					</div>
+				</div>
+				<div class="feedback-form__right">
+					<textarea placeholder="Текст сообщения..." required name="message"></textarea>
+				</div>
+			</div>
+			<button class="btn btn--center" type="submit">Отправить</button>
+		</form>
+		<div class="form__success" id="popup__success">
+			<div class="form__text">
+				Сообщение успешно отправлено!
+			</div>
+		</div>
+	</div>
+</div>
+    </div>
+
+<footer class="footer">
+	<div class="container container--sm">
+		<span class="footer__right">
+			<span><a href="tel:+79283306759" class="footer__link">+7 928 330-67-59</a></span>  •  
+			<span><a href="mailto:info@natur-napitki.ru" class="footer__link">info@natur-napitki.ru</a></span>
+		</span>
+		<span class="footer__left">ООО «Натуральные напитки» © • 2018</span>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

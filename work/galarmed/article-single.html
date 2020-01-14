@@ -1,0 +1,342 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Статья</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css?rel=11933">
+    <!-- @endif -->
+
+    <!--[if lt IE 9]>
+		<link rel="stylesheet" href="/reject/reject.css" media="all" />
+		<script type="text/javascript" src="/reject/reject.min.js"></script>
+	<![endif]-->
+</head>
+<body class=" @@class ">
+
+	
+
+	<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<header class="header">
+	<div class="header__top">
+		<div class="container">
+			<div class="header__top-wrap">
+				<div class="header__left">
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">
+							<img src="pic/logo.png" alt="">
+						</a>
+					</div>
+					<span class="header__descr">Хирургическое и медицинское оборудование. Высокого качества по хорошим ценам</span>
+				</div>
+				<div class="header__location">
+					<span class="header__location-icon">
+						<svg class="icon-location">
+							<use xlink:href="#location"></use>
+						</svg>
+					</span>
+					<div class="header__location-inner">
+						<a href="#" class="header__location-link">г. Москва, ул. Каргопольская, д17</a>
+						<span class="header__location-time">По будням 9:00 - 18:00</span>
+					</div>
+				</div>
+				<div class="header__contact">
+					<span class="header__contact-icon">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<div class="header__contact-inner">
+						<a href="tel:+74957390906" class="header__contact-phone">+7 (495) 739 09 06</a>
+						<a href="#popup" data-fancybox class="header__contact-callback">Заказать звонок</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header__bottom">
+		<div class="container">
+			<nav class="header__nav">
+				<ul class="header__nav-list">
+					<li class="header__nav-item header__nav-item--catalog js-nav-catalog">
+						<a href="#" class="header__nav-link header__nav-link--catalog">
+							<span>Каталог оборудования</span>
+						</a>
+						<ul class="header__subnav js-sub-menu">
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Эндоскопия</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Гинекологий</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Ультразвуковая диагностика</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Реанимация</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Лучевая диагностика</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Неонатология</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Функциональная диагностика</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Оборудование оториноларингологии</a>
+							</li>
+							<li class="header__subnav-item">
+								<a href="#" class="header__subnav-link">Стерилизация и дезинфекция</a>
+							</li>
+						</ul>
+					</li>
+					<li class="header__nav-item-other js-mobile-menu">
+						<ul class="header__nav-other">
+							<li class="header__nav-item hide-desktop">
+								<a href="#" class="header__nav-link">Каталог</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Наша компания</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Доставка и оплата </a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Статьи</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">Контакты</a>
+							</li>
+						</ul>
+						<div class="header__location header__location--nav">
+							<span class="header__location-icon">
+								<svg class="icon-location">
+									<use xlink:href="#location"></use>
+								</svg>
+							</span>
+							<div class="header__location-inner">
+								<a href="#" class="header__location-link">г. Москва, ул. Каргопольская, д17</a>
+								<span class="header__location-time">По будням 9:00 - 18:00</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<span class="header__nav-btn-mobile js-btn-nav">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</nav>
+		</div>
+	</div>
+</header>
+
+
+	<div class="article-single">
+	<div class="article-single__head" style="background-image: url(pic/bg/bg-4.jpg);">
+		<div class="container">
+			<div class="article-single__head-wrap">
+				<div class="breadcrumbs">
+	<ul class="breadcrumbs__list">
+		
+			<li class="breadcrumbs__item">
+				<a href="#" class="breadcrumbs__link">Главная</a>
+			</li>
+		
+		<li class="breadcrumbs__item">
+			Статьи
+		</li>
+	</ul>
+</div>
+				<h1 class="article-single__caption">Правила пользования расходными материалами</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="article-single__content">
+			<h3 class="article-single__title">Правила пользования расходными материалами</h3>
+			<p>Следующая вещь, которую мы должны модифицировать – это манифест. Эта вещь, которая говорит, какие службы задействованы при работе приложения, какие они имеют разрешения и так далее. </p>
+			<p>Итак, мы начнём с самого кода, и именно с кода директории smali. Если вы посмотрите на дерево каталогов Angry Birds, то увидите множество папок, содержащих различные компоненты, упорядоченные в виде подкаталогов.</p>
+			<p>Я даже не знаю, какие из этих вещей мне реально нужны и что они делают, но это мне и не нужно. Сейчас я сделаю техническую вещь потрясающей сложности – скопирую каталог droidwhisperer отсюда, из директории SearchableDictionary, сюда, в поддиректорию com/burstly/example/android директории smali. Вот и всё, надеюсь, вы поняли, в чём тут смысл. В процессе работы и исследований различных сервисов мы всё чаще можем встретить Spring Framework. И логичным шагом является знакомство с его структурой и возможными уязвимостями.</p>
+			<p>Самыми интересными для любого пентестера являются уязвимости, которые приводят к исполнению кода. Одним из способов получить RCE в Spring является инъекция SpEL-выражений.</p>
+			<p>В этой статье мы попробуем разобраться, что такое SpEL, где его можно найти, какие есть особенности использования и как же находить такие инъекции.</p>
+			<div class="article-single__box">
+				<div class="article-single__img">
+					<img src="pic/bg/bg-3.jpg" alt="">
+				</div>
+				<span class="article-single__descr">Одним из способов получить RCE в Spring является инъекция SpEL-выражений.</span>
+			</div>
+			<h3 class="article-single__title">Правила пользования расходными материалами</h3>
+			<p>Следующая вещь, которую мы должны модифицировать – это манифест. Эта вещь, которая говорит, какие службы задействованы при работе приложения, какие они имеют разрешения и так далее. </p>
+			<p>Итак, мы начнём с самого кода, и именно с кода директории smali. Если вы посмотрите на дерево каталогов Angry Birds, то увидите множество папок, содержащих различные компоненты, упорядоченные в виде подкаталогов.</p>
+			<p>Я даже не знаю, какие из этих вещей мне реально нужны и что они делают, но это мне и не нужно. Сейчас я сделаю техническую вещь потрясающей сложности – скопирую каталог droidwhisperer отсюда, из директории SearchableDictionary, сюда, в поддиректорию com/burstly/example/android директории smali. Вот и всё, надеюсь, вы поняли, в чём тут смысл. В процессе работы и исследований различных сервисов мы всё чаще можем встретить Spring Framework. И логичным шагом является знакомство с его структурой и возможными уязвимостями.</p>
+			<p>Самыми интересными для любого пентестера являются уязвимости, которые приводят к исполнению кода. Одним из способов получить RCE в Spring является инъекция SpEL-выражений.</p>
+			<p>В этой статье мы попробуем разобраться, что такое SpEL, где его можно найти, какие есть особенности использования и как же находить такие инъекции.</p>
+		</div>
+	</div>
+</div>
+
+<div class="other-article">
+	<div class="container">
+		<div class="other-article__outer">
+			<span class="other-article__caption">Похожие статьи</span>
+			<div class="other-article__wrap js-slider-article">
+				<div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-3.jpg);"></span>
+		<span class="article-item__name">Amazon отослала 1700 аудиозаписей пользователя Alexa случайному человеку</span>
+	</a>
+</div><div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-4.jpg);"></span>
+		<span class="article-item__name">Развёртывание встраиваемой системы на базе Windows и Linux</span>
+	</a>
+</div><div class="article-item">
+	<a href="#" class="article-item__link">
+		<span class="article-item__img" style="background-image: url(pic/article/article-5.jpg);"></span>
+		<span class="article-item__name">Почему так сложно непрерывно измерять уровень глюкозы?</span>
+	</a>
+</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<footer class="footer ">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__logo">
+				<a href="#" class="footer__logo-link">
+					<img src="pic/logo.png" alt="">
+				</a>
+			</div>
+			<ul class="footer__list">
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Каталог оборудования</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Статьи</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Наша компания</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Контакты</a>
+				</li>
+				<li class="footer__list-item">
+					<a href="#" class="footer__list-link">Доставка и оплата</a>
+				</li>
+			</ul>
+			<div class="footer__right">
+				<div class="footer__location">
+					<span class="footer__location-icon">
+						<svg class="icon-location">
+							<use xlink:href="#location"></use>
+						</svg>
+					</span>
+					<div class="footer__location-inner">
+						<a href="#" class="footer__location-link">г. Москва, ул. Каргопольская, д17</a>
+						<span class="footer__location-time">По будням 9:00 - 18:00</span>
+					</div>
+				</div>
+				<div class="footer__contact">
+					<span class="footer__contact-icon">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+					</span>
+					<div class="footer__contact-inner">
+						<a href="tel:+74957390906" class="footer__contact-phone">+7 (495) 739 09 06</a>
+						<a href="#" class="footer__contact-callback">Заказать звонок</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div class="popup" id="popup">
+	<span class="popup__caption">Заказать звонок</span>
+	<form action="">
+		<div class="popup__form">
+			<div class="popup__row">
+				<input type="text" placeholder="Имя">
+			</div>
+			<div class="popup__row">
+				<input type="text" placeholder="Телефон">
+			</div>
+			<div class="popup__btn-wrap">
+				<button class="btn btn--image" style="background-image: url(pic/bg/btn-fon.jpg);">Отправить</button>
+			</div>
+		</div>
+	</form>
+</div>
+<script src="js/vendor.js?rel=11933"></script>
+
+
+<script src="pages-list.js"></script>
+
+
+<script src="js/main.js?rel=11933"></script>
+
+
+</body>
+</html>
+

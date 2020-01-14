@@ -1,0 +1,1898 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MFWXKZ4');</script>
+	<!-- End Google Tag Manager -->
+	<!-- @if NODE_ENV='production' -->
+	<link rel="stylesheet" href="css/main.css">
+	<!-- @endif -->
+</head>
+<body class=" @@class ">
+	<!-- Google Tag Manager (noscript) --><noscript><iframesrc="https://www.googletagmanager.com/ns.html?id=GTM-52LMM8Z" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
+
+	<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+		var outer = document.createElement("div");
+		outer.style.visibility = "hidden";
+		outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+}
+var scrollW = getScrollbarWidth();
+document.body.style.paddingRight = scrollW + 'px';
+document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader" class="preloader">
+	<div class="preloader__center">
+		<svg class="icon-logo-preloader">
+			<use xlink:href="#logo-foot"></use>
+		</svg>
+		<div class="preloader__dots">
+			<span class="preloader__dots-item"></span>
+			<span class="preloader__dots-item"></span>
+			<span class="preloader__dots-item"></span>
+		</div>
+	</div>
+</div>
+
+<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+
+</div> 
+
+<div class="wrapper">
+
+	<div class="heading">
+		<header class="header wow bounceInDown" data-wow-duration="1s" data-wow-delay="3s">
+			<nav class="header__nav js-nav">
+				<div class="header__close-btn js-close"></div>
+				<ul class="header__nav-list">
+					<li class="header__nav-item">
+						<a href="#about-complex" class="header__nav-link js-scroll">О комплексе</a>
+					</li>
+					<li class="header__nav-item">
+						<a href="#about-rozmarin" class="header__nav-link js-scroll">Про «Розмарин»</a>
+					</li>
+					<li class="header__nav-item">
+						<a href="#about-available" class="header__nav-link js-scroll">В каждой квартире доступно</a>
+					</li>
+					<li class="header__nav-item">
+						<a href="#gallery" class="header__nav-link js-scroll">Галерея комплекса</a>
+					</li>
+					<li class="header__nav-item">
+						<a href="#infrastructure" class="header__nav-link js-scroll">Инфраструктура комплекса</a>
+					</li>
+					<li class="header__nav-item">
+						<a href="#region-box" class="header__nav-link js-scroll">Инфраструктура района</a>
+					</li>
+					<li class="header__nav-item">
+						<a href="#price" class="header__nav-link js-scroll">Квартиры и цены</a>
+					</li>
+					<li class="header__nav-item">
+						<a href="#credit" class="header__nav-link js-scroll">Рассрочка и ипотека</a>
+					</li>
+					<li class="header__nav-item">
+						<a href="#contact" class="header__nav-link js-scroll">Контакты</a>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="container">
+				<div class="header__wrap">
+					<div class="header__left wow bounceIn" data-wow-duration="1s" data-wow-delay="4s">
+						<div class="header__menu-btn js-menu-btn">
+							<span class="header__line"></span>
+							<span class="header__line"></span>
+							<span class="header__line"></span>
+						</div>
+						<div class="header__address">
+							<span class="header__street">Москва, ул. Наметкина, 18</span>
+							<span class="header__underground">Метро — Черемушки</span>
+						</div>
+					</div>
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">
+							<svg class="icon-logo">
+								<use xlink:href="#logo"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="header__right wow bounceIn" data-wow-duration="1s" data-wow-delay="4s">
+						<div class="header__phone">
+							<a href="tel:+74953200099" class="header__phone-link">+7 (495) 320-00-99</a>
+						</div>
+						<div class="header__callback">
+							<a data-fancybox data-src="#popup-feedback" href="javascript:;" class="header__callback-link">Заказать звонок</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+
+		<div class="heading__outer js-heading-slider">
+			<div class="heading__item" style="background-image: url(pic/bg/bg-1.jpg);">
+				<div class="heading__video">
+					<video loop muted video poster="">
+						<source src="video_rozmarin.mp4" type="video/mp4"></source>
+						<source src="video_rozmarin.webm" type="video/webm"></source>
+					</video>
+				</div>
+				<div class="container">
+					<div class="heading__wrap">
+						<h1 class="heading__caption wow fadeIn" data-wow-duration="1s" data-wow-delay="2s">Жилой комплекс Розмарин</h1>
+						<div class="heading__btn-wrap wow bounceInUp" data-wow-duration="1s" data-wow-delay="2s">
+							<a href="#" class="btn heading__btn">Ключи в день покупки</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="heading__item" style="background-image: url(pic/bg/bg-1.jpg);">
+				<div class="container">
+					<div class="heading__wrap">
+						<h1 class="heading__caption">Жилой комплекс Розмарин</h1>
+						<div class="heading__btn-wrap wow bounceInUp" data-wow-duration="1s" data-wow-delay="2s">
+							<a href="#" class="btn heading__btn">Ключи в день покупки</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="heading__item" style="background-image: url(pic/bg/bg-1.jpg);">
+				<div class="container">
+					<div class="heading__wrap">
+						<h1 class="heading__caption">Жилой комплекс Розмарин</h1>
+						<div class="heading__btn-wrap wow bounceInUp" data-wow-duration="1s" data-wow-delay="2s">
+							<a href="#" class="btn heading__btn">Ключи в день покупки</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="heading__item" style="background-image: url(pic/bg/bg-1.jpg);">
+				<div class="container">
+					<div class="heading__wrap">
+						<h1 class="heading__caption">Жилой комплекс Розмарин</h1>
+						<div class="heading__btn-wrap wow bounceInUp" data-wow-duration="1s" data-wow-delay="2s">
+							<a href="#" class="btn heading__btn">Ключи в день покупки</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="heading__item" style="background-image: url(pic/bg/bg-1.jpg);">
+				<div class="container">
+					<div class="heading__wrap">
+						<h1 class="heading__caption">Жилой комплекс Розмарин</h1>
+						<div class="heading__btn-wrap wow bounceInUp" data-wow-duration="1s" data-wow-delay="2s">
+							<a href="#" class="btn heading__btn">Ключи в день покупки</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="heading__overview js-overview wow bounceIn" data-wow-duration="1s" data-wow-delay="4s">
+			<a href="#" class="heading__overview-link">
+				<span class="heading__overview-icon">
+					<svg class="icon-video">
+						<use xlink:href="#video"></use>
+					</svg>
+				</span>
+				<span class="heading__overview-text">Обзор с камер наблюдения</span>
+			</a>
+		</div>
+
+		<div class="heading__count js-count wow bounceIn" data-wow-duration="1s" data-wow-delay="4s">
+			<span class="heading__current js-heading-count">01</span>
+			<span class="heading__slesh">\</span>
+			<span class="heading__all js-heading-all">05</span>
+		</div>
+
+
+	</div>
+
+	<div class="about" id="about-complex">
+		<div class="container">
+			<span class="about__caption wow fadeInUp">О комплексе</span>
+			<div class="about__wrap">
+
+				<div class="about__item wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+					<div class="about__inner" data-number="01">
+						<span class="about__icon">
+							<svg class="icon-train">
+								<use xlink:href="#train"></use>
+							</svg>
+						</span>
+						<span class="about__name">5 минут до метро</span>
+					</div>
+					<div class="about__info">
+						<div class="about__info-head">
+							<span class="about__info-icon">
+								<svg class="icon-train-small">
+									<use xlink:href="#train"></use>
+								</svg>
+							</span>
+							<span class="about__info-title">5 минут до метро</span>
+						</div>
+						<span class="about__info-text">В 600 м от комплекса строится станция метро «Зюзино»
+							(Большая кольцевая линия Московского метрополитена).
+							Расположится на пересечении ул. Каховка и
+						Севастопольский пр-к. Открытие запланировано на 2020 г.</span>
+						<span class="about__info-text"></span>
+					</div>
+				</div>
+
+				<div class="about__item wow fadeInUp" data-wow-duration="1s" data-wow-delay=".75s">
+					<div class="about__inner" data-number="02">
+						<span class="about__icon">
+							<svg class="icon-tree">
+								<use xlink:href="#tree"></use>
+							</svg>
+						</span>
+						<span class="about__name">Свой парк</span>
+					</div>
+					<div class="about__info">
+						<div class="about__info-head">
+							<span class="about__info-icon">
+								<svg class="icon-tree-small">
+									<use xlink:href="#tree"></use>
+								</svg>
+							</span>
+							<span class="about__info-title">Свой парк</span>
+						</div>
+						<span class="about__info-text">Комплекс выгодно отличается наличием своего парка
+							площадью 6 Га. Парк выполнен в богатом ландшафтном
+							дизайне, посажено огромное количество растений.
+							Наличие детских площадок, уютных беседок и каскада
+						фонтанов говорит о заботе комфортной жизни жильцов.</span>
+						<span class="about__info-text"></span>
+					</div>
+				</div>
+
+				<div class="about__item wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+					<div class="about__inner" data-number="03">
+						<span class="about__icon">
+							<svg class="icon-baby">
+								<use xlink:href="#baby"></use>
+							</svg>
+						</span>
+						<span class="about__name">Детский сад</span>
+					</div>
+					<div class="about__info">
+						<div class="about__info-head">
+							<span class="about__info-icon">
+								<svg class="icon-baby-small">
+									<use xlink:href="#baby"></use>
+								</svg>
+							</span>
+							<span class="about__info-title">Детский сад</span>
+						</div>
+						<span class="about__info-text">На территории комплекса работает частный детский сад
+							Legacy (Наследие). Детский сад премиум-класса на 115 детей
+							от 1,5 до 7 лет. В саду более 30 образовательных программ,
+							группы обеспечены современным оборудованием. Отдельно
+						можно отметить наличие бассейна и соляной комнаты.</span>
+						<span class="about__info-text"></span>
+					</div>
+				</div>
+
+				<div class="about__item wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.25s">
+					<div class="about__inner" data-number="04">
+						<span class="about__icon">
+							<svg class="icon-wall">
+								<use xlink:href="#wall"></use>
+							</svg>
+						</span>
+						<span class="about__name">Монолит</span>
+					</div>
+					<div class="about__info">
+						<div class="about__info-head">
+							<span class="about__info-icon">
+								<svg class="icon-wall-small">
+									<use xlink:href="#wall"></use>
+								</svg>
+							</span>
+							<span class="about__info-title">Монолит</span>
+						</div>
+						<span class="about__info-text">Здания построены по индивидуальному проекту с применением
+							технологии монолитно-железобетонного строительства.
+							Наружные стены - многослойные, с применением эффективного
+							негорючего утеплителя, вентилируемый фасад с облицовкой
+						керамогранитом.</span>
+						<span class="about__info-text"></span>
+					</div>
+				</div>
+
+				<div class="about__item wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+					<div class="about__inner" data-number="05">
+						<span class="about__icon">
+							<svg class="icon-home">
+								<use xlink:href="#home"></use>
+							</svg>
+						</span>
+						<span class="about__name">Умный дом</span>
+					</div>
+					<div class="about__info">
+						<div class="about__info-head">
+							<span class="about__info-icon">
+								<svg class="icon-home-small">
+									<use xlink:href="#home"></use>
+								</svg>
+							</span>
+							<span class="about__info-title">Умный дом</span>
+						</div>
+						<span class="about__info-text">«Умный дом» - это безопасность и комфорт в вашей квартире.
+							В базовые опции включено: контроль доступа и ликвидации протечек,
+							контроль температуры воздуха, дистанционное управление бытовой
+							техникой, управление освещением в квартире.
+						Часть квартир реализуется с базовым пакетом системы «Умный дом».</span>
+						<span class="about__info-text"></span>
+					</div>
+				</div>
+
+				<div class="about__item wow fadeInUp" data-wow-duration="1s" data-wow-delay=".75s">
+					<div class="about__inner" data-number="06">
+						<span class="about__icon">
+							<svg class="icon-box">
+								<use xlink:href="#box"></use>
+							</svg>
+						</span>
+						<span class="about__name">White box</span>
+					</div>
+					<div class="about__info">
+						<div class="about__info-head">
+							<span class="about__info-icon">
+								<svg class="icon-box-small">
+									<use xlink:href="#box"></use>
+								</svg>
+							</span>
+							<span class="about__info-title">White box</span>
+						</div>
+						<span class="about__info-text">Предчистовая отделка White box позволить сберечь время и силы
+							на ремонт и сразу перейди к его творческому части.
+							В квартире будут выполнены все черновые работы,
+							включая выравнивание и штукатурку стен, возведение
+						перегородок, выполнение стяжки пола, проведение электропроводки.</span>
+						<span class="about__info-text"></span>
+					</div>
+				</div>
+
+				<div class="about__item wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+					<div class="about__inner" data-number="07">
+						<span class="about__icon">
+							<svg class="icon-parking">
+								<use xlink:href="#parking"></use>
+							</svg>
+						</span>
+						<span class="about__name">Паркинг</span>
+					</div>
+					<div class="about__info">
+						<div class="about__info-head">
+							<span class="about__info-icon">
+								<svg class="icon-parking-small">
+									<use xlink:href="#parking"></use>
+								</svg>
+							</span>
+							<span class="about__info-title">Паркинг</span>
+						</div>
+						<span class="about__info-text">Подземный 3-х уровневый паркинг на 828 машино-мест позволяет
+							забыть о проблемах поиска свободного места для автомобиля.
+							Для комфорта и безопасность предусмотрен доступ в паркинг
+							прямо из комплекса без выхода на улицу.
+						Для гостей имеется отдельная охраняемая парковка.</span>
+						<span class="about__info-text"></span>
+					</div>
+				</div>
+
+				<div class="about__item wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.25s">
+					<div class="about__inner" data-number="08">
+						<span class="about__icon">
+							<svg class="icon-size">
+								<use xlink:href="#size"></use>
+							</svg>
+						</span>
+						<span class="about__name">Высота потолков</span>
+					</div>
+					<div class="about__info">
+						<div class="about__info-head">
+							<span class="about__info-icon">
+								<svg class="icon-size-small">
+									<use xlink:href="#size"></use>
+								</svg>
+							</span>
+							<span class="about__info-title">Высота потолков</span>
+						</div>
+						<span class="about__info-text">Отдельным ключевым фактором для жилья бизнес-класса
+							является высота потолков - они не должны быть менее
+							3 м. В квартирах ЖК «Розмарин» высота потолков 3,1 м
+							это соответствует условиям высококачественного жилья,
+						рассчитанных на состоятельных людей.</span>
+						<span class="about__info-text"></span>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="about-company effect" style="background-image: url(pic/bg/bg-2.png)">
+		<div class="container">
+			<div class="about-company__wrap js-about-wrap" id="about-rozmarin">
+				<span class="about-company__title about-company__title--left wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="1s">Про «Розмарин»</span>
+
+				<div class="about-company__holder about-company__holder--right js-about-gallery-right wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="1s">
+					<div class="about-company__gallery-item active js-about-gallery-item">
+						<img src="pic/about-company/about-company-01.jpg" alt="" class="about-company__gallery-img">
+					</div>
+					<div class="about-company__gallery-item js-about-gallery-item">
+						<img src="pic/about-company/about-company-02.jpg" alt="" class="about-company__gallery-img">
+					</div>
+					<div class="about-company__gallery-item js-about-gallery-item">
+						<img src="pic/about-company/about-company-03.jpg" alt="" class="about-company__gallery-img">
+					</div>
+					<div class="about-company__gallery-item js-about-gallery-item">
+						<img src="pic/about-company/about-company-04.jpg" alt="" class="about-company__gallery-img">
+					</div>
+					<div class="about-company__gallery-item js-about-gallery-item">
+						<img src="pic/about-company/about-company-05.jpg" alt="" class="about-company__gallery-img">
+					</div>
+				</div>
+
+				<div class="about-company__holder about-company__holder--left">
+					<ul class="about-company__nav-list">
+						<li class="about-company__nav-item js-about-item wow fadeInUpBig" data-wow-duration="1s" data-wow-delay=".5s">
+							<div class="about-company__nav-top js-about-btn">
+								<div class="about-company__nav-icon">
+									<svg class="icon-building">
+										<use xlink:href="#building"></use>
+									</svg>
+								</div>
+								<span class="about-company__nav-title">Окружение жилого комплекса</span>
+							</div>
+							<div class="about-company__nav-bottom js-about-collapse">
+								<div class="about-company__nav-img">
+									<img src="pic/about-company/about-company-01.jpg" alt="" class="about-company__gallery-img">
+								</div>
+								<!-- <span class="about-company__nav-caption">«Розмарин»</span>
+									<span class="about-company__nav-subtitle">жилой комплекс на юго-западе москвы</span> -->
+									<span class="about-company__nav-desc">Жилой комплекс «Розмарин» - отвечает всем стандартам бизнес-класса: престижный район, индивидуальный проект, развитая инфраструктура, комфорт и безопасность.</span>              
+								</div>
+							</li>
+							<li class="about-company__nav-item js-about-item wow fadeInUpBig" data-wow-duration="1s" data-wow-delay=".5s">
+								<div class="about-company__nav-top js-about-btn">
+									<div class="about-company__nav-icon">
+										<svg class="icon-cap">
+											<use xlink:href="#cap"></use>
+										</svg>
+									</div>
+									<span class="about-company__nav-title">Образовательная инфраструктура</span>
+								</div>
+								<div class="about-company__nav-bottom js-about-collapse">
+									<div class="about-company__nav-img">
+										<img src="pic/about-company/about-company-02.jpg" alt="" class="about-company__gallery-img">
+									</div>
+									<span class="about-company__nav-desc">На территории комплекса находится частный детский сад Legacy,
+										Школа танцев Романа Ковгана и школа иностранных языков Ling-Win.
+										В шаговой доступности от комплекс насчитывает более 14 детских садов,
+										15 школ, включая лицеи и гимназии, а так же ВУЗы. Например всего в километре от комплекса
+									располагается Московский финансово-юридический университет МФЮА.</span>
+								</div>
+							</li>
+							<li class="about-company__nav-item js-about-item wow fadeInUpBig" data-wow-duration="1s" data-wow-delay=".5s">
+								<div class="about-company__nav-top js-about-btn">
+									<div class="about-company__nav-icon">
+										<svg class="icon-fitness">
+											<use xlink:href="#fitness"></use>
+										</svg>
+									</div>
+									<span class="about-company__nav-title">Спортивная инфраструктура</span>
+								</div>
+								<div class="about-company__nav-bottom js-about-collapse">
+									<div class="about-company__nav-img">
+										<img src="pic/about-company/about-company-03.jpg" alt="" class="about-company__gallery-img">
+									</div>
+									<span class="about-company__nav-desc">В радиусе полутора километров от комплекса находится 14 фитнес центров.
+									Можно выделить фитнес - клуб премиального сегмента World Class, до него всего 700 м.</span>
+								</div>
+							</li>
+							<li class="about-company__nav-item js-about-item wow fadeInUpBig" data-wow-duration="1s" data-wow-delay=".5s">
+								<div class="about-company__nav-top js-about-btn">
+									<div class="about-company__nav-icon">
+										<svg class="icon-buss">
+											<use xlink:href="#buss"></use>
+										</svg>
+									</div>
+									<span class="about-company__nav-title">Транспортная инфраструктура</span>
+								</div>
+								<div class="about-company__nav-bottom js-about-collapse">
+									<div class="about-company__nav-img">
+										<img src="pic/about-company/about-company-04.jpg" alt="" class="about-company__gallery-img">
+									</div>
+									<span class="about-company__nav-desc">Удобная транспортная доступность ещё одно преимущество комплекса,
+										рядом м. Новые Черемушки, м. Калужская, расстояние до МКАД 6 км до ТТК 5 км.
+										Прямые выезды на Севастопольский просп., улица Профсоюзная позволяют моментально
+									включится в активную жизнь мегаполиса.</span>
+								</div>
+							</li>
+							<li class="about-company__nav-item js-about-item wow fadeInUpBig" data-wow-duration="1s" data-wow-delay=".5s">
+								<div class="about-company__nav-top js-about-btn">
+									<div class="about-company__nav-icon">
+										<svg class="icon-garden">
+											<use xlink:href="#garden"></use>
+										</svg>
+									</div>
+									<span class="about-company__nav-title">Парки и скверы</span>
+								</div>
+								<div class="about-company__nav-bottom js-about-collapse">
+									<div class="about-company__nav-img">
+										<img src="pic/about-company/about-company-05.jpg" alt="" class="about-company__gallery-img">
+									</div>
+									<span class="about-company__nav-desc">Близкое расположение к паркам делает жилой комплекс привлекательным
+										с точки зрения экологии. «Легкими» района по праву можно считать природно-исторический парк
+										«Битцевский лес», его площадь составляет около 2200 Га. Исторической достопримечательностью
+										служит природный историко-архитектурный и рекреационный комплекс «Усадьба Воронцово»,
+										более известный как «Воронцовский парк».<br/>
+										На территории жилого комплекса есть свой парк с фонтанами площадью 6 Га,
+										парк выполнен с применением ландшафтного дизайна, что придает дополнительную
+									гармонию и уют комплексу.</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="about-company__wrap about-company__wrap--bottom js-about-wrap" id="about-available">
+					<span class="about-company__title about-company__title--right wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="1s">В каждой квартире доступно</span>
+
+					<div class="about-company__holder about-company__holder--left js-about-gallery-left wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="1s">
+						<div class="about-company__gallery-item js-about-gallery-item">
+							<img src="pic/about-company/about-company-06.jpg" alt="" class="about-company__gallery-img">
+						</div>
+						<div class="about-company__gallery-item js-about-gallery-item">
+							<img src="pic/about-company/about-company-07.jpg" alt="" class="about-company__gallery-img">
+						</div>
+						<div class="about-company__gallery-item js-about-gallery-item">
+							<img src="pic/about-company/about-company-08.jpg" alt="" class="about-company__gallery-img">
+						</div>
+						<div class="about-company__gallery-item js-about-gallery-item">
+							<img src="pic/about-company/about-company-09.jpg" alt="" class="about-company__gallery-img">
+						</div>
+						<div class="about-company__gallery-item js-about-gallery-item">
+							<img src="pic/about-company/about-company-10.jpg" alt="" class="about-company__gallery-img">
+						</div>
+						<div class="about-company__gallery-item active js-about-gallery-item">
+							<img src="pic/about-company/about-company-11.jpg" alt="" class="about-company__gallery-img">
+						</div>
+						<div class="about-company__gallery-item js-about-gallery-item">
+							<img src="pic/about-company/about-company-12.jpg" alt="" class="about-company__gallery-img">
+						</div>
+					</div>     
+
+					<div class="about-company__holder about-company__holder--right">
+						<ul class="about-company__nav-list">
+							<li class="about-company__nav-item js-about-item wow fadeInUpBig" data-wow-duration="1s" data-wow-delay=".5s">
+								<div class="about-company__nav-top js-about-btn">
+									<div class="about-company__nav-icon">
+										<svg class="icon-fan">
+											<use xlink:href="#fan"></use>
+										</svg>
+									</div>
+									<span class="about-company__nav-title">Централизованная система кондиционирования</span>
+								</div>
+								<div class="about-company__nav-bottom js-about-collapse">
+									<div class="about-company__nav-img">
+										<img src="pic/about-company/about-company-06.jpg" alt="" class="about-company__gallery-img">
+									</div>
+									<span class="about-company__nav-desc">Благодаря <strong>встроенной централизованной системе
+									кондиционирования</strong> жители комплекса освобождаются от проблем
+									поиска и установки данного решения. Владельцы квартиры
+									сам определяет выбор комфортных индивидуальных
+									условий в помещениях, а забота об обслуживании
+								автоматически переходят в компетенцию управляющей компании.</span>
+							</div>
+						</li>
+						<li class="about-company__nav-item js-about-item wow fadeInUpBig" data-wow-duration="1s" data-wow-delay=".5s">
+							<div class="about-company__nav-top js-about-btn">
+								<div class="about-company__nav-icon">
+									<svg class="icon-hot">
+										<use xlink:href="#hot"></use>
+									</svg>
+								</div>
+								<span class="about-company__nav-title">Индивидуальный тепловой пункт</span>
+							</div>
+							<div class="about-company__nav-bottom js-about-collapse">
+								<div class="about-company__nav-img">
+									<img src="pic/about-company/about-company-07.jpg" alt="" class="about-company__gallery-img">
+								</div>
+								<span class="about-company__nav-desc"><strong>Индивидуальный тепловой пункт позволяет</strong>
+									обеспечить стабильные комфортные условия внутри квартиры,
+									при этом снизить расходы, благодаря автономности и
+								постоянному контролю.</span>
+							</div>
+						</li>
+						<li class="about-company__nav-item js-about-item wow fadeInUpBig" data-wow-duration="1s" data-wow-delay=".5s">
+							<div class="about-company__nav-top js-about-btn">
+								<div class="about-company__nav-icon">
+									<svg class="icon-hight">
+										<use xlink:href="#hight"></use>
+									</svg>
+								</div>
+								<span class="about-company__nav-title">Потолки 3.1 м</span>
+							</div>
+							<div class="about-company__nav-bottom js-about-collapse">
+								<div class="about-company__nav-img">
+									<img src="pic/about-company/about-company-08.jpg" alt="" class="about-company__gallery-img">
+								</div>
+								<span class="about-company__nav-desc">В квартирах ЖК «Розмарин» высота <strong>потолков 3,1 м</strong>
+									это соответствует условиям высококачественного жилья
+									бизнес-класса, потому как является ключевым фактором
+								в данном сегменте.</span>
+							</div>
+						</li>
+						<li class="about-company__nav-item js-about-item wow fadeInUpBig" data-wow-duration="1s" data-wow-delay=".5s">
+							<div class="about-company__nav-top js-about-btn">
+								<div class="about-company__nav-icon">
+									<svg class="icon-home-signal">
+										<use xlink:href="#home-signal"></use>
+									</svg>
+								</div>
+								<span class="about-company__nav-title">Умный дом</span>
+							</div>
+							<div class="about-company__nav-bottom js-about-collapse">
+								<div class="about-company__nav-img">
+									<img src="pic/about-company/about-company-09.jpg" alt="" class="about-company__gallery-img">
+								</div>
+								<span class="about-company__nav-desc"><strong>«Умный дом»</strong> - это безопасность и комфорт в вашей квартире.
+									В базовые опции системы <strong>«умный дом»</strong> включено: контроль доступа
+									и ликвидации протечек, контроль температуры воздуха, дистанционное
+								управление бытовой техникой, управление освещением в квартире.</span>
+							</div>
+						</li>
+						<li class="about-company__nav-item js-about-item wow fadeInUpBig" data-wow-duration="1s" data-wow-delay=".5s">
+							<div class="about-company__nav-top js-about-btn">
+								<div class="about-company__nav-icon">
+									<svg class="icon-withe-box">
+										<use xlink:href="#withe-box"></use>
+									</svg>
+								</div>
+								<span class="about-company__nav-title">White box</span>
+							</div>
+							<div class="about-company__nav-bottom js-about-collapse">
+								<div class="about-company__nav-img">
+									<img src="pic/about-company/about-company-10.jpg" alt="" class="about-company__gallery-img">
+								</div>
+								<span class="about-company__nav-desc">В квартирах с отделкой <strong>White box</strong> будут выполнены все черновые работы,
+									включая выравнивание и штукатурку стен, возведение перегородок,
+									выполнение стяжки пола, проведение электропроводки.
+									Предчистовая отделка <strong>White box</strong> позволить сберечь время и силы
+									на ремонт и сразу перейди к его творческому части - выбору дизайнерских
+								решений, материалов и мебели.</span>
+							</div>
+						</li>
+						<li class="about-company__nav-item js-about-item wow fadeInUpBig" data-wow-duration="1s" data-wow-delay=".5s">
+							<div class="about-company__nav-top js-about-btn">
+								<div class="about-company__nav-icon">
+									<svg class="icon-layer">
+										<use xlink:href="#layer"></use>
+									</svg>
+								</div>
+								<span class="about-company__nav-title">Разработка индивидулаьного дизайн-проекта</span>
+							</div>
+							<div class="about-company__nav-bottom js-about-collapse">
+								<div class="about-company__nav-img">
+									<img src="pic/about-company/about-company-11.jpg" alt="" class="about-company__gallery-img">
+								</div>
+								<span class="about-company__nav-desc">Заказав у нас дизайн-проект квартиры вы получаете оригинальное планировочное решение, набор документации для строителей, подборку отделочных материалов и текстиля, схему расстановки мебели, схемы освещения и даже оформленную атмосферу дома в виде примеров аксессуаров.</span>              
+							</div>
+						</li>
+						<li class="about-company__nav-item js-about-item wow fadeInUpBig" data-wow-duration="1s" data-wow-delay=".5s">
+							<div class="about-company__nav-top js-about-btn">
+								<div class="about-company__nav-icon">
+									<svg class="icon-trees">
+										<use xlink:href="#trees"></use>
+									</svg>
+								</div>
+								<span class="about-company__nav-title">Виды из окон</span>
+							</div>
+							<div class="about-company__nav-bottom js-about-collapse">
+								<div class="about-company__nav-img">
+									<img src="pic/about-company/about-company-12.jpg" alt="" class="about-company__gallery-img">
+								</div>
+								<span class="about-company__nav-desc">Из ЖК «Розмарин» открываются прекрасные панорамные виды на юго-запад Москвы. Вид на битцевский парк и университет им. Ломоносова.</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="gallery" id="gallery">
+		<div class="container">
+			<span class="gallery__title wow fadeInUp" data-wow-duration="1s">Галерея комплекса</span>
+		</div>
+		<div class="gallery__tab js-tabs-wrap wow fadeIn">
+			<div class="container">
+				<ul class="gallery__nav-list">
+					<li class="gallery__nav-item active js-tab wow fadeIn" data-wow-duration="1s" data-wow-delay=".25s">
+						<a href="#" class="gallery__nav-link">
+							<svg class="icon-pic">
+								<use xlink:href="#pic"></use>
+							</svg>
+							Галерея «Розмарин»
+						</a>
+					</li>
+					<li class="gallery__nav-item js-tab wow fadeIn js-iframe-load" data-wow-duration="1s" data-wow-delay=".5s">
+						<a href="#" class="gallery__nav-link">
+							<svg class="icon-vr">
+								<use xlink:href="#vr"></use>
+							</svg>
+							Виртуальный тур
+						</a>
+					</li>
+					<li class="gallery__nav-item js-tab wow fadeIn" data-wow-duration="1s" data-wow-delay=".75s">
+						<a href="#" class="gallery__nav-link">
+							<svg class="icon-play">
+								<use xlink:href="#play"></use>
+							</svg>
+							Видео о комплексе
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="gallery__tab-content active js-tab-content">
+				<div class="gallery__slider js-gallery-slider">
+					<div class="gallery__slide" style="background-image: url(pic/about-company/about-company-01.jpg)"></div>
+					<div class="gallery__slide" style="background-image: url(pic/about-company/about-company-02.jpg)"></div>
+					<div class="gallery__slide" style="background-image: url(pic/about-company/about-company-03.jpg)"></div>
+					<div class="gallery__slide" style="background-image: url(pic/about-company/about-company-04.jpg)"></div>
+					<div class="gallery__slide" style="background-image: url(pic/about-company/about-company-05.jpg)"></div>
+				</div>
+				<div class="gallery__slider-nav">
+					<div class="container">
+						<div class="gallery__slider-bottom js-gallery-bottom wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
+							<div class="gallery__slider-dots js-gallery-dots"></div>
+							<div class="gallery__slider-counter js-gallery-counter">
+								<span class="gallery__slider-active js-gallery-active">01</span>
+								<span class="gallery__slider-total js-gallery-total">05</span>
+							</div>              
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="gallery__tab-content js-tab-content">
+
+				<iframe src="" frameborder="0" class="gallery__frame js-iframe"></iframe>
+
+			</div>
+
+
+			<div class="gallery__tab-content js-tab-content">
+				<div class="gallery__video">
+					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/i_3kzfZaQZ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="infrastructure" id="infrastructure" style="background-image: url(pic/bg/bg-7.jpg);">
+		<div class="container">
+			<div class="infrastructure__caption wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Инфраструктура комплекса</div>
+			<div class="infrastructure__wrap">
+				<div class="infrastructure__item" data-tooltip="1">
+					<span class="infrastructure__title">100 метров</span>
+					<span class="infrastructure__descr">С верхних этажей открывается живописная панорама города</span>
+				</div>
+				<div class="infrastructure__item" data-tooltip="2">
+					<span class="infrastructure__title">Детский городок</span>
+					<span class="infrastructure__descr">Современное и безопасное игровое оборудование</span>
+				</div>
+				<div class="infrastructure__item" data-tooltip="3">
+					<span class="infrastructure__title">Legacy</span>
+					<span class="infrastructure__descr">Частный детский сад на 115 малышей</span>
+				</div>
+				<div class="infrastructure__item" data-tooltip="4">
+					<span class="infrastructure__title">Инфраструктура комплекса</span>
+					<span class="infrastructure__descr">Супермаркет, школа танцев, химчистка, аптека, ресторан</span>
+				</div>
+				<div class="infrastructure__item" data-tooltip="5">
+					<span class="infrastructure__title">Закрытая территория</span>
+					<span class="infrastructure__descr">Въезд и выезд по пропускам, охрана и видеонаблюдение</span>
+				</div>
+				<div class="infrastructure__item" data-tooltip="6">
+					<span class="infrastructure__title">Эко парк 6 Га</span>
+					<span class="infrastructure__descr">Ландшафтный дизайн, каскад фонтанов</span>
+				</div>
+				<div class="infrastructure__item" data-tooltip="7">
+					<span class="infrastructure__title">Монолит</span>
+					<span class="infrastructure__descr">Вентилируемый фасад с облицовкой керамогранитом</span>
+				</div>
+				<div class="infrastructure__item" data-tooltip="8">
+					<span class="infrastructure__title">Управляющая компания</span>
+					<span class="infrastructure__descr">Качественное обслуживание и своевременное решение вопросов. Консьерж-сервис</span>
+				</div>
+				<div class="infrastructure__item" data-tooltip="9">
+					<span class="infrastructure__title">Подземный паркинг</span>
+					<span class="infrastructure__descr">3-х уровневый на 828 машино-мест</span>
+				</div>
+			</div>
+			<div class="infrastructure__complex">
+				<div class="infrastructure__img-wrap">
+					<img src="pic/infra.png" alt="">
+				</div>
+				<span class="infrastructure__btn-info wow bounceIn" data-btn="1" data-wow-duration="1s" data-wow-delay="1s">
+					<div class="infrastructure__item" data-tooltip="1">
+						<span class="infrastructure__title">100 метров</span>
+						<span class="infrastructure__descr">С верхних этажей открывается живописная панорама города</span>
+					</div>
+				</span>
+				<span class="infrastructure__btn-info wow bounceIn" data-btn="2" data-wow-duration="1s" data-wow-delay="1.25s">
+					<div class="infrastructure__item" data-tooltip="2">
+						<span class="infrastructure__title">Детский городок</span>
+						<span class="infrastructure__descr">Современное и безопасное игровое оборудование</span>
+					</div>
+				</span>
+				<span class="infrastructure__btn-info wow bounceIn" data-btn="3" data-wow-duration="1s" data-wow-delay="1.5s">
+					<div class="infrastructure__item" data-tooltip="3">
+						<span class="infrastructure__title">Legacy</span>
+						<span class="infrastructure__descr">Частный детский сад на 115 малышей</span>
+					</div>
+				</span>
+				<span class="infrastructure__btn-info wow bounceIn" data-btn="4" data-wow-duration="1s" data-wow-delay="1s">
+					<div class="infrastructure__item" data-tooltip="4">
+						<span class="infrastructure__title">Закрытая территория</span>
+						<span class="infrastructure__descr">Въезд и выезд по пропускам, охрана и видеонаблюдение</span>
+					</div>
+				</span>
+				<span class="infrastructure__btn-info wow bounceIn" data-btn="5" data-wow-duration="1s" data-wow-delay="1.75s">
+					<div class="infrastructure__item" data-tooltip="5">
+						<span class="infrastructure__title">Эко парк 6 Га</span>
+						<span class="infrastructure__descr">Ландшафтный дизайн, каскад фонтанов</span>
+					</div>
+				</span>
+				<span class="infrastructure__btn-info wow bounceIn" data-btn="6" data-wow-duration="1s" data-wow-delay="1.5s">
+					<div class="infrastructure__item" data-tooltip="6">
+						<span class="infrastructure__title">Инфраструктура комплекса</span>
+						<span class="infrastructure__descr">Супермаркет, школа танцев, химчистка, аптека, ресторан</span>
+					</div>
+				</span>
+				<span class="infrastructure__btn-info wow bounceIn" data-btn="7" data-wow-duration="1s" data-wow-delay="1.75s">
+					<div class="infrastructure__item" data-tooltip="7">
+						<span class="infrastructure__title">Управляющая компания</span>
+						<span class="infrastructure__descr">Качественное обслуживание и своевременное решение вопросов. Консьерж-сервис</span>
+					</div>
+				</span>
+				<span class="infrastructure__btn-info wow bounceIn" data-btn="8" data-wow-duration="1s" data-wow-delay="1.25s">
+					<div class="infrastructure__item" data-tooltip="8">
+						<span class="infrastructure__title">Монолит</span>
+						<span class="infrastructure__descr">Вентилируемый фасад с облицовкой керамогранитом</span>
+					</div>
+				</span>
+				<span class="infrastructure__btn-info wow bounceIn" data-btn="9" data-wow-duration="1s" data-wow-delay="1.75s">
+					<div class="infrastructure__item" data-tooltip="9">
+						<span class="infrastructure__title">Подземный паркинг</span>
+						<span class="infrastructure__descr">3-х уровневый на 828 машино-мест</span>
+					</div>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="region" id="region-box">
+		<div class="region__top">
+			<div class="container">
+				<div class="region__outer">
+					<span class="region__caption wow fadeInUp">Инфраструктура района</span>
+					<div class="region__wrap">
+						<div class="region__col js-tab wow fadeIn" data-wow-duration="1s" data-wow-delay=".25s">
+							<label class="checkbox-region">
+								<input type="radio" id="schoolCheck" name="region">
+								<span>
+									<span class="region__icon">
+										<svg class="icon-school">
+											<use xlink:href="#school"></use>
+										</svg>
+									</span>
+									<span class="region__title">Школы</span>
+								</span>
+							</label>
+
+						</div>
+						<div class="region__col js-tab wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+							<label class="checkbox-region">
+								<input type="radio" id="kindergardenCheck" name="region">
+								<span>
+									<span class="region__icon">
+										<svg class="icon-cube">
+											<use xlink:href="#cube"></use>
+										</svg>
+									</span>
+									<span class="region__title">Детские сады</span>
+								</span>
+							</label>
+						</div>
+						<div class="region__col js-tab wow fadeIn" data-wow-duration="1s" data-wow-delay=".75s">
+							<label class="checkbox-region">
+								<input type="radio" id="bankCheck" name="region">
+								<span>
+									<span class="region__icon">
+										<svg class="icon-bank">
+											<use xlink:href="#bank"></use>
+										</svg>
+									</span>
+									<span class="region__title">Банки</span>
+								</span>
+							</label>
+						</div>
+						<div class="region__col js-tab wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
+							<label class="checkbox-region">
+								<input type="radio" id="basketCheck" name="region">
+								<span>
+									<span class="region__icon">
+										<svg class="icon-basket">
+											<use xlink:href="#basket"></use>
+										</svg>
+									</span>
+									<span class="region__title">Магазины</span>
+								</span>
+							</label>
+						</div>
+						<div class="region__col js-tab wow fadeIn" data-wow-duration="1s" data-wow-delay="1.25s">
+							<label class="checkbox-region">
+								<input type="radio" id="gymCheck" name="region">
+								<span>
+									<span class="region__icon">
+										<svg class="icon-gym">
+											<use xlink:href="#gym"></use>
+										</svg>
+									</span>
+									<span class="region__title">Фитнесс и спорт</span>
+								</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="region__bottom" id="region"></div>
+	</div>
+
+	<div class="price" id="price">
+		<div class="container">
+			<span class="price__caption wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Квартиры и цены</span>
+			<div class="price__head">
+				<span class="price__head-title wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Количество комнат</span>
+				<ul class="price__head-tabs">
+					<li class="price__head-tab wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s" id="1" data-filter=".category-1">1</li>
+					<li class="price__head-tab wow fadeInUp" data-wow-duration="1s" data-wow-delay=".75s" id="2" data-filter=".category-2">2</li>
+					<li class="price__head-tab wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" id="3" data-filter=".category-3">3</li>
+					<li class="price__head-tab wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.25s" id="4" data-filter=".category-4">4</li>
+				</ul>
+			</div>
+
+			<div class="price__content wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.5">
+				<div class="price__content-item js-slider-content js-filter">
+					<div class="price__item mix category-2 filter-2" data-title="Квартира 2-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/2_85-3.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">2 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">85</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-2 filter-2" data-title="Квартира 2-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/2_85-6.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">2 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">85</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-2 filter-2" data-title="Квартира 2-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/2_86-2m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">2 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">86</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-2 filter-2" data-title="Квартира 2-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/2_86-8m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">2 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">86</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-2 filter-2" data-title="Квартира 2-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/2_88-1m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">2 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">88</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-2 filter-2" data-title="Квартира 2-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/2_89-8m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">2 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">89</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-2 filter-2" data-title="Квартира 2-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/2_89-9m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">2 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">89</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-2 filter-2" data-title="Квартира 2-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/2_93-2m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">2 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">93</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-2 filter-2" data-title="Квартира 2-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/2_97-6m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">2 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">97</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-2 filter-2" data-title="Квартира 2-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/2_98-9m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">2 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">98</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-2 filter-2" data-title="Квартира 2-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/2_101-8m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">2 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">101</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-3 filter-3" data-title="Квартира 3-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/3_111-4m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">3 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">111</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-3 filter-3" data-title="Квартира 3-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/3_120-2m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">3 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">120</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-3 filter-3" data-title="Квартира 3-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/3_122-9m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">3 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">122</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-3 filter-3" data-title="Квартира 3-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/3_126-7m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">3 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">126</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-3 filter-3" data-title="Квартира 3-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/3_128-1m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">3 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">128</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-3 filter-3" data-title="Квартира 3-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/3_133-1m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">3 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">133</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-3 filter-3" data-title="Квартира 3-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/3_135m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">3 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">135</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-3 filter-3" data-title="Квартира 3-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/3_138-1m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">3 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">138</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-3 filter-3" data-title="Квартира 3-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/3_140-5m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">3 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">140</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-3 filter-3" data-title="Квартира 3-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/3_141m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">3 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">141</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-3 filеter-3" data-title="Квартира 3-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/3_146-4m.jpg" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">3 комнаты, 
+								<span class="price__square-value">
+									<span class="js-square">146</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+					<div class="price__item mix category-1 filter-1" data-title="Квартира 1-комнатная">
+						<a data-fancybox data-src="#popup-apartment-view" href="javascript:;" class="price__inner">
+							<span class="price__img-wrap">
+								<img src="pic/room/room-1.png" alt="">
+							</span>
+							<span class="price__value">
+								<span class="js-value" data-price="10700000">10 700 000</span> <span class="rubl">o</span>
+							</span>
+							<span class="price__square">1 комната, 
+								<span class="price__square-value">
+									<span class="js-square">68</span> м<sup>2</sup>
+								</span>
+
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="price__btn-wrap wow fadeInUp">
+				<a data-title="Квартира 2-комнатная" data-fancybox data-src="#popup-get-price" href="javascript:;" class="btn price__btn">Получить прайс квартир со скидкой</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="credit" id="credit" style="background-image: url(pic/bg/bg-6.jpg);">
+		<div class="container">
+			<span class="credit__caption wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Рассрочка и ипотека</span>
+			<span class="credit__descr wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Ипотеки на готовое жилье от любого, удобного банка, рассрочка на индивидуальных условиях</span>
+			<span class="credit__offer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">* Не является публичной офертой</span>
+			<div class="credit__wrap js-credit-slider">
+
+				<div class="credit__item wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+					<div class="credit__inner">
+						<div class="credit__head">
+							<div class="credit__bank">
+								<img src="pic/bank/absolyut.png" alt="">
+							</div>
+							<span class="credit__percent">от 9,49%</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Срок кредита:</span>
+							<span class="credit__text">20 лет</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Мин. первоначальный взнос:</span>
+							<span class="credit__text">от 20%</span>
+						</div>
+						<div class="credit__btn-wrap">
+							<a data-fancybox="" data-src="#popup-mortgage" href="javascript:;" class="btn credit__btn" data-percent="0.094">Выбрать</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="credit__item wow fadeInUp" data-wow-duration="1s" data-wow-delay=".75s">
+					<div class="credit__inner">
+						<div class="credit__head">
+							<div class="credit__bank">
+								<img src="pic/bank/bank-2.png" alt="">
+							</div>
+							<span class="credit__percent">от 8,8%</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Срок кредита:</span>
+							<span class="credit__text">30 лет</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Мин. первоначальный взнос:</span>
+							<span class="credit__text">от 15%</span>
+						</div>
+						<div class="credit__btn-wrap">
+							<a data-fancybox="" data-src="#popup-mortgage" href="javascript:;" class="btn credit__btn" data-percent="0.088">Выбрать</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="credit__item wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+					<div class="credit__inner">
+						<div class="credit__head">
+							<div class="credit__bank">
+								<img src="pic/bank/evrazyisky.png" alt="">
+							</div>
+							<span class="credit__percent">от 9%</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Срок кредита:</span>
+							<span class="credit__text">25 лет</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Мин. первоначальный взнос:</span>
+							<span class="credit__text">от 20%</span>
+						</div>
+						<div class="credit__btn-wrap">
+							<a data-fancybox="" data-src="#popup-mortgage" href="javascript:;" class="btn credit__btn" data-percent="0.09">Выбрать</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="credit__item wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+					<div class="credit__inner">
+						<div class="credit__head">
+							<div class="credit__bank">
+								<img src="pic/bank/forabank.png" alt="">
+							</div>
+							<span class="credit__percent">от 9,5%</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Срок кредита:</span>
+							<span class="credit__text">30 лет</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Мин. первоначальный взнос:</span>
+							<span class="credit__text">от 15%</span>
+						</div>
+						<div class="credit__btn-wrap">
+							<a data-fancybox="" data-src="#popup-mortgage" href="javascript:;" class="btn credit__btn" data-percent="0.095">Выбрать</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="credit__item wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+					<div class="credit__inner">
+						<div class="credit__head">
+							<div class="credit__bank">
+								<img src="pic/bank/gazprom.png" alt="">
+							</div>
+							<span class="credit__percent">от 6,0%</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Срок кредита:</span>
+							<span class="credit__text">30 лет</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Мин. первоначальный взнос:</span>
+							<span class="credit__text">от 20%</span>
+						</div>
+						<div class="credit__btn-wrap">
+							<a data-fancybox="" data-src="#popup-mortgage" href="javascript:;" class="btn credit__btn" data-percent="0.06">Выбрать</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="credit__item wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+					<div class="credit__inner">
+						<div class="credit__head">
+							<div class="credit__bank">
+								<img src="pic/bank/promsvyazbank.png" alt="">
+							</div>
+							<span class="credit__percent">от 9,4%</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Срок кредита:</span>
+							<span class="credit__text">30 лет</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Мин. первоначальный взнос:</span>
+							<span class="credit__text">от 20%</span>
+						</div>
+						<div class="credit__btn-wrap">
+							<a data-fancybox="" data-src="#popup-mortgage" href="javascript:;" class="btn credit__btn" data-percent="0.094">Выбрать</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="credit__item wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+					<div class="credit__inner">
+						<div class="credit__head">
+							<div class="credit__bank">
+								<img src="pic/bank/raifaizen.png" alt="">
+							</div>
+							<span class="credit__percent">от 9,5%</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Срок кредита:</span>
+							<span class="credit__text">30 лет</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Мин. первоначальный взнос:</span>
+							<span class="credit__text">от 15%</span>
+						</div>
+						<div class="credit__btn-wrap">
+							<a data-fancybox="" data-src="#popup-mortgage" href="javascript:;" class="btn credit__btn" data-percent="0.095">Выбрать</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="credit__item wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+					<div class="credit__inner">
+						<div class="credit__head">
+							<div class="credit__bank">
+								<img src="pic/bank/smpbank.png" alt="">
+							</div>
+							<span class="credit__percent">от 9,6%</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Срок кредита:</span>
+							<span class="credit__text">25 лет</span>
+						</div>
+						<div class="credit__row">
+							<span class="credit__label">Мин. первоначальный взнос:</span>
+							<span class="credit__text">от 25%</span>
+						</div>
+						<div class="credit__btn-wrap">
+							<a data-fancybox="" data-src="#popup-mortgage" href="javascript:;" class="btn credit__btn" data-percent="0.096">Выбрать</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="credit__bottom wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+				<a data-fancybox data-src="#popup-mortgage" href="javascript:;" class="btn credit__bottom-btn" data-percent="0.095">Рассчитать ипотеку</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="contact" id="contact">
+		<div class="contact__top">
+			<div class="container">
+				<span class="contact__caption wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Контакты</span>
+				<div class="contact__wrap wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+
+					<div class="contact__col wow fadeInUp" data-wow-duration="1s" data-wow-delay=".75s">
+						<span class="contact__icon">
+							<svg class="icon-phone">
+								<use xlink:href="#phone"></use>
+							</svg>
+						</span>
+						<div class="contact__text">
+							<span class="contact__title">Отдел продаж</span>
+							<span class="contact__row">
+								<a href="tel:+73952579862">+7 (395) 257-98-62</a>
+							</span>
+						</div>
+					</div>
+
+					<div class="contact__col wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+						<span class="contact__icon">
+							<svg class="icon-location">
+								<use xlink:href="#location"></use>
+							</svg>
+						</span>
+						<div class="contact__text">
+							<span class="contact__title">Расположение и адрес</span>
+							<span class="contact__row">Москва, ул. Наметкина, 18</span>
+						</div>
+					</div>
+
+					<div class="contact__col wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.25s">
+						<span class="contact__icon">
+							<svg class="icon-clock">
+								<use xlink:href="#clock"></use>
+							</svg>
+						</span>
+						<div class="contact__text">
+							<span class="contact__title">График работы</span>
+							<span class="contact__time">пн-пт с 9:00 до 18:00</span>
+							<span class="contact__time">сб-вс с 10:00 до 18:00</span>
+						</div>
+					</div>
+
+					<div class="contact__col contact__col--bottom wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+						<a data-fancybox data-src="#popup-question" href="javascript:;" class="contact__link"><span>Остались вопросы?</span> <span>Задайте их менеджеру</span></a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="contact__bottom wow fadeIn" id="mapContact" data-wow-duration="1s" data-wow-delay=".5s"></div>
+	</div>
+
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__col footer__col--logo wow fadeIn" data-wow-duration="1s">
+				<a href="#" class="footer__logo">
+					<svg class="icon-logo-foot">
+						<use xlink:href="#logo-foot"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="footer__col footer__col--info wow fadeIn" data-wow-duration="1s" data-wow-delay=".2s">
+				<span class="footer__info-item">ООО «МЕГАСТРОЙ»</span>
+				<span class="footer__info-item">ИНН 7107081069</span>
+				<span class="footer__info-item">ОГРН 1047101124256</span>
+			</div>
+			<div class="footer__col footer__col--tashir wow fadeIn" data-wow-duration="1s" data-wow-delay=".4s">
+				<img src="pic/tashir.png" alt="">
+			</div>
+			<div class="footer__col footer__col--document wow fadeIn" data-wow-duration="1s" data-wow-delay=".6s">
+				<span class="footer__title">Документация проекта</span>
+				<div class="footer__document-item">
+					<a href="#" class="footer__document-link">Согласие на обработку персональных данных</a>
+				</div>
+				<div class="footer__document-item">
+					<a href="#" class="footer__document-link">Положение об обработке персональных данных</a>
+				</div>
+			</div>
+			<div class="footer__col footer__col--social wow fadeIn" data-wow-duration="1s" data-wow-delay=".8s">
+				<div class="footer__social-wrap">
+					<div class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-vk">
+								<use xlink:href="#vk"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-facebook">
+								<use xlink:href="#facebook"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-odnoklassniki">
+								<use xlink:href="#odnoklassniki"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-instagram">
+								<use xlink:href="#instagram"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div style="display: none;" class="popup" id="popup-question">
+	<span class="popup__title">Задать вопрос</span>
+	<form action="" class="popup__form">
+		<div class="popup__form-row">
+			<input type="text" class="popup__form-input" placeholder="Ваше имя">
+		</div>
+		<div class="popup__form-row">
+			<input type="tel" class="popup__form-input" placeholder="Ваш телефон">
+		</div>
+		<div class="popup__form-row">
+			<textarea class="popup__form-textarea" placeholder="Комментарий...."></textarea>
+		</div>
+		<div class="popup__form-row">
+			<button type="submit" class="btn popup__form-btn">Отправить</button>
+		</div>
+	</form>
+	<span class="popup__info">Нажимая на кнопку <a href="#" class="popup__info-link">Вы соглашаетесь на обработку персональных данных</a></span>
+</div>
+
+<div style="display: none;" class="popup" id="popup-request">
+	<span class="popup__title">Оставить заявку</span>
+	<form action="" class="popup__form">
+		<div class="popup__form-row">
+			<input type="text" class="popup__form-input" placeholder="Ваше имя">
+		</div>
+		<div class="popup__form-row">
+			<input type="tel" class="popup__form-input" placeholder="Ваш телефон">
+		</div>
+		<div class="popup__form-row">
+			<button type="submit" class="btn popup__form-btn">Оставить заявку</button>
+		</div>
+	</form>
+	<span class="popup__info">Нажимая на кнопку <a href="#" class="popup__info-link">Вы соглашаетесь на обработку персональных данных</a></span>
+</div>
+
+<div style="display: none;" class="popup" id="popup-get-price">
+	<span class="popup__title">Получить прайс</span>
+	<form action="" class="popup__form">
+		<div class="popup__form-row">
+			<input type="text" class="popup__form-input" placeholder="Ваше имя">
+		</div>
+		<div class="popup__form-row">
+			<input type="tel" class="popup__form-input" placeholder="Ваш телефон">
+		</div>
+		<div class="popup__form-row">
+			<button type="submit" class="btn popup__form-btn">Получить прайс</button>
+		</div>
+	</form>
+	<span class="popup__info">Нажимая на кнопку <a href="#" class="popup__info-link">Вы соглашаетесь на обработку персональных данных</a></span>
+</div>
+
+<div style="display: none;" class="popup" id="popup-apartment">
+	<span class="popup__title">Подобрать квартиру</span>
+	<form action="" class="popup__form">
+		<div class="popup__form-row">
+			<input type="text" class="popup__form-input" placeholder="Ваше имя">
+		</div>
+		<div class="popup__form-row">
+			<input type="tel" class="popup__form-input" placeholder="Ваш телефон">
+		</div>
+		<div class="popup__form-row">
+			<button type="submit" class="btn popup__form-btn">Подобрать квартиру</button>
+		</div>
+	</form>
+	<span class="popup__info">Нажимая на кнопку <a href="#" class="popup__info-link">Вы соглашаетесь на обработку персональных данных</a></span>
+</div>
+
+<div style="display: none;" class="popup" id="popup-feedback">
+	<span class="popup__title">Заказать звонок</span>
+	<form action="" class="popup__form">
+		<div class="popup__form-row">
+			<input type="text" class="popup__form-input" placeholder="Ваше имя">
+		</div>
+		<div class="popup__form-row">
+			<input type="tel" class="popup__form-input" placeholder="Ваш телефон">
+		</div>
+		<div class="popup__form-row">
+			<button type="submit" class="btn popup__form-btn">Заказать звонок</button>
+		</div>
+	</form>
+	<span class="popup__info">Нажимая на кнопку <a href="#" class="popup__info-link">Вы соглашаетесь на обработку персональных данных</a></span>
+</div>
+
+<div style="display: none;" class="popup popup--large" id="popup-mortgage">
+	<form action="" class="popup__form">
+		<div class="popup__form-top">
+			<span class="popup__title">Рассчитать стоимость ипотеки</span>
+			<div class="popup__form-row popup__form-row--multy">
+				<div class="popup__form-col">
+					<span class="popup__form-label">Стоимость квартиры <span class="rubl">o</span></span>
+					<input type="text" class="input--border popup__form-input js-value-price" readonly>
+					<div class="popup__form-slider">
+						<span class="popup__form-txt popup__form-txt--min">15 000 000</span>
+						<span class="popup__form-txt popup__form-txt--max">35 000 000</span>
+						<div class="popup__form-slide js-form-slide-price" data-min="15000000" data-max="35000000" data-value="15000000" data-step="100000"></div>
+					</div>
+				</div>
+				<div class="popup__form-col">
+					<span class="popup__form-label">Первоначальный взнос <span class="rubl">o</span></span>
+					<div class="popup__form-inner">
+						<input type="text" class="input--border popup__form-input js-value-first" readonly>
+						<span class="popup__form-info">15%</span>
+					</div>          
+					<div class="popup__form-slider">
+						<span class="popup__form-txt popup__form-txt--min js-min-first">4 500 000</span>
+						<span class="popup__form-txt popup__form-txt--max js-max-first">35 000 000</span>
+						<div class="popup__form-slide js-form-slide-first" data-min="2250000" data-max="15000000" data-value="2250000" data-step="50000"></div>
+					</div>
+				</div>
+				<div class="popup__form-col">
+					<span class="popup__form-label">Срок кредита лет</span>
+					<input type="text" class="input--border popup__form-input js-value-year" readonly>
+					<div class="popup__form-slider">
+						<span class="popup__form-txt popup__form-txt--min">1</span>
+						<span class="popup__form-txt popup__form-txt--max">30</span>
+						<div class="popup__form-slide js-form-slide-year" data-min="1" data-max="30" data-value="15" data-step="1"></div>
+					</div>
+				</div>
+
+				<div class="popup__result-wrap">
+					<span class="popup__form-label">Ежемесячный платеж</span>
+					<span class="popup__result-text js-result-value">56 700</span>
+					<span class="popup__result-text">  рублей</span>
+				</div>
+			</div>
+		</div>
+		<div class="popup__form-bottom">
+			<span class="popup__title">Оставить заявку</span>
+			<div class="popup__form-holder">
+				<div class="popup__form-row">
+					<input type="text" class="popup__form-input" placeholder="Ваше имя">
+				</div>
+				<div class="popup__form-row">
+					<input type="tel" class="popup__form-input" placeholder="Ваш телефон">
+				</div>
+				<div class="popup__form-row">
+					<button type="submit" class="btn popup__form-btn">Отправить заявку</button>
+				</div>
+				<span class="popup__info">Нажимая на кнопку <a href="#" class="popup__info-link">Вы соглашаетесь на обработку персональных данных</a></span>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div style="display: none;" class="popup popup--large popup--view" id="popup-apartment-view">
+	<a href="#" class="popup__btn popup__btn--left"></a>
+	<a href="#" class="popup__btn popup__btn--right"></a>
+	<div class="popup__wrap">
+		<div class="popup__holder popup__holder--small">
+			<img src="pic/popup-room.png" alt="" class="popup__img js-img-popup">
+		</div>
+		<div class="popup__holder popup__holder--large">
+			<span class="popup__title js-title-popup">...</span>
+			<span class="popup__txt">Общая лощадь — 
+				<span class="js-square-popup">...</span> м<sup>2</sup>
+			</span>
+<!--			<span class="popup__txt popup__txt--last">
+	<!--				Цена за м<sup>2</sup> —       -->
+<!--				<span>
+					<span class="js-price-one-popup">...</span> <span class="rubl">o</span>
+				</span>
+			</span>
+			<span class="popup__price">Стоимость — 
+				<span class="js-price-popup">...</span> <span class="rubl">o</span>
+			</span>     -->
+			<form action="" class="popup__form">
+				<div class="popup__form-row popup__form-row--booking">
+					<span class="popup__form-booking">Забронировать на:</span>
+					<select class="popup__form-select">
+						<option value="">1 день</option>
+						<option value="">2 дня</option>
+						<option value="">3 дня</option>
+						<option value="">4 дня</option>
+						<option value="">5 дней</option>
+						<option value="">6 дней</option>
+						<option value="">7 дней</option>
+						<option value="">8 дней</option>
+						<option value="">9 дней</option>
+						<option value="">10 дней</option>
+					</select>
+				</div>
+				<div class="popup__form-row">
+					<input type="text" class="popup__form-input" placeholder="Ваше имя">
+				</div>
+				<div class="popup__form-row">
+					<input type="tel" class="popup__form-input" placeholder="Ваш телефон">
+				</div>
+				<div class="popup__form-row">
+					<button type="submit" class="btn popup__form-btn">Забронировать</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+<script src="js/vendor.js"></script>
+
+
+<script src="pages-list.js"></script>
+
+
+<script src="js/main.js"></script>
+
+
+
+
+
+</body>
+</html>

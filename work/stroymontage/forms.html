@@ -1,0 +1,375 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Создать вопрос</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css?rel=84987">
+    <!-- @endif -->
+</head>
+<body class="@@class">
+
+<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ </div> 
+
+<div class="wrapper">
+
+	<header class="header">
+  <div class="header__top">
+    <div class="container">
+      <a href="#" class="header__logo">
+        <img src="pic/logo.svg" alt="">
+      </a>
+      <div class="header__contacts">
+        <span class="header__contacts-text">123283, Москва,</span>
+        <span class="header__contacts-text">ул. Пушкина, дом Колотушкина <a href="#">На карте</a></span>
+      </div>
+      <a href="#callback" data-fancybox  class="header__call-btn btn">Обратный звонок</a>
+      <a href="#" class="header__phone-link">
+        <svg class="icon-phone">
+          <use xlink:href="#phone"></use>
+        </svg>
+        <span>8 (800)</span> 2000500
+      </a>
+    </div>
+  </div>
+  <nav class="header__nav">
+    <div class="container">
+      <ul class="header__nav-list js-nav">
+        <li class="header__nav-list-item"><a href="#" class="header__nav-link">О компании</a></li>
+        <li class="header__nav-list-item"><a href="#" class="header__nav-link">Каталог</a></li>
+        <li class="header__nav-list-item"><a href="#" class="header__nav-link">Услуги и Сервис</a></li>
+        <li class="header__nav-list-item"><a href="#" class="header__nav-link">Специальные цены</a></li>
+        <li class="header__nav-list-item"><a href="#" class="header__nav-link">Заказ продукции</a></li>
+        <li class="header__nav-list-item header__nav-list-item--right"><a href="#" class="header__nav-link">Контакты</a></li>
+        <li class="header__nav-list-item header__nav-list-item--right"><a href="#" class="header__nav-link">Объекты</a></li>
+        <li class="header__nav-list-item header__nav-list-item--border header__nav-list-item--right"><a href="#" class="header__nav-link">Партнеры</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+	<div class="page-title" style="background-image: url(pic/bg-title/bg-title-4.jpg)">
+  <div class="container">
+    <div class="page-title__text">Создать вопрос</div>
+  </div>
+</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col md-75 sm-66">
+				<div class="callback">
+	<strong class="callback__descr">Строительная опалубка изготавливается из высококачественных материалов (алюминий и сталь) с учётом действующих строительных норм и правил. </strong>
+	<span class="callback__text">Оставьте заявку, и наш специалист свяжется в течение 10 минут, подробно проконсультирует по любому вопросу и предложит индивидуальную скидку.</span>
+	<span class="callback__caption">Контактные данные</span>
+	<form action="">
+		<div class="callback__form">
+			<div class="callback__row">
+				<span class="callback__label">Как к вам обращаться?: </span>
+				<div class="callback__input-wrap">
+					<input type="text" placeholder="Укажите имя">
+				</div>
+			</div>
+			<div class="callback__row">
+				<span class="callback__label">Ваш номер телефона:</span>
+				<div class="callback__input-wrap">
+					<input type="tel" placeholder="+7 (900) 2000500">
+				</div>
+			</div>
+			<div class="callback__row">
+				<span class="callback__label">Ваш E-Mail:</span>
+				<div class="callback__input-wrap">
+					<input type="email" placeholder="info@emailbuilding.com">
+				</div>
+			</div>
+
+			<span class="callback__data-title">Данные о проекте</span>
+
+			<div class="callback__row">
+				<span class="callback__label">Бюджет проекта</span>
+				<div class="callback__input-wrap">
+					<input type="text" placeholder="менее 10 000 рублей">
+				</div>
+			</div>
+			<div class="callback__row">
+				<span class="callback__label">Категория проекта</span>
+				<div class="callback__input-wrap">
+					<!-- <input type="text" placeholder="Опалубка здания"> -->
+					<select class="js-select">
+						<option value="">Опалубка здания</option>
+						<option value="">Опалубка здания1</option>
+						<option value="">Опалубка здания2</option>
+					</select>
+				</div>
+			</div>
+			<div class="callback__row callback__row--textarea">
+				<span class="callback__label">Дополнительная информация</span>
+				<div class="callback__input-wrap">
+					<textarea placeholder="Укажите дополнительную информацию"></textarea>
+				</div>
+			</div>
+			<div class="callback__row callback__row--load">
+				<span class="callback__label">Техническое задание</span>
+				<div class="callback__input-wrap">
+					<label>
+						<input id="file" type="file" name="file">
+						<span>
+							<span>Прикрепить файл ....</span>
+						</span>
+					</label>
+				</div>
+			</div>
+			<div class="callback__row">
+				<span class="callback__label"></span>
+				<div class="callback__input-wrap">
+					<span class="callback__text-info">Оставьте заявку, и наш специалист свяжется в течение 10 минут, подробно проконсультирует по любому вопросу и предложит индивидуальную скидку.</span>
+				</div>
+			</div>
+			<div class="callback__btn-wrap">
+				<button type="btn" class="btn btn--orange">Создать заявку</button>
+			</div>
+		</div>
+	</form>
+</div>
+			</div>
+
+			<div class="col md-25 sm-33">
+				<div class="aside-services ">
+	
+	<span class="aside-services__title">НАШ СЕРВИС</span>
+	
+	<div class="aside-services__wrap">
+		<span class="aside-services__text">Полный ассортимент инвентарной опалубки с менеджером</span>
+		<div class="aside-services__btn-wrap">
+			<a href="#" class="btn btn--orange aside-services__btn">Вызвать мастера</a>
+		</div>
+	</div>
+</div>
+
+
+				<div class="aside-goods">
+	<div class="aside-goods__wrap">
+		<div class="aside-goods__top" style="background-image: url(pic/bg-baner.jpg);"></div>
+		<div class="aside-goods__bottom">
+			<span class="aside-goods__text">Полный ассортимент инвентарной опалубки с менеджером</span>
+			<div class="aside-goods__btn-wrap">
+				<a href="#request" data-fancybox class="btn aside-goods__btn">Создать заявку</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<footer class="footer ">
+  <div class="container">
+    
+    <div class="footer__title">База ЗНАНИЙ</div>
+    <div class="footer__row">
+      <div class="footer__col">
+        <div class="footer__col-title">ВОПРОС - ОТВЕТ</div>
+        <div class="footer__block">
+          <div class="footer__block-title">
+            <a href="#">Купить опалубку для монолитного строительства может не каждый – дорого ?</a>
+          </div>
+        </div>
+        <div class="footer__block">
+          <div class="footer__block-title">
+            <a href="#">Услуга аренды экономически выгоднее покупки ?</a>
+          </div>
+        </div>
+        <div class="footer__block">
+          <div class="footer__block-title">
+            <a href="#">Не нужно думать, где хранить разборные конструкции ?</a>
+          </div>
+        </div>
+        <a href="#" class="footer__btm-link">Все вопросы и ответы</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">НормативЫ и ГОСТЫ</div>
+        <div class="footer__block">
+          <div class="footer__block-title">
+            <a href="#">ГОСТ 1234</a>
+          </div>
+          <div class="footer__block-descr">Опалубка для монолитного строительства нормативы</div>
+        </div>
+        <div class="footer__block">
+          <div class="footer__block-title">
+            <a href="#">ГОСТ 1234</a>
+          </div>
+          <div class="footer__block-descr">Опалубка для монолитного строительства нормативы</div>
+        </div>
+        <div class="footer__block">
+          <div class="footer__block-title">
+            <a href="#">ГОСТ 1234</a>
+          </div>
+          <div class="footer__block-descr">Опалубка для монолитного строительства нормативы</div>
+        </div>
+        <a href="#" class="footer__btm-link">Все нормативы</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">ПУБЛИКАЦИИ</div>
+        <div class="footer__block">
+          <div class="footer__block-title">
+            <a href="#">Геотехника (стержневые, многопрядевые, извлекаемые, буроинъекционные анкеры, забивные сваи)</a>
+          </div>
+          <div class="footer__block-name">Олег Николаев</div>
+          <div class="footer__block-publ-info">
+            <div>Специалист</div>
+            <div>2 дня назад</div>
+          </div>
+        </div>
+        <div class="footer__block">
+          <div class="footer__block-title">
+            <a href="#">Стержневые, многопрядевые, извлекаемые, буроинъекционные анкеры, забивные сваи</a>
+          </div>
+          <div class="footer__block-name">Николай Олегов</div>
+          <div class="footer__block-publ-info">
+            <div>Специалист</div>
+            <div>4 дня назад</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Словарь</div>
+        <div class="footer__block">
+          <div class="footer__block-title">
+            <a href="#">Сваи</a>
+          </div>
+          <div class="footer__block-descr footer__block-descr--mod">Геотехника (стержневые, многопрядевые, извлекаемые, буроинъекционные анкеры, забивные сваи)</div>
+        </div>
+        <div class="footer__block">
+          <div class="footer__block-title">
+            <a href="#">Геотехника</a>
+          </div>
+          <div class="footer__block-descr footer__block-descr--mod">Геотехника (стержневые, многопрядевые, извлекаемые, буроинъекционные анкеры, забивные сваи)</div>
+        </div>
+        <div class="footer__block">
+          <div class="footer__block-title">
+            <a href="#">Буровая установка</a>
+          </div>
+          <div class="footer__block-descr footer__block-descr--mod">Геотехника (стержневые, многопрядевые, извлекаемые, буроинъекционные анкеры, забивные сваи)</div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="footer__bottom-text">Ассоциация «СтройМонтаж»</div>
+      <div class="footer__bottom-text">Продажа опалубки стеновой для <span class="hide-mob">монолитного</span> строительства, 2019</div>
+    </div>      
+  </div>
+</footer>
+
+<div class="popup" id="callback">
+  <form action="#">
+    <div class="popup__title">Заказ обратного звонка</div>
+    <div class="popup__subtitle">
+      <div>Наши менеджеры сейчас не в офисе.</div>
+      <div>Но они обязательно перезвонят вам в указанное время!</div>
+    </div>
+    <div class="popup__inputcols">
+      <div class="popup__col lg">
+        <div class="popup__inputbox">
+          <svg class="icon-phone">
+            <use xlink:href="#phone"></use>
+          </svg>
+          <input type="text" class="input popup__phone-input" placeholder="Номер телефона">
+        </div>        
+      </div>
+      <div class="popup__col sm">
+        <select class="select js-select">
+          <option value="">Завтра</option>
+          <option value="">Завтра2</option>
+          <option value="">Завтра3</option>
+          <option value="">Завтра4</option>
+          <option value="">Завтра4</option>
+          <option value="">Завтра4</option>
+          <option value="">Завтра4</option>
+          <option value="">Завтра4</option>
+        </select>
+      </div>
+      <div class="popup__col sm">
+        <select class="select js-select">
+          <option value="">07:00</option>
+          <option value="">08:00</option>
+          <option value="">09:00</option>
+          <option value="">10:00</option>
+          <option value="">10:00</option>
+          <option value="">10:00</option>
+          <option value="">10:00</option>
+          <option value="">10:00</option>
+          <option value="">10:00</option>
+          <option value="">10:00</option>
+        </select>
+      </div>
+    </div>
+    <div class="popup__checkbox">
+      <label class="checkbox">
+        <input type="checkbox">
+        <span>
+          Согласен на обработку персональных данных
+          <span class="checkbox__descr">Ставя отметку, я даю свое согласие на обработку моих персональных данных в соответствии с законом №152-Ф3 «О персональных данных» от 27.07.2006 и принимаю условия Политики конфиденциальности</span>
+        </span>
+      </label>
+    </div>
+    <div class="popup__btnbox">
+      <button type="submit" class="btn">Заказать звонок</button>
+    </div>
+  </form>    
+</div>
+
+<div class="popup popup--mod" id="request">
+  <form action="#">
+    <div class="popup__title">Заявка на расчет</div>
+    <div class="popup__input-block">
+      <div class="popup__inputrow">
+        <div class="popup__inputrow-label">Как к вам обращаться?:</div>
+        <input type="text" class="input popup__phone-input" placeholder="Имя">
+      </div>
+      <div class="popup__inputrow">
+        <div class="popup__inputrow-label">Ваш номер телефона:</div>
+        <input type="text" class="input popup__phone-input" placeholder="Номер телефона">
+      </div>
+      <div class="popup__inputrow">
+        <div class="popup__inputrow-label">Ваш E-Mail:</div>
+        <input type="email" class="input popup__phone-input" placeholder="E-mail">
+      </div>
+    </div>    
+    <div class="popup__checkbox">
+      <label class="checkbox">
+        <input type="checkbox">
+        <span>
+          Согласен на обработку персональных данных
+          <span class="checkbox__descr">Ставя отметку, я даю свое согласие на обработку моих персональных данных в соответствии с законом №152-Ф3 «О персональных данных» от 27.07.2006 и принимаю условия Политики конфиденциальности</span>
+        </span>
+      </label>
+    </div>
+    <div class="popup__btnbox">
+      <button type="submit" class="btn">Создать заявку</button>
+    </div>
+  </form>    
+</div>
+
+  <script src="js/vendor.js?rel=84987"></script>
+  
+
+  
+  <script src="pages-list.js"></script>
+  
+
+  <script src="js/main.js?rel=84987"></script>
+
+
+</body>
+</html>
+

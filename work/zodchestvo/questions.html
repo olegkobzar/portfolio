@@ -1,0 +1,583 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Questions</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body>
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+
+ 	</div>
+ 
+
+  <header class="header">
+	<div class="header__visible-mobile">
+		<div class="header__logo">
+			<a href="#" class="header__logo-link">
+				<!-- <span class="header__logo-icon">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</span>
+				<span class="header__logo-text">Зодчество</span>
+				<span class="header__logo-fest">международный фестиваль</span> -->
+				<svg class="icon-logo-header">
+					<use xlink:href="#logo-header"></use>
+				</svg>
+			</a>
+		</div>
+		<div class="header__menu-mobile js-menu-mobile">
+			<span class="header__menu-mobile-item"></span>
+			<span class="header__menu-mobile-item"></span>
+			<span class="header__menu-mobile-item"></span>
+		</div>
+	</div>
+	<div class="header__wrapp js-nav-mobile">
+		<div class="header__top">
+			<div class="container">
+				<div class="header__top-wrapp">
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">
+							<!-- <span class="header__logo-icon">
+								<svg class="icon-logo">
+									<use xlink:href="#logo"></use>
+								</svg>
+							</span>
+							<span class="header__logo-text">Зодчество</span>
+							<span class="header__logo-fest">международный фестиваль</span> -->
+
+							<svg class="icon-logo-header">
+								<use xlink:href="#logo-header"></use>
+							</svg>
+						</a>
+					</div>
+					<nav class="header__nav js-nav js-wrapp-nav">
+						<div class="header__close-mobile js-close-mobile">
+							<span class="header__close-mobile-item"></span>
+							<span class="header__close-mobile-item"></span>
+						</div>
+						<ul class="header__list">
+							<li class="header__item active" data-text="01_">
+								<a href="#" class="header__link">О фестивале</a>
+								<div class="header__submenu">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Фестиваль 2018</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Каталог</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Награды</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="02_">
+								<a href="#" class="header__link">Конкурсы</a>
+							</li>
+							<li class="header__item" data-text="03_">
+								<a href="#" class="header__link">Выставки</a>
+							</li>
+							<li class="header__item" data-text="04_">
+								<a href="#" class="header__link">Участники</a>
+								<div class="header__submenu header__submenu--mod">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Все участники</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Работы участников</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="05_">
+								<a href="#" class="header__link">Итоги</a>
+							</li>
+							<li class="header__item" data-text="06_">
+								<a href="#" class="header__link">Медиа</a>
+								<div class="header__submenu">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Новости</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">СМИ о нас</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Аккредитация</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Фотогалерея</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="07_">
+								<a href="#" class="header__link">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="header__login">
+						<a href="#" class="header__login-link">
+							<span class="header__login-icon-circle"></span>
+							<span class="header__login-text">Вход в личный кабинет</span>
+						</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="header__menu-mobile js-menu-mobile">
+				<span class="header__menu-mobile-item"></span>
+				<span class="header__menu-mobile-item"></span>
+				<span class="header__menu-mobile-item"></span>
+			</div>
+			<div class="header__bott">
+				<div class="container">
+					<div class="header__bott-wrapp">
+						<div class="header__left">
+							<ul class="header__left-list">
+								<li class="header__left-item">
+									<a href="#" class="header__left-link">Вопросы и ответы</a>
+								</li>
+								<li class="header__left-item">
+									<a href="#" class="header__left-link">Eng</a>
+								</li>
+							</ul>
+						</div>
+						<div class="header__right">
+							<ul class="header__right-list">
+								<li class="header__right-item">
+									<a href="#" class="btn btn--border header__right-link header__right-link--ticket">Получить билет на выставку</a>
+								</li>
+								<li class="header__right-item">
+									<a href="#" class="btn header__right-link header__right-link--registration">Регистрация на конкурс</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+    
+    <div class="wrapper">
+      <div class="questions-heading">
+    	 <div class="heading " style="background-image: url(pic/bg/bg-heading-main.jpg);">
+  <div class="container">
+    <div class="heading__wrap">
+      <div class="heading__holder">
+        
+        <h1 class="heading__title">Вопрос-ответ</h1>
+        
+        
+      </div>
+    </div>
+  </div>
+  <div class="heading__decor">
+    <div class="heading__decor-col heading__decor-col--large"></div>
+    <div class="heading__decor-col heading__decor-col--small"></div>
+  </div>
+</div>
+
+      </div>
+
+      <div class="questions">
+	<div class="container">
+		<div class="questions__holder">
+			<div class="questions__item">
+				<div class="questions__item-inner js-accordeon-link">
+					<span class="questions__item-num">01_</span>
+					<span class="questions__item-title">О чем Фестиваль?</span>
+					<a href="#" class="questions__item-link">
+						<span class="questions__item-answer">Ответ</span>
+						<span class="questions__item-icon"></span>
+					</a>
+				</div>
+				<div class="questions__item-content js-accordeon-content">
+					<div class="questions__item-content-txt">
+						<p>
+							В состав Жюри входят члены Союза Архитекторов России, Союза Реставраторов России, Всероссийского общества охраны памятников истории и культуры, а также авторитетные специалисты и эксперты в области охраны наследия. Состав жюри каждого смотра-конкурса утверждается на президиуме Союза архитекторов России и оглашается за 30 дней до начала Фестиваля.
+						</p>
+					</div>		
+				</div>
+			</div>
+			<div class="questions__item">
+				<div class="questions__item-inner js-accordeon-link">
+					<span class="questions__item-num">02_</span>
+					<span class="questions__item-title">
+						Кто может принимать участие в Фестивале?
+					</span>
+					<a href="#" class="questions__item-link">
+						<span class="questions__item-answer">Ответ</span>
+						<span class="questions__item-icon"></span>
+					</a>
+				</div>
+				<div class="questions__item-content js-accordeon-content">
+					<div class="questions__item-content-txt">
+						<p>
+							В состав Жюри входят члены Союза Архитекторов России, Союза Реставраторов России, Всероссийского общества охраны памятников истории и культуры, а также авторитетные специалисты и эксперты в области охраны наследия. Состав жюри каждого смотра-конкурса утверждается на президиуме Союза архитекторов России и оглашается за 30 дней до начала Фестиваля.
+						</p>
+					</div>		
+				</div>
+			</div>
+			<div class="questions__item">
+				<div class="questions__item-inner js-accordeon-link">
+					<span class="questions__item-num">03_</span>
+					<span class="questions__item-title">
+						Где я могу заполнить Заявку?
+					</span>
+					<a href="#" class="questions__item-link">
+						<span class="questions__item-answer">Ответ</span>
+						<span class="questions__item-icon"></span>
+					</a>
+				</div>
+				<div class="questions__item-content js-accordeon-content">
+					<div class="questions__item-content-txt">
+						<p>
+							В состав Жюри входят члены Союза Архитекторов России, Союза Реставраторов России, Всероссийского общества охраны памятников истории и культуры, а также авторитетные специалисты и эксперты в области охраны наследия. Состав жюри каждого смотра-конкурса утверждается на президиуме Союза архитекторов России и оглашается за 30 дней до начала Фестиваля.
+						</p>
+					</div>		
+				</div>
+			</div>
+			<div class="questions__item">
+				<div class="questions__item-inner js-accordeon-link">
+					<span class="questions__item-num">04_</span>
+					<span class="questions__item-title">
+						Что я должен знать на момент оформления Заявки? 
+					</span>
+					<a href="#" class="questions__item-link">
+						<span class="questions__item-answer">Ответ</span>
+						<span class="questions__item-icon"></span>
+					</a>
+				</div>
+				<div class="questions__item-content js-accordeon-content">
+					<div class="questions__item-content-txt">
+						<p>
+							В состав Жюри входят члены Союза Архитекторов России, Союза Реставраторов России, Всероссийского общества охраны памятников истории и культуры, а также авторитетные специалисты и эксперты в области охраны наследия. Состав жюри каждого смотра-конкурса утверждается на президиуме Союза архитекторов России и оглашается за 30 дней до начала Фестиваля.
+						</p>
+					</div>		
+				</div>
+			</div>
+			<div class="questions__item">
+				<div class="questions__item-inner js-accordeon-link">
+					<span class="questions__item-num">05_</span>
+					<span class="questions__item-title">
+						Могу ли я подать несколько заявок?
+					</span>
+					<a href="#" class="questions__item-link">
+						<span class="questions__item-answer">Ответ</span>
+						<span class="questions__item-icon"></span>
+					</a>
+				</div>
+				<div class="questions__item-content js-accordeon-content">
+					<div class="questions__item-content-txt">
+						<p>
+							В состав Жюри входят члены Союза Архитекторов России, Союза Реставраторов России, Всероссийского общества охраны памятников истории и культуры, а также авторитетные специалисты и эксперты в области охраны наследия. Состав жюри каждого смотра-конкурса утверждается на президиуме Союза архитекторов России и оглашается за 30 дней до начала Фестиваля.
+						</p>
+					</div>		
+				</div>
+			</div>
+			<div class="questions__item">
+				<div class="questions__item-inner js-accordeon-link">
+					<span class="questions__item-num">06_</span>
+					<span class="questions__item-title">
+						Какую номинацию мне выбрать?
+					</span>
+					<a href="#" class="questions__item-link">
+						<span class="questions__item-answer">Ответ</span>
+						<span class="questions__item-icon"></span>
+					</a>
+				</div>
+				<div class="questions__item-content js-accordeon-content">
+					<div class="questions__item-content-txt">
+						<p>
+							В состав Жюри входят члены Союза Архитекторов России, Союза Реставраторов России, Всероссийского общества охраны памятников истории и культуры, а также авторитетные специалисты и эксперты в области охраны наследия. Состав жюри каждого смотра-конкурса утверждается на президиуме Союза архитекторов России и оглашается за 30 дней до начала Фестиваля.
+						</p>
+					</div>		
+				</div>
+			</div>
+			<div class="questions__item">
+				<div class="questions__item-inner js-accordeon-link">
+					<span class="questions__item-num">07_</span>
+					<span class="questions__item-title">
+						Когда как узнать о результатах проведения смотров-конкурсов?
+					</span>
+					<a href="#" class="questions__item-link">
+						<span class="questions__item-answer">Ответ</span>
+						<span class="questions__item-icon"></span>
+					</a>
+				</div>
+				<div class="questions__item-content js-accordeon-content">
+					<div class="questions__item-content-txt">
+						<p>
+							В состав Жюри входят члены Союза Архитекторов России, Союза Реставраторов России, Всероссийского общества охраны памятников истории и культуры, а также авторитетные специалисты и эксперты в области охраны наследия. Состав жюри каждого смотра-конкурса утверждается на президиуме Союза архитекторов России и оглашается за 30 дней до начала Фестиваля.
+						</p>
+					</div>		
+				</div>
+			</div>
+			<div class="questions__item">
+				<div class="questions__item-inner js-accordeon-link show">
+					<span class="questions__item-num">08_</span>
+					<span class="questions__item-title">
+						Кто входит в состав Жюри?
+					</span>
+					<a href="#" class="questions__item-link">
+						<span class="questions__item-answer">Ответ</span>
+						<span class="questions__item-icon"></span>
+					</a>
+				</div>
+				<div class="questions__item-content js-accordeon-content">
+					<div class="questions__item-content-txt">
+						<p>
+							В состав Жюри входят члены Союза Архитекторов России, Союза Реставраторов России, Всероссийского общества охраны памятников истории и культуры, а также авторитетные специалисты и эксперты в области охраны наследия. Состав жюри каждого смотра-конкурса утверждается на президиуме Союза архитекторов России и оглашается за 30 дней до начала Фестиваля.
+						</p>
+					</div>		
+				</div>
+			</div>
+			<div class="questions__item">
+				<div class="questions__item-inner js-accordeon-link ">
+					<span class="questions__item-num">09_</span>
+					<span class="questions__item-title">
+						Что такое кнопка SOS?
+					</span>
+					<a href="#" class="questions__item-link">
+						<span class="questions__item-answer">Ответ</span>
+						<span class="questions__item-icon"></span>
+					</a>
+				</div>
+				<div class="questions__item-content js-accordeon-content">
+					<div class="questions__item-content-txt">
+						<p>
+							В состав Жюри входят члены Союза Архитекторов России, Союза Реставраторов России, Всероссийского общества охраны памятников истории и культуры, а также авторитетные специалисты и эксперты в области охраны наследия. Состав жюри каждого смотра-конкурса утверждается на президиуме Союза архитекторов России и оглашается за 30 дней до начала Фестиваля.
+						</p>
+					</div>		
+				</div>
+			</div>
+			<div class="questions__item">
+				<div class="questions__item-inner js-accordeon-link ">
+					<span class="questions__item-num">10_</span>
+					<span class="questions__item-title">
+						Как пройти на Фестиваль участнику или гостю?
+					</span>
+					<a href="#" class="questions__item-link">
+						<span class="questions__item-answer">Ответ</span>
+						<span class="questions__item-icon"></span>
+					</a>
+				</div>
+				<div class="questions__item-content js-accordeon-content">
+					<div class="questions__item-content-txt">
+						<p>
+							В состав Жюри входят члены Союза Архитекторов России, Союза Реставраторов России, Всероссийского общества охраны памятников истории и культуры, а также авторитетные специалисты и эксперты в области охраны наследия. Состав жюри каждого смотра-конкурса утверждается на президиуме Союза архитекторов России и оглашается за 30 дней до начала Фестиваля.
+						</p>
+					</div>		
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+      <div class="contacts-people">
+	<div class="container">
+		<div class="contacts-people__wrapp">
+			<span class="contacts-people__caption">Консультация</span>
+			<ul class="contacts-people__list">
+				<li class="contacts-people__item">Кандейкина Надежда</li>
+				<li class="contacts-people__item">
+					<a href="tel:+74956906865" class="contacts-people__link">+7 (495) 690-68-65</a>
+				</li>
+				<li class="contacts-people__item">
+					<a href="mailto:info@zodchestvo.com" class="contacts-people__link">info@zodchestvo.com</a>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+</div>
+      <div class="support ">
+	<div class="container">
+		<div class="support__holder">
+			<span class="support__title">При поддержке</span>
+			<div class="support__inner slick slick--support js-support-slider">
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-01.png" alt="img">
+					</div>
+					<span class="support__item-txt">Минстрой России</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-02.png" alt="img">
+					</div>
+					<span class="support__item-txt">Сайт президента России</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-03.png" alt="img">
+					</div>
+					<span class="support__item-txt">Совет Федераций</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-04.png" alt="img">
+					</div>
+					<span class="support__item-txt">Официальный сайт Мэра Москвы</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img support__item-img--mod">
+						<img src="pic/support/support-05.png" alt="img">
+					</div>
+					<span class="support__item-txt">Правительство Московской области</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="heading__decor support__decor">
+  	<div class="heading__decor-col heading__decor-col--large"></div>
+  	<div class="heading__decor-col heading__decor-col--small"></div>
+  </div>
+</div>
+    	
+    </div>
+
+  <footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__inner">
+			<div class="footer__logo">
+				<a href="#" class="footer__logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="footer__info-box">
+				<div class="footer__info">
+					<div class="footer__info-item">
+						<span class="footer__info-title footer__info-title--mod">
+							Зодчество
+						</span>
+						<span class="footer__info-txt">XXVI архитектурный фестиваль</span>
+					</div>
+					<div class="footer__info-item">
+						<span class="footer__info-title">Москва</span>
+						<span class="footer__info-txt">ЦВЗ «Манеж»</span>
+					</div>
+					<div class="footer__info-item">
+						<span class="footer__info-title">
+							<span class="footer__info-date">19</span>
+							<span class="footer__info-date">21</span>
+						</span>
+						<span class="footer__info-txt">ноября 2018</span>
+					</div>
+				</div>
+				<div class="footer__copy">
+					<div class="footer__copy-box">
+						<span class="footer__copy-txt">
+							Дирекция международного фестиваля «Зодчество»
+						</span>
+						<span class="footer__copy-txt">
+							123001, Москва, Гранатный пер. 12
+						</span>
+					</div>
+					<div class="footer__copy-phone-wrap">
+						<span class="footer__copy-phone">
+							<a href="tel:+7(495)6906865" class="footer__copy-link">
+								+7 (495) 690-68-65
+							</a>
+						</span>
+						<span class="footer__copy-phone">
+							<a href="tel:+7(495)6915321" class="footer__copy-link">
+								+7 (495) 691-53-21
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="footer__contacts">
+				<a href="#"class="footer__contacts-head">
+					<span class="footer__contacts-title">Контакты</span>
+					<span class="icon-arrow icon-arrow--next"></span>
+				</a>
+				<div class="footer__contacts-social">
+					<a href="#" class="footer__contacts-link">Facebook,</a>
+					<a href="#" class="footer__contacts-link">Vkontakte,</a>
+					<a href="#" class="footer__contacts-link">Instagram</a>
+				</div>
+				<a href="mailto:info@zodchestvo.com" class="footer__contacts-mail">info@zodchestvo.com</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+
+

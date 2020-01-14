@@ -1,0 +1,1123 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@@title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class="">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+<div class="wrapper">
+
+	<div class="higher" style="background-image: url(pic/bg/bg-services.jpg);">
+	<div class="higher__decor">
+		<header class="header ">
+	<div class="container">	
+		<div class="header__logo">
+			<a href="#" class="header__logo-link">
+				<img src="pic/logo.png" alt="">
+			</a>
+		</div>
+		<nav class="header__nav">
+			<ul class="header__list">
+				<li class="header__item">
+					<a href="#" class="header__link">О нас</a>
+				</li>
+				<li class="header__item">
+					<a href="#" class="header__link">Продажа автомобилей</a>
+				</li>
+				<li class="header__item">
+					<a href="#" class="header__link">Онлайн сервисы</a>
+				</li>
+				<li class="header__item">
+					<a href="#" class="header__link">Контакты</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="header__contact">
+			<div class="header__contact-callback">
+				<a href="" class="header__link-callback">Заказать звонок</a>
+			</div>
+			<div class="header__contact-phone">
+				<a href="tel:88005504213" class="header__link-phone">8 800 550 42 13</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+		<div class="container">
+			<div class="higher__outher">
+				<div class="higher__back">
+					<a href="#" class="higher__back-text">вернуться назад</a>
+				</div>
+				<div class="higher__wrapp">
+					<span class="higher__about-text">О компании</span>
+					<h1 class="higher__caption">Автомарин 25 безопасно. надежно. доступно</h1>
+					<span class="higher__descr">В этом разделе мы расскажем Вам почему наши покупатели полностью защищены от любых необоснованных расходов, форс-мажорных и конфликтных ситуаций.</span>
+					<div class="higher__social">
+						<ul class="higher__list">
+							<li class="higher__item">
+								<a href="#" class="higher__link">
+									<svg class="icon-facebook">
+										<use xlink:href="#facebook"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="higher__item">
+								<a href="#" class="higher__link">
+									<svg class="icon-instagram">
+										<use xlink:href="#instagram"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="higher__item">
+								<a href="#" class="higher__link">
+									<svg class="icon-vk">
+										<use xlink:href="#vk"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="higher__item">
+								<a href="#" class="higher__link">
+									<svg class="icon-youtube">
+										<use xlink:href="#youtube"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+  <div class="info">
+  <div class="info__row info__row--bg-gray">
+
+    <div class="info__col info__col--left">
+      <div class="info__slider">
+
+        <div class="info__slider-list js-info-slider">
+          
+          <div class="info__slider-item">
+            <h2 class="info__title">Помощь в покупке авто с аукционов Японии</h2>
+            <p class="info__desc">Наша команда предлагает заказать автомобиль из Японии с аукциона
+              на выгодных условиях. Для каждого отдельного проекта назначается менеджер, который ведет его от начала и
+              до конца. Вам предлагается широкий выбор между новыми и б/у моделями. Также Вы можете заказать
+              дополнительную инспекцию машины с запросом на дополнительные фото со всех ракурсов.</p>
+            <div class="info__bottom">
+              <div class="info__inner info__inner--small">
+                <div class="info__icon"></div>
+              </div>
+              <div class="info__inner info__inner--large">
+                <p class="info__txt">Продажа новых и б/у машин, спец-, мото- и водной техники проверенных сток ярдами с полным описанием и аукционными листами.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info__slider-item">
+            <h2 class="info__title">Помощь в покупке авто с аукционов Японии</h2>
+            <p class="info__desc">Наша команда предлагает заказать автомобиль из Японии с аукциона
+              на выгодных условиях. Для каждого отдельного проекта назначается менеджер, который ведет его от начала и
+              до конца. Вам предлагается широкий выбор между новыми и б/у моделями. Также Вы можете заказать
+              дополнительную инспекцию машины с запросом на дополнительные фото со всех ракурсов.</p>
+            <div class="info__bottom">
+              <div class="info__inner info__inner--small">
+                <div class="info__icon"></div>
+              </div>
+              <div class="info__inner info__inner--large">
+                <p class="info__txt">Продажа новых и б/у машин, спец-, мото- и водной техники проверенных сток ярдами с полным описанием и аукционными листами.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info__slider-item">
+            <h2 class="info__title">Помощь в покупке авто с аукционов Японии</h2>
+            <p class="info__desc">Наша команда предлагает заказать автомобиль из Японии с аукциона
+              на выгодных условиях. Для каждого отдельного проекта назначается менеджер, который ведет его от начала и
+              до конца. Вам предлагается широкий выбор между новыми и б/у моделями. Также Вы можете заказать
+              дополнительную инспекцию машины с запросом на дополнительные фото со всех ракурсов.</p>
+            <div class="info__bottom">
+              <div class="info__inner info__inner--small">
+                <div class="info__icon"></div>
+              </div>
+              <div class="info__inner info__inner--large">
+                <p class="info__txt">Продажа новых и б/у машин, спец-, мото- и водной техники проверенных сток ярдами с полным описанием и аукционными листами.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info__slider-item">
+            <h2 class="info__title">Помощь в покупке авто с аукционов Японии</h2>
+            <p class="info__desc">Наша команда предлагает заказать автомобиль из Японии с аукциона
+              на выгодных условиях. Для каждого отдельного проекта назначается менеджер, который ведет его от начала и
+              до конца. Вам предлагается широкий выбор между новыми и б/у моделями. Также Вы можете заказать
+              дополнительную инспекцию машины с запросом на дополнительные фото со всех ракурсов.</p>
+            <div class="info__bottom">
+              <div class="info__inner info__inner--small">
+                <div class="info__icon"></div>
+              </div>
+              <div class="info__inner info__inner--large">
+                <p class="info__txt">Продажа новых и б/у машин, спец-, мото- и водной техники проверенных сток ярдами с полным описанием и аукционными листами.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info__slider-item">
+            <h2 class="info__title">Помощь в покупке авто с аукционов Японии</h2>
+            <p class="info__desc">Наша команда предлагает заказать автомобиль из Японии с аукциона
+              на выгодных условиях. Для каждого отдельного проекта назначается менеджер, который ведет его от начала и
+              до конца. Вам предлагается широкий выбор между новыми и б/у моделями. Также Вы можете заказать
+              дополнительную инспекцию машины с запросом на дополнительные фото со всех ракурсов.</p>
+            <div class="info__bottom">
+              <div class="info__inner info__inner--small">
+                <div class="info__icon"></div>
+              </div>
+              <div class="info__inner info__inner--large">
+                <p class="info__txt">Продажа новых и б/у машин, спец-, мото- и водной техники проверенных сток ярдами с полным описанием и аукционными листами.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info__slider-item">
+            <h2 class="info__title">Помощь в покупке авто с аукционов Японии</h2>
+            <p class="info__desc">Наша команда предлагает заказать автомобиль из Японии с аукциона
+              на выгодных условиях. Для каждого отдельного проекта назначается менеджер, который ведет его от начала и
+              до конца. Вам предлагается широкий выбор между новыми и б/у моделями. Также Вы можете заказать
+              дополнительную инспекцию машины с запросом на дополнительные фото со всех ракурсов.</p>
+            <div class="info__bottom">
+              <div class="info__inner info__inner--small">
+                <div class="info__icon"></div>
+              </div>
+              <div class="info__inner info__inner--large">
+                <p class="info__txt">Продажа новых и б/у машин, спец-, мото- и водной техники проверенных сток ярдами с полным описанием и аукционными листами.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info__slider-item">
+            <h2 class="info__title">Помощь в покупке авто с аукционов Японии</h2>
+            <p class="info__desc">Наша команда предлагает заказать автомобиль из Японии с аукциона
+              на выгодных условиях. Для каждого отдельного проекта назначается менеджер, который ведет его от начала и
+              до конца. Вам предлагается широкий выбор между новыми и б/у моделями. Также Вы можете заказать
+              дополнительную инспекцию машины с запросом на дополнительные фото со всех ракурсов.</p>
+            <div class="info__bottom">
+              <div class="info__inner info__inner--small">
+                <div class="info__icon"></div>
+              </div>
+              <div class="info__inner info__inner--large">
+                <p class="info__txt">Продажа новых и б/у машин, спец-, мото- и водной техники проверенных сток ярдами с полным описанием и аукционными листами.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info__slider-item">
+            <h2 class="info__title">Помощь в покупке авто с аукционов Японии</h2>
+            <p class="info__desc">Наша команда предлагает заказать автомобиль из Японии с аукциона
+              на выгодных условиях. Для каждого отдельного проекта назначается менеджер, который ведет его от начала и
+              до конца. Вам предлагается широкий выбор между новыми и б/у моделями. Также Вы можете заказать
+              дополнительную инспекцию машины с запросом на дополнительные фото со всех ракурсов.</p>
+            <div class="info__bottom">
+              <div class="info__inner info__inner--small">
+                <div class="info__icon"></div>
+              </div>
+              <div class="info__inner info__inner--large">
+                <p class="info__txt">Продажа новых и б/у машин, спец-, мото- и водной техники проверенных сток ярдами с полным описанием и аукционными листами.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info__slider-item">
+            <h2 class="info__title">Помощь в покупке авто с аукционов Японии</h2>
+            <p class="info__desc">Наша команда предлагает заказать автомобиль из Японии с аукциона
+              на выгодных условиях. Для каждого отдельного проекта назначается менеджер, который ведет его от начала и
+              до конца. Вам предлагается широкий выбор между новыми и б/у моделями. Также Вы можете заказать
+              дополнительную инспекцию машины с запросом на дополнительные фото со всех ракурсов.</p>
+            <div class="info__bottom">
+              <div class="info__inner info__inner--small">
+                <div class="info__icon"></div>
+              </div>
+              <div class="info__inner info__inner--large">
+                <p class="info__txt">Продажа новых и б/у машин, спец-, мото- и водной техники проверенных сток ярдами с полным описанием и аукционными листами.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info__slider-item">
+            <h2 class="info__title">Помощь в покупке авто с аукционов Японии</h2>
+            <p class="info__desc">Наша команда предлагает заказать автомобиль из Японии с аукциона
+              на выгодных условиях. Для каждого отдельного проекта назначается менеджер, который ведет его от начала и
+              до конца. Вам предлагается широкий выбор между новыми и б/у моделями. Также Вы можете заказать
+              дополнительную инспекцию машины с запросом на дополнительные фото со всех ракурсов.</p>
+            <div class="info__bottom">
+              <div class="info__inner info__inner--small">
+                <div class="info__icon"></div>
+              </div>
+              <div class="info__inner info__inner--large">
+                <p class="info__txt">Продажа новых и б/у машин, спец-, мото- и водной техники проверенных сток ярдами с полным описанием и аукционными листами.</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="info__slider-counter">
+          <button class="info__counter-btn info__counter-btn--prev js-slide-prev" type="button"></button>
+          <span class="info__counter-inner js-slide-counter"></span>
+          <button class="info__counter-btn info__counter-btn--next js-slide-next" type="button"></button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="info__col info__col--right info__col--img" style="background-image: url(pic/bg/bg-japan.jpg);">
+      <div class="info__holder">
+        <span class="info__txt info__txt--inverse">Более</span>
+        <span class="info__txt-number">150</span>
+        <span class="info__txt info__txt--inverse">привезенных</span>
+        <span class="info__txt info__txt--inverse">авто</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="info__row">
+
+    <div class="info__col info__col--left info__col--img" style="background-image: url(pic/bg/bg-order.jpg);">
+      <div class="info__holder">
+        <span class="info__txt info__txt--inverse">Более</span>
+        <span class="info__txt-number">240</span>
+        <span class="info__txt info__txt--inverse">выполненных</span>
+        <span class="info__txt info__txt--inverse">контрактов</span>
+      </div>
+    </div>
+
+    <div class="info__col info__col--right">
+      <h2 class="info__title">Закажите авто у профессионалов</h2>
+      <p class="info__desc">Мы не задаемся целью заработка любой ценой. Для нас важно оказать профессиональную помощь
+        людям, которые хотят приобрести качественный, с прозрачной историей, исправный транспорт. Если у Вас возникают
+        сомнения при покупке автомобиля на территории РФ, Вы можете всегда связаться с нами для бесплатной
+        консультации.</p>
+    </div>
+
+  </div>
+</div>
+
+  <div class="categories categories--services">
+  <div class="container">
+    <div class="categories__wrap">
+      <div class="categories__row">
+        <div class="categories__col categories__col--small">
+          <div class="categories__holder" style="background-image: url(pic/service/service-01.jpg);">
+            <a href="#" class="categories__inner">
+              <span class="categories__caption">Авто под полную пошлину</span>
+            </a>
+          </div>
+        </div>
+        <div class="categories__col categories__col--small">
+          <div class="categories__holder" style="background-image: url(pic/service/service-02.jpg);">
+            <a href="#" class="categories__inner">
+              <span class="categories__caption">Распил и крапил</span>
+            </a>
+          </div>
+        </div>
+        <div class="categories__col categories__col--small">
+          <div class="categories__holder" style="background-image: url(pic/service/service-03.jpg);">
+            <a href="#" class="categories__inner">
+              <span class="categories__caption">Конструкторы</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="categories__row">
+        <div class="categories__col categories__col--small">
+          <div class="categories__holder" style="background-image: url(pic/service/service-04.jpg);">
+            <a href="#" class="categories__inner">
+              <span class="categories__caption">Грузовики с ПТС</span>
+            </a>
+          </div>
+        </div>
+        <div class="categories__col categories__col--small">
+          <div class="categories__holder" style="background-image: url(pic/service/service-05.jpg);">
+            <a href="#" class="categories__inner">
+              <span class="categories__caption">Мототехника</span>
+            </a>
+          </div>
+        </div>
+        <div class="categories__col categories__col--small">
+          <div class="categories__holder" style="background-image: url(pic/service/service-06.jpg);">
+            <a href="#" class="categories__inner">
+              <span class="categories__caption">Спецтехника</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="how-working">
+  <div class="container">
+    <h3 class="how-working__title">Как мы работаем</h3>
+    <div class="how-working__body">
+      <div class="how-working__list js-slider-mobile-working">
+
+        <div class="how-working__item">
+          <div class="how-working__holder">
+            <div class="how-working__inner">
+              <div class="how-working__top">
+                <svg class="icon-send">
+                  <use xlink:href="#send"></use>
+                </svg>
+              </div>
+              <span class="how-working__desc">Вы <a href="#" class="how-working__link">отправляете заявку</a></span>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="how-working__item">
+          <div class="how-working__holder">
+            <div class="how-working__inner">
+              <div class="how-working__top">
+                <svg class="icon-consultation">
+                  <use xlink:href="#consultation"></use>
+                </svg>
+              </div>
+              <span class="how-working__desc">Консультация</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="how-working__item">
+          <div class="how-working__holder">
+            <div class="how-working__inner">
+              <div class="how-working__top">
+                <svg class="icon-treaty">
+                  <use xlink:href="#treaty"></use>
+                </svg>
+              </div>
+              <span class="how-working__desc">Заключение договора</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="how-working__item">
+          <div class="how-working__holder">
+            <div class="how-working__inner">
+              <div class="how-working__top">
+                <svg class="icon-choice-car">
+                  <use xlink:href="#choice-car"></use>
+                </svg>
+              </div>
+              <span class="how-working__desc">Выбор авто и оплата</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="how-working__item">
+          <div class="how-working__holder">
+            <div class="how-working__inner">
+              <div class="how-working__top">
+                <svg class="icon-delivery">
+                  <use xlink:href="#delivery"></use>
+                </svg>
+              </div>
+              <span class="how-working__desc">Доставка и оформление</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="how-working__footer">
+      <div class="how-working__row">
+        <div class="how-working__col">
+          <a href="#" class="how-working__btn how-working__btn--red">перейти в каталог</a>
+        </div>
+        <div class="how-working__col">
+          <a href="#" class="how-working__btn">Нужна помощь в выборе? </a>
+        </div>
+        <div class="how-working__col">
+          <a href="#" class="how-working__btn">заказать звонок менеджера</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="sample-contracts">
+  <div class="container">
+    <div class="sample-contracts__wrap">
+      <div class="sample-contracts__holder sample-contracts__holder--large">
+        <h3 class="sample-contracts__title">образцы договоров</h3>
+        <div class="sample-contracts__inner">
+          <a download="#" class="sample-contracts__link">Договор полная пошлина</a>
+          <a download="#" class="sample-contracts__link">Договор распил</a>
+        </div>
+        <p class="sample-contracts__desc">Подберем машину абсолютно под любой бюджет, также мы гарантируем прозрачность сделки. Дадим дельный совет: какая машина подойдет для семейных поездок, а какая для любителей быстрой езды. Наш коллектив – это обученные, грамотные сотрудники, знающие всю подноготную японского автопрома. Обращаясь к нам, Вы можете рассчитывать на чуткое отношение специалистов и оперативное решение.</p>
+      </div>
+      <div class="sample-contracts__holder sample-contracts__holder--small" style="background-image: url(pic/bg/bg-contract-signature.jpg);">
+        <span class="sample-contracts__txt">Договор подписываем сразу в нашем офисе</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="video js-video-wrap" style="background-image: url(pic/bg/bg-video.jpg);">
+  <div class="container">
+    <div class="video__holder">
+      <div class="video__inner">
+        <div class="video__text">
+          <span class="video__title">Видео</span>
+          <span class="video__caption">видеообращение от директора компании</span>
+          <span class="video__desc">
+						«Автомарин25» — это надёжный партнёр при покупке авто, об этом 	расскажет директор компании Фамилия Имя
+					</span>
+        </div>
+        <div class="video__play">
+          <a href="#" class="video__icon js-video-play">
+						<span class="video__icon-inner">
+							<svg class="icon-play">
+								<use xlink:href="#play"></use>
+							</svg>			
+						</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="video__overlay js-video-overlay">
+    <div class="video__item js-video-item">
+      <iframe class="js-video" width="100%" height="100%" src="https://www.youtube.com/embed/Dv9ugq25XXg"
+              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <a href="#" class="video__close-btn js-video-close"></a>
+    </div>
+  </div>
+</div>
+
+  <div class="reviews">
+	<div class="container">
+		<div class="reviews__holder js-reviews-slider-wrap">
+			<span class="reviews__title">Отзывы клиентов</span>
+			<div class="reviews__slider js-reviews-slider">
+				
+					<div class="reviews__item js-get-slides-number">
+						<span class="reviews__item-name">Александр, Москва — Toyota Prius A</span>
+						<p class="reviews__item-text">
+							Обратился в Automarine25 с целью покупки японского авто Toyota Crown. По началу были сомнения.Но после консультации по телефону,поменял своё мнения. В коллцентре мне дали полную информацию, на все вопросы ответили,притензий нет. Теперь про машину: Toyota Crown Hybrid 2.5 Royal Four 4WD/178 л.с. Машина зверь и цена была тоже доступная для такого года,класса авто. Брал в кредит, все было легко, без лишней воды и напряга, даже с моей не очень симпатичной кредитной историей. Менеджер Максим рассказал мне о некоторых фишках авто, о которых мне впринципе ни кто не рассказывал, даже интернет.
+						</p>
+						<div class="reviews__more">
+							<a href="#" class="reviews__link">
+								<span class="reviews__icon">
+									<svg class="icon-photo">
+										<use xlink:href="#photo"></use>
+									</svg>
+								</span>
+								<span class="reviews__link-txt">Фотография авто</span>
+							</a>
+							<a href="#" class="reviews__link reviews__link--more">
+								<span class="reviews__link-txt">Подробнее</span>
+							</a>
+						</div>
+					</div>
+				
+					<div class="reviews__item js-get-slides-number">
+						<span class="reviews__item-name">Олег, Харьков — Toyota Camry</span>
+						<p class="reviews__item-text">
+							Обратился в Automarine25 с целью покупки японского авто Toyota Crown. По началу были сомнения.Но после консультации по телефону,поменял своё мнения. В коллцентре мне дали полную информацию, на все вопросы ответили,притензий нет. Теперь про машину: Toyota Crown Hybrid 2.5 Royal Four 4WD/178 л.с. Машина зверь и цена была тоже доступная для такого года,класса авто. Брал в кредит, все было легко, без лишней воды и напряга, даже с моей не очень симпатичной кредитной историей. Менеджер Максим рассказал мне о некоторых фишках авто, о которых мне впринципе ни кто не рассказывал, даже интернет.
+						</p>
+						<div class="reviews__more">
+							<a href="#" class="reviews__link">
+								<span class="reviews__icon">
+									<svg class="icon-photo">
+										<use xlink:href="#photo"></use>
+									</svg>
+								</span>
+								<span class="reviews__link-txt">Фотография авто</span>
+							</a>
+							<a href="#" class="reviews__link reviews__link--more">
+								<span class="reviews__link-txt">Подробнее</span>
+							</a>
+						</div>
+					</div>
+				
+					<div class="reviews__item js-get-slides-number">
+						<span class="reviews__item-name">Виталий, Москва — Toyota Prius B</span>
+						<p class="reviews__item-text">
+							Обратился в Automarine25 с целью покупки японского авто Toyota Crown. По началу были сомнения.Но после консультации по телефону,поменял своё мнения. В коллцентре мне дали полную информацию, на все вопросы ответили,притензий нет. Теперь про машину: Toyota Crown Hybrid 2.5 Royal Four 4WD/178 л.с. Машина зверь и цена была тоже доступная для такого года,класса авто. Брал в кредит, все было легко, без лишней воды и напряга, даже с моей не очень симпатичной кредитной историей. Менеджер Максим рассказал мне о некоторых фишках авто, о которых мне впринципе ни кто не рассказывал, даже интернет.
+						</p>
+						<div class="reviews__more">
+							<a href="#" class="reviews__link">
+								<span class="reviews__icon">
+									<svg class="icon-photo">
+										<use xlink:href="#photo"></use>
+									</svg>
+								</span>
+								<span class="reviews__link-txt">Фотография авто</span>
+							</a>
+							<a href="#" class="reviews__link reviews__link--more">
+								<span class="reviews__link-txt">Подробнее</span>
+							</a>
+						</div>
+					</div>
+				
+			</div>
+			<div class="reviews__item-slider-dots">
+				<span class="js-reviews-dots-is">1</span>
+				<span> / </span>
+				<span class="js-reviews-dots-all">0</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+  <div class="contacts">
+
+  <div class="contacts__map" id="map"></div>
+  <script>
+    function initMap() {
+      var uluru = {lat: 43.117479, lng: 131.881996};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        styles: [
+          {
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#f5f5f5"
+              }
+            ]
+          },
+          {
+            "elementType": "labels.icon",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#616161"
+              }
+            ]
+          },
+          {
+            "elementType": "labels.text.stroke",
+            "stylers": [
+              {
+                "color": "#f5f5f5"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.land_parcel",
+            "elementType": "geometry.stroke",
+            "stylers": [
+              {
+                "color": "#f2f2f2"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.land_parcel",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#cecece"
+              }
+            ]
+          },
+          {
+            "featureType": "landscape",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#f9f9f9"
+              }
+            ]
+          },
+          {
+            "featureType": "landscape.natural",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#f0f0f0"
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#eeeeee"
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#757575"
+              }
+            ]
+          },
+          {
+            "featureType": "poi.park",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#e5e5e5"
+              }
+            ]
+          },
+          {
+            "featureType": "poi.park",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#9e9e9e"
+              }
+            ]
+          },
+          {
+            "featureType": "road",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#ffffff"
+              }
+            ]
+          },
+          {
+            "featureType": "road.arterial",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#757575"
+              }
+            ]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#dadada"
+              }
+            ]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#616161"
+              }
+            ]
+          },
+          {
+            "featureType": "road.local",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#9e9e9e"
+              }
+            ]
+          },
+          {
+            "featureType": "transit.line",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#e5e5e5"
+              }
+            ]
+          },
+          {
+            "featureType": "transit.station",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#eeeeee"
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#eaeaea"
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#9e9e9e"
+              }
+            ]
+          }
+        ],
+        center: {lat: 43.115965, lng: 131.877289},
+        zoomControl: false,
+        scaleControl: false,
+        mapTypeControl: false,
+        fullscreenControl: false
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+        icon: 'img/location.png'
+      });
+    }
+  </script>
+  <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsfBnSX729htgOdc59O3MfLROi_Lb0gOY&callback=initMap">
+  </script>
+
+  <div class="contacts__outer">
+    <div class="container">
+
+      <div class="contacts__body">
+        <div class="contacts__holder contacts__holder--left">
+          <h3 class="contacts__title">контактная информация</h3>
+          <div class="contacts__inner">
+
+            <div class="contacts__row">
+              <div class="contacts__col">
+                <span class="contacts__caption">Бесплатно по Росии:</span>
+                <a href="tel: 88005504213" class="contacts__txt">8 (800) 550 42 13</a>
+              </div>
+              <div class="contacts__col">
+                <span class="contacts__caption">Телефон во Владивостоке:</span>
+                <a href="tel: +78005504213" class="contacts__txt">+7 (800) 550-42-13</a>
+              </div>
+            </div>
+
+            <div class="contacts__row">
+              <div class="contacts__col">
+                <span class="contacts__caption">Отдел продаж:</span>
+                <a href="mailto: sales@utomarine25.ru" class="contacts__txt">sales@utomarine25.ru</a>
+              </div>
+              <div class="contacts__col">
+                <span class="contacts__caption">Общая почта:</span>
+                <a href="mailto: info@automarine25.ru" class="contacts__txt">info@automarine25.ru</a>
+              </div>
+            </div>
+
+            <div class="contacts__row">
+              <div class="contacts__col">
+                <span class="contacts__caption">Мы находимся по адресу:</span>
+                <span class="contacts__txt">г. Владивосток ул. Фокина 8а, офис 22</span>
+              </div>
+              <div class="contacts__col">
+                <span class="contacts__caption">График работы:</span>
+                <span class="contacts__txt">Ежедневно с 10:00 до 19:00</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="contacts__footer">
+        <div class="callback callback--contacts">
+	<div class="container">
+		<form action="">
+			<div class="callback__wrapp">
+				<span class="callback__caption">Заказать звонок</span>
+				<div class="callback__wrapp-element">
+					<div class="callback__inner callback__inner--left">
+						<span class="callback__descr">Заполните форму и наш менеджер свяжется с вами ближайшее время</span>
+						<label class="checkbox checkbox--small callback__checkbox">
+							<input type="checkbox" name="check" checked>
+							<span>Отправляя данную заявку я соглашуюсь с принятием <a href="#" class="callback__link">политики конфеденциальности</a></span>
+						</label>
+					</div>
+					<div class="callback__inner callback__inner--right">
+						<div class="callback__form-wrapp">
+							<div class="callback__form-inner">
+								<span class="callback__label">Как к Вам обращаться</span>
+								<input type="text" class="callback__input">
+							</div>
+							<div class="callback__form-inner">
+								<span class="callback__label callback__label--required">Контактный телефон</span>
+								<input type="text" class="callback__input" required>
+							</div>
+							<div class="callback__form-inner callback__form-inner--btn">
+								<button type="submit" class="btn">Отправить</button>
+							</div>
+							<div class="callback__required">
+								<span class="callback__required-text">— Обязательные поля</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<footer class="footer">
+  <div class="footer__outer">
+    <div class="container">
+      <div class="footer__wrap">
+        <div class="footer__holder footer__holder--left">
+          <div class="footer__row footer__row--contacts">
+            <div class="footer__col">
+              <span class="footer__title">Бесплатно по России</span>
+              <a href="tel: +788005504213" class="footer__contacts footer__contacts--free">8 (800) 550 42 13</a>
+            </div>
+          </div>
+          <div class="footer__row">
+            <div class="footer__col">
+              <div class="footer__top">
+                <span class="footer__title">Ежедневно с 10:00 до 19:00</span>
+                <span class="footer__info">т. <a href="tel: +79242324313" class="footer__contacts footer__contacts--phone">+7 (924) 232 43 13</a></span>
+                <span class="footer__info">т. <a href="tel: +78005504213" class="footer__contacts footer__contacts--phone">+7 (800) 550 42 13</a></span>
+              </div>
+              <div class="footer__bottom">
+                <span class="footer__info"><a href="mailto: salesautomarine25@yandex.ru" class="footer__contacts">salesautomarine25@yandex.ru</a></span>
+                <span class="footer__info"><a href="mailto: infoautomarine25@yandex.ru" class="footer__contacts">infoautomarine25@yandex.ru</a></span>
+              </div>
+            </div>
+            <div class="footer__col">
+              <div class="footer__top">
+                <span class="footer__title">Центральный офис:</span>
+                <span class="footer__info">690091, г. Владивосток</span>
+                <span class="footer__info">ул. Адмирала Фокина 8а, офис 22</span>
+              </div>
+              <div class="footer__bottom">
+                <span class="footer__info"><a href="#" class="footer__contacts">Показать офис на карте</a></span>
+                <span class="footer__info"><a href="#" class="footer__contacts">Написать менеджеру</a></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__row footer__row--social">
+            <div class="footer__col footer__social">
+              <ul class="footer__social-list">
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-facebook">
+                      <use xlink:href="#facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-instagram">
+                      <use xlink:href="#instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-vk">
+                      <use xlink:href="#vk"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__social-item">
+                  <a href="#" class="footer__social-link">
+                    <svg class="icon-youtube">
+                      <use xlink:href="#youtube"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer__row">
+            <div class="footer__col footer__col--txt">
+              <span class="footer__txt">ООО "Автомарин25"</span>
+              <span class="footer__txt">Автомобили с аукционов Японии.</span>
+              <span class="footer__txt">Все права защищены.</span>
+            </div>
+            <div class="footer__col footer__col--txt">
+              <span class="footer__txt">Данный сайт носит исключительно информационный характер и не является публичной офертой</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer__holder footer__holder--right">
+          <div class="footer__row footer__row--nav">
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Авто под полную пошлину</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Распил и крапио</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Конструкторы</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Грузовики с ПТС</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Спецтехника</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Мототехника</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="" class="footer__link">О компании</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Наша команда</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Видеотрансляция офиса</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Преимущества</a>
+                </li>
+                <li class="footer__item">
+                  <a href="" class="footer__link">Написать директору</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__row">
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Аукционы онлайн</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Статистика продаж</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">One Price стоянки</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Калькулятор распилов</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Расшифровка аук листа</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Полная пошлина</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Схема работы и оплаты</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Доставка в регионы РФ</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Гарантии компании</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Недавно купленные авто</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+
+

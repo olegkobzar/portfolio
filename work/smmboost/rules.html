@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rules</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="page">
+
+	<aside class="page-sidebar js-sidebar-collapse">
+		<span class="page-sidebar__toggler js-sidebar-toggler"></span>
+		<div class="page-sidebar__holder">
+
+			<div class="sidebar">
+  <div class="sidebar__holder">
+    <a href="#" class="sidebar__logo">SmmBoost</a>
+  </div>
+  <div class="sidebar__holder">
+   
+    <span class="sidebar__title">Основное</span>
+    
+    <ul class="sidebar__list">
+      <li class="sidebar__item">
+        <a href="#" class="sidebar__link active">
+          <span class="sidebar__icon">
+            <svg class="icon-home">
+              <use xlink:href="#home"></use>
+            </svg>
+          </span>
+          <span class="sidebar__txt">Главная</span>
+        </a>
+      </li>
+      <li class="sidebar__item">
+        <a href="#" class="sidebar__link">
+          <span class="sidebar__icon">
+            <svg class="icon-price">
+              <use xlink:href="#price"></use>
+            </svg>
+          </span>
+          <span class="sidebar__txt">Цены</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar__holder">
+   
+    <span class="sidebar__title">Услуги</span>
+    
+    <ul class="sidebar__list sidebar__list--services">
+      <li class="sidebar__item">
+        <span class="sidebar__link js-submenu-btn">
+          <span class="sidebar__icon">
+            <svg class="icon-telegram">
+              <use xlink:href="#telegram"></use>
+            </svg>
+          </span>
+          <span class="sidebar__txt">Telegram</span>
+        </span>
+        <ul class="sidebar__submenu-list">
+          <li class="sidebar__submenu-item">
+            <a href="#" class="sidebar__submenu-link">
+              <span class="sidebar__submenu-txt">Каналы</span>
+              <span class="sidebar__submenu-numb">3</span>
+            </a>
+          </li>
+          <li class="sidebar__submenu-item">
+            <a href="#" class="sidebar__submenu-link active">
+              <span class="sidebar__submenu-txt">Задачи</span>
+              <span class="sidebar__submenu-numb">11</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar__item">
+        <span class="sidebar__link js-submenu-btn">
+          <span class="sidebar__icon">
+            <svg class="icon-vk">
+              <use xlink:href="#vk"></use>
+            </svg>
+          </span>
+          <span class="sidebar__txt">vkontakte</span>
+        </span>
+        <ul class="sidebar__submenu-list">
+          <li class="sidebar__submenu-item">
+            <a href="#" class="sidebar__submenu-link">
+              <span class="sidebar__submenu-txt">Каналы</span>
+              <span class="sidebar__submenu-numb">3</span>
+            </a>
+          </li>
+          <li class="sidebar__submenu-item">
+            <a href="#" class="sidebar__submenu-link">
+              <span class="sidebar__submenu-txt">Задачи</span>
+              <span class="sidebar__submenu-numb">11</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar__item">
+        <span class="sidebar__link js-submenu-btn">
+          <span class="sidebar__icon">
+            <svg class="icon-instagram">
+              <use xlink:href="#instagram"></use>
+            </svg>
+          </span>
+          <span class="sidebar__txt">instagram</span>
+        </span>
+        <ul class="sidebar__submenu-list">
+          <li class="sidebar__submenu-item">
+            <a href="#" class="sidebar__submenu-link">
+              <span class="sidebar__submenu-txt">Каналы</span>
+              <span class="sidebar__submenu-numb">3</span>
+            </a>
+          </li>
+          <li class="sidebar__submenu-item">
+            <a href="#" class="sidebar__submenu-link">
+              <span class="sidebar__submenu-txt">Задачи</span>
+              <span class="sidebar__submenu-numb">11</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    
+  </div>
+</div>
+			
+		</div>
+	</aside>
+
+	<div class="page-content">
+
+		<header class="header">
+	<div class="header__col header__col--balance">
+		<span class="header__balance-text">Баланс: </span>
+		<span class="header__balance-value">973 рубля</span>
+	</div>
+	<div class="header__col header__col--replenish">
+		<a href="#" class="header__replenish-link">
+			<span class="header__replenish-icon">
+				<svg class="icon-wallet">
+					<use xlink:href="#wallet"></use>
+				</svg>
+			</span>
+			<span class="header__replenish-text">Пополнить</span>
+		</a>
+	</div>
+	<div class="header__col header__col--notice">
+		<a href="#" class="header__notice-icon">
+			<svg class="icon-bell">
+				<use xlink:href="#bell"></use>
+			</svg>
+		</a>
+	</div>
+	<div class="header__col">
+		<span class="header__name">Александр</span>
+	</div>
+</header>
+
+
+
+		<div class="page-main">
+
+			<div class="rules">
+	<span class="rules__caption">Правила сервиса</span>
+	<div class="rules__wrap">
+		<div class="static-content">
+			<p>Получая доступ к нашим продуктами и услугам, и пользуясь ими, Вы соглашаетесь с перечисленными ниже Условиями предоставления услуг.</p>
+			<h4>Связь с Telegram:</h4>
+			<ul>
+				<li>TmSMM никаким образом не аффилирован, и не спонсируется со стороны Telegram.</li>
+				<li>TmSMM не нацелен на ослабление торговой марки Telegram.</li>
+				<li>TmSMM работает совершенно независимо от Telegram.</li>
+				<li>TmSMM не пытается неправомерно зарабатывать на репутации Telegram.</li>
+			</ul>
+			<h4>Дополнительные замечания:</h4>
+			<ul>
+				<li>Выполнение правил Telegram, а также законодательства, субъектом которого Вы являетесь, полностью лежит на вашей ответственности.</li>
+				<li>Вы используете TmSMM на ваш собственный риск.</li>
+				<li>Мы не несем ответственности за любые ваши действия и их последствия. Мы не принимаем</li>
+			</ul>
+			<h4>Платные услуги:</h4>
+			<ul>
+				<li>TmSMM никаким образом не аффилирован, и не спонсируется со стороны Telegram.</li>
+				<li>TmSMM не нацелен на ослабление торговой марки Telegram.</li>
+				<li>TmSMM работает совершенно независимо от Telegram.</li>
+				<li>TmSMM не пытается неправомерно зарабатывать на репутации Telegram.</li>
+			</ul>
+			<h4>Изменение услуг и расценок:</h4>
+			<ul>
+				<li>Выполнение правил Telegram, а также законодательства, субъектом которого Вы являетесь, полностью лежит на вашей ответственности.</li>
+				<li>Вы используете TmSMM на ваш собственный риск.</li>
+				<li>Мы не несем ответственности за любые ваши действия и их последствия. Мы не принимаем</li>
+			</ul>
+		</div>
+	</div>
+</div>	
+
+
+		</div>
+
+	</div>
+
+</div>
+
+<div class="popup-channel" id="popup-channel">
+	<div class="popup-channel__holder">
+		<span class="popup-channel__title">Добавить канал</span>
+
+		<form action="" class="popup-channel__form">
+			<span class="popup-channel__form-title">Канал</span>
+			<input type="text" class="popup-channel__form-input">
+
+			<div class="popup-channel__form-txt">
+				<p>
+					Открытый канал или супергруппа @smmboost_ru
+				</p>
+				<p>
+					Закрытый канал или супергруппа
+				</p>
+				<a href="#">https://t.me/joinchat/AAAAAEqXmeqmP2V0iQoqWw</a>
+			</div>
+
+			<span class="popup-channel__form-title">Комментарий</span>
+			<textarea name="" id="" class="popup-channel__form-textarea"></textarea>
+
+			<button type="submit" class="btn popup-channel__form-btn">Сохранить</button>
+		</form>
+	</div>
+</div>
+
+
+<footer class="footer">
+	
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

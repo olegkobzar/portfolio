@@ -1,0 +1,1387 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Карточка товара</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css?rel=42761">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+<div class="wrapper"> 
+
+	<header class="header">
+	<div class="header__top compensate-for-scrollbar">
+		<div class="container">
+			<div class="header__top-inner">
+				<a href="#" class="header__logo">
+					<img src="pic/logo.png" alt="">
+					<span class="header__logo-text">Работаем с 1998</span>
+				</a>
+				<div class="header__top-main">
+					<div class="header__top-box">
+						<span class="header__worktime">Режим работы 8:00 - 21:00</span>
+						<a href="#" class="header__mail-link">
+							<svg class="icon-email">
+								<use xlink:href="#email"></use>
+							</svg>
+							<span>sales@rusbolt.ru</span>
+						</a>
+					</div>            
+					<div class="header__phones">
+						<svg class="icon-phone">
+							<use xlink:href="#phone"></use>
+						</svg>
+						<a href="tel:+74993727777" class="header__phones-link"><span class="code">+7(499)</span> 372-77-77</a>
+						<a href="tel:+7(495)9808925" class="header__phones-link"><span class="code">+7(495)</span> 980-89-25</a> 
+					</div>
+					<a href="#" class="header__callback">Заказать звонок</a>
+					
+					<div class="header__login">
+						<svg class="icon-man-user">
+							<use xlink:href="#man-user"></use>
+						</svg>
+						<a href="#" class="header__login-link header__login-link--border">
+							<svg class="icon-man-user">
+								<use xlink:href="#man-user"></use>
+							</svg>
+							Вход
+						</a>
+						<a href="#" class="header__login-link">Регистрация</a>
+					</div>
+					
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header__bottom">
+		<div class="container">
+			<div class="header__bottom-inner">
+				<div class="header__catalog-title js-catalog-nav-btn">
+					<span class="burger"></span>
+					Каталог товаров
+				</div>
+				<div class="header__actions">
+					<a href="#" class="header__actions-link">
+						<svg class="icon-rating">
+							<use xlink:href="#rating"></use>
+						</svg>
+
+						<span class="compare-box">
+							<span class="compare-box__wrap">
+								<span class="compare-box__item">
+									<span class="compare-box__link">
+										<span class="compare-box__img">
+											<img src="pic/bolt/bolt-4.jpg" alt="">
+										</span>
+										<span class="compare-box__name">Анкер забивной (закладной)</span>
+									</span>
+								</span>
+								<span class="compare-box__item">
+									<span class="compare-box__link">
+										<span class="compare-box__img">
+											<img src="pic/bolt/bolt-5.jpg" alt="">
+										</span>
+										<span class="compare-box__name">Анкер клиновой</span>
+									</span>
+								</span>
+							</span>
+							<span class="btn compare-box__link-btn">Сравнить товары</span>
+						</span>
+					</a>
+					<a href="#" class="header__actions-link">
+						<svg class="icon-heart">
+							<use xlink:href="#heart"></use>
+						</svg>
+					</a>
+					<a href="#" class="header__actions-link">
+						<svg class="icon-basket">
+							<use xlink:href="#basket"></use>
+						</svg>
+						<span class="header__actions-count">99</span>
+					</a>
+					<div class="header__actions-info">
+						<span class="header__actions-info-num">Вы заказали на <b>1850 Р</b></span>
+						<span class="header__actions-info-min">Минимальная сумма заказа 3000 Р</span>
+					</div>
+					<div class="header__actions-burger js-header-nav-btn">
+						<div class="line"></div>
+					</div>
+				</div>
+				<div class="header__nav js-header-nav">
+					<ul class="header__nav-list">
+						<li class="header__nav-list-item">
+							<a href="#" class="header__nav-link">О компании</a>
+							<div class="header__nav-drop">
+								<ul class="header__nav-drop-list">
+									<li class="header__nav-drop-item">
+										<a href="#" class="header__nav-drop-link">Дипломы и сертификаты</a>
+									</li>
+									<li class="header__nav-drop-item">
+										<a href="#" class="header__nav-drop-link">Вакансии</a>
+									</li>
+									<li class="header__nav-drop-item">
+										<a href="#" class="header__nav-drop-link">Поставщики метизов</a>
+									</li>
+									<li class="header__nav-drop-item">
+										<a href="#" class="header__nav-drop-link">Новости отрасли</a>
+									</li>
+									<li class="header__nav-drop-item">
+										<a href="#" class="header__nav-drop-link">Новости компании</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="header__nav-list-item">
+							<a href="#" class="header__nav-link">Услуги</a>
+						</li>
+						<li class="header__nav-list-item">
+							<a href="#" class="header__nav-link">Информация</a>
+						</li>
+						<li class="header__nav-list-item">
+							<a href="#" class="header__nav-link">Контакты</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="container container--wrapper">
+		<div class="sidebar">
+			<div class="cat-nav js-catalog-nav ">
+  <ul class="cat-nav__list">
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-1.png" alt="">
+        Анкеры
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-2.png" alt="">
+        Болты
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-3.png" alt="">
+        Винты
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-4.png" alt="">
+        Гайки
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-5.png" alt="">
+        Гвозди
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-6.png" alt="">
+        Гровер
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-7.png" alt="">
+        Дюбель-гвозди
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-8.png" alt="">
+        Заклепки
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-9.png" alt="">
+        Круги отрезные
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-10.png" alt="">
+        Мебельные оси
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-11.png" alt="">
+        Проволока
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-12.png" alt="">
+        Саморезы
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-13.png" alt="">
+        Такелаж
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-14.png" alt="">
+        Шпильки
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-15.png" alt="">
+        Шплинты
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-16.png" alt="">
+        Шурупы
+      </a>
+    </li>
+    <li class="cat-nav__list-item">
+      <a href="#" class="cat-nav__link">
+        <img src="pic/catalog/catalog-17.png" alt="">
+        Электроды
+      </a>
+    </li>
+  </ul>
+</div>
+
+		</div>
+		<div class="content">
+			<div class="search js-search">
+	<div class="search__inner">
+		<div class="search__main">
+			<input type="text" class="search__input js-search-input" placeholder="Поиск по каталогу">
+			<a href="#" class="search__btn">
+				<svg class="icon-search">
+					<use xlink:href="#search"></use>
+				</svg>
+			</a>
+			<a href="#" class="search__link js-search-filter-link">
+				<span class="search__link-main">Показать расширенный поиск</span>
+				<span class="search__link-opened">Скрыть расширенный поиск</span>
+			</a>
+			<div class="search__drop js-search-drop">
+				<div class="search__drop-left js-custom-scroll">
+					<ul class="search__drop-list js-search-autolist"></ul>
+				</div>
+				<div class="search__drop-right">
+					<div class="search__drop-cols-wrap">
+						<div class="search__drop-col">
+							<a href="#" class="search-card">
+  <div class="search-card__row">
+    <div class="search-card__img">
+      <img src="pic/bolt/bolt-3.jpg" alt="">
+    </div>
+    <div class="search-card__title">Забиваемый металлический дюбель-гвоздь</div>
+  </div>
+  <span class="search-card__availability">
+    <svg class="icon-checked">
+      <use xlink:href="#checked"></use>
+    </svg>
+    <span>В наличии. Все размеры</span>
+  </span>
+</a>
+
+						</div>
+						<div class="search__drop-col">
+							<a href="#" class="search-card">
+  <div class="search-card__row">
+    <div class="search-card__img">
+      <img src="pic/bolt/bolt-3.jpg" alt="">
+    </div>
+    <div class="search-card__title">Забиваемый металлический дюбель-гвоздь</div>
+  </div>
+  <span class="search-card__availability">
+    <svg class="icon-checked">
+      <use xlink:href="#checked"></use>
+    </svg>
+    <span>В наличии. Все размеры</span>
+  </span>
+</a>
+
+						</div>
+						<div class="search__drop-col">
+							<a href="#" class="search-card">
+  <div class="search-card__row">
+    <div class="search-card__img">
+      <img src="pic/bolt/bolt-5.jpg" alt="">
+    </div>
+    <div class="search-card__title">Анкер клиновой</div>
+  </div>
+  <span class="search-card__availability">
+    <svg class="icon-checked">
+      <use xlink:href="#checked"></use>
+    </svg>
+    <span>В наличии. Все размеры</span>
+  </span>
+</a>
+
+						</div>
+						<div class="search__drop-col">
+							<a href="#" class="search-card">
+  <div class="search-card__row">
+    <div class="search-card__img">
+      <img src="pic/bolt/bolt-5.jpg" alt="">
+    </div>
+    <div class="search-card__title">Анкер клиновой</div>
+  </div>
+  <span class="search-card__availability">
+    <svg class="icon-checked">
+      <use xlink:href="#checked"></use>
+    </svg>
+    <span>В наличии. Все размеры</span>
+  </span>
+</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a href="#" class="search__online-btn">
+		<svg class="icon-calculator">
+			<use xlink:href="#calculator"></use>
+		</svg>
+		<span>Онлайн калькукятор</span>
+	</a>
+	</div>
+	<div class="search__filter js-search-filter">
+		<div class="search__filter-col">
+			<input type="text" class="input input--gray" placeholder="Din/En/Ico/арт.">
+		</div>
+		<div class="search__filter-col">
+			<select class="js-select select-gray">
+				<option value="">Материал</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+			</select>
+		</div>
+		<div class="search__filter-col">
+			<select class="js-select select-gray">
+				<option value="">Покрытие</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+			</select>
+		</div>
+		<div class="search__filter-col">
+			<select class="js-select select-gray">
+				<option value="">Форма</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+			</select>
+		</div>
+		<div class="search__filter-col">
+			<select class="js-select select-gray">
+				<option value="">Диаметр</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+			</select>
+		</div>
+		<div class="search__filter-col">
+			<select class="js-select select-gray">
+				<option value="">Длина</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+				<option value="">Lorem ipsum.</option>
+				<option value="">Lorem.</option>
+				<option value="">Lorem ipsum dolor.</option>
+			</select>
+		</div>
+		<div class="search__filter-btnbox">
+			<a href="#" class="btn search__filter-btn">        
+				<span>
+					<svg class="icon-search">
+						<use xlink:href="#search"></use>
+					</svg>
+					Найти
+				</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+			<ul class="breadcrumbs">
+	
+	<li class="breadcrumbs__item">
+		<a href="#" class="breadcrumbs__link">Главная</a>
+	</li>
+	
+	<li class="breadcrumbs__item">Каталог</li>
+</ul>
+			<div class="product-main">
+  <div class="product-main__left">
+    <div class="product-main__title">Анкерный болт с кольцом</div>
+    <div class="product-main__avaible">
+      <svg class="icon-checked">
+        <use xlink:href="#checked"></use>
+      </svg>
+      В наличии Все размеры 
+    </div>
+    <div class="product-main__row">
+      <div class="product-main__image">
+        <img src="pic/bolt/bolt-6.jpg" alt="">
+      </div>
+      <div class="product-main__info">
+        <div class="product-main__info-top">
+          <div class="product-main__info-rating rating-box">
+            <div class="rating-box__inner" style="width: 41%"></div>
+          </div>
+          <a href="#" class="product-main__info-comment-link">
+            <svg class="icon-comment">
+              <use xlink:href="#comment"></use>
+            </svg>
+            <span>125</span>
+          </a>
+        </div>  
+        <dl class="product-main__table product-card__info">
+          <dt><span>Покрытие:</span></dt>
+          <dd>Цинк</dd>
+          <dt><span>Назначение:</span></dt>
+          <dd>Сквозной монтаж</dd>
+          <dt><span>Диаметр:</span></dt>
+          <dd>М6, М8, М10, М12, М16, М20, М24 мм</dd>
+          <dt><span>Длина</span></dt>
+          <dd>50, 60, 80, 100, 105, 125, 130, 135, 140…600 мм</dd>
+        </dl>  
+        <div class="product-main__payment">
+          <span class="product-main__payment-title">Способы оплаты: <a href="#" class="link">подробнее</a></span>
+          <ul class="product-main__payment-list">
+            <li class="product-main__payment-list-item"><img src="pic/pay/pay-1.png" alt=""></li>
+            <li class="product-main__payment-list-item"><img src="pic/pay/pay-2.png" alt=""></li>
+            <li class="product-main__payment-list-item"><img src="pic/pay/pay-3.png" alt=""></li>
+          </ul>
+        </div>     
+      </div>
+    </div>
+  </div>
+  <div class="product-main__right">
+    <div class="product-main__pagination">
+      <a href="#" class="product-main__pagination-prev link">Предыдущий товар</a>
+      <a href="#" class="product-main__pagination-next link">Следующий товар</a>
+    </div>
+    <div class="product-main__actions">
+      <a href="#" class="btn">Заказать</a>
+      <a href="#popup-f-order" data-fancybox class="btn btn--inverse">Купить в 1 клик</a>
+      <a href="#" class="product-main__actions-link link">
+        <svg class="icon-rating">
+          <use xlink:href="#rating"></use>
+        </svg>
+        <span>Сравнить</span>
+      </a>
+      <a href="#" class="product-main__actions-link link">
+        <svg class="icon-heart">
+          <use xlink:href="#heart"></use>
+        </svg>
+        <span>В избранное</span>
+      </a>
+    </div>
+    <div class="product-main__contacts">
+      <span class="product-main__contacts-title">Цену уточняйте у менеджера</span>
+      <a href="#" class="link"><b>sales@rusbolt.ru</b></a>
+      <div class="product-main__contacts-phones">
+        <a href="tel:+74993727777" class="link"><b>+ 7 (499) 372-77-77</b></a>
+        <a href="tel:+74959808922" class="link"><b>+ 7 (495) 980-89-22</b></a>
+        <a href="tel:+74959808922" class="link"><b>+ 7 (495) 980-89-22</b></a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+			<div class="product-tabs js-tab-wrap">
+  <div class="product-tabs__list">
+    <a href="#" class="product-tabs__list-link active js-tab">Описание</a>
+    <a href="#" class="product-tabs__list-link js-tab">Характеристики</a>
+    <a href="#" class="product-tabs__list-link js-tab">Видео</a>
+    <a href="#" class="product-tabs__list-link js-tab">С этим товаром покупают</a>
+    <a href="#" class="product-tabs__list-link js-tab">Отзывы <span class="product-tabs__list-link-count">(14)</span></a>
+  </div>
+  <div class="product-tabs__contents">
+    <div class="product-tabs__content product-tabs__content--description static-content active js-tab-content">
+      <p>Анкерный болт с кольцом предназначен для крепления подвесных конструкций с использованием гибких элементов (тросов, цепей, канатов) к основаниям из бетона, природного строительного камня, полнотелого кирпича и дерева. Крепеж содержит в своей конструкции такие элементы: болт с головкой в форме кольца с запрессованной на его стержне ограничительной шайбой, распорный конус с внутренней резьбой и подвижную цилиндрическую гильзу с продольными прорезями, закрывающую резьбу стержня детали. </p>
+      <p>Анкерные болты с кольцами забивают легкими ударами молотком в заранее просверленные и очищенные от посторонних включений отверстия. Затем несколькими поворотами кольца по часовой стрелке фиксируют деталь в посадочном месте. Распорный конус перемещается в сторону кольца анкера, разжимает лепестки гильзы и жестко фиксирует деталь в базовом материале. Нагрузки на вырывание, срез и изгиб, создаваемые навесными элементами конструкций на анкерный крепеж в процессе его эксплуатации, не должны превышать предельно допустимых значений, указанных производителями в технической документации.</p>
+      <p>Провести расчет веса, заказать анкеры с кольцом, узнать точные цены можно через страницы сайта или позвонив нашему менеджеру. </p>
+      <p>Компания «Машкрепеж» реализует своим клиентам анкерный крепеж оптовыми и мелкооптовыми партиями по доступным ценам отечественного рынка. Изделия высокого качества, с желтопассированным цинковым покрытием упакованы в коробки весом по 5 кг, содержащие в одной упаковке от 14 до 302 деталей.</p>
+      <p>В нашем каталоге представлен большой ассортимент крепежных изделий для монтажа оборудования, металлических конструкций, строительных и отделочных работ в различных климатических условиях. Сделайте свой выбор и позвоните нашим менеджерам, чтобы узнать цены, оформить заявку на покупку и согласовать сроки доставки товара в указанный адрес.</p>
+    </div>
+    <div class="product-tabs__content js-tab-content">
+      <div class="product-tabs__params-image">
+        <img src="pic/card-image.jpg" alt="">
+      </div>
+      <div class="product-tabs__table-title">Техническая характеристика анкера-болта с кольцом</div>
+      <div class="product-tabs__table-wrap">
+        <table class="product-tabs__table">
+          <tr>
+            <th>Размер, мм</th>
+            <th>D-наружный диаметр, мм</th>
+            <th>D-внутренний диаметр, мм</th>
+            <th>L-длина без кольца, мм</th>
+            <th>L-длина с кольцом, мм</th>
+            <th>Нагрузка, кн</th>
+          </tr>
+          <tr>
+            <td data-th="Размер, мм">8 х 40</td>
+            <td data-th="D-наружный диаметр, мм">8</td>
+            <td data-th="D-внутренний диаметр, мм">6</td>
+            <td data-th="L-длина без кольца, мм">35</td>
+            <td data-th="L-длина с кольцом, мм">55</td>
+            <td data-th="Нагрузка, кн">10,00</td>
+          </tr>
+          <tr>
+            <td data-th="Размер, мм">10 х 50</td>
+            <td data-th="D-наружный диаметр, мм">10</td>
+            <td data-th="D-внутренний диаметр, мм">8</td>
+            <td data-th="L-длина без кольца, мм">50</td>
+            <td data-th="L-длина с кольцом, мм">86</td>
+            <td data-th="Нагрузка, кн">12,00</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="product-tabs__content js-tab-content">
+      <div class="product-tabs__video">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qvXzEhXujxA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="product-tabs__content product-tabs__content--relations js-tab-content">
+      <ul class="bestsellers__list">
+        <li class="bestsellers__list-item">
+          <div class="popup-add__card">
+  <a href="#" class="popup-add__card-img">
+    <img src="pic/bolt/bolt-3.jpg" alt="">
+  </a>
+  <div class="popup-add__card-caption">
+    <div class="product-card__avaible">
+      <svg class="icon-checked">
+        <use xlink:href="#checked"></use>
+      </svg>
+      <span>В наличии</span>
+      <span>Все размеры</span>
+    </div>
+    <span class="popup-add__card-title"><a href="#">Забиваемый металлический дюбель-гвоздь</a></span>
+    <span class="popup-add__card-actions">
+      <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в сравнение">
+        <svg class="icon-rating">
+          <use xlink:href="#rating"></use>
+        </svg>
+      </a>
+      <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в избраное">
+        <svg class="icon-heart">
+          <use xlink:href="#heart"></use>
+        </svg>
+      </a>
+      <a href="#" class="product-card__actions-link product-card__actions-link--basket">
+        <svg class="icon-basket">
+          <use xlink:href="#basket"></use>
+        </svg>
+      </a>
+    </span>
+  </div>
+</div> 
+        </li>
+        <li class="bestsellers__list-item">
+          <div class="popup-add__card">
+  <a href="#" class="popup-add__card-img">
+    <img src="pic/bolt/bolt-3.jpg" alt="">
+  </a>
+  <div class="popup-add__card-caption">
+    <div class="product-card__avaible">
+      <svg class="icon-checked">
+        <use xlink:href="#checked"></use>
+      </svg>
+      <span>В наличии</span>
+      <span>Все размеры</span>
+    </div>
+    <span class="popup-add__card-title"><a href="#">Забиваемый металлический дюбель-гвоздь</a></span>
+    <span class="popup-add__card-actions">
+      <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в сравнение">
+        <svg class="icon-rating">
+          <use xlink:href="#rating"></use>
+        </svg>
+      </a>
+      <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в избраное">
+        <svg class="icon-heart">
+          <use xlink:href="#heart"></use>
+        </svg>
+      </a>
+      <a href="#" class="product-card__actions-link product-card__actions-link--basket">
+        <svg class="icon-basket">
+          <use xlink:href="#basket"></use>
+        </svg>
+      </a>
+    </span>
+  </div>
+</div> 
+        </li>
+        <li class="bestsellers__list-item">
+          <div class="popup-add__card">
+  <a href="#" class="popup-add__card-img">
+    <img src="pic/bolt/bolt-3.jpg" alt="">
+  </a>
+  <div class="popup-add__card-caption">
+    <div class="product-card__avaible">
+      <svg class="icon-checked">
+        <use xlink:href="#checked"></use>
+      </svg>
+      <span>В наличии</span>
+      <span>Все размеры</span>
+    </div>
+    <span class="popup-add__card-title"><a href="#">Забиваемый металлический дюбель-гвоздь</a></span>
+    <span class="popup-add__card-actions">
+      <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в сравнение">
+        <svg class="icon-rating">
+          <use xlink:href="#rating"></use>
+        </svg>
+      </a>
+      <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в избраное">
+        <svg class="icon-heart">
+          <use xlink:href="#heart"></use>
+        </svg>
+      </a>
+      <a href="#" class="product-card__actions-link product-card__actions-link--basket">
+        <svg class="icon-basket">
+          <use xlink:href="#basket"></use>
+        </svg>
+      </a>
+    </span>
+  </div>
+</div> 
+        </li>
+        <li class="bestsellers__list-item">
+          <div class="popup-add__card">
+  <a href="#" class="popup-add__card-img">
+    <img src="pic/bolt/bolt-3.jpg" alt="">
+  </a>
+  <div class="popup-add__card-caption">
+    <div class="product-card__avaible">
+      <svg class="icon-checked">
+        <use xlink:href="#checked"></use>
+      </svg>
+      <span>В наличии</span>
+      <span>Все размеры</span>
+    </div>
+    <span class="popup-add__card-title"><a href="#">Забиваемый металлический дюбель-гвоздь</a></span>
+    <span class="popup-add__card-actions">
+      <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в сравнение">
+        <svg class="icon-rating">
+          <use xlink:href="#rating"></use>
+        </svg>
+      </a>
+      <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в избраное">
+        <svg class="icon-heart">
+          <use xlink:href="#heart"></use>
+        </svg>
+      </a>
+      <a href="#" class="product-card__actions-link product-card__actions-link--basket">
+        <svg class="icon-basket">
+          <use xlink:href="#basket"></use>
+        </svg>
+      </a>
+    </span>
+  </div>
+</div> 
+        </li>
+      </ul>
+    </div>
+    <div class="product-tabs__content product-tabs__content--reviews js-tab-content">
+      <div class="product-tabs__reviews-top">
+        <div class="product-tabs__reviews-counter">10 отзывов из 156. Страница 1 </div>
+        <a href="#popup-review" data-fancybox class="btn">Написать отзыв</a>
+      </div>
+      <div class="product-tabs__reviews-list">
+        <div class="product-review">
+  <div class="product-review__top">
+    <div class="product-review__date">
+      <span>27 </span>марта
+    </div>
+  </div>
+  <div class="product-review__name">Кристина Михайлова</div>
+  <div class="product-review__text">В нашем каталоге представлен большой ассортимент крепежных изделий для монтажа оборудования, металлических конструкций, строительных и отделочных работ в различных климатических условиях. Сделайте свой выбор и позвоните нашим менеджерам, чтобы узнать цены, оформить заявку на покупку</div>
+  
+  <div class="product-review__answer">
+    <div class="product-review__answer-name">Антон Сомов</div>
+    <div class="product-review__answer-subname">Главный менеджер</div>
+    <div class="product-review__text">В нашем каталоге представлен большой ассортимент крепежных изделий для монтажа оборудования, металлических конструкций, строительных и отделочных работ</div>
+  </div>
+  
+</div><div class="product-review">
+  <div class="product-review__top">
+    <div class="product-review__date">
+      <span>27 </span>марта
+    </div>
+  </div>
+  <div class="product-review__name">Кристина Михайлова</div>
+  <div class="product-review__text">В нашем каталоге представлен большой ассортимент крепежных изделий для монтажа оборудования, металлических конструкций, </div>
+  
+</div><div class="product-review">
+  <div class="product-review__top">
+    <div class="product-review__date">
+      <span>27 </span>марта
+    </div>
+  </div>
+  <div class="product-review__name">Кристина Михайлова</div>
+  <div class="product-review__text">В нашем каталоге представлен большой ассортимент крепежных изделий для монтажа оборудования, металлических конструкций, строительных и отделочных работ в различных климатических условиях. Сделайте свой выбор и позвоните нашим менеджерам, чтобы узнать цены, оформить заявку на покупку и согласовать сроки доставки товара в указанный адрес.</div>
+  
+</div><div class="product-review">
+  <div class="product-review__top">
+    <div class="product-review__date">
+      <span>27 </span>марта
+    </div>
+  </div>
+  <div class="product-review__name">Кристина Михайлова</div>
+  <div class="product-review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta voluptatem quae, porro quia officia sapiente, voluptate voluptatum repellat dolorum iusto molestiae praesentium laudantium possimus. Molestiae quo dignissimos quasi, minima rerum sit facere eaque veniam neque, quisquam quaerat? Repellendus exercitationem adipisci illo molestias, esse sunt.</div>
+  
+</div><div class="product-review">
+  <div class="product-review__top">
+    <div class="product-review__date">
+      <span>27 </span>марта
+    </div>
+  </div>
+  <div class="product-review__name">Кристина Михайлова</div>
+  <div class="product-review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum dignissimos qui animi error dicta nihil obcaecati, quae! Optio hic illum, perspiciatis sunt sequi iure odio voluptas magni adipisci, voluptate ipsa!</div>
+  
+</div><div class="product-review">
+  <div class="product-review__top">
+    <div class="product-review__date">
+      <span>27 </span>марта
+    </div>
+  </div>
+  <div class="product-review__name">Кристина Михайлова</div>
+  <div class="product-review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam assumenda delectus natus odio, esse quos eveniet laborum debitis recusandae ipsam! Voluptates provident consequatur eius non adipisci, distinctio minus fugiat voluptatem? Dolorum ex facilis possimus impedit omnis unde, aliquam maiores nisi optio fugiat vel architecto quos. Sit ad facere mollitia repellat a odit dicta debitis natus consequatur, quaerat reprehenderit, magni ab adipisci accusantium numquam saepe deleniti maxime suscipit beatae provident. Ea.</div>
+  
+</div>
+        <div class="pagination product-tabs__reviews-pagination">
+	
+	<div class="pagination__btn-wrap">
+		<a href="#" class="btn">Показать еще 12</a>
+	</div>
+	
+	<div class="pagination__wrap">
+		<div class="pagination__arrow">
+			<a href="#" class="pagination__arrow-link pagination__arrow-link--prev"></a>
+		</div>
+		<ul class="pagination__list">
+			<li class="pagination__item">
+				<a href="#" class="pagination__link">2</a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link">3</a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link active">4</a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link">5</a>
+			</li>
+			<li class="pagination__item pagination__item--dots">
+				....
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link">12</a>
+			</li>
+		</ul>
+		<div class="pagination__arrow">
+			<a href="#" class="pagination__arrow-link pagination__arrow-link--next"></a>
+		</div>
+	</div>
+	
+	<div class="pagination__btn-wrap pagination__btn-wrap--mod">
+		<a href="#" class="btn">Написать отзыв</a>
+	</div>
+	
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+			<div class="bestsellers">
+        <div class="content-title">Вы недавно смотрели</div>
+        <ul class="bestsellers__list">
+          <li class="bestsellers__list-item">
+            <div class="product-card">    
+  <div class="product-card__label">sale</div>
+  <div class="product-card__img">
+    <img src="pic/bolt/bolt-3.jpg" alt="">
+  </div>
+  <div class="product-card__main">
+    <div class="product-card__title"><a href="#">Забиваемый металлический дюбель-гвоздь</a></div>
+     
+  </div>
+  <div class="product-card__actions">
+    <div class="product-card__avaible">
+      <svg class="icon-checked">
+        <use xlink:href="#checked"></use>
+      </svg>
+      <span>В наличии</span>
+      <span>Все размеры</span>
+    </div>
+    <div class="product-card__actions-btns">
+      <a href="#popup-add" class="btn" data-fancybox>Купить</a>
+      <a href="#" class="btn btn--inverse">Рассчитать вес</a>
+    </div>
+    <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в сравнение">
+      <svg class="icon-rating">
+        <use xlink:href="#rating"></use>
+      </svg>
+    </a>
+    <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в избраное">
+      <svg class="icon-heart">
+        <use xlink:href="#heart"></use>
+      </svg>
+    </a>
+    <a href="#popup-add" class="product-card__actions-link product-card__actions-link--basket" data-fancybox>
+      <svg class="icon-basket">
+        <use xlink:href="#basket"></use>
+      </svg>
+    </a>
+  </div>
+</div>
+
+          </li>
+          <li class="bestsellers__list-item">
+            <div class="product-card">    
+  <div class="product-card__label">sale</div>
+  <div class="product-card__img">
+    <img src="pic/bolt/bolt-4.jpg" alt="">
+  </div>
+  <div class="product-card__main">
+    <div class="product-card__title"><a href="#">Анкер забивной (закладной)</a></div>
+     
+  </div>
+  <div class="product-card__actions">
+    <div class="product-card__avaible">
+      <svg class="icon-checked">
+        <use xlink:href="#checked"></use>
+      </svg>
+      <span>В наличии</span>
+      <span>Все размеры</span>
+    </div>
+    <div class="product-card__actions-btns">
+      <a href="#popup-add" class="btn" data-fancybox>Купить</a>
+      <a href="#" class="btn btn--inverse">Рассчитать вес</a>
+    </div>
+    <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в сравнение">
+      <svg class="icon-rating">
+        <use xlink:href="#rating"></use>
+      </svg>
+    </a>
+    <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в избраное">
+      <svg class="icon-heart">
+        <use xlink:href="#heart"></use>
+      </svg>
+    </a>
+    <a href="#popup-add" class="product-card__actions-link product-card__actions-link--basket" data-fancybox>
+      <svg class="icon-basket">
+        <use xlink:href="#basket"></use>
+      </svg>
+    </a>
+  </div>
+</div>
+
+          </li>
+          <li class="bestsellers__list-item">
+            <div class="product-card">    
+  <div class="product-card__label">sale</div>
+  <div class="product-card__img">
+    <img src="pic/bolt/bolt-5.jpg" alt="">
+  </div>
+  <div class="product-card__main">
+    <div class="product-card__title"><a href="#">Анкер клиновой</a></div>
+     
+  </div>
+  <div class="product-card__actions">
+    <div class="product-card__avaible">
+      <svg class="icon-checked">
+        <use xlink:href="#checked"></use>
+      </svg>
+      <span>В наличии</span>
+      <span>Все размеры</span>
+    </div>
+    <div class="product-card__actions-btns">
+      <a href="#popup-add" class="btn" data-fancybox>Купить</a>
+      <a href="#" class="btn btn--inverse">Рассчитать вес</a>
+    </div>
+    <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в сравнение">
+      <svg class="icon-rating">
+        <use xlink:href="#rating"></use>
+      </svg>
+    </a>
+    <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в избраное">
+      <svg class="icon-heart">
+        <use xlink:href="#heart"></use>
+      </svg>
+    </a>
+    <a href="#popup-add" class="product-card__actions-link product-card__actions-link--basket" data-fancybox>
+      <svg class="icon-basket">
+        <use xlink:href="#basket"></use>
+      </svg>
+    </a>
+  </div>
+</div>
+
+          </li>
+          <li class="bestsellers__list-item">
+            <div class="product-card">    
+  <div class="product-card__label">sale</div>
+  <div class="product-card__img">
+    <img src="pic/bolt/bolt-6.jpg" alt="">
+  </div>
+  <div class="product-card__main">
+    <div class="product-card__title"><a href="#">Металлический дюбель для пустотелых конструкций</a></div>
+     
+  </div>
+  <div class="product-card__actions">
+    <div class="product-card__avaible">
+      <svg class="icon-checked">
+        <use xlink:href="#checked"></use>
+      </svg>
+      <span>В наличии</span>
+      <span>Все размеры</span>
+    </div>
+    <div class="product-card__actions-btns">
+      <a href="#popup-add" class="btn" data-fancybox>Купить</a>
+      <a href="#" class="btn btn--inverse">Рассчитать вес</a>
+    </div>
+    <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в сравнение">
+      <svg class="icon-rating">
+        <use xlink:href="#rating"></use>
+      </svg>
+    </a>
+    <a href="#" class="product-card__actions-link js-prod-card-add" data-added="Добавлен в избраное">
+      <svg class="icon-heart">
+        <use xlink:href="#heart"></use>
+      </svg>
+    </a>
+    <a href="#popup-add" class="product-card__actions-link product-card__actions-link--basket" data-fancybox>
+      <svg class="icon-basket">
+        <use xlink:href="#basket"></use>
+      </svg>
+    </a>
+  </div>
+</div>
+
+          </li>
+        </ul>
+      </div>
+      <div class="services-callback services-callback--mod">
+	<div class="services-callback__col services-callback__col--text">
+	  
+	  <span class="services-callback__caption">Нужна помощь в выборе?</span>
+	  
+	  
+		<span class="services-callback__descr">оставьте свой номер и наш специалист Вам перезвонит и проконсультирует бесплатно</span>
+	</div>
+	<div class="services-callback__col services-callback__col--form">
+		<form action="">
+			<div class="services-callback__form">
+				<div class="services-callback__row">
+					<div class="services-callback__input-wrap">
+						<input type="text" placeholder="Ваше имя">
+					</div>
+					<div class="services-callback__input-wrap">
+						<input type="tel" placeholder="Ваш номер">
+					</div>
+				</div>
+				<div class="services-callback__row services-callback__row--bottom">
+					<div class="services-callback__check">
+						<label class="checkbox">
+							<input type="checkbox" checked>
+							<span>Я согласен на обработку <a href="#">персональных данных</a></span>
+						</label>
+					</div>
+					<div class="services-callback__btn-wrap">
+             
+             <button class="btn" type="submit">Отправить</button>
+             
+					  
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer">
+	<div class="footer__top">
+		<div class="container">
+			<div class="footer__wrap">
+				<div class="footer__col footer__col--first">
+					<div class="footer__inner footer__inner--catalog">
+						<span class="footer__title">Каталог</span>
+						<ul class="footer__list footer__list--col">
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Анкеры</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Мебельные оси</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Болты</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Проволока</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Винты</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Саморезы</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Гайки</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Такелаж</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Гвозди</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Шпильки</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Гровер</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Шплинты</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Дюбель-гвозди</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Шурупы</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Заклепки</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Электроды</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Круги отрезные</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__inner footer__inner--form">
+						<span class="footer__title">Получать письма с промокодами на спецпредложения и скидки</span>
+						<form action="">
+							<div class="footer__form">
+								<div class="footer__input-wrap">
+									<input type="email" placeholder="Ваш e-mail">
+								</div>
+								<div class="footer__form-btn">
+									<button type="submit" class="btn footer__btn">Подписаться</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="footer__col footer__col--two">
+					<div class="footer__inner footer__inner--services">
+						<span class="footer__title">Услуги</span>
+						<ul class="footer__list">
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Термодиффузионное цинкование</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Гальваническое цинкование</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Горячее цинкование</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Доставка</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__inner footer__inner--about">
+						<span class="footer__title">О компании</span>
+						<ul class="footer__list">
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Дипломы и сертификаты</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Вакансии</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Поставщики метизов</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Новости отрасли</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Новости компании</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__policy">
+						<a href="#" class="footer__policy-link">Политика конфиденциальности</a>
+					</div>
+				</div>
+				<div class="footer__col footer__col--three">
+					<div class="footer__inner footer__inner--info">
+						<span class="footer__title">Полезная информация</span>
+						<ul class="footer__list">
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Советы по выбору крепежных изделий</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Стандарты ГОСТ и DIN</a>
+							</li>
+							<li class="footer__list-item">
+								<a href="#" class="footer__list-link">Часто задаваемые вопросы</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__inner footer__inner--contact">
+						<span class="footer__title">Контакты</span>
+						<span class="footer__address">121357, г. Москва, Верейская ул, дом № 29, строение 154, оф.24</span>
+						<ul class="footer__contact">
+							<li class="footer__contact-item">
+								<a href="tel:+74993727777" class="footer__contact-link">
+									<span class="footer__contact-icon">
+										<svg class="icon-phone-foot">
+											<use xlink:href="#phone"></use>
+										</svg>
+									</span>
+									<span class="footer__contact-text">+7 (499) 372-77-77</span>
+								</a>
+							</li>
+							<li class="footer__contact-item">
+								<a href="mailto:info@zevs-r.ru" class="footer__contact-link">
+									<span class="footer__contact-icon">
+										<svg class="icon-email-foot">
+											<use xlink:href="#email"></use>
+										</svg>
+									</span>
+									<span class="footer__contact-text">info@zevs-r.ru </span>
+								</a>
+							</li>
+							<li class="footer__contact-item">
+								<a href="#" class="footer__contact-link">
+									<span class="footer__contact-icon">
+										<svg class="icon-skype-foot">
+											<use xlink:href="#skype"></use>
+										</svg>
+									</span>
+									<span class="footer__contact-text">rusbolt.ru</span>
+								</a>
+							</li>
+						</ul>
+						<div class="footer__callback-btn">
+							<a href="#" class="btn footer__btn">Обратная связь</a>
+						</div>
+						<ul class="footer__social">
+							<li class="footer__social-item">
+								<a href="#" class="footer__social-link">
+									<svg class="icon-vk-foot">
+										<use xlink:href="#vk"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="footer__social-item">
+								<a href="#" class="footer__social-link">
+									<svg class="icon-instagram-foot">
+										<use xlink:href="#instagram"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="footer__social-item">
+								<a href="#" class="footer__social-link">
+									<svg class="icon-facebook-foot">
+										<use xlink:href="#facebook"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer__bottom">
+		<div class="container">
+			<span class="footer__copyright">© Компания Машкрепеж - основной поставщик крепежа в России, 1998-2018</span>
+		</div>
+	</div>
+</footer>
+
+<div class="popup popup--review" id="popup-review">
+  <div class="popup__title">Написать отзыв</div>
+  <div class="popup__wrap">
+    <div class="popup__input-wrap popup__input-wrap--mod">
+      <input type="text" placeholder="Имя">
+    </div>
+    <div class="popup__input-wrap popup__input-wrap--mod">
+      <input type="email" placeholder="E-mail">
+    </div>
+    <div class="popup__input-wrap popup__input-wrap--mod popup__input-wrap--wide">
+      <textarea placeholder="Комментарий"></textarea>
+    </div>
+  </div>
+  <div class="popup__bottom">
+    <div class="popup__check">
+      <label class="checkbox">
+        <input type="checkbox" checked>
+        <span>Я согласен на обработку <a href="#">персональных данных</a></span>
+      </label>
+    </div>
+    <div class="popup__btn-wrap">
+      <button class="btn">Отправить</button>
+    </div>
+  </div>
+</div>
+<div class="popup popup--review" id="popup-f-order">
+  <div class="popup__title">Быстрый заказ</div>
+  <div class="popup-f-order__row">
+    <div class="popup-f-order__row-col">
+      <img src="pic/bolt/bolt-6.jpg" alt="">
+    </div>
+    <div class="popup-f-order__row-col">
+      <div class="product-main__info-top">
+        <div class="product-main__info-rating rating-box">
+          <div class="rating-box__inner" style="width: 41%"></div>
+        </div>
+        <a href="#" class="product-main__info-comment-link">
+          <svg class="icon-comment">
+            <use xlink:href="#comment"></use>
+          </svg>
+          <span>125</span>
+        </a>
+      </div>
+      <div class="popup-f-order__title">Анкерный болт с кольцом</div>
+      <div class="popup-f-order__spinner">
+        <span class="popup-f-order__spinner-label">Количество</span>
+        <div class="spinner basket-item__spinner js-spinner" data-min="1" data-max="30">
+          <a href="#" title="" class="spinner__minus js-spinner-minus"></a>
+          <input type="text" class="spinner__text">
+          <a href="#" title="" class="spinner__plus js-spinner-plus"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup__wrap">
+    <div class="popup__input-wrap popup__input-wrap--mod">
+      <input type="text" placeholder="Имя">
+    </div>
+    <div class="popup__input-wrap popup__input-wrap--mod">
+      <input type="text" placeholder="Телефон">
+    </div>
+    <div class="popup__input-wrap popup__input-wrap--mod">
+      <input type="email" placeholder="E-mail">
+    </div>
+    <div class="popup__input-wrap popup__input-wrap--mod">
+      <button class="btn">Заказать </button>
+    </div>
+  </div>
+  <div class="popup-f-order__bottom">
+    <a href="#" class="link">Подробнее о товаре</a>
+  </div>
+</div>
+<script src="js/vendor.js?rel=42761"></script>
+
+
+<script src="pages-list.js"></script>
+
+
+<script src="js/main.js?rel=42761"></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,1198 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<header class="header">
+	<div class="container">
+		<div class="header__wrap">
+			<div class="header__left">
+				<div class="header__logo">
+					<img src="pic/logo-main.png" alt="">
+				</div>
+				<nav class="header__nav js-menu">
+					<span class="header__close js-close-menu"></span>
+					<ul class="header__list">
+						<li class="header__item">
+							<a href="#about" class="header__link js-scroll-id">О конференции</a>
+						</li>
+						<li class="header__item">
+							<a href="#schedule" class="header__link js-scroll-id">Расписание и спикеры</a>
+						</li>
+						<li class="header__item">
+							<a href="#registration" class="header__link js-scroll-id">Вопросы</a>
+						</li>
+						<li class="header__item">
+							<a href="#application" class="header__link js-scroll-id">Скачать приложение участника</a>
+						</li>
+						<li class="header__item">
+							<a href="#contact" class="header__link js-scroll-id">Контакты</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="header__btn-mob js-btn-menu">
+				<span class="header__btn-line"></span>
+				<span class="header__btn-line"></span>
+				<span class="header__btn-line"></span>
+			</div>
+			<div class="header__right">
+				<a data-fancybox data-src="#popup-registration" href="javascript:;" class="btn">Зарегистрироваться</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
+	<div class="heading" style="background-image: url(pic/bg/bg-1.jpg);">
+	<div class="container">
+		<div class="heading__wrap">
+			<span class="heading__date">11 октября</span>
+			<span class="heading__name">1-я конференция <span>Почты России</span></span>
+			<span class="heading__name-text">по цифровой коммерции</span>
+			<div class="heading__btn-wrap">
+				<a data-fancybox data-src="#popup-registration" href="javascript:;" class="btn heading__btn">Зарегистрироваться</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="about" id="about" data-text="О конференции">
+	<div class="container">
+		<div class="about__wrap">
+			<div class="about__row">
+				<span class="about__title">Зачем</span>
+				<span class="about__descr">Собрать в рамках одной площадки ключевых участников рынка E-Commerce России из сфер логистики, инфраструктуры, цифровых технологий, бизнес решений,  маркетинга и государственного регулирования для формирования единого видения развития рынка на ближайшие годы.</span>
+			</div>
+			<div class="about__row">
+				<span class="about__title">Цели</span>
+				<div class="about__descr">
+					<ul class="about__descr-list">
+						<li class="about__descr-item">Представить зарубежный опыт развития E-Commerce и возможности его применения в российских реалиях</li>
+						<li class="about__descr-item">Обсудить точки роста и проблемы рынка E-Commerce в России</li>
+						<li class="about__descr-item">Выработать план действий по развитию рынка и создать рабочие группы для его реализации</li>
+						<li class="about__descr-item">Подготовка документа с наиболее актуальными вопросами законодательного для дальнейшей передачи в профильные министерства и ведомства</li>
+					</ul>
+				</div>
+			</div>
+			<ul class="about__stat">
+				<li class="about__stat-item">
+					<span class="about__stat-number">300</span>
+					<span class="about__stat-text">топ менеджеров ведущих Ecom компаний России</span>
+				</li>
+				<li class="about__stat-item">
+					<span class="about__stat-number">5</span>
+					<span class="about__stat-text">Профильных министерств и регуляторов</span>
+				</li>
+				<li class="about__stat-item">
+					<span class="about__stat-number">40</span>
+					<span class="about__stat-text">Экспертов</span>
+				</li>
+			</ul>
+			<div class="about__bott">
+				<span class="about__quote">Уважаемые коллеги! <br> Приглашаю Вас присоединиться к первой конференции Почты России и ИД «Коммерсант» по цифровой коммерции «Е-коммерсъ 2018». <br> С растущей доступностью технологий происходит массовый переход покупателей из традиционного ритейла в интернет-пространство. Убежден, что конференция «Е-коммерсъ 2018» станет эффективным инструментом для обсуждения актуальных вопросов отрасли, определения первоочередных задач и поиска путей их решения. <br> Желаю Вам плодотворной работы! </span>
+				<span class="about__director-name">Николай Подгузов</span>
+				<span class="about__position">Генеральный директор ФГУП «Почта России»</span>
+			</div>
+			<div class="about__img-wrap">
+				<img src="pic/director.png" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="schedule" id="schedule" data-title="Расписание">
+<div class="container">
+	<div class="schedule__holder js-tabs">
+		<!-- tabs nav -->
+		<div class="schedule__nav">
+			<div class="schedule__nav-item">
+				<span class="schedule__nav-link schedule__nav-link--not-active">
+					<span class="schedule__nav-time">09:00-10:00</span>
+					<span class="schedule__nav-txt">Сбор гостей, регистрация</span>
+				</a>
+			</div>
+			<div class="schedule__nav-item">
+				<a href="#time-1" class="schedule__nav-link js-tabs-nav active">
+					<span class="schedule__nav-time">10:00-12:10</span>
+					<span class="schedule__nav-txt">Пленарная сессия</span>
+				</a>
+			</div>
+			<div class="schedule__nav-item">
+				<span class="schedule__nav-link schedule__nav-link--not-active">
+					<span class="schedule__nav-time">12:10-13:30</span>
+					<span class="schedule__nav-txt">Обед</span>
+				</span>
+			</div>
+			<div class="schedule__nav-item">
+				<a href="#time-2" class="schedule__nav-link schedule__nav-link--mod js-tabs-nav">
+						<span class="schedule__nav-time">13:30-14:45</span>
+						<span class="schedule__nav-txt">Импорт-Экспорт</span>
+				</a>
+				<a href="#time-2-2" class="schedule__nav-link schedule__nav-link--mod js-tabs-nav">
+					<span class="schedule__nav-time">13:30-14:45</span>
+					<span class="schedule__nav-txt">IT</span>
+				</a>
+			</div>
+			<div class="schedule__nav-item">
+				<span class="schedule__nav-link schedule__nav-link--not-active">
+					<span class="schedule__nav-time">14:45-15:15</span>
+					<span class="schedule__nav-txt">Кофе-брейк</span>
+				</span>
+			</div>
+			<div class="schedule__nav-item">
+				<a href="#time-3" class="schedule__nav-link schedule__nav-link--mod js-tabs-nav">
+						<span class="schedule__nav-time">15:15-16:30</span>
+						<span class="schedule__nav-txt">Логистика-Посылки</span>
+				</a>
+				<a href="#time-3-2" class="schedule__nav-link schedule__nav-link--mod js-tabs-nav">
+						<span class="schedule__nav-time">15:15-16:30</span>
+						<span class="schedule__nav-txt">ФинТех</span>
+				</a>
+			</div>
+			<div class="schedule__nav-item">
+				<span class="schedule__nav-link schedule__nav-link--not-active">
+					<span class="schedule__nav-time">16:30-17:00</span>
+					<span class="schedule__nav-txt">Завершение конференции</span>
+				</span>
+			</div>
+			<div class="schedule__nav-item">
+				<span class="schedule__nav-link schedule__nav-link--not-active">
+					<span class="schedule__nav-time">17:30-21:00</span>
+					<span class="schedule__nav-txt">Ужин с Почтой России</span>
+				</span>
+			</div>
+		</div>
+		<!-- tabs nav  end-->
+
+		<!-- tabs content -->
+
+			<div class="schedule__content js-tabs-content active" id="time-1">
+				<div class="schedule__content-inner">
+					<span class="schedule__content-btn js-close-btn"></span>
+					<div class="schedule__info" data-info="Импорт-экспорт">
+					<div class="schedule__info-item" data-num="01">
+						Рост E-com с текущих 4% до 20% что для этого необходимо
+					</div>
+					<div class="schedule__info-item" data-num="02">
+						Формирование экосистем (ПР+ВТБ, Яндекс+СБ); создание электронной площадки «нового розничного формата»
+					</div>
+					<div class="schedule__info-item" data-num="03">
+						Законодательное регулирование:
+						<ul>
+							<li>• итоги ФЗ-54</li>
+							<li>• онлайн-продажи алкоголя, лекарства, ювелирки</li>
+							<li>• защита онлайн-покупателей</li>
+							<li>• возврат НДС при экспорте, регулирование валютных платежей и работы международных платежных сервисов, работа международных онлайн-сервисов и ритейлеров в России. Налоговое регулирование eСom рынка</li>
+							<li>• введение новых таможенных пошлин</li>
+						</ul>
+					</div>
+
+					</div>
+					<div class="schedule__speakers" data-speaker="Спикеры">
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-1.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Николай Подгузов</span>
+						<span class="schedule__speakers-pro">(ПР)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-2.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Константин Носков</span>
+						<!-- <span class="schedule__speakers-pro">ФТС</span> -->
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-3.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Денис Мантуров / Виктор Евтухов</span>
+						<span class="schedule__speakers-pro">(Минпромторг)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-4.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Илья Трунин</span>
+						<span class="schedule__speakers-pro">(МинФин) </span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-5.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Александр Шульгин</span>
+						<span class="schedule__speakers-pro">(Озон)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-5.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Бен Янг</span>
+						<!-- <span class="schedule__speakers-pro">(Озон)</span> -->
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-5.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Сергей Лебедев</span>
+						<span class="schedule__speakers-pro">(Alibaba)</span>
+					</div>
+
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-8.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Петр Косенко</span>
+						<span class="schedule__speakers-pro">Модератор сессии</span>
+					</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="schedule__content js-tabs-content" id="time-2">
+				<div class="schedule__content-inner">
+					<span class="schedule__content-btn js-close-btn"></span>
+					<div class="schedule__info" data-info="Импорт-экспорт">
+					<div class="schedule__info-item" data-num="01">
+						Omni ритейл
+					</div>
+					<div class="schedule__info-item" data-num="02">
+						Нормативное регулирование
+					</div>
+					<div class="schedule__info-item" data-num="03">
+						Политика возвратов
+					</div>
+					<div class="schedule__info-item" data-num="04">
+						Почему для классифайда недостаточно просто доставить товар
+					</div>
+					<div class="schedule__info-item" data-num="05">
+						Гарантии-защита продавца и клиента
+					</div>
+					<div class="schedule__info-item" data-num="06">
+						Интеграция в клиента. Опыт с Tmall Russia
+					</div>
+					</div>
+					<div class="schedule__speakers" data-speaker="Спикеры">
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-6.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Денис Ильин</span>
+						<span class="schedule__speakers-pro">(ПР)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-2.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Михаил Числов</span>
+						<span class="schedule__speakers-pro">(ФТС)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-5.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Артем Степин</span>
+						<span class="schedule__speakers-pro">(ATK)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-1.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Никита Кузнецов</span>
+						<span class="schedule__speakers-pro">(Минпромторг)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-3.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Илья Кретов</span>
+						<span class="schedule__speakers-pro">(eBay)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-8.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Ярослав Мандрон </span>
+						<span class="schedule__speakers-pro">Модератор сессии</span>
+					</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="schedule__content js-tabs-content" id="time-2-2">
+				<div class="schedule__content-inner">
+					<span class="schedule__content-btn js-close-btn"></span>
+					<div class="schedule__info" data-info="IT">
+					<div class="schedule__info-item" data-num="01">
+						Почта России – динамичный игрок на пике технологий. Новая экосистема с 1С
+					</div>
+					<div class="schedule__info-item" data-num="02">
+						Технологические решения, изменяющие ритейл, диджитал-трансформация ( Big Data и клиентский опыт). Портрет современного потребителя, Понимание потребителей
+					</div>
+					<div class="schedule__info-item" data-num="03">
+						Cash on delivery
+					</div>
+					<div class="schedule__info-item" data-num="04">
+						Работа с недобросовестными покупателями. Возвраты
+					</div>
+					<div class="schedule__info-item" data-num="05">
+						Эффективные каналы коммуникации: соцсети, персонализация контента; Личный кабинет юр.лиц на ПР
+					</div>
+					</div>
+					<div class="schedule__speakers" data-speaker="Спикеры">
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-1.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Сергей Емельченков</span>
+						<span class="schedule__speakers-pro">(ПР)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-2.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Андрей Ревяшко</span>
+						<span class="schedule__speakers-pro">(Wildberries)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-3.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Юрий Берченко </span>
+						<span class="schedule__speakers-pro">(Google)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-4.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Артем Соколов</span>
+						<span class="schedule__speakers-pro">(In Sales)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-5.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Борис Нуралиев</span>
+						<span class="schedule__speakers-pro">(1С)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-6.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Сергей Панкратов</span>
+						<span class="schedule__speakers-pro">SAP</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-7.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Игорь Зубов</span>
+						<span class="schedule__speakers-pro">Модератор сессии</span>
+					</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="schedule__content js-tabs-content" id="time-3">
+				<div class="schedule__content-inner">
+					<span class="schedule__content-btn js-close-btn"></span>
+					<div class="schedule__info" data-info="Логистика-посылки">
+					<div class="schedule__info-item" data-num="01">
+						Изменения логистической инфраструктуры (Логистика и посылки, Политика возвратов, упрощение системы)
+					</div>
+					<div class="schedule__info-item" data-num="02">
+						Исполнение заказов интернет-магазинов. Планы ритейлеров и сервис-провайдеров по развитию складской и фулфилмент-инфраструктуры. Запуск фуллфилмент на Почте. 
+					</div>
+					<div class="schedule__info-item" data-num="03">
+						Новые сроки доставок и новая инфраструктура (с ВТБ)
+					</div>
+					<div class="schedule__info-item" data-num="04">
+						Продуктовая линейка ПР для российского eCom
+					</div>
+					<div class="schedule__info-item" data-num="05">
+						Цифровые сервисы Почты России для отправителя и получателя
+					</div>
+					</div>
+					<div class="schedule__speakers" data-speaker="Спикеры">
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-1.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Игорь Чебунин</span>
+						<span class="schedule__speakers-pro">(ПР)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-2.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Сергей Малышев</span>
+						<span class="schedule__speakers-pro">(ПР)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-3.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Руслан Давыдов </span>
+						<span class="schedule__speakers-pro">(ФТС)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-4.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Алекс Васильев</span>
+						<span class="schedule__speakers-pro">(Беру/Яндекс.Маркет)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-5.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Олег Панкратов</span>
+						<span class="schedule__speakers-pro">(ВТБ)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-6.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Соломон Кунин</span>
+						<span class="schedule__speakers-pro">(Goods)</span>
+					</div>
+					<div class="schedule__speakers-item">
+						<div class="schedule__speakers-img">
+							<img src="pic/speacker/speacker-7.png" alt="">
+						</div>
+						<span class="schedule__speakers-name">Александр Иванов</span>
+						<span class="schedule__speakers-pro">Модератор сессии</span>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="schedule__content js-tabs-content" id="time-3-2">
+				<div class="schedule__content-inner">
+					<span class="schedule__content-btn js-close-btn"></span>
+					<div class="schedule__info" data-info="ФинТех">
+					<div class="schedule__info-item" data-num="01">
+						Классический банкинг Vs ФинТех
+					</div>
+					<div class="schedule__info-item" data-num="02">
+						Платежные системы будущего 
+					</div>
+					<div class="schedule__info-item" data-num="03">
+						FinTech новости онлайн-платежей
+					</div>
+					<div class="schedule__info-item" data-num="04">
+						Безопасность платежей
+					</div>
+					<div class="schedule__info-item" data-num="04">
+						Он-лайн кредитование/факторинг
+					</div>
+					
+					</div>
+					<div class="schedule__speakers" data-speaker="Спикеры">
+						<div class="schedule__speakers-item">
+							<div class="schedule__speakers-img">
+								<img src="pic/speacker/speacker-1.png" alt="">
+							</div>
+							<span class="schedule__speakers-name">Владимир Салахутдинов</span>
+							<span class="schedule__speakers-pro">(ПР)</span>
+						</div>
+						<div class="schedule__speakers-item">
+							<div class="schedule__speakers-img">
+								<img src="pic/speacker/speacker-2.png" alt="">
+							</div>
+							<span class="schedule__speakers-name">Дмитрий Мариничев</span>
+							<span class="schedule__speakers-pro">(Аппарат)</span>
+						</div>
+						<div class="schedule__speakers-item">
+							<div class="schedule__speakers-img">
+								<img src="pic/speacker/speacker-3.png" alt="">
+							</div>
+							<span class="schedule__speakers-name">Александра Сороко</span>
+							<span class="schedule__speakers-pro">(VISA)</span>
+						</div>
+						<div class="schedule__speakers-item">
+							<div class="schedule__speakers-img">
+								<img src="pic/speacker/speacker-4.png" alt="">
+							</div>
+							<span class="schedule__speakers-name">Юрий Иванов</span>
+							<span class="schedule__speakers-pro">(Вконтакте)</span>
+						</div>
+						<div class="schedule__speakers-item">
+							<div class="schedule__speakers-img">
+								<img src="pic/speacker/speacker-5.png" alt="">
+							</div>
+							<span class="schedule__speakers-name">Анастасия Масленникова</span>
+							<span class="schedule__speakers-pro">(ПБ)</span>
+						</div>
+						<div class="schedule__speakers-item">
+							<div class="schedule__speakers-img">
+								<img src="pic/speacker/speacker-8.png" alt="">
+							</div>
+							<span class="schedule__speakers-name">Ефим Алдухов</span>
+							<span class="schedule__speakers-pro">Модеротор сессии</span>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		<!-- tabs content end-->
+
+		<!-- promo -->
+			<div class="schedule__promo">
+				<div class="schedule__promo-barcode">
+					<div class="schedule__promo-img">
+						<img src="pic/promo.png" alt="">
+					</div>
+					<span class="schedule__promo-barcode-title">
+						У вас есть вопрос по конференции?
+					</span>
+					<a data-fancybox data-src="#popup" href="javascript:;" class="schedule__promo-link">Задать вопрос</a>
+				</div>
+
+				<span class="schedule__promo-title">
+					Хотите попасть на конференцию?	
+				</span>
+				<a data-fancybox data-src="#popup-registration" href="javascript:;" class="btn schedule__promo-btn">Зарегистрироваться</a>
+			</div>
+		<!-- promo end -->
+	</div>
+</div>
+</div>
+
+	<div class="registration" id="registration">
+	<div class="container">
+		<div class="registration__wrap">
+			<div class="registration__holder registration__holder--left">
+				<div class="registration__bg" style="background-image: url(pic/bg/bg-2.jpg);"></div>
+			</div>
+			<div class="registration__holder registration__holder--right">
+				<div class="registration__inner">
+					<span class="registration__title">Форма <span>регистрации</span></span>
+					<form action="form.php" method="POST" class="registration__form js-valid-form">
+						<div class="registration__form-item js-input-wrap">
+							<label for="name" class="registration__form-placeholder js-placeholder">ФИО</label>
+							<input class="registration__form-input js-input" name="name" type="text">
+						</div>
+						<div class="registration__form-item js-input-wrap">
+							<label for="email" class="registration__form-placeholder js-placeholder">Эл. почта</label>
+							<input class="registration__form-input js-input" name="email" type="email">
+						</div>
+						<div class="registration__form-item js-input-wrap">
+							<label for="phone" class="registration__form-placeholder js-placeholder">Телефон</label>
+							<input class="registration__form-input js-input js-submit-phone" name="phone" type="tel">
+						</div>
+						<div class="registration__form-item js-input-wrap">
+							<label for="position" class="registration__form-placeholder js-placeholder">Должность</label>
+							<input class="registration__form-input js-input" name="position" type="text">
+						</div>
+						<div class="registration__form-item js-input-wrap">
+							<label for="company" class="registration__form-placeholder js-placeholder">Компания</label>
+							<input class="registration__form-input js-input" name="company" type="text">
+						</div>
+						<div class="registration__form-item registration__form-item--btn">
+							<button type="submit" class="btn registration__form-btn">
+								Принять участие
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="application" id="application">
+	<div class="container">
+		<div class="application__holder">
+			<div class="application__inner application__inner--left">
+				<img class="application__inner-image" src="pic/phone.png" alt="">
+			</div>
+			<div class="application__inner application__inner--right">
+				<div class="application__info">
+					<span class="application__title">Скачать приложение</span>
+					<span class="application__desc">
+						Для получения доступа ко всем возможностям участника конференции необходимо скачать приложение EKM 2018
+					</span>
+					<div class="application__download">
+						<div class="application__download-item">
+							<a href="#" class="application__download-link">
+								<img src="pic/google.png" alt="">
+							</a>
+						</div>
+						<div class="application__download-item">
+							<a href="#" class="application__download-link">
+								<img src="pic/ios.png" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="application__info-inner">
+						<div class="application__info-item">
+							<span class="application__info-icon icon-app-icon-1"></span>
+							<span class="application__info-txt">
+								Информация об участниках, материалы и инструкции
+							</span>
+						</div>
+						<div class="application__info-item">
+							<span class="application__info-icon icon-app-icon-2"></span>
+							<span class="application__info-txt">
+								Интерактивное расписание и навигация
+							</span>
+						</div>
+						<div class="application__info-item">
+							<span class="application__info-icon icon-app-icon-3"></span>
+							<span class="application__info-txt">
+								Взаимодействие со спикерами и организаторами в режиме online
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="contact" id="contact">
+	<div class="contact__map" id="map"></div>
+
+	<div class="contact__box">
+		<div class="contact__left">
+			<span class="contact__caption">Место проведения конференции</span>
+			<ul class="contact__list">
+				<li class="contact__item">
+					<span class="contact__title">Адрес</span>
+					<span class="contact__text">г. Москва, Берсеневская набережная 6, ул.3</span>
+				</li>
+				<li class="contact__item">
+					<span class="contact__title">Эл. почта</span>
+					<a href="mailto:k.ignatova@kommersant.ru" class="contact__link">k.ignatova@kommersant.ru</a>
+				</li>
+				<li class="contact__item">
+					<span class="contact__title">Телефон</span>
+					<a href="tel:+79671271153" class="contact__link">+7 (967) 127 11 53</a>
+				</li>
+			</ul>
+		</div>
+		<div class="contact__right">
+			<a data-fancybox data-src="#popup-registration" href="javascript:;" class="btn contact__btn">Принять участие</a>
+		</div>
+	</div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsfBnSX729htgOdc59O3MfLROi_Lb0gOY&callback=initMap" async defer></script>
+
+<script>
+
+	function initMap() {
+		var map;
+
+		var myOptions = {
+			zoom: 18,
+			center: new google.maps.LatLng(55.740717, 37.608955),
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+
+		map = new google.maps.Map(document.getElementById("map"),
+			myOptions);
+
+		var infowindow = new google.maps.InfoWindow({
+			content: '<span class="map-head">Берсеневская набережная 6, ул. 3</span>',
+		});
+
+		var address1 = {lat: 55.740717, lng: 37.608955};
+
+		var marker = new google.maps.Marker(
+		{
+			position: address1, 
+			icon: 'pic/location.png',
+			map: map,
+			animation: google.maps.Animation.DROP
+		}
+		);
+
+		marker.addListener('click', function(){
+			infowindow.open(map, marker);
+		});
+
+		var styledMapType = new google.maps.StyledMapType(
+			[
+			{
+				"featureType": "all",
+				"elementType": "geometry",
+				"stylers": [
+				{
+					"color": "#0b142b"
+				},
+				{
+					"visibility": "on"
+				}
+				]
+			},
+			{
+				"featureType": "administrative",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				{
+					"color": "#0e204c"
+				},
+				{
+					"visibility": "on"
+				}
+				]
+			},
+			{
+				"featureType": "administrative",
+				"elementType": "labels.text.stroke",
+				"stylers": [
+				{
+					"visibility": "off"
+				}
+				]
+			},
+			{
+				"featureType": "administrative.country",
+				"elementType": "geometry",
+				"stylers": [
+				{
+					"color": "#0b142b"
+				},
+				{
+					"visibility": "on"
+				}
+				]
+			},
+			{
+				"featureType": "administrative.country",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				{
+					"visibility": "on"
+				}
+				]
+			},
+			{
+				"featureType": "landscape",
+				"elementType": "all",
+				"stylers": [
+				{
+					"color": "#f2f2f2"
+				}
+				]
+			},
+			{
+				"featureType": "landscape.man_made",
+				"elementType": "geometry",
+				"stylers": [
+				{
+					"visibility": "on"
+				},
+				{
+					"color": "#0b142b"
+				}
+				]
+			},
+			{
+				"featureType": "landscape.man_made",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				{
+					"color": "#112a6a"
+				},
+				{
+					"visibility": "on"
+				}
+				]
+			},
+			{
+				"featureType": "landscape.natural",
+				"elementType": "geometry",
+				"stylers": [
+				{
+					"color": "#0b142b"
+				},
+				{
+					"visibility": "on"
+				}
+				]
+			},
+			{
+				"featureType": "landscape.natural",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				{
+					"color": "#0e204c"
+				},
+				{
+					"visibility": "on"
+				}
+				]
+			},
+			{
+				"featureType": "poi",
+				"elementType": "all",
+				"stylers": [
+				{
+					"visibility": "off"
+				}
+				]
+			},
+			{
+				"featureType": "road",
+				"elementType": "all",
+				"stylers": [
+				{
+					"saturation": -100
+				},
+				{
+					"lightness": 45
+				}
+				]
+			},
+			{
+				"featureType": "road",
+				"elementType": "geometry",
+				"stylers": [
+				{
+					"visibility": "on"
+				},
+				{
+					"color": "#0b1328"
+				}
+				]
+			},
+			{
+				"featureType": "road",
+				"elementType": "geometry.fill",
+				"stylers": [
+				{
+					"color": "#0b1328"
+				}
+				]
+			},
+			{
+				"featureType": "road",
+				"elementType": "geometry.stroke",
+				"stylers": [
+				{
+					"visibility": "on"
+				},
+				{
+					"color": "#0c1939"
+				}
+				]
+			},
+			{
+				"featureType": "road",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				{
+					"color": "#14378f"
+				},
+				{
+					"visibility": "on"
+				}
+				]
+			},
+			{
+				"featureType": "road",
+				"elementType": "labels.text.stroke",
+				"stylers": [
+				{
+					"color": "#3f0d0f"
+				},
+				{
+					"visibility": "off"
+				}
+				]
+			},
+			{
+				"featureType": "road.highway",
+				"elementType": "all",
+				"stylers": [
+				{
+					"visibility": "simplified"
+				}
+				]
+			},
+			{
+				"featureType": "road.arterial",
+				"elementType": "labels.icon",
+				"stylers": [
+				{
+					"visibility": "off"
+				}
+				]
+			},
+			{
+				"featureType": "transit",
+				"elementType": "all",
+				"stylers": [
+				{
+					"visibility": "off"
+				}
+				]
+			},
+			{
+				"featureType": "water",
+				"elementType": "all",
+				"stylers": [
+				{
+					"color": "#c5dce6"
+				},
+				{
+					"visibility": "on"
+				}
+				]
+			},
+			{
+				"featureType": "water",
+				"elementType": "geometry",
+				"stylers": [
+				{
+					"visibility": "on"
+				},
+				{
+					"color": "#0d1c43"
+				}
+				]
+			},
+			{
+				"featureType": "water",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				{
+					"color": "#14378f"
+				},
+				{
+					"visibility": "on"
+				},
+				{
+					"saturation": "39"
+				}
+				]
+			}
+			],
+			{name:'Styled Map'}
+			);
+		map.mapTypes.set('styled_map', styledMapType);
+		map.setMapTypeId('styled_map');
+	}
+
+	if (document.getElementById("map")) {
+		document.addEventListener("DOMContentLoaded", initMap);
+	}
+
+</script>
+
+</div>
+<div class="popup" id="popup">
+	<div class="popup__holder">
+		<span class="popup__title">Задать вопрос</span>
+		<form action="question.php" method="POST" class="popup__form js-valid-form">
+			<div class="popup__form-item">
+				<input type="text" class="popup__form-input" placeholder="Имя" name="name" required>
+			</div>
+			<div class="popup__form-item">
+				<input type="tel" class="popup__form-input js-submit-phone" placeholder="Телефон" name="phone" required>
+			</div>
+			<div class="popup__form-item">
+				<select class="popup__form-select js-select" name="session">
+					<option value="">Сессия</option>
+					<option value="1">Two</option>
+					<option value="2">Three</option>
+				</select>
+			</div>
+			<div class="popup__form-item">
+				<select class="popup__form-select js-select" name="speaker">
+					<option value="">Спикер</option>
+					<option value="1">Two</option>
+					<option value="2">Three</option>
+					<option value="3">Two</option>
+					<option value="4">Three</option>
+				</select>
+			</div>
+			<div class="popup__form-item">
+				<textarea class="popup__form-textarea" name="question" placeholder="Вопрос"></textarea>
+			</div>
+			<div class="popup__form-item popup__form-item--btn">
+				<button type="submit" class="popup__form-btn" class="btn">
+					Задать вопрос
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="popup-success" id="popup-success">
+	<div class="popup-success__holder">
+		<span class="popup-success__icon icon-question"></span>
+		<span class="popup-success__title">
+			Спасибо за ваш вопрос
+		</span>
+		<span class="popup-success__txt">
+			Наши спикеры обязательно на него ответят
+		</span>
+	</div>
+</div>
+<div class="popup" id="popup-registration">
+	<div class="popup__holder">
+		<span class="popup__title">Регистрация</span>
+		<form action="registration.php" method="POST" class="popup__form js-valid-form">
+			<div class="popup__form-item">
+				<input type="text" class="popup__form-input" placeholder="ФИО" name="name" required>
+			</div>
+			<div class="popup__form-item">
+				<input type="email" class="popup__form-input" placeholder="Эл. почта" name="email" required>
+			</div>
+			<div class="popup__form-item">
+				<select class="popup__form-select js-select" name="phoneSelect">
+					<option value="">Телефон</option>
+					<option value="1">+7 (967) 437 11 53</option>
+					<option value="2">+7 (967) 657 22 52</option>
+				</select>
+			</div>
+			<div class="popup__form-item">
+				<select class="popup__form-select js-select" name="position">
+					<option value="">Должность</option>
+					<option value="1">Ceo</option>
+					<option value="2">manager</option>
+					<option value="3">teamlead</option>
+					<option value="4">project Manager</option>
+				</select>
+			</div>
+			<div class="popup__form-item">
+				<input type="text" class="popup__form-input" placeholder="Компания" name="company" required>
+			</div>
+			<div class="popup__form-item popup__form-item--btn">
+				<button class="popup__form-btn" type="submit" class="btn">
+					Зарегистрироваться
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+<footer class="footer">
+	<div class="container">
+		<div class="footer__wrap">
+			<div class="footer__inner">
+				<ul class="footer__social">
+					<li class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-facebook">
+								<use xlink:href="#facebook"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-vk">
+								<use xlink:href="#vk"></use>
+							</svg>
+						</a>
+					</li>
+					<li class="footer__social-item">
+						<a href="#" class="footer__social-link">
+							<svg class="icon-instagram">
+								<use xlink:href="#instagram"></use>
+							</svg>
+						</a>
+					</li>
+				</ul>
+				<div class="footer__create">
+					<a href="#" class="footer__create-logo">
+						<span class="footer__create-txt">Создано в</span>
+						<img src="pic/logo-nix.png" alt="">
+					</a>
+				</div>
+			</div>
+			<span class="footer__logo">e-коммерсъ</span>
+			<ul class="footer__partner">
+				<li class="footer__partner-item">
+					<a href="#" class="footer__partner-link">
+						<img src="pic/partner/partner-1.png" alt="">
+					</a>
+				</li>
+				<li class="footer__partner-item">
+					<a href="#" class="footer__partner-link">
+						<img src="pic/partner/partner-2.png" alt="">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Goods</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css?rel=92042">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<header class="header">
+
+	<div class="container">
+		<div class="header__wrap">
+			<div class="header__col header__col--logo">
+				<a href="#" class="header__logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="header__col header__col--content">
+				<div class="header__top">
+					<ul class="header__social">
+						<li class="header__social-item">
+							<a href="#" class="header__social-link">
+								<svg class="icon-face">
+									<use xlink:href="#face"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="header__social-item">
+							<a href="#" class="header__social-link">
+								<svg class="icon-instagram">
+									<use xlink:href="#instagram"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+					<div class="header__btn-wrap header__btn-wrap--cart">
+						<a href="#" class="btn btn--cart header__btn-cart">
+							<svg class="icon-cart">
+								<use xlink:href="#cart"></use>
+							</svg>
+							cart
+							<span class="header__cart-number">4</span>
+						</a>
+					</div>
+					<div class="header__btn-wrap header__btn-wrap--sign-in">
+						<a href="#" class="btn btn--singin header__btn-signin">
+							sign in
+							<svg class="icon-head">
+								<use xlink:href="#head"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="header__bottom">
+					<div class="header__nav-btn js-toggle-btn">
+						<span class="header__line"></span>
+						<span class="header__line"></span>
+						<span class="header__line"></span>
+					</div>
+					<nav class="header__nav js-nav">
+						<ul class="header__nav-list">
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">WISH LIST</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">FREE GIFTS</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">PREPAID PROJECTS</a>
+							</li>
+							<li class="header__nav-item">
+								<a href="#" class="header__nav-link">SUPPORT</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="header__search">
+						<form action="">
+							<div class="header__form">
+								<div class="header__form-input">
+									<input type="text" placeholder="Search">
+								</div>
+								
+								<button type="search" class="header__form-btn">
+									<svg class="icon-search">
+										<use xlink:href="#search"></use>
+									</svg>
+								</button>
+								
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="container">
+		<div class="goods">
+	<div class="goods__holder js-tabs">
+		<div class="goods__head">
+			<span class="goods__title">Xmas Night</span>
+			<span class="goods__subtitle">Alex Prihodko</span>
+		</div>
+		<div class="goods__left">
+			<div class="goods__img js-tabs-content active" id="goods-item-1">
+				<img src="pic/goods/goods-01.jpg" alt="">
+			</div>
+			<div class="goods__img js-tabs-content" id="goods-item-2">
+				<img src="pic/goods/goods-02.jpg" alt="">
+			</div>
+			<div class="goods__img js-tabs-content" id="goods-item-3">
+				<img src="pic/goods/goods-02.jpg" alt="">
+			</div>
+			<div class="goods__img js-tabs-content" id="goods-item-4">
+				<img src="pic/goods/goods-02.jpg" alt="">
+			</div>
+			<div class="goods__img js-tabs-content" id="goods-item-5">
+				<img src="pic/goods/goods-02.jpg" alt="">
+			</div>
+			<div class="goods__img js-tabs-content" id="goods-item-6">
+				<img src="pic/goods/goods-02.jpg" alt="">
+			</div>
+			
+		</div>
+		<div class="goods__right">
+			<div class="goods__info">
+				<div class="goods__info-left">
+					<div class="goods__info-head">
+						<span class="goods__title">Xmas Night</span>
+						<span class="goods__subtitle">Alex Prihodko</span>
+					</div>
+					<div class="goods__info-body">
+						<div class="goods__info-item">
+							<span class="goods__info-title">Description</span>
+							<span class="goods__info-txt">Zip file with psd (psp) format image</span>
+							<span class="goods__info-txt">Object on separate layer</span>
+							<span class="goods__info-txt">Close-up included</span>
+							<span class="goods__info-txt">Tube’s size 880x1210 (300ppi)</span>
+						</div>
+						<div class="goods__info-item">
+							<span class="goods__info-title">Copyrights</span>
+							<span class="goods__info-txt">&copy; verymany</span>
+							<span class="goods__info-txt">
+								<a href="#">www.verymanytubes.com</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="goods__info-right">
+					<div class="goods__info-img">
+						<img src="pic/card/card-01.jpg" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="goods__ctrl">
+				<div class="goods__basket">
+					<div class="goods__add">
+						<a href="#" class="goods__add-link">
+							<span class="goods__add-price">$1.85</span>
+							<span class="goods__add-icon">
+								<svg class="icon-cart">
+									<use xlink:href="#cart"></use>
+								</svg>
+							</span>
+							<span class="goods__add-text">Add to cart</span>
+						</a>
+					</div>
+					<div class="goods__like">
+						<a href="#" class="goods__like-link">
+							<svg class="icon-wish">
+								<use xlink:href="#wish"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="goods__view">
+					<span class="goods__view-title">View more tubes</span>
+					<div class="goods__view-holder">
+						<div class="goods__view-row">
+							<div class="goods__view-col">
+								<a href="#goods-item-1" class="goods__view-item js-tabs-link active">
+									<img src="pic/goods/goods-01.jpg" alt="">
+								</a>
+							</div>
+							<div class="goods__view-col">
+								<a href="#goods-item-2" class="goods__view-item js-tabs-link">
+									<img src="pic/goods/goods-02.jpg" alt="">
+								</a>
+							</div>
+							<div class="goods__view-col">
+								<a href="#goods-item-3" class="goods__view-item js-tabs-link">
+									<img src="pic/goods/goods-02.jpg" alt="">
+								</a>
+							</div>
+							<div class="goods__view-col">
+								<a href="#goods-item-4" class="goods__view-item js-tabs-link">
+									<img src="pic/goods/goods-02.jpg" alt="">
+								</a>
+							</div>
+							<div class="goods__view-col">
+								<a href="#goods-item-5" class="goods__view-item js-tabs-link">
+									<img src="pic/goods/goods-02.jpg" alt="">
+								</a>
+							</div>
+							<div class="goods__view-col">
+								<a href="#goods-item-6" class="goods__view-item js-tabs-link">
+									<img src="pic/goods/goods-02.jpg" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	</div>
+
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__holder">
+			<div class="footer__inner footer__social">
+				<a href="#" class="footer__social-item">
+					<svg class="icon-face">
+						<use xlink:href="#face"></use>
+					</svg>
+				</a>
+				<a href="#" class="footer__social-item">
+					<svg class="icon-instagram">
+						<use xlink:href="#instagram"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="footer__inner footer__nav">
+				<ul class="footer__nav-list">
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">About</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Terms Of Use</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Privacy Policy</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Contact</a>
+					</li>
+					<li class="footer__nav-item">
+						<a href="#" class="footer__nav-link">Subscribe</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__inner footer__payment">
+				<a href="#" class="footer__payment-icon">
+					<svg class="icon-paying-systems">
+						<use xlink:href="#paying-systems"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="footer__copy">
+				<span class="footer__copy-descr">Pictures for personal use on the web.</span>
+				<span class="footer__copy-txt">&copy; 2018 Verymany All rights reserved</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="js/vendor.js?rel=92042"></script>
+
+
+<script src="pages-list.js"></script>
+
+
+<script src="js/main.js?rel=92042"></script>
+
+
+</body>
+</html>

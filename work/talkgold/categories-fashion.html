@@ -1,0 +1,471 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Fashion</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<svg class="icon-decor icon-decor-1">
+		<use xlink:href="#decor"></use>
+	</svg>
+	<svg class="icon-decor icon-decor-2">
+		<use xlink:href="#decor"></use>
+	</svg>
+	<svg class="icon-decor icon-decor-3">
+		<use xlink:href="#decor"></use>
+	</svg>
+
+	<header class="header">
+	<div class="container">
+		<div class="wrap">
+			<div class="logo">
+				<a href="#">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="country">
+				<div class="country-inner select-country js-country-wrap">
+					<select name="country" class="js-select-country" id="">
+						<option value="USA" selected>USA</option>
+						<option value="CA">CA</option>
+						<option value="UK">UK</option>
+						<option value="AU">AU</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="search search-head">
+	<div class="container">
+		<div class="wrap">
+			
+			<form action="">
+				<input type="text" placeholder="Put product name...">
+				<button class="btn">
+					<svg class="icon-search">
+						<use xlink:href="#search"></use>
+					</svg>
+				</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+	<div class="breadcrumbs">
+	<div class="container">
+		<ul>
+			
+				<li>
+					<a href="#">Catalog</a>
+				</li>
+			
+			<li>Fashion</li>
+		</ul>
+	</div>
+</div>
+
+	<div class="categories">
+	<div class="container">
+		<h1>Fashion</h1>
+		<div class="wrap">
+
+			<div class="item js-item-wrap">
+				<div class="inner js-height">
+					<div class="head js-head-btn">
+						<span class="icon">
+							<svg class="icon-beauty">
+								<use xlink:href="#beauty"></use>
+							</svg>
+						</span>
+						<h3>Beauty</h3>
+					</div>
+					<div class="list js-categories-list">
+						<ul>
+							<li><a href="#">Binoculars & Telescopes </a></li>
+							<li><a href="#">Camcorders </a></li>
+							<li><a href="#">Camera & Photo Accessories</a></li>
+							<li><a href="#">Camera Drones </a></li>
+							<li><a href="#">Camera Lenses Filters</a></li>
+							<li><a href="#">Digital Cameras</a></li>
+							<li><a href="#">Digital Photo Frames</a></li>
+							<li><a href="#">Film Photography</a></li>
+							<li><a href="#">Flashes & Flash Accessories</a></li>
+							<li><a href="#">Manuals & Guides </a></li>
+						</ul>
+						<ul class="all js-all-list">
+							<li><a href="#">Binoculars & Telescopes </a></li>
+							<li><a href="#">Camcorders </a></li>
+							<li><a href="#">Camera & Photo Accessories</a></li>
+							<li><a href="#">Camera Drones </a></li>
+							<li><a href="#">Camera Lenses Filters</a></li>
+							<li><a href="#">Digital Cameras</a></li>
+							<li><a href="#">Digital Photo Frames</a></li>
+							<li><a href="#">Film Photography</a></li>
+							<li><a href="#">Flashes & Flash Accessories</a></li>
+							<li><a href="#">Manuals & Guides </a></li>
+							<li><a href="#">Flashes & Flash Accessories</a></li>
+							<li><a href="#">Manuals & Guides </a></li>
+						</ul>
+						<a href="#" class="more js-more-btn">show more (12)</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item js-item-wrap">
+				<div class="inner js-height">
+					<div class="head js-head-btn">
+						<span class="icon">
+							<svg class="icon-handbags">
+								<use xlink:href="#handbags"></use>
+							</svg>
+						</span>
+						<h3>Handbags & Accessories</h3>
+					</div>
+					<div class="list js-categories-list">
+						<ul>
+							<li><a href="#">12-Volt Portable Appliances</a></li>
+							<li><a href="#">Car Alarms & Security</a></li>
+							<li><a href="#">Car Audio</a></li>
+							<li><a href="#">Car Audio & Video Installation</a></li>
+							<li><a href="#">Car Electronics Accessories</a></li>
+							<li><a href="#">Car Video</a></li>
+							<li><a href="#">GPS Accessories & Tracking</a></li>
+							<li><a href="#">GPS Units</a></li>
+							<li><a href="#">Marine Audio</a></li>
+							<li><a href="#">Other Vehicle Electronics</a></li>
+						</ul>
+						<ul class="all js-all-list">
+							<li><a href="#">Radar & Laser Detectors</a></li>
+						</ul>
+						<a href="#" class="more js-more-btn">show more (1)</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item js-item-wrap">
+				<div class="inner js-height">
+					<div class="head js-head-btn">
+						<span class="icon">
+							<svg class="icon-health">
+								<use xlink:href="#health"></use>
+							</svg>
+						</span>
+						<h3>Health</h3>
+					</div>
+					<div class="list js-categories-list">
+						<ul>
+							<li><a href="#">Batteries</a></li>
+							<li><a href="#">Cables & Adapters </a></li>
+							<li><a href="#">Cases, Covers, & Skins </a></li>
+							<li><a href="#">Cell Phone Accessories </a></li>
+							<li><a href="#">Cell Phone Parts</a></li>
+							<li><a href="#">Cell Phones & Smartphones </a></li>
+							<li><a href="#">Chargers & Cradles</a></li>
+							<li><a href="#">Headsets</a></li>
+							<li><a href="#">Screen protectors </a></li>
+							<li><a href="#">Smart Watches </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="item js-item-wrap">
+				<div class="inner js-height">
+					<div class="head js-head-btn">
+						<span class="icon">
+							<svg class="icon-jewelry">
+								<use xlink:href="#jewelry"></use>
+							</svg>
+						</span>
+						<h3>Jewelry</h3>
+					</div>
+					<div class="list js-categories-list">
+						<ul>
+							<li><a href="#">Cables & Connectors</a></li>
+							<li><a href="#">Computer Components & Parts</a></li>
+							<li><a href="#">Desktops & All-In-Ones </a></li>
+							<li><a href="#">Drives, Storage & Blank Media </a></li>
+							<li><a href="#">Enterprise Networking & Servers</a></li>
+							<li><a href="#">Home Networking & Connectivity </a></li>
+							<li><a href="#">Keyboards, Mice, & Pointing</a></li>
+							<li><a href="#">Laptop & Desktop Accessories</a></li>
+							<li><a href="#">Laptops & Netbooks</a></li>
+							<li><a href="#">Manuals & Resources</a></li>
+						</ul>
+						<ul class="all js-all-list">
+							<li><a href="#">Cables & Connectors</a></li>
+							<li><a href="#">Computer Components & Parts</a></li>
+							<li><a href="#">Desktops & All-In-Ones </a></li>
+							<li><a href="#">Drives, Storage & Blank Media </a></li>
+							<li><a href="#">Enterprise Networking & Servers</a></li>
+						</ul>
+						<a href="#" class="more js-more-btn">show more (5)</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item js-item-wrap">
+				<div class="inner js-height">
+					<div class="head js-head-btn">
+						<span class="icon">
+							<svg class="icon-kids">
+								<use xlink:href="#kids"></use>
+							</svg>
+						</span>
+						<h3>Kids & Baby</h3>
+					</div>
+					<div class="list js-categories-list">
+						<ul>
+							<li><a href="#">Calculators </a></li>
+							<li><a href="#">DVD & Blu-ray players</a></li>
+							<li><a href="#">Gadgets </a></li>
+							<li><a href="#">Headphones </a></li>
+							<li><a href="#">Home Audio</a></li>
+							<li><a href="#">Home Automation</a></li>
+							<li><a href="#">Home Speakers & Subwoofers </a></li>
+							<li><a href="#">Home Surveillance </a></li>
+							<li><a href="#">Media Streamers</a></li>
+							<li><a href="#">Portable Audio & Accessories </a></li>
+						</ul>
+						<ul class="all js-all-list">
+							<li><a href="#">Calculators </a></li>
+							<li><a href="#">DVD & Blu-ray players</a></li>
+							<li><a href="#">Gadgets </a></li>
+						</ul>
+						<a href="#" class="more js-more-btn">show more (3)</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item js-item-wrap">
+				<div class="inner js-height">
+					<div class="head js-head-btn">
+						<span class="icon">
+							<svg class="icon-mens-clothing">
+								<use xlink:href="#mens-clothing"></use>
+							</svg>
+						</span>
+						<h3>Men's Clothing</h3>
+					</div>
+					<div class="list js-categories-list">
+						<ul>
+							<li><a href="#">Other Video Games & Consoles </a></li>
+							<li><a href="#">Prepaid Gaming Cards</a></li>
+							<li><a href="#">Replacement Parts & Tools </a></li>
+							<li><a href="#">Strategy Guides & Cheats</a></li>
+							<li><a href="#">Video Game Accessories</a></li>
+							<li><a href="#">Video Game Memorabilia </a></li>
+							<li><a href="#">Video Game Merchandise</a></li>
+							<li><a href="#">Video Game Wholesale Lots </a></li>
+							<li><a href="#">Video Games </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="item js-item-wrap">
+				<div class="inner js-height">
+					<div class="head js-head-btn">
+						<span class="icon">
+							<svg class="icon-shoes">
+								<use xlink:href="#fashion"></use>
+							</svg>
+						</span>
+						<h3>Shoes</h3>
+					</div>
+					<div class="list js-categories-list">
+						<ul>
+							<li><a href="#">Cables & Connectors</a></li>
+							<li><a href="#">Computer Components & Parts</a></li>
+							<li><a href="#">Desktops & All-In-Ones </a></li>
+							<li><a href="#">Drives, Storage & Blank Media </a></li>
+							<li><a href="#">Enterprise Networking & Servers</a></li>
+							<li><a href="#">Home Networking & Connectivity </a></li>
+							<li><a href="#">Keyboards, Mice, & Pointing</a></li>
+							<li><a href="#">Laptop & Desktop Accessories</a></li>
+							<li><a href="#">Laptops & Netbooks</a></li>
+							<li><a href="#">Manuals & Resources</a></li>
+						</ul>
+						<ul class="all js-all-list">
+							<li><a href="#">Cables & Connectors</a></li>
+							<li><a href="#">Computer Components & Parts</a></li>
+							<li><a href="#">Desktops & All-In-Ones </a></li>
+							<li><a href="#">Drives, Storage & Blank Media </a></li>
+							<li><a href="#">Enterprise Networking & Servers</a></li>
+						</ul>
+						<a href="#" class="more js-more-btn">show more (5)</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item js-item-wrap">
+				<div class="inner js-height">
+					<div class="head js-head-btn">
+						<span class="icon">
+							<svg class="icon-watches">
+								<use xlink:href="#watches"></use>
+							</svg>
+						</span>
+						<h3>Watches</h3>
+					</div>
+					<div class="list js-categories-list">
+						<ul>
+							<li><a href="#">Calculators </a></li>
+							<li><a href="#">DVD & Blu-ray players</a></li>
+							<li><a href="#">Gadgets </a></li>
+							<li><a href="#">Headphones </a></li>
+							<li><a href="#">Home Audio</a></li>
+							<li><a href="#">Home Automation</a></li>
+							<li><a href="#">Home Speakers & Subwoofers </a></li>
+							<li><a href="#">Home Surveillance </a></li>
+							<li><a href="#">Media Streamers</a></li>
+							<li><a href="#">Portable Audio & Accessories </a></li>
+						</ul>
+						<ul class="all js-all-list">
+							<li><a href="#">Calculators </a></li>
+							<li><a href="#">DVD & Blu-ray players</a></li>
+							<li><a href="#">Gadgets </a></li>
+						</ul>
+						<a href="#" class="more js-more-btn">show more (3)</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item js-item-wrap">
+				<div class="inner js-height">
+					<div class="head js-head-btn">
+						<span class="icon">
+							<svg class="icon-womens-clothing">
+								<use xlink:href="#womens-clothing"></use>
+							</svg>
+						</span>
+						<h3>Women's Clothing</h3>
+					</div>
+					<div class="list js-categories-list">
+						<ul>
+							<li><a href="#">Other Video Games & Consoles </a></li>
+							<li><a href="#">Prepaid Gaming Cards</a></li>
+							<li><a href="#">Replacement Parts & Tools </a></li>
+							<li><a href="#">Strategy Guides & Cheats</a></li>
+							<li><a href="#">Video Game Accessories</a></li>
+							<li><a href="#">Video Game Memorabilia </a></li>
+							<li><a href="#">Video Game Merchandise</a></li>
+							<li><a href="#">Video Game Wholesale Lots </a></li>
+							<li><a href="#">Video Games </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+	<div class="seo">
+	<div class="container">
+		<h2>Some seo text title</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
+	</div>
+</div>
+
+</div>
+
+<footer>
+	<div class="container">
+		<div class="wrap">
+			<div class="navigate">
+				<ul>
+					<li><a href="#">Advertisement</a></li>
+					<li><a href="#">About Us</a></li>
+				</ul>
+				<ul>
+					<li><a href="#">What is Talkgold.com</a></li>
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Privacy policy</a></li>
+				</ul>
+			</div>
+			<div class="info">
+				<span>If you have a questionswrite us <a href="mailto:info@talkgold.com">info@talkgold.com</a></span>
+				<span>© 2018 Talkgold.com</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>

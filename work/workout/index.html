@@ -1,0 +1,1292 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+  <header class="header">
+	<div class="header__top">
+		<div class="container">
+			<div class="header__logo">
+				<div class="header__logo-img">
+					<a href="#">
+						<img src="pic/logo/logo-white.png" alt="logo">
+					</a>
+				</div>
+				<div class="header__logo-text">
+					<div class="header__text-top">Региональная физкультурно-спортивная общественная организация</div>
+					<div class="header__text-bottom">«Краснодарская краевая федерация воркаута»</div>
+				</div>
+			</div>
+			<div class="header__contact">
+				<div class="header__tel">
+					<a href="tel:88003332920">8-800-333-29-20</a>
+				</div>
+				<div class="header__mail">
+					<a href="mailto:info@workoutkrd.ru">info@workoutkrd.ru</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header__bottom">
+		<div class="container">
+			<div class="header__img-center">
+				<img src="pic/logo/logo-big.png" alt="">
+			</div>
+			<nav class="header__nav">
+				<ul class="header__list js-nav">
+					<li class="header__item"><a href="#government">О нас</a></li>
+					<li class="header__item"><a href="#sport">Спортсмены</a></li>
+					<li class="header__item"><a href="#mission">Миссия</a></li>
+					<li class="header__item"><a href="#events">События</a></li>
+					<li class="header__item header__item--mod"><a href="#about">О воркауте</a></li>
+					<li class="header__item header__item--mod"><a href="#documents">Документы</a></li>
+					<li class="header__item"><a href="#sport">Состав</a></li>
+					<li class="header__item"><a href="#contacts">Контакты</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="header__icons">
+		<span class="header__icon">
+			<a href="https://vk.com/workout_krd" target="blank">
+				<svg class="icon-vk-mobile">
+	  				<use xlink:href="#vk-mobile"/>
+	  			</svg>
+			</a>
+		</span>
+		<span class="header__icon">
+			<a href="https://www.instagram.com/fsc_team/" target="blank">
+				<svg class="icon-instagram-mobile">
+	  				<use xlink:href="#instagram"/>
+	  			</svg>
+			</a>
+		</span>
+	</div>
+	
+</header>
+
+    
+    <div class="wrapper">
+    	
+    	<div class="mission" id="mission">
+	<div class="container">
+		<div class="mission__inner">
+			<h1 class="mission__figure">Миссия</h1>
+			<div class="mission__img-wrapp">
+				<img src="pic/mission/mission-center.png" alt="image" class="mission__img">
+			</div>
+			<div class="mission__objectives">
+				<h2>Цели и задачи</h2>
+				<p class="mission__description">Федерация создана в целях развития воркаута, проведения спортивных мероприятий, объединения спортсменов и специалистов в области воркаута и освещения событий и новостей воркаут сообщества через различные каналы, в том числе СМИ.</p>
+				<ol class="mission__list">
+					<li class="mission__item">Содействие развитию массового воркаута и совершенствование его форм. </li>
+					<li class="mission__item">Оказание всесторонней поддержки воркаута в других регионах Россиийской Федерации, развитие различных форм воркаут движений. </li>
+					<li class="mission__item">Работа в направлении официального признания воркаута видом спорта и развитие соответствующих областей: учебно-методической базы, соревнований, спортивных площадок и центров. </li>
+					<li class="mission__item">Создание благоприятных условий для объединения специалистов в области воркаута в целях профессионального роста, обмена опытом, раскрытия потенциала и увеличения числа занимающихся воркаутом. </li>
+					<li class="mission__item">Содействие созданию спортивных центров, школ, клубов, коллективов и иных объединений по воркауту, оказание им организационно-методической и материально-технической поддержки, а также практической помощи в спортивной деятельности. </li>
+					<li class="mission__item">Развитие и укрепление спортивных связей на международной арене, участие в спортивных соревнованиях общероссийского и мирового масштаба. </li>
+					<li class="mission__item">Повышение интереса и престижа соревнований по воркауту среди населения и взаимодействие с общественностью посредством СМИ. </li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+
+    	<div class="about" id="about">
+	<div class="container">
+		<div class="about__inner">
+			<h1 class="about__figure">О воркауте</h1>
+			<div class="about__items">
+				<div class="about-item static-content">
+					<h3>Что такое WorkOut? Начало</h3>
+					<div class="about-item__img-wrapp ">
+						<img src="pic/about/about-1.png" alt="img">
+					</div>
+					<div class="about-item__paragraph">
+						<p>WorkOut (по-русски – «Воркаут») – уличная субкультура, объединяющая уникальный подход к тренировкам, стремление к разностороннему развитию личности и социальную активность. Она базируется вокруг тренировок с собственным весом и пропагандирует здоровый образ жизни среди молодёжи. Воркаута продвигает идею получения сильного, красивого и здорового тела без финансовых вложений, то есть практически любой человек может достичь модельной внешности не посещая фитнес клубов, не тратя деньги на биодобавки и не следуя странным диетам. Главное, это вариативность и регулярность тренировок</p>
+					</div>
+					<div class="about-item__btn about-item__btn--vision-top btn js-open">Читать далее</div>
+				</div>
+				<div class="about__items-hidden js-slideup">
+					
+	<div class="about-item static-content">
+		<h3>Что значит WorkOut</h3>
+		<div class="about-item__img-wrapp ">
+			<img src="pic/about/about-2.png" alt="img">
+		</div>
+		<div class="about-item__paragraph">
+			<p>Дословно workout переводится как тренировка. Хотя на английском языке упражнения с собственным весом называются калистеникой (calisthenics), я считаю, что слово воркаут в качестве названия лучше отражает дух субкультуры и идеи, которые мы в неё закладываем.</p> <p>С одной стороны это связано с тем, что calisthenics на русский язык часто переводится просто как разминка или утренняя гимнастика. С другой - есть близкое по произношению и написанию направление калланетика. С третьей - WorkOut зарождался на улицах, и это отлично отражено во второй части слова (Out — переводится как «вне»). Не стоит забывать и то, что Воркаут призывает тренироваться вне рамок и условностей, и этот смысл тоже заложен в названии.</p> <p>Хотя сама идея тренировок с собственным весом на уличных тренировочных площадках начала своё возрождение в Америке (и получила распространение по всему миру благодаря видеороликам на YouTube), Воркаут, как субкультура, появился именно в Москве, в марте 2009 года, и с тех пор так активно развивался, что в настоящее время больше 50 тысяч человек почти в сотне городов на территории нескольких стран бывшего СССР являются активными участниками движения и занимаются Воркаутом. Если на самую первую тренировку собралось всего 3 человека, то сейчас на регулярные воскресные тренировки только в Москве приходит около 50 человек!</p>
+		</div>
+		<div class="about-item__btn undefined js-close btn">undefined</div>
+	</div>
+
+	<div class="about-item static-content">
+		<h3>Что привлекает в WorkOut</h3>
+		<div class="about-item__img-wrapp ">
+			<img src="pic/about/about-3.png" alt="img">
+		</div>
+		<div class="about-item__paragraph">
+			<p>В настоящее время у многих людей существует сильное заблуждение, что для получения красивого, здорового и сильного тела необходимо тренироваться в дорогих фитнес клубах с персональными тренерами (или как вариант в качалках тягая железо), мучить себя различными диетами и принимать всякие биологически активные добавки. По-другому никак.</p> <p>Воркаут ставит своей целью опровергнуть это и показать, что обрести отличный внешний вид, стать более здоровым и сильным можно гораздо проще. Достаточно лишь регулярно тренироваться с собственным весом (прогресс – дело времени, нельзя неожиданно проснуться утром и получить желаемый результат) и использовать в этих тренировках своё воображение (второй ключевой принцип – вариативность, необходимо постоянно менять упражнения, чтобы мышцы не могли адаптироваться).</p> <p>Воркаут предлагает по-новому взглянуть на всем известные подтягивания, отжимания от пола, отжимания на брусьях и приседания. За счёт использования воображения можно придумать огромное количество вариантов этих упражнений (одних только способов подтянуться мы насчитали более 50), а также комбинирования и объединения их в связки, что позволяет достигнуть действительно отличных результатов!</p> <p>Я думаю, что именно это и привлекает в Воркауте. С одной стороны – возможность тренироваться где угодно и когда угодно (потому что для тренировок с собственным весом не нужно вовсе ничего или нужно то, что можно найти в ближайшем дворе), с другой стороны свобода от рамок и условностей в упражнениях, то есть физическая тренировка становится способом самовыражения!</p>
+		</div>
+		<div class="about-item__btn undefined js-close btn">undefined</div>
+	</div>
+
+	<div class="about-item static-content">
+		<h3>Три принципа уличных тренировок</h3>
+		<div class="about-item__img-wrapp ">
+			<img src="pic/about/about-4.png" alt="img">
+		</div>
+		<div class="about-item__paragraph">
+			<p>Первый принцип — необходимо прислушиваться к своему телу и подбирать именно те упражнения, которые лучше всего подходят именно вам. Более того, я бы предложил многим отказаться от привычной системы подходов и повторов и просто тренироваться, потому что, как известно, результат приносят именно последние несколько повторений, которые вы делаете уже на пределе своих сил. На них и нужно сфокусироваться. Если постоянно стараться превзойти свой предыдущий результат, то просто невозможно остановиться в прогрессе!</p> <p>Второй принцип — использование своего воображения. Со временем организм начинает привыкать к той нагрузке, которую вы ему даёте и это уже не будет приносить прежние результаты. Воркаут основывается на идеи активного использования своего воображения, чтобы постоянно менять упражнения (а значит и нагрузку!) и не давать телу приспособиться к ним. Это так же гарантирует получение результатов в долгосрочной перспективе.</p> <p>Третий принцип — фокус на технике выполнения, а не на количестве. Не так важно, сколько подтягиваний вы делаете сегодня, потому что если вы делаете их правильно, и полностью контролируете выполнение движения, то со временем вы будете становиться сильнее. И количество подтягиваний тоже будет расти. Поверьте, все, кто сейчас подтягиваются 25-30 раз, тоже начанали с 5-10 повторений!</p>
+		</div>
+		<div class="about-item__btn undefined js-close btn">undefined</div>
+	</div>
+
+	<div class="about-item static-content">
+		<h3>Где можно заниматься</h3>
+		<div class="about-item__img-wrapp ">
+			<img src="pic/about/about-5.png" alt="img">
+		</div>
+		<div class="about-item__paragraph">
+			<p>Как я уже говорил ранее, поскольку Воркаут продвигает уличные тренировки и упражнения с использованием веса собственного тела, то заниматься можно практически где угодно. На спортивных площадках школ или парков можно найти большое количество разнообразных металлических конструкций для подтягиваний, отжиманий, или других упражнений. В любом дворе найдётся турник и брусья, а если нет, то не так уж и сложно найти им замену. А главное – это то, что подобные тренировки проходят на свежем воздухе, что очень полезно для организма!</p>
+		</div>
+		<div class="about-item__btn undefined js-close btn">undefined</div>
+	</div>
+
+	<div class="about-item static-content">
+		<h3>Каковы цели субкультуры WorkOut</h3>
+		<div class="about-item__img-wrapp ">
+			<img src="pic/about/about-6.png" alt="img">
+		</div>
+		<div class="about-item__paragraph">
+			<p>Наша главная цель - рассказать и показать как можно большему количеству людей об этом новом направлении физического развития, показать возможность получения желаемых результатов без лишних финансовых и временных затрат. Тренировки с собственным весом, помимо всего прочего, позволяют лучше понять работу своего организма, что безусловно станет огромным плюсом при занятиях другими видами спорта.</p> <p>Вторая наша цель - объединить всех участников движения из разных городов и стран в единое целое, для чего мы запустили проект www.workoutkrd.ru (в тесном сотрудничестве с активистами движения Воркаут в каждом городе). Создавая единое информационное пространство на сайте, мы сможем значительно ускорить обмен информацией между участниками движения, а это значит, что не придётся наступать на одни и те же грабли по несколько раз!</p> <p>Третья наша цель – продолжать еженедельно проводить открытые воскресные тренировки для всех желающих. Потому что это отличный способ провести выходной день на свежем воздухе и научиться чему-нибудь новому, а заодно научить других тому, что умеешь сам.</p> <p>Наконец, наша четвёртая цель - организовать активное сотрудничество с государственными и коммерческими структурами с целью продвижения WorkOut, а также строительство спортивных площадок, ориентированных именно на тех, кто занимается данным направлением.</p>
+		</div>
+		<div class="about-item__btn undefined js-close btn">undefined</div>
+	</div>
+
+	<div class="about-item static-content">
+		<h3>Какое будущее у WorkOut</h3>
+		<div class="about-item__img-wrapp ">
+			<img src="pic/about/about-7.png" alt="img">
+		</div>
+		<div class="about-item__paragraph">
+			<p>С каждым днём всё больше и больше людей узнают о существовании данного направления физического развития и делают выбор в пользу занятий Воркаутом.</p> <p>Кто-то делает это, чтобы получить более привлекательное тело; кто-то чтобы улучшить физические показатели. Кстати, Воркаут является отличной подготовительной системой для многих других видов спорта, в том числе и потому, что учит вас лучше владеть своим телом и контролировать его. А кто-то, и мне бы хотелось надеяться, что таких большинство, занимается Воркаутом просто потому, что ему нравится сам процесс тренировок. Для таких людей Воркаут это способ самовыражения.</p> <p>Уверен, что в будущем участников движения будет становиться только больше. Будут подключаться новые города и страны. Всё больше людей увидят каких результатов можно добиться с помощью упражнений с собственным весом, начнут тренировки и включат физическое развитие в свой распорядок дня.</p> <p>А это значит, что вокруг будет больше здоровых и красивых людей!</p>
+		</div>
+		<div class="about-item__btn about-item__btn--vision-bott js-close btn">Свернуть</div>
+	</div>
+
+	
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+    	<div class="government" id="government">
+	<div class="container">
+		<div class="government__inner">
+			<h1 class="government__caption">ОРГАНЫ УПРАВЛЕНИЯ РФССО «ВОРКАУТ КРАСНОДАР»</h1>
+			<ul class="government__list">
+				<li class="government__item">
+					<div class="government__img-wrapp">
+						<img src="pic/people_control/control-1.png" alt="people">
+					</div>
+					<div class="government__position">
+						<div class="government__surname">Фетисов</div>
+						<div class="government__name">Сергей Дмитриевич</div>
+						<div class="government__rank">Президент</div>
+						<ul class="government__list-duties">
+							<li class="government__duties">Финансовый отдел</li>
+							<li class="government__duties">Отдел по развитию и внешним связям</li>
+						</ul>
+					</div>
+				</li>
+				<li class="government__item">
+					<div class="government__img-wrapp">
+						<img src="pic/people_control/control-2.png" alt="people">
+					</div>
+					<div class="government__position">
+						<div class="government__surname">Кривенко</div>
+						<div class="government__name">Михаил Владимирович</div>
+						<div class="government__rank">Исполнительный директор</div>
+						<ul class="government__list-duties">
+							<li class="government__duties">Исполнительный директор</li>
+							<li class="government__duties">Административно-хозяйственный отдел</li>
+						</ul>
+					</div>
+				</li>
+				<li class="government__item">
+					<div class="government__img-wrapp">
+						<img src="pic/people_control/control-3.png" alt="people">
+					</div>
+					<div class="government__position">
+						<div class="government__surname">Помигалов</div>
+						<div class="government__name">Константин Александрович</div>
+						<div class="government__rank">Секретарь</div>
+						<ul class="government__list-duties">
+							<li class="government__duties">Общий отдел</li>
+						</ul>
+					</div>
+				</li>
+				<li class="government__item">
+					<div class="government__img-wrapp">
+						<img src="pic/people_control/control-4.png" alt="people">
+					</div>
+					<div class="government__position">
+						<div class="government__surname">Шарабарин</div>
+						<div class="government__name">Руслан Геннадьевич</div>
+						<div class="government__rank">Ревизор</div>
+						<ul class="government__list-duties">
+							<li class="government__duties">Контрольно-ревизионный комитет</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+    	<div class="sport" id="sport">
+	<div class="container">
+		<div class="sport__inner">
+			<h1 class="sport__figure">Спортсмены</h1>
+			<div class="sport__list-link">
+				<a href="#">Полный реестр зарегистрированных членов Федерации (скачать)</a>
+			</div>
+			<div class="sport__wrapp-items">
+				<ul class="sport__list js-scroll">
+					
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-1.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-2.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				ХАНДАМОВ РОБЕРТ
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-3.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				ПЕТРУК ВИТАЛИЙ
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-4.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				ГЕТМАНЕНКО АЛЕКСЕЙ
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-5.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Айриян Давид
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-6.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Беляева Елизавета
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-7.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Гаврилов Вадим
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-8.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Гедзик Александр
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-9.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Дебольский Александр
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-10.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Искендеров Семур
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-11.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Карлов Никита
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-12.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				КОРЕНСКИЙ ФЕДОР
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-13.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Лагутов Иван
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-14.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Литинский Дмитрий
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-15.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Луданов Никита
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-16.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Лукьянов Андрей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-17.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Поздняков Никита
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-18.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Попков Никита
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-19.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Прасолова Надежда
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-20.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Савицкий Дмитрий
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-21.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Сидоренко Галина
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-22.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Силкин Денис
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-23.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Стародубцев Александр
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-24.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Стрига Никита
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-25.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Терлов Константин
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-26.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Трипук Дмитрий
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-27.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Чичётка Дмитрий
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-1.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-2.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-3.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-4.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-5.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-6.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-7.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-8.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-9.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-10.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-11.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-12.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-13.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-14.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-15.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-16.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-17.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-18.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-19.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-20.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-21.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-22.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-23.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-24.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-25.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-26.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+	<li class="sport__item">
+		<a data-fancybox data-src="#info-1" href="javascript:;">
+			<div class="sport__img-wrapp">
+				<img src="pic/people_sport/sport-27.png" alt="sportsmen">
+			</div>
+			<div class="sport__name">
+				Кобяков Алексей
+			</div>
+		</a>
+	</li>
+
+
+				</ul>
+			</div>
+		</div>
+		<div class="sport__info" id="info-1">
+	<div class="sport__img-wrapp-big">
+		<img src="pic/sport_people-big/sport-1.png" alt="image">
+	</div>
+	<div class="sport__content">
+		
+		<div class="sport__name-big">
+			<span class="sport__icon">
+				<svg class="icon-builder">
+		  			<use xlink:href="#builder"/>
+		  		</svg>
+			</span>
+			<span class="sport__name-right">Алексей Кобяков</span>
+		</div>
+		<div class="sport__births">
+			Родился 27 мая 1994 года
+		</div>
+		<div class="sport__description">
+			Вице-президент федерации, лидер воркаут движения в Краснодарском крае и Краснодаре, руководитель сообщества WORKOUT KRASNODAR, капитан команды FSC TEAM, многократный победитель международных, краевых и региональных соревнований по воркауту:
+		</div>
+		<ul class="sport__list-big">
+			<li class="sport__item-big">Бронзовый призер «Battle of the Bars 20»</li>
+			<li class="sport__item-big">Победитель «VFM BATTLES»</li>
+			<li class="sport__item-big">Победитель «Кубка Черного моря 2016»</li>
+			<li class="sport__item-big">3-х кратный чемпион г. Туапсе по воркауту</li>
+			<li class="sport__item-big">А также участник «ВОРКАУТ БАТЛЫ РОССИИ 2015»</li>
+		</ul>
+	</div>
+</div>
+	</div>
+</div>
+
+    	<div class="events" id="events">
+	<div class="container">
+		<span class="events__title">События</span>
+		<div class="events__slider js-slider">
+			<div class="events__holder">
+	<div class="events__info">
+		<span class="events__info-date">16:15, 5 декабря 2017</span>
+		<span class="events__info-title">«FSC CHAMP»</span>
+		<span class="events__info-desc">23 декабря 2017 года – Зимний международный чемпионат по воркауту!</span>
+	</div>
+	<div class="events__image">
+		<img src="pic/developments/developments-1.png" alt="img">
+	</div>
+	<span class="events__partners">Спонсоры мероприятия: КубаньФинанс, СБС-мегамолл, журнал «Красота & Спорт», FLY ZONE</span>
+	<div class="events__text"><p>Ну что друзья, вы готовы к очередной невероятной движухе? Тогда поехали!</p><p>23 декабря, в 12:00, пройдет заключительное и абсолютно уникальное событие уходящего года, грандиозный, зимний чемпионат по воркауту «FSC CHAMP», в рамках которого пройдут соревнования в номинации «БАТЛЫ 1Х1»!</p><p>Сильнейшие атлеты России соберутся на одной площадке, в самом центре одного из крупнейших ТРК Краснодара, чтобы сразиться за титул чемпиона года! В этот раз, кульминацией и изюминкой мероприятия станет гость и атлет с мировой известностью – Daniels Laizans (Рига, Латвия)!</p><p>Захватывающая битва, невероятная атмосфера и завораживающее шоу, все это ждет вас 23 декабря, в 12:00, в ТРК СБС Мегамолл!</p><p>Также, в предверии чемпионата, 22 декабря, состоится семинар, воркшоп и общая тренировка совместно с чемпионом мира 2017г. Приходи, приезжай и прилетай где бы ты не был!</p></div>
+</div><div class="events__holder">
+	<div class="events__info">
+		<span class="events__info-date">16:15, 25 декабря 2017</span>
+		<span class="events__info-title">«FSC CHAMP»</span>
+		<span class="events__info-desc">23 декабря 2017 года – Зимний международный чемпионат по воркауту!</span>
+	</div>
+	<div class="events__image">
+		<img src="pic/developments/developments-1.png" alt="img">
+	</div>
+	<span class="events__partners">Спонсоры мероприятия: КубаньФинанс, СБС-мегамолл, журнал «Красота & Спорт», FLY ZONE</span>
+	<div class="events__text"><p>Ну что друзья, вы готовы к очередной невероятной движухе? Тогда поехали!</p><p>23 декабря, в 12:00, пройдет заключительное и абсолютно уникальное событие уходящего года, грандиозный, зимний чемпионат по воркауту «FSC CHAMP», в рамках которого пройдут соревнования в номинации «БАТЛЫ 1Х1»!</p><p>Сильнейшие атлеты России соберутся на одной площадке, в самом центре одного из крупнейших ТРК Краснодара, чтобы сразиться за титул чемпиона года! В этот раз, кульминацией и изюминкой мероприятия станет гость и атлет с мировой известностью – Daniels Laizans (Рига, Латвия)!</p><p>Захватывающая битва, невероятная атмосфера и завораживающее шоу, все это ждет вас 23 декабря, в 12:00, в ТРК СБС Мегамолл!</p><p>Также, в предверии чемпионата, 22 декабря, состоится семинар, воркшоп и общая тренировка совместно с чемпионом мира 2017г. Приходи, приезжай и прилетай где бы ты не был!</p></div>
+</div><div class="events__holder">
+	<div class="events__info">
+		<span class="events__info-date">16:15, 23 марта 2018</span>
+		<span class="events__info-title">«FSC CHAMP»</span>
+		<span class="events__info-desc">23 декабря 2017 года – Зимний международный чемпионат по воркауту!</span>
+	</div>
+	<div class="events__image">
+		<img src="pic/developments/developments-1.png" alt="img">
+	</div>
+	<span class="events__partners">Спонсоры мероприятия: КубаньФинанс, СБС-мегамолл, журнал «Красота & Спорт», FLY ZONE</span>
+	<div class="events__text"><p>Ну что друзья, вы готовы к очередной невероятной движухе? Тогда поехали!</p><p>23 декабря, в 12:00, пройдет заключительное и абсолютно уникальное событие уходящего года, грандиозный, зимний чемпионат по воркауту «FSC CHAMP», в рамках которого пройдут соревнования в номинации «БАТЛЫ 1Х1»!</p><p>Сильнейшие атлеты России соберутся на одной площадке, в самом центре одного из крупнейших ТРК Краснодара, чтобы сразиться за титул чемпиона года! В этот раз, кульминацией и изюминкой мероприятия станет гость и атлет с мировой известностью – Daniels Laizans (Рига, Латвия)!</p><p>Захватывающая битва, невероятная атмосфера и завораживающее шоу, все это ждет вас 23 декабря, в 12:00, в ТРК СБС Мегамолл!</p><p>Также, в предверии чемпионата, 22 декабря, состоится семинар, воркшоп и общая тренировка совместно с чемпионом мира 2017г. Приходи, приезжай и прилетай где бы ты не был!</p></div>
+</div>
+		</div>
+	</div>
+</div>
+    	
+    	<div class="documents" id="documents">
+	<div class="container">
+		<div class="documents__holder">
+			<span class="documents__title">Документы</span>
+			<div class="documents__inner">
+				
+	<div class="documents__item-wrap">
+		<div class="documents__item">
+			<div class="documents__icon">
+				<img src="pic/logo/document.png" alt="document-img">
+			</div>
+			<a href="#" class="documents__link">
+				Важный документ 1
+			</a>
+		</div>
+	</div>
+
+	<div class="documents__item-wrap">
+		<div class="documents__item">
+			<div class="documents__icon">
+				<img src="pic/logo/document.png" alt="document-img">
+			</div>
+			<a href="#" class="documents__link">
+				Важный документ 2
+			</a>
+		</div>
+	</div>
+
+	<div class="documents__item-wrap">
+		<div class="documents__item">
+			<div class="documents__icon">
+				<img src="pic/logo/document.png" alt="document-img">
+			</div>
+			<a href="#" class="documents__link">
+				Важный документ 3
+			</a>
+		</div>
+	</div>
+
+	<div class="documents__item-wrap">
+		<div class="documents__item">
+			<div class="documents__icon">
+				<img src="pic/logo/document.png" alt="document-img">
+			</div>
+			<a href="#" class="documents__link">
+				Важный документ 4
+			</a>
+		</div>
+	</div>
+
+	<div class="documents__item-wrap">
+		<div class="documents__item">
+			<div class="documents__icon">
+				<img src="pic/logo/document.png" alt="document-img">
+			</div>
+			<a href="#" class="documents__link">
+				Важный документ 5
+			</a>
+		</div>
+	</div>
+
+	<div class="documents__item-wrap">
+		<div class="documents__item">
+			<div class="documents__icon">
+				<img src="pic/logo/document.png" alt="document-img">
+			</div>
+			<a href="#" class="documents__link">
+				Важный документ 6
+			</a>
+		</div>
+	</div>
+
+	<div class="documents__item-wrap">
+		<div class="documents__item">
+			<div class="documents__icon">
+				<img src="pic/logo/document.png" alt="document-img">
+			</div>
+			<a href="#" class="documents__link">
+				Важный документ 7
+			</a>
+		</div>
+	</div>
+
+	<div class="documents__item-wrap">
+		<div class="documents__item">
+			<div class="documents__icon">
+				<img src="pic/logo/document.png" alt="document-img">
+			</div>
+			<a href="#" class="documents__link">
+				Важный документ 8
+			</a>
+		</div>
+	</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+    		
+    	<div class="contacts" id="contacts">
+	<div class="container">
+		<div class="contacts__holder">
+			<span class="contacts__title">Контакты</span>
+			<div class="contacts__text">
+				<p>
+					Если у вас есть предложения или вопросы, вы можете связаться с нами любым из предложенных способов,мы будем рады сотрудничеству и ответим на все интересующие вас вопросы.
+				</p>
+			</div>
+			<div class="contacts__info">
+				<span class="contacts__address">
+					<span class="contacts__icon">
+						<svg class="icon-marker">
+			  				<use xlink:href="#marker"/>
+		  				</svg>			
+					</span>
+					<span class="contacts__address-txt">350075, Российская Федерация, Краснодарский край, г. Краснодар, ул. Стасова, 174/1</span>
+				</span>
+				<div class="contacts__info-inner">
+					<div class="contacts__info-wrap">
+					<div class="contacts__item">
+						<span class="contacts__icon">
+							<svg class="icon-tel">
+			  					<use xlink:href="#tel"/>
+		  					</svg>			
+						</span>
+						<a href="tel:88003332920" class="contacts__link">
+							8-800-333-29-20
+						</a>,
+						<a href="tel:89181240044" class="contacts__link">
+							8-918-124-00-44
+						</a>
+					</div>
+					<div class="contacts__item">
+						<a href="mailto:workoutkrd@gmail.com" class="contacts__link">
+							<span class="contacts__icon">
+								<svg class="icon-mail">
+			  						<use xlink:href="#mail"/>
+		  						</svg>			
+							</span>
+							workoutkrd@gmail.com
+						</a>
+					</div>
+				</div>
+				<div class="contacts__info-wrap">
+					<div class="contacts__item">
+						<a href="https://vk.com/workout_krd" target="blank" class="contacts__link">
+							<span class="contacts__icon">
+								<svg class="icon-vk">
+			  						<use xlink:href="#vk"/>
+		  						</svg>			
+							</span>
+							vk.com/workout_krd
+						</a>
+					</div>
+					<div class="contacts__item">
+						<a href="https://www.instagram.com/fsc_team/" target="blank" class="contacts__link">
+							<span class="contacts__icon">
+								<svg class="icon-instagram">
+			  						<use xlink:href="#instagram"/>
+		  						</svg>			
+							</span>
+							www.instagram.com/fsc_team
+						</a>
+					</div>
+					<div class="contacts__item contacts__item--mobile">
+						<a href="#" class="contacts__link">
+							<span class="contacts__icon">
+								<svg class="icon-notes">
+			  						<use xlink:href="#notes"/>
+		  						</svg>			
+							</span>
+							Реквизиты организации
+						</a>
+					</div>
+				</div>
+				</div>
+				<div class="contacts__desc">
+					<div class="contacts__item contacts__item--mod">
+						<a href="#" class="contacts__link">
+							<span class="contacts__icon contacts__icon--mod">
+								<svg class="icon-message">
+			  						<use xlink:href="#message"/>
+		  						</svg>			
+							</span>
+							Написать нам через форму обратной связи
+						</a>
+					</div>
+					<div class="contacts__item contacts__item--mod">
+						<a href="#" class="contacts__link">
+							<span class="contacts__icon">
+								<svg class="icon-notes">
+			  						<use xlink:href="#notes"/>
+		  						</svg>			
+							</span>
+							Реквизиты организации
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="contacts__map" id="map"></div>
+		</div>
+	</div>
+</div>
+    		
+    	<div class="partners" id="partners">
+	<div class="container">
+		<span class="partners__title">
+			СПОНСОРЫ И ПАРТНЕРЫ:
+		</span>
+		<div class="partners__inner">
+			<div class="partners__item">
+				<a href="#"><img src="pic/partners/partners-1.png" alt="partners-img"></a>
+			</div>
+			<div class="partners__item">
+				<a href="#"><img src="pic/partners/partners-2.png" alt="partners-img"></a>
+			</div>
+			<div class="partners__item">
+				<a href="#"><img src="pic/partners/partners-3.png" alt="partners-img"></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+    </div>
+
+  <footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__inner">
+			<div class="footer__inner-left">
+			<div class="footer__logo">
+					<a href="#">
+						<img src="pic/logo/logo-black.png" alt="logo">
+					</a>
+			</div>
+			<div class="footer__text">
+				<span class="footer__desc">
+					Региональная физкультурно-спортивная общественная организация
+				</span>
+				<span class="footer__title">
+					«Краснодарская краевая федерация воркаута»
+				</span>
+				<span class="footer__copyright">
+					При использовании материалов сайта ссылка на источник с указанием автора обязательна.
+				</span>
+			</div>
+			</div>
+			<div class="footer__contacts">
+				<span class="footer__tel">
+					<a href="tel:88003332920">8-800-333-29-20</a>
+				</span>
+				<span class="footer__tel">
+					<a href="tel:89181240044">8-918-124-00-44</a>
+				</span>
+				<div class="footer__mail">
+					<a href="mailto:info@workoutkrd.ru">info@workoutkrd.ru</a>
+				</div>
+				<div class="footer__social">
+					<a href="https://www.instagram.com/fsc_team/" target="blank" class="footer__social-icon">
+						<svg class="icon-instagram">
+		  				  <use xlink:href="#instagram"/>
+		  				</svg>
+					</a>
+					<a href="https://vk.com/workout_krd" target="blank" class="footer__social-icon">
+						<svg class="icon-vk">
+		  				  <use xlink:href="#vk"/>
+		  				</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="footer__inner-mob">
+			<div class="footer__mob-contacts">
+				<div class="footer__mob-tel">
+					<a href="tel:88003332920">8-800-333-29-20</a>
+				</div>
+				<div class="footer__mob-mail">
+					<a href="mailto:workoutkrd@gmail.com">workoutkrd@gmail.com</a>
+				</div>
+			</div>
+			<span class="footer__mob-copy">
+				При использовании материалов сайта ссылка на источник с указанием автора обязательна.
+			</span>
+		</div>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+
+

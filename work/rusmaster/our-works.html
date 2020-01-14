@@ -1,0 +1,1109 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@@title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class="">
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+
+	<div class="wrapper">
+
+		<header class="header ">
+	<div class="container">
+		<div class="header__wrapp">
+			<div class="header__logo">
+				<a href="#" class="header__logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="header__logo-mob">
+				<a href="#" class="header__logo-mob-link">
+					<svg class="icon-logo-mob">
+						<use xlink:href="#logo-mob"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="header__contact">
+				<div class="header__contact-callback">
+					<span class="btn-border">
+						<a data-fancybox data-src="#popup-callback" class="btn">Обратный звонок</a>
+					</span>
+				</div>
+				<div class="header__contact-time">
+					<span class="header__contact-icon">
+						<svg class="icon-clock">
+							<use xlink:href="#clock"></use>
+						</svg>
+					</span>
+					<div class="header__contact-descr">
+						<span class="header__contact-text">Работаем для вас</span>
+						<span class="header__contact-time-work">с 9:00 до 21:00</span>
+					</div>
+				</div>
+				<div class="header__contact-email">
+					<span class="header__contact-icon">
+						<svg class="icon-email">
+							<use xlink:href="#email"></use>
+						</svg>
+					</span>
+					<div class="header__contact-descr">
+						<span class="header__contact-text">E-mail</span>
+						<span class="header__contact-link-wrapp">
+							<a href="mailto:sales@rusmaster.spb.ru" class="header__contact-link">sales@rusmaster.spb.ru</a>
+						</span>
+					</div>
+				</div>
+				<div class="header__contact-phone">
+					<a href="tel:+78126423828" class="header__contact-phone-link">
+						<span class="header__contact-phone-small">+7 (812)</span>
+						<span class="header__contact-phone-big">642-38-28</span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		
+			<nav class="header__nav js-width js-wrapp-nav">
+				<div class="header__btn-open js-btn-open">
+					<div class="header__btn-open-wrapp">
+						<span class="header__btn-open-line"></span>
+						<span class="header__btn-open-line"></span>
+						<span class="header__btn-open-line"></span>
+					</div>
+					<span class="header__btn-open-text">Меню</span>
+				</div>
+				<ul class="header__list js-menu-open">
+					<div class="header__btn-close js-menu-close"></div>
+					<li class="header__item active-page">
+						<a class="header__link header__link--more js-more-big">Ремонт квартир</a>
+						<div class="header__submenu-wrapp js-submenu">
+							<div class="header__back-menu">
+								<a class="header__back-text italic js-back">Ремонт квартир</a>
+							</div>
+							<div class="header__submenu">
+								<div class="header__submenu-col">
+									<div class="header__submenu-inner">
+										<h6 class="header__submenu-title">Тип квартиры</h6>
+										<ul class="header__submenu-list">
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Студия</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Однокомнатная</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Двухкомнатная</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Трехкомнатная</a>
+											</li>
+										</ul>
+									</div>
+									<div class="header__submenu-inner">
+										<h6 class="header__submenu-title">Тип дома</h6>
+										<ul class="header__submenu-list">
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Новостройка</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Старый фонд</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="header__submenu-col">
+									<div class="header__submenu-inner">
+										<h6 class="header__submenu-title">Тип ремонта</h6>
+										<ul class="header__submenu-list">
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Косметический</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Капитальный</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Элитный</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Эконом</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Комфорт</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Евро</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Дизайнерский</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Комплексный</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="header__submenu-col">
+									<div class="header__submenu-inner">
+										<h6 class="header__submenu-title">Тип помещения</h6>
+										<ul class="header__submenu-list">
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Комната</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Кухня</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Прихожая</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Санузел совмещенный</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Ванна</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Туалет</a>
+											</li>
+										</ul>
+									</div>
+									<div class="header__submenu-inner">
+										<h6 class="header__submenu-title">Ремонт коттеджей</h6>
+									</div>
+								</div>
+								<div class="header__submenu-col">
+									<div class="header__submenu-inner">
+										<h6 class="header__submenu-title">Другое</h6>
+										<ul class="header__submenu-list">
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Для иногородних</a>
+											</li>
+											<li class="header__submenu-item">
+												<a href="#" class="header__submenu-link">Под сдачу</a>
+											</li>
+										</ul>
+									</div>
+									<div class="header__submenu-btn-wrapp">
+										<span class="btn-plus">
+											<a href="#" class="btn">Калькулятор</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">Приемка квартир</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">Дизайн интерьера</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link header__link--more js-more-small">Для бизнеса</a>
+						<div class="header__submenu-small js-submenu-small">
+							<div class="header__back-menu">
+								<a class="header__back-text italic js-back">Для бизнеса</a>
+							</div>
+							<ul class="header__submenu-small-list">
+								<li class="header__submenu-small-item">
+									<a href="#" class="header__submenu-small-link">Офис</a>
+								</li>
+								<li class="header__submenu-small-item">
+									<a href="#" class="header__submenu-small-link">Коммерческое помещений</a>
+								</li>
+								<li class="header__submenu-small-item">
+									<a href="#" class="header__submenu-small-link">Кафе/Ресторан/бар</a>
+								</li>
+								<li class="header__submenu-small-item">
+									<a href="#" class="header__submenu-small-link">Магазин</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">Цены</a>
+					</li>
+					<li class="header__item">
+						<a href="#" class="header__link">Контакты</a>
+					</li>
+				</ul>
+			</nav>
+		
+	</div>
+</header>
+
+
+    <div class="breadcrumbs ">
+	<div class="container">
+		<ul class="breadcrumbs__wrapp">
+			
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link">Главная</a>
+				</li>
+			
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link">Ремонт квартир</a>
+				</li>
+			
+		</ul>
+		<h1 class="breadcrumbs__caption">Наши работы</h1>
+		
+	</div>
+</div>
+
+    <div class="our-works our-works--examples">
+  <div class="container">
+
+    <div class="our-works__sidebar">
+
+      <div class="our-works__top">
+        <span class="our-works__caption" style="background-image: url(pic/decor/decor-big.png);">Виды работ:</span>
+      </div>
+
+      <div class="our-works__sidebar-inner js-our-wrap">
+
+        <span class="our-works__select js-our-select">
+          <span class="our-works__select-txt js-auto-cut">Эконом</span>
+        </span>
+
+        <ul class="our-works__list our-works__list--nav line js-out-list">
+          <li class="our-works__item">
+            <a href="#" class="our-works__link">Все</a>
+          </li>
+          <li class="our-works__item">
+            <a href="#" class="our-works__link">Косметический</a>
+          </li>
+          <li class="our-works__item active">
+            <a href="#" class="our-works__link">Эконом</a>
+          </li>
+          <li class="our-works__item">
+            <a href="#" class="our-works__link">Евроремонт</a>
+          </li>
+          <li class="our-works__item">
+            <a href="#" class="our-works__link">Капитальный</a>
+          </li>
+          <li class="our-works__item">
+            <a href="#" class="our-works__link">Дизайнерский</a>
+          </li>
+          <li class="our-works__item">
+            <a href="#" class="our-works__link">Коттеджи</a>
+          </li>
+          <li class="our-works__item">
+            <a href="#" class="our-works__link">Коммерческие помещения</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="our-works__content">
+      <div class="our-works__row">
+         <div class="our-works__col">
+
+          <div class="our-works__header">
+            <a href="" class="our-works__inner" style="background-image: url(pic/our-works/our-works-11.jpg);">
+              <span class="our-works__hover">
+                <span class="our-works__hover-desc">Класс ремонта: Эконом</span>
+                <span class="our-works__hover-desc">Время ремонта: 1,5 мес.</span>
+                <span class="our-works__hover-desc">Состояние квартиры: Голые стены, электрика.</span>
+                <span class="our-works__hover-desc">Стоимость работ: 148 430 руб.</span>
+                <span class="our-works__hover-desc">Стоимость черновых материалов: 76 335 руб.</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="our-works__body">
+            <div class="our-works__subject">
+              <a href="#" class="our-works__subject-link">Бутлерова д.9</a>
+            </div>
+            <span class="our-works__area">
+              <span class="our-works__area-icon">S</span>
+            <span class="our-works__area-txt">36 кв.м.</span>
+            </span>
+            <div class="our-works__desc our-works__desc--tablet">
+              <span class="our-works__desc-item">Класс ремонта: Эконом</span>
+              <span class="our-works__desc-item">Время ремонта: 1,5 мес.</span>
+              <span class="our-works__desc-item">Состояние квартиры: Голые стены, электрика.</span>
+              <span class="our-works__desc-item">Стоимость работ: 148 430 руб.</span>
+              <span class="our-works__desc-item">Стоимость черновых материалов: 76 335 руб.</span>
+            </div>
+          </div>
+
+      </div>
+       <div class="our-works__col">
+
+          <div class="our-works__header">
+            <a href="" class="our-works__inner" style="background-image: url(pic/our-works/our-works-12.jpg);">
+              <span class="our-works__hover">
+                <span class="our-works__hover-desc">Класс ремонта: Эконом</span>
+                <span class="our-works__hover-desc">Время ремонта: 1,5 мес.</span>
+                <span class="our-works__hover-desc">Состояние квартиры: Голые стены, электрика.</span>
+                <span class="our-works__hover-desc">Стоимость работ: 148 430 руб.</span>
+                <span class="our-works__hover-desc">Стоимость черновых материалов: 76 335 руб.</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="our-works__body">
+            <div class="our-works__subject">
+              <a href="#" class="our-works__subject-link">Ремонт квартира на ул. Данини</a>
+            </div>
+            <span class="our-works__area">
+              <span class="our-works__area-icon">S</span>
+            <span class="our-works__area-txt">38 кв.м.</span>
+            </span>
+            <div class="our-works__desc our-works__desc--tablet">
+              <span class="our-works__desc-item">Класс ремонта: Эконом</span>
+              <span class="our-works__desc-item">Время ремонта: 1,5 мес.</span>
+              <span class="our-works__desc-item">Состояние квартиры: Голые стены, электрика.</span>
+              <span class="our-works__desc-item">Стоимость работ: 148 430 руб.</span>
+              <span class="our-works__desc-item">Стоимость черновых материалов: 76 335 руб.</span>
+            </div>
+          </div>
+
+      </div>
+       <div class="our-works__col">
+
+          <div class="our-works__header">
+            <a href="" class="our-works__inner" style="background-image: url(pic/our-works/our-works-13.jpg);">
+              <span class="our-works__hover">
+                <span class="our-works__hover-desc">Класс ремонта: Эконом</span>
+                <span class="our-works__hover-desc">Время ремонта: 1,5 мес.</span>
+                <span class="our-works__hover-desc">Состояние квартиры: Голые стены, электрика.</span>
+                <span class="our-works__hover-desc">Стоимость работ: 148 430 руб.</span>
+                <span class="our-works__hover-desc">Стоимость черновых материалов: 76 335 руб.</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="our-works__body">
+            <div class="our-works__subject">
+              <a href="#" class="our-works__subject-link">Ремонт двухкомнатной квартиры</a>
+            </div>
+            <span class="our-works__area">
+              <span class="our-works__area-icon">S</span>
+            <span class="our-works__area-txt">58 кв.м.</span>
+            </span>
+            <div class="our-works__desc our-works__desc--tablet">
+              <span class="our-works__desc-item">Класс ремонта: Эконом</span>
+              <span class="our-works__desc-item">Время ремонта: 1,5 мес.</span>
+              <span class="our-works__desc-item">Состояние квартиры: Голые стены, электрика.</span>
+              <span class="our-works__desc-item">Стоимость работ: 148 430 руб.</span>
+              <span class="our-works__desc-item">Стоимость черновых материалов: 76 335 руб.</span>
+            </div>
+          </div>
+
+      </div>
+       <div class="our-works__col">
+
+          <div class="our-works__header">
+            <a href="" class="our-works__inner" style="background-image: url(pic/our-works/our-works-14.jpg);">
+              <span class="our-works__hover">
+                <span class="our-works__hover-desc">Класс ремонта: Эконом</span>
+                <span class="our-works__hover-desc">Время ремонта: 1,5 мес.</span>
+                <span class="our-works__hover-desc">Состояние квартиры: Голые стены, электрика.</span>
+                <span class="our-works__hover-desc">Стоимость работ: 148 430 руб.</span>
+                <span class="our-works__hover-desc">Стоимость черновых материалов: 76 335 руб.</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="our-works__body">
+            <div class="our-works__subject">
+              <a href="#" class="our-works__subject-link">Пулковское шоссе</a>
+            </div>
+            <span class="our-works__area">
+              <span class="our-works__area-icon">S</span>
+            <span class="our-works__area-txt">34 кв.м.</span>
+            </span>
+            <div class="our-works__desc our-works__desc--tablet">
+              <span class="our-works__desc-item">Класс ремонта: Эконом</span>
+              <span class="our-works__desc-item">Время ремонта: 1,5 мес.</span>
+              <span class="our-works__desc-item">Состояние квартиры: Голые стены, электрика.</span>
+              <span class="our-works__desc-item">Стоимость работ: 148 430 руб.</span>
+              <span class="our-works__desc-item">Стоимость черновых материалов: 76 335 руб.</span>
+            </div>
+          </div>
+
+      </div>
+       <div class="our-works__col">
+
+          <div class="our-works__header">
+            <a href="" class="our-works__inner" style="background-image: url(pic/our-works/our-works-15.jpg);">
+              <span class="our-works__hover">
+                <span class="our-works__hover-desc">Класс ремонта: Эконом</span>
+                <span class="our-works__hover-desc">Время ремонта: 1,5 мес.</span>
+                <span class="our-works__hover-desc">Состояние квартиры: Голые стены, электрика.</span>
+                <span class="our-works__hover-desc">Стоимость работ: 148 430 руб.</span>
+                <span class="our-works__hover-desc">Стоимость черновых материалов: 76 335 руб.</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="our-works__body">
+            <div class="our-works__subject">
+              <a href="#" class="our-works__subject-link">ЖК 'Каменка'</a>
+            </div>
+            <span class="our-works__area">
+              <span class="our-works__area-icon">S</span>
+            <span class="our-works__area-txt">35 кв.м.</span>
+            </span>
+            <div class="our-works__desc our-works__desc--tablet">
+              <span class="our-works__desc-item">Класс ремонта: Эконом</span>
+              <span class="our-works__desc-item">Время ремонта: 1,5 мес.</span>
+              <span class="our-works__desc-item">Состояние квартиры: Голые стены, электрика.</span>
+              <span class="our-works__desc-item">Стоимость работ: 148 430 руб.</span>
+              <span class="our-works__desc-item">Стоимость черновых материалов: 76 335 руб.</span>
+            </div>
+          </div>
+
+      </div>
+       <div class="our-works__col">
+
+          <div class="our-works__header">
+            <a href="" class="our-works__inner" style="background-image: url(pic/our-works/our-works-16.jpg);">
+              <span class="our-works__hover">
+                <span class="our-works__hover-desc">Класс ремонта: Эконом</span>
+                <span class="our-works__hover-desc">Время ремонта: 1,5 мес.</span>
+                <span class="our-works__hover-desc">Состояние квартиры: Голые стены, электрика.</span>
+                <span class="our-works__hover-desc">Стоимость работ: 148 430 руб.</span>
+                <span class="our-works__hover-desc">Стоимость черновых материалов: 76 335 руб.</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="our-works__body">
+            <div class="our-works__subject">
+              <a href="#" class="our-works__subject-link">Оранжерейная ул.</a>
+            </div>
+            <span class="our-works__area">
+              <span class="our-works__area-icon">S</span>
+            <span class="our-works__area-txt">76 кв.м.</span>
+            </span>
+            <div class="our-works__desc our-works__desc--tablet">
+              <span class="our-works__desc-item">Класс ремонта: Эконом</span>
+              <span class="our-works__desc-item">Время ремонта: 1,5 мес.</span>
+              <span class="our-works__desc-item">Состояние квартиры: Голые стены, электрика.</span>
+              <span class="our-works__desc-item">Стоимость работ: 148 430 руб.</span>
+              <span class="our-works__desc-item">Стоимость черновых материалов: 76 335 руб.</span>
+            </div>
+          </div>
+
+      </div>
+      
+    </div>
+
+    <div class="our-works__pagination">
+      <div class="page-list">
+        <div class="page-list__item page-list__item--txt">
+          <a href="#" class="page-list__link">пред.</a>
+        </div>
+        <div class="page-list__item">
+          <a href="#" class="page-list__link">1</a>
+        </div>
+        <div class="page-list__item active">
+          <a href="#" class="page-list__link">2</a>
+        </div>
+        <div class="page-list__item">
+          <a href="#" class="page-list__link">3</a>
+        </div>
+        <div class="page-list__item page-list__item--last">
+          <a href="#" class="page-list__link">11</a>
+        </div>
+        <div class="page-list__item page-list__item--txt">
+          <a href="#" class="page-list__link">след.</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="our-works__bottom">
+      <div class="static-content">
+        <h2>Фото косметического ремонта</h2>
+        <p>Ремонтная компания «РМ-Ремонт» славится своей надежностью, более 11 лет предоставляя горожанам квалифицированные ремонтные услуги. Благодаря долгосрочной совместной деятельности с множеством строительных гипермаркетов нам доступна оптовая закупка
+          ремонтно-отделочных материалов по выгодным ценам.</p>
+        <p>Ввиду внушительных объемов закупок мы предоставляем привлекательные скидки на товар. К тому же, наша репутация ответственной и серьезной компании помогла нам обрести партнерство на особых условиях с официальными дилерами крупнейших производителей.
+          Как результат – став клиентом «РМ-Ремонт»</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+
+    <div class="map " id="map">
+	<div class="container">
+		<div class="map__holder">
+				<div class="map__info">
+					<div class="map__info-holder">
+						<div class="map__info-inner">
+							<a href="tel:+78126423828" class="map__info-phone">
+								+7 (812) 642-38-28
+							</a>
+							<span class="map__info-address">
+								198035, г. Санкт-Петербург, ул. Двинская, д.3, лит.А БЦ “Бригантина”
+							</span>
+							<a href="mailto:sales@rusmaster.spb.ru" class="map__info-mail">
+								sales@rusmaster.spb.ru
+							</a>
+
+							<div class="map__info-bottom">
+								<a href="#" class="map__info-mail">Контакты</a>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+
+    <div class="choice-services">
+  <div class="container">
+    <div class="choice-services__wrap js-tabs-wrap">
+
+      <div class="choice-services__holder choice-services__holder--nav">
+        <ul class="choice-services__nav-list">
+          <li class="choice-services__nav-item js-tab active">
+            <span class="choice-services__nav-link">Ремонт квартир</span>
+          </li>
+          <li class="choice-services__nav-item js-tab">
+            <span class="choice-services__nav-link">Приемка квартир</span>
+          </li>
+          <li class="choice-services__nav-item js-tab">
+            <span class="choice-services__nav-link">Дизайн интерьера</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="choice-services__holder choice-services__holder--content">
+        <div class="choice-services__content-row js-tab-content active">
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Тип квартиры</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Студия</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Однокомнатная</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Двухкомнатная</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Трехкомнатная</a>
+              </li>
+            </ul>
+
+            <span class="choice-services__content-title">Тип дома</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Новостройка</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Старый фонд</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Тип ремонта</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Косметический</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Капитальный</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Элитный</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Эконом</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комфорт</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Евро</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Дизайнерский</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комплексный</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+            <span class="choice-services__content-title">Тип помещения</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комната</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Кухня</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Прихожая</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Санузел совмещенный</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Ванная комната</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Туалет</a>
+              </li>
+            </ul>
+
+            <a href="#" class="choice-services__content-link choice-services__content-link--cottage">Ремонт коттеджей</a>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Другое</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Для иногородних</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Под сдачу</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">По дизайн проекту</a>
+              </li>
+            </ul>
+
+            <span class="choice-services__content-title">Для бизнеса</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Офис</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Коммерческое помещений</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Кафе/Ресторан/бар</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Магазин</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">О компании</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Отзывы</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Акции</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Сметы</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Объекты в работе</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Галерея работ</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Советы по ремонту</a>
+              </li>
+            </ul>
+
+            <a href="#" class="choice-services__content-link choice-services__content-link--prices" style="background-image: url(pic/bg/bg-decor-prices.png);">Цены</a>
+
+          </div>
+        </div>
+
+        <div class="choice-services__content-row js-tab-content">
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Тип квартиры</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Студия</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Однокомнатная</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Двухкомнатная</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Трехкомнатная</a>
+              </li>
+            </ul>
+
+            <span class="choice-services__content-title">Тип дома</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Новостройка</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Старый фонд</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Тип ремонта</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Косметический</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Капитальный</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комфорт</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Евро</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Дизайнерский</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комплексный</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+            <span class="choice-services__content-title">Тип помещения</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комната</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Кухня</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Прихожая</a>
+              </li>
+            </ul>
+
+            <a href="#" class="choice-services__content-link choice-services__content-link--cottage">Ремонт коттеджей</a>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Другое</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Для иногородних</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Под сдачу</a>
+              </li>
+            </ul>
+
+            <span class="choice-services__content-title">Для бизнеса</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Офис</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Коммерческое помещений</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Кафе/Ресторан/бар</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Магазин</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">О компании</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Отзывы</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Акции</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Сметы</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Объекты в работе</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Галерея работ</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Советы по ремонту</a>
+              </li>
+            </ul>
+
+            <a href="#" class="choice-services__content-link choice-services__content-link--prices" style="background-image: url(pic/bg/bg-decor-prices.png);">Цены</a>
+
+          </div>
+        </div>
+
+        <div class="choice-services__content-row js-tab-content">
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Тип квартиры</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Студия</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Однокомнатная</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Двухкомнатная</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Трехкомнатная</a>
+              </li>
+            </ul>
+
+            <span class="choice-services__content-title">Тип дома</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Новостройка</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Старый фонд</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Тип ремонта</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Косметический</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Капитальный</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Элитный</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Эконом</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комфорт</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Евро</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Дизайнерский</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комплексный</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+            <span class="choice-services__content-title">Тип помещения</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Комната</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Кухня</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Прихожая</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Санузел совмещенный</a>
+              </li>
+            </ul>
+
+            <a href="#" class="choice-services__content-link choice-services__content-link--cottage">Ремонт коттеджей</a>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">Другое</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Для иногородних</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Под сдачу</a>
+              </li>
+            </ul>
+
+            <span class="choice-services__content-title">Для бизнеса</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Офис</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Коммерческое помещений</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="choice-services__content-col">
+
+            <span class="choice-services__content-title">О компании</span>
+            <ul class="choice-services__content-list">
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Отзывы</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Акции</a>
+              </li>
+              <li class="choice-services__content-item">
+                <a href="#" class="choice-services__content-link">Сметы</a>
+              </li>
+            </ul>
+
+            <a href="#" class="choice-services__content-link choice-services__content-link--prices" style="background-image: url(pic/bg/bg-decor-prices.png);">Цены</a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+	</div>
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer__row">
+			<div class="footer__col footer__col--copyright">
+				<span class="footer__txt">ООО «РМ-Ремонт» - ремонт квартир в Санкт-Петербурге</span>
+			</div>
+			<div class="footer__col footer__col--small">
+				<div class="footer__inner">
+					<a href="tel: +78126423828" class="footer__contacts-link footer__contacts-link--phone">+7 (812) 642-38-28</a>
+				</div>
+				<div class="footer__inner">
+					<a href="mailto: sales@rusmaster.spb.ru" class="footer__contacts-link footer__contacts-link--email">sales@rusmaster.spb.ru</a>
+				</div>
+			</div>
+			<div class="footer__col">
+				<span class="footer__txt">198035, г. Санкт-Петербург, ул. Двинская, д.3, лит.А БЦ “Бригантина”</span>
+			</div>
+			<div class="footer__col footer__col--large">
+				<div class="footer__social">
+					<ul class="footer__social-list">
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<span class="footer__social-inner">
+									<svg class="icon-vk">
+									  <use xlink:href="#vk"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<span class="footer__social-inner">
+									<svg class="icon-facebook">
+									  <use xlink:href="#facebook"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<span class="footer__social-inner">
+									<svg class="icon-twitter">
+									  <use xlink:href="#twitter"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<span class="footer__social-inner">
+									<svg class="icon-youtube">
+									  <use xlink:href="#youtube"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="footer__social-item">
+							<a href="#" class="footer__social-link">
+								<span class="footer__social-inner">
+									<svg class="icon-social-l">
+									  <use xlink:href="#social-l"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div style="display: none;" id="popup-callback">
+	<div class="popup popup--callback">
+    <h2 class="popup__title">Обратный звонок</h2>
+    <div class="popup__body">
+      <form action="" class="popup__form">
+        <div class="popup__form-row">
+          <input type="text" class="popup__form-input" placeholder="Контактное лицо *">
+        </div>
+        <div class="popup__form-row popup__form-row--phone">
+          <input type="tel" class="popup__form-input" placeholder="Телефон *">
+        </div>
+        <div class="popup__form-row">
+          <button type="submit" name="button">Отправить заявку</button>
+        </div>
+        <div class="popup__form-row">
+          <span class="popup__form-txt">Нажимая кнопку «Отправить заявку», я даю свое <a href="#" class="popup__form-link">Согласие</a> на обработку персональных данных</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

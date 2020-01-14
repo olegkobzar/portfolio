@@ -1,0 +1,1635 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Country</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+  <header class="header">
+	<div class="container">
+		<div class="header__wrapp">
+			<div class="header__left">
+				<a href="#" class="header__logo">
+					<span class="header__logo-img">
+						<img src="pic/logo/logo.png" alt="logo">
+					</span>
+					<span class="header__logo-text">Unicket</span>
+				</a>
+				<div class="header__service">
+					<span class="header__service-text">
+						Авиабилеты
+					</span>
+					<span class="header__service-icon"></span>
+				</div>
+			</div>
+			<div class="header__right">
+
+				<div class="header__inner header__inner--subscribe">
+					<a data-fancybox data-src="#popup" href="javascript:;" class="header__inner--subscribe-link">
+						<span class="header__inner--subscribe-icon"></span>
+						<span class="header__inner--subscribe-text">
+							Подписаться
+						</span>
+					</a>
+					<div class="popup" id="popup">
+	<span class="popup__caption">
+		Оформление подписки
+	</span>
+	<div class="popup__bott">
+		<div class="popup__left">
+			<img src="pic/article/art-2.png" alt="mail">
+		</div>
+		<div class="popup__right">
+			<p class="popup__descr">
+				Оформите подписку, чтобы регулярно получать новости об изменениях цен на билеты, которые вы ищете.
+			</p>
+			<p class="popup__descr">
+				Для активации и редактирования данных подписки укажите адрес своей электронной почты.
+			</p>
+			<form action="">
+				<div class="popup__form">
+					<div class="popup__wrapp-inp">
+						<input type="email" class="popup__inp" placeholder="Ваш E-mail">
+					</div>
+					<div class="popup__wrapp-btn">
+						<button type="submit" class="btn btn--popup">Подписаться</button>
+					</div>
+				</div>
+			</form>
+			<span class="popup__descr--link">
+				Нажимая «Подписаться», вы соглашаетесь с правилами <a href="#" class="popup__link">использования сервиса</a> и <a href="#" class="popup__link">обработки персональных данных.</a>
+			</span>
+		</div>
+	</div>
+</div>
+				</div>
+
+				<div class="header__inner header__inner--lang js-bg-lang">
+					<div class="header__inner-element js-lang-btn">
+						<div class="header__inner--lang-img">
+							<img src="pic/flag/flag-rus.png" alt="">
+						</div>
+						<div class="header__inner--lang-text">
+							<span class="header__inner--lang-name">RU</span>
+							<span>/</span>
+							<span class="header__inner--lang-currency">RUB</span>
+						</div>
+					</div>
+					<div class="header__lang-open js-header-lang">
+						<span class="header__lang-caption">Выберите региональные настройки</span>
+						<form action="">
+							<div class="header__lang-form">
+								<div class="header__lang-wrapp">
+									<span class="header__lang-title">Доставка в</span>
+									<div class="header__lang-select js-delivery-box">
+									    <select name="delivery" id="header-delivery" class="js-delivery">
+									    	<option value="United States" data-class="flag" data-style="background-image: url(pic/flag/usa.png);">United States</option>
+											<option value="Russian Federation" selected data-class="flag" data-style="background-image: url(pic/flag/russia.png);">Russian Federation</option>
+											<option value="Spain" data-class="flag" data-style="background-image: url(pic/flag/spain.png);">Spain</option>
+											<option value="France" data-class="flag" data-style="background-image: url(pic/flag/france.png);">France</option>
+											<option value="United Kingdom" data-class="flag" data-style="background-image: url(pic/flag/uk.png);">United Kingdom</option>
+											<option value="Brazil" data-class="flag" data-style="background-image: url(pic/flag/brazil.png);">Brazil</option>
+											<option value="Israel" data-class="flag" data-style="background-image: url(pic/flag/israel.png);">Israel</option>
+											<option value="Netherlands" data-class="flag" data-style="background-image: url(pic/flag/netherland.png);">Netherlands</option>
+											<option value="Canada" data-class="flag" data-style="background-image: url(pic/flag/canada.png);">Canada</option>
+											<option value="United States" data-class="flag" data-style="background-image: url(pic/flag/usa.png);">United States</option>
+											<option value="Russian Federation" data-class="flag" data-style="background-image: url(pic/flag/russia.png);">Russian Federation</option>
+											<option value="Spain" data-class="flag" data-style="background-image: url(pic/flag/spain.png);">Spain</option>
+											<option value="France" data-class="flag" data-style="background-image: url(pic/flag/france.png);">France</option>
+											<option value="United Kingdom" data-class="flag" data-style="background-image: url(pic/flag/uk.png);">United Kingdom</option>
+											<option value="Brazil" data-class="flag" data-style="background-image: url(pic/flag/brazil.png);">Brazil</option>
+											<option value="Israel" data-class="flag" data-style="background-image: url(pic/flag/israel.png);">Israel</option>
+											<option value="Netherlands" data-class="flag" data-style="background-image: url(pic/flag/netherland.png);">Netherlands</option>
+											<option value="Canada" data-class="flag" data-style="background-image: url(pic/flag/canada.png);">Canada</option>
+									    </select>
+									</div>
+								</div>
+								<div class="header__lang-wrapp">
+									<span class="header__lang-title">Доставка в</span>
+									<div class="header__lang-select">
+										<select name="currency" id="header-currency" class="js-currency">
+											<option value="">USD</option>
+											<option value="">RUB</option>
+											<option value="">GBP</option>
+											<option value="">AUD</option>
+											<option value="">EUR</option>
+											<option value="">USD</option>
+											<option value="">RUB</option>
+											<option value="">GBP</option>
+											<option value="">AUD</option>
+											<option value="">EUR</option>
+										</select>
+									</div>
+								</div>
+								<div class="header__lang-wrapp-btn">
+									<button type="submit" class="btn btn--lang">Сравнить</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="header__inner header__inner--login js-bg-login">
+					<div class="header__inner-element js-login-btn">
+						<span class="header__inner--login-icon"></span>
+						<span class="header__inner--login-text">
+							Войти
+						</span>
+					</div>
+					<div class="header__login-open js-header-login">
+						<span class="header__login-caption">
+							Выполните вход или зарегистрируйтесь
+						</span>
+						<div class="header__login-content">
+							<div class="header__login-left">
+								<span class="header__login-title">Вход через социальные сети</span>
+								<span class="header__login-descr">Это быстро, просто, и мы не будем ничего публиковать, не спросив вас</span>
+								<ul class="header__login-social-list">
+									<li class="header__login-social-item">
+										<a href="#" class="header__login-wrapp">
+											<span class="header__login-icon header__login-icon--facebook"></span>
+											<span class="header__login-text">Вход через Facebook</span>
+										</a>
+									</li>
+									<li class="header__login-social-item">
+										<a href="#" class="header__login-wrapp">
+											<span class="header__login-icon header__login-icon--google"></span>
+											<span class="header__login-text">Вход через Google+</span>
+										</a>
+									</li>
+									<li class="header__login-social-item">
+										<a href="#" class="header__login-wrapp">
+											<span class="header__login-icon header__login-icon--vk"></span>
+											<span class="header__login-text">Войти через ВКонтакте</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="header__login-right">
+								
+								
+								<form action="">
+									<div class="header__login-form">
+										<div class="header__login-wrapp-inp">
+											<input type="email" class="header__login-input" id="login-inp-mail" placeholder="E-mail">
+											<label class="header__login-inp-label header__login-inp-label--mail" for="login-inp-mail"></label>
+										</div>
+										<div class="header__login-wrapp-inp">
+											<input type="password" class="header__login-input" id="login-inp-pass" placeholder="Пароль">
+											<label class="header__login-inp-label header__login-inp-label--pass" for="login-inp-pass"></label>
+										</div>
+										<div class="header__login-group">
+											<div class="header__login-wrapp-checkbox">
+												<input type="checkbox" id="login-pass" class="header__login-inp">
+												<label for="login-pass">Показать пароль</label>
+											</div>
+											<div class="header__login-wrapp-checkbox">
+												<input type="checkbox" id="login-remember" class="header__login-inp" checked>
+												<label for="login-remember">Запомнить меня</label>
+											</div>
+										</div>
+										
+										
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="header__login-bottom">
+							<span class="header__login-bottom-text">
+								Регистрируясь, вы тем самым принимаете <a href="#" class="header__login-link">условия обслуживания</a> и <a href="#" class="header__login-link">политику конфиденциальности</a> Unicket
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="header__inner header__inner--btn js-bg-nav">
+					<div class="header__inner--btn-group js-nav-btn">
+						<span class="header__btn-line"></span>
+						<span class="header__btn-line"></span>
+						<span class="header__btn-line"></span>
+					</div>
+					<nav class="header__nav js-header-nav">
+						<ul class="header__nav-list-top">
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Календарь низких цен
+								</a>
+							</li>
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Карта низких цен
+								</a>
+							</li>
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Спецпредложения
+								</a>
+							</li>
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Топ 100 билетов
+								</a>
+							</li>
+							<li class="header__nav-item-top">
+								<a href="#" class="header__nav-link-top">
+									Горящие авиабилеты
+								</a>
+							</li>
+						</ul>
+						<ul class="header__nav-list-bott">
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Блог
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Помощь
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									О компании
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Вакансии
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Авиакомпании
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Страны
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Города
+								</a>
+							</li>
+							<li class="header__nav-item-bott">
+								<a href="#" class="header__nav-link-bott">
+									Аэропорты
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+    
+    <div class="wrapper">
+    	<div class="cities-selection">
+				<div class="container">
+					<div class="cities-selection__wrapper">
+						<div class="selection-tabs js-tabs-wrap">
+ <div class="selection-tabs__nav">
+  
+    <a href="#" class="selection-tabs__nav-item selection-tabs__nav-item--avia js-tab active">Авиабилеты</a>
+  
+    <a href="#" class="selection-tabs__nav-item selection-tabs__nav-item--train js-tab ">Поезда</a>
+  
+    <a href="#" class="selection-tabs__nav-item selection-tabs__nav-item--bus js-tab ">Автобусы</a>
+  
+    <a href="#" class="selection-tabs__nav-item selection-tabs__nav-item--hotel js-tab ">Отели</a>
+  
+    <a href="#" class="selection-tabs__nav-item selection-tabs__nav-item--avto js-tab ">Авто</a>
+  	
+  </div>
+  
+  <div class="selection-tabs__wrapper">
+   
+      <div class="selection-tabs__content js-tab-content active">
+  
+    <div class="selection-type selection-type--avia">
+
+<!--simple route -->
+<div class="selection-type__tab js-selection-route active">
+   <form>
+     <div class="selection-type__row js-selection-item">
+       
+        <div class="selection-type__item selection-type__item--city">
+          <span class="selection-type__item-title">Город вылета</span>
+          <div class="selection-type__item-box">
+            <input type="text" class="selection-type__item-input selection-type__item-input--button js-selection-first-city js-selection-city-input" value="Краснодар">
+            <span class="selection-type__item-city-code">KRR</span> 
+            <button class="selection-type__item-round js-selection-change-city"></button> 
+          </div>
+        </div>
+
+        <div class="selection-type__item selection-type__item--city">
+          <span class="selection-type__item-title">Город прибытия</span>
+          <div class="selection-type__item-box">
+            <input type="text" class="selection-type__item-input js-selection-second-city js-selection-city-input" value="Санкт-Петербург"> 
+          </div>
+        </div>
+        
+        <div class="selection-type__item selection-type__item--calendar">
+          <div class="selection-type__item-box">
+            <label class="selection-type__item-date" for="first-date-avia"></label>
+            <input type="text" class="selection-type__item-input selection-type__item-input--date js-selection-date-range js-selection-date-first" id="first-date-avia" placeholder="Туда">
+          </div> 
+        </div>
+
+        <div class="selection-type__item selection-type__item--calendar">
+          <div class="selection-type__item-box">
+             <label class="selection-type__item-date" for="second-date-avia"></label>
+              <input type="text" class="selection-type__item-input selection-type__item-input--date js-selection-date-range js-selection-date-second" id="second-date-avia" placeholder="Обратно"> 
+          </div>
+        </div>
+       
+       <div class="selection-type__drop-daterange js-drop-daterange">
+         <div class="js-datepicker"></div>
+         <div class="selection-type__drop-daterange-bottom">
+            <input type="checkbox" name="without-return" id="without-return" value="without-return">
+            <label for="without-return" class="switch">Показать цены в одну сторону</label>
+         </div>
+       </div>
+
+        <div class="selection-type__item selection-type__item--drop js-selection-passengers">
+         <div class="selection-type__item-box">
+          <input type="hidden" class="js-selection-passengers-input" value="1 пасажир, эконом" data-words='{"0":"пассажир","1":"пассажира","2":"пассажиров"}'>
+
+          <div class="selection-type__drop-link js-selection-drop-link">
+            <span class="js-selection-passengers-qty">1 пасажир</span>, <span class="js-selection-passengers-class">эконом</span>
+          </div>
+
+          <div class="selection-type__dropdown js-selection-dropdown">
+
+            <div class="selection-type__dropdown-item">
+              <div class="selection-type__dropdown-cell">Взрослые</div>
+              <div class="selection-type__dropdown-cell">
+                <div class="selection-type__spinner spinner js-spinner" data-min="1" data-max="99" data-init="1">
+                    <a href="#" title="" class="spinner__minus js-spinner-minus"></a>
+                    <input type="text" class="spinner__text js-selection-passengers-people" value="1">
+                    <a href="#" title="" class="spinner__plus js-spinner-plus"></a>
+                </div>  
+              </div>
+            </div>
+
+            <div class="selection-type__dropdown-item">
+              <div class="selection-type__dropdown-cell">Дети до 12 лет</div>
+              <div class="selection-type__dropdown-cell">
+                <div class="selection-type__spinner spinner js-spinner" data-min="0" data-max="99" data-init="0">
+                    <a href="#" title="" class="spinner__minus js-spinner-minus"></a>
+                    <input type="text" class="spinner__text js-selection-passengers-people" value="0">
+                    <a href="#" title="" class="spinner__plus js-spinner-plus"></a>
+                </div>  
+              </div>
+            </div>
+
+            <div class="selection-type__dropdown-item">
+              <div class="selection-type__dropdown-cell">Дети до 2 лет<span class="selection-type__dropdown-cell-note">без места</span></div>
+              <div class="selection-type__dropdown-cell">
+                <div class="selection-type__spinner spinner js-spinner" data-min="0" data-max="99" data-init="0">
+                    <a href="#" title="" class="spinner__minus js-spinner-minus"></a>
+                    <input type="text" class="spinner__text js-selection-passengers-people" value="0">
+                    <a href="#" title="" class="spinner__plus js-spinner-plus"></a>
+                </div>  
+              </div>
+            </div>
+
+            <div class="selection-type__dropdown-bottom">
+              <input type="checkbox" name="check" id="check" class="js-selection-passengers-business-class" data-invert="эконом" data-value="бизнес" value="">
+              <label for="check" class="selection-type__checkbox selection-type__checkbox--white">Бизнесс класс</label>
+            </div>
+          </div>  
+        </div>
+       </div>
+      </div>  
+
+      <div class="selection-type__bottom">
+        <div class="selection-type__bottom-item">
+          <a href="#" class="selection-type__bottom-complex js-complex-route-toggle">Составить сложный маршрут</a>
+        </div>
+         <div class="selection-type__bottom-item">
+          <input type="checkbox" name="check2" id="check2" checked>
+          <label for="check2" class="selection-type__checkbox">Показать рейсы без пересадок</label>
+        </div>
+        <div class="selection-type__bottom-item selection-type__bottom-item--right">
+          <input type="checkbox" name="check3" id="check3" checked>
+          <label for="check3" class="selection-type__checkbox">Показать отели в новом окне</label>
+        </div>
+      </div>
+      
+      <div class="selection-type__submit">
+        <button class="selection-type__btn selection-type__btn--avia btn btn--search" type="submit">Найти билеты</button>
+      </div>
+      
+    </form>
+  </div>
+  
+  
+  <!--complex route -->
+  <div class="selection-type__tab selection-type__tab--complex js-selection-route">
+   <form>
+       <div class="selection-type__row  js-selection-item js-selection-row">
+          <div class="selection-type__item selection-type__item--city">
+            <div class="selection-type__item-box">
+              <input type="text" class="selection-type__item-input selection-type__item-input--button js-selection-first-city js-selection-city-input" name="city-first-1">
+              <button class="selection-type__item-round js-selection-change-city">KRR</button> 
+            </div>
+          </div>
+
+          <div class="selection-type__item selection-type__item--city">
+            <div class="selection-type__item-box">
+              <input type="text" class="selection-type__item-input js-selection-second-city js-selection-city-input" name="city-second-1"> 
+            </div>
+          </div>
+
+          <div class="selection-type__item selection-type__item--calendar">
+            <div class="selection-type__item-box">
+              <label class="selection-type__item-date js-selection-date-label" for="date-avia-1"></label>
+              <input type="text" class="selection-type__item-input selection-type__item-input--date js-selection-date-input" id="date-avia-1" placeholder="Дата вылета" name="date-1">
+            </div> 
+          </div>
+      </div>
+
+     
+      <div class="selection-type__row  js-selection-item js-selection-row">
+        <div class="selection-type__item selection-type__item--city">
+          <div class="selection-type__item-box">
+            <input type="text" class="selection-type__item-input selection-type__item-input--button js-selection-first-city js-selection-city-input" name="city-first-2">
+            <button class="selection-type__item-round js-selection-change-city">KRR</button> 
+          </div>
+        </div>
+
+        <div class="selection-type__item selection-type__item--city">
+          <div class="selection-type__item-box">
+            <input type="text" class="selection-type__item-input js-selection-second-city js-selection-city-input" name="city-second-2">
+          </div>
+        </div>
+      
+        <div class="selection-type__item selection-type__item--calendar">
+          <div class="selection-type__item-box">
+           <label class="selection-type__item-date js-selection-date-label" for="date-avia-2"></label>
+            <input type="text" class="selection-type__item-input selection-type__item-input--date js-selection-date-input" id="date-avia-2" placeholder="Дата вылета" name="date-2"> 
+          </div>
+        </div>
+      </div>
+      
+      <div class="selection-type__row  js-selection-item js-selection-row">
+        <div class="selection-type__item selection-type__item--city">
+           <div class="selection-type__item-box">
+            <input type="text" class="selection-type__item-input selection-type__item-input--button js-selection-first-city js-selection-city-input" name="city-first-3">
+            <button class="selection-type__item-round js-selection-change-city">KRR</button> 
+            </div>
+        </div>
+
+        <div class="selection-type__item selection-type__item--city">
+           <div class="selection-type__item-box">
+            <input type="text" class="selection-type__item-input js-selection-second-city js-selection-city-input" name="city-second-3">
+            </div> 
+        </div>
+      
+        <div class="selection-type__item selection-type__item--calendar">
+          <div class="selection-type__item-box">
+            <label class="selection-type__item-date js-selection-date-label" for="date-avia-3"></label>
+            <input type="text" class="selection-type__item-input selection-type__item-input--date js-selection-date-input" id="date-avia-3" placeholder="Дата вылета" name="date-3"> 
+          </div>
+        </div>
+      </div>
+      
+      <div class="selection-type__row js-selection-last-row">
+        <button class="selection-type__addflight js-selection-addflight">Добавить вылет</button>
+      
+        <div class="selection-type__item selection-type__item--drop js-selection-passengers">
+         <div class="selection-type__item-box">
+          <input type="hidden" class="js-selection-passengers-input" value="2 пасажирa, эконом" data-words='{"0":"пассажир","1":"пассажира","2":"пассажиров"}'>
+
+          <div class="selection-type__drop-link js-selection-drop-link">
+            <span class="js-selection-passengers-qty">2 пасажирa</span>, <span class="js-selection-passengers-class">эконом</span>
+          </div>
+
+          <div class="selection-type__dropdown js-selection-dropdown">
+
+            <div class="selection-type__dropdown-item">
+              <div class="selection-type__dropdown-cell">Взрослые</div>
+              <div class="selection-type__dropdown-cell">
+                <div class="selection-type__spinner spinner js-spinner" data-min="1" data-max="99" data-init="2">
+                    <a href="#" title="" class="spinner__minus js-spinner-minus"></a>
+                    <input type="text" class="spinner__text js-selection-passengers-people" value="2">
+                    <a href="#" title="" class="spinner__plus js-spinner-plus"></a>
+                </div>  
+              </div>
+            </div>
+
+            <div class="selection-type__dropdown-item">
+              <div class="selection-type__dropdown-cell">Дети до 12 лет</div>
+              <div class="selection-type__dropdown-cell">
+                <div class="selection-type__spinner spinner js-spinner" data-min="0" data-max="99" data-init="0">
+                    <a href="#" title="" class="spinner__minus js-spinner-minus"></a>
+                    <input type="text" class="spinner__text js-selection-passengers-people" value="0">
+                    <a href="#" title="" class="spinner__plus js-spinner-plus"></a>
+                </div>  
+              </div>
+            </div>
+
+            <div class="selection-type__dropdown-item">
+              <div class="selection-type__dropdown-cell">Дети до 2 лет<span class="selection-type__dropdown-cell-note">без места</span></div>
+              <div class="selection-type__dropdown-cell">
+                <div class="selection-type__spinner spinner js-spinner" data-min="0" data-max="99" data-init="0">
+                    <a href="#" title="" class="spinner__minus js-spinner-minus"></a>
+                    <input type="text" class="spinner__text js-selection-passengers-people" value="0">
+                    <a href="#" title="" class="spinner__plus js-spinner-plus"></a>
+                </div>  
+              </div>
+            </div>
+
+            <div class="selection-type__dropdown-bottom">
+              <input type="checkbox" name="check4" id="check4" class="js-selection-passengers-business-class" data-invert="эконом" data-value="бизнес" value="">
+              <label for="check4" class="selection-type__checkbox selection-type__checkbox--white">Бизнесс класс</label>
+            </div>
+          </div>  
+        </div>
+        </div>
+      </div>  
+
+      <div class="selection-type__bottom">
+        <div class="selection-type__bottom-item">
+          <a href="#" class="selection-type__bottom-simple js-complex-route-toggle">Вернуться к простому маршруту</a>
+        </div>
+      </div>
+      
+      <div class="selection-type__submit">
+        <button class="selection-type__btn selection-type__btn--avia btn btn--search" type="submit">Найти билеты</button>
+      </div>
+      
+    </form>
+  </div>
+</div>
+  
+   
+  
+   
+        
+</div>
+    
+      <div class="selection-tabs__content js-tab-content ">
+  
+  
+    <div class="selection-type selection-type--train">
+   <form>
+     <div class="selection-type__row js-selection-item">
+       
+        <div class="selection-type__item selection-type__item--city">
+          <span class="selection-type__item-title">Город отправления</span>
+          <div class="selection-type__item-box">
+            <input type="text" class="selection-type__item-input selection-type__item-input--button js-selection-first-city js-selection-city-input" value="Краснодар">
+            <button class="selection-type__item-round js-selection-change-city"></button> 
+          </div>
+        </div>
+
+        <div class="selection-type__item selection-type__item--city">
+          <span class="selection-type__item-title">Город прибытия</span>
+          <div class="selection-type__item-box">
+            <input type="text" class="selection-type__item-input js-selection-second-city js-selection-city-input" value="Санкт-Петербург"> 
+          </div>
+        </div>
+        
+        <div class="selection-type__item selection-type__item--calendar">
+          <div class="selection-type__item-box">
+            <label class="selection-type__item-date" for="date-train"></label>
+            <input type="text" class="selection-type__item-input selection-type__item-input--date js-selection-date-input" id="date-train" placeholder="Туда">
+          </div> 
+        </div>
+
+      </div>  
+
+      <div class="selection-type__bottom">
+         <div class="selection-type__bottom-item">
+          <input type="checkbox" name="check12" id="check12" checked>
+          <label for="check12" class="selection-type__checkbox">Сегодня</label>
+        </div>
+        <div class="selection-type__bottom-item">
+          <input type="checkbox" name="check13" id="check13" checked>
+          <label for="check13" class="selection-type__checkbox">Завтра</label>
+        </div>
+        <div class="selection-type__bottom-item">
+          <input type="checkbox" name="check14" id="check14" checked>
+          <label for="check14" class="selection-type__checkbox">На все дни</label>
+        </div>
+      </div>
+      
+      <div class="selection-type__submit">
+        <button class="selection-type__btn selection-type__btn--train btn btn--search" type="submit">Найти билеты</button>
+      </div>
+      
+    </form>
+</div>
+   
+  
+   
+        
+</div>
+    
+      <div class="selection-tabs__content js-tab-content ">
+  
+   
+  
+    <div class="selection-type selection-type--bus">
+   <form>
+     <div class="selection-type__row js-selection-item">
+       
+        <div class="selection-type__item selection-type__item--city">
+          <span class="selection-type__item-title">Город отправления</span>
+          <div class="selection-type__item-box">
+            <input type="text" class="selection-type__item-input selection-type__item-input--button js-selection-first-city js-selection-city-input" value="Краснодар">
+            <button class="selection-type__item-round js-selection-change-city"></button> 
+          </div>
+        </div>
+
+        <div class="selection-type__item selection-type__item--city">
+          <span class="selection-type__item-title">Город прибытия</span>
+          <div class="selection-type__item-box">
+            <input type="text" class="selection-type__item-input js-selection-second-city js-selection-city-input" value="Санкт-Петербург"> 
+          </div>
+        </div>
+        
+        <div class="selection-type__item selection-type__item--calendar">
+          <div class="selection-type__item-box">
+            <label class="selection-type__item-date" for="date-bus"></label>
+            <input type="text" class="selection-type__item-input selection-type__item-input--date js-selection-date-input" id="date-bus" placeholder="Туда">
+          </div> 
+        </div>
+
+      </div>  
+
+      <div class="selection-type__bottom">
+         <div class="selection-type__bottom-item">
+          <input type="checkbox" name="check22" id="check22" checked>
+          <label for="check12" class="selection-type__checkbox">Сегодня</label>
+        </div>
+        <div class="selection-type__bottom-item">
+          <input type="checkbox" name="check23" id="check23" checked>
+          <label for="check13" class="selection-type__checkbox">Завтра</label>
+        </div>
+        <div class="selection-type__bottom-item">
+          <input type="checkbox" name="check24" id="check24" checked>
+          <label for="check14" class="selection-type__checkbox">На все дни</label>
+        </div>
+      </div>
+      
+      <div class="selection-type__submit">
+        <button class="selection-type__btn selection-type__btn--bus btn btn--search" type="submit">Найти билеты</button>
+      </div>
+      
+    </form>
+</div>
+  
+   
+        
+</div>
+    
+      <div class="selection-tabs__content js-tab-content ">
+  
+   
+  
+  
+    <div class="selection-type selection-type--hotel">
+   <form>
+     <div class="selection-type__row js-selection-item">
+       
+        <div class="selection-type__item selection-type__item--city">
+          <div class="selection-type__item-box">
+            <input type="text" class="selection-type__item-input js-selection-city-input" placeholder="Город или отель">
+          </div>
+        </div>
+        
+        <div class="selection-type__item selection-type__item--calendar">
+          <div class="selection-type__item-box">
+            <label class="selection-type__item-date" for="first-date-hotel"></label>
+            <input type="text" class="selection-type__item-input selection-type__item-input--date js-selection-date-range js-selection-date-first" id="first-date-hotel" placeholder="Дата заезда">
+          </div> 
+        </div>
+
+        <div class="selection-type__item selection-type__item--calendar">
+          <div class="selection-type__item-box">
+             <label class="selection-type__item-date" for="second-date-hotel"></label>
+              <input type="text" class="selection-type__item-input selection-type__item-input--date js-selection-date-range js-selection-date-second" id="second-date-hotel" placeholder="Дата выезда"> 
+          </div>
+        </div>
+       
+       <div class="selection-type__drop-daterange js-drop-daterange">
+         <div class="js-datepicker"></div>
+         <div class="selection-type__drop-daterange-bottom">
+            <input type="checkbox" name="without-return2" id="without-return2" value="without-return2">
+            <label for="without-return2" class="switch">Показать цены в одну сторону</label>
+         </div>
+       </div>
+
+        <div class="selection-type__item selection-type__item--drop js-selection-passengers">
+         <div class="selection-type__item-box">
+          <input type="hidden" class="js-selection-passengers-input" value="1 гость" data-words='{"0":"гость","1":"гостя","2":"гостей"}'>
+
+          <div class="selection-type__drop-link js-selection-drop-link">
+            <span class="js-selection-passengers-qty">1 гость</span>
+          </div>
+
+          <div class="selection-type__dropdown js-selection-dropdown">
+
+            <div class="selection-type__dropdown-item">
+              <div class="selection-type__dropdown-cell">Взрослые</div>
+              <div class="selection-type__dropdown-cell">
+                <div class="selection-type__spinner spinner js-spinner" data-min="1" data-max="99" data-init="1">
+                    <a href="#" title="" class="spinner__minus js-spinner-minus"></a>
+                    <input type="text" class="spinner__text js-selection-passengers-people" value="1">
+                    <a href="#" title="" class="spinner__plus js-spinner-plus"></a>
+                </div>  
+              </div>
+            </div>
+
+            <div class="selection-type__dropdown-item">
+              <div class="selection-type__dropdown-cell">Дети до 12 лет</div>
+              <div class="selection-type__dropdown-cell">
+                <div class="selection-type__spinner spinner js-spinner" data-min="0" data-max="99" data-init="0">
+                    <a href="#" title="" class="spinner__minus js-spinner-minus"></a>
+                    <input type="text" class="spinner__text js-selection-passengers-people" value="0">
+                    <a href="#" title="" class="spinner__plus js-spinner-plus"></a>
+                </div>  
+              </div>
+            </div>
+
+            <div class="selection-type__dropdown-item">
+              <div class="selection-type__dropdown-cell">Дети до 2 лет<span class="selection-type__dropdown-cell-note">без места</span></div>
+              <div class="selection-type__dropdown-cell">
+                <div class="selection-type__spinner spinner js-spinner" data-min="0" data-max="99" data-init="0">
+                    <a href="#" title="" class="spinner__minus js-spinner-minus"></a>
+                    <input type="text" class="spinner__text js-selection-passengers-people" value="0">
+                    <a href="#" title="" class="spinner__plus js-spinner-plus"></a>
+                </div>  
+              </div>
+            </div>
+
+            <div class="selection-type__dropdown-bottom">
+               <div class="selection-type__dropdown-item">
+                <div class="selection-type__dropdown-cell">Количество номеров</div>
+                <div class="selection-type__dropdown-cell">
+                  <div class="selection-type__spinner spinner js-spinner" data-min="0" data-max="99" data-init="0">
+                      <a href="#" title="" class="spinner__minus js-spinner-minus"></a>
+                      <input type="text" class="spinner__text" value="0">
+                      <a href="#" title="" class="spinner__plus js-spinner-plus"></a>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            
+          </div>  
+        </div>
+       </div>
+      </div>  
+      
+      <div class="selection-type__submit">
+        <button class="selection-type__btn selection-type__btn--hotel btn btn--search" type="submit">Найти отель</button>
+      </div>
+      
+    </form>
+</div>
+   
+        
+</div>
+    
+      <div class="selection-tabs__content js-tab-content ">
+  
+   
+  
+   
+  
+    <div class="selection-type selection-type--avto">
+  <form>
+    <div class="selection-type__row js-selection-item">
+
+      <div class="selection-type__item selection-type__item--city">
+        <span class="selection-type__item-title">Аренда авто</span>
+        <div class="selection-type__item-box">
+          <input type="text" class="selection-type__item-input js-selection-city-input" placeholder="Место получения автомобиля">
+        </div>
+      </div>
+
+      <div class="selection-type__item selection-type__item--city">
+        <div class="selection-type__item-box">
+          <input type="text" class="selection-type__item-input js-selection-city-input" placeholder="Место назначения">
+        </div>
+      </div>
+
+      <div class="selection-type__group">
+        <div class="selection-type__item selection-type__item--calendar">
+          <div class="selection-type__item-box">
+            <label class="selection-type__item-date" for="first-date-car"></label>
+            <input type="text" class="selection-type__item-input selection-type__item-input--date js-selection-date-range js-selection-date-first" id="first-date-car" placeholder="Дата получения">
+          </div>
+        </div>
+
+        <div class="selection-type__item selection-type__item--calendar">
+          <div class="selection-type__item-box">
+            <label class="selection-type__item-date" for="second-date-car"></label>
+            <input type="text" class="selection-type__item-input selection-type__item-input--date js-selection-date-range js-selection-date-second" id="second-date-car" placeholder="Дата возврата">
+          </div>
+        </div>
+        
+        <div class="selection-type__drop-daterange js-drop-daterange">
+         <div class="js-datepicker"></div>
+         <div class="selection-type__drop-daterange-bottom">
+            <input type="checkbox" name="without-return3" id="without-return3" value="without-return3">
+            <label for="without-return3" class="switch">Показать цены в одну сторону</label>
+         </div>
+       </div>
+      </div>
+
+      <div class="selection-type__group">
+          <div class="selection-type__item selection-type__item--time">
+            <div class="selection-type__item-box">
+              <label class="selection-type__item-time" for="first-time-car"></label>
+              <input type="text" class="selection-type__item-input selection-type__item-input--date" id="first-time-car" placeholder="Время">
+            </div>
+          </div>
+          <div class="selection-type__item selection-type__item--time">
+            <div class="selection-type__item-box">
+              <label class="selection-type__item-time" for="second-time-car"></label>
+              <input type="text" class="selection-type__item-input selection-type__item-input--date" id="second-time-car" placeholder="Время">
+            </div>
+         </div>
+      </div>
+    </div>
+
+
+    <div class="selection-type__bottom">
+      <div class="selection-type__bottom-item">
+        <input type="checkbox" name="check42" id="check42" checked>
+        <label for="42" class="selection-type__checkbox">Возврат машины в другое место</label>
+      </div>
+      <div class="selection-type__bottom-item">
+        <input type="checkbox" name="check43" id="check43" checked>
+        <label for="check43" class="selection-type__checkbox tooltip-text">Возраст водителя от 25 до 75 <span class="tooltip-link" data-tooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua">!</span></label>
+      </div>
+    </div>
+
+    <div class="selection-type__submit">
+      <button class="selection-type__btn selection-type__btn--avto btn btn--search" type="submit">Найти машину</button>
+    </div>
+
+  </form>
+</div>
+
+        
+</div>
+    	
+  </div>        
+</div>
+				</div>
+			</div>
+		</div>
+			<div class="country">
+	<div class="container">
+		<div class="content-holder">
+			<div class="sidebar">
+				<div class="navigation item-box">
+	<div class="navigation__head js-nav-link">
+		<span class="navigation__title">
+			Навигация по странице
+		</span>
+	</div>
+	<ul class="navigation__list js-accordeon-nav">
+		<li class="navigation__list-item">
+			<a href="#" class="navigation__list-link active">
+				Дешевые авиабилеты
+			</a>
+		</li>
+		<li class="navigation__list-item">
+			<a href="#" class="navigation__list-link">
+				Виза и перелет
+			</a>
+		</li>
+		<li class="navigation__list-item">
+			<a href="#" class="navigation__list-link">
+				Время для путешествий
+			</a>
+		</li>
+		<li class="navigation__list-item">
+			<a href="#" class="navigation__list-link">
+				Популярные города
+			</a>
+		</li>
+		<li class="navigation__list-item">
+			<a href="#" class="navigation__list-link">
+				Время и связь
+			</a>
+		</li>
+		<li class="navigation__list-item">
+			<a href="#" class="navigation__list-link">
+				Деньги и покупки
+			</a>
+		</li>
+		<li class="navigation__list-item">
+			<a href="#" class="navigation__list-link">
+				Транспорт и проживание
+			</a>
+		</li>
+		<li class="navigation__list-item">
+			<a href="#" class="navigation__list-link">
+				Спецпредложения на авиабилеты
+			</a>
+		</li>
+	</ul>
+</div>
+				<div class="social item-box js-tabs-wrap ">
+	<div class="social__tabs">
+		<a href="#social-tab-vk" class="social__tabs-item social__tabs-item--vk js-tab active">
+			VKontakte
+		</a>
+		<a href="#social-tab-fb" class="social__tabs-item social__tabs-item--fb js-tab">
+			Facebook
+		</a>
+		<a href="#social-tab-google" class="social__tabs-item social__tabs-item--google js-tab">
+			Google+
+		</a>
+	</div>
+	<div class="social__tabs-content js-tab-content active" id="social-tab-vk">
+		<img src="pic/article/art-3.jpg" alt="img">
+	</div>
+	<div class="social__tabs-content js-tab-content" id="social-tab-fb">
+		<img src="pic/article/art-3.jpg" alt="img">
+	</div>
+	<div class="social__tabs-content js-tab-content" id="social-tab-google">
+		<img src="pic/article/art-3.jpg" alt="img">
+	</div>
+</div>
+			</div>
+			<div class="content">
+				<div class="country__content item-box">
+					<div class="country__breadcrumbs">
+						<div class="breadcrumbs ">
+	<div class="container">
+		<ul class="breadcrumbs__list">
+			
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link">Дешевые авиабилеты</a>
+					<span>/</span>
+				</li>
+			
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link">Страны</a>
+					<span>/</span>
+				</li>
+			
+			<li class="breadcrumbs__item">Россия</li>
+		</ul>
+	</div>
+</div>
+					</div>
+					<div class="country__price">
+						<h3 class="country__price-title">
+							Цены на авиабилеты в Россию
+						</h3>
+						<div class="country__price-text">
+							<p>
+								Стоимость билетов в Россию зависит от сезона, города вылета, авиакомпании и наличия распродаж. Ниже список самых дешевых авиабилетов в Россию, найденных нашими посетителями за последние 48 часов *:
+							</p>
+						</div>
+						<div class="country__price-item-wrap">
+							
+	<div class="country__price-item">
+		<a href="#" class="country__price-direction">
+			Кёльн — Москва
+		</a>
+		<span class="country__price-elem">
+			от 1 184 <span class="rubl">i</span>
+		</span>
+	</div>
+
+	<div class="country__price-item">
+		<a href="#" class="country__price-direction">
+			Карлсруэ — Москва
+		</a>
+		<span class="country__price-elem">
+			от 1 184 <span class="rubl">i</span>
+		</span>
+	</div>
+
+	<div class="country__price-item">
+		<a href="#" class="country__price-direction">
+			Лейпциг — Москва
+		</a>
+		<span class="country__price-elem">
+			от 1 184 <span class="rubl">i</span>
+		</span>
+	</div>
+
+	<div class="country__price-item">
+		<a href="#" class="country__price-direction">
+			Анталья — Москва
+		</a>
+		<span class="country__price-elem">
+			от 1 184 <span class="rubl">i</span>
+		</span>
+	</div>
+
+						</div>
+						<div class="static-content">
+							<h3>
+								Виза и перелет
+							</h3>
+							<p>
+								Гражданам большинства государств для получения визы в Россию требуется приглашение (Tourist Invitation), заявление, паспорт, 2 фотографии, квитанция об оплате консульского сбора (35 евро для граждан ЕС), медицинская страховка. Важный нюанс: по прибытии нужно зарегистрироваться по месту пребывания – в отеле или через принимающую сторону. Среди местных авиакомпаний стоит выделить Аэрофлот, UTair, S7 Airlines, Rossiya Airlines. В списке европейских дискаунтеров, предлагающих дешевые авиабилеты в Россию, – German wings, Air Baltic, ClickAir, FlyNiki, Estonian Air.Если вы выбираете авиабилеты в Россию с оглядкой на сезон, спешим заверить: эта страна прекрасна в любое время года! С поздней осени до ранней весны здесь царит настоящая зимняя сказка. К услугам поклонников активного отдыха – 150 горнолыжных курортов: Красная поляна, Домбай, Урал. Многие покупают авиабилет в Россию, чтобы покорить ее высочайшую вершину – Эльбрус.
+							</p>
+							<p>
+								Возможности пляжного отдыха, конечно, не так широки. Все три летних месяца на черноморском побережье – единственной в России субтропической зоне – царит небывалый ажиотаж. Спадет он лишь в сентябре – в «бархатный сезон». Азовское море – вариант для тех, кто предпочитает спокойный и бюджетный отдых. Стоимость авиабилетов в Россию зависит от сезона – пик приходится на позднюю весну и лето. Не забудьте, что в мае проходит сразу несколько ярких праздников, включая День Победы, который отмечают повсеместными салютами и парадом на Красной площади в Москве. Максимум шансов найти дешевые авиабилеты в Россию в середине осени, в январе и в начале весны. В любом случае рекомендуется бронировать рейсы в Россию заранее – Aviasales поможет выбрать оптимальный маршрут!
+							</p>
+						</div>
+						<div class="country__content-slider">
+							<h3 class="country__price-title country__price-title--slider">
+								Крупные города и аэропорты России
+							</h3>
+							<div class="country__slider js-country-slider">
+								<div class="country__slide" style="background-image: url(pic/slider/slider.jpg);">
+	<div class="country__slide-inner">
+		<span class="country__slide-title">Сочи</span>
+		<div class="country__slide-body">
+			<div class="country__slide-body-holder">
+				<a href="#" class="country__slide-link">
+					Международный аэропорт Сочи
+				</a>
+			</div>
+		</div>
+	</div>
+</div><div class="country__slide" style="background-image: url(pic/slider/slider.jpg);">
+	<div class="country__slide-inner">
+		<span class="country__slide-title">Сочи</span>
+		<div class="country__slide-body">
+			<div class="country__slide-body-holder">
+				<a href="#" class="country__slide-link">
+					Международный аэропорт Сочи
+				</a>
+			</div>
+		</div>
+	</div>
+</div><div class="country__slide" style="background-image: url(pic/slider/slider.jpg);">
+	<div class="country__slide-inner">
+		<span class="country__slide-title">Сочи</span>
+		<div class="country__slide-body">
+			<div class="country__slide-body-holder">
+				<a href="#" class="country__slide-link">
+					Международный аэропорт Сочи
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="item-box">
+			<div class="item-box special-offers__content-item special-offers__content-item--big">
+	<span class="special-offers__content-title">
+		По России от 1390 рублей! Специальное предложение от авиакомпании Red Wings
+	</span>
+	<div class="special-offers__content-info">
+		<div class="special-offers__content-info-item">
+			<span class="special-offers__content-info-img">
+				<img src="pic/company/company-12.png" alt="img">
+			</span>
+			<span class="special-offers__content-info-txt special-offers__content-info-txt--price">
+				от 5 020 р.
+			</span>
+		</div>
+		<div class="special-offers__content-info-item">
+			<span class="special-offers__content-info-date">
+				<span>Даты перелетов:</span>
+				23.03.2018 – 01.09.2018
+			</span>
+			<span class="special-offers__content-info-txt ">
+				Осталось 19 дней
+			</span>
+		</div>
+	</div>
+	<div class="special-offers__content-table-wrap static-content">
+		<table class="special-offers__content-table">
+			<tbody>
+				
+					<tr>
+						<td><a href="#" class="special-offers__content-table-link">Москва — Барселона</a></td>
+						<td><span class="special-offers__content-table-txt">
+							В одну сторону, эконом – от 13 390 р. <span class="special-offers__content-table-price">undefined</span>
+						</span></td>
+						<td><a href="#" class="btn btn--date special-offers__content-table-btn">Выбрать даты</a></td>
+					</tr>
+				
+					<tr>
+						<td><a href="#" class="special-offers__content-table-link">Москва — Валенсия</a></td>
+						<td><span class="special-offers__content-table-txt">
+							В одну сторону, эконом – от 9 250 р. <span class="special-offers__content-table-price">undefined</span>
+						</span></td>
+						<td><a href="#" class="btn btn--date special-offers__content-table-btn">Выбрать даты</a></td>
+					</tr>
+				
+					<tr>
+						<td><a href="#" class="special-offers__content-table-link">Москва — Мюнхен</a></td>
+						<td><span class="special-offers__content-table-txt">
+							В одну сторону, эконом – от 15 877 р. <span class="special-offers__content-table-price">undefined</span>
+						</span></td>
+						<td><a href="#" class="btn btn--date special-offers__content-table-btn">Выбрать даты</a></td>
+					</tr>
+				
+					<tr>
+						<td><a href="#" class="special-offers__content-table-link">Москва — Мадрид</a></td>
+						<td><span class="special-offers__content-table-txt">
+							В одну сторону, эконом – от 5 020 р. <span class="special-offers__content-table-price">undefined</span>
+						</span></td>
+						<td><a href="#" class="btn btn--date special-offers__content-table-btn">Выбрать даты</a></td>
+					</tr>
+				
+					<tr>
+						<td><a href="#" class="special-offers__content-table-link">Москва — Лондон</a></td>
+						<td><span class="special-offers__content-table-txt">
+							В одну сторону, эконом – от 8 870 р. <span class="special-offers__content-table-price">undefined</span>
+						</span></td>
+						<td><a href="#" class="btn btn--date special-offers__content-table-btn">Выбрать даты</a></td>
+					</tr>
+				
+			</tbody>
+		</table>
+	</div>
+</div>
+		</div>
+		<div class="item-box">
+			<div class="item-box special-offers__content-item special-offers__content-item--big">
+	<span class="special-offers__content-title">
+		По России от 1390 рублей! Специальное предложение от авиакомпании Red Wings
+	</span>
+	<div class="special-offers__content-info">
+		<div class="special-offers__content-info-item">
+			<span class="special-offers__content-info-img">
+				<img src="pic/company/company-12.png" alt="img">
+			</span>
+			<span class="special-offers__content-info-txt special-offers__content-info-txt--price">
+				от 5 020 р.
+			</span>
+		</div>
+		<div class="special-offers__content-info-item">
+			<span class="special-offers__content-info-date">
+				<span>Даты перелетов:</span>
+				23.03.2018 – 01.09.2018
+			</span>
+			<span class="special-offers__content-info-txt ">
+				Осталось 19 дней
+			</span>
+		</div>
+	</div>
+	<div class="special-offers__content-table-wrap static-content">
+		<table class="special-offers__content-table">
+			<tbody>
+				
+					<tr>
+						<td><a href="#" class="special-offers__content-table-link">Москва — Барселона</a></td>
+						<td><span class="special-offers__content-table-txt">
+							В одну сторону, эконом – от 13 390 р. <span class="special-offers__content-table-price">undefined</span>
+						</span></td>
+						<td><a href="#" class="btn btn--date special-offers__content-table-btn">Выбрать даты</a></td>
+					</tr>
+				
+					<tr>
+						<td><a href="#" class="special-offers__content-table-link">Москва — Валенсия</a></td>
+						<td><span class="special-offers__content-table-txt">
+							В одну сторону, эконом – от 9 250 р. <span class="special-offers__content-table-price">undefined</span>
+						</span></td>
+						<td><a href="#" class="btn btn--date special-offers__content-table-btn">Выбрать даты</a></td>
+					</tr>
+				
+					<tr>
+						<td><a href="#" class="special-offers__content-table-link">Москва — Мюнхен</a></td>
+						<td><span class="special-offers__content-table-txt">
+							В одну сторону, эконом – от 15 877 р. <span class="special-offers__content-table-price">undefined</span>
+						</span></td>
+						<td><a href="#" class="btn btn--date special-offers__content-table-btn">Выбрать даты</a></td>
+					</tr>
+				
+					<tr>
+						<td><a href="#" class="special-offers__content-table-link">Москва — Мадрид</a></td>
+						<td><span class="special-offers__content-table-txt">
+							В одну сторону, эконом – от 5 020 р. <span class="special-offers__content-table-price">undefined</span>
+						</span></td>
+						<td><a href="#" class="btn btn--date special-offers__content-table-btn">Выбрать даты</a></td>
+					</tr>
+				
+					<tr>
+						<td><a href="#" class="special-offers__content-table-link">Москва — Лондон</a></td>
+						<td><span class="special-offers__content-table-txt">
+							В одну сторону, эконом – от 8 870 р. <span class="special-offers__content-table-price">undefined</span>
+						</span></td>
+						<td><a href="#" class="btn btn--date special-offers__content-table-btn">Выбрать даты</a></td>
+					</tr>
+				
+			</tbody>
+		</table>
+	</div>
+</div>
+		</div>
+	</div>
+	<div class="discount discount--offers">
+	<div class="container">
+		<div class="discount__holder">
+			<div class="discount__inner">
+				<span class="discount__title">
+					Хотите знать всё о скидках на авиабилеты из Москвы в Тиват?
+				</span>
+				<div class="discount__box">
+					<div class="discount__social">
+						<span class="discount__social-txt">
+							Вы можете подписаться на нашу рассылку через соц сети или по электронной почте.
+						</span>
+						<div class="discount__social-items">
+							<a href="#" class="discount__social-link discount__social-link--vk"></a>
+							<a href="#" class="discount__social-link discount__social-link--fb"></a>
+							<a href="#" class="discount__social-link discount__social-link--twitter"></a>
+							<a href="#" class="discount__social-link discount__social-link--insta"></a>
+						</div>
+					</div>
+					<div class="discount__subscribe">
+						<form action="#" class="discount__subscribe-form">
+							<input type="email" class="discount__subscribe-input" placeholder="Ваш email">
+							<button class="btn btn--subscribe discount__subscribe-btn">
+								Подписаться
+							</button>
+						</form>
+						<span class="discount__subscribe-txt">
+							Нажимая “Подписатсья”, вы соглашаетесь с правилами использования сервиса и обработки персональный данных.
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+    </div>
+
+  <footer class="footer  js-footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">Страны</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Россия
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Таиланд
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Черногория
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Кипр
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Болгария
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Грузия
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="footer__item-link">Все страны</a>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">Города</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Москва
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Санкт-Петербург
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Симферополь
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Адлер
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Екатеринбург
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Лондон
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="footer__item-link">Все страны</a>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">авиакомпании</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Air Berlin
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Air France
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Alitalia
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Air Baltic
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Emirates
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							KLM
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="footer__item-link">Все авиакомпании</a>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">аэропорты</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Шереметьево
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Курумоч
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Домодедово
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Толмачево
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Владивосток
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Гамбург
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="footer__item-link">Все аэропорты</a>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">Направления</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – SIP
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – AER
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – TIV
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – MRV
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							LED – MOW
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							MOW – BKK
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__item col-xl-2">
+				<a href="#" class="footer__item-title">Сервисы</a>
+				<ul class="footer__list">
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Горящие авиабилеты
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Календарь низких цен
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Карта низких цен
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Спецпредложения
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Таблица цен
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Блог
+						</a>
+					</li>
+					<li class="footer__list-item">
+						<a href="#" class="footer__list-link">
+							Помощь
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer__nav-wrap">
+			<div class="footer__nav">
+			<ul class="footer__nav-list">
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						О компании    
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Партнёрская программа 
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Реклама 
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Вакансии 
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Помощь
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						Правила
+					</a>
+				</li>
+				<li class="footer__nav-list-item">
+					<a href="#" class="footer__nav-list-link">
+						White Label авиабилеты
+					</a>
+				</li>
+
+			</ul>
+			</div>
+			<div class="footer__copi-box">
+			<div class="footer__social">
+				<span class="footer__social-txt">
+					Следуйте на за нами:
+				</span>
+				<div class="footer__social-items">
+					<a href="#" class="footer__social-link footer__social-link--vk"></a>
+					<a href="#" class="footer__social-link footer__social-link--fb"></a>
+					<a href="#" class="footer__social-link footer__social-link--twitter"></a>
+					<a href="#" class="footer__social-link footer__social-link--insta"></a>
+				</div>
+			</div>
+			<div class="footer__copiright">
+				<span>
+					© 2007–2018, Superaviatickets — дешевые авиабилеты
+				</span>
+			</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

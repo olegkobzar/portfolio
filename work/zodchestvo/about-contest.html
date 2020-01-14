@@ -1,0 +1,608 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Смотр-конкурс «Регионы России»</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body>
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+
+ 	</div>
+
+
+    <div class="wrapper">
+
+      <header class="header">
+	<div class="header__visible-mobile">
+		<div class="header__logo">
+			<a href="#" class="header__logo-link">
+				<!-- <span class="header__logo-icon">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</span>
+				<span class="header__logo-text">Зодчество</span>
+				<span class="header__logo-fest">международный фестиваль</span> -->
+				<svg class="icon-logo-header">
+					<use xlink:href="#logo-header"></use>
+				</svg>
+			</a>
+		</div>
+		<div class="header__menu-mobile js-menu-mobile">
+			<span class="header__menu-mobile-item"></span>
+			<span class="header__menu-mobile-item"></span>
+			<span class="header__menu-mobile-item"></span>
+		</div>
+	</div>
+	<div class="header__wrapp js-nav-mobile">
+		<div class="header__top">
+			<div class="container">
+				<div class="header__top-wrapp">
+					<div class="header__logo">
+						<a href="#" class="header__logo-link">
+							<!-- <span class="header__logo-icon">
+								<svg class="icon-logo">
+									<use xlink:href="#logo"></use>
+								</svg>
+							</span>
+							<span class="header__logo-text">Зодчество</span>
+							<span class="header__logo-fest">международный фестиваль</span> -->
+
+							<svg class="icon-logo-header">
+								<use xlink:href="#logo-header"></use>
+							</svg>
+						</a>
+					</div>
+					<nav class="header__nav js-nav js-wrapp-nav">
+						<div class="header__close-mobile js-close-mobile">
+							<span class="header__close-mobile-item"></span>
+							<span class="header__close-mobile-item"></span>
+						</div>
+						<ul class="header__list">
+							<li class="header__item active" data-text="01_">
+								<a href="#" class="header__link">О фестивале</a>
+								<div class="header__submenu">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Фестиваль 2018</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Каталог</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Награды</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="02_">
+								<a href="#" class="header__link">Конкурсы</a>
+							</li>
+							<li class="header__item" data-text="03_">
+								<a href="#" class="header__link">Выставки</a>
+							</li>
+							<li class="header__item" data-text="04_">
+								<a href="#" class="header__link">Участники</a>
+								<div class="header__submenu header__submenu--mod">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Все участники</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Работы участников</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="05_">
+								<a href="#" class="header__link">Итоги</a>
+							</li>
+							<li class="header__item" data-text="06_">
+								<a href="#" class="header__link">Медиа</a>
+								<div class="header__submenu">
+									<ul class="header__submenu-list">
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Новости</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">СМИ о нас</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Аккредитация</a>
+										</li>
+										<li class="header__submenu-item">
+											<a href="" class="header__submenu-link">Фотогалерея</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="header__item" data-text="07_">
+								<a href="#" class="header__link">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="header__login">
+						<a href="#" class="header__login-link">
+							<span class="header__login-icon-circle"></span>
+							<span class="header__login-text">Вход в личный кабинет</span>
+						</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="header__menu-mobile js-menu-mobile">
+				<span class="header__menu-mobile-item"></span>
+				<span class="header__menu-mobile-item"></span>
+				<span class="header__menu-mobile-item"></span>
+			</div>
+			<div class="header__bott">
+				<div class="container">
+					<div class="header__bott-wrapp">
+						<div class="header__left">
+							<ul class="header__left-list">
+								<li class="header__left-item">
+									<a href="#" class="header__left-link">Вопросы и ответы</a>
+								</li>
+								<li class="header__left-item">
+									<a href="#" class="header__left-link">Eng</a>
+								</li>
+							</ul>
+						</div>
+						<div class="header__right">
+							<ul class="header__right-list">
+								<li class="header__right-item">
+									<a href="#" class="btn btn--border header__right-link header__right-link--ticket">Получить билет на выставку</a>
+								</li>
+								<li class="header__right-item">
+									<a href="#" class="btn header__right-link header__right-link--registration">Регистрация на конкурс</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+      <div class="heading heading--breadcrumbs" style="background-image: url(pic/bg/bg-heading-04.jpg);">
+  <div class="container">
+    <div class="heading__wrap">
+      <div class="heading__holder">
+        
+        
+        <a href="#" class="heading__link">Конкурсы</a>
+        <h2 class="heading__title">Смотр-конкурс «Регионы России»</h2>
+        
+      </div>
+    </div>
+  </div>
+  <div class="heading__decor">
+    <div class="heading__decor-col heading__decor-col--large"></div>
+    <div class="heading__decor-col heading__decor-col--small"></div>
+  </div>
+</div>
+
+
+      <div class="menu">
+        <div class="container">
+          <ul class="menu__list">
+            <li class="menu__item active">
+	<a href="#" class="menu__link">Участникам</a>
+</li><li class="menu__item ">
+	<a href="#" class="menu__link">Посетителям</a>
+</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="info info--contest">
+  <div class="container">
+    <div class="info__row">
+      <div class="info__holder info__holder--left">
+        <p class="info__preview">Смотр-конкурс проводится среди субъектов и муниципальных образований Российской Федерации. Участниками могут стать органы исполнительной власти организации, представляющие субъекты РФ или муниципальные образования.</p>
+        <h3 class="info__caption">Цель конкурса</h3>
+        <p class="info__desc">Выявление лучших примеров архитектурно-градостроительной политики и практики городов и регионов России. А также выявление новых подходов к созданию среды жизнедеятельности.</p>
+        <h3 class="info__caption">Награды</h3>
+        <div class="info__rewards">
+          <ul class="info__rewards-list">
+            <li class="info__rewards-item">Премия «Золотой знак»</li>
+            <li class="info__rewards-item">Премия «Серебряный знак»</li>
+            <li class="info__rewards-item">По решению жюри могут присуждаться дипломы и специальные призы</li>
+          </ul>
+        </div>
+      </div>
+      <div class="info__holder info__holder--doc">
+        <ul class="info__list">
+
+          <li class="info__item">
+            <div class="info__inner">
+              <svg class="icon-pdf">
+                <use xlink:href="#pdf"></use>
+              </svg>
+            </div>
+            <div class="info__inner info__inner--link">
+              <a href="#" class="info__link">Положение о смотре-конкурсе</a>
+            </div>
+          </li>
+
+          <li class="info__item">
+            <div class="info__inner">
+              <svg class="icon-pdf">
+                <use xlink:href="#pdf"></use>
+              </svg>
+            </div>
+            <div class="info__inner info__inner--link">
+              <a href="#" class="info__link">Стоимость участия в смотр конкурсе</a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <p class="info__desc info__desc--review">Смотр-конкурс "Регионы России" проходит по 2 разделам, в следующих номинациях:</p>
+
+    <div class="info__row info__row--nominations">
+      <div class="info__holder info__holder--left">
+        <h3 class="info__caption">I Раздел «Лучшие архитектурные практики»</h3>
+        <h5 class="info__subject">Номинации:</h5>
+        <div class="info__nominations">
+          <ul class="info__nominations-list">
+            <li class="info__nominations-item">Региональные или муниципальные программы, направленные на повышение качества архитектурной среды, улучшения архитектурно-художественного облика застройки и публичных пространств, создания монументально–декоративных произведений городского значения и так далее;</li>
+            <li class="info__nominations-item">Проекты градостроительных ансамблей и комплексов, разработанные по государственным или муниципальным заказам, либо при поддержке органов власти субъектов Российской Федерации или муниципальных образований;</li>
+            <li class="info__nominations-item">Реализованные проекты градостроительных ансамблей и комплексов.</li>
+          </ul>
+        </div>
+        <h3 class="info__caption">II Раздел «Городская среда»</h3>
+        <h5 class="info__subject">Номинации:</h5>
+        <div class="info__nominations">
+          <ul class="info__nominations-list">
+            <li class="info__nominations-item">Региональные и муниципальные программы градостроительного развития, реорганизации промышленных территорий, создания комфортной жилой среды, сохранения культурного наследия, охраны окружающей среды и так далее;</li>
+            <li class="info__nominations-item">Проекты благоустройства, в том числе развития общественных, дворовых пространств, парковых и рекреационных территорий и том числе, разработанные по государственным или муниципальным заказам, либо при поддержке органов власти субъектов Российской Федерации или муниципальных образований;</li>
+            <li class="info__nominations-item">Реализованные проекты благоустройства, в том числе. развития общественных, дворовых пространств, парковых и рекреационных территорий и так далее, разработанные по государственным или муниципальным заказам, либо при поддержке органов власти субъектов Российской Федерации или муниципальных образований.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="info__holder info__holder--doc">
+
+        <div class="info__txt">
+          <p class="info__desc">Конкурсные материалы должны быть представлены в полном объеме на стенде в любом формате, в том числе допускаются видеоролики и иные презентации;</p>
+          <p class="info__desc">Заявки принимаются с 15 марта по 15 августа 2017 года включительно;</p>
+          <p class="info__desc">Оглашение результатов Смотра-конкурса — на церемонии награждения.</p>
+        </div>
+
+        <ul class="info__list">
+
+          <li class="info__item">
+            <div class="info__inner">
+              <svg class="icon-pdf">
+                <use xlink:href="#pdf"></use>
+              </svg>
+            </div>
+            <div class="info__inner info__inner--link">
+              <a href="#" class="info__link">Дизайн-проект экспозиции</a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="schedule-competition schedule-competition--participation">
+  <div class="container">
+    <div class="schedule-competition__wrap">
+      <h3 class="schedule-competition__title">Стоимость участия:</h3>
+      <ul class="schedule-competition__list">
+      
+        <li class="schedule-competition__item">
+          <span class="schedule-competition__inner schedule-competition__inner--value">Регистрационный взнос</span>
+          <span class="schedule-competition__inner schedule-competition__inner--data">11 800 руб.</span>
+        </li>
+      
+        <li class="schedule-competition__item">
+          <span class="schedule-competition__inner schedule-competition__inner--value">Обязательная публикация в каталоге 2 полосы</span>
+          <span class="schedule-competition__inner schedule-competition__inner--data">29 500 руб.</span>
+        </li>
+      
+        <li class="schedule-competition__item">
+          <span class="schedule-competition__inner schedule-competition__inner--value">Дополнительная 1 полоса</span>
+          <span class="schedule-competition__inner schedule-competition__inner--data">11 800 руб.</span>
+        </li>
+      
+        <li class="schedule-competition__item">
+          <span class="schedule-competition__inner schedule-competition__inner--value">Оборудованная выставочная площадь 1 кв. м.</span>
+          <span class="schedule-competition__inner schedule-competition__inner--data">15 340 руб.</span>
+        </li>
+      
+        <li class="schedule-competition__item">
+          <span class="schedule-competition__inner schedule-competition__inner--value">Необорудованная выставочная площадь 1 кв. м.</span>
+          <span class="schedule-competition__inner schedule-competition__inner--data">11 800 руб.</span>
+        </li>
+      
+      </ul>
+
+      
+        <a href="#" class="btn btn--arrow schedule-competition__btn">Льготные условия</a>
+      
+    </div>
+  </div>
+</div>
+
+
+      <div class="info info--application">
+  <div class="container">
+
+    <div class="info__header">
+      <h2 class="info__title">Подача заявки</h2>
+      <div class="info__row info__row--preview">
+        <p class="info__preview">Для подачи заявки необходимо нажать на кнопку «Регистрация», выбрать смотр-конкурс «Регионы России» и заполнить онлайн анкету. После заполнения анкеты Вам на почту придет подтверждение о получении Заявки, и с Вами свяжется менеджер по работе с участниками для заключения Договора на участие. Оплата участия происходит после согласования Договора на основании выставленного счета. Более подробную информацию о заполнении Заявки можно найти в Буклете участника. В случае если Вы не нашли ответ на нужный вопрос, звоните менеджеру по работе с участниками.</p>
+        <a href="#" class="btn info__btn">Подать заявку</a>
+      </div>
+    </div>
+
+    <div class="info__row">
+      <div class="info__holder info__holder--left">
+        <h3 class="info__caption">Важная информация</h3>
+        <div class="info__nominations info__nominations--mod">
+          <ul class="info__nominations-list">
+            <li class="info__nominations-item">Конкурсные работы экспонируются на вертикальных выставочных конструкциях согласно дизайн-проекту;</li>
+            <li class="info__nominations-item">Печать конкурсных работ осуществляется Дирекцией Фестиваля на баннерах;</li>
+            <li class="info__nominations-item">Подготовка макета баннера осуществляется самостоятельно Участниками по заданному Дирекцией шаблону;</li>
+            <li class="info__nominations-item">Монтаж конкурсных работ осуществляется Дирекцией Фестиваля.</li>
+          </ul>
+        </div>
+        <h3 class="info__caption">Требования к оформлению</h3>
+        <p class="info__desc info__desc--demands">Уважаемые участники, для успешной работы мы предлагаем Вашему вниманию перечень положений и требований к оформлению! Все Положения представлены в формате .pdf, открыть их можно при помощи программы Adobe Reader.</p>
+        <p class="info__desc info__desc--demands">Требования к оформления материалов представлены в формате .psd, открыть их можно при помощи программы Photoshop (Скачать бесплатную пробную версию).</p>
+        <p class="info__desc info__desc--demands">По вопросам обращайтесь к менеджеру по работе с участниками.</p>
+      </div>
+      <div class="info__holder info__holder--doc">
+        <ul class="info__list">
+
+          <li class="info__item">
+            <div class="info__inner">
+              <svg class="icon-pdf">
+                <use xlink:href="#pdf"></use>
+              </svg>
+            </div>
+            <div class="info__inner info__inner--link">
+              <a href="#" class="info__link">Требования к оформлению</a>
+            </div>
+          </li>
+
+          <li class="info__item">
+            <div class="info__inner">
+              <svg class="icon-pdf">
+                <use xlink:href="#pdf"></use>
+              </svg>
+            </div>
+            <div class="info__inner info__inner--link">
+              <a href="#" class="info__link">Планшет для смотр-конкурса «Регионы России»</a>
+            </div>
+          </li>
+
+          <li class="info__item">
+            <div class="info__inner">
+              <svg class="icon-pdf">
+                <use xlink:href="#pdf"></use>
+              </svg>
+            </div>
+            <div class="info__inner info__inner--link">
+              <a href="#" class="info__link">Общие требования к оформлению</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+      <div class="contacts-people">
+	<div class="container">
+		<div class="contacts-people__wrapp">
+			<span class="contacts-people__caption">Менеджер</span>
+			<ul class="contacts-people__list">
+				<li class="contacts-people__item">Кандейкина Надежда</li>
+				<li class="contacts-people__item">
+					<a href="tel:+74956906865" class="contacts-people__link">+7 (495) 690-68-65</a>
+				</li>
+				<li class="contacts-people__item">
+					<a href="mailto:info@zodchestvo.com" class="contacts-people__link">info@zodchestvo.com</a>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+</div>
+
+      <div class="support ">
+	<div class="container">
+		<div class="support__holder">
+			<span class="support__title">При поддержке</span>
+			<div class="support__inner slick slick--support js-support-slider">
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-01.png" alt="img">
+					</div>
+					<span class="support__item-txt">Минстрой России</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-02.png" alt="img">
+					</div>
+					<span class="support__item-txt">Сайт президента России</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-03.png" alt="img">
+					</div>
+					<span class="support__item-txt">Совет Федераций</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img">
+						<img src="pic/support/support-04.png" alt="img">
+					</div>
+					<span class="support__item-txt">Официальный сайт Мэра Москвы</span>
+				</a>
+				<a href="#" class="support__item">
+					<div class="support__item-img support__item-img--mod">
+						<img src="pic/support/support-05.png" alt="img">
+					</div>
+					<span class="support__item-txt">Правительство Московской области</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="heading__decor support__decor">
+  	<div class="heading__decor-col heading__decor-col--large"></div>
+  	<div class="heading__decor-col heading__decor-col--small"></div>
+  </div>
+</div>
+
+    </div>
+
+  <footer class="footer js-footer">
+	<div class="container">
+		<div class="footer__inner">
+			<div class="footer__logo">
+				<a href="#" class="footer__logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<div class="footer__info-box">
+				<div class="footer__info">
+					<div class="footer__info-item">
+						<span class="footer__info-title footer__info-title--mod">
+							Зодчество
+						</span>
+						<span class="footer__info-txt">XXVI архитектурный фестиваль</span>
+					</div>
+					<div class="footer__info-item">
+						<span class="footer__info-title">Москва</span>
+						<span class="footer__info-txt">ЦВЗ «Манеж»</span>
+					</div>
+					<div class="footer__info-item">
+						<span class="footer__info-title">
+							<span class="footer__info-date">19</span>
+							<span class="footer__info-date">21</span>
+						</span>
+						<span class="footer__info-txt">ноября 2018</span>
+					</div>
+				</div>
+				<div class="footer__copy">
+					<div class="footer__copy-box">
+						<span class="footer__copy-txt">
+							Дирекция международного фестиваля «Зодчество»
+						</span>
+						<span class="footer__copy-txt">
+							123001, Москва, Гранатный пер. 12
+						</span>
+					</div>
+					<div class="footer__copy-phone-wrap">
+						<span class="footer__copy-phone">
+							<a href="tel:+7(495)6906865" class="footer__copy-link">
+								+7 (495) 690-68-65
+							</a>
+						</span>
+						<span class="footer__copy-phone">
+							<a href="tel:+7(495)6915321" class="footer__copy-link">
+								+7 (495) 691-53-21
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="footer__contacts">
+				<a href="#"class="footer__contacts-head">
+					<span class="footer__contacts-title">Контакты</span>
+					<span class="icon-arrow icon-arrow--next"></span>
+				</a>
+				<div class="footer__contacts-social">
+					<a href="#" class="footer__contacts-link">Facebook,</a>
+					<a href="#" class="footer__contacts-link">Vkontakte,</a>
+					<a href="#" class="footer__contacts-link">Instagram</a>
+				</div>
+				<a href="mailto:info@zodchestvo.com" class="footer__contacts-mail">info@zodchestvo.com</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

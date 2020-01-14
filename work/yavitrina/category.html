@@ -1,0 +1,565 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Одежда и обувь</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+
+<div class="wrapper">
+
+	<div class="cookie js-cookie">
+	<div class="container">
+		<div class="wrap">
+			<span class="text">ЯВитрина использует cookie (файлы с данными о прошлых посещениях сайта) для персонализации сервисов и удобства пользователей. ЯВитрина серьезно относится к защите персональных данных - ознакомьтесь с <a href="#">условиями и принципами их обработки</a>.</span>
+			<span class="ban">Вы можете запретить сохранение cookie в настройках своего браузера.</span>
+
+			<span class="close js-close-cookie">X</span>
+		</div>
+	</div>
+</div>
+
+	<header class="header ">
+
+	<div class="container">
+		<div class="header-wrap">
+
+			<div class="circle circle-1"></div>
+			<div class="circle circle-3"></div>
+			<div class="circle circle-5"></div>
+			<div class="circle circle-6"></div>
+
+			
+
+			
+			<div class="logo">
+				<a href="#" class="logo-link">
+					<svg class="icon-logo">
+						<use xlink:href="#logo"></use>
+					</svg>
+				</a>
+			</div>
+			<form action="" class="search-form">
+				<div class="search-input-wrap">
+					<input type="text" placeholder="Введите название товара">
+				</div>
+				<button class="btn search-btn">
+					<svg class="icon-search">
+						<use xlink:href="#search"></use>
+					</svg>
+				</button>
+			</form>
+			<div class="city">
+				<div class="city-btn js-city-btn">
+					<span class="city-icon">
+						<svg class="icon-marker">
+							<use xlink:href="#marker"></use>
+						</svg>
+					</span>
+					<span class="city-text js-city-name">Москва</span>
+				</div>
+
+				<div class="city-drop js-select-wrap-city">
+					<div class="city-head">
+						<span class="city-title">Выбор города</span>
+						<a href="#" class="city-back js-close-select"></a>
+					</div>
+					<div class="city-select">
+						<select name="city" id="" class="js-select-city">
+							<optgroup label="Адыгея Республика">
+								<option value="Майкоп">Майкоп</option>
+							</optgroup>
+							<optgroup label="Алтайский край">
+								<option value="Барнаул">Барнаул</option>
+								<option value="Бийск">Бийск</option>
+								<option value="Рубцовск">Рубцовск</option>
+							</optgroup>
+							<optgroup label="Амурская область">
+								<option value="Благовещенск">Благовещенск</option>
+							</optgroup>
+							<optgroup label="Архангельская область">
+								<option value="Архангельск">Архангельск</option>
+								<option value="Северодвинск">Северодвинск</option>
+							</optgroup>
+							<optgroup label="Адыгея Республика">
+								<option value="Майкоп">Майкоп</option>
+							</optgroup>
+							<optgroup label="Алтайский край">
+								<option value="Барнаул">Барнаул</option>
+								<option value="Бийск">Бийск</option>
+								<option value="Рубцовск">Рубцовск</option>
+							</optgroup>
+							<optgroup label="Амурская область">
+								<option value="Благовещенск">Благовещенск</option>
+							</optgroup>
+							<optgroup label="Архангельская область">
+								<option value="Архангельск">Архангельск</option>
+								<option value="Северодвинск">Северодвинск</option>
+							</optgroup>
+							<optgroup label="Адыгея Республика">
+								<option value="Майкоп">Майкоп</option>
+							</optgroup>
+							<optgroup label="Алтайский край">
+								<option value="Барнаул">Барнаул</option>
+								<option value="Бийск">Бийск</option>
+								<option value="Рубцовск">Рубцовск</option>
+							</optgroup>
+							<optgroup label="Амурская область">
+								<option value="Благовещенск">Благовещенск</option>
+							</optgroup>
+							<optgroup label="Архангельская область">
+								<option value="Архангельск">Архангельск</option>
+								<option value="Северодвинск">Северодвинск</option>
+							</optgroup>
+							<optgroup label="Московская область">
+								<option value="Москва" selected>Москва</option>
+							</optgroup>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="breadcrumbs">
+	<div class="container">
+		<div class="breadcrumbs-outer">
+			<ul class="breadcrumbs-wrap">
+				
+					<li class="breadcrumbs-item">
+						<a href="#" class="breadcrumbs-link">Каталог</a>
+					</li>
+				
+				<li class="breadcrumbs-item">
+					Одежда и обувь
+				</li>
+			</ul>
+			<div class="back">
+				<a href="#" class="back-link">Назад</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="category">
+	<div class="container">
+		<h1>Одежда и обувь</h1>
+		<div class="category-wrap">
+			<div class="item">
+				<span class="icon">
+					<a href="#">
+						<svg class="icon-shoes">
+							<use xlink:href="#shoes"></use>
+						</svg>
+					</a>
+				</span>
+				<div class="inner">
+					<a href="#" class="name">Обувь</a>
+					<ul>
+						<li>
+							<a href="#">Женская обувь</a>
+						</li>
+						<li>
+							<a href="#">Мужская обувь</a>
+						</li>
+						<li>
+							<a href="#">Обувь для мальчиков</a>
+						</li>
+						<li>
+							<a href="#">Обувь для девочек</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="item">
+				<span class="icon">
+					<a href="#">
+						<svg class="icon-woomen">
+							<use xlink:href="#woomen"></use>
+						</svg>
+					</a>
+				</span>
+				<div class="inner">
+					<a href="#" class="name">Женская одежда</a>
+					<ul>
+						<li>
+							<a href="#">Верхняя одежда</a>
+						</li>
+						<li>
+							<a href="#">Блузки</a>
+						</li>
+						<li>
+							<a href="#">Платья</a>
+						</li>
+						<li>
+							<a href="#">Юбки</a>
+						</li>
+						<li>
+							<a href="#">Футболки</a>
+						</li>
+						<li>
+							<a href="#">Комбинезоны</a>
+						</li>
+						<li>
+							<a href="#">Шорты</a>
+						</li>
+						<li>
+							<a href="#">Капри</a>
+						</li>
+						<li>
+							<a href="#">Домашняя одежда</a>
+						</li>
+						<li>
+							<a href="#">Брюки</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="item">
+				<span class="icon">
+					<a href="#">
+						<svg class="icon-man">
+							<use xlink:href="#man"></use>
+						</svg>
+					</a>
+				</span>
+				<div class="inner">
+					<a href="#" class="name">Мужская одежда</a>
+					<ul>
+						<li>
+							<a href="#">Джинсы</a>
+						</li>
+						<li>
+							<a href="#">Рубашки</a>
+						</li>
+						<li>
+							<a href="#">Кардиганы</a>
+						</li>
+						<li>
+							<a href="#">Футболки</a>
+						</li>
+						<li>
+							<a href="#">Шорты</a>
+						</li>
+						<li>
+							<a href="#">Брюки</a>
+						</li>
+						<li>
+							<a href="#">Пиджаки</a>
+						</li>
+						<li>
+							<a href="#">Домашняя одежда</a>
+						</li>
+						<li>
+							<a href="#">Жилеты</a>
+						</li>
+						<li>
+							<a href="#">Футболки-поло</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="item">
+				<span class="icon">
+					<a href="#">
+						<svg class="icon-cap">
+							<use xlink:href="#cap"></use>
+						</svg>
+					</a>
+				</span>
+				<div class="inner">
+					<a href="#" class="name">Детская одежда</a>
+					<ul>
+						<li>
+							<a href="#">Для девочек</a>
+						</li>
+						<li>
+							<a href="#">Для мальчиков</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="item">
+				<span class="icon">
+					<a href="#">
+						<svg class="icon-bag">
+							<use xlink:href="#bag"></use>
+						</svg>
+					</a>
+				</span>
+				<div class="inner">
+					<a href="#" class="name">Сумки и рюкзаки</a>
+					<ul>
+						<li>
+							<a href="#">Чемоданы</a>
+						</li>
+						<li>
+							<a href="#">Рюкзаки</a>
+						</li>
+						<li>
+							<a href="#">Портфели</a>
+						</li>
+						<li>
+							<a href="#">Сумки</a>
+						</li>
+						<li>
+							<a href="#">Клатчи</a>
+						</li>
+						<li>
+							<a href="#">Кошельки</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="item">
+				<span class="icon">
+					<a href="#">
+						<svg class="icon-user-plus">
+							<use xlink:href="#user-plus"></use>
+						</svg>
+					</a>
+				</span>
+				<div class="inner">
+					<a href="#" class="name">Большие раззмеры</a>
+					<ul>
+						<li>
+							<a href="#">Для женщин</a>
+						</li>
+						<li>
+							<a href="#">Для мужчин</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="category-list new">
+	<div class="container">
+		
+			<span class="title">Новые категории</span>
+		
+		<ul>
+			
+				<li>
+					<a href="#">Вечерние</a>
+				</li>
+			
+				<li>
+					<a href="#">Красные</a>
+				</li>
+			
+				<li>
+					<a href="#">На свадьбу</a>
+				</li>
+			
+				<li>
+					<a href="#">На высоком каблуке</a>
+				</li>
+			
+				<li>
+					<a href="#">Без каблука</a>
+				</li>
+			
+				<li>
+					<a href="#">Детские</a>
+				</li>
+			
+				<li>
+					<a href="#">Вечерние</a>
+				</li>
+			
+				<li>
+					<a href="#">Красные</a>
+				</li>
+			
+				<li>
+					<a href="#">На свадьбу</a>
+				</li>
+			
+				<li>
+					<a href="#">На высоком каблуке</a>
+				</li>
+			
+				<li>
+					<a href="#">Без каблука</a>
+				</li>
+			
+				<li>
+					<a href="#">Детские</a>
+				</li>
+			
+				<li>
+					<a href="#">Вечерние</a>
+				</li>
+			
+				<li>
+					<a href="#">Красные</a>
+				</li>
+			
+				<li>
+					<a href="#">На свадьбу</a>
+				</li>
+			
+		</ul>
+	</div>
+</div>
+
+</div>
+
+<footer class="footer" style="background-image: url(pic/bg/bg-2.png);">
+	<div class="container">
+		<div class="footer-top">
+			<span class="footer-logo">
+				<a href="#">
+					<svg class="icon-logo-footer">
+						<use xlink:href="#logo-2"></use>
+					</svg>
+				</a>
+			</span>
+			<div>
+				<span>Покупателям</span>
+				<ul>
+					<li>
+						<a href="#">Как сделать заказ</a>
+					</li>
+					<li>
+						<a href="#">Доставка и возврат</a>
+					</li>
+					<li>
+						<a href="#">Добавить магазин</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<span>О компании</span>
+				<ul>
+					<li>
+						<a href="#">Что такое ЯВитрина</a>
+					</li>
+					<li>
+						<a href="#">Реклама на сайте</a>
+					</li>
+					<li>
+						<a href="#">Сотрудничество</a>
+					</li>
+				</ul>
+			</div>
+			<div class="hide">
+				<span>Партнёрам</span>
+				<ul>
+					<li>
+						<a href="#">Реклама на сайте</a>
+					</li>
+					<li>
+						<a href="#">Сотрудничество</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="footer-info">
+				<span class="footer-email">
+					По вопросам сайта пишите на 
+					<a href="mailto:info@yavitrina.ru">info@yavitrina.ru</a>
+				</span>
+				<span>© 2018 Yavitrina.ru</span>
+			</div>
+			<div class="footer-social">
+				<div>
+					<a href="#">
+						<svg class="icon-yandex-market">
+							<use xlink:href="#yandex-market"></use>
+						</svg>
+					</a>
+				</div>
+				<div>
+					<a href="#">
+						<svg class="icon-youtube">
+							<use xlink:href="#youtube"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

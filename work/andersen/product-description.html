@@ -1,0 +1,730 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Описание товара</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body>
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<img class="preloader-img" src="img/preloader.gif" alt="">
+</div>
+
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+
+ 	</div>
+
+
+    <div class="wrapper">
+
+       <!-- top of module headers -->
+        <header class="header">
+	<div class="header__top">
+		<div class="container">
+			<div class="header__wrapp">
+				<div class="header__phone">
+					<a href="tel:+79555228989" class="header__link-phone">+7 (955) <span class="header__link-phone--black">522-89-89</span></a>
+				</div>
+				<div class="header__logo">
+					<a href="#" class="header__link-logo">
+						<svg class="icon-logo">
+							<use xlink:href="#logo"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="header__panel js-panel">
+					<ul class="header__list-panel">
+						<li class="header__item-panel">
+							<a href="#" class="header__link-icon">
+								<span class="header__icon">
+									<svg class="icon-user">
+										<use xlink:href="#user"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="header__item-panel">
+							<a href="#" class="header__link-icon">
+								<span class="header__icon">
+									<svg class="icon-login">
+										<use xlink:href="#login"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="header__item-panel">
+							<a href="#" class="header__link-icon">
+								<span class="header__icon">
+									<svg class="icon-like">
+										<use xlink:href="#like"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="header__item-panel">
+							<a href="#" class="header__link-icon js-dropp-icon">
+								<span class="header__icon">
+									<svg class="icon-basket">
+										<use xlink:href="#basket"></use>
+									</svg>
+								</span>
+								<span class="header__basket-goods">
+									(<span class="header__basket-num">0</span>)
+								</span>
+							</a>
+						</li>
+					</ul>
+					<div class="drop-basket js-dropp-basket">
+	<div class="drop-basket__wrapp">
+		<span class="drop-basket__close js-close-basket"></span>
+		<div class="drop-basket__goods">
+			<div class="drop-basket__img-wrapp">
+				<img src="pic/goods/goods-2.png" alt="">
+			</div>
+			<div class="drop-basket__goods-descr">
+				<span class="drop-basket__goods-price">8 990 <span class="rubl">o</span></span>
+				<span class="drop-basket__goods-name">Детская дутая куртка Monki</span>
+				<ul class="drop-basket__goods-list">
+					<li class="drop-basket__goods-item">Зеленый</li>
+					<li class="drop-basket__goods-item">XS</li>
+					<li class="drop-basket__goods-item">Кол-во 2</li>
+				</ul>
+			</div>
+		</div>
+		<div class="drop-basket__total">
+			<span class="drop-basket__total-text">Всего:</span>
+			<span class="drop-basket__total-price">8 990 <span class="rubl drop-basket__rubl">o</span></span>
+		</div>
+		<div class="drop-basket__foot">
+			<div class="drop-basket__link-wrapp">
+				<a href="#" class="drop-basket__link">Посмотреть корзину</a>
+			</div>
+			<div class="drop-basket__btn-wrapp">
+				<button class="btn btn--dark drop-basket__btn">Оформить заказ</button>
+			</div>
+		</div>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header__bott">
+		<div class="container">
+			<div class="header__wrapp">
+				<div class="header__nav-wrapp js-wrapp-nav">
+					<div class="header__open-menu js-btn-menu">
+						<span class="header__line js-line"></span>
+						<span class="header__line js-line"></span>
+						<span class="header__line js-line"></span>
+					</div>
+					<nav class="header__nav js-nav">
+						<div class="header__close-btn js-close-btn">
+							<span class="header__line-close"></span>
+							<span class="header__line-close"></span>
+						</div>
+						<ul class="header__list">
+							<li class="header__item">
+								<a href="#" class="header__link">Для девочек</a>
+							</li>
+
+							<li class="header__item">
+								<a href="#" class="header__link js-acc-head">Для мальчиков</a>
+								<div class="header__submenu js-acc-body">
+									<div class="header__submenu-inner">
+										<ul class="header__list-submenu">
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Платья</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Юбки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Джинсы</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Шорты</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Топы и футболки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Рубашки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Джемперы</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Свитера</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Верхняя одежда</a>
+											</li>
+										</ul>
+										<div class="header__desc-right">
+											<div class="header__img-wrapp">
+												<img src="pic/image/menu-mini.png" alt="">
+											</div>
+											<span class="header__text-sale">Какой-нибудь текст про акции <span class="header__sale">Sale 10%</span></span>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="header__item">
+								<a href="#" class="header__link">Аксессуары</a>
+							</li>
+							<li class="header__item">
+								<a href="#" class="header__link">Бренды</a>
+							</li>
+							<li class="header__item">
+								<a href="#" class="header__link js-acc-head">Sales</a>
+								<div class="header__submenu js-acc-body">
+									<div class="header__submenu-inner">
+										<ul class="header__list-submenu">
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Платья</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Юбки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Джинсы</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Шорты</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Топы и футболки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Рубашки</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Джемперы</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Свитера</a>
+											</li>
+											<li class="header__item-submenu">
+												<a href="" class="header__link-submenu">Верхняя одежда</a>
+											</li>
+										</ul>
+										<div class="header__desc-right">
+											<div class="header__img-wrapp">
+												<img src="pic/image/menu-mini.png" alt="">
+											</div>
+											<span class="header__text-sale">Какой-нибудь текст про акции <span class="header__sale">Sale 10%</span></span>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="header__search-wrapp js-wrapp-search">
+					<form action="">
+						<span class="header__search-btn-open js-search-open">
+							<svg class="icon-search">
+								<use xlink:href="#search"></use>
+							</svg>
+						</span>
+						<div class="header__form js-form-open">
+							<div class="header__input-wrapp">
+								<input type="text" class="header__input" placeholder="Поиск">
+							</div>
+							<div class="header__btn-wrapp">
+								<button class="header__btn-search">
+									<span class="header__icon">
+										<svg class="icon-search">
+											<use xlink:href="#search"></use>
+										</svg>
+									</span>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+        <!-- end of module headers -->
+
+      <div class="breadcrumbs">
+	<div class="container">
+		<ul class="breadcrumbs__list">
+			
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link">Главная</a>
+					<span class="breadcrumbs__delimiter"> - </span>
+				</li>
+			
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link">Для девочек</a>
+					<span class="breadcrumbs__delimiter"> - </span>
+				</li>
+			
+				<li class="breadcrumbs__item">
+					<a href="#" class="breadcrumbs__link">Рубашки и блузки</a>
+					<span class="breadcrumbs__delimiter"> - </span>
+				</li>
+			
+			<li class="breadcrumbs__item">Блузка “Наименование или бренд” с длинными рукавами</li>
+		</ul>
+	</div>
+</div>
+
+      <div class="descr">
+	<div class="container">
+		<div class="descr__wrapp">
+			<div class="descr__inner">
+				<div class="descr__gallery-tabs js-tabs-wrap">
+					<ul class="descr__list-tab">
+						<li class="descr__item-tab active js-tab"><img src="pic/goods-loupe/goods-loupe-mini-1.png" alt=""></li>
+						<li class="descr__item-tab js-tab"><img src="pic/goods-loupe/goods-loupe-mini-2.png" alt=""></li>
+						<li class="descr__item-tab js-tab"><img src="pic/goods-loupe/goods-loupe-mini-3.png" alt=""></li>
+					</ul>
+					<div class="descr__list-content">
+						<a href="pic/goods-loupe/goods-loupe-big-1.png" class="descr__item-content active js-tab-content" data-width="1000" data-height="1000" data-fancybox="image">
+							<span class="descr__icon">
+								<svg class="icon-loupe">
+									<use xlink:href="#search"></use>
+								</svg>
+							</span>
+							<img src="pic/goods-loupe/goods-loupe-big-1.png" alt="">
+						</a>
+						<a href="pic/goods-loupe/goods-loupe-mini-2.png" class="descr__item-content js-tab-content" data-width="1000" data-height="1000" data-fancybox="image">
+							<span class="descr__icon">
+								<svg class="icon-loupe">
+									<use xlink:href="#search"></use>
+								</svg>
+							</span>
+							<img src="pic/goods-loupe/goods-loupe-mini-2.png" alt="">
+						</a>
+						<a href="pic/goods-loupe/goods-loupe-mini-3.png" class="descr__item-content js-tab-content" data-width="1000" data-height="1000" data-fancybox="image">
+							<span class="descr__icon">
+								<svg class="icon-loupe">
+									<use xlink:href="#search"></use>
+								</svg>
+							</span>
+							<img src="pic/goods-loupe/goods-loupe-mini-3.png" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="descr__inner descr__inner--right">
+				<span class="descr__vendor">Артикул: 001245250</span>
+				<h3 class="descr__name-brand">Название бренда</h3>
+				<span class="descr__name-goods">Вязаное платье из супермягкой пряжи</span>
+				<form action="">
+					<div class="descr__form">
+						<div class="descr__form-left">
+							<span class="descr__price">1.990 <span class="rubl">o</span></span>
+							<div class="descr__wrapp-select">
+								<select class="js-select" name="">
+									<option value="">Выберите размер</option>
+									<option value="">30</option>
+									<option value="">32</option>
+									<option value="">34</option>
+									<option value="">36</option>
+									<option value="">38</option>
+									<option value="">40</option>
+									<option value="">42</option>
+									<option value="">44</option>
+									<option value="">46</option>
+									<option value="">48</option>
+									<option value="">50</option>
+									<option value="">52</option>
+								</select>
+							</div>
+							<div class="descr__wrapp-select">
+								<select class="js-select" name="">
+									<option value="">Выберите количество</option>
+									<option value="">1</option>
+									<option value="">2</option>
+									<option value="">3</option>
+									<option value="">4</option>
+									<option value="">5</option>
+									<option value="">6</option>
+									<option value="">7</option>
+									<option value="">8</option>
+									<option value="">9</option>
+									<option value="">10</option>
+									<option value="">11</option>
+									<option value="">12</option>
+								</select>
+							</div>
+							<div class="descr__warning">
+								<span class="descr__warning-icon">!</span>
+								<span class="descr__warning-text">Количество товара ограничено</span>
+							</div>
+							<div class="descr__add">
+								<div class="descr__btn-wrapp">
+									<button class="btn descr__btn">Добавить в корзину</button>
+								</div>
+								<span class="descr__icon-heart">
+									<svg class="icon-heart-descr js-heart-descr">
+										<use xlink:href="#heart"></use>
+									</svg>
+								</span>
+							</div>
+							<a data-fancybox data-src="#popup-availability" href="javascript:;" class="descr__info">Узнать о наличии</a>
+						</div>
+						<div class="descr__form-right">
+							<a href="#" class="descr__link-size">
+								<span class="descr__size-table">Размерная</span>
+								<span class="descr__size-table">таблица</span>
+							</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+      <div class="descr-tabs js-tabs-wrap">
+	<div class="container">
+		<ul class="descr-tabs__list">
+			<li class="descr-tabs__item active js-tab">Описание товара</li>
+			<li class="descr-tabs__item js-tab">Характеристики</li>
+			<li class="descr-tabs__item js-tab">Доставка</li>
+		</ul>
+	</div>
+	<div class="descr-tabs__bott">
+		<div class="container">
+			<ul class="descr-tabs__list-content">
+				<li class="descr-tabs__item-content active js-tab-content">
+					<p class="descr-tabs__specification">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+					<p class="descr-tabs__specification">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+				</li>
+				<li class="descr-tabs__item-content js-tab-content">
+					<p class="descr-tabs__specification">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый.</p>
+					<p class="descr-tabs__specification">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+				</li>
+				<li class="descr-tabs__item-content js-tab-content">
+					<p class="descr-tabs__specification">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+					<p class="descr-tabs__specification">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+      <div class="product-slider product-slider--descr">
+  <div class="container">
+    <div class="product-slider__header">
+      <h2 class="product-slider__title">Недавно просмотренные</h2>
+    </div>
+    <div class="product-slider__body">
+      <div class="product-slider__list js-slider-product">
+
+        <div class="product-slider__item">
+          <a href="#" class="product-slider__link">
+            <div class="product-slider__top">
+              <img src="pic/goods/goods-1.png" alt="" class="product-slider__img">
+              <img src="pic/goods/goods-2.png" alt="" class="product-slider__img product-slider__img--hover">
+            </div>
+            <div class="product-slider__bottom">
+              <span class="product-slider__price">1.990 <span class="rubl">o</span></span>
+              <span class="product-slider__desc">Название или категория</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="product-slider__item">
+          <a href="#" class="product-slider__link">
+            <div class="product-slider__top">
+              <img src="pic/goods/goods-1.png" alt="" class="product-slider__img">
+              <img src="pic/goods/goods-2.png" alt="" class="product-slider__img product-slider__img--hover">
+            </div>
+            <div class="product-slider__bottom">
+              <span class="product-slider__price">1.990 <span class="rubl">o</span></span>
+              <span class="product-slider__desc">Название или категория</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="product-slider__item">
+          <a href="#" class="product-slider__link">
+            <div class="product-slider__top">
+              <img src="pic/goods/goods-1.png" alt="" class="product-slider__img">
+              <img src="pic/goods/goods-2.png" alt="" class="product-slider__img product-slider__img--hover">
+            </div>
+            <div class="product-slider__bottom">
+              <span class="product-slider__price">1.990 <span class="rubl">o</span></span>
+              <span class="product-slider__desc">Название или категория</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="product-slider__item">
+          <a href="#" class="product-slider__link">
+            <div class="product-slider__top">
+              <img src="pic/goods/goods-1.png" alt="" class="product-slider__img">
+              <img src="pic/goods/goods-2.png" alt="" class="product-slider__img product-slider__img--hover">
+            </div>
+            <div class="product-slider__bottom">
+              <span class="product-slider__price">1.990 <span class="rubl">o</span></span>
+              <span class="product-slider__desc">Название или категория</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="product-slider__item">
+          <a href="#" class="product-slider__link">
+            <div class="product-slider__top">
+              <img src="pic/goods/goods-1.png" alt="" class="product-slider__img">
+              <img src="pic/goods/goods-2.png" alt="" class="product-slider__img product-slider__img--hover">
+            </div>
+            <div class="product-slider__bottom">
+              <span class="product-slider__price">1.990 <span class="rubl">o</span></span>
+              <span class="product-slider__desc">Название или категория</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="product-slider__item">
+          <a href="#" class="product-slider__link">
+            <div class="product-slider__top">
+              <img src="pic/goods/goods-1.png" alt="" class="product-slider__img">
+              <img src="pic/goods/goods-2.png" alt="" class="product-slider__img product-slider__img--hover">
+            </div>
+            <div class="product-slider__bottom">
+              <span class="product-slider__price">1.990 <span class="rubl">o</span></span>
+              <span class="product-slider__desc">Название или категория</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  <div class="popup popup--availability" id="popup-availability">
+  <div class="popup__wrap">
+    <div class="popup__holder" data-txt="наличие в магазинах">
+      <div class="popup__inner">
+        <div class="popup__header">
+          <h4 class="popup__title">Узнать о наличии</h4>
+        </div>
+        <form action="" class="popup__form">
+          <div class="popup__form-row">
+            <span class="popup__form-txt">Выберите нужные параметры</span>
+            <div class="popup__form-box">
+              <div class="popup__form-select">
+                <select name="" id="" class="js-select">
+                  <option value="">Выберите размер</option>
+                  <option value="">30</option>
+                  <option value="">31</option>
+                  <option value="">32</option>
+                  <option value="">33</option>
+                </select>
+              </div>
+              <div class="popup__form-select">
+                <select name="" id="" class="js-select">
+                  <option value="">Выберите город</option>
+                  <option value="">Москва</option>
+                  <option value="">Санкт-Петербург</option>
+                  <option value="">Ростов-на-Дону</option>
+                  <option value="">Сочи</option>
+                  <option value="">Тула</option>
+                  <option value="">Новороссийск</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="popup__form-row">
+            <span class="popup__form-value">К сожалению, данного товара нет в наличии в нашем Интернет-магазине</span>
+          </div>
+          <div class="popup__form-row">
+            <ul class="popup__form-list">
+              <li class="popup__form-item">
+                <div class="popup__form-info">
+                  <span class="popup__form-address">ТЦ МЕГА, пр. Аксайский, 23</span>
+                  <span class="popup__form-phone">тел.: +7 (863) 280-10-94</span>
+                </div>
+                <a href="#" class="btn popup__form-btn">зарезервировать</a>
+              </li>
+              <li class="popup__form-item">
+                <div class="popup__form-info">
+                  <span class="popup__form-address">ТРК "Горизонт", Новая Галерея, 3 этаж, пр.М.Нагибина, 32/2</span>
+                  <span class="popup__form-phone">тел.: +7 (863) 280-10-94</span>
+                </div>
+                <a href="#" class="btn popup__form-btn">зарезервировать</a>
+              </li>
+              <li class="popup__form-item">
+                <div class="popup__form-info">
+                  <span class="popup__form-address">ЦУМ, 3 этаж ул.Большая Садовая, 46</span>
+                  <span class="popup__form-phone">тел.: +7 (863) 280-10-94</span>
+                </div>
+                <a href="#" class="btn popup__form-btn">зарезервировать</a>
+              </li>
+              <li class="popup__form-item">
+                <div class="popup__form-info">
+                  <span class="popup__form-address">ТРК «МегаМаг», ул. Пойменная,1, 2 этаж</span>
+                  <span class="popup__form-phone">тел.: +7 (863) 280-10-94</span>
+                </div>
+                <a href="#" class="btn popup__form-btn">зарезервировать</a>
+              </li>
+            </ul>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <footer class="footer js-footer">
+	<div class="footer__top">
+		<div class="container">
+			<div class="footer__wrapp">
+				<div class="footer__inner">
+					<span class="footer__caption">Продукция</span>
+					<ul class="footer__list">
+						<li class="footer__item"><a href="#" class="footer__link">Для девочек</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Для мальчиков</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Аксессуары и шапки</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Бренды</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Sale</a></li>
+					</ul>
+				</div>
+				<div class="footer__inner">
+					<span class="footer__caption">Для клиентов</span>
+					<ul class="footer__list">
+						<li class="footer__item"><a href="#" class="footer__link">Где купить</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Центр поддержки</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Как оформить заказ</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Как выбрать размер</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Доставка</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Оплата</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Возврат</a></li>
+						<li class="footer__item"><a href="#" class="footer__link">Оферта</a></li>
+					</ul>
+				</div>
+				<div class="footer__inner">
+					<div class="footer__item-wrapp">
+						<span class="footer__caption">О нас</span>
+						<ul class="footer__list">
+							<li class="footer__item"><a href="#" class="footer__link">О компании</a></li>
+							<li class="footer__item"><a href="#" class="footer__link">Вакансии</a></li>
+							<li class="footer__item"><a href="#" class="footer__link">Контакты</a></li>
+						</ul>
+					</div>
+					<span class="footer__caption">Сотрудничество</span>
+					<ul class="footer__list">
+						<li class="footer__item"><a href="#" class="footer__link">Стать нашим партнером</a></li>
+					</ul>
+				</div>
+				<div class="footer__inner">
+					<span class="footer__caption">Способы оплаты</span>
+					<div class="footer__img-wrapp">
+						<img src="pic/card-bank/visa-master.png" alt="">
+					</div>
+					<span class="footer__desc">Вы можете оплатить покупки наличными, либо выбрать <a href="#" class="footer__another-pay">другой способ оплаты</a></span>
+				</div>
+				<div class="footer__inner">
+					<span class="footer__caption">Социальные сети</span>
+					<ul class="footer__list footer__list--social">
+						<li class="footer__item">
+							<a href="#" class="footer__link footer__link--instagram">
+								<svg class="icon-instagram">
+									<use xlink:href="#instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link footer__link--facebook">
+								<svg class="icon-facebook">
+									<use xlink:href="#facebook"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link footer__link--vk">
+								<svg class="icon-vk">
+									<use xlink:href="#vk"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer__item">
+							<a href="#" class="footer__link footer__link--twitter">
+								<svg class="icon-twitter">
+									<use xlink:href="#twitter"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="footer__bott">
+		<div class="container">
+			<span class="footer__desc-bott">Личные данные, предоставленные посредством электронных сообщений или электронной анкеты, регистрируются согласно Федеральному Закону "О защите личных данных" 15/1999 от 13 декабря.</span>
+			<span class="footer__desc-bott">Регистрируемая база данных яляется собственностью компании LARSON retail. Компания гарантирует сохранность этих данных, обязуется не разглашать информацию третьим лицам.</span>
+		</div>
+	</div>
+</footer>
+
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

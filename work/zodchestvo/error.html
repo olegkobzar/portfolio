@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ошибка 404</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body>
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+
+ 	</div>
+
+
+    <div class="wrapper">
+
+      <div class="header header--error">
+  <div class="header__container">
+    <div class="header__wrapp">
+
+        <div class="header__logo">
+          <a href="#" class="header__logo-link">
+            <span class="header__logo-icon">
+              <svg class="icon-logo">
+                <use xlink:href="#logo"></use>
+              </svg>
+            </span>
+            <span class="header__logo-text">Зодчество</span>
+          </a>
+        </div>
+
+        <span class="header__txt">Международный архитектурный фестиваль</span>
+
+        <span class="header__data">19 — 21 ноября, Москва, Манеж</span>
+
+    </div>
+  </div>
+</div>
+
+
+      <div class="heading heading--error" style="background-image: url(pic/bg/bg-error.jpg);">
+  <div class="container">
+    <div class="heading__wrap">
+      <div class="heading__holder">
+        <h1 class="heading__title">404</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="error-page">
+        <div class="error-page__outer">
+          <div class="container">
+            <h2 class="error-page__title">Ошибка</h2>
+            <span class="error-page__desc">Такой страницы не существует</span>
+            <a href="#" class="btn btn--border error-page__btn">Вернуться на главную</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

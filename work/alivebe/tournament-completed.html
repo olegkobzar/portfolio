@@ -1,0 +1,1104 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Турниры - завершенные</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div>
+<header class="header">
+	<div class="container">
+		<div class="header__holder">
+			<div class="header__item header__logo">
+        
+				  <a href="#" class="header__logo-link">
+				  	<img src="pic/logo/logo.png" alt="logo">
+				  </a>
+        
+        
+			</div>
+			<div class="header__item header__menu">
+				<nav class="header__nav">
+					<ul class="header__nav-list">
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">Лента</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">Турниры</a>
+						</li>
+						<li class="header__nav-item">
+							<a href="#" class="header__nav-link">Рейтинги</a>
+						</li>
+						<li class="header__nav-item header__nav-item--mod">
+							<a data-fancybox data-src="#popup-enter" href="javascript:;" class="header__nav-link">Еще</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="header__item header__ctrl js-menu-wrap">
+				<div class="header__ctrl-item">
+          <div class="header__lang js-menu-parent">
+				    <span class="header__lang-item js-menu-link">RU</span>
+            <div class="header__lang-drop js-menu-drop">
+              <span class="header__lang-item header__lang-item--mod">EN</span>
+            </div>
+          </div>
+				</div>
+				<div class="header__ctrl-item header__ctrl-item--search header__search">
+					<span class="header__search-icon js-search-btn">
+						<svg class="icon-search">
+							<use xlink:href="#search"></use>
+						</svg>
+					</span>
+          <div class="header__search-more js-header-search">
+            <span class="header__search-more-icon">
+              <svg class="icon-search">
+                <use xlink:href="#search"></use>
+              </svg>
+            </span>
+            <input type="text" class="header__search-input" placeholder="Поиск">
+            <span class="header__search-close js-search-close"></span>
+          </div>
+				</div>
+				<div class="header__ctrl-item">
+          <div class="header__ctrl js-menu-parent">
+            <div class="header__notice js-menu-link">
+				      <span class="header__notice-tooltip" data-num="2"></span>
+				      <span class="header__notice-icon">
+				      	<svg class="icon-bell">
+				      		<use xlink:href="#bell"></use>
+				      	</svg>
+				      </span>
+            </div>
+            <div class="header__notice-drop js-menu-drop">
+              <ul class="header__notice-drop-list">
+                <li class="header__notice-drop-item">
+                  <a href="#" class="header__notice-drop-link">
+                    <span class="header__notice-drop-img">
+                      <img src="pic/users/users-11.png" alt="people">
+                    </span>
+                    <div class="header__notice-drop-txt">
+                      <span class="header__notice-drop-name">
+                        Петр Завацкий
+                      </span>
+                      <span class="header__notice-drop-date">
+                        Сегодня, 14 : 50
+                      </span>
+                      <span class="header__notice-drop-info">
+                        пригласил (-а)  в друзья
+                      </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="header__notice-drop-item">
+                  <a href="#" class="header__notice-drop-link">
+                    <span class="header__notice-drop-img">
+                      <img src="pic/users/users-12.png" alt="people">
+                    </span>
+                    <div class="header__notice-drop-txt">
+                      <span class="header__notice-drop-name">
+                        Светлана Петрова
+                      </span>
+                      <span class="header__notice-drop-date">
+                        Сегодня, 13 : 45
+                      </span>
+                      <span class="header__notice-drop-info">
+                        принял (-а) твое предложение дружбы
+                      </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="header__notice-drop-item">
+                  <a href="#" class="header__notice-drop-link">
+                    <span class="header__notice-drop-img">
+                      <img src="pic/users/users-12.png" alt="people">
+                    </span>
+                    <div class="header__notice-drop-txt">
+                      <span class="header__notice-drop-name">
+                        Светлана Петрова
+                      </span>
+                      <span class="header__notice-drop-date">
+                         03.07.18
+                      </span>
+                      <span class="header__notice-drop-info">
+                        оценил (-а) твою активность 
+                      </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="header__notice-drop-item">
+                  <a href="#" class="header__notice-drop-link">
+                    <span class="header__notice-drop-img">
+                      <img src="pic/users/users-11.png" alt="people">
+                    </span>
+                    <div class="header__notice-drop-txt">
+                      <span class="header__notice-drop-name">
+                        Петр Завацкий
+                      </span>
+                      <span class="header__notice-drop-date">
+                        02.07.18
+                      </span>
+                      <span class="header__notice-drop-info">
+                        прокомментировал (-а) твою активность
+                      </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="header__notice-drop-item">
+                  <a href="#" class="header__notice-drop-link">
+                    <span class="header__notice-drop-img">
+                      <img src="pic/users/users-14.png" alt="people">
+                    </span>
+                    <div class="header__notice-drop-txt">
+                      <span class="header__notice-drop-name">
+                        AliveBe
+                      </span>
+                      <span class="header__notice-drop-date">
+                        01.07.18
+                      </span>
+                      <span class="header__notice-drop-info header__notice-drop-info--mod">
+                        Напоминаем, что до начала турнира “Challenge Global 2018 September» осталось 2 дня!
+                      </span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <div class="header__notice-drop-more">
+                <a href="#">Показать еще</a>
+              </div>
+            </div>
+          </div>
+				</div>
+				<div class="header__ctrl-item">
+          
+          <div class="header__profile">
+            <div class="header__profile-parent js-menu-parent">
+				    <span class="header__profile-img">
+				    	<img src="pic/users/users-21.png" alt="user">
+				    </span>
+            </div>
+            <div class="header__profile-parent js-menu-parent">
+				      <span class="header__profile-icon js-menu-link"></span>
+              <div class="header__profile-drop js-menu-drop">
+                <ul class="header__profile-drop-list">
+                  <li class="header__profile-drop-item">
+                    <a href="#" class="header__profile-drop-link">
+                      <span class="header__profile-drop-icon">
+                        <svg class="icon-pen">
+                          <use xlink:href="#pen"></use>
+                        </svg>
+                      </span>
+                      <span class="header__profile-drop-txt">Изменить профиль</span>
+                    </a>
+                  </li>
+                  <li class="header__profile-drop-item">
+                    <a href="#" class="header__profile-drop-link">
+                      <span class="header__profile-drop-icon">
+                        <svg class="icon-user">
+                          <use xlink:href="#user"></use>
+                        </svg>
+                      </span>
+                      <span class="header__profile-drop-txt">Друзья</span>
+                    </a>
+                  </li>
+                  <li class="header__profile-drop-item">
+                    <a href="#" class="header__profile-drop-link">
+                      <span class="header__profile-drop-icon">
+                        <svg class="icon-gollar">
+                          <use xlink:href="#gollar"></use>
+                        </svg>
+                      </span>
+                      <span class="header__profile-drop-txt">Бонусы</span>
+                    </a>
+                  </li>
+                  <li class="header__profile-drop-item">
+                    <a href="#" class="header__profile-drop-link">
+                      <span class="header__profile-drop-icon">
+                        <svg class="icon-purse">
+                          <use xlink:href="#purse"></use>
+                        </svg>
+                      </span>
+                      <span class="header__profile-drop-txt">Кошелек</span>
+                    </a>
+                  </li>
+                  <li class="header__profile-drop-item">
+                    <a href="#" class="header__profile-drop-link">
+                      <span class="header__profile-drop-icon">
+                        <svg class="icon-pulse-2">
+                          <use xlink:href="#pulse-2"></use>
+                        </svg>
+                      </span>
+                      <span class="header__profile-drop-txt">Пульсовые зоны</span>
+                    </a>
+                  </li>
+                  <li class="header__profile-drop-item">
+                    <a href="#" class="header__profile-drop-link">
+                      <span class="header__profile-drop-icon">
+                        <svg class="icon-tooltip">
+                          <use xlink:href="#tooltip"></use>
+                        </svg>
+                      </span>
+                      <span class="header__profile-drop-txt">Инструкция</span>
+                    </a>
+                  </li>
+                  <li class="header__profile-drop-item">
+                    <a href="#" class="header__profile-drop-link">
+                      <span class="header__profile-drop-icon">
+                        <svg class="icon-message">
+                          <use xlink:href="#message"></use>
+                        </svg>
+                      </span>
+                      <span class="header__profile-drop-txt">Служба поддержки</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+	<div class="wrapper">
+
+		<div class="tou">
+	<div class="tou__head-wrapp">
+		<div class="container">
+			<ul class="tou__head-list">
+				<li class="tou__head-item">
+					<a href="#" class="tou__head-link active">
+						Карточка
+					</a>
+				</li>
+				<li class="tou__head-item">
+					<a href="#" class="tou__head-link ">
+						Мои отчеты
+					</a>
+				</li>
+				<li class="tou__head-item">
+					<a href="#" class="tou__head-link ">
+						Участники
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	
+</div>
+
+
+		<div class="card-head" style="background-image: url(pic/bg/bg-06.jpg);">
+	<div class="card-head__decor">
+		<div class="container">
+			
+			
+			
+			
+			
+				<div class="card-head__wrapp card-head__wrapp--completed">
+					<div class="card-head__content">
+						<span class="card-head__title">XXIX Международный марафон "Белые ночи"</span>
+						<span class="card-head__time-text">Турнир</span>
+						<div class="card-head__time-wrapp">
+							<span class="card-head__day-text">Завершен</span>
+						</div>
+					</div>
+				</div>
+			
+			
+		</div>
+	</div>
+</div>
+
+		<div class="card-descr">
+	<div class="container">
+		<div class="card-descr__wrapp js-descr-slider">
+			<div class="card-descr__item">
+				<div class="card-descr__item-center">
+					<span class="card-descr__title">Цель</span>
+					<div class="card-descr__inner">
+						<span class="card-descr__icon">
+							<svg class="icon-target">
+								<use xlink:href="#target"></use>
+							</svg>
+						</span>
+						<span class="card-descr__text">мах дист./период</span>
+					</div>
+				</div>
+			</div>
+			<div class="card-descr__item">
+				<div class="card-descr__item-center">
+					<span class="card-descr__title">Период</span>
+					<div class="card-descr__inner">
+						<span class="card-descr__icon">
+							<svg class="icon-period">
+								<use xlink:href="#period"></use>
+							</svg>
+						</span>
+						<span class="card-descr__text">01 - 31.08.18</span>
+					</div>
+				</div>
+			</div>
+			<div class="card-descr__item">
+				<div class="card-descr__item-center">
+					<span class="card-descr__title">Участники</span>
+					<div class="card-descr__inner">
+						<span class="card-descr__icon">
+							<svg class="icon-people">
+								<use xlink:href="#people"></use>
+							</svg>
+						</span>
+						<span class="card-descr__text">1290</span>
+					</div>
+				</div>
+			</div>
+			<div class="card-descr__item">
+				<div class="card-descr__item-center">
+					<span class="card-descr__title">Лайки</span>
+					<div class="card-descr__inner">
+						<span class="card-descr__icon">
+							<svg class="icon-like">
+								<use xlink:href="#like"></use>
+							</svg>
+						</span>
+						<span class="card-descr__text">567</span>
+					</div>
+				</div>
+			</div>
+
+			
+				<div class="card-descr__item">
+					<div class="card-descr__item-center">
+						<span class="card-descr__title">Норматив</span>
+						<div class="card-descr__inner">
+							<span class="card-descr__icon">
+								<svg class="icon-check">
+									<use xlink:href="#check"></use>
+								</svg>
+							</span>
+							<span class="card-descr__text">20 км</span>
+						</div>
+					</div>
+				</div>
+				<div class="card-descr__item">
+					<div class="card-descr__item-center">
+						<span class="card-descr__title">Общая дистанция</span>
+						<div class="card-descr__inner">
+							<span class="card-descr__icon">
+								<svg class="icon-distance">
+									<use xlink:href="#distance"></use>
+								</svg>
+							</span>
+							<span class="card-descr__text">1300 км</span>
+						</div>
+					</div>
+				</div>
+				<div class="card-descr__item card-descr__item--sex">
+					<div class="card-descr__item-center">
+						<span class="card-descr__title">Полы</span>
+						<div class="card-descr__inner">
+							<span class="card-descr__icon">
+								<svg class="icon-man">
+									<use xlink:href="#man"></use>
+								</svg>
+							</span>
+							<span class="card-descr__text">1002</span>
+						</div>
+						<div class="card-descr__inner">
+							<span class="card-descr__icon">
+								<svg class="icon-woman">
+									<use xlink:href="#woman"></use>
+								</svg>
+							</span>
+							<span class="card-descr__text">288</span>
+						</div>
+					</div>
+				</div>
+			
+		</div>
+	</div>
+</div>
+
+		<div class="result ">
+	<div class="container">
+		<div class="result__group-wrapp">
+			<span class="result__group">Моя квалификационная группа : </span>
+			<span class="result__group-number">Любители, 3 группа</span>
+		</div>
+		
+		<span class="result__people">Мои результаты:</span>
+		<table class="result__table">
+			<thead class="result__table-head">
+				<tr>
+					<th>Участники</th>
+					<th>Место</th>
+					<th>Километры</th>
+					<th>Нравится</th>
+				</tr>
+			</thead>
+			<tbody class="result__table-body">
+				<tr>
+					<td>
+						
+							<div class="result__place">
+								<img src="pic/medal/medal-01.png" alt="">
+							</div>
+						
+						
+						<div class="result__user">
+							<div class="result__user-avatar">
+								<img src="pic/users/users-21.png" alt="">
+							</div>
+						</div>
+						<div class="result__user-name">Михаил Филиппов</div>
+					</td>
+					<td>1</td>
+					<td>10</td>
+					<td>
+						<div class="like js-like-trigger">
+							<div class="like-icon">
+								<svg>
+									<use xlink:href="#like"></use>
+								</svg>
+								<svg class="filled">
+									<use xlink:href="#like-2"></use>
+								</svg>
+							</div>
+							<div class="like-txt js-like-num">95</div>
+						</div>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td>
+						
+							<div class="result__place">
+								<img src="pic/medal/medal-03.png" alt="">
+							</div>
+						
+						<div class="result__user">
+							<div class="result__user-avatar result__user-avatar--couple">
+								<span class="result__user-avatar-one">
+									<img src="pic/users/users-21.png" alt="">
+								</span>
+								<span class="result__user-avatar-two">
+									<img src="pic/users/users-09.png" alt="">
+								</span>
+							</div>
+							
+						</div>
+						<div class="result__user-name">
+							Пара 
+							<a href="#" class="result__user-link">
+								с Ириной Петровой
+							</a>
+						</div>
+					</td>
+					<td>16</td>
+					<td>100</td>
+					<td>
+						<div class="like js-like-trigger">
+							<div class="like-icon">
+								<svg>
+									<use xlink:href="#like"></use>
+								</svg>
+								<svg class="filled">
+									<use xlink:href="#like-2"></use>
+								</svg>
+							</div>
+							<div class="like-txt js-like-num">100</div>
+						</div>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td>
+						
+							<div class="result__place">
+								10
+							</div>
+						
+						<div class="result__user">
+							<div class="result__user-avatar">
+								<img src="pic/users/users-22.png" alt="">
+							</div>
+							
+						</div>
+						<div class="result__user-name">
+							Команда
+							<a href="#" class="result__user-link">
+								Jungle Adventure
+							</a>
+						</div>
+					</td>
+					<td>5</td>
+					<td>20</td>
+					<td>
+						<div class="like js-like-trigger">
+							<div class="like-icon">
+								<svg>
+									<use xlink:href="#like"></use>
+								</svg>
+								<svg class="filled">
+									<use xlink:href="#like-2"></use>
+								</svg>
+							</div>
+							<div class="like-txt js-like-num">273</div>
+						</div>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td>
+						
+							<div class="result__place">
+								<img src="pic/medal/medal-02.png" alt="">
+							</div>
+						
+						<div class="result__user">
+							<div class="result__user-avatar">
+								<img src="pic/users/users-23.png" alt="">
+							</div>
+							
+						</div>
+						<div class="result__user-name">
+							Клуб
+							<a href="#" class="result__user-link">
+								Runers
+							</a>
+						</div>
+					</td>
+					<td>3</td>
+					<td>5</td>
+					<td>
+						<div class="like js-like-trigger">
+							<div class="like-icon">
+								<svg>
+									<use xlink:href="#like"></use>
+								</svg>
+								<svg class="filled">
+									<use xlink:href="#like-2"></use>
+								</svg>
+							</div>
+							<div class="like-txt js-like-num">42</div>
+						</div>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td>
+						
+							<div class="result__place">
+								6
+							</div>
+						
+						<div class="result__user">
+							<div class="result__user-avatar">
+								<img src="pic/users/users-24.png" alt="">
+							</div>
+							
+						</div>
+						<div class="result__user-name">
+							Организация
+							<a href="#" class="result__user-link">
+								Газпром
+							</a>
+						</div>
+					</td>
+					<td>7</td>
+					<td>15</td>
+					<td>
+						<div class="like js-like-trigger">
+							<div class="like-icon">
+								<svg>
+									<use xlink:href="#like"></use>
+								</svg>
+								<svg class="filled">
+									<use xlink:href="#like-2"></use>
+								</svg>
+							</div>
+							<div class="like-txt js-like-num">107</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+		<div class="static-content">
+			<div class="container">
+				<div class="content-regulations">
+					<a href="#">Положение о турнире</a>
+					<h5>Описание:</h5>
+					<p>ХХIX Международный марафон "Белые ночи" проводится с целью пропаганды здорового образа жизни, приобщения населения к регулярным занятиям физической культурой и спортом, дальнейшего развития международных дружественных спортивных связей и туризма, выявления сильнейших марафонцев Санкт-Петербурга.</p>
+					<p>Марафон пройдёт 22 июля 2018 года в Санкт-Петербурге. Старт в 8.00. Старт и финиш Марафона на Дворцовой площади. Трасса Марафона проложена в один круг по набережным, проспектам и улицам центра Санкт-Петербурга мимо всемирно известных архитектурных и исторических памятников и размечена голубой пунктирной линией по всей длине дистанции.</p>
+					<h6>Участники и программа </h6>
+					<p>Соревнования для мужчин и женщин проводятся на дистанциях- 15 км.</p>
+					<h6>Выдача стартовых пакетов</h6>
+					<p>Выдача стартовых пакетов состоится по адресу: г. Санкт-Петербург, Зимний стадион, Манежная площадь, д. 2, вход с Кленовой улицы, ближайшие станции метро «Гостиный двор» и «Невский проспект».</p>
+					<div class="time">
+						<span>20 июля с 12:00 до 20:00;</span>
+						<span>21 июля c 10:00 до 19:00.</span>
+					</div>
+					<p>Для получения стартового номера необходимо представить документ, удостоверяющий личность, и медицинскую справку, выданную не ранее 22 февраля 2018 года.</p>
+					<h6>Санкт-Петербург. Белые Ночи. Не время спать. Беги.</h6>
+				</div>
+			</div>
+		</div>
+
+		<div class="share">
+	<div class="container">
+		<span class="share__title">Поделиться событием:</span>
+		<ul class="share__list">
+			<li class="share__item">
+				<a href="#" class="share__link vk">
+					<span class="share__icon">
+						<svg class="icon-vk">
+							<use xlink:href="#vk"></use>
+						</svg>
+					</span>
+					<span class="share__number">18</span>
+				</a>
+			</li>
+			<li class="share__item">
+				<a href="#" class="share__link fb">
+					<span class="share__icon">
+						<svg class="icon-fb">
+							<use xlink:href="#fb"></use>
+						</svg>
+					</span>
+					<span class="share__number">34</span>
+				</a>
+			</li>
+			<li class="share__item">
+				<a href="#" class="share__link twitter">
+					<span class="share__icon">
+						<svg class="icon-twitter">
+							<use xlink:href="#twitter"></use>
+						</svg>
+					</span>
+					<span class="share__number">5</span>
+				</a>
+			</li>
+			<li class="share__item">
+				<a href="#" class="share__link google">
+					<span class="share__icon">
+						<svg class="icon-google">
+							<use xlink:href="#google"></use>
+						</svg>
+					</span>
+					<span class="share__number">11</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+	</div>
+
+<footer class="footer js-footer">
+  <div class="container">
+    <div class="footer__holder">
+      <!-- desktop -->
+      <div class="footer__desktop">
+        <div class="footer__info">
+          <div class="footer__info-col">
+            <div class="footer__logo">
+              <a href="#">
+                <img src="pic/logo/logo.png" alt="logo">
+              </a>
+            </div>
+            <div class="footer__copy">
+              <span>&copy; 2018 AliveBe</span>
+              <span>Все права защищены.</span>
+            </div>
+            <div class="footer__social">
+              <div class="footer__social-icon">
+                <a href="#">
+                  <svg class="icon-vk">
+                    <use xlink:href="#vk"></use>
+                  </svg>          
+                </a>
+              </div>
+              <div class="footer__social-icon">
+                <a href="#">
+                  <svg class="icon-fb">
+                    <use xlink:href="#fb"></use>
+                  </svg>          
+                </a>
+              </div>
+              <div class="footer__social-icon">
+                <a href="#">
+                  <svg class="icon-insta">
+                    <use xlink:href="#insta"></use>
+                  </svg>          
+                </a>
+              </div>
+              <div class="footer__social-icon">
+                <a href="#">
+                  <svg class="icon-youtube">
+                    <use xlink:href="#youtube"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__info-col footer__info-col--mod">
+            <ul class="footer__info-list footer__info-list--first">
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  Лента
+                </a>
+              </li>
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  Турниры
+                </a>
+              </li>
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  Рейтинг
+                </a>
+              </li>
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  О проекте
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__info-col footer__info-col--mod">
+            <ul class="footer__info-list">
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  Часто задаваемые вопросы
+                </a>
+              </li>
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  Инструкция
+                </a>
+              </li>
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  Служба поддержки
+                </a>
+              </li>
+              <li class="footer__info-item">
+                <a href="" class="footer__info-link">
+                  Privacy Policy
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__subs">
+          <span class="footer__subs-title">
+            Подпишитесь на рассылку!
+          </span>
+          <span class="footer__subs-subtitle">
+            Получайте полезную информацию первыми.
+          </span>
+          <form action="#" class="footer__subs-form">
+            <label class="input-email-label">
+              <div class="input-email-inner">
+                <span>
+                  <svg class="icon-message">
+                    <use xlink:href="#message"></use>
+                  </svg>
+                </span>
+                <input type="email" name="input-email" class="input-email" placeholder="Email">
+              </div>
+              <div class="input-email-inner input-email-inner--btn">
+                <button class="btn">Подписаться</button>
+              </div>
+            </label>
+          </form>
+        </div>
+        <div class="footer__desc">
+          <span>
+            Цель проекта AliveBe – приобщать людей к регулярным занятиям спортом через участие в online - соревнованиях, которые проводятся в циклических видах спорта (бег, лыжи, велосипед, ходьба, плавание) на протяжении длительных периодов.
+          </span>
+        </div>
+      </div>
+      <!-- end desktop -->
+
+      <!-- mobile -->
+      <div class="footer__mobile">
+        <ul class="footer__menu js-footer-menu">
+          <li class="footer__menu-item">
+            <a href="#" class="footer__menu-link">
+              <span class="footer__menu-icon">
+                <svg class="icon-list">
+                  <use xlink:href="#list"></use>
+                </svg>
+              </span>
+              <span class="footer__menu-txt">Лента</span>
+            </a>
+          </li>
+          <li class="footer__menu-item">
+            <a href="#" class="footer__menu-link">
+              <span class="footer__menu-icon">
+                <svg class="icon-prize-2">
+                  <use xlink:href="#prize-2"></use>
+                </svg>
+              </span>
+              <span class="footer__menu-txt">Турниры</span>
+            </a>
+          </li>
+          <li class="footer__menu-item">
+            <a href="#" class="footer__menu-link">
+              <span class="footer__menu-icon">
+                <svg class="icon-star">
+                  <use xlink:href="#star"></use>
+                </svg>
+              </span>
+              <span class="footer__menu-txt">Рейтинг</span>
+            </a>
+          </li>
+          <li class="footer__menu-item js-footer-parent">
+            <a href="#" class="footer__menu-link js-footer-link">
+              <span class="footer__menu-icon">
+                <svg class="icon-more">
+                  <use xlink:href="#more"></use>
+                </svg>
+              </span>
+              <span class="footer__menu-txt ">Еще</span>
+            </a>
+            <span class="footer__menu-drop js-footer-drop">
+              <ul class="footer__menu-drop-list">
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-prize">
+                        <use xlink:href="#prize"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Достижения</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-pen">
+                        <use xlink:href="#pen"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Изменить профиль</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-user">
+                        <use xlink:href="#user"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Друзья</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-gollar">
+                        <use xlink:href="#gollar"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Бонусы</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-purse">
+                        <use xlink:href="#purse"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Кошелек</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-flag">
+                        <use xlink:href="#flag"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Клубы</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-building">
+                        <use xlink:href="#building"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Организации</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-user">
+                        <use xlink:href="#user"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Трекеры</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item">
+                  <a href="#" class="footer__menu-drop-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-pulse-2">
+                        <use xlink:href="#pulse-2"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Пульсовые зоны</span>
+                  </a>
+                </li>
+                <li class="footer__menu-drop-item js-sub-parent">
+                  <a href="#" class="footer__menu-drop-link js-sub-link">
+                    <span class="footer__menu-drop-icon">
+                      <svg class="icon-tooltip">
+                        <use xlink:href="#tooltip"></use>
+                      </svg>
+                    </span>
+                    <span class="footer__menu-drop-txt">Справка</span>
+                  </a>
+                  <div class="footer__menu-sub-drop js-sub-drop">
+                    <ul class="footer__menu-sub-list">
+                      <li class="footer__menu-sub-item">
+                        <a href="#" class="footer__menu-sub-link">
+                          Часто задаваемые вопросы
+                        </a>
+                      </li>
+                      <li class="footer__menu-sub-item">
+                        <a href="#" class="footer__menu-sub-link">
+                          Инструкция
+                        </a>
+                      </li>
+                      <li class="footer__menu-sub-item">
+                        <a href="#" class="footer__menu-sub-link">
+                          Служба поддержки
+                        </a>
+                      </li>
+                      <li class="footer__menu-sub-item">
+                        <a href="#" class="footer__menu-sub-link">
+                          Условия использования
+                        </a>
+                      </li>
+                      <li class="footer__menu-sub-item">
+                        <a href="#" class="footer__menu-sub-link">
+                          Privacy Policy
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                
+              </ul>
+            </span>
+          </li>
+
+        </ul>
+      </div>
+      <!-- end mobile -->
+    </div>
+  </div>
+</footer>
+
+<div class="popup" id="popup-enter">
+  <div class="popup__holder">
+    <div class="popup__icon">
+      <svg class="icon-login">
+        <use xlink:href="#login"></use>
+      </svg>
+    </div>
+    <div class="popup__text">
+      <p>
+        Для того, чтобы посмотреть все разделы сайта Вам необходимо <a href="#">зарегистрироваться</a> или <a href="#">войти</a> в свой акаунт.
+      </p>
+    </div>
+  </div>
+</div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+

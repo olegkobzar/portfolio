@@ -1,0 +1,463 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- @endif -->
+</head>
+<body class=" @@class ">
+<script>
+	//for preloader
+	//document.body.classList.add("overflow-hidden");
+	function getScrollbarWidth() {
+	var outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.width = "100px";
+	outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+	document.body.appendChild(outer);
+
+	var widthNoScroll = outer.offsetWidth;
+	// force scrollbars
+	outer.style.overflow = "scroll";
+
+	// add innerdiv
+	var inner = document.createElement("div");
+	inner.style.width = "100%";
+	outer.appendChild(inner);        
+
+	var widthWithScroll = inner.offsetWidth;
+
+	// remove divs
+	outer.parentNode.removeChild(outer);
+
+	return widthNoScroll - widthWithScroll;
+	}
+	var scrollW = getScrollbarWidth();
+	document.body.style.paddingRight = scrollW + 'px';
+	document.body.className = "overflow-hidden";
+</script>
+
+
+<div id="preloader">
+	<div class="preloader-wrapper big active">
+	<div class="spinner-layer">
+	  <div class="circle-clipper left">
+		<div class="circle"></div>
+	  </div><div class="gap-patch">
+		<div class="circle"></div>
+	  </div><div class="circle-clipper right">
+		<div class="circle"></div>
+	  </div>
+	</div>
+  </div>
+</div>
+	<div style="height: 0; width: 0; position: absolute;overflow: hidden;" id="svg-sprite-container">
+ 		
+ 	</div> 
+    
+  <div class="wrapper">
+    
+    <div class="js-full-page" id="fullpage">
+
+      <div class="section" style="background-image: url(pic/bg/bg-02.jpg);">
+        <div class="section-outer">
+          <div class="section-wrap">
+            <div class="section-holder">
+              <header class="header-main">
+  <div class="container">
+    <div class="header-main__wrap">
+      
+      <div class="header-main__holder header-main__holder--left">
+        <div class="header-main__logo">
+          <a href="#" class="header-main__logo-link">
+            <svg class="header-main__logo-icon icon-logo">
+              <use xlink:href="#logo"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="header-main__holder header-main__holder--right">
+        <div class="header-main__singin">
+          <a href="#" class="header-main__singin-link js-header-main">
+            <span class="header-main__singin-inner">
+              <svg class="header-main__singin-icon icon-login">
+                <use xlink:href="#login"></use>
+              </svg>
+            </span>
+            <span class="header-main__singin-txt">Войти</span>
+          </a>
+        </div>
+      </div>
+        
+    </div>
+  </div>
+</header>
+
+              
+              <div class="main-popup js-main-popup">
+  <span class="main-popup__close js-main-popup-close"></span>
+  <!--<div class="main-popup__holder main-popup__holder&#45;&#45;bg"-->
+       <!--style="background-image: url(pic/bg/bg-main-popups.jpg);">-->
+    <!--<a href="#" class="main-popup__logo">-->
+      <!--<svg class="main-popup__logo-icon icon-logo">-->
+        <!--<use xlink:href="#logo"></use>-->
+      <!--</svg>-->
+    <!--</a>-->
+  <!--</div>-->
+
+  <div class="main-popup__holder main-popup__holder--large">
+    <div class="main-popup__tab js-tabs">
+
+      <div class="main-popup__tab-nav main-popup__nav">
+        <ul class="main-popup__nav-list">
+          <li class="main-popup__nav-item">
+            <a href="#tab-1" class="main-popup__nav-link js-tab-link js-main-login active">Вход</a>
+          </li>
+          <li class="main-popup__nav-item">
+            <a href="#tab-2" class="main-popup__nav-link js-tab-link js-main-reg">Регистрация</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main-popup__content-item active js-tab-content" id="tab-1">
+
+        <div class="main-popup__content-top" data-txt="или">
+          <div class="main-popup__content-row">
+            <div class="main-popup__content-col">
+              <a href="#" class="btn btn--social btn--fb">
+                    <span class="btn-icon">
+                      <svg class="icon-fb">
+                        <use xlink:href="#fb"></use>
+                      </svg>
+                    </span>
+                Войти через facebook
+              </a>
+            </div>
+            <div class="main-popup__content-col">
+              <a href="#" class="btn btn--social btn--vk">
+                    <span class="btn-icon">
+                      <svg class="icon-vk">
+                        <use xlink:href="#vk"></use>
+                      </svg>
+                    </span>
+                Войти через vkontakte
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-popup__content-middle">
+          <form action="" class="main-popup__content-form main-popup__form">
+            <div class="main-popup__form-row main-popup__form-row--multi">
+
+              <div class="main-popup__form-col">
+                <span class="main-popup__form-label">Email</span>
+                <input type="email" class="main-popup__form-input" placeholder="Введите Email">
+              </div>
+
+              <div class="main-popup__form-col">
+                <span class="main-popup__form-label">Пароль</span>
+                <input type="password" class="main-popup__form-input" placeholder="Введите пароль">
+              </div>
+
+            </div>
+
+            <div class="main-popup__form-row">
+              <a href="#" class="main-popup__form-link">Забыли пароль?</a>
+            </div>
+
+            <div class="main-popup__form-row">
+              <button class="btn main-popup__form-btn" type="submit">Войти</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="main-popup__content-item js-tab-content" id="tab-2">
+        <div class="main-popup__content-top" data-txt="или">
+          <div class="main-popup__content-row">
+            <div class="main-popup__content-col">
+              <a href="#" class="btn btn--social btn--fb">
+                    <span class="btn-icon">
+                      <svg class="icon-fb">
+                        <use xlink:href="#fb"></use>
+                      </svg>
+                    </span>
+                Войти через facebook
+              </a>
+            </div>
+            <div class="main-popup__content-col">
+              <a href="#" class="btn btn--social btn--vk">
+                    <span class="btn-icon">
+                      <svg class="icon-vk">
+                        <use xlink:href="#vk"></use>
+                      </svg>
+                    </span>
+                Войти через vkontakte
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-popup__content-middle">
+          <form action="" class="main-popup__content-form main-popup__form">
+            <div class="main-popup__form-row main-popup__form-row--multi">
+
+              <div class="main-popup__form-col">
+                <span class="main-popup__form-label">Имя</span>
+                <input type="text" class="main-popup__form-input" placeholder="Введите имя">
+              </div>
+
+              <div class="main-popup__form-col">
+                <span class="main-popup__form-label">Фамилия</span>
+                <input type="text" class="main-popup__form-input" placeholder="Введите фамилию">
+              </div>
+
+            </div>
+
+            <div class="main-popup__form-row main-popup__form-row--multi">
+
+              <div class="main-popup__form-col">
+                <span class="main-popup__form-label">Email</span>
+                <input type="email" class="main-popup__form-input" placeholder="Введите Email">
+              </div>
+
+              <div class="main-popup__form-col">
+                <span class="main-popup__form-label">Пароль</span>
+                <input type="password" class="main-popup__form-input" placeholder="Введите пароль">
+              </div>
+
+            </div>
+
+            <div class="main-popup__form-row main-popup__form-row--multi">
+
+              <div class="main-popup__form-col">
+                <span class="main-popup__form-label">Дату рождения</span>
+                <input type="date" class="main-popup__form-input" placeholder="ДД.ММ.ГГГГ">
+              </div>
+
+              <div class="main-popup__form-col">
+                <span class="main-popup__form-label">Город</span>
+                <select class="main-popup__form-select js-select" name="select">
+                  <option value="">Выберите город</option>
+                  <option value="">Москва</option>
+                  <option value="">Москва 2</option>
+                  <option value="">Москва 3</option>
+                  <option value="">Москва 4</option>
+                  <option value="">Москва 5</option>
+                  <option value="">Москва 6</option>
+                  <option value="">Москва 7</option>
+                  <option value="">Москва 8</option>
+                  <option value="">Москва 9</option>
+                  <option value="">Москва 10</option>
+                  <option value="">Москва 11</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="main-popup__form-row main-popup__form-row--info">
+              
+              <div class="main-popup__form-checkbox">
+                <label class="checkbox">
+                  <input type="checkbox" name="check">
+                  <span>Подпишитесь на рассылку , чтобы получать новости</span>
+                </label>
+              </div>
+              
+              <span class="main-popup__form-txt">Создавая аккаунт, ты принимаешь <a href="#" class="main-popup__form-link">Политику конфеденциальности и Условия использоания.</a></span>
+
+            </div>
+
+            <div class="main-popup__form-row">
+              <button class="btn main-popup__form-btn" type="submit">Создать аккаунт </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      
+              <div class="main-screen">
+  <div class="container">
+    <div class="main-screen__holder js-main-screen-desc">
+      <span class="main-screen__title">Онлайн соревнования</span>
+      <p class="main-screen__desc">Бегай в удобное для тебя время и где ты хочешь, фиксируй результаты в своем фитнес-трекере или мобильном беговом приложении  и участвуй в соревновании по всей стране!</p>
+
+      <div class="main-screen__bottom">
+        <a href="#" class="btn btn--registration main-screen__btn main-screen__btn--value js-main-popup-btn">Регистрация</a>
+        <a href="#" class="btn btn--show main-screen__btn">Посмотреть</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+              
+              <div class="footer-main">
+  <div class="container">
+    <div class="footer-main__wrap">
+      
+      <div class="footer-main__col footer-main__col--left">
+        <span class="footer-main__txt">&copy; 2018 AliveBe Все права защищены.</span>
+      </div>
+      
+      <div class="footer-main__col footer-main__col--info">
+        <div class="footer-main__inner js-footer-mouse">
+          <span class="footer-main__top">
+            <svg class="footer-main__icon icon-mouse">
+              <use xlink:href="#mouse"></use>
+            </svg>
+          </span>
+          <span class="footer-main__txt"> Scroll down</span>
+        </div>
+      </div>
+      
+      <div class="footer-main__col footer-main__col--right">
+        <div class="footer-main__social">
+          <ul class="footer-main__social-list">
+            <li class="footer-main__social-item">
+              <a href="#" class="footer-main__social-link">
+                <svg class="footer-main__social-icon icon-vk">
+                  <use xlink:href="#vk"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer-main__social-item">
+              <a href="#" class="footer-main__social-link">
+                <svg class="footer-main__social-icon icon-fb">
+                  <use xlink:href="#fb"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer-main__social-item">
+              <a href="#" class="footer-main__social-link">
+                <svg class="footer-main__social-icon icon-insta">
+                  <use xlink:href="#insta"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer-main__social-item">
+              <a href="#" class="footer-main__social-link">
+                <svg class="footer-main__social-icon icon-youtube">
+                  <use xlink:href="#youtube"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section" style="background-image: url(pic/bg/bg-03.jpg);">
+        <div class="section-outer">
+          <div class="section-wrap">
+            <div class="section-holder">
+              <div class="main-screen">
+  <div class="container">
+    <div class="main-screen__holder js-main-screen-desc">
+      <span class="main-screen__title">Включайся!</span>
+      <p class="main-screen__desc">Выбери активный турнир и присоединись к нему. Возможен пробный бесплатный период участия, по итогам которого будет определена твоя квалификационная группа</p>
+
+      <div class="main-screen__bottom">
+        <a href="#" class="btn btn--registration main-screen__btn main-screen__btn--value js-main-popup-btn">Присоединиться</a>
+        <a href="#" class="btn btn--show main-screen__btn">Посмотреть</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>        
+      </div>
+      
+      <div class="section" style="background-image: url(pic/bg/bg-04.jpg);">
+        <div class="section-outer">
+          <div class="section-wrap">
+            <div class="section-holder">
+              
+              <div class="main-screen">
+  <div class="container">
+    <div class="main-screen__holder js-main-screen-desc">
+      <span class="main-screen__title">Побеждай!</span>
+      <p class="main-screen__desc">Побеждает тот, кто пробежит более длинную дистанцию в своей квалификационной группе за время турнира (месяц). Бегай регулярно! Соревнуйся с другими и самим собой!</p>
+
+      <div class="main-screen__bottom">
+        <a href="#" class="btn btn--registration main-screen__btn main-screen__btn--value js-main-popup-btn">Участвовать</a>
+        <a href="#" class="btn btn--show main-screen__btn">Посмотреть</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section" style="background-image: url(pic/bg/bg-05.jpg);">
+        <div class="section-outer">
+          <div class="section-wrap">
+            <div class="section-holder">
+              <div class="main-screen">
+  <div class="container">
+    <div class="main-screen__holder js-main-screen-desc">
+      <span class="main-screen__title">Получай призы!</span>
+      <p class="main-screen__desc">Победители (1-3 места) в квалификационных и возрастных группах получают денежные призы. Участники турниров, выполнившие  норматив турнира, получают призы от спонсоров турнира</p>
+
+      <div class="main-screen__bottom">
+        <a href="#" class="btn btn--registration main-screen__btn main-screen__btn--value js-main-popup-btn">Регистрация</a>
+        <a href="#" class="btn btn--show main-screen__btn">Посмотреть</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    	
+  </div>
+
+		
+
+    <script src="js/vendor.js"></script>
+
+    
+    	<script src="pages-list.js"></script>
+    
+    
+    <script src="js/main.js"></script>
+
+
+    
+
+    
+</body>
+</html>
+
+
